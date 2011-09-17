@@ -1,0 +1,32 @@
+<tables>
+	<table name="3gSysFile">
+		<field name="CI" type="int" source="import">
+		</field>
+		<field name="NodeB" type="varchar(255)" source="import">
+		</field>
+		<field name="RNC" type="varchar(50)" source="import">
+		</field>
+		<field name="SGSN" type="varchar(50)" source="import">
+		</field>
+		<field name="MSC" type="varchar(50)" source="import">
+		</field>
+		<field name="LAC" type="int" source="import">
+		</field>
+		<field name="RAC" type="int" source="import">
+		</field>
+		<field name="Frequency" type="int" source="import">
+		</field>
+		<field name="Latitude" type="float" source="import">
+		</field>
+		<field name="Longitude" type="float" source="import">
+		</field>
+		<field name="Azimuth" type="int" source="import">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>
+
+

@@ -1,0 +1,524 @@
+<aggregation>
+	<aggregate name="hourly">
+		 <step name="1" from="T110_TRX_H" to="T110_SECTOR_H" groupfrom="BSC_ID,BTS_ID,SECTOR,OMC_ID,STARTDATE,STARTTIME,ENDDATE,ENDTIME,BSC_NAME" groupto="groupfrom" limit="1" limitfrom="STARTDATE" limitto="STARTDATE">
+		 </step>
+		 <step name="2" from="T110_SECTOR_H" to="T110_BTS_H" groupfrom="BSC_ID,BTS_ID,OMC_ID,STARTDATE,STARTTIME,ENDDATE,ENDTIME,BSC_NAME,SDATE" groupto="groupfrom" limit="1" limitfrom="STARTDATE" limitto="STARTDATE">
+		 </step>
+		 <step name="3" from="T110_BTS_H" to="T110_BSC_H" groupfrom="BSC_ID,OMC_ID,STARTDATE,STARTTIME,ENDDATE,ENDTIME,BSC_NAME,SDATE" groupto="groupfrom" limit="1" limitfrom="STARTDATE" limitto="STARTDATE">
+		 </step>
+	</aggregate>
+	<aggregate name="daily">
+		 <step name="1" from="T110_TRX_H" to="T110_TRX_D"  groupfrom="BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,STARTDATE,BSC_NAME,giveDateTime(STARTDATE)" groupto="BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,IMPORTDATE,BSC_NAME,SDATE" limit="3" limitfrom="STARTDATE" limitto="IMPORTDATE">
+		 </step>
+		 <step name="2" from="T110_SECTOR_H" to="T110_SECTOR_D" groupfrom="BSC_ID,BTS_ID,SECTOR,OMC_ID,STARTDATE,BSC_NAME,giveDateTime(STARTDATE)" groupto="BSC_ID,BTS_ID,SECTOR,OMC_ID,IMPORTDATE,BSC_NAME,SDATE" limit="3" limitfrom="STARTDATE" limitto="IMPORTDATE">
+		 </step>
+		 <step name="3" from="T110_SECTOR_D" to="T110_BTS_D" groupfrom="BSC_ID,BTS_ID,OMC_ID,IMPORTDATE,BSC_NAME,SDATE" groupto="groupfrom" limit="3" limitfrom="IMPORTDATE" limitto="IMPORTDATE">
+		 </step>
+		 <step name="4" from="T110_BTS_D" to="T110_BSC_D" groupfrom="BSC_ID,OMC_ID,IMPORTDATE,BSC_NAME,SDATE" groupto="groupfrom" limit="3" limitfrom="IMPORTDATE" limitto="IMPORTDATE">
+		 </step>
+	</aggregate>
+	<aggregate name="weekly">
+		 <step name="1" from="T110_TRX_D" to="T110_TRX_W" groupfrom="BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,BSC_NAME,giveStartDate(IMPORTDATE)" groupto="BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,BSC_NAME,SDATE" limit="2" limitfrom="giveStartDate(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="2" from="T110_SECTOR_D" to="T110_SECTOR_W" groupfrom="BSC_ID,BTS_ID,SECTOR,OMC_ID,BSC_NAME,giveStartDate(IMPORTDATE)" groupto="BSC_ID,BTS_ID,SECTOR,OMC_ID,BSC_NAME,SDATE" limit="2" limitfrom="giveStartDate(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="3" from="T110_SECTOR_W" to="T110_BTS_W" groupfrom="BSC_ID,BTS_ID,OMC_ID,BSC_NAME,SDATE" groupto="groupfrom" limit="2" limitfrom="SDATE" limitto="SDATE">
+		 </step>
+		 <step name="4" from="T110_BTS_W" to="T110_BSC_W" groupfrom="BSC_ID,OMC_ID,BSC_NAME,SDATE" groupto="groupfrom" limit="2" limitfrom="SDATE" limitto="SDATE">
+		 </step>
+	</aggregate>
+	<aggregate name="monthly">
+		 <step name="1" from="T110_TRX_D" to="T110_TRX_M" groupfrom="BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,BSC_NAME,giveMonthStart(IMPORTDATE)" groupto="BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,BSC_NAME,SDATE" limit="2" limitfrom="giveMonthStart(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="2" from="T110_SECTOR_D" to="T110_SECTOR_M" groupfrom="BSC_ID,BTS_ID,SECTOR,OMC_ID,BSC_NAME,giveMonthStart(IMPORTDATE)" groupto="BSC_ID,BTS_ID,SECTOR,OMC_ID,BSC_NAME,SDATE" limit="2" limitfrom="giveMonthStart(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="3" from="T110_SECTOR_D" to="T110_BTS_M" groupfrom="BSC_ID,BTS_ID,OMC_ID,BSC_NAME,giveMonthStart(IMPORTDATE)" groupto="BSC_ID,BTS_ID,OMC_ID,BSC_NAME,SDATE" limit="2" limitfrom="giveMonthStart(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="4" from="T110_BTS_M" to="T110_BSC_M" groupfrom="BSC_ID,OMC_ID,BSC_NAME,SDATE" groupto="groupfrom" limit="2" limitfrom="giveMonthStart(SDATE)" limitto="SDATE">
+		 </step>
+	</aggregate>
+	<aggregate name="fields">
+		<field name="MC621" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC703" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC710" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC711" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC712" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC713" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC714" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC717a" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC717b" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC718" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC736" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC739" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC746b" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC370a" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC370b" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC380a" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC380b" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC380c" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC380d" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC380e" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC380f" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC381" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC390" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC400" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC380a" do="hourly:1-3;daily:1-4;weekly:1-4;monthly:1-4" how="sum">
+		</field>
+		<field name="MC01" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC02" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC02a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC02b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC02c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC02d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC02e" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC02f" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC02g" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC02h" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC03" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC04" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC07" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC10" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC13a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC13b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC14a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC14c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC15a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC15b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC137" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC138" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC147" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC148" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC149" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC24" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC27" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC141" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC8a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC8b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC8c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC8d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC541a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC41b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC586a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC586b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC586c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC142e" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC142f" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC144e" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC144f" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC850" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC151" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC153" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC555" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC196" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC197" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC170" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC461" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC921a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC921b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC921c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC921d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC921e" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC607" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC812" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC612a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC612b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC612c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC612d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC541" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC551" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC81" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC642" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC643" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC645a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC646" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC647" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC648" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC650" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC652" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC653" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC655a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC656" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC657" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC658" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC660" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC561" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC101" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC662" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC663" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC667" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC670" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC671" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC672" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC673" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC674" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC675" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC676" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC677" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC678" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC679" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC706" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC785a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC785d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC785e" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC785f" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC820" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC320a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC320b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC320c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC320d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC320e" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC821" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC250" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC26" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC28a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC29a" do="hourly:2-5;daily:2-6;weekly:2-6;monthly:2-6" how="max">
+		</field>
+		<field name="MC830" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC831" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC34" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC31" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC870" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC871" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC803" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC1040" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC1044" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC1050" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC161" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC162" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC448a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC448b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC449" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC701a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC701b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC701c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC701d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC701e" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC702a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC702b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC702c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC704a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC704b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC705" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC901" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC902" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC903" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC140a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC140b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC460a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC922a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC922b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC922c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC922d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC800" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC801a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC801b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC802a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC802b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC804a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC804b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC805a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC805b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC91" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC923a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC923b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC923c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC923d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC02i" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC462a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC462b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC462c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC463a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC463b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC463c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC191" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC701f" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC701g" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC925a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC925b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC925c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC925d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC925e" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC925f" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC925g" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC925h" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC927a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC927b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC927c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC927d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC927e" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC927f" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC928a" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC928b" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC928c" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC928d" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC928e" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC928f" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC928g" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC928h" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC928i" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC930" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC931" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC932" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC933" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC934" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC935" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC936" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC937" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC938" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC939" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC950" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC951" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC952" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC953" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC954" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC955" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC956" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC957" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC958" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC959" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC960" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC961" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC962" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC963" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+		<field name="MC964" do="hourly:2-3;daily:2-4;weekly:2-4;monthly:2-4" how="sum">
+		</field>
+	</aggregate>
+</aggregation>

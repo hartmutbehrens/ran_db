@@ -1,0 +1,1538 @@
+<tables>
+	<table name="BS_PHY_H" loadedfromcsv="yes" granularity="3600" idx="PHY">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="EDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="PHY" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSID" type="varchar(100)" counter="no">
+		</field>
+		<field name="L1DL0051" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0052" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0053" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0011" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0012" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0013" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0014" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0021" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0022" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0023" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0024" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0031" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0032" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0033" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0034" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0041" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0042" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0043" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0044" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0051" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0052" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0053" type="bigint" counter="yes"> 
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,PHY</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="BS_MS_PHY_H" loadedfromcsv="yes" granularity="3600" idx="MS_PHY">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="EDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="MS_PHY" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSID" type="varchar(100)" counter="no">
+		</field>
+		<field name="L1DL0011" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0012" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0013" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0014" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0021" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0022" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0023" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0024" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0031" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0032" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0033" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0034" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0041" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0042" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0043" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0044" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0001" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0002" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0003" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0004" type="bigint" counter="yes"> 
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,MS_PHY</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="BS_MAC_H" loadedfromcsv="yes" granularity="3600" idx="MAC">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="EDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="MAC" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSID" type="varchar(100)" counter="no">
+		</field>
+		<field name="L1DL0100" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0101" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0102" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0103" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0104" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0105" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0120" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0125" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0130" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0201" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0202" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0211" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0212" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0221" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0222" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0223" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0300" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0301" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0311" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0312" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0321" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0322" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0323" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0324" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0100" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0101" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0102" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0103" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0104" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0105" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0120" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0125" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0130" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0201" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0202" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0211" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0212" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0221" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0301" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0302" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0311" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0312" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0313" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0321" type="bigint" counter="yes">
+		</field>
+		<field name="NE0010" type="bigint" counter="yes">
+		</field>
+		<field name="NE0011" type="bigint" counter="yes">
+		</field>
+		<field name="NE0012" type="bigint" counter="yes">
+		</field>
+		<field name="NE0100" type="bigint" counter="yes">
+		</field>
+		<field name="NE0101" type="bigint" counter="yes">
+		</field>
+		<field name="NE0102" type="bigint" counter="yes">
+		</field>
+		<field name="NE0103" type="bigint" counter="yes">
+		</field>
+		<field name="NE0110" type="bigint" counter="yes">
+		</field>
+		<field name="NE0111" type="bigint" counter="yes">
+		</field>
+		<field name="NE0112" type="bigint" counter="yes">
+		</field>
+		<field name="NE0113" type="bigint" counter="yes">
+		</field>
+		<field name="NE0120" type="bigint" counter="yes">
+		</field>
+		<field name="NE0130" type="bigint" counter="yes">
+		</field>
+		<field name="NE0140" type="bigint" counter="yes">
+		</field>
+		<field name="NE0150" type="bigint" counter="yes">
+		</field>
+		<field name="NE0160" type="bigint" counter="yes">
+		</field>
+		<field name="NE0170" type="bigint" counter="yes">
+		</field>
+		<field name="MS0110" type="bigint" counter="yes">
+		</field>
+		<field name="MS0120" type="bigint" counter="yes">
+		</field>
+		<field name="MS0130" type="bigint" counter="yes">
+		</field>
+		<field name="MS0135" type="bigint" counter="yes">
+		</field>
+		<field name="MS0140" type="bigint" counter="yes">
+		</field>
+		<field name="MS0150" type="bigint" counter="yes">
+		</field>
+		<field name="MS0155" type="bigint" counter="yes">
+		</field>
+		<field name="MS0160" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0100" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0110" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0150" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0151" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0152" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0100" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0110" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0150" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0151" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0152" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0010" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0060" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0070" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0080" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0090" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0110" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0120" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0130" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0140" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0160" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0170" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0180" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0190" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0200" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0210" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0010" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0020" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0030" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0040" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0050" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0060" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0070" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0080" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0090" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0100" type="bigint" counter="yes"> 
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,MAC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="BS_BSCELL_CSN_LINK_H" loadedfromcsv="yes" granularity="3600" idx="BSCELL_CSN_LINK">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="EDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSCELL_CSN_LINK" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSID" type="varchar(100)" counter="no">
+		</field>
+		<field name="CSN_LINK" type="varchar(100)" counter="no">
+		</field>
+		<field name="MS0101" type="bigint" counter="yes">
+		</field>
+		<field name="MS0102" type="bigint" counter="yes">
+		</field>
+		<field name="MS0103" type="bigint" counter="yes">
+		</field>
+		<field name="MS0104" type="bigint" counter="yes">
+		</field>
+		<field name="MS0105" type="bigint" counter="yes">
+		</field>
+		<field name="MS0106" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0100" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0101" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0102" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0103" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0104" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0110" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0111" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0112" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0113" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0114" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0120" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0121" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0122" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0123" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0124" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0140" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0141" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0142" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0143" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0144" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0150" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0151" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0152" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0153" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0154" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0160" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0161" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0162" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0163" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0164" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0190" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0191" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0192" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0193" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0194" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0200" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0201" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0202" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0203" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0204" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0210" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0211" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0212" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0213" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0214" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0300" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0301" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0302" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0303" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0304" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0100" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0101" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0102" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0103" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0104" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0110" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0111" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0112" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0113" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0114" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0120" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0121" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0122" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0123" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0124" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0140" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0141" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0142" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0143" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0144" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0150" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0151" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0152" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0153" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0154" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0160" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0161" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0162" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0163" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0164" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0190" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0191" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0192" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0193" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0194" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0200" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0201" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0202" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0203" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0204" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0210" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0211" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0212" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0213" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0214" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0300" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0301" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0302" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0303" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0304" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0140" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0141" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0142" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0143" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0144" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0160" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0161" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0162" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0163" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0164" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0165" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0166" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0167" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0168" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0169" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0170" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0171" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0172" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0173" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0174" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0175" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0176" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0177" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0178" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0179" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0200" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0201" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0202" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0203" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0204" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0205" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0206" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0220" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0221" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0222" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0223" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0224" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0225" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0226" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0227" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0300" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0301" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0140" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0141" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0142" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0143" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0144" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0145" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0146" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0147" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0148" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0149" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0160" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0161" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0162" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0163" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0164" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0165" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0166" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0167" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0168" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0169" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0170" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0171" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0172" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0173" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0174" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0175" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0176" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0177" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0178" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0179" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0200" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0201" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0202" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0203" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0204" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0220" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0221" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0222" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0223" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0224" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0225" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0300" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0301" type="bigint" counter="yes"> 
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,BSCELL_CSN_LINK</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="BS_PHY_D">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="PHY" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSID" type="varchar(100)" counter="no">
+		</field>
+		<field name="L1DL0051" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0052" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0053" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0011" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0012" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0013" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0014" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0021" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0022" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0023" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0024" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0031" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0032" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0033" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0034" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0041" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0042" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0043" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0044" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0051" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0052" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0053" type="bigint" counter="yes"> 
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,PHY</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="BS_MS_PHY_D">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="MS_PHY" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSID" type="varchar(100)" counter="no">
+		</field>
+		<field name="L1DL0011" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0012" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0013" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0014" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0021" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0022" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0023" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0024" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0031" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0032" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0033" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0034" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0041" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0042" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0043" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0044" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0001" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0002" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0003" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0004" type="bigint" counter="yes"> 
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,MS_PHY</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="BS_MAC_D">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="MAC" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSID" type="varchar(100)" counter="no">
+		</field>
+		<field name="L1DL0100" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0101" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0102" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0103" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0104" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0105" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0120" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0125" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0130" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0201" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0202" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0211" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0212" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0221" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0222" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0223" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0300" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0301" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0311" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0312" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0321" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0322" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0323" type="bigint" counter="yes">
+		</field>
+		<field name="L1DL0324" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0100" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0101" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0102" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0103" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0104" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0105" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0120" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0125" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0130" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0201" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0202" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0211" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0212" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0221" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0301" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0302" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0311" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0312" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0313" type="bigint" counter="yes">
+		</field>
+		<field name="L1UL0321" type="bigint" counter="yes">
+		</field>
+		<field name="NE0010" type="bigint" counter="yes">
+		</field>
+		<field name="NE0011" type="bigint" counter="yes">
+		</field>
+		<field name="NE0012" type="bigint" counter="yes">
+		</field>
+		<field name="NE0100" type="bigint" counter="yes">
+		</field>
+		<field name="NE0101" type="bigint" counter="yes">
+		</field>
+		<field name="NE0102" type="bigint" counter="yes">
+		</field>
+		<field name="NE0103" type="bigint" counter="yes">
+		</field>
+		<field name="NE0110" type="bigint" counter="yes">
+		</field>
+		<field name="NE0111" type="bigint" counter="yes">
+		</field>
+		<field name="NE0112" type="bigint" counter="yes">
+		</field>
+		<field name="NE0113" type="bigint" counter="yes">
+		</field>
+		<field name="NE0120" type="bigint" counter="yes">
+		</field>
+		<field name="NE0130" type="bigint" counter="yes">
+		</field>
+		<field name="NE0140" type="bigint" counter="yes">
+		</field>
+		<field name="NE0150" type="bigint" counter="yes">
+		</field>
+		<field name="NE0160" type="bigint" counter="yes">
+		</field>
+		<field name="NE0170" type="bigint" counter="yes">
+		</field>
+		<field name="MS0110" type="bigint" counter="yes">
+		</field>
+		<field name="MS0120" type="bigint" counter="yes">
+		</field>
+		<field name="MS0130" type="bigint" counter="yes">
+		</field>
+		<field name="MS0135" type="bigint" counter="yes">
+		</field>
+		<field name="MS0140" type="bigint" counter="yes">
+		</field>
+		<field name="MS0150" type="bigint" counter="yes">
+		</field>
+		<field name="MS0155" type="bigint" counter="yes">
+		</field>
+		<field name="MS0160" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0100" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0110" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0150" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0151" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0152" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0100" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0110" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0150" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0151" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0152" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0010" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0060" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0070" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0080" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0090" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0110" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0120" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0130" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0140" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0160" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0170" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0180" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0190" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0200" type="bigint" counter="yes">
+		</field>
+		<field name="MOB_BS_C0210" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0010" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0020" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0030" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0040" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0050" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0060" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0070" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0080" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0090" type="bigint" counter="yes">
+		</field>
+		<field name="IM_BS_C0100" type="bigint" counter="yes"> 
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,MAC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="BS_BSCELL_CSN_LINK_D">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSCELL_CSN_LINK" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSID" type="varchar(100)" counter="no">
+		</field>
+		<field name="CSN_LINK" type="varchar(100)" counter="no">
+		</field>
+		<field name="MS0101" type="bigint" counter="yes">
+		</field>
+		<field name="MS0102" type="bigint" counter="yes">
+		</field>
+		<field name="MS0103" type="bigint" counter="yes">
+		</field>
+		<field name="MS0104" type="bigint" counter="yes">
+		</field>
+		<field name="MS0105" type="bigint" counter="yes">
+		</field>
+		<field name="MS0106" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0100" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0101" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0102" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0103" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0104" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0110" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0111" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0112" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0113" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0114" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0120" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0121" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0122" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0123" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0124" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0140" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0141" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0142" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0143" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0144" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0150" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0151" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0152" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0153" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0154" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0160" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0161" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0162" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0163" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0164" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0190" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0191" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0192" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0193" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0194" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0200" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0201" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0202" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0203" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0204" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0210" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0211" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0212" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0213" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0214" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0300" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0301" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0302" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0303" type="bigint" counter="yes">
+		</field>
+		<field name="SFDL0304" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0100" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0101" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0102" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0103" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0104" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0110" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0111" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0112" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0113" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0114" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0120" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0121" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0122" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0123" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0124" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0140" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0141" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0142" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0143" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0144" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0150" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0151" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0152" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0153" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0154" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0160" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0161" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0162" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0163" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0164" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0190" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0191" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0192" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0193" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0194" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0200" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0201" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0202" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0203" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0204" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0210" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0211" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0212" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0213" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0214" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0300" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0301" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0302" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0303" type="bigint" counter="yes">
+		</field>
+		<field name="SFUL0304" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0140" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0141" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0142" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0143" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0144" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0160" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0161" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0162" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0163" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0164" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0165" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0166" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0167" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0168" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0169" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0170" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0171" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0172" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0173" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0174" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0175" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0176" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0177" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0178" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0179" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0200" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0201" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0202" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0203" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0204" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0205" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0206" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0220" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0221" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0222" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0223" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0224" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0225" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0226" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0227" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0300" type="bigint" counter="yes">
+		</field>
+		<field name="PACDL0301" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0140" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0141" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0142" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0143" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0144" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0145" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0146" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0147" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0148" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0149" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0160" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0161" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0162" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0163" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0164" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0165" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0166" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0167" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0168" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0169" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0170" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0171" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0172" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0173" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0174" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0175" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0176" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0177" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0178" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0179" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0200" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0201" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0202" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0203" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0204" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0220" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0221" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0222" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0223" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0224" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0225" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0300" type="bigint" counter="yes">
+		</field>
+		<field name="PACUL0301" type="bigint" counter="yes"> 
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,BSCELL_CSN_LINK</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+</tables>

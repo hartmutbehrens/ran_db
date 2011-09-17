@@ -1,0 +1,39 @@
+<tables>
+	<table name="CELLPOSITIONS_3G">
+		<field name="MSC" type="varchar(50)">
+		</field>
+		<field name="RNC" type="varchar(50)">
+		</field>
+		<field name="NODEB" type="varchar(50)">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="NODEBID" type="int">
+		</field>
+		<field name="NODEB_NAME" type="varchar(100)">
+		</field>
+		<field name="LAT" type="float">
+		</field>
+		<field name="LON" type="float">
+		</field>
+		<field name="ASIMUTH" type="int">
+		</field>
+		<field name="DOWNTILT" type="float">
+		</field>
+		<field name="HEIGHT" type="float">
+		</field>
+		<field name="HEXAGON_RADIUS" type="varchar(50)">
+		</field>
+		<field name="ANTENNA" type="varchar(50)">
+		</field>
+		<field name="SITE_TYPE" type="varchar(50)">
+		</field>
+		<index name="laci">
+			<order>CI,LAC</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	
+</tables>

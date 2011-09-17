@@ -1,0 +1,574 @@
+<aggregation>
+	<aggregate name="hourly">
+		 <step name="1" from="BWA_BS_30m" to="BWA_BS_H" groupfrom="Object,startDateTime_Hour(SDATETIME),BS,NetworkElement" groupto="Object,SDATETIME,BS,NetworkElement" limit="2" limitfrom="startDateTime_Hour(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="2" from="BWA_CARRIER_30m" to="BWA_CARRIER_H" groupfrom="Object,startDateTime_Hour(SDATETIME),CarrierNo,NetworkElement" groupto="Object,SDATETIME,CarrierNo,NetworkElement" limit="2" limitfrom="startDateTime_Hour(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="3" from="ASNGW_BUTT_30m" to="ASNGW_BUTT_H" groupfrom="Object,startDateTime_Hour(SDATETIME),BUTT,NetworkElement" groupto="Object,SDATETIME,BUTT,NetworkElement" limit="2" limitfrom="startDateTime_Hour(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="4" from="ASNGW_BSID_30m" to="ASNGW_BSID_H" groupfrom="Object,startDateTime_Hour(SDATETIME),BSID,NetworkElement" groupto="Object,SDATETIME,BSID,NetworkElement" limit="2" limitfrom="startDateTime_Hour(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="5" from="ASNGW_CARD_30m" to="ASNGW_CARD_H" groupfrom="Object,startDateTime_Hour(SDATETIME),Slot,FrameNumber,NetworkElement" groupto="Object,SDATETIME,Slot,FrameNumber,NetworkElement" limit="2" limitfrom="startDateTime_Hour(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="6" from="ASNGW_DOMAIN_30m" to="ASNGW_DOMAIN_H" groupfrom="Object,startDateTime_Hour(SDATETIME),DOMAIN,NetworkElement" groupto="Object,SDATETIME,DOMAIN,NetworkElement" limit="2" limitfrom="startDateTime_Hour(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="7" from="ASNGW_FLOW_30m" to="ASNGW_FLOW_H" groupfrom="Object,startDateTime_Hour(SDATETIME),FLOW,NetworkElement" groupto="Object,SDATETIME,FLOW,NetworkElement" limit="2" limitfrom="startDateTime_Hour(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="8" from="ASNGW_MSID_30m" to="ASNGW_MSID_H" groupfrom="Object,startDateTime_Hour(SDATETIME),MSID,NetworkElement" groupto="Object,SDATETIME,MSID,NetworkElement" limit="2" limitfrom="startDateTime_Hour(SDATETIME)" limitto="SDATETIME">
+		 </step>
+	</aggregate>
+	<aggregate name="daily">
+		 <step name="1" from="BWA_BS_H" to="BWA_BS_D" groupfrom="Object,giveDayStart(SDATETIME),BS,NetworkElement" groupto="Object,SDATETIME,BS,NetworkElement" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="2" from="BWA_CARRIER_H" to="BWA_CARRIER_D" groupfrom="Object,giveDayStart(SDATETIME),CarrierNo,NetworkElement" groupto="Object,SDATETIME,CarrierNo,NetworkElement" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="3" from="ASNGW_BUTT_H" to="ASNGW_BUTT_D" groupfrom="Object,giveDayStart(SDATETIME),BUTT,NetworkElement" groupto="Object,SDATETIME,BUTT,NetworkElement" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="4" from="ASNGW_BSID_H" to="ASNGW_BSID_D" groupfrom="Object,giveDayStart(SDATETIME),BSID,NetworkElement" groupto="Object,SDATETIME,BSID,NetworkElement" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="5" from="ASNGW_CARD_H" to="ASNGW_CARD_D" groupfrom="Object,giveDayStart(SDATETIME),Slot,FrameNumber,NetworkElement" groupto="Object,SDATETIME,Slot,FrameNumber,NetworkElement" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="6" from="ASNGW_DOMAIN_H" to="ASNGW_DOMAIN_D" groupfrom="Object,giveDayStart(SDATETIME),DOMAIN,NetworkElement" groupto="Object,SDATETIME,DOMAIN,NetworkElement" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="7" from="ASNGW_FLOW_H" to="ASNGW_FLOW_D" groupfrom="Object,giveDayStart(SDATETIME),FLOW,NetworkElement" groupto="Object,SDATETIME,FLOW,NetworkElement" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="8" from="ASNGW_MSID_H" to="ASNGW_MSID_D" groupfrom="Object,giveDayStart(SDATETIME),MSID,NetworkElement" groupto="Object,SDATETIME,MSID,NetworkElement" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+	</aggregate>
+	<aggregate name="fields">
+		<field name="up_num" do="hourly:1;daily:1" how="sum">
+		</field>
+		<field name="up_flow" do="hourly:1;daily:1" how="sum">
+		</field>
+		<field name="unicast_down_num" do="hourly:1;daily:1" how="sum">
+		</field>
+		<field name="unicast_down_flow" do="hourly:1;daily:1" how="sum">
+		</field>
+		<field name="broadcast_down_num" do="hourly:1;daily:1" how="sum">
+		</field>
+		<field name="broadcast_down_flow" do="hourly:1;daily:1" how="sum">
+		</field>
+		<field name="unknown_packets_num" do="hourly:1;daily:1" how="sum">
+		</field>
+		<field name="transmit_num" do="hourly:1;daily:1" how="sum">
+		</field>
+		<field name="transmit_flow" do="hourly:1;daily:1" how="sum">
+		</field>
+		<field name="UL_ERROR_PDU_NUMBER" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="DL_OVERFLOW_SDU_NUMBER" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="HARQ_RETRANSMISSION_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="HARQ_TOTAL_TRANSMISSION_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="INITIAL_NETWORK_ENTRY_REQUEST_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="INITIAL_NETWORK_ENTRY_SUCCESS_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="MS_DROP_OUT_TOTAL_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="OM_KICK_OFF_MS_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="GW_KICK_OFF_MS_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="MS_QUIT_NETWORK_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="MS_HANDOVER_REQUEST_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="MS_HANDOVER_SUCCESS_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="HANDOVER_RE_ENTRY_REQUEST_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="HANDOVER_RE_ENTRY_SUCCESS_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="INITIAL_AUTH_REQUEST_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="INITIAL_AUTH_SUCCESS_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="RE_AUTH_REQUEST_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="RE_AUTH_SUCCESS_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="RE_INITIAL_AUTH_REQUEST_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="RE_INITIAL_AUTH_SUCCESS_TIMES" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="ON_LINE_MAX_NUMBER" do="hourly:2;daily:2" how="sum">
+		</field>
+		<field name="Number_of_Received_PPP_Negotiation_Packets" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Sent_PPP_Negotiation_Packets" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Received_Invalid_PPP_Negotiation_Packets" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Successful_LCP_Negotiations" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_LCP_Negotiation_Attempts" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Successful_IPCP_Negotiations" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_IPCP_Negotiation_Attempts" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Successful_CCP_Negotiations" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_CCP_Negotiation_Attempts" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Received_Stac_LZS_Compressed_Packets" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Sent_Stac_LZS_Compressed_Packets" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Received_Microsoft_Point_to_Point_Compressed_Packets" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Sent_Microsoft_Point_to_Point_Compressed_Packets" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Successful_PPP_Negotiations" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_PPP_Negotiation_Attempts" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Received_L2TP_Control_Packets" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Received_Invalid_L2TP_Control_Packets" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Sent_L2TP_Control_Packets" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_L2TP_Tunnel_Setup_Attempts" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Successful_L2TP_Tunnel_Setup_Times" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_L2TP_Session_Setup_Attempts" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Successful_L2TP_Session_Setup_Times" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Success_Rate_for_Uplink_Packet_Forwarding" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Success_Rate_for_Downlink_Packet_Forwarding" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Uplink_Packets_on_the_R3_Interface" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Downlink_Packets_on_the_R3_Interface" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Error_Downlink_Packets_on_the_R3_Interface" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Average_Packet_Throughput_on_the_R3_Interface" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Packet_Throughput_on_the_R3_Interface" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Average_Uplink_Packet_Rate_on_the_R3_Interface" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Uplink_Packet_Rate_on_the_R3_Interface" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Average_Downlink_Packet_Rate_on_the_R3_Interface" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Downlink_Packet_Rate_on_the_R3_Interface" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Number_of_Uplink_Packets_on_R4_and_R6_Interfaces" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Downlink_Packets_on_R4_and_R6_Interfaces" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Error_Uplink_Packets_on_R4_and_R6_Interfaces" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Average_Packet_Throughput_on_R4_and_R6_Interfaces" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Packet_Throughput_on_R4_and_R6_Interfaces" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Average_Uplink_Packet_Rate_on_R4_and_R6_Interfaces" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Uplink_Packet_Rate_on_R4_and_R6_Interfaces" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Average_Downlink_Packet_Rate_on_R4_and_R6_Interfaces" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Downlink_Packet_Rate_on_R4_and_R6_Interfaces" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Uplink_Packets_Exceeding_1500_Bytes_on_R4_and_R6" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Downlink_Packets_Exceeding_1500_Bytes_on_R3" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Uplink_Traffic_on_the_R3_Interface_KB" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Downlink_Traffic_on_the_R3_Interface_KB" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Uplink_Traffic_on_the_R3_Interface_MB" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Downlink_Traffic_on_the_R3_Interface_MB" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Average_Throughput_on_the_R3_Interface_KBps" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Throughput_on_the_R3_Interface_KBps" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Average_Throughput_on_the_R3_Interface_MBps" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Throughput_on_the_R3_Interface_MBps" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Average_Uplink_Rate_on_the_R3_Interface_KBps" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Uplink_Rate_on_the_R3_Interface_KBps" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Average_Downlink_Rate_on_the_R3_Interface_KBps" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Downlink_Rate_on_the_R3_Interface_KBps" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Uplink_Traffic_on_R4_and_R6_Interfaces_KB" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Downlink_Traffic_on_R4_and_R6_Interfaces_KB" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Uplink_Traffic_on_R4_and_R6_Interfaces_MB" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Downlink_Traffic_on_R4_and_R6_Interfaces_MB" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Average_Throughput_on_R4_and_R6_Interfaces_KBps" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Throughput_on_R4_and_R6_Interfaces_KBps" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Average_Throughput_on_R4_and_R6_Interfaces_MBps" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Throughput_on_R4_and_R6_Interfaces_MBps" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Average_Uplink_Rate_on_R4_and_R6_Interfaces_KBps" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Uplink_Rate_on_R4_and_R6_Interfaces_KBps" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Average_Downlink_Rate_on_R4_and_R6_Interfaces_KBps" do="hourly:3,6;daily:3,6" how="avg">
+		</field>
+		<field name="Maximum_Downlink_Rate_on_R4_and_R6_Interfaces_KBps" do="hourly:3,6;daily:3,6" how="max">
+		</field>
+		<field name="Number_of_Received_EAP_Start_Messages" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_EAP_Request_Messages_Sent_to_the_BS" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_EAP_Response_Messages_Received_from_the_BS" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Successful_Authentication_Responses" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Authentication_Requests" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Re_sent_Authentication_Requests" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_EAP_Response_Messages_to_the_AAA_Server" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_EAP_Request_Messages_from_the_AAA_Server" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_EAP_Success_Messages_from_the_AAA_Server" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_EAP_Failure_Messages_from_the_AAA_Server" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Number_of_Successful_Accounting_Start_Responses" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Accounting_Start_Requests" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Re_sent_Accounting_Start_Requests" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Successful_Interim_UDR_Updates" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Interim_UDR_Update_Requests" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Re_sent_Interim_UDR_Update_Requests" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Successful_Accounting_End_Responses" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Accounting_End_Requests" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Re_sent_Accounting_End_Requests" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Sent_Messages_Carrying_UDRs" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Successfully_Sent_Messages_Carrying_UDRs" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_UDRs_Waiting_to_Be_Sent" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Received_Invalid_AAA_Messages" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_AAA_Link_Interruption_Times" do="hourly:3,6;daily:3,6" how="sum">
+		</field>
+		<field name="Number_of_Activated_Service_Flows" do="hourly:3,4,5,6;daily:3,4,5,6" how="avg" hourly="sum" daily="max">
+		</field>
+		<field name="Average_Number_of_Activated_Service_Flows" do="hourly:3,5,6;daily:3,5,6" how="avg">
+		</field>
+		<field name="Maximum_Number_of_Activated_Service_Flows" do="hourly:3,5,6;daily:3,5,6" how="max">
+		</field>
+		<field name="Number_of_UGS_Service_Flows" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_ertPS_Service_Flows" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_rtPS_Service_Flows" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_nrtPS_Service_Flows" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_BE_Service_Flows" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Users_with_Dynamic_IP_Addresses" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Users_with_Static_IP_Addresses" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_DP_Registration_Requests" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Successful_DP_Registration_Times" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Re_sent_DP_Registration_Requests" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_DP_Deregistration_Requests" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Successful_DP_Deregistration_Times" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Re_sent_DP_Deregistration_Requests" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Total_Online_Duration_of_Users" do="hourly:3,5;daily:3,5" how="sum">
+		</field>
+		<field name="Average_Online_Duration_of_Users" do="hourly:3,5;daily:3,5" how="avg">
+		</field>
+		<field name="Number_of_Activated_Users" do="hourly:3,4,5,6;daily:3,4,5,6" how="avg" hourly="sum" daily="max">
+		</field>
+		<field name="Number_of_Access_Users" do="hourly:3,4,5,6;daily:3,4,5,6" how="avg" hourly="sum" daily="max">
+		</field>
+		<field name="Average_Number_of_Access_Users" do="hourly:3,4,5,6;daily:3,4,5,6" how="avg">
+		</field>
+		<field name="Maximum_Number_of_Access_Users" do="hourly:3,4,5,6;daily:3,4,5,6" how="max">
+		</field>
+		<field name="Number_of_Registration_Updates" do="hourly:3,4;daily:3,4" how="sum">
+		</field>
+		<field name="Number_of_Network_Access_Requests" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Successful_Network_Access_Times" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Success_Rate_of_Network_Access" do="hourly:3,4,5,6;daily:3,4,5,6" how="sum">
+		</field>
+		<field name="Access_Failure_Due_to_AUTC_Negotiation_Failure" do="hourly:3,4,5,6;daily:3,4,5,6" how="sum">
+		</field>
+		<field name="Access_Failure_Due_to_Capability_Negotiation_Failure" do="hourly:3,4,5,6;daily:3,4,5,6" how="sum">
+		</field>
+		<field name="Access_Failure_Due_to_Other_Reason" do="hourly:3,4,5,6;daily:3,4,5,6" how="sum">
+		</field>
+		<field name="Number_of_Access_Authentication_Negotiation_Requests" do="hourly:3,4,5,6;daily:3,4,5,6" how="sum">
+		</field>
+		<field name="Number_of_Access_Authentication_Negotiation_Responses" do="hourly:3,4,5,6;daily:3,4,5,6" how="sum">
+		</field>
+		<field name="Number_of_Access_Capability_Negotiation_Requests" do="hourly:3,4,5,6;daily:3,4,5,6" how="sum">
+		</field>
+		<field name="Number_of_Access_Capability_Negotiation_Responses" do="hourly:3,4,5,6;daily:3,4,5,6" how="sum">
+		</field>
+		<field name="Number_of_Sent_Access_Negotiation_Responses" do="hourly:3,4,5,6;daily:3,4,5,6" how="sum">
+		</field>
+		<field name="Number_of_MIP_Users" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_PPPoE_Users" do="hourly:3,5;daily:3,5" how="sum">
+		</field>
+		<field name="Number_of_L2TP_Users" do="hourly:3,5;daily:3,5" how="sum">
+		</field>
+		<field name="Expiration_of_BS_Neighbor_Parameter_Synchronization" do="hourly:3;daily:3" how="sum">
+		</field>
+		<field name="Success_of_Neighbor_Parameter_Synchronization_of_BS" do="hourly:3,5;daily:3,5" how="sum">
+		</field>
+		<field name="Success_of_Load_Capacity_Reporting_of_BS" do="hourly:3,5;daily:3,5" how="sum">
+		</field>
+		<field name="Expiration_of_Load_Capacity_Reporting_of_BS" do="hourly:3,5;daily:3,5" how="sum">
+		</field>
+		<field name="Number_of_Idle_Users" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Paging_Initiation_Times" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Successful_Paging_Times" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Re_sent_Paging_Initiation_Times" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Paging_Failure_Times_Due_to_No_Response" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Paging_Failure_Due_to_Failure_to_Get_Target_BS_Info" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Paging_Failure_Times_Due_to_Other_Reason" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Location_Update_Requests" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Location_Update_Responses" do="hourly:3,5;daily:3,5" how="sum">
+		</field>
+		<field name="Number_of_Failed_Location_Updates_Due_to_No_Response" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Failed_Location_Updates_Due_to_Rejection" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Failed_Location_Updates_Due_to_Other_Reason" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Requests_for_Entering_Idle_State" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Times_for_Successfully_Entering_Idle_State" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Failed_Idle_State_Entry_Times_Rejected" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Failed_Idle_State_Entry_Times_Other_Reason" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Requests_for_Exiting_from_Idle_State" do="hourly:3,5;daily:3,5" how="sum">
+		</field>
+		<field name="Number_of_Times_for_Successful_Idle_State_Exit" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Failed_Idle_State_Exit_Times_Rejected" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Number_of_Failed_Idle_State_Exit_Times_Other_Reason" do="hourly:3,5,6;daily:3,5,6" how="sum">
+		</field>
+		<field name="Uplink_BS_Traffic" do="hourly:4;daily:4" how="sum">
+		</field>
+		<field name="Downlink_BS_Traffic" do="hourly:4;daily:4" how="sum">
+		</field>
+		<field name="Number_of_Access_Requests" do="hourly:4;daily:4" how="sum">
+		</field>
+		<field name="Number_of_Successful_Access_Times" do="hourly:4;daily:4" how="sum">
+		</field>
+		<field name="Uplink_UGS_Traffic" do="hourly:5,6;daily:5,6" how="sum">
+		</field>
+		<field name="Downlink_UGS_Traffic" do="hourly:5,6;daily:5,6" how="sum">
+		</field>
+		<field name="Uplink_ertPS_Traffic" do="hourly:5,6;daily:5,6" how="sum">
+		</field>
+		<field name="Downlink_ertPS_Traffic" do="hourly:5,6;daily:5,6" how="sum">
+		</field>
+		<field name="Uplink_rtPS_Traffic" do="hourly:5,6;daily:5,6" how="sum">
+		</field>
+		<field name="Downlink_rtPS_Traffic" do="hourly:5,6;daily:5,6" how="sum">
+		</field>
+		<field name="Uplink_nrtPS_Traffic" do="hourly:5,6;daily:5,6" how="sum">
+		</field>
+		<field name="Downlink_nrtPS_Traffic" do="hourly:5,6;daily:5,6" how="sum">
+		</field>
+		<field name="Uplink_BE_Traffic" do="hourly:5,6;daily:5,6" how="sum">
+		</field>
+		<field name="Downlink_BE_Traffic" do="hourly:5,6;daily:5,6" how="sum">
+		</field>
+		<field name="Number_of_Registration_Update_Times" do="hourly:5,6;daily:5,6" how="sum">
+		</field>
+		<field name="Number_of_Access_Times_Per_Second" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Maximum_Number_of_Access_Times_Per_Second" do="hourly:5;daily:5" how="max">
+		</field>
+		<field name="Average_Number_of_Access_Times_Per_Second" do="hourly:5;daily:5" how="avg">
+		</field>
+		<field name="Number_of_PPP_Users" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Controlled_Incoming_Handover_Requests" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Controlled_Outgoing_Handover_Requests" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Successful_Controlled_Incoming_Handovers" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Successful_Controlled_Outgoing_Handovers" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Failed_Controlled_Incoming_Handovers" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Failed_Controlled_Outgoing_Handovers" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Incoming_Handover_Failure_Due_to_Restriction" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Outgoing_Handover_Failure_Due_to_Restriction" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Incoming_Handover_Failure_Due_to_BS_Rejection" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Outgoing_Handover_Failure_Due_to_BS_Rejection" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Incoming_Handover_Failure_Due_to_BS_Cancellation" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Outgoing_Handover_Failure_Due_to_BS_Cancellation" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Incoming_Handover_Failure_Indicated_by_HO_Complete" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Outgoing_Handover_Failure_Indicated_by_HO_Complete" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Incoming_Handover_Failure_Due_to_DP_Setup_Failure" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Outgoing_Handover_Failure_Due_to_DP_Setup_Failure" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Incoming_Handover_Failure_Due_to_a_New_Handover" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Outgoing_Handover_Failure_Due_to_a_New_Handover" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Incoming_Handover_Failure_ASN_GW_Resource_Error" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Outgoing_Handover_Failure_ASN_GW_Resource_Error" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Incoming_Handover_Failure_Due_to_MS_Exit" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Outgoing_Handover_Failure_Due_to_MS_Exit" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Incoming_Handover_Failure_Due_to_Other_Reason" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Controlled_Outgoing_Handover_Failure_Due_to_Other_Reason" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Successful_Uncontrolled_Incoming_Handovers" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Successful_Uncontrolled_Outgoing_Handovers" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Failed_Uncontrolled_Incoming_Handovers" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Failed_Uncontrolled_Outgoing_Handovers" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Incoming_Handover_Failure_Due_to_Restriction" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Outgoing_Handover_Failure_Due_to_Restriction" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Incoming_Handover_Failure_Due_to_BS_Rejection" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Outgoing_Handover_Failure_Due_to_BS_Rejection" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Incoming_Handover_Failure_Due_to_BS_Cancellation" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Outgoing_Handover_Failure_Due_to_BS_Cancellation" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Incoming_Handover_Failure_Indicated_by_HO_Complete" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Outgoing_Handover_Failure_Indicated_by_HO_Complete" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Incoming_Handover_Failure_Due_to_DP_Setup_Failure" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Outgoing_Handover_Failure_Due_to_DP_Setup_Failure" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Incoming_Handover_Failure_Due_to_a_New_Handover" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Outgoing_Handover_Failure_Due_to_a_New_Handover" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Incoming_Handover_Failure_ASN_GW_Resource_Error" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Outgoing_Handover_Failure_ASN_GW_Resource_Error" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Incoming_Handover_Failure_Due_to_MS_Exit" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Outgoing_Handover_Failure_Due_to_MS_Exit" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Incoming_Handover_Failure_Due_to_Other_Reason" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Uncontrolled_Outgoing_Handover_Failure_Due_to_Other_Reason" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Re_sent_Controlled_Incoming_Handover_Requests" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Re_sent_Controlled_Outgoing_Handover_Requests" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Re_sent_Uncontrolled_Incoming_Handover_Requests" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Re_sent_Uncontrolled_Outgoing_Handover_Requests" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Expiration_of_Neighbor_Parameter_Synchronization_of_BS" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Average_CPU_Utilization" do="hourly:5;daily:5" how="avg">
+		</field>
+		<field name="Average_Memory_Utilization" do="hourly:5;daily:5" how="avg">
+		</field>
+		<field name="Maximum_CPU_Utilization" do="hourly:5;daily:5" how="max">
+		</field>
+		<field name="Number_of_MBS_R6_Heartbeat_Detection_Failure_Times" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_MBS_Channel_Setup_Requests" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Success_Times_for_MBS_Channel_Setup" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_MBS_R6_Channel_Setup_Requests" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Success_Times_for_MBS_R6_Channel_Setup" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Number_of_Handshake_Failure_Times_of_MBS_Channel" do="hourly:5;daily:5" how="sum">
+		</field>
+		<field name="Traffic_of_Uplink_Service_Flows" do="hourly:7;daily:7" how="sum">
+		</field>
+		<field name="Traffic_of_Downlink_Service_Flows" do="hourly:7;daily:7" how="sum">
+		</field>
+		<field name="Uplink_User_Traffic" do="hourly:8;daily:8" how="sum">
+		</field>
+		<field name="Downlink_User_Traffic" do="hourly:8;daily:8" how="sum">
+		</field>
+		<field name="Online_Duration_of_Users" do="hourly:8;daily:8" how="sum">
+		</field>
+	</aggregate>
+</aggregation>

@@ -1,0 +1,630 @@
+<tables>
+	<table name="WACCLBS">
+		<field name="SDATETIME" type="datetime">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NAME" type="varchar(100)">
+		</field>
+		<field name="PARENT" type="varchar(100)">
+		</field>
+		<field name="BSID" type="varchar(100)">
+		</field>
+		<field name="arqBlockSizeMax" type="varchar(100)">
+		</field>
+		<field name="arqBlockSizeMin" type="varchar(100)">
+		</field>
+		<field name="diffServEnabled" type="varchar(10)">
+		</field>
+		<field name="diffServEnabled" type="varchar(10)">
+		</field>
+		<field name="enableEthernetTagging" type="varchar(10)">
+		</field>
+		<field name="enableTransOamSplit" type="varchar(10)">
+		</field>
+		<field name="permitRoutingForLMT" type="varchar(10)">
+		</field>
+		<field name="transDscpMode" type="varchar(100)">
+		</field>
+		<field name="wmanIfBsQosScArqDeliverInOrder" type="varchar(10)">
+		</field>
+		<field name="ne_release" type="varchar(10)">
+		</field>
+		<field name="WACSideVlanId" type="bigint">
+		</field>
+		<field name="arqResetMaxRetries" type="bigint">
+		</field>
+		<field name="bsCapCfgBandwidths" type="bigint">
+		</field>
+		<field name="bsCapDiucCinrMax" type="bigint">
+		</field>
+		<field name="bsCapDiucCinrMin" type="bigint">
+		</field>
+		<field name="bsCapUiucCinrMax" type="bigint">
+		</field>
+		<field name="bsCapUiucCinrMin" type="bigint">
+		</field>
+		<field name="bsCapUiucSsPwrMax" type="bigint">
+		</field>
+		<field name="bsCapUiucSsPwrMin" type="bigint">
+		</field>
+		<field name="defaultVlanId" type="bigint">
+		</field>
+		<field name="initialMtu" type="bigint">
+		</field>
+		<field name="maxFrequency" type="bigint">
+		</field>
+		<field name="minFrequency" type="bigint">
+		</field>
+		<field name="oamDscp" type="bigint">
+		</field>
+		<field name="transVlanId" type="bigint">
+		</field>
+		<field name="ulMsSubchSubcarrPwrOffset" type="bigint">
+		</field>
+		<field name="wmanIfBsQosScArqBlockLifetime" type="bigint">
+		</field>
+		<field name="wmanIfBsQosScArqRxPurgeTimeout" type="bigint">
+		</field>
+		<field name="wmanIfBsQosScArqSyncLossTimeout" type="bigint">
+		</field>
+		<field name="wmanIfBsQosScArqWindowSize" type="bigint">
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,PARENT</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="BSBSCELL">
+		<field name="SDATETIME" type="datetime">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NAME" type="varchar(100)">
+		</field>
+		<field name="PARENT" type="varchar(100)">
+		</field>
+		<field name= "harqRepetitionCodingIndication" type="varchar(100)">
+		</field>
+		<field name= "timingDeviation" type="bigint">
+		</field>
+		<field name= "t8Timeout" type="bigint">
+		</field>
+		<field name= "maxNbrSF" type="bigint">
+		</field>
+		<field name= "racMethod"  type="varchar(100)">
+		</field>
+		<field name= "ssInactivityTimeout" type="bigint">
+		</field>
+		<field name= "BSIdleModeSystemTimer" type="bigint">
+		</field>
+		<field name= "priDlQosToleratedJitter" type="bigint">
+		</field>
+		<field name= "t46Timeout" type="bigint">
+		</field>
+		<field name= "nrtvrHarqNumberOfRetransmissions" type="bigint">
+		</field>
+		<field name= "hoBsRankingMinDiffCinr" type="float">
+		</field>
+		<field name= "regionInfoLocation"  type="varchar(100)">
+		</field>
+		<field name= "ne_release" type="varchar(100)">
+		</field>
+		<field name= "pkmCryptoSuites" type="varchar(100)">
+		</field>
+		<field name= "txPowerReportIntervalCqich" type="bigint">
+		</field>
+		<field name= "txPowerReportInterval" type="bigint">
+		</field>
+		<field name= "initialRangingBackoffEnd" type="bigint">
+		</field>
+		<field name= "hardHandoverTriggerAvgDuration" type="bigint">
+		</field>
+		<field name= "dcdConfigurationChangeCount" type="bigint">
+		</field>
+		<field name= "basDlQosTrafficPriority" type="bigint">
+		</field>
+		<field name= "basDlQosServiceType" type="varchar(100)">
+		</field>
+		<field name= "periodicRangingBackoffEnd" type="bigint">
+		</field>
+		<field name= "wmanIfBsOfdmaDownlinkCenterFreq"  type="bigint">
+		</field>
+		<field name= "ucdConfigurationChangeCount" type="bigint">
+		</field>
+		<field name= "defaultRssiAveraging" type="bigint">
+		</field>
+		<field name= "fastRangingEnabled"  type="varchar(100)">
+		</field>
+		<field name= "ascAgingTimer" type="bigint">
+		</field>
+		<field name= "preambleIndex" type="bigint">
+		</field>
+		<field name= "cidsIncludedInMaps"  type="varchar(100)">
+		</field>
+		<field name= "t7Timeout" type="bigint">
+		</field>
+		<field name= "pagingBandwidth" type="bigint">
+		</field>
+		<field name= "priUlQosMaximumSustainedTrafficRate" type="bigint">
+		</field>
+		<field name= "wmanIfBsOfdmaTTG" type="bigint">
+		</field>
+		<field name= "compressedMapsEnabled" type="varchar(100)">
+		</field>
+		<field name= "extendedCellRangingMode"  type="varchar(100)">
+		</field>
+		<field name= "bwRequestBackoffStart" type="bigint">
+		</field>
+		<field name= "frequencyDeviation" type="bigint">
+		</field>
+		<field name= "wmanIfBsOfdmRatioG"  type="varchar(100)">
+		</field>
+		<field name= "handoverRngCodes" type="bigint">
+		</field>
+		<field name= "wmanIfBsOfdmInitRngMaxRSS" type="float">
+		</field>
+		<field name= "maxFastRangingRepetitions" type="bigint">
+		</field>
+		<field name= "extSubheaderSupport"  type="varchar(100)">
+		</field>
+		<field name= "wmanIfBsUcdInterval" type="bigint">
+		</field>
+		<field name= "cqichIdSize" type="varchar(100)">
+		</field>
+		<field name= "wmanIfBsOfdmaInitRngCodes" type="bigint">
+		</field>
+		<field name= "hardHandoverTriggerValueRSSI" type="float">
+		</field>
+		<field name= "ulHarqMgmtConnRetransmissions" type="bigint">
+		</field>
+		<field name= "priUlQosUnsolicitedGrantInterval" type="bigint">
+		</field>
+		<field name= "pkmAuthModes" type="varchar(100)">
+		</field>
+		<field name= "basUlQosMinimumReservedTrafficRate" type="bigint">
+		</field>
+		<field name= "cqichSlotReuseType" type="varchar(100)">
+		</field>
+		<field name= "t22Timeout" type="bigint">
+		</field>
+		<field name= "basUlQosTrafficPriority" type="bigint">
+		</field>
+		<field name= "mobNbrAdvInterval" type="bigint">
+		</field>
+		<field name= "pagingIntervalLength" type="bigint">
+		</field>
+		<field name= "pilotSymbolsType"  type="varchar(100)">
+		</field>
+		<field name= "basDlQosMaximumSustainedTrafficRate" type="bigint">
+		</field>
+		<field name= "harqRetransmissionBoost" type="varchar(100)">
+		</field>
+		<field name= "wmanIfBsOfdmaRTG" type="bigint">
+		</field>
+		<field name= "dlHarqChAllocToMgmtConn"  type="varchar(100)">
+		</field>
+		<field name= "txPowerReportThresholdCqich" type="bigint">
+		</field>
+		<field name= "initialRangingBackoffStart" type="bigint">
+		</field>
+		<field name= "dlMapRepetitionCodingIndication" type="varchar(100)">
+		</field>
+		<field name= "scanTriggerValueCINR" type="float">
+		</field>
+		<field name= "msMeasurementMode"  type="varchar(100)">
+		</field>
+		<field name= "saChallengeTimeout" type="bigint">
+		</field>
+		<field name= "basDlQosMaximumLatency" type="bigint">
+		</field>
+		<field name= "hardHandoverHysteresisMargin" type="bigint">
+		</field>
+		<field name= "hoRangingBackoffEnd" type="bigint">
+		</field>
+		<field name= "dlAmcAllocFirstPhyBand" type="bigint">
+		</field>
+		<field name= "mobHoIndTimeout" type="bigint">
+		</field>
+		<field name= "wmanIfBsDcdTransition" type="bigint">
+		</field>
+		<field name= "wmanIfBsPkmDefaultAuthLifetime" type="bigint">
+		</field>
+		<field name= "rtvrHarqNumberOfRetransmissions" type="bigint">
+		</field>
+		<field name= "ulPuscAllocFirstSubch" type="bigint">
+		</field>
+		<field name= "wmanIfBsOfdmaStartOfRngCodes" type="bigint">
+		</field>
+		<field name= "beHarqNumberOfRetransmissions" type="bigint">
+		</field>
+		<field name= "msPowerControl" type="varchar(100)">
+		</field>
+		<field name= "bwRequestBackoffEnd" type="bigint">
+		</field>
+		<field name= "priUlQosMinimumReservedTrafficRate" type="bigint">
+		</field>
+		<field name= "basUlQosMaximumLatency" type="bigint">
+		</field>
+		<field name= "enableNegativeTrafficIndications" type="varchar(100)">
+		</field>
+		<field name= "hoResourceRetainTime" type="bigint">
+		</field>
+		<field name= "basDlQosMinimumReservedTrafficRate" type="bigint">
+		</field>
+		<field name= "periodicRangingBackoffStart" type="bigint">
+		</field>
+		<field name= "priDlQosTrafficPriority" type="bigint">
+		</field>
+		<field name= "defaultCinrAveraging" type="bigint">
+		</field>
+		<field name= "txOutputPower" type="bigint">
+		</field>
+		<field name= "UserLabel" type="varchar(100)">
+		</field>
+		<field name= "hoRetransmissionTimer" type="bigint">
+		</field>
+		<field name= "priDlQosMinimumReservedTrafficRate" type="bigint">
+		</field>
+		<field name= "basUlQosToleratedJitter" type="bigint">
+		</field>
+		<field name= "ssInactivityThreshold" type="bigint">
+		</field>
+		<field name= "BSID" type="varchar(100)">
+		</field>
+		<field name= "eapCompleteMaxResends" type="bigint">
+		</field>
+		<field name= "t10Timeout" type="bigint">
+		</field>
+		<field name= "priDlQosMaximumLatency" type="bigint">
+		</field>
+		<field name= "ulAmcAllocLastPhyBand" type="bigint">
+		</field>
+		<field name= "wmanIfBsOfdmaPeriodicRngCodes" type="bigint">
+		</field>
+		<field name= "pageResponseWindow" type="bigint">
+		</field>
+		<field name= "hoRangingBackoffStart" type="bigint">
+		</field>
+		<field name= "wmanIfCmnInvitedRangRetries" type="bigint">
+		</field>
+		<field name= "scanTriggerValueRSSI" type="float">
+		</field>
+		<field name= "CellId" type="bigint">
+		</field>
+		<field name= "actionTimeCorrection" type="bigint">
+		</field>
+		<field name= "bsCapCfgIdleMode" type="varchar(100)">
+		</field>
+		<field name= "powerDeviation" type="float">
+		</field>
+		<field name= "requestTransmissionPolicy" type="varchar(100)">
+		</field>
+		<field name= "timeHorizon" type="bigint">
+		</field>
+		<field name= "bsCapCfgMobility" type="varchar(100)">
+		</field>
+		<field name= "schedulingChannelAwareWeight" type="bigint">
+		</field>
+		<field name= "sleepModeEnabled" type="varchar(100)">
+		</field>
+		<field name= "alphaPavg" type="bigint">
+		</field>
+		<field name= "alphaPavgCqich" type="bigint">
+		</field>
+		<field name= "hoBsRankingThresholdRssi" type="float">
+		</field>
+		<field name= "cellBandwidth" type="bigint">
+		</field>
+		<field name= "saChallengeMaxResends" type="bigint">
+		</field>
+		<field name= "requestResponsePeriod" type="bigint">
+		</field>
+		<field name= "wmanIfBsT17Timeout" type="bigint">
+		</field>
+		<field name= "txPowerReportThreshold" type="bigint">
+		</field>
+		<field name= "wmanIfBsInitialRangingInterval" type="bigint">
+		</field>
+		<field name= "wmanIfBsOfdmMaxRoundTripDelay" type="bigint">
+		</field>
+		<field name= "ertvrHarqNumberOfRetransmissions" type="bigint">
+		</field>
+		<field name= "phyProfileType"  type="varchar(100)">
+		</field>
+		<field name= "tekPnDlCorrection" type="bigint">
+		</field>
+		<field name= "basUlQosMaximumSustainedTrafficRate" type="bigint">
+		</field>
+		<field name= "hardHandoverTriggerValueCINR" type="float">
+		</field>
+		<field name= "BSPagingGroupID" type="bigint">
+		</field>
+		<field name= "overflowThreshold" type="bigint">
+		</field>
+		<field name= "eirp" type="bigint">
+		</field>
+		<field name= "managementResourceHoldingTimer" type="bigint">
+		</field>
+		<field name= "wmanIfBsPkmDefaultTekLifetime" type="bigint">
+		</field>
+		<field name= "dregReqTimeout" type="bigint">
+		</field>
+		<field name= "schedulingAlgorithm" type="varchar(100)">
+		</field>
+		<field name= "harqForManagementConnectionsEnabled" type="varchar(100)">
+		</field>
+		<field name= "dlAmcAllocLastPhyBand" type="bigint">
+		</field>
+		<field name= "priUlQosServiceType" type="varchar(100)">
+		</field>
+		<field name= "wmanIfBsOfdmaBWReqCodes" type="bigint">
+		</field>
+		<field name= "racEnabled" type="varchar(100)">
+		</field>
+		<field name= "racBpEvaluationEnabled" type="varchar(100)">
+		</field>
+		<field name= "wmanIfBsOfdmaFrameDurationCode" type="varchar(100)">
+		</field>
+		<field name= "wmanIfBsUcdTransition" type="bigint">
+		</field>
+		<field name= "hardHandoverTimeToTriggerDuration" type="bigint">
+		</field>
+		<field name= "ulHarqChAllocToMgmtConn" type="varchar(100)">
+		</field>
+		<field name= "dlHarqRetransmissions" type="bigint">
+		</field>
+		<field name= "hoSsBufferFlushMaxDuration" type="bigint">
+		</field>
+		<field name= "wmanIfBsOfdmCapCfgFftSizes" type="varchar(100)">
+		</field>
+		<field name= "basDlQosToleratedJitter" type="bigint">
+		</field>
+		<field name= "priUlQosTrafficPriority" type="bigint">
+		</field>
+		<field name= "eapStartTimeout" type="bigint">
+		</field>
+		<field name= "sleepReqRetransmissionTime" type="bigint">
+		</field>
+		<field name= "priUlQosToleratedJitter" type="bigint">
+		</field>
+		<field name= "wmanIfBsT9Timeout" type="bigint">
+		</field>
+		<field name= "wmanIfBsSsRangRespProcTime" type="bigint">
+		</field>
+		<field name= "ulPuscAllocLastSubch" type="bigint">
+		</field>
+		<field name= "scanTriggerMeasurementMetric" type="varchar(100)">
+		</field>
+		<field name= "priUlQosMaximumLatency" type="bigint">
+		</field>
+		<field name= "ulSubframeDuration" type="bigint">
+		</field>
+		<field name= "priDlQosMaximumSustainedTrafficRate" type="bigint">
+		</field>
+		<field name= "ugsHarqNumberOfRetransmissions" type="bigint">
+		</field>
+		<field name= "basUlQosUnsolicitedGrantInterval" type="bigint">
+		</field>
+		<field name= "dregCommandRetryCount" type="bigint">
+		</field>
+		<field name= "priDlQosServiceType" type="varchar(100)">
+		</field>
+		<field name= "dlHarqMgmtConnRetransmissions" type="bigint">
+		</field>
+		<field name= "basUlQosServiceType" type="varchar(100)">
+		</field>
+		<field name= "cellCapCfgAntennaUse" type="varchar(100)">
+		</field>
+		<field name= "cqichAllocAfterSleepModeActivation" type="varchar(100)">
+		</field>
+		<field name= "ulAmcAllocFirstPhyBand" type="bigint">
+		</field>
+		<field name= "dlSubframeDuration" type="bigint">
+		</field>
+		<field name= "dlMapCodingIndication" type="varchar(100)">
+		</field>
+		<field name= "ulHarqRetransmissions" type="bigint">
+		</field>
+		<field name= "wmanIfBsT13Timeout" type="bigint">
+		</field>
+		<field name= "hoTriggerMeasurementMetric" type="varchar(100)">
+		</field>
+		<field name= "wmanIfBsDcdInterval" type="bigint">
+		</field>
+		<index name="idx1">
+			<order>UserLabel,SDATETIME,PARENT</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx3">
+			<order>NAME</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="WACCLWAC">
+		<field name="SDATETIME" type="datetime">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NAME" type="varchar(100)">
+		</field>
+		<field name="PARENT" type="varchar(100)">
+		</field>
+		<field name="UserLabel" type="varchar(100)">
+		</field>
+		<field name="WACLUId" type="bigint">
+		</field>
+		<field name="ne_release" type="varchar(100)">
+		</field>
+		<field name="pagingGroupID" type="bigint">
+		</field>
+		<field name="wacId"  type="varchar(100)">
+		</field>
+		<field name="wacLULogicalName" type="varchar(100)">
+		</field>
+		<field name="wacRole" type="varchar(100)">
+		</field>
+		<index name="idx1">
+			<order>UserLabel,SDATETIME,PARENT</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="SubnetworkWACCL">
+		<field name="SDATETIME" type="datetime">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NAME" type="varchar(100)">
+		</field>
+		<field name="PARENT" type="varchar(100)">
+		</field>
+		<field name= "interHoTwacGuardTimer" type="bigint">
+		</field>
+		<field name= "bsKrxTimer" type="bigint">
+		</field>
+		<field name= "diskUsageWarningAlarm" type="bigint">
+		</field>
+		<field name= "diameterTaTimer" type="bigint">
+		</field>
+		<field name= "diameterTrelTimer" type="bigint">
+		</field>
+		<field name= "cpuLoadMajorAlarmRec" type="bigint">
+		</field>
+		<field name= "mipNbMaxOfRetry" type="bigint">
+		</field>
+		<field name= "cpuLoadWarningRec" type="bigint">
+		</field>
+		<field name= "cpuLoadMinorAlarm" type="bigint">
+		</field>
+		<field name= "haFlag"  type="varchar(50)">
+		</field>
+		<field name= "interWacWaitMaxPeriod" type="bigint">
+		</field>
+		<field name= "interHoSwacGuardTimer" type="bigint">
+		</field>
+		<field name= "cpuLoadMinorAlarmRec" type="bigint">
+		</field>
+		<field name= "mipLifeTimeCorrection" type="bigint">
+		</field>
+		<field name= "accountInterimPeriod" type="bigint">
+		</field>
+		<field name= "bsKtxTimer" type="bigint">
+		</field>
+		<field name= "vlanFlag" type="varchar(50)">
+		</field>
+		<field name= "hoGuardTimer"  type="bigint">
+		</field>
+		<field name= "eapReqRetransTimer" type="bigint">
+		</field>
+		<field name= "diskUsageWarningRec" type="bigint">
+		</field>
+		<field name= "operatorName" type="varchar(50)">
+		</field>
+		<field name= "mipRetransPeriod" type="bigint">
+		</field>
+		<field name= "transportMtuItf1" type="bigint">
+		</field>
+		<field name= "bsPagingInterval" type="bigint">
+		</field>
+		<field name= "diskUsageMajorAlarm" type="bigint">
+		</field>
+		<field name= "diskUsageMajorAlarmRec" type="bigint">
+		</field>
+		<field name= "pmkLifeTimeCorrection" type="bigint">
+		</field>
+		<field name= "maxPagingCycle"  type="bigint">
+		</field>
+		<field name= "interHoRelocIndTimer" type="bigint">
+		</field>
+		<field name= "mipSecondRegPeriod" type="bigint">
+		</field>
+		<field name= "eapNbMaxOfRetry" type="bigint">
+		</field>
+		<field name= "interWacTcpKaTimer" type="bigint">
+		</field>
+		<field name= "interWacTcTimer" type="bigint">
+		</field>
+		<field name= "maxAttachedMs" type="bigint">
+		</field>
+		<field name= "pagingRetryCount" type="bigint">
+		</field>
+		<field name= "diskUsageMinorAlarm" type="bigint">
+		</field>
+		<field name= "errPacketWarningRec" type="bigint">
+		</field>
+		<field name= "diameterRegLifetime" type="bigint">
+		</field>
+		<field name= "radiusReqRetransTimer" type="bigint">
+		</field>
+		<field name= "pcIdleGuardTimer" type="bigint">
+		</field>
+		<field name= "errPacketMinorAlarm" type="bigint">
+		</field>
+		<field name= "mipLifeTime" type="bigint">
+		</field>
+		<field name= "bsWaitMaxPeriod" type="bigint">
+		</field>
+		<field name= "diameterTwTimer" type="bigint">
+		</field>
+		<field name= "errPacketWarningAlarm" type="bigint">
+		</field>
+		<field name= "idleModeFlag" type="varchar(50)">
+		</field>
+		<field name= "ulEgressBandwidth" type="bigint">
+		</field>
+		<field name= "enableWave1Compliancy" type="varchar(50)">
+		</field>
+		<field name= "dlEgressBandwidth" type="bigint">
+		</field>
+		<field name= "pagingRetryCorrection" type="bigint">
+		</field>
+		<field name= "cpuLoadWarningAlarm" type="bigint">
+		</field>
+		<field name= "diskUsageMinorAlarmRec" type="bigint">
+		</field>
+		<field name= "diameterRealm" type="varchar(50)">
+		</field>
+		<field name= "errPacketMinorAlarmRec" type="bigint">
+		</field>
+		<field name= "errPacketMajorAlarm" type="bigint">
+		</field>
+		<field name= "errPacketMajorAlarmRec" type="bigint">
+		</field>
+		<field name= "pmkLifetime"  type="bigint">
+		</field>
+		<field name= "idleModeSystemTimer" type="bigint">
+		</field>
+		<field name= "diameterTcTimer" type="bigint">
+		</field>
+		<field name= "cpuLoadMajorAlarm" type="bigint">
+		</field>
+		<field name= "signallingDscp"  type="bigint">
+		</field>
+		<field name= "macAddressBase" type="bigint">
+		</field>
+		<field name= "managementResourceHoldingTimer" type="bigint">
+		</field>
+		<field name= "radiusNbMaxOfRetry" type="bigint">
+		</field>
+		<field name= "hoTargetBsSelectNum" type="bigint">
+		</field>
+		<field name= "transportMtuItf0" type="bigint">
+		</field>
+		<field name= "ne_release" type="varchar(50)">
+		</field>
+		<field name= "mobilityFlag" type="varchar(50)">
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,PARENT</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>

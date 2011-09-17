@@ -1,0 +1,10 @@
+<tables>
+	<table name="WACCLBS" loadedfromcsv="yes" granularity="3600" idx="NodeBEquipment,LocalCellGroup">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+	</table>
+</tables>

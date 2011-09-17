@@ -1,0 +1,176 @@
+<layout name="rms" version="b9" alcatelOrdering="no">
+	<blocktype name="3100" loadtable="RMS_CELL" index="BTS_ID,SECTOR" indexlength="2">
+		<counter name="TAB_PAR_MEAS_LEVEL" offset="0" length="9" vector="yes" unitsize="1">
+		</counter>
+		<counter name="FILLER" offset="9" length="1">
+		</counter>
+		<counter name="TAB_PAR_MEAS_CI" offset="10" length="9" vector="yes" unitsize="1">
+		</counter>
+		<counter name="FILLER" offset="19" length="1">
+		</counter>
+		<counter name="TAB_PAR_MEAS_STAT_BFI" offset="20" length="9" vector="yes" unitsize="1">
+		</counter>
+		<counter name="FILLER" offset="29" length="1">
+		</counter>
+		<counter name="TAB_PAR_MEAS_STAT_S" offset="30" length="9" vector="yes" unitsize="1">
+		</counter>
+		<counter name="FILLER" offset="39" length="1">
+		</counter>
+		<counter name="TAB_PAR_MEAS_PATH_BALANCE" offset="40" length="9" vector="yes" unitsize="1">
+		</counter>
+		<counter name="FILLER" offset="49" length="1">
+		</counter>
+		<counter name="TAB_PAR_MEAS_STAT_TA" offset="50" length="9" vector="yes" unitsize="1">
+		</counter>
+		<counter name="FILLER" offset="59" length="1">
+		</counter>
+		<counter name="PAR_EN_BALANCED" offset="60" length="1">
+		</counter>
+		<counter name="PAR_TA_STAT" offset="61" length="1">
+		</counter>
+		<counter name="PAR_VQ_AVERAGE" offset="62" length="1">
+		</counter>
+		<counter name="PAR_VQ_RXLEV" offset="63" length="1">
+		</counter>
+		<counter name="PAR_VQ_RXQUAL" offset="64" length="1">
+		</counter>
+		<counter name="PAR_VQ_RXQUAL_VS_RXFER" offset="65" length="1">
+		</counter>
+		<counter name="PAR_VQ_GOOD_RXFER" offset="66" length="1">
+		</counter>
+		<counter name="PAR_VQ_BAD_RXFER" offset="67" length="1">
+		</counter>
+		<counter name="PAR_VQ_INTF_THRESHOLD" offset="68" length="1">
+		</counter>
+		<counter name="PAR_VQ_FER_THRESHOLD" offset="69" length="1">
+		</counter>
+	</blocktype>
+	<blocktype name="3110" loadtable="RMS_TRX" index="BTS_ID,SECTOR,TRX" indexlength="3">
+		<counter name="FILLER" offset="0" length="1">
+		</counter>
+		<counter name="TRE_BAND" offset="1" length="1">
+		</counter>
+		<counter name="IND_RMS_RESTARTED" offset="2" length="1">
+		</counter>
+		<counter name="BS_TX_PWRMAX" offset="3" length="1">
+		</counter>
+		<counter name="MS_TX_PWRMAX" offset="4" length="1">
+		</counter>
+		<counter name="IND_TRE_OVERLOAD" offset="5" length="1">
+		</counter>
+		<counter name="IND_CI_PARTIAL_OBSERVATION" offset="6" length="1">
+		</counter>
+		<counter name="IND_CI_OVERFLOW" offset="7" length="1">
+		</counter>
+		<counter name="TOT_SEIZ_TCH" offset="8" length="4">
+		</counter>
+		<counter name="TOT_MEAS" offset="12" length="4">
+		</counter>
+		<counter name="TOT_MEAS_L1INFO_NOL3INFO" offset="16" length="4">
+		</counter>
+		<counter name="TOT_MEAS_DTX_UL" offset="20" length="4">
+		</counter>
+		<counter name="TOT_MEAS_DTX_DL" offset="24" length="4">
+		</counter>
+		<counter name="PERC_TA_GT_TA_STAT" offset="28" length="1">
+		</counter>
+		<counter name="MAX_TA" offset="29" length="1">
+		</counter>
+		<counter name="TOT_EMR" offset="30" length="4">
+		</counter>
+		<counter name="VQ_NOISY_UL_INTERFERENCE" offset="34" length="2">
+		</counter>
+		<counter name="VQ_NOISY_DL_INTERFERENCE" offset="36" length="2">
+		</counter>
+		<counter name="VQ_NOISY_UL_COVERAGE" offset="38" length="2">
+		</counter>
+		<counter name="VQ_NOISY_DL_COVERAGE" offset="40" length="2">
+		</counter>
+		<counter name="VQ_NOISY_UL_UNDEFINED" offset="42" length="2">
+		</counter>
+		<counter name="VQ_NOISY_DL_UNDEFINED" offset="44" length="2">
+		</counter>
+		<counter name="VQ_NOISY_UL_BAD_FER" offset="46" length="2">
+		</counter>
+		<counter name="VQ_NOISY_UL_GOOD_FER" offset="48" length="2">
+		</counter>
+		<counter name="VQ_ABNORMAL_BAD_FER" offset="50" length="2">
+		</counter>
+		<counter name="TMR_RXQUAL_UL_RXLEV_UL" offset="52" length="10" vector="yes" unitsize="4">
+		</counter>
+		<counter name="TMR_RXQUAL_DL_RXLEV_DL" offset="92" length="10" vector="yes" unitsize="4">
+		</counter>
+	</blocktype>
+	<blocktype name="3115" loadtable="RMS_BFI" index="BTS_ID,SECTOR,TRX" indexlength="3">
+		<counter name="FILLER" offset="0" length="1">
+		</counter>
+	</blocktype>
+	<blocktype name="3111" loadtable="RMS_UL" index="BTS_ID,SECTOR,TRX" indexlength="3">
+		<counter name="FILLER" offset="0" length="1">
+		</counter>
+		<counter name="TPR_RXQUAL_UL_RXLEV_UL" offset="1" length="240" vector="yes" unitsize="1">
+		</counter>
+	</blocktype>
+	<blocktype name="3112" lloadtable="RMS_DL" index="BTS_ID,SECTOR,TRX" indexlength="3">
+		<counter name="FILLER" offset="0" length="1">
+		</counter>
+		<counter name="TPR_RXQUAL_DL_RXLEV_DL" offset="1" length="240" vector="yes" unitsize="1">
+		</counter>
+	</blocktype>
+	<blocktype name="3116" loadtable="RMS_BFI_AMR_TA" index="BTS_ID,SECTOR,TRX" indexlength="3">
+		<counter name="FILLER" offset="0" length="1">
+		</counter>
+		<counter name="TPR_TIMING_ADVANCE" offset="1" length="10" vector="yes" unitsize="1">
+		</counter>
+		<counter name="MAX_TIMING_ADVANCE" offset="11" length="4">
+		</counter>
+		<counter name="TPR_UL_RXLEV_TA_BAND" offset="15" length="10" vector="yes" unitsize="2">
+		</counter>
+		<counter name="TPR_DL_RXLEV_TA_BAND" offset="35" length="10" vector="yes" unitsize="2">
+		</counter>
+		<counter name="TPR_UL_RXQUAL_TA_BAND" offset="55" length="10" vector="yes" unitsize="2">
+		</counter>
+		<counter name="TPR_DL_RXQUAL_TA_BAND" offset="75" length="10" vector="yes" unitsize="2">
+		</counter>
+		<counter name="AMR_FR_UL_BAD" offset="95" length="8" vector="yes" unitsize="1">
+		</counter>
+		<counter name="MAX_AMR_FR_UL_BAD" offset="103" length="4">
+		</counter>
+		<counter name="AMR_HR_UL_BAD" offset="107" length="5" vector="yes" unitsize="1">
+		</counter>
+		<counter name="MAX_AMR_HR_UL_BAD" offset="112" length="4">
+		</counter>
+		<counter name="MAX_POWER_PER_TRX" offset="116" length="1">
+		</counter>
+	</blocktype>
+	<blocktype name="3117" loadtable="RMS_AMR_UL" index="BTS_ID,SECTOR,TRX" indexlength="3">
+	</blocktype>
+	<blocktype name="3118" loadtable="RMS_AMR_DL" index="BTS_ID,SECTOR,TRX" indexlength="3">
+	</blocktype>
+	<blocktype name="3120" loadtable="RMS_CIN" index="BTS_ID,SECTOR,TRX" indexlength="3">
+		<counter name="FILLER" offset="0" length="1">
+		</counter>
+		<canrepeat name="CIN vector" upto="14">
+			<counter name="BCCH" offset="1" length="2">
+			</counter>
+			<counter name="BSIC" offset="3" length="1">
+			</counter>
+			<counter name="TPR_CIN" offset="4" length="10" vector="yes" unitsize="1">
+			</counter>
+			<counter name="MR_CIN" offset="14" length="4">
+			</counter>
+		</canrepeat>
+	</blocktype>
+	<blocktype name="3121" loadtable="RMS_CIF" index="BTS_ID,SECTOR,TRX" indexlength="3">
+		<counter name="FILLER" offset="0" length="1">
+		</counter>
+		<canrepeat name="CIF vector" upto="14">
+			<counter name="ARFCN" offset="1" length="2">
+			</counter>
+			<counter name="TPR_CIF" offset="3" length="10" vector="yes" unitsize="1">
+			</counter>
+			<counter name="MR_CIF" offset="13" length="4">
+			</counter>
+		</canrepeat>
+	</blocktype>
+</layout>

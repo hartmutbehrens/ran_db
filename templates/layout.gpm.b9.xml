@@ -1,0 +1,18 @@
+<layout name="gpm" version="b9">
+	<blocktype name="BEARERCHANNEL" loadtable="GPM_BEARERCHANNEL_H" index="Bearer,TP">
+	</blocktype>
+	<blocktype name="BSC" loadtable="GPM_BSC_H" index="BSS,FABRIC">
+	</blocktype>
+	<blocktype name="BTS" loadtable="GPM_BTS_H" index="BTS,BSS,FABRIC">
+	</blocktype>
+	<blocktype name="CELL" loadtable="GPM_CELL_H" index="CI,LAC">
+	</blocktype>
+	<blocktype name="LCSCELL" loadtable="GPM_LCSCELL_H" index="CI,LAC">
+	</blocktype>
+	<blocktype name="DISTCELL" loadtable="GPM_DISTCELL_H" index="CI,LAC">
+	</blocktype>
+	<blocktype name="LAPD" loadtable="GPM_LAPD_H" index="BSS,GSL,TP">
+	</blocktype>
+	<blocktype name="PVC" loadtable="GPM_PVC_H" index="PVC,Bearer,TP">
+	</blocktype>
+</layout>

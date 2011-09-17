@@ -1,0 +1,82 @@
+﻿<tables>
+	<table name="T19_SMS_H">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(20)" counter="no">
+		</field>
+		<field name="BSC_ID" type="int" counter="no">
+		</field>
+		<field name="BTS_ID" type="int" counter="no">
+		</field>
+		<field name="SECTOR" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(20)" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="C190" type="bigint" counter="yes">
+		</field>
+		<field name="C191" type="bigint" counter="yes">
+		</field>
+		<field name="C192" type="bigint" counter="yes">
+		</field>
+		<field name="C193" type="bigint" counter="yes">
+		</field>
+		<field name="C194a" type="bigint" counter="yes">
+		</field>
+		<field name="C194b" type="bigint" counter="yes">
+		</field>
+		<field name="C194c" type="bigint" counter="yes">
+		</field>
+		<field name="C195" type="bigint" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>BSC_ID,BTS_ID,SECTOR,SDATE,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T19_SMS_D">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(20)" counter="no">
+		</field>
+		<field name="BSC_ID" type="int" counter="no">
+		</field>
+		<field name="BTS_ID" type="int" counter="no">
+		</field>
+		<field name="SECTOR" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(20)" counter="no">
+		</field>
+		<field name="C190" type="bigint" counter="yes">
+		</field>
+		<field name="C191" type="bigint" counter="yes">
+		</field>
+		<field name="C192" type="bigint" counter="yes">
+		</field>
+		<field name="C193" type="bigint" counter="yes">
+		</field>
+		<field name="C194a" type="bigint" counter="yes">
+		</field>
+		<field name="C194b" type="bigint" counter="yes">
+		</field>
+		<field name="C194c" type="bigint" counter="yes">
+		</field>
+		<field name="C195" type="bigint" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>BSC_ID,BTS_ID,SECTOR,SDATE,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>

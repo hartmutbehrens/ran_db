@@ -1,0 +1,448 @@
+<aggregation>
+	<aggregate name="daily">
+		 <step name="1" from="WAC_WAC_H" to="WAC_WAC_D"  groupfrom="NAME,giveDayStart(SDATETIME),OMC_ID,WAC" groupto="NAME,SDATETIME,OMC_ID,WAC" limit="3" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="2" from="WAC_BS_H" to="WAC_BS_D"  groupfrom="NAME,giveDayStart(SDATETIME),OMC_ID,BS" groupto="NAME,SDATETIME,OMC_ID,BS" limit="3" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="3" from="WAC_PhysicalLink_H" to="WAC_PhysicalLink_D"  groupfrom="NAME,giveDayStart(SDATETIME),OMC_ID,PhysicalLink" groupto="NAME,SDATETIME,OMC_ID,PhysicalLink" limit="3" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="4" from="WAC_Processor_H" to="WAC_Processor_D"  groupfrom="NAME,giveDayStart(SDATETIME),OMC_ID,Processor" groupto="NAME,SDATETIME,OMC_ID,Processor" limit="3" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="5" from="WAC_AAA_H" to="WAC_AAA_D"  groupfrom="NAME,giveDayStart(SDATETIME),OMC_ID,AAA" groupto="NAME,SDATETIME,OMC_ID,AAA" limit="3" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="6" from="WAC_WAC_CSN_LINK_H" to="WAC_WAC_CSN_LINK_D"  groupfrom="NAME,giveDayStart(SDATETIME),OMC_ID,WAC_CSN_LINK" groupto="NAME,SDATETIME,OMC_ID,WAC_CSN_LINK" limit="3" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="7" from="WAC_BSCELL_CSN_LINK_H" to="WAC_BSCELL_CSN_LINK_D"  groupfrom="NAME,giveDayStart(SDATETIME),OMC_ID,BSCELL_CSN_LINK" groupto="NAME,SDATETIME,OMC_ID,BSCELL_CSN_LINK" limit="3" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+	</aggregate>
+	<aggregate name="fields">
+		<field name="CQOS8" do="daily:1" how="sum">
+		</field>
+    <field name="CQOS9" do="daily:1" how="sum">
+    </field>
+    <field name="CQOS10" do="daily:1" how="sum">
+    </field>
+    <field name="CH2" do="daily:1" how="sum">
+    </field>
+    <field name="CH12" do="daily:1" how="sum">
+    </field>
+    <field name="CH13" do="daily:1" how="sum">
+    </field>
+    <field name="CH14" do="daily:1" how="sum">
+    </field>
+    <field name="CH30" do="daily:1" how="sum">
+    </field>
+    <field name="CH31" do="daily:1" how="sum">
+    </field>
+    <field name="CH32" do="daily:1" how="sum">
+    </field>
+    <field name="CRAU3" do="daily:1" how="avg">
+    </field>
+    <field name="CRAU4" do="daily:1" how="max">
+    </field>
+    <field name="CH28" do="daily:1" how="sum">
+    </field>
+    <field name="CH29" do="daily:1" how="sum">
+    </field>
+    <field name="CI19" do="daily:1" how="sum">
+    </field>
+    <field name="CI20" do="daily:1" how="sum">
+    </field>
+    <field name="CI1" do="daily:1" how="sum">
+    </field>
+    <field name="CI2" do="daily:1" how="sum">
+    </field>
+    <field name="CI3" do="daily:1" how="sum">
+    </field>
+    <field name="CI4" do="daily:1" how="sum">
+    </field>
+    <field name="CI5" do="daily:1" how="sum">
+    </field>
+    <field name="CI6" do="daily:1" how="sum">
+    </field>
+    <field name="CI7" do="daily:1" how="sum">
+    </field>
+    <field name="CI8" do="daily:1" how="sum">
+    </field>
+    <field name="CI9" do="daily:1" how="sum">
+    </field>
+    <field name="CI10" do="daily:1" how="sum">
+    </field>
+    <field name="CI12" do="daily:1" how="sum">
+    </field>
+    <field name="CI13" do="daily:1" how="sum">
+    </field>
+    <field name="CI14" do="daily:1" how="sum">
+    </field>
+    <field name="CI15" do="daily:1" how="sum">
+    </field>
+    <field name="CI16" do="daily:1" how="sum">
+    </field>
+    <field name="CI17" do="daily:1" how="sum">
+    </field>
+    <field name="CI18" do="daily:1" how="sum">
+    </field>
+    <field name="LQOS1" do="daily:1" how="sum">
+    </field>
+    <field name="LQOS2" do="daily:1" how="sum">
+    </field>
+    <field name="LTL1" do="daily:1" how="sum">
+    </field>
+    <field name="LQOS6" do="daily:1" how="sum">
+    </field>
+    <field name="UQOS2" do="daily:1" how="sum">
+    </field>
+    <field name="UTL5" do="daily:1" how="sum">
+    </field>
+    <field name="UTL6" do="daily:1" how="sum">
+    </field>
+    <field name="UTL7" do="daily:1" how="sum">
+    </field>
+    <field name="UTL8" do="daily:1" how="sum">
+    </field>
+    <field name="GQOS9" do="daily:1" how="sum">
+    </field>
+    <field name="GQOS10" do="daily:1" how="sum">
+    </field>
+    <field name="GQOS91" do="daily:1" how="sum">
+    </field>
+    <field name="GQOS92" do="daily:1" how="sum">
+    </field>
+    <field name="GDR1" do="daily:1" how="sum">
+    </field>
+    <field name="GDR2" do="daily:1" how="sum">
+    </field>
+    <field name="GDR3" do="daily:1" how="sum">
+    </field>
+    <field name="GDR4" do="daily:1" how="sum">
+    </field>
+    <field name="GDR5" do="daily:1" how="sum">
+    </field>
+    <field name="GDR6" do="daily:1" how="sum">
+    </field>
+    <field name="GDR7" do="daily:1" how="sum">
+    </field>
+    <field name="CQOS5" do="daily:2" how="sum">
+		</field>
+		<field name="CQOS13" do="daily:2" how="sum">
+		</field>
+		<field name="CQOS14" do="daily:2" how="sum">
+		</field>
+		<field name="CQOS15" do="daily:2" how="sum">
+		</field>
+		<field name="CQOS16" do="daily:2" how="sum">
+		</field>
+		<field name="CQOS17" do="daily:2" how="sum">
+		</field>
+		<field name="CQOS21" do="daily:2" how="sum">
+		</field>
+		<field name="CH10" do="daily:2" how="sum">
+		</field>
+		<field name="CH6" do="daily:2" how="sum">
+		</field>
+		<field name="CH15" do="daily:2" how="sum">
+		</field>
+		<field name="CH3" do="daily:2" how="sum">
+		</field>
+		<field name="CH4" do="daily:2" how="sum">
+		</field>
+		<field name="CH5" do="daily:2" how="sum">
+		</field>
+		<field name="CH33" do="daily:2" how="sum">
+		</field>
+		<field name="CH37" do="daily:2" how="sum">
+		</field>
+		<field name="CH38" do="daily:2" how="sum">
+		</field>
+		<field name="CI11" do="daily:2" how="sum">
+		</field>
+		<field name="CQOS22" do="daily:2" how="sum">
+		</field>
+		<field name="UTL1" do="daily:2" how="sum">
+		</field>
+		<field name="UTL2" do="daily:2" how="sum">
+		</field>
+		<field name="UTL3" do="daily:2" how="sum">
+		</field>
+		<field name="UTL4" do="daily:2" how="sum">
+		</field>
+		<field name="UQOS1" do="daily:2" how="sum">
+		</field>
+		<field name="LTL2" do="daily:3" how="sum">
+		</field>
+    <field name="LTL3" do="daily:3" how="sum">
+    </field>
+    <field name="LTL4" do="daily:3" how="sum">
+    </field>
+    <field name="LTL5" do="daily:3" how="sum">
+    </field>
+    <field name="LQOS3" do="daily:3" how="sum">
+    </field>
+    <field name="LQOS4" do="daily:3" how="sum">
+    </field>
+    <field name="LQOS5" do="daily:3" how="sum">
+    </field>
+    <field name="LQOS7" do="daily:3" how="sum">
+    </field>
+    <field name="CRAU1" do="daily:4" how="avg">
+    </field>
+    <field name="CRAU2" do="daily:4" how="max">
+    </field>
+    <field name="CQOS18" do="daily:5" how="sum">
+    </field>
+    <field name="CQOS19" do="daily:5" how="sum">
+    </field>
+    <field name="CQOS20" do="daily:5" how="sum">
+    </field>
+    <field name="CQOS7" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS25" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS26" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS28" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS29" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS30" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS31" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS33" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS34" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS35" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS36" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS37" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS38" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS39" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS40" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS41" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS42" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS43" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS44" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS45" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS46" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS47" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS48" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS49" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS50" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS51" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS53" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS54" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS55" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS56" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS57" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS58" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS59" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS60" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS61" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS62" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS63" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS64" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS65" do="daily:6" how="sum">
+		</field>
+		<field name="UTL13" do="daily:6" how="sum">
+		</field>
+		<field name="UTL17" do="daily:6" how="sum">
+		</field>
+		<field name="UTL18" do="daily:6" how="sum">
+		</field>
+		<field name="UTL19" do="daily:6" how="sum">
+		</field>
+		<field name="UTL20" do="daily:6" how="sum">
+		</field>
+		<field name="UTL21" do="daily:6" how="sum">
+		</field>
+		<field name="UTL15" do="daily:6" how="sum">
+		</field>
+		<field name="UTL22" do="daily:6" how="sum">
+		</field>
+		<field name="UTL23" do="daily:6" how="sum">
+		</field>
+		<field name="UTL24" do="daily:6" how="sum">
+		</field>
+		<field name="UTL25" do="daily:6" how="sum">
+		</field>
+		<field name="UTL26" do="daily:6" how="sum">
+		</field>
+		<field name="UTL14" do="daily:6" how="sum">
+		</field>
+		<field name="UTL27" do="daily:6" how="sum">
+		</field>
+		<field name="UTL28" do="daily:6" how="sum">
+		</field>
+		<field name="UTL29" do="daily:6" how="sum">
+		</field>
+		<field name="UTL30" do="daily:6" how="sum">
+		</field>
+		<field name="UTL31" do="daily:6" how="sum">
+		</field>
+		<field name="UTL16" do="daily:6" how="sum">
+		</field>
+		<field name="UTL32" do="daily:6" how="sum">
+		</field>
+		<field name="UTL33" do="daily:6" how="sum">
+		</field>
+		<field name="UTL34" do="daily:6" how="sum">
+		</field>
+		<field name="UTL35" do="daily:6" how="sum">
+		</field>
+		<field name="UTL36" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS3" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS4" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS5" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS6" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS7" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS8" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS9" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS10" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS11" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS12" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS13" do="daily:6" how="sum">
+		</field>
+		<field name="UQOS14" do="daily:6" how="sum">
+		</field>
+		<field name="DQOS1" do="daily:6" how="sum">
+		</field>
+		<field name="DQOS2" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS1" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS2" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS3" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS4" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS5" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS6" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS7" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS8" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS11" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS15" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS23" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS43" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS72" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS77" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS82" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS87" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS95" do="daily:6" how="sum">
+		</field>
+		<field name="GQOS96" do="daily:6" how="sum">
+		</field>
+		<field name="CQOS1" do="daily:7" how="sum">
+		</field>
+    <field name="CQOS2" do="daily:7" how="sum">
+    </field>
+    <field name="CQOS23" do="daily:7" how="sum">
+    </field>
+    <field name="CQOS24" do="daily:7" how="sum">
+    </field>
+    <field name="CQOS4" do="daily:7" how="sum">
+    </field>
+    <field name="CQOS6" do="daily:7" how="sum">
+    </field>
+    <field name="UTL10" do="daily:7" how="sum">
+    </field>
+    <field name="UTL37" do="daily:7" how="sum">
+    </field>
+    <field name="UTL38" do="daily:7" how="sum">
+    </field>
+    <field name="UTL39" do="daily:7" how="sum">
+    </field>
+    <field name="UTL40" do="daily:7" how="sum">
+    </field>
+    <field name="UTL41" do="daily:7" how="sum">
+    </field>
+    <field name="UTL12" do="daily:7" how="sum">
+    </field>
+    <field name="UTL42" do="daily:7" how="sum">
+    </field>
+    <field name="UTL43" do="daily:7" how="sum">
+    </field>
+    <field name="UTL44" do="daily:7" how="sum">
+    </field>
+    <field name="UTL45" do="daily:7" how="sum">
+    </field>
+    <field name="UTL46" do="daily:7" how="sum">
+    </field>
+    <field name="UTL9" do="daily:7" how="sum">
+    </field>
+    <field name="UTL47" do="daily:7" how="sum">
+    </field>
+    <field name="UTL48" do="daily:7" how="sum">
+    </field>
+    <field name="UTL49" do="daily:7" how="sum">
+    </field>
+    <field name="UTL50" do="daily:7" how="sum">
+    </field>
+    <field name="UTL51" do="daily:7" how="sum">
+    </field>
+    <field name="UTL11" do="daily:7" how="sum">
+    </field>
+    <field name="UTL52" do="daily:7" how="sum">
+    </field>
+    <field name="UTL53" do="daily:7" how="sum">
+    </field>
+    <field name="UTL54" do="daily:7" how="sum">
+    </field>
+    <field name="UTL55" do="daily:7" how="sum">
+    </field>
+    <field name="UTL56" do="daily:7" how="sum">
+    </field>
+	</aggregate>
+</aggregation>

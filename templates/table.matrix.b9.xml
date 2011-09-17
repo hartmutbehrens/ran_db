@@ -1,0 +1,119 @@
+<tables>
+	<table name="T31_MATRIX_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC_TGT" type="int" counter="no">
+		</field>
+		<field name="CI_TGT" type="varchar(20)" counter="no">
+		</field>
+		<field name="PATCHED" type="int" counter="no">
+		</field>
+		<field name="CERTAINTY" type="varchar(20)" counter="no">
+		</field>
+		<field name="IFPROB" type="int" counter="no">
+		</field>
+		<field name="IFPROB_2" type="int" counter="no">
+		</field>
+		<field name="IFPROB_3" type="int" counter="no">
+		</field>
+		<field name="IFPROB_4" type="int" counter="no">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,CI_TGT,LAC_TGT,PATCHED,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_MATRIX_W">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC_TGT" type="int" counter="no">
+		</field>
+		<field name="CI_TGT" type="varchar(20)" counter="no">
+		</field>
+		<field name="PATCHED" type="int" counter="no">
+		</field>
+		<field name="CERTAINTY" type="varchar(20)" counter="no">
+		</field>
+		<field name="IFPROB" type="int" counter="no">
+		</field>
+		<field name="IFPROB_2" type="int" counter="no">
+		</field>
+		<field name="IFPROB_3" type="int" counter="no">
+		</field>
+		<field name="IFPROB_4" type="int" counter="no">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,CI_TGT,LAC_TGT,PATCHED,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_HO_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC_TGT" type="int" counter="no">
+		</field>
+		<field name="CI_TGT" type="varchar(20)" counter="no">
+		</field>
+		<field name="PATCHED" type="int" counter="no">
+		</field>
+		<field name="CERTAINTY" type="varchar(20)" counter="no">
+		</field>
+		<field name="IFPROB" type="int" counter="no">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,CI_TGT,LAC_TGT,PATCHED,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_CIVAL_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int" >
+		</field>
+		<field name="TRX" type="int">
+		</field>
+		<field name="LAC_TGT" type="int">
+		</field>
+		<field name="CI_TGT" type="varchar(20)">
+		</field>
+		<field name="NC_BCCH" type="int">
+		</field>
+		<field name="NC_BSIC" type="int">
+		</field>
+		<field name="AVE_CI" type="float">
+		</field>
+		<field name="BAD_CI" type="float">
+		</field>
+		<field name="BAD_CI_pcent" type="float">
+		</field>
+		<field name="MED_CI" type="float">
+		</field>
+		<field name="MED_CI_pcent" type="float">
+		</field>
+		<field name="GOOD_CI" type="float">
+		</field>
+		<field name="GOOD_CI_pcent" type="float">
+		</field>
+		<field name="NUM_SAMPLES" type="int">
+		</field>
+		
+		<index name="idx1">
+			<order>CI,LAC,CI_TGT,LAC_TGT,TRX,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>

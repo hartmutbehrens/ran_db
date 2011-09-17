@@ -1,0 +1,22 @@
+<tables>
+	<table name="T180_MATRIX">
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="TARGET_LAC" type="int" counter="no">
+		</field>
+		<field name="TARGET_CI" type="int" counter="no">
+		</field>
+		<field name="C400_SUM" type="int" counter="yes">
+		</field>
+		<field name="C401_SUM" type="int" counter="yes">
+		</field>
+		<field name="C402_SUM" type="int" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,TARGET_CI,TARGET_LAC</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>

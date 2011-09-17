@@ -1,0 +1,78 @@
+﻿<tables>
+	<table name="T180_ADJ_H">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="TARGET_LAC" type="int" counter="no">
+		</field>
+		<field name="TARGET_CI" type="int" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_ID" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BTS_ID" type="int" counter="no">
+		</field>
+		<field name="SECTOR" type="int" counter="no">
+		</field>
+		<field name="C400" type="bigint" counter="yes">
+		</field>
+		<field name="C401" type="bigint" counter="yes">
+		</field>
+		<field name="C402" type="bigint" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,TARGET_CI,TARGET_LAC,SDATE</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>TARGET_CI,TARGET_LAC,CI,LAC,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T180_ADJ_D">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="TARGET_LAC" type="int" counter="no">
+		</field>
+		<field name="TARGET_CI" type="int" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="C400" type="bigint" counter="yes">
+		</field>
+		<field name="C401" type="bigint" counter="yes">
+		</field>
+		<field name="C402" type="bigint" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,TARGET_CI,TARGET_LAC,SDATE</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>TARGET_CI,TARGET_LAC,CI,LAC,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>

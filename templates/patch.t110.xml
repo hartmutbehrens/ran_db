@@ -1,0 +1,6 @@
+<patching>
+	<table name="T110_TRX_H" timecolumn="SDATE" granularity="hour" idx="BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID" interval="3">
+	</table>
+	<table name="T110_SECTOR_H" timecolumn="SDATE" granularity="hour" idx="BSC_ID,BTS_ID,SECTOR,OMC_ID" interval="3">
+	</table>
+</patching>

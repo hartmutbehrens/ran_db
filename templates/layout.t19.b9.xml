@@ -1,0 +1,20 @@
+﻿<layout name="t19" version="b11">
+	<blocktype name="190" loadtable="T19_SMS_H" index="BTS_ID,SECTOR" indexlength="2">
+			<counter name="C190" offset="0" length="4">
+			</counter>
+			<counter name="C191" offset="4" length="4">
+			</counter>
+			<counter name="C192" offset="8" length="4">
+			</counter>
+			<counter name="C193" offset="12" length="4">
+			</counter>
+			<counter name="C194a" offset="16" length="4">
+			</counter>
+			<counter name="C194b" offset="20" length="4">
+			</counter>
+			<counter name="C194c" offset="24" length="4">
+			</counter>
+			<counter name="C195" offset="28" length="4">
+			</counter>
+	</blocktype>
+</layout>

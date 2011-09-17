@@ -1,0 +1,48 @@
+<tables>	
+	<table name="GPMRES_PVC_H">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS_ID" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="Bearer" type="int" counter="no">
+		</field>
+		<field name="PVC" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P4" type="int" counter="yes">
+		</field>
+		<field name="P5" type="int" counter="yes">
+		</field>
+		<field name="P23" type="int" counter="yes">
+		</field>
+		<field name="P34" type="int" counter="yes">
+		</field>
+		<field name="P45" type="int" counter="yes">
+		</field>
+		<field name="P46" type="int" counter="yes">
+		</field>
+		<field name="P6c" type="int" counter="yes">
+		</field>
+		<field name="P6d" type="int" counter="yes">
+		</field>
+		<index name="pvc">
+			<order>TP,Bearer,PVC,MFS_ID,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>	
+</tables>

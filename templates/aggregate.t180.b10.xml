@@ -1,0 +1,18 @@
+<aggregation>
+	<aggregate name="daily">
+		 <step name="1" from="T180_ADJ_H" to="T180_ADJ_D"  groupfrom="CI,LAC,TARGET_CI,TARGET_LAC,giveDayStart(SDATE),BSC_NAME,OMC_ID" groupto="CI,LAC,TARGET_CI,TARGET_LAC,SDATE,BSC_NAME,OMC_ID" limit="2" limitfrom="giveDayStart(SDATE)" limitto="SDATE">
+		 </step>
+	</aggregate>
+	<aggregate name="weekly">
+		 <step name="1" from="T180_ADJ_D" to="T180_ADJ_W"  groupfrom="CI,LAC,TARGET_CI,TARGET_LAC,giveRollingLastWeek(SDATE),BSC_NAME,OMC_ID" groupto="CI,LAC,TARGET_CI,TARGET_LAC,SDATE,BSC_NAME,OMC_ID" limit="1" limitfrom="giveRollingLastWeek(SDATE)" limitto="SDATE">
+		 </step>
+	</aggregate>
+	<aggregate name="fields">
+		<field name="C400" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="C401" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="C402" do="daily:1;weekly:1" how="sum">
+		</field>
+	</aggregate>
+</aggregation>

@@ -1,0 +1,151 @@
+<tables>
+	<table name="TRACE_CTN">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="traceIdentifier" type="int">
+		</field>
+		<field name="callIdentifier" type="varchar(100)">
+		</field>
+		<field name="callStartTime" type="datetime">
+		</field>
+		<field name="Name" type="varchar(100)">
+		</field>
+		<field name="event" type="varchar(100)">
+		</field>
+		<field name="calltype" type="varchar(100)">
+		</field>
+		<field name="cndomain" type="varchar(100)">
+		</field>
+		<field name="eventTime" type="datetime">
+		</field>
+		<field name="primarycell" type="bigint">
+		</field>
+		<field name="targetcell" type="bigint">
+		</field>
+		<field name="detectedcell" type="bigint">
+		</field>
+		<field name="detectedcell_cpichecno" type="bigint">
+		</field>
+		<field name="preprimarycell" type="bigint">
+		</field>
+		<field name="newprimarycell" type="bigint">
+		</field>
+		<field name="cause" type="bigint">
+		</field>
+		<field name="targetcell_systemtype" type="varchar(100)">
+		</field>
+		<field name="targetcell_gsmcellinfo_cellid" type="bigint">
+		</field>
+		<field name="targetcell_gsmcellinfo_bcch" type="bigint">
+		</field>
+		<field name="hsxpaind" type="varchar(100)">
+		</field>
+		<field name="initialaccess_initaccesscell" type="varchar(100)">
+		</field>
+		<field name="initialaccess_callestabcause" type="varchar(100)">
+		</field>
+		<index name="idx10">
+			<order>Name,callIdentifier,event,eventTime,OMC_ID,traceIdentifier</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="TRACE_CTN_D">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="Name" type="varchar(100)">
+		</field>
+		<field name="eventName" type="varchar(100)">
+		</field>
+		<field name="eventTime" type="date">
+		</field>
+		<field name="eventCount" type="bigint">
+		</field>
+		<field name="primarycell" type="bigint">
+		</field>
+		<field name="targetcell" type="bigint">
+		</field>
+		<field name="detectedcell" type="bigint">
+		</field>
+		<field name="detectedcell_cpichecno" type="bigint">
+		</field>
+		<field name="preprimarycell" type="bigint">
+		</field>
+		<field name="newprimarycell" type="bigint">
+		</field>
+		<field name="targetcell_gsmcellinfo_cellid" type="bigint">
+		</field>
+		<field name="targetcell_gsmcellinfo_bcch" type="bigint">
+		</field>
+		<field name="initialaccess_initaccesscell" type="bigint">
+		</field>
+		<index name="idx10">
+			<order>Name,eventName,eventTime,OMC_ID,primarycell,targetcell,detectedcell,preprimarycell,newprimarycell,targetcell_gsmcellinfo_cellid,targetcell_gsmcellinfo_bcch,initialaccess_initaccesscell</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx6">
+			<order>NETWORK,Name,primarycell,targetcell</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx7">
+			<order>eventName,eventTime,Name</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx8">
+			<order>NETWORK,Name,primarycell,detectedcell</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="TRACE_CTN_W">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="Name" type="varchar(100)">
+		</field>
+		<field name="eventName" type="varchar(100)">
+		</field>
+		<field name="eventTime" type="datetime">
+		</field>
+		<field name="eventCount" type="bigint">
+		</field>
+		<field name="primarycell" type="bigint">
+		</field>
+		<field name="targetcell" type="bigint">
+		</field>
+		<field name="detectedcell" type="bigint">
+		</field>
+		<field name="detectedcell_cpichecno" type="bigint">
+		</field>
+		<field name="preprimarycell" type="bigint">
+		</field>
+		<field name="newprimarycell" type="bigint">
+		</field>
+		<field name="targetcell_gsmcellinfo_cellid" type="bigint">
+		</field>
+		<field name="targetcell_gsmcellinfo_bcch" type="bigint">
+		</field>
+		<field name="initialaccess_initaccesscell" type="bigint">
+		</field>
+		<index name="idx10">
+			<order>Name,eventName,eventTime,OMC_ID,primarycell,targetcell,detectedcell,preprimarycell,newprimarycell,targetcell_gsmcellinfo_cellid,targetcell_gsmcellinfo_bcch,initialaccess_initaccesscell</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx6">
+			<order>NETWORK,Name,primarycell,targetcell</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx7">
+			<order>eventName,eventTime,Name</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx8">
+			<order>NETWORK,Name,primarycell,detectedcell</order>
+			<unique>no</unique>
+		</index>
+	</table>
+</tables>
+

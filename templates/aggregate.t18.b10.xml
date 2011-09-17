@@ -1,0 +1,50 @@
+<aggregation>
+	<aggregate name="daily">
+		 <step name="1" from="T18_ACHANNEL_H" to="T18_ACHANNEL_D"  groupfrom="BSC_ID,LINK,giveDayStart(SDATE),OMC_ID,BSC_NAME,PCM,TS" groupto="BSC_ID,LINK,SDATE,OMC_ID,BSC_NAME,PCM,TS" limit="2" limitfrom="giveDayStart(SDATE)" limitto="SDATE">
+		 </step>
+		 <step name="2" from="T18_N7_H" to="T18_N7_D"  groupfrom="BSC_ID,giveDayStart(SDATE),OMC_ID,BSC_NAME" groupto="BSC_ID,SDATE,OMC_ID,BSC_NAME" limit="2" limitfrom="giveDayStart(SDATE)" limitto="SDATE">
+		 </step>
+	</aggregate>
+	<aggregate name="fields">
+		<field name="C750" do="daily:1" how="sum">
+		</field>
+		<field name="C751" do="daily:1" how="sum">
+		</field>
+		<field name="C180a" do="daily:2" how="sum">
+		</field>
+		<field name="C180b" do="daily:2" how="sum">
+		</field>
+		<field name="C180c" do="daily:2" how="sum">
+		</field>
+		<field name="C180d" do="daily:2" how="sum">
+		</field>
+		<field name="C180e" do="daily:2" how="sum">
+		</field>
+		<field name="C181a" do="daily:2" how="sum">
+		</field>
+		<field name="C181b" do="daily:2" how="sum">
+		</field>
+		<field name="C181c" do="daily:2" how="sum">
+		</field>
+		<field name="C181d" do="daily:2" how="sum">
+		</field>
+		<field name="C181e" do="daily:2" how="sum">
+		</field>
+		<field name="C181f" do="daily:2" how="sum">
+		</field>
+		<field name="C181g" do="daily:2" how="sum">
+		</field>
+		<field name="C181h" do="daily:2" how="sum">
+		</field>
+		<field name="C181i" do="daily:2" how="sum">
+		</field>
+		<field name="C181j" do="daily:2" how="sum">
+		</field>
+		<field name="C181k" do="daily:2" how="sum">
+		</field>
+		<field name="C181l" do="daily:2" how="sum">
+		</field>
+		<field name="C182" do="daily:2" how="sum">
+		</field>
+	</aggregate>
+</aggregation>

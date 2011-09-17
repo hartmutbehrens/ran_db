@@ -1,0 +1,1151 @@
+﻿<tables>
+	<table name="Cell">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="CellInstanceIdentifier" type="varchar(255)">
+		</field>
+		<field name="CellGlobalIdentity" type="varchar(100)">
+		</field>
+		<field name="BCCHFrequency" type="int">
+		</field>
+		<field name="BSC_ID" type="int">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)">
+		</field>
+		<field name="REGION" type="varchar(50)">
+		</field>
+		<field name="BTS_ID" type="int">
+		</field>
+		<field name="SECTOR" type="int">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="RxLevAccessMin" type="int">
+		</field>
+		<field name="THR_FR_LOAD_L_SV1" type="int">
+		</field>
+		<field name="THR_FR_LOAD_L_SV3" type="int">
+		</field>
+		<field name="THR_FR_LOAD_U_SV1" type="int">
+		</field>
+		<field name="THR_FR_LOAD_U_SV3" type="int">
+		</field>
+		<field name="UserLabel" type="varchar(255)">
+		</field>
+		<field name="RnlSupportingSector" type="varchar(100)">
+		</field>
+		<field name="CellBarred" type="varchar(100)">
+		</field>
+		<field name="CELL_BAR_QUALIFY" type="varchar(100)">
+		</field>
+		<field name="CELL_RESELECT_OFFSET" type="varchar(100)">
+		</field>
+		<field name="CELL_RESELECT_PARAM_IND" type="varchar(100)">
+		</field>
+		<field name="HR_ENABLED" type="varchar(100)">
+		</field>
+		<field name="CellAllocation" type="varchar(255)">
+		</field>
+		<field name="CellAllocationDCS" type="varchar(255)">
+		</field>
+		<field name="BsIdentityCode" type="varchar(50)">
+		</field>
+		<field name="FrequencyRange" type="varchar(50)">
+		</field>
+		<field name="RnlCellType" type="varchar(20)">
+		</field>
+		<field name="QsearchC" type="int">
+		</field>
+		<field name="QsearchP" type="int">
+		</field>
+		<field name="QsearchI" type="int">
+		</field>
+		<field name="ACmbBsCvMax" type="int" source="import"></field>
+		<field name="ACmbFDD_Qmin" type="int" source="import"></field>
+		<field name="ACmbFDD_Qoffset" type="int" source="import"></field>
+		<field name="ACmbLSA_ID_i" type="varchar(100)" source="import"></field>
+		<field name="ACmbNExtraAbisTsMain" type="int" source="import"></field>	
+		<field name="ACmbNExtraAbisTsSecondary" type="int" source="import"></field>	
+		<field name="ACmbNbExtraAbisTs" type="int" source="import"></field>	
+		<field name="ACmbNbTsMpdch" type="int" source="import"></field>	
+		<field name="ACmbPanDec" type="int" source="import"></field>	
+		<field name="ACmbPanInc" type="int" source="import"></field>	
+		<field name="ACmbPanMax" type="int" source="import"></field>	
+		<field name="ACmbPriorityAccessThreshold" type="int" source="import"></field>	
+		<field name="ACmbQsearch" type="int" source="import"></field>	
+		<field name="ACmbRaCode" type="int" source="import"></field>	
+		<field name="ACmbT3168" type="int" source="import"></field>	
+		<field name="ACmbT3192" type="int" source="import"></field>	
+		<field name="ACmbTPagCs" type="int" source="import"></field>	
+		<field name="ACmbTPagPs" type="int" source="import"></field>	
+		<field name="ADDITIONAL_RESELECT_PARAM" type="int" source="import"></field>	
+		<field name="AEcnoHo" type="int" source="import"></field>	
+		<field name="AG_PREMPT_PCH" type="int" source="import"></field>	
+		<field name="AGprsAccessBurstType" type="int" source="import"></field>	
+		<field name="AGprsBepPeriod" type="int" source="import"></field>	
+		<field name="AGprsBsPagBlksRes" type="int" source="import"></field>	
+		<field name="AGprsBsPbcchBlks" type="int" source="import"></field>	
+		<field name="AGprsBsPrachBlks" type="int" source="import"></field>	
+		<field name="AGprsC31Hyst" type="int" source="import"></field>	
+		<field name="AGprsC32Qual" type="int" source="import"></field>	
+		<field name="AGprsCsMaxIdlePeriod" type="int" source="import"></field>	
+		<field name="AGprsEnConvGps" type="int" source="import"></field>	
+		<field name="AGprsEnCsAdaptationAck" type="int" source="import"></field>	
+		<field name="AGprsEnCsAdaptationNack" type="int" source="import"></field>	
+		<field name="AGprsEnExtendedUlTbf" type="int" source="import"></field>	
+		<field name="AGprsEnFastInitialGprsAccess" type="int" source="import"></field>	
+		<field name="AGprsEnMsAssistedAgps" type="int" source="import"></field>	
+		<field name="AGprsEnMsBasedAgps" type="int" source="import"></field>	
+		<field name="AGprsEnNacc" type="int" source="import"></field>	
+		<field name="AGprsEnOutgoingGprsRedir" type="int" source="import"></field>	
+		<field name="AGprsEnPsiStatus" type="int" source="import"></field>	
+		<field name="AGprsEnSolsa" type="int" source="import"></field>	
+		<field name="AGprsEnStreaming" type="int" source="import"></field>	
+		<field name="AGprsFddGprsQoffset" type="int" source="import"></field>	
+		<field name="AGprsGchRedFactorHighAterUsage" type="int" source="import"></field>	
+		<field name="AGprsGprsCellReselectHysteresis" type="int" source="import"></field>	
+		<field name="AGprsGprsHcsThr" type="int" source="import"></field>	
+		<field name="AGprsGprsPenaltyTime" type="int" source="import"></field>	
+		<field name="AGprsGprsPriorityClass" type="int" source="import"></field>	
+		<field name="AGprsGprsReselectionOffset" type="int" source="import"></field>	
+		<field name="AGprsGprsRxLevAccessMin" type="int" source="import"></field>	
+		<field name="AGprsGprsTemporaryOffset" type="int" source="import"></field>	
+		<field name="AGprsHalfpwrBeamWidth" type="int" source="import"></field>	
+		<field name="AGprsKAvgL" type="int" source="import"></field>	
+		<field name="AGprsKAvgQ" type="int" source="import"></field>	
+		<field name="AGprsMaxDlTbfSpdch" type="int" source="import"></field>	
+		<field name="AGprsMaxEgprsMcs" type="int" source="import"></field>	
+		<field name="AGprsMaxGprsAssignAgchRetrans" type="int" source="import"></field>	
+		<field name="AGprsMaxGprsAssignPchRetrans" type="int" source="import"></field>	
+		<field name="AGprsMaxPdch" type="int" source="import"></field>	
+		<field name="AGprsMaxPdchHighLoad" type="int" source="import"></field>	
+		<field name="AGprsMaxPdchPerTbf" type="int" source="import"></field>	
+		<field name="AGprsMaxPdchPerTbfHighAterUsage" type="int" source="import"></field>	
+		<field name="AGprsMaxRetrans1" type="int" source="import"></field>	
+		<field name="AGprsMaxRetrans2" type="int" source="import"></field>	
+		<field name="AGprsMaxRetrans3" type="int" source="import"></field>	
+		<field name="AGprsMaxRetrans4" type="int" source="import"></field>
+		<field name="AGprsMaxUlTbfSpdch" type="int" source="import"></field>
+		<field name="AGprsMinPdch" type="int" source="import"></field>	
+		<field name="AGprsNTbfPerSpdch" type="int" source="import"></field>	
+		<field name="AGprsNc2DeactivationMode" type="int" source="import"></field>	
+		<field name="AGprsNcDlRxlevLimitThr" type="int" source="import"></field>	
+		<field name="AGprsNcDlRxlevThr" type="int" source="import"></field>	
+		<field name="AGprsNcDlRxqualThr" type="int" source="import"></field>	
+		<field name="AGprsNcPingPongOffset" type="int" source="import"></field>	
+		<field name="AGprsNcReportingPeriodT" type="int" source="import"></field>	
+		<field name="AGprsNcRxlevForgettingFactor" type="int" source="import"></field>	
+		<field name="AGprsNcRxqualAvgPeriod" type="int" source="import"></field>	
+		<field name="AGprsNcUlRxqualThr" type="int" source="import"></field>	
+		<field name="AGprsNetworkControlOrder" type="int" source="import"></field>	
+		<field name="AGprsPersistenceLevel1" type="int" source="import"></field>	
+		<field name="AGprsPersistenceLevel2" type="int" source="import"></field>	
+		<field name="AGprsPersistenceLevel3" type="int" source="import"></field>	
+		<field name="AGprsPersistenceLevel4" type="int" source="import"></field>	
+		<field name="AGprsPrachBusyThres" type="int" source="import"></field>	
+		<field name="AGprsQosSafetyMargin" type="int" source="import"></field>	
+		<field name="AGprsQsearchPPtm" type="int" source="import"></field>	
+		<field name="AGprsRAverageEgprs" type="int" source="import"></field>	
+		<field name="AGprsRAverageGprs" type="int" source="import"></field>	
+		<field name="AGprsRaReselectHysteresis" type="int" source="import"></field>	
+		<field name="AGprsRandomAccRetry" type="int" source="import"></field>	
+		<field name="AGprsRminEgprs" type="int" source="import"></field>	
+		<field name="AGprsRminGprs" type="int" source="import"></field>	
+		<field name="AGprsRoundTripDelay" type="int" source="import"></field>
+		<field name="AGprsS" type="int" source="import"></field>	
+		<field name="AGprsTCorr" type="int" source="import"></field>	
+		<field name="AGprsTDlAssignCcch" type="int" source="import"></field>	
+		<field name="AGprsTDlEgprsMeasreport" type="int" source="import"></field>	
+		<field name="AGprsTDlGprsMeasreport" type="int" source="import"></field>	
+		<field name="AGprsTMaxExtendedUl" type="int" source="import"></field>	
+		<field name="AGprsTNcPingpong" type="int" source="import"></field>	
+		<field name="AGprsTNcRejCell" type="int" source="import"></field>	
+		<field name="AGprsTPdchPreemption" type="int" source="import"></field>	
+		<field name="AGprsTResel" type="int" source="import"></field>	
+		<field name="AGprsTUlAssignCcch" type="int" source="import"></field>	
+		<field name="AGprsTUlAssignPccch" type="int" source="import"></field>	
+		<field name="AGprsTbfDlInitCs" type="int" source="import"></field>	
+		<field name="AGprsTbfDlInitMcs" type="int" source="import"></field>	
+		<field name="AGprsTbfUlInitCs" type="int" source="import"></field>	
+		<field name="AGprsTbfUlInitMcs" type="int" source="import"></field>	
+		<field name="AGprsTestab" type="int" source="import"></field>	
+		<field name="AGprsThrNc2LoadRanking" type="int" source="import"></field>	
+		<field name="AGprsTxEfficiencyAckThr" type="int" source="import"></field>	
+		<field name="AGprsTxEfficiencyNackThr" type="int" source="import"></field>	
+		<field name="AGprsTxInt" type="int" source="import"></field>	
+		<field name="AGprsWiPr" type="int" source="import"></field>	
+		<field name="AMR_FR_HYST" type="int" source="import"/>
+	  <field name="AMR_FR_THR1" type="int" source="import"/>
+	  <field name="AMR_FR_THR2" type="int" source="import"/>
+	  <field name="AMR_FR_THR3" type="int" source="import"/>
+	  <field name="AMR_HR_HYST" type="int" source="import"/>
+	  <field name="AMR_HR_THR1" type="int" source="import"/>
+	  <field name="AMR_HR_THR2" type="int" source="import"/>
+	  <field name="AMR_HR_THR3" type="int" source="import"/>
+	  <field name="ARFN_CU_Mapping" type="text" source="import"/>
+	  <field name="AccessClassBarringThreshold" type="int" source="import"/>
+	  <field name="ActiveRadioConfig" type="int" source="import"/>
+	  <field name="AdministrativeState" type="int" source="import"/>
+	  <field name="AlarmStatus" type="varchar(100)" source="import"/>
+	  <field name="AlarmsAcknowledgementStatus" type="varchar(100)" source="import"/>
+	  <field name="AlignmentStatus" type="varchar(100)" source="import"/>
+	  <field name="AlignmentStatusCause" type="varchar(100)" source="import"/>
+	  <field name="AllowIMSIAttachDetach" type="varchar(100)" source="import"/>
+	  <field name="AvailabilityStatus" type="varchar(100)" source="import"/>
+	  <field name="Azimuth" type="int" source="import"/>
+	  <field name="BBTsPerCellNumber" type="int" source="import"/>
+	  <field name="BSS_Release" type="varchar(100)" source="import"/>
+	  <field name="BTS_Q_LENGTH" type="int" source="import"/>
+	  <field name="BscGSMGeneralObjectID" type="int" source="import"/>
+	  <field name="BtsSiteManagerIDSecondary" type="int" source="import"/>
+	  <field name="CCCH_CONF" type="varchar(100)" source="import"/>
+	  <field name="CallReestablishmentAllowed" type="varchar(100)" source="import"/>
+	  <field name="CellCapacityClass" type="int" source="import"/>
+	  <field name="CellReselectHysteresis" type="int" source="import"/>
+	  <field name="CheckActivationErrorList" type="varchar(100)" source="import"/>
+	  <field name="DtmCapability" type="varchar(100)" source="import"/>
+	  <field name="DtxUplink" type="varchar(100)" source="import"/>
+	  <field name="DtxUplinkAMR" type="varchar(100)" source="import"/>
+	  <field name="DtxUplinkAMR_HR" type="varchar(100)" source="import"/>
+	  <field name="DtxUplinkHR" type="varchar(100)" source="import"/>
+	  <field name="EFR_ENABLED" type="varchar(100)" source="import"/>
+	  <field name="EN_AMR_FR" type="varchar(100)" source="import"/>
+	  <field name="EN_AMR_HR" type="varchar(100)" source="import"/>
+	  <field name="EN_Extended_CBCH" type="varchar(100)" source="import"/>
+	  <field name="EN_IPE_PREF_CODEC_TYPE" type="varchar(100)" source="import"/>
+	  <field name="EN_RL_RECOV" type="varchar(100)" source="import"/>
+	  <field name="EN_TFO" type="varchar(100)" source="import"/>
+	  <field name="EN_TFO_MATCH" type="varchar(100)" source="import"/>
+	  <field name="EN_TFO_OPT" type="varchar(100)" source="import"/>
+	  <field name="EXT_BCCH" type="varchar(100)" source="import"/>
+	  <field name="EmergencyCallRestricted" type="varchar(100)" source="import"/>
+	  <field name="En2gTo3gCellReselection" type="varchar(100)" source="import"/>
+	  <field name="En3GHo" type="varchar(100)" source="import"/>
+	  <field name="EnEgprs" type="varchar(100)" source="import"/>
+	  <field name="EnGprs" type="varchar(100)" source="import"/>
+	  <field name="EnReturnCsZoneHo" type="varchar(100)" source="import"/>
+	  <field name="EnUnbalancedOutputPower" type="varchar(100)" source="import"/>
+	  <field name="EnVgcs" type="varchar(100)" source="import"/>
+	  <field name="EnableLoadMngtAccessClassBarring" type="varchar(100)" source="import"/>
+	  <field name="EnableMASelection" type="varchar(100)" source="import"/>
+	  <field name="EnablePagingBarring" type="varchar(100)" source="import"/>
+	  <field name="FORCE_TFO_HR_WHEN_LOADED" type="varchar(100)" source="import"/>
+	  <field name="FORCE_TFO_VS_AMR" type="varchar(100)" source="import"/>
+	  <field name="FddMultiratReporting" type="int" source="import"/>
+	  <field name="FddReportingOffset" type="int" source="import"/>
+	  <field name="FddReportingThreshold" type="int" source="import"/>
+	  <field name="FinalAdministrativeState" type="varchar(100)" source="import"/>
+	  <field name="ForceTrxRslReshuffling" type="varchar(100)" source="import"/>
+	  <field name="GeographicalCoordinates" type="varchar(100)" source="import"/>
+	  <field name="HoppingType" type="varchar(100)" source="import"/>
+	  <field name="InactiveHoppingType" type="varchar(100)" source="import"/>
+	  <field name="InbandPagingThr" type="int" source="import"/>
+	  <field name="IsReflexiveReselection" type="varchar(100)" source="import"/>
+	  <field name="KEEP_CODEC_HO" type="varchar(100)" source="import"/>
+	  <field name="LSA_OFFSET" type="int" source="import"/>
+	  <field name="LoadEvPeriodGPRS" type="int" source="import"/>
+	  <field name="LocationName" type="varchar(100)" source="import"/>
+	  <field name="MSTxPwrMaxCCH" type="int" source="import"/>
+	  <field name="MateCellId" type="int" source="import"/>
+	  <field name="MaxGprsCs" type="int" source="import"/>
+	  <field name="MaxNumberRetransmission" type="varchar(100)" source="import"/>
+	  <field name="MaxVgcsTs" type="varchar(100)" source="import"/>
+	  <field name="MfsAdministrativeState" type="varchar(100)" source="import"/>
+	  <field name="MfsAlarmStatus" type="varchar(100)" source="import"/>
+	  <field name="MfsAlarmsAcknowledgementStatus" type="varchar(100)" source="import"/>
+	  <field name="MfsAlignmentStatus" type="varchar(100)" source="import"/>
+	  <field name="MfsAlignmentStatusCause" type="varchar(100)" source="import"/>
+	  <field name="MfsAvailabilityStatus" type="varchar(100)" source="import"/>
+	  <field name="MfsOperationalState" type="varchar(100)" source="import"/>
+	  <field name="MinVgcsTs" type="int" source="import"/>
+	  <field name="MultibandReporting" type="varchar(100)" source="import"/>
+	  <field name="N_BSTXPWR_M" type="int" source="import"/>
+	  <field name="Nb_TS_FOR_BASIC_CBCH" type="int" source="import"/>
+	  <field name="Nb_TS_FOR_E_CBCH" type="int" source="import"/>
+	  <field name="NbrSDCCH" type="int" source="import"/>
+	  <field name="NbrSDCCHavailable" type="int" source="import"/>
+	  <field name="NbrTCH" type="int" source="import"/>
+	  <field name="NbrTCHinner" type="int"/>
+	  <field name="NbrTCHavailable" type="int" source="import"/>
+	  <field name="NoOfBlocksForAccessGrant" type="int" source="import"/>
+	  <field name="NoOfMultiframesBetweenPaging" type="int" source="import"/>
+	  <field name="NotAllowedAccessClasses" type="varchar(100)" source="import"/>
+	  <field name="NotifFacchOtherVgcsCallThr" type="int" source="import"/>
+	  <field name="NotifFacchPtpCallThr" type="int" source="import"/>
+	  <field name="NotifPchThr" type="int" source="import"/>
+	  <field name="NumberNchBlocks" type="int" source="import"/>
+	  <field name="NumberOfSlotsSpreadTrans" type="int" source="import"/>
+	  <field name="Ny1" type="int" source="import"/>
+	  <field name="Ny2" type="int" source="import"/>
+	  <field name="OperationalState" type="int" source="import"/>
+	  <field name="PENALTY_TIME" type="int" source="import"/>
+	  <field name="PRIO_THR" type="int" source="import"/>
+	  <field name="PWRC" type="int" source="import"/>
+	  <field name="PercentageSDCCHavailable" type="int" source="import"/>
+	  <field name="PercentageTCHavailable" type="int" source="import"/>
+	  <field name="PeriodCCCHLoadIndication" type="varchar(100)" source="import"/>
+	  <field name="PlmnPermitted" type="varchar(100)" source="import"/>
+	  <field name="ProceduralStatus" type="varchar(100)" source="import"/>
+	  <field name="PsPrefBcchTrx" type="int" source="import"/>
+	  <field name="RACHBusyThreshold" type="int" source="import"/>
+	  <field name="RACHLoadAveragingSlots" type="int" source="import"/>
+	  <field name="RADIOLINK_TIMEOUT_BS" type="int" source="import"/>
+	  <field name="RMS_EN_EXT_MEAS_REP" type="varchar(100)" source="import"/>
+	  <field name="RMS_Ext_Meas_Rep_List" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE" type="int" source="import"/>
+	  <field name="RMS_tA_STAT" type="int" source="import"/>
+	  <field name="RaColor" type="int" source="import"/>
+	  <field name="RadioLinkTimeout" type="int" source="import"/>
+	  <field name="RelatedSecondarySector" type="int" source="import"/>
+	  <field name="RnlAdjWhereTarget" type="text" source="import"/>
+	  <field name="RnlGPRSmSTxPwrMaxCCH" type="int" source="import"/>
+	  <field name="RnlNetworkCellID" type="varchar(100)" source="import"/>
+	  <field name="SCHEDULE_PERIOD" type="int" source="import"/>
+	  <field name="SCHEDULE_PERIOD_E_CBCH" type="int" source="import"/>
+	  <field name="SolsaFunctLevel" type="int" source="import"/>
+	  <field name="StartUplinkReply" type="int" source="import"/>
+	  <field name="T3105_D" type="int" source="import"/>
+	  <field name="T3105_D_STOP" type="int" source="import"/>
+	  <field name="T3105_F_FR" type="int" source="import"/>
+	  <field name="T3105_F_HR" type="int" source="import"/>
+	  <field name="T3105_F_STOP" type="int" source="import"/>
+	  <field name="T3106_D" type="int" source="import"/>
+	  <field name="T3106_D_STOP" type="int" source="import"/>
+	  <field name="T3106_F" type="int" source="import"/>
+	  <field name="T3106_F_STOP" type="int" source="import"/>
+	  <field name="T3115" type="int" source="import"/>
+	  <field name="TEMPORARY_OFFSET" type="int" source="import"/>
+	  <field name="TRepetitionChannelRelease" type="int" source="import"/>
+	  <field name="TRepetitionUplinkFree" type="int" source="import"/>
+	  <field name="T_FILTER" type="int" source="import"/>
+	  <field name="T_INTRF_L3" type="int" source="import"/>
+	  <field name="ThrCellLoad3gReject" type="int" source="import"/>
+	  <field name="ThrEcnoHo" type="int" source="import"/>
+	  <field name="ThresholdCCCHLoadIndication" type="int" source="import"/>
+	  <field name="TimeAdvanceFilter" type="int" source="import"/>
+	  <field name="TimerPeriodicUpdateMS" type="int" source="import"/>
+	  <field name="TimerTIA" type="int" source="import"/>
+	  <field name="TimerTPDA" type="int" source="import"/>
+	  <field name="TimerTPUA" type="int" source="import"/>
+	  <field name="TscValue" type="int" source="import"/>
+	  <field name="UnknownStatus" type="varchar(100)" source="import"/>
+	  <field name="UsageState" type="varchar(100)" source="import"/>
+	  <field name="WaitIndicationForCallReestablishment" type="varchar(100)" source="import"/>
+	  <field name="WaitIndicationForEmergencyCall" type="varchar(100)" source="import"/>
+	  <field name="WaitIndicationForOriginatingCall" type="varchar(100)" source="import"/>
+	  <field name="WaitIndicationForOtherProcedures" type="varchar(100)" source="import"/>
+	  <field name="WaitUplinkAccess" type="varchar(100)" source="import"/>
+	  <field name="WarningList" type="varchar(100)" source="import"/>
+		<index name="idx1">
+			<order>CI,LAC</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx4">
+			<order>CellInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx3">
+			<order>BSC_ID,BTS_ID,SECTOR,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RnlAlcatelMFS">
+		<field name="OMC_ID" type="varchar(50)" source="import"></field>
+		<field name="IMPORTDATE" type="date" source="import"></field>
+		<field name="RnlAlcatelMFSInstanceIdentifier" type="varchar(255)" source="import"></field>
+		<field name="UserLabel" type="varchar(255)" source="import"></field>
+		<field name="MfsGeneration" type="varchar(50)" source="import"></field>
+		<field name="NeAlarmStatus" type="varchar(50)" source="import"></field>
+		<index name="idx1">
+			<order>RnlAlcatelMFSInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RnlAlcatelSector">
+		<field name="OMC_ID" type="varchar(50)" source="import"></field>
+		<field name="IMPORTDATE" type="date" source="import"></field>
+		<field name="RnlAlcatelSectorInstanceIdentifier" type="varchar(255)" source="import"></field>
+		<field name="UserLabel" type="varchar(255)" source="import"></field>
+		<index name="idx1">
+			<order>RnlAlcatelSectorInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RnlAlcatelSiteManager">
+		<field name="OMC_ID" type="varchar(50)" source="import"></field>
+		<field name="IMPORTDATE" type="date" source="import"></field>
+		<field name="RnlAlcatelSiteManagerInstanceIdentifier" type="varchar(255)" source="import"></field>
+		<field name="UserLabel" type="varchar(255)" source="import"></field>
+		<index name="idx1">
+			<order>RnlAlcatelSiteManagerInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RnlBasebandTransceiver">
+		<field name="OMC_ID" type="varchar(50)" source="import"></field>
+		<field name="IMPORTDATE" type="date" source="import"></field>
+		<field name="RnlBasebandTransceiverInstanceIdentifier" type="varchar(255)" source="import"></field>
+		<field name="ChannelSelectionPreferenceMark" type="bigint" source="import"></field>
+		<field name="Tei" type="bigint" source="import"></field>
+		<field name="Rank" type="bigint" source="import"></field>
+		<field name="ListOfRadioChannels" type="text" source="import"></field>
+		<field name="InactiveListOfFrequencyUsage" type="text" source="import"></field>
+		<field name="SharedSectorType" type="varchar(20)" source="import"></field>
+		<field name="UserLabel" type="varchar(255)" source="import"></field>
+		<field name="LAC" type="int"></field>
+		<field name="CI" type="int"></field>
+		<field name="ZONE_TYPE" type="varchar(10)" source="import"></field>
+		<index name="idx1">
+			<order>RnlBasebandTransceiverInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>CI,LAC,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="RnlFrequencyHoppingSystem">
+		<field name="OMC_ID" type="varchar(50)" source="import"></field>
+		<field name="IMPORTDATE" type="date" source="import"></field>
+		<field name="RnlFrequencyHoppingSystemInstanceIdentifier" type="varchar(255)" source="import"></field>
+		<field name="UserLabel" type="varchar(255)" source="import"></field>
+		<field name="MobileAllocation" type="varchar(255)" source="import"></field>
+		<index name="idx1">
+			<order>RnlFrequencyHoppingSystemInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RnlPowerControl">
+		<field name="OMC_ID" type="varchar(50)" source="import"></field>
+		<field name="IMPORTDATE" type="date" source="import"></field>
+		<field name="RnlPowerControlInstanceIdentifier" type="varchar(255)" source="import"></field>
+		<field name="LAC" type="int"></field> 
+		<field name="CI" type="int"></field> 
+		<field name="ACmbAlpha" type="int" source="import"></field> 
+		<field name="ACmbNAvgI" type="int" source="import"></field> 
+		<field name="ACmbPcMeasChan" type="varchar(10)" source="import"></field> 
+		<field name="ACmbTAvgT" type="int" source="import"></field> 
+		<field name="ACmbTAvgW" type="int" source="import"></field> 
+		<field name="AGprsGammaTnx" type="int" source="import"></field> 
+		<field name="BS_P_CON_ACK" type="int" source="import"></field> 
+		<field name="BS_P_CON_INT" type="int" source="import"></field> 
+		<field name="BS_TXPWR_MAX" type="int" source="import"></field> 
+		<field name="BS_TXPWR_MAX_INNER" type="int" source="import"></field> 
+		<field name="BS_TXPWR_MIN" type="int" source="import"></field> 
+		<field name="EN_BS_PC" type="varchar(10)" source="import"></field> 
+		<field name="EN_MS_PC" type="varchar(10)" source="import"></field> 
+		<field name="EmePwrMaxDcs" type="int" source="import"></field> 
+		<field name="EmePwrMaxGsm" type="int" source="import"></field> 
+		<field name="LocationName" type="int" source="import"></field> 
+		<field name="MS_P_CON_ACK" type="int" source="import"></field> 
+		<field name="MS_P_CON_INT" type="int" source="import"></field> 
+		<field name="MS_TXPWR_MAX" type="int" source="import"></field> 
+		<field name="MS_TXPWR_MAX_INNER" type="int" source="import"></field> 
+		<field name="MS_TXPWR_MIN" type="int" source="import"></field> 
+		<field name="MsmtProcParamLoc" type="varchar(255)" source="import"></field> 
+		<field name="PcAveragingLev" type="varchar(255)" source="import"></field> 
+		<field name="PcAveragingQual" type="varchar(255)" source="import"></field> 
+		<field name="PcLowerOffsetQualParam" type="int" source="import"></field> 
+		<field name="PcLowerThresholdLevParam" type="varchar(255)" source="import"></field> 
+		<field name="PcLowerThresholdQualParam" type="varchar(255)" source="import"></field> 
+		<field name="PcSDCCHStopDuration" type="int" source="import"></field> 
+		<field name="PcUpperThresholdLevParam" type="varchar(255)" source="import"></field> 
+		<field name="PcUpperThresholdQualParam" type="varchar(255)" source="import"></field> 
+		<field name="PowerControlInterval" type="int" source="import"></field> 
+		<field name="PowerIncrFactor" type="int" source="import"></field> 
+		<field name="PowerIncrMax" type="int" source="import"></field> 
+		<field name="PowerIncrStepSize" type="int" source="import"></field> 
+		<field name="PowerRedFactor" type="int" source="import"></field> 
+		<field name="PowerRedMax" type="int" source="import"></field> 
+		<field name="PowerRedStepSize" type="int" source="import"></field> 
+		<field name="UserLabel" type="varchar(100)" source="import"></field> 
+		<index name="idx1">
+			<order>RnlPowerControlInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx3">
+			<order>CI,LAC</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="SubNetwork">
+		<field name="OMC_ID" type="varchar(50)" source="import"></field>
+		<field name="IMPORTDATE" type="date" source="import"></field>
+		<field name="SubNetworkInstanceIdentifier" type="varchar(255)" source="import"></field>
+		<field name="CurrentTotalsOfConfiguredUnits" type="text" source="import"></field>
+		<field name="Omc3InstanceName" type="varchar(20)" source="import"></field>
+		<field name="UserLabel" type="varchar(255)" source="import"></field>
+		<index name="idx1">
+			<order>SubNetworkInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="Adjacency">
+		<field name="OMC_ID" type="varchar(50)" source="import"></field>
+		<field name="IMPORTDATE" type="date" source="import"></field>
+		<field name="AdjacencyInstanceIdentifier" type="varchar(255)" source="import"></field>
+		<field name="LAC" type="int" source="calculated"></field>
+		<field name="CI" type="int" source="calculated"></field>
+		<field name="BCCH" type="int" source="calculated"></field>
+		<field name="CELLNAME" type="varchar(255)" source="calculated"></field>
+		<field name="LAC_TGT" type="int" source="calculated"></field>
+		<field name="CI_TGT" type="int" source="calculated"></field>
+		<field name="BCCH_TGT" type="int" source="calculated"></field>
+		<field name="CELLNAME_TGT" type="varchar(255)" source="calculated"></field>
+		<field name="AdjacencyType" type="varchar(100)">
+		</field>
+		<field name="EnableTrafficLoadHO" type="varchar(100)">
+		</field>
+		<field name="HoMargin" type="int">
+		</field>
+		<field name="HoMarginAlcatelDist" type="int">
+		</field>
+		<field name="HoMarginLevel" type="int">
+		</field>
+		<field name="HoMarginQual" type="int">
+		</field>
+		<field name="HoPriorityLevel" type="int">
+		</field>
+		<field name="L_RXLEV_CPT_HO" type="int">
+		</field>
+		<index name="idx1">
+			<order>AdjacencyInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>CI,LAC,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx3">
+			<order>CI_TGT,LAC_TGT,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="ExternalOmcCell">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="ExternalOmcCellInstanceIdentifier" type="varchar(255)">
+		</field>
+		<field name="BCCHFrequency" type="int">
+		</field>
+		<field name="CellGlobalIdentity" type="varchar(100)">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="UserLabel" type="varchar(255)">
+		</field>
+		<field name="BsIdentityCode" type="varchar(50)">
+		</field>
+		<field name="FrequencyRange" type="varchar(50)">
+		</field>
+		<field name="RnlCellType" type="varchar(20)">
+		</field>
+		<index name="idx1">
+			<order>LAC,CI</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx2">
+			<order>ExternalOmcCellInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="HoControl">
+		<field name="OMC_ID" type="varchar(50)" source="import"></field>
+		<field name="IMPORTDATE" type="date" source="import"></field>
+		<field name="HoControlInstanceIdentifier" type="varchar(255)" source="import"></field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="ALLOC_ANYWAY" type="varchar(100)" source="import"> 
+		</field>
+	  <field name="ATrafficLoad" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="A_LEV_MCHO" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="A_PBGT_DR" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="A_QUAL_CA_FR_HR" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="A_QUAL_CA_HR_FR" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="CELL_EV" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_AMR_CA" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_DR" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_FAST_TRAFFIC_HO" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_FORCED_DR" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_IC_HO" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_INTRACELL_REPEATED" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_INTRA_DL" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_INTRA_DL_AMR" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_INTRA_UL" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_INTRA_UL_AMR" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_LOAD_BALANCE" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_LOAD_ORDER" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_MCHO_H_DL" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_MCHO_H_UL" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_MCHO_NCELL" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_MCHO_RESCUE" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_MULTIBAND_PBGT_HO" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_PREFERRED_BAND_HO" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_RESCUE_UM" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_RXLEV_DL" type="varchar(100)" source="import">
+	   </field>
+	  <field name="EN_RXLEV_UL" type="varchar(100)" source="import">
+	   </field>
+	  <field name="EN_RXQUAL_DL" type="varchar(100)" source="import">
+	   </field>
+	  <field name="EN_RXQUAL_UL" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EN_SPEED_DISC" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EXT_HO_FORCED" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EnableBetterZoneHO" type="varchar(100)" source="import">
+	   </field>
+	  <field name="EnableBiBandMS" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EnableGeneralCaptureHO" type="varchar(100)" source="import">
+	   </field>
+	  <field name="EnableOptHandoverProcessing" type="varchar(100)" source="import">
+	   </field>
+	  <field name="EnablePriorityOrdering" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="EnablePwBudgetFiltering" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="FreeLevelDRn" type="varchar(100)" source="import">
+	   </field>
+	  <field name="Freefactor_1" type="varchar(100)" source="import">
+	   </field>
+	  <field name="Freefactor_2" type="varchar(100)" source="import">
+	   </field>
+	  <field name="Freefactor_3" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Freefactor_4" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Freefactor_5" type="varchar(100)" source="import">
+	   </field>
+	  <field name="Freelevel_1" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Freelevel_2" type="varchar(100)" source="import">
+	   </field>
+	  <field name="Freelevel_3" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Freelevel_4" type="varchar(100)" source="import">
+	   </field>
+	  <field name="GeneralCaptureHOTLCondition" type="varchar(100)" source="import">
+	   </field>
+	  <field name="HO_INTERCELL_ALLOWED" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="HO_INTRACELL_ALLOWED" type="varchar(100)" source="import">
+	   </field>
+	  <field name="HO_SDCCH_INHIBIT" type="varchar(100)" source="import">
+	   </field>
+	  <field name="H_LOAD_OBJ" type="varchar(100)" source="import">
+	   </field>
+	  <field name="HighTrafficLoadGPRS" type="varchar(100)" source="import">
+	   </field>
+	  <field name="HoAveragingAdjCellParam" type="varchar(100)" source="import">
+	   </field>
+	  <field name="HoAveragingDistParam" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="HoAveragingLevParam" type="varchar(100)" source="import">
+	   </field>
+	  <field name="HoAveragingQualParam" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="HoHystConcentricCellDl" type="varchar(100)" source="import">
+	   </field>
+	  <field name="HoHystConcentricCellUl" type="varchar(100)" source="import">
+	   </field>
+	  <field name="HoMarginAlcatelInnerOffset" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="HoMarginDef" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="HoOffsetQualParam" type="varchar(100)" source="import">
+	   </field>
+	  <field name="HoThresholdDistParam" type="varchar(100)" source="import">
+	   </field>
+	  <field name="HoThresholdInterferenceParam" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="HoThresholdLevParam" type="varchar(100)" source="import">
+	   </field>
+	  <field name="HoThresholdQualParam" type="varchar(100)" source="import">
+	   </field>
+	  <field name="InterferenceAveragingParam" type="varchar(100)" source="import">
+	   </field>
+	  <field name="L_LOAD_OBJ" type="varchar(100)" source="import">
+	   </field>
+	  <field name="L_RXLEV_NCELL_DRn" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="L_RXQUAL_DL_H_AMR" type="varchar(100)" source="import">
+	   </field>
+	  <field name="L_RXQUAL_UL_H_AMR" type="varchar(100)" source="import">
+	   </field>
+	  <field name="LoadEvPeriod" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Loadfactor_1" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Loadfactor_2" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Loadfactor_3" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Loadfactor_4" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Loadfactor_5" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Loadlevel_1" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Loadlevel_2" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Loadlevel_3" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="Loadlevel_4" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="LocationName" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="LowTrafficLoadGPRS" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="MIN_CONNECT_TIME" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="MinTimingAdvanceExtOuterHo" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="MsTxPwrMaxCellDef" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="MsmtProcParamLoc" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="MultibandTrafficLoadHOCondition" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="NTrafficLoad" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="NUM_TCH_EGNCY_HO" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="N_BAD_SACCH" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="N_TCH_HO" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="OFFSET_CA_HIGH" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="OFFSET_CA_NORMAL" type="varchar(100)" source="import">
+	   </field>
+	  <field name="PING_PONG_HCP" type="varchar(100)" source="import">
+	   </field>
+	  <field name="RXLEV_DL_ZONE" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="RXLEV_UL_ZONE" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="RxLevMinCell" type="varchar(100)" source="import">
+	   </field>
+	  <field name="RxLevMinCellDef" type="varchar(100)" source="import">
+	   </field>
+	  <field name="RxLevPwBudgetHoThreshold" type="varchar(100)" source="import">
+	   </field>
+	  <field name="SDCCH_COUNTER" type="varchar(100)" source="import">
+	   </field>
+	  <field name="THR_RXQUAL_CA_HIGH" type="varchar(100)" source="import">
+	   </field>
+	  <field name="THR_RXQUAL_CA_NORMAL" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="T_HCP" type="varchar(100)" source="import">
+	   </field>
+	  <field name="T_INHIBIT_CPT" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="TrafficLoadHOMargins" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="TrafficLoadThresholds" type="varchar(100)" source="import">
+	   </field>
+	  <field name="U_RXLEV_DL_MCHO" type="varchar(100)" source="import">
+	   </field>
+	  <field name="U_RXLEV_UL_MCHO" type="varchar(100)" source="import">
+	   </field>
+	  <field name="UserLabel" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="WITH_SYNCHRONISED_HANDOVER" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="W_LEV_MCHO" type="varchar(100)" source="import"> 
+	  </field>
+	  <field name="W_QUAL_CA" type="varchar(100)" source="import"> 
+	  </field>
+		<index name="idx1">
+			<order>HoControlInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx3">
+			<order>CI,LAC</order>
+			<unique>no</unique>
+		</index>
+	</table>
+ 	<table name="RnlAlcatelBSC">
+		<field name="OMC_ID" type="varchar(50)" source="import"></field>
+		<field name="IMPORTDATE" type="date" source="import"></field>
+		<field name="REGION" type="varchar(50)"></field>
+		<field name="RnlAlcatelBSCInstanceIdentifier" type="varchar(255)" source="import"></field>
+		<field name="UserLabel" type="varchar(255)" source="import"></field>
+		<field name="AGprsAterUsageThreshold" type="int" source="import"></field> 
+		<field name="AGprsBestEffortPriority" type="int" source="import"></field> 
+		<field name="AGprsCsBlerDl34" type="int" source="import"></field> 
+		<field name="AGprsCsBlerDl43" type="int" source="import"></field> 
+		<field name="AGprsCsHstDlLt" type="int" source="import"></field> 
+		<field name="AGprsCsHstDlSt" type="int" source="import"></field> 
+		<field name="AGprsCsHstUlLt" type="int" source="import"></field> 
+		<field name="AGprsCsHstUlSt" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl12FhAck" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl12FhNack" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl12NfhAck" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl12NfhNack" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl23FhAck" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl23FhNack" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl23NfhAck" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl23NfhNack" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl34FhAck" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl34FhNack" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl34NfhAck" type="int" source="import"></field> 
+		<field name="AGprsCsQualDl34NfhNack" type="int" source="import"></field>
+		<field name="AGprsCsQualUl12FhAck" type="int" source="import"></field> 
+		<field name="AGprsCsQualUl12FhNack" type="int" source="import"></field>
+		<field name="AGprsCsQualUl12NfhAck" type="int" source="import"></field> 
+		<field name="AGprsCsQualUl12NfhNack" type="int" source="import"></field> 
+		<field name="AGprsCsQualUl23FhAck" type="int" source="import"></field>
+		<field name="AGprsCsQualUl23FhNack" type="int" source="import"></field>
+		<field name="AGprsCsQualUl23NfhAck" type="int" source="import"></field> 
+		<field name="AGprsCsQualUl23NfhNack" type="int" source="import"></field> 
+		<field name="AGprsCsQualUl34FhAck" type="int" source="import"></field> 
+		<field name="AGprsCsQualUl34FhNack" type="int" source="import"></field>
+		<field name="AGprsCsQualUl34NfhAck" type="int" source="import"></field>
+		<field name="AGprsCsQualUl34NfhNack" type="int" source="import"></field> 
+		<field name="AGprsCsSirDl34FhAck" type="int" source="import"></field> 
+		<field name="AGprsCsSirDl34FhNack" type="int" source="import"></field>
+		<field name="AGprsCsSirDl34NfhAck" type="int" source="import"></field>
+		<field name="AGprsCsSirDl34NfhNack" type="int" source="import"></field> 
+		<field name="AGprsCsSirHstDl" type="int" source="import"></field> 
+		<field name="AGprsETxEfficiencyPeriod" type="int" source="import"></field> 
+		<field name="AGprsEnDlLlcPduRerouting" type="int" source="import"></field> 
+		<field name="AGprsEnFastUsfUlExtended" type="int" source="import"></field> 
+		<field name="AGprsEnFullIrDl" type="int" source="import"></field> 
+		<field name="AGprsEnIrUl" type="int" source="import"></field> 
+		<field name="AGprsEnPfcFeature" type="int" source="import"></field> 
+		<field name="AGprsEnRaCapUpdate" type="int" source="import"></field> 
+		<field name="AGprsEnResReallocation" type="int" source="import"></field> 
+		<field name="AGprsEnResegmentationUl" type="int" source="import"></field> 
+		<field name="AGprsEnSagi" type="int" source="import"></field> 
+		<field name="AGprsGprsMultislotClassDefValue" type="int" source="import"></field> 
+		<field name="AGprsHighPrecedenceBackgroundPriority" type="int" source="import"></field> 
+		<field name="AGprsHighPrecedenceThp1Priority" type="int" source="import"></field> 
+		<field name="AGprsHighPrecedenceThp2Priority" type="int" source="import"></field> 
+		<field name="AGprsHighPrecedenceThp3Priority" type="int" source="import"></field> 
+		<field name="AGprsLowPrecedenceBackgroundPriority" type="int" source="import"></field> 
+		<field name="AGprsLowPrecedenceThp1Priority" type="int" source="import"></field> 
+		<field name="AGprsLowPrecedenceThp2Priority" type="int" source="import"></field> 
+		<field name="AGprsLowPrecedenceThp3Priority" type="int" source="import"></field> 
+		<field name="AGprsMaxPagingQueue" type="int" source="import"></field> 
+		<field name="AGprsMaxRadiusFactor" type="int" source="import"></field> 
+		<field name="AGprsMinRadiusFactor" type="int" source="import"></field> 
+		<field name="AGprsNAterTsMarginGpu" type="int" source="import"></field> 
+		<field name="AGprsNormalPrecedenceBackgroundPriority" type="int" source="import"></field> 
+		<field name="AGprsNormalPrecedenceThp1Priority" type="int" source="import"></field> 
+		<field name="AGprsNormalPrecedenceThp2Priority" type="int" source="import"></field> 
+		<field name="AGprsNormalPrecedenceThp3Priority" type="int" source="import"></field> 
+		<field name="AGprsPdDlPdchUnitAllocThr1" type="int" source="import"></field> 
+		<field name="AGprsPdDlPdchUnitAllocThr2" type="int" source="import"></field> 
+		<field name="AGprsPdDlPdchUnitAllocThr3" type="int" source="import"></field> 
+		<field name="AGprsPdDlPdchUnitAllocThr4" type="int" source="import"></field> 
+		<field name="AGprsPdDlPdchUnitAllocThr5" type="int" source="import"></field> 
+		<field name="AGprsPdDlPdchUnitAllocThr6" type="int" source="import"></field> 
+		<field name="AGprsPdDlPdchUnitAllocThr7" type="int" source="import"></field> 
+		<field name="AGprsPdDlPdchUnitAllocThr8" type="int" source="import"></field> 
+		<field name="AGprsPdDlPdchUnitAllocThr9" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfDurationThr1" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfDurationThr2" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfDurationThr3" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfDurationThr4" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfDurationThr5" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfDurationThr6" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfDurationThr7" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfDurationThr8" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfDurationThr9" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfVolumeThr1" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfVolumeThr2" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfVolumeThr3" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfVolumeThr4" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfVolumeThr5" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfVolumeThr6" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfVolumeThr7" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfVolumeThr8" type="int" source="import"></field> 
+		<field name="AGprsPdDlTbfVolumeThr9" type="int" source="import"></field> 
+		<field name="AGprsPdUlPdchUnitAllocThr1" type="int" source="import"></field> 
+		<field name="AGprsPdUlPdchUnitAllocThr2" type="int" source="import"></field> 
+		<field name="AGprsPdUlPdchUnitAllocThr3" type="int" source="import"></field> 
+		<field name="AGprsPdUlPdchUnitAllocThr4" type="int" source="import"></field> 
+		<field name="AGprsPdUlPdchUnitAllocThr5" type="int" source="import"></field> 
+		<field name="AGprsPdUlPdchUnitAllocThr6" type="int" source="import"></field> 
+		<field name="AGprsPdUlPdchUnitAllocThr7" type="int" source="import"></field> 
+		<field name="AGprsPdUlPdchUnitAllocThr8" type="int" source="import"></field> 
+		<field name="AGprsPdUlPdchUnitAllocThr9" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfDurationThr1" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfDurationThr2" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfDurationThr3" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfDurationThr4" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfDurationThr5" type="int" source="import"></field>
+		<field name="AGprsPdUlTbfDurationThr6" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfDurationThr7" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfDurationThr8" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfDurationThr9" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfVolumeThr1" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfVolumeThr2" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfVolumeThr3" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfVolumeThr4" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfVolumeThr5" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfVolumeThr6" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfVolumeThr7" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfVolumeThr8" type="int" source="import"></field> 
+		<field name="AGprsPdUlTbfVolumeThr9" type="int" source="import"></field> 
+		<field name="AGprsPfcT6" type="int" source="import"></field> 
+		<field name="AGprsPfcT8" type="int" source="import"></field> 
+		<field name="AGprsSgsnr" type="int" source="import"></field> 
+		<field name="AGprsSmsPriority" type="int" source="import"></field> 
+		<field name="AGprsTDelayedFinalPuan" type="int" source="import"></field>
+		<field name="AGprsTFlowCtrlCell" type="int" source="import"></field> 
+		<field name="AGprsTFlowCtrlMs" type="int" source="import"></field> 
+		<field name="AGprsTGchInactivity" type="int" source="import"></field> 
+		<field name="AGprsTGchInactivityLast" type="int" source="import"></field> 
+		<field name="AGprsTLcsDelayTolerant" type="int" source="import"></field> 
+		<field name="AGprsTLcsLowDelay" type="int" source="import"></field> 
+		<field name="AGprsTMaxStreamingBuffering" type="int" source="import"></field> 
+		<field name="AGprsTNetworkResponseTime" type="int" source="import"></field> 
+		<field name="AGprsTPdchInactivity" type="int" source="import"></field> 
+		<field name="AGprsTPdchInactivityLast" type="int" source="import"></field> 
+		<field name="AGprsTPsiPacch" type="int" source="import"></field> 
+		<field name="AGprsTRrlpDelayTolerant" type="int" source="import"></field> 
+		<field name="AGprsTRrlpLowDelay" type="int" source="import"></field> 
+		<field name="AGprsTbfCs3BlerPeriod" type="int" source="import"></field> 
+		<field name="AGprsTbfCs4BlerPeriod" type="int" source="import"></field> 
+		<field name="AGprsTbfCsDl" type="int" source="import"></field> 
+		<field name="AGprsTbfCsUl" type="int" source="import"></field> 
+		<field name="AGprsTbfMcsDl" type="int" source="import"></field> 
+		<field name="AGprsTbfMcsUl" type="int" source="import"></field> 
+		<field name="AGprsTxEfficiencyPeriod" type="int" source="import"></field>
+		<field name="AC_PRIORITY_LIST" type="varchar(100)" source="import"/>
+	  <field name="ACmbDrxTimerMax" type="int" source="import"/>
+	  <field name="ACmbEn2gTo3gCellReselection" type="int" source="import"/>
+	  <field name="ACmbEnLcs" type="varchar(100)" source="import"/>
+	  <field name="ACmbMSCR" type="varchar(100)" source="import"/>
+	  <field name="ACmbNetworkOperationMode" type="int" source="import"/>
+	  <field name="ACmbPlmnFrequencyBands" type="int" source="import"/>
+	  <field name="AMR_FR_SUBSET" type="varchar(255)" source="import"/>
+	  <field name="AMR_HR_SUBSET" type="varchar(255)" source="import"/>
+	  <field name="AMR_START_MODE_FR" type="int" source="import"/>
+	  <field name="AMR_START_MODE_HR" type="int" source="import"/>
+	  <field name="AUT_BAR" type="int" source="import"/>
+	  <field name="AdministrativeState" type="varchar(100)" source="import"/>
+	  <field name="AlarmSeverityAssignmentProfilePointer" type="varchar(100)" source="import"/>
+	  <field name="AlarmStatus" type="varchar(100)" source="import"/>
+	  <field name="AlarmStatusSynthesis" type="varchar(100)" source="import"/>
+	  <field name="AlarmsAcknowledgementStatus" type="varchar(100)" source="import"/>
+	  <field name="AlarmsAcknowledgementSynthesis" type="varchar(100)" source="import"/>
+	  <field name="AlignmentStatus" type="varchar(100)" source="import"/>
+	  <field name="AlignmentStatusCause" type="varchar(100)" source="import"/>
+	  <field name="BSC_Generation" type="varchar(100)" source="import"/>
+	  <field name="BSC_HW_Config" type="varchar(100)" source="import"/>
+	  <field name="BSS_CIPH_LIST" type="varchar(100)" source="import"/>
+	  <field name="BSS_Release" type="varchar(100)" source="import"/>
+	  <field name="BandAllocationRange" type="varchar(100)" source="import"/>
+	  <field name="BssFunctionAlignmentStatus" type="varchar(100)" source="import"/>
+	  <field name="BssMapT1" type="varchar(100)" source="import"/>
+	  <field name="BssMapT10" type="varchar(100)" source="import"/>
+	  <field name="BssMapT13" type="varchar(100)" source="import"/>
+	  <field name="BssMapT17" type="varchar(100)" source="import"/>
+	  <field name="BssMapT18" type="varchar(100)" source="import"/>
+	  <field name="BssMapT19" type="varchar(100)" source="import"/>
+	  <field name="BssMapT20" type="varchar(100)" source="import"/>
+	  <field name="BssMapT4" type="varchar(100)" source="import"/>
+	  <field name="BssMapT7" type="varchar(100)" source="import"/>
+	  <field name="BssMapT8" type="varchar(100)" source="import"/>
+	  <field name="BssMapTimerT11Forced" type="varchar(100)" source="import"/>
+	  <field name="CBC_CallUserDataSel" type="varchar(100)" source="import"/>
+	  <field name="CBC_OPERATOR" type="int" source="import"/>
+	  <field name="CBC_PASSWORD" type="int" source="import"/>
+	  <field name="CBC_WINDOW" type="int" source="import"/>
+	  <field name="CGI_REQD" type="varchar(100)" source="import"/>
+	  <field name="Cgi3gReqd" type="varchar(100)" source="import"/>
+	  <field name="CurrentSessionStatus" type="varchar(100)" source="import"/>
+	  <field name="DWELL_TIME_STEP" type="varchar(100)" source="import"/>
+	  <field name="DtxDownlink" type="varchar(100)" source="import"/>
+	  <field name="DtxDownlinkAMR_FR" type="varchar(100)" source="import"/>
+	  <field name="DtxDownlinkAMR_HR" type="varchar(100)" source="import"/>
+	  <field name="DtxDownlinkHR" type="varchar(100)" source="import"/>
+	  <field name="EC_BAR" type="varchar(100)" source="import"/>
+	  <field name="EN_BSS_OVRL_CLASS_BAR" type="varchar(100)" source="import"/>
+	  <field name="EN_CIRCUIT_GROUP" type="varchar(100)" source="import"/>
+	  <field name="EN_INTERBAND_NEIGH" type="varchar(100)" source="import"/>
+	  <field name="EN_LOAD_EGSM" type="varchar(100)" source="import"/>
+	  <field name="EN_LOAD_OUTER" type="varchar(100)" source="import"/>
+	  <field name="EN_SEND_CHAN_MODE" type="varchar(100)" source="import"/>
+	  <field name="EN_SEND_CM3" type="varchar(100)" source="import"/>
+	  <field name="EN_SEND_SPEECH_VERSION" type="varchar(100)" source="import"/>
+	  <field name="EdrAssignmentFailureAfterHoReq" type="varchar(100)" source="import"/>
+	  <field name="EdrAssignmentFailureCause" type="varchar(100)" source="import"/>
+	  <field name="EdrKeepAssignmentReqInQueue" type="varchar(100)" source="import"/>
+	  <field name="EdrSendAssignmentFailure" type="varchar(100)" source="import"/>
+	  <field name="EgsmRrAllocStrategy" type="varchar(100)" source="import"/>
+	  <field name="EnInbandNotif" type="varchar(100)" source="import"/>
+	  <field name="EnInbandPaging" type="varchar(100)" source="import"/>
+	  <field name="EnUplinkReply" type="varchar(100)" source="import"/>
+	  <field name="EnableEdr" type="varchar(100)" source="import"/>
+	  <field name="EnableHoReqReject" type="varchar(100)" source="import"/>
+	  <field name="EnableImmediateAssignmentReject" type="varchar(100)" source="import"/>
+	  <field name="EnableUnequippedCircuit" type="varchar(100)" source="import"/>
+	  <field name="FDD_ARFCN_List" type="varchar(100)" source="import"/>
+	  <field name="FORBID_AMR_NS" type="varchar(100)" source="import"/>
+	  <field name="Forbid_dtxDownlink_NH_BCCH_F" type="varchar(100)" source="import"/>
+	  <field name="ForceAssignmentReqQueuing" type="varchar(100)" source="import"/>
+	  <field name="GSM_PHASE" type="varchar(100)" source="import"/>
+	  <field name="H_MIN_DWELL_TIME" type="varchar(100)" source="import"/>
+	  <field name="Ignore_2Mbit_Failure" type="varchar(100)" source="import"/>
+	  <field name="IphoSupported" type="varchar(100)" source="import"/>
+	  <field name="L_MIN_DWELL_TIME" type="varchar(100)" source="import"/>
+	  <field name="LocationName" type="varchar(100)" source="import"/>
+	  <field name="M1" type="int" source="import"/>
+	  <field name="M2" type="int" source="import"/>
+	  <field name="MTP3_WB_INTERWORKING" type="varchar(100)" source="import"/>
+	  <field name="MfsAdministrativeState" type="varchar(100)" source="import"/>
+	  <field name="MfsAlarmStatus" type="varchar(100)" source="import"/>
+	  <field name="MfsAlarmsAcknowledgementStatus" type="varchar(100)" source="import"/>
+	  <field name="MfsAlignmentStatus" type="varchar(100)" source="import"/>
+	  <field name="MfsAlignmentStatusCause" type="varchar(100)" source="import"/>
+	  <field name="MfsAvailabilityStatus" type="varchar(100)" source="import"/>
+	  <field name="MfsOperationalState" type="varchar(100)" source="import"/>
+	  <field name="MluModeStatus" type="varchar(100)" source="import"/>
+	  <field name="MluProgressionStatus" type="varchar(100)" source="import"/>
+	  <field name="N1" type="int" source="import"/>
+	  <field name="N2" type="int" source="import"/>
+	  <field name="NCI" type="varchar(100)" source="import"/>
+	  <field name="NbrPreferredCellsForHandover" type="int" source="import"/>
+	  <field name="NbrResetRep" type="varchar(100)" source="import"/>
+	  <field name="Nbr_Blk_Unblk" type="int" source="import"/>
+	  <field name="Nbr_CLR_REQ" type="int" source="import"/>
+	  <field name="Nbr_RESET_CIC_REP" type="int" source="import"/>
+	  <field name="NodeIdentifier" type="int" source="import"/>
+	  <field name="OperationalState" type="varchar(100)" source="import"/>
+	  <field name="PREFERRED_BAND" type="varchar(100)" source="import"/>
+	  <field name="ProceduralStatus" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_1" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_10" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_11" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_12" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_13" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_14" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_15" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_16" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_2" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_3" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_4" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_5" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_6" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_7" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_8" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_9" type="text" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_1" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_10" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_11" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_12" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_13" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_14" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_15" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_16" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_2" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_3" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_4" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_5" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_6" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_7" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_8" type="varchar(100)" source="import"/>
+	  <field name="RMS_TEMPLATE_NAME_9" type="varchar(100)" source="import"/>
+	  <field name="ROT" type="varchar(100)" source="import"/>
+	  <field name="RelatedEMLObject" type="varchar(100)" source="import"/>
+	  <field name="ReplacementJobStatus" type="varchar(100)" source="import"/>
+	  <field name="ReservationStatus" type="varchar(100)" source="import"/>
+	  <field name="RnlRelatedMFS" type="varchar(100)" source="import"/>
+	  <field name="SMSCB_MODE" type="varchar(100)" source="import"/>
+	  <field name="SMSCB_Phase" type="varchar(100)" source="import"/>
+	  <field name="SMSCB_Recovery" type="varchar(100)" source="import"/>
+	  <field name="SMSCB_STATE" type="varchar(100)" source="import"/>
+	  <field name="SMSCB_featureSet" type="varchar(100)" source="import"/>
+	  <field name="SendClassMarkEnquiry" type="varchar(100)" source="import"/>
+	  <field name="StripByte5FromClassmark2" type="varchar(100)" source="import"/>
+	  <field name="SupportedOwnMCC" type="varchar(100)" source="import"/>
+	  <field name="SupportedOwnMNC" type="varchar(100)" source="import"/>
+	  <field name="SwPackageProductionStatus" type="varchar(100)" source="import"/>
+	  <field name="T14" type="varchar(100)" source="import"/>
+	  <field name="T18_Overload" type="varchar(100)" source="import"/>
+	  <field name="T3101" type="varchar(100)" source="import"/>
+	  <field name="T3103" type="varchar(100)" source="import"/>
+	  <field name="T3107" type="varchar(100)" source="import"/>
+	  <field name="T3109" type="varchar(100)" source="import"/>
+	  <field name="T3111" type="varchar(100)" source="import"/>
+	  <field name="T3121" type="varchar(100)" source="import"/>
+	  <field name="T9104" type="varchar(100)" source="import"/>
+	  <field name="T9105" type="varchar(100)" source="import"/>
+	  <field name="T9110" type="varchar(100)" source="import"/>
+	  <field name="T9112" type="varchar(100)" source="import"/>
+	  <field name="T9113" type="varchar(100)" source="import"/>
+	  <field name="TCH_PREMPT" type="varchar(100)" source="import"/>
+	  <field name="TNotifResponseDelay" type="varchar(100)" source="import"/>
+	  <field name="TWaitUplinkAccess" type="varchar(100)" source="import"/>
+	  <field name="TWaitUplinkRequestAck" type="varchar(100)" source="import"/>
+	  <field name="T_AUTOCLEANING_MEAS_REP" type="varchar(100)" source="import"/>
+	  <field name="T_BIND_CNF" type="varchar(100)" source="import"/>
+	  <field name="T_Loc_abort" type="varchar(100)" source="import"/>
+	  <field name="T_Location" type="varchar(100)" source="import"/>
+	  <field name="T_Location_Longer" type="varchar(100)" source="import"/>
+	  <field name="T_MS_CELL_REJ" type="varchar(100)" source="import"/>
+	  <field name="TchUsageInfoPeriod" type="varchar(100)" source="import"/>
+	  <field name="TimeLimitCall" type="varchar(100)" source="import"/>
+	  <field name="TimeLimitHandover" type="varchar(100)" source="import"/>
+	  <field name="TimerTBurst" type="varchar(100)" source="import"/>
+	  <field name="TimerTConnEst" type="varchar(100)" source="import"/>
+	  <field name="TimerTHOReqdLost" type="varchar(100)" source="import"/>
+	  <field name="TimerTStatInfo" type="varchar(100)" source="import"/>
+	  <field name="TimerTi" type="varchar(100)" source="import"/>
+	  <field name="TimerTiar" type="varchar(100)" source="import"/>
+	  <field name="TimerTias" type="varchar(100)" source="import"/>
+	  <field name="TimerTrel" type="varchar(100)" source="import"/>
+	  <field name="TranscodingCapability" type="varchar(100)" source="import"/>
+	  <field name="UnAcknowledgedAlarm" type="varchar(100)" source="import"/>
+	  <field name="UnknownStatus" type="varchar(100)" source="import"/>
+	  <field name="VersionOfOMC_BSCInterface" type="varchar(100)" source="import"/>
+	  <field name="VgcsFixAmrFrCodec" type="varchar(100)" source="import"/>
+	  <field name="VgcsFixAmrHrCodec" type="varchar(100)" source="import"/> 
+		<index name="idx1">
+			<order>RnlAlcatelBSCInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>
+

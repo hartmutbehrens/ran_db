@@ -1,0 +1,16 @@
+﻿<tables>
+  <table name="Cell_BH">
+    <field name="BH" type="time">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+  </table>
+</tables>

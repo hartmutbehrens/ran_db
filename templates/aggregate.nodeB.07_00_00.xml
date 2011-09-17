@@ -1,0 +1,1423 @@
+<aggregation>
+	<aggregate name="daily">
+		 <step name="1" from="NODEB_LOCALCELLGROUP_H" to="NODEB_LOCALCELLGROUP_D"  groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,LocalCellGroup" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,LocalCellGroup" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="2" from="NODEB_CCM_H" to="NODEB_CCM_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,Board,CCM" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,Board,CCM" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="3" from="NODEB_IPINTERFACE_H" to="NODEB_IPINTERFACE_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,IPinterface" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,IPinterface" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="4" from="NODEB_ATM_H" to="NODEB_ATM_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,PcmLink,Atm" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,PcmLink,Atm" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="5" from="NODEB_HSDPASERVICE_H" to="NODEB_HSDPASERVICE_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,BtsCell,HSDPAService" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,BtsCell,HSDPAService" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="6" from="NODEB_TRM_H" to="NODEB_TRM_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,Board,TRM" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,Board,TRM" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="7" from="NODEB_BTSCELL_H" to="NODEB_BTSCELL_D"  groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,BtsCell" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,BtsCell" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="8" from="NODEB_PCMLINK_H" to="NODEB_PCMLINK_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,PcmLink" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,PcmLink" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="9" from="NODEB_CEM_H" to="NODEB_CEM_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,Board,CEM" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,Board,CEM" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="10" from="NODEB_AAL5_H" to="NODEB_AAL5_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,AtmVcc,Aal5" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,AtmVcc,Aal5" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="11" from="NODEB_IMAGROUP_H" to="NODEB_IMAGROUP_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,IMAGroup" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,IMAGroup" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="12" from="NODEB_NODEBEQUIPMENT_H" to="NODEB_NODEBEQUIPMENT_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="13" from="NODEB_AAL2_H" to="NODEB_AAL2_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,AtmVcc,Aal2" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,AtmVcc,Aal2" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="14" from="NODEB_PASSIVECOMPONENTPA_H" to="NODEB_PASSIVECOMPONENTPA_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,PassiveComponent,PA" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,PassiveComponent,PA" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="15" from="NODEB_HSDPARESOURCE_H" to="NODEB_HSDPARESOURCE_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,HSDPAresource" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,HSDPAresource" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="16" from="NODEB_HSUPASERVICE_H" to="NODEB_HSUPASERVICE_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,BtsCell,HSUPAService" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,BtsCell,HSUPAService" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="17" from="NODEB_HSDPASERVICE_A1_H" to="NODEB_HSDPASERVICE_A1_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,BtsCell,HSDPAService" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,BtsCell,HSDPAService" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+		 <step name="18" from="NODEB_IPRAN_H" to="NODEB_IPRAN_D" groupfrom="NAME,DATE(SDATETIME),OMC_ID,NodeBEquipment,IpRan" groupto="NAME,IMPORTDATE,OMC_ID,NodeBEquipment,IpRan" limit="2" limitfrom="DATE(SDATETIME)" limitto="IMPORTDATE">
+		 </step>
+	</aggregate>
+	<aggregate name="weekly">
+		 <step name="1" from="NODEB_LOCALCELLGROUP_H" to="NODEB_LOCALCELLGROUP_W"  groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,LocalCellGroup" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,LocalCellGroup" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="2" from="NODEB_CCM_H" to="NODEB_CCM_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,Board,CCM" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,Board,CCM" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="3" from="NODEB_IPINTERFACE_H" to="NODEB_IPINTERFACE_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,IPinterface" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,IPinterface" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="4" from="NODEB_ATM_H" to="NODEB_ATM_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,PcmLink,Atm" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,PcmLink,Atm" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="5" from="NODEB_HSDPASERVICE_H" to="NODEB_HSDPASERVICE_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,BtsCell,HSDPAService" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,BtsCell,HSDPAService" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="6" from="NODEB_TRM_H" to="NODEB_TRM_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,Board,TRM" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,Board,TRM" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="7" from="NODEB_BTSCELL_H" to="NODEB_BTSCELL_W"  groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,BtsCell" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,BtsCell" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="8" from="NODEB_PCMLINK_H" to="NODEB_PCMLINK_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,PcmLink" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,PcmLink" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="9" from="NODEB_CEM_H" to="NODEB_CEM_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,Board,CEM" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,Board,CEM" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="10" from="NODEB_AAL5_H" to="NODEB_AAL5_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,AtmVcc,Aal5" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,AtmVcc,Aal5" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="11" from="NODEB_IMAGROUP_H" to="NODEB_IMAGROUP_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,IMAGroup" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,IMAGroup" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="12" from="NODEB_NODEBEQUIPMENT_H" to="NODEB_NODEBEQUIPMENT_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment" groupto="NAME,SDATE,OMC_ID,NodeBEquipment" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="13" from="NODEB_AAL2_H" to="NODEB_AAL2_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,AtmVcc,Aal2" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,AtmVcc,Aal2" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="14" from="NODEB_PASSIVECOMPONENTPA_H" to="NODEB_PASSIVECOMPONENTPA_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,PassiveComponent,PA" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,PassiveComponent,PA" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+		 <step name="15" from="NODEB_HSDPARESOURCE_H" to="NODEB_HSDPARESOURCE_W" groupfrom="NAME,giveWeekEnd(IMPORTDATE),OMC_ID,NodeBEquipment,HSDPAresource" groupto="NAME,SDATE,OMC_ID,NodeBEquipment,HSDPAresource" limit="2" limitfrom="giveWeekEnd(IMPORTDATE)" limitto="SDATE">
+		 </step>
+	</aggregate>
+	<aggregate name="fields">
+		<field name="VS.LocalCellGroupLoad.UsedUL.Max" do="daily:1,11;weekly:1,11" how="max">
+		</field>
+		<field name="VS.LocalCellGroupLoad.FreeUL.Avg" do="daily:1,11;weekly:1,11" how="sum(`VS.LocalCellGroupLoad.FreeUL.Cum`)/sum(`VS.LocalCellGroupLoad.FreeUL.NbEvt`)">
+		</field>
+		<field name="VS.LocalCellGroupLoad.UsedDL.Avg" do="daily:1,11;weekly:1,11" how="sum(`VS.LocalCellGroupLoad.UsedDL.Cum`)/sum(`VS.LocalCellGroupLoad.UsedDL.NbEvt`)">
+		</field>
+		<field name="VS.CEMAlloc.fail" do="daily:1,11;weekly:1,11" how="sum">
+		</field>
+		<field name="VS.LocalCellGroupLoad.FreeDL.Min" do="daily:1,11;weekly:1,11" how="min">
+		</field>
+		<field name="VS.LocalCellGroupLoad.FreeDL.NbEvt" do="daily:1,11;weekly:1,11" how="sum">
+		</field>
+		<field name="VS.LocalCellGroupLoad.FreeUL.Max" do="daily:1,11;weekly:1,11" how="max">
+		</field>
+		<field name="VS.LocalCellGroupLoad.FreeUL.Cum" do="daily:1,11;weekly:1,11" how="sum">
+		</field>
+		<field name="VS.LocalCellGroupLoad.UsedDL.Max" do="daily:1,11;weekly:1,11" how="max">
+		</field>
+		<field name="VS.LocalCellGroupLoad.FreeDL.Max" do="daily:1,11;weekly:1,11" how="max">
+		</field>
+		<field name="VS.CEMAlloc.success" do="daily:1,11;weekly:1,11" how="sum">
+		</field>
+		<field name="VS.LocalCellGroupLoad.FreeUL.Min" do="daily:1,11;weekly:1,11" how="min">
+		</field>
+		<field name="VS.LocalCellGroupLoad.UsedDL.Cum" do="daily:1,11;weekly:1,11" how="sum">
+		</field>
+		<field name="VS.LocalCellGroupLoad.UsedUL.Avg" do="daily:1,11;weekly:1,11" how="sum(`VS.LocalCellGroupLoad.UsedUL.Cum`)/sum(`VS.LocalCellGroupLoad.UsedUL.NbEvt`)">
+		</field>
+		<field name="VS.LocalCellGroupLoad.FreeUL.NbEvt" do="daily:1,11;weekly:1,11" how="sum">
+		</field>
+		<field name="VS.LocalCellGroupLoad.FreeDL.Avg" do="daily:1,11;weekly:1,11" how="sum(`VS.LocalCellGroupLoad.FreeDL.Cum`)/sum(`VS.LocalCellGroupLoad.FreeDL.NbEvt`)">
+		</field>
+		<field name="VS.LocalCellGroupLoad.FreeDL.Cum" do="daily:1,11;weekly:1,11" how="sum">
+		</field>
+		<field name="VS.LocalCellGroupLoad.UsedDL.Min" do="daily:1,11;weekly:1,11" how="min">
+		</field>
+		<field name="VS.LocalCellGroupLoad.UsedUL.NbEvt" do="daily:1,11;weekly:1,11" how="sum">
+		</field>
+		<field name="VS.LocalCellGroupLoad.UsedUL.Cum" do="daily:1,11;weekly:1,11" how="sum">
+		</field>
+		<field name="VS.LocalCellGroupLoad.UsedUL.Min" do="daily:1,11;weekly:1,11" how="min">
+		</field>
+		<field name="VS.LocalCellGroupLoad.UsedDL.NbEvt" do="daily:1,11;weekly:1,11" how="sum">
+		</field>
+		<field name="VS.eDCHUEsPerLCG.Max" do="daily:1;weekly:1" how="max">
+		</field>
+		<field name="VS.eDCHUEsPerLCG.NbEvt" do="daily:1;weekly:1" how="sum"> 
+		</field>
+		<field name="VS.eDCHUEsPerLCG.Cum" do="daily:1;weekly:1" how="sum"> 
+		</field>
+		<field name="VS.eDCHUEsPerLCG.Avg" do="daily:1;weekly:1" how="sum(`VS.eDCHUEsPerLCG.Cum`)/sum(`VS.eDCHUEsPerLCG.NbEvt`)">  
+		</field>
+		<field name="VS.HsdpaUEsPerLCG.Cum" do="daily:1;weekly:1" how="sum"> 
+		</field>
+		<field name="VS.HsdpaUEsPerLCG.Min" do="daily:1;weekly:1" how="min"> 
+		</field>
+		<field name="VS.eDCHUEsPerLCG.Min" do="daily:1;weekly:1" how="min">  
+		</field>
+		<field name="VS.HsdpaUEsPerLCG.NbEvt" do="daily:1;weekly:1" how="sum"> 
+		</field>
+		<field name="VS.HsdpaUEsPerLCG.Avg" do="daily:1;weekly:1" how="sum(`VS.HsdpaUEsPerLCG.Cum`)/sum(`VS.HsdpaUEsPerLCG.NbEvt`)">   
+		</field>
+		<field name="VS.HsdpaUEsPerLCG.Max" do="daily:1;weekly:1" how="max"> 
+		</field>
+		
+		<field name="VS.CEMAlloc.FailSetup" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAlloc.FailReconf" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAlloc.FailSetupLock" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAlloc.FailReconfLock" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessUL.SF4" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessUL.SF8" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessUL.SF16" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessUL.SF32" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessUL.SF64" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessUL.SF128" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessUL.SF256" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessDL.SF4" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessDL.SF8" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessDL.SF16" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessDL.SF32" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessDL.SF64" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessDL.SF128" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocSuccessDL.SF256" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedUL.SF4" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedUL.SF8" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedUL.SF16" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedUL.SF32" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedUL.SF64" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedUL.SF128" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedUL.SF256" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedDL.SF4" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedDL.SF8" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedDL.SF16" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedDL.SF32" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedDL.SF64" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedDL.SF128" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedDL.SF256" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothUL.SF4" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothUL.SF8" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothUL.SF16" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothUL.SF32" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothUL.SF64" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothUL.SF128" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothUL.SF256" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothDL.SF4" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothDL.SF8" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothDL.SF16" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothDL.SF32" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothDL.SF64" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothDL.SF128" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="VS.CEMAllocFailedBothDL.SF256" do="daily:1;weekly:1" how="sum">
+		</field>
+		
+		<field name="VS.cpuLoad.NbEvt" do="daily:2,6,9;weekly:2,6,9" how="sum">
+		</field>
+		<field name="VS.cpuLoad.Min" do="daily:2,6,9;weekly:2,6,9" how="min">
+		</field>
+		<field name="VS.cpuLoad.Max" do="daily:2,6,9;weekly:2,6,9" how="max">
+		</field>
+		<field name="VS.cpuLoad.Cum" do="daily:2,6,9;weekly:2,6,9" how="sum">
+		</field>
+		<field name="VS.cpuLoad.Avg" do="daily:2,6,9;weekly:2,6,9" how="sum(`VS.cpuLoad.Cum`)/sum(`VS.cpuLoad.NbEvt`)">
+		</field>
+		<field name="VS.ifInNUcastPkts" do="daily:3,11,18;weekly:3,11,18" how="sum">
+		</field>
+		<field name="VS.ifInOctets" do="daily:3,11,18;weekly:3,11,18" how="sum">
+		</field>
+		<field name="VS.ifOutOctets" do="daily:3,11,18;weekly:3,11,18" how="sum">
+		</field>
+		<field name="VS.ifInDiscards" do="daily:3,11,18;weekly:3,11,18" how="sum">
+		</field>
+		<field name="VS.ifInErrors" do="daily:3,11,18;weekly:3,11,18" how="sum">
+		</field>
+		<field name="VS.ifOutNUcastPkts" do="daily:3,11,18;weekly:3,11,18" how="sum">
+		</field>
+		<field name="VS.ifOutErrors" do="daily:3,11,18;weekly:3,11,18" how="sum">
+		</field>
+		<field name="VS.ifInUcastPkts" do="daily:3,11,18;weekly:3,11,18" how="sum">
+		</field>
+		<field name="VS.ifInUnknownProtos" do="daily:3,11,18;weekly:3,11,18" how="sum">
+		</field>
+		<field name="VS.ifOutDiscards" do="daily:3,11,18;weekly:3,11,18" how="sum">
+		</field>
+		<field name="VS.ifOutUcastPkts" do="daily:3,11,18;weekly:3,11,18" how="sum">
+		</field>
+		<field name="VS.PCMATMnbSentCell.NbEvt" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.PCMATMnbReceivedCell.NbEvt" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.PCMATMnbSentCell.Avg" do="daily:4;weekly:4" how="sum(`VS.PCMATMnbSentCell.Cum`)/sum(`VS.PCMATMnbSentCell.NbEvt`)">
+		</field>
+		<field name="VS.PCMATMnbReceivedCell.Cum" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.PCMATMnbSentCell.Max" do="daily:4;weekly:4" how="max">
+		</field>
+		<field name="VS.PCMATMnbReceivedCell.Min" do="daily:4;weekly:4" how="min">
+		</field>
+		<field name="VS.PCMATMnbSentCell.Cum" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.PCMATMnbReceivedCell.Avg" do="daily:4;weekly:4" how="sum(`VS.PCMATMnbReceivedCell.Cum`)/sum(`VS.PCMATMnbReceivedCell.NbEvt`)">
+		</field>
+		<field name="VS.PCMATMnbSentCell.Min" do="daily:4;weekly:4" how="min">
+		</field>
+		<field name="VS.PCMATMnbReceivedCell.Max" do="daily:4;weekly:4" how="max">
+		</field>
+		<field name="VS.HsdpaMACdPDUAckBits.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level27" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level25" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level18" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaDataBufferedNodeB.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitsSchedTotal.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaTxDataBitsMAChs.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaHSPDSCHCodesPerTTI.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level20" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitsSchedTotal.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaHSSCCHTxPwr.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaDataBufferedNodeB.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaDiscMACdPDUsTimerExpiry" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaDiscTransportBlocksOnMaxRetrans" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaMeanNbrRetrans.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.Hsdpa16QAMUsage" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaMeanNbrRetrans.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaHSSCCHCodesPerTTI.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaHSPDSCHTxPwr.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaHSPDSCHTxPwr.Cum`)/sum(`VS.HsdpaHSPDSCHTxPwr.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level28" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaHSPDSCHCodesPerTTI.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaHSPDSCHTxPwr.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitsSchedTotal.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaTxDataBitsSchedTotal.Cum`)/sum(`VS.HsdpaTxDataBitsSchedTotal.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level0" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaMeanNbrRetrans.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaHSSCCHTxPwr.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaHSSCCHTxPwr.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaHSSCCHTxPwr.Cum`)/sum(`VS.HsdpaHSSCCHTxPwr.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaMeanNbrRetrans.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaMeanNbrRetrans.Cum`)/sum(`VS.HsdpaMeanNbrRetrans.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaHSPDSCHCodesPerTTI.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitsMAChs.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level24" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaHSPDSCHTxPwr.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaRxDataBitsMAChs.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaRxDataBitsMAChs.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaDataBufferedNodeB.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaDataBufferedNodeB.Cum`)/sum(`VS.HsdpaDataBufferedNodeB.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaMACdPDUAckBits.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaMeanNbrRetrans.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level21" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaRxDataBitsMAChs.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaRxDataBitsMAChs.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaRxDataBitsMAChs.Cum`)/sum(`VS.HsdpaRxDataBitsMAChs.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level23" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaHSSCCHCodesPerTTI.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaHSSCCHCodesPerTTI.Cum`)/sum(`VS.HsdpaHSSCCHCodesPerTTI.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaHSSCCHTxPwr.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaNbrACKRcv" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaNbrNACKRcv" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level11" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitsMAChs.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaHSPDSCHTxPwr.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level14" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level13" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitsSchedTotal.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIsUsed" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level29" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitsMAChs.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaTxDataBitsMAChs.Cum`)/sum(`VS.HsdpaTxDataBitsMAChs.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaTxDataBitsMAChs.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level12" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level16" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level22" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level15" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitsSchedTotal.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaDataBufferedNodeB.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaHSSCCHCodesPerTTI.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level19" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaHSSCCHCodesPerTTI.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaNbrDTX" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaPAOverload" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaHSSCCHTxPwr.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaRxDataBitsMAChs.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaMACdPDUAckBits.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaMACdPDUAckBits.Cum`)/sum(`VS.HsdpaMACdPDUAckBits.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.notDecoded" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level17" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaMACdPDUAckBits.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaHSSCCHCodesPerTTI.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaMACdPDUAckBits.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaHSPDSCHTxPwr.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaHSPDSCHCodesPerTTI.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaHSPDSCHCodesPerTTI.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaHSPDSCHCodesPerTTI.Cum`)/sum(`VS.HsdpaHSPDSCHCodesPerTTI.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level30" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaReceivedCQI.level26" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaDataBufferedNodeB.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		
+		<field name="VS.HsdpaTTIperUEcat.UEcat1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat11" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat12" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat11" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat12" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaPDUnumber.MAChs" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaPDUnumber.MACd" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaNbUserWithDataTTI.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaNbUserWithDataTTI.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaNbUserWithDataTTI.Cum`)/sum(`VS.HsdpaNbUserWithDataTTI.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaNbUserWithDataTTI.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaNbUserWithDataTTI.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaNbUserWithDataTTI.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaBufferDelay.Delay0" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaBufferDelay.Delay1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaBufferDelay.Delay2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaBufferDelay.Delay3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaBufferDelay.Delay4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaBufferDelay.Delay5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaBufferDelay.Delay6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaBufferDelay.Delay7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaBufferDelay.Delay8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaBufferDelay.Delay9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaBufferDelay.DelayGT1sec" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaMACdPDUAckBitsForGbr.NbTTI" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaMACdPDUAckBitsForGbr.AckedBits" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaFullCodeUsageByGbr" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrPowerUsage.PowerEq100" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrPowerUsage.PowerGe95_Lt100" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrPowerUsage.PowerGe85_Lt95" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrPowerUsage.PowerGe70_Lt85" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrPowerUsage.PowerLt70" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI0.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI0.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI0.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI0.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI0.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI0.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI0.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI1.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI1.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI1.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI1.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI1.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI1.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI1.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI2.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI2.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI2.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI2.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI2.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI2.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI2.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI3.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI3.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI3.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI3.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI3.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI3.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI3.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI4.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI4.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI4.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI4.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI4.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI4.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI4.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI5.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI5.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI5.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI5.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI5.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI5.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI5.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI6.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI6.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI6.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI6.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI6.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI6.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI6.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI7.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI7.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI7.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI7.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI7.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI7.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI7.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI8.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI8.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI8.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI8.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI8.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI8.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI8.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI9.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI9.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI9.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI9.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI9.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI9.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI9.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI10.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI10.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI10.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI10.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI10.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI10.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI10.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI11.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI11.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI11.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI11.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI11.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI11.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI11.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI12.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI12.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI12.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI12.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI12.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI12.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI12.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI13.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI13.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI13.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI13.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI13.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI13.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI13.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI14.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI14.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI14.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI14.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI14.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI14.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI14.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI15.Cum" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI15.Avg" do="daily:5;weekly:5" how="sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI15.Cum`)/sum(`VS.HsdpaGbrDeficitRatioPerSpi.SPI15.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI15.NbEvt" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI15.Max" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI15.Min" do="daily:5;weekly:5" how="min">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI0" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI11" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI12" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI13" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI14" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.SPI15" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="VS.HsdpaGbrSatisfiedFlows.NbPeriods" do="daily:5;weekly:5" how="sum">
+		</field>
+		
+		<field name="VS.RachNack.Cum" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.RadioWBandRxDivPwr.Min" do="daily:7;weekly:7" how="min">
+		</field>
+		<field name="VS.RadioTxCarrierPwr.Oper.Min" do="daily:7;weekly:7" how="min">
+		</field>
+		<field name="VS.RachNack.NbEvt" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.CellULload.Cum" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.RadioTxCarrierPwr.Oper.Cum" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.RachNack.Min" do="daily:7;weekly:7" how="min">
+		</field>
+		<field name="VS.FailedAdmissionDueToULload.Cum" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.RadioWBandRxDivPwr.NbEvt" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.RadioTxCarrierPwr.Used.Min" do="daily:7;weekly:7" how="min">
+		</field>
+		<field name="VS.RadioTxCarrierPwr.Oper.NbEvt" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.RadioWBandRxMainPwr.NbEvt" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.FailedAdmissionDueToULload.Max" do="daily:7;weekly:7" how="max">
+		</field>
+		<field name="VS.RadioTxCarrierPwr.Used.Max" do="daily:7;weekly:7" how="max">
+		</field>
+		<field name="VS.RadioTxCarrierPwr.Oper.Max" do="daily:7;weekly:7" how="max">
+		</field>
+		<field name="VS.FailedAdmissionDueToULload.Avg" do="daily:7;weekly:7" how="sum(`VS.FailedAdmissionDueToULload.Cum`)/sum(`VS.FailedAdmissionDueToULload.NbEvt`)">
+		</field>
+		<field name="VS.RadioWBandRxDivPwr.Avg" do="daily:7;weekly:7" how="sum(`VS.RadioWBandRxDivPwr.Cum`)/sum(`VS.RadioWBandRxDivPwr.NbEvt`)">
+		</field>
+		<field name="VS.RadioWBandRxMainPwr.Min" do="daily:7;weekly:7" how="min">
+		</field>
+		<field name="VS.RadioTxCarrierPwr.Oper.Avg" do="daily:7;weekly:7" how="sum(`VS.RadioTxCarrierPwr.Oper.Cum`)/sum(`VS.RadioTxCarrierPwr.Oper.NbEvt`)">
+		</field>
+		<field name="VS.RadioWBandRxMainPwr.Max" do="daily:7;weekly:7" how="max">
+		</field>
+		<field name="VS.CellULload.Avg" do="daily:7;weekly:7" how="sum(`VS.CellULload.Cum`)/sum(`VS.CellULload.NbEvt`)">
+		</field>
+		<field name="VS.FailedAdmissionDueToULload.Min" do="daily:7;weekly:7" how="min">
+		</field>
+		<field name="VS.RadioWBandRxMainPwr.Avg" do="daily:7;weekly:7" how="sum(`VS.RadioWBandRxMainPwr.Cum`)/sum(`VS.RadioWBandRxMainPwr.NbEvt`)">
+		</field>
+		<field name="VS.RadioTxCarrierPwr.Used.Avg" do="daily:7;weekly:7" how="sum(`VS.RadioTxCarrierPwr.Used.Cum`)/sum(`VS.RadioTxCarrierPwr.Used.NbEvt`)">
+		</field>
+		<field name="VS.RadioWBandRxDivPwr.Cum" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.CellULload.NbEvt" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.CellULload.Max" do="daily:7;weekly:7" how="max">
+		</field>
+		<field name="VS.RachNackSquare" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.RachNack.Max" do="daily:7;weekly:7" how="max">
+		</field>
+		<field name="VS.RadioTxCarrierPwr.Used.NbEvt" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.RachAckSquare" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.RachAck" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.FailedAdmissionDueToULload.NbEvt" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.CellULload.Min" do="daily:7;weekly:7" how="min">
+		</field>
+		<field name="VS.RadioWBandRxMainPwr.Cum" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.RadioWBandRxDivPwr.Max" do="daily:7;weekly:7" how="max">
+		</field>
+		<field name="VS.RachNack.Avg" do="daily:7;weekly:7" how="sum(`VS.RachNack.Cum`)/sum(`VS.RachNack.NbEvt`)">
+		</field>
+		<field name="VS.RadioTxCarrierPwr.Used.Cum" do="daily:7;weekly:7" how="sum">
+		</field>
+		
+		<field name="VS.CellULload.Total.Cum" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.CellULload.Total.Avg" do="daily:7;weekly:7" how="sum(`VS.CellULload.Total.Cum`)/sum(`VS.CellULload.Total.NbEvt`)">
+		</field>
+		<field name="VS.CellULload.Total.NbEvt" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.CellULload.Total.Max" do="daily:7;weekly:7" how="max">
+		</field>
+		<field name="VS.CellULload.Total.Min" do="daily:7;weekly:7" how="min">
+		</field>
+		<field name="VS.CellULload.eDCH.Cum" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.CellULload.eDCH.Avg" do="daily:7;weekly:7" how="sum(`VS.CellULload.eDCH.Cum`)/sum(`VS.CellULload.eDCH.NbEvt`)">
+		</field>
+		<field name="VS.CellULload.eDCH.NbEvt" do="daily:7;weekly:7" how="sum">
+		</field>
+		<field name="VS.CellULload.eDCH.Max" do="daily:7;weekly:7" how="max">
+		</field>
+		<field name="VS.CellULload.eDCH.Min" do="daily:7;weekly:7" how="min">
+		</field>
+		
+		<field name="VS.imaLinkFeUnavailSecs" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.imaLinkNeTxUnusableSecs" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmBpvp" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmFe" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmFas" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmCrc" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.imaLinkImaViolations" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmLfa" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.imaLinkFeSevErroredSecs" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.imaLinkNeRxUnusableSecs" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmEs" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.imaLinkFeTxUnusableSecs" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmRai" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmBbe" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmUas" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.imaLinkFeRxUnusableSecs" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmSes" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmEbits" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.imaLinkNeTxNumFailures" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmLos" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.imaLinkNeRxNumFailures" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.imaLinkNeSevErroredSecs" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmSlip" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.PcmAis" do="daily:8;weekly:8" how="sum">
+		</field>
+		<field name="VS.imaLinkNeUnavailSecs" do="daily:8;weekly:8" how="sum">
+		</field>
+		
+		<field name="VS.HsdpaUsersCapacity.NbEvt" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaUsersCapacity.CumHWcapacity" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaUsersCapacity.CumLicensing" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaUsersCapacity.CumUsed" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaUsersCapacity.AllocSuccess" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaUsersCapacity.AllocLicensingRefusal" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaUsersCapacity.AllocHWfail" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaThroughputCapacity.NbEvt" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaThroughputCapacity.CumHWcapacity" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaThroughputCapacity.CumLicensing" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaThroughputCapacity.CumUsed" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaThroughputCapacity.AllocSuccess" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaThroughputCapacity.AllocLicensingRefusal" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.HsdpaThroughputCapacity.AllocHWfail" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHUsersCapacity.NbEvt" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHUsersCapacity.CumHWcapacity" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHUsersCapacity.CumLicensing" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHUsersCapacity.CumUsed" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHUsersCapacity.AllocSuccess" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHUsersCapacity.AllocLicensingRefusal" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHUsersCapacity.AllocHWfail" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHThroughputCapacity.NbEvt" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHThroughputCapacity.CumHWcapacity" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHThroughputCapacity.CumLicensing" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHThroughputCapacity.CumUsed" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHThroughputCapacity.AllocSuccess" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHThroughputCapacity.AllocLicensingRefusal" do="daily:9;weekly:9" how="sum">
+		</field>
+		<field name="VS.eDCHThroughputCapacity.AllocHWfail" do="daily:9;weekly:9" how="sum">
+		</field>
+		
+		<field name="VS.AAL5NbInvalidSize" do="daily:10;weekly:10" how="sum">
+		</field>
+		<field name="VS.AAL5NbSentCell.Min" do="daily:10;weekly:10" how="min">
+		</field>
+		<field name="VS.AAL5NbSentCell.NbEvt" do="daily:10;weekly:10" how="sum">
+		</field>
+		<field name="VS.AAL5NbSentCell.Cum" do="daily:10;weekly:10" how="sum">
+		</field>
+		<field name="VS.AAL5NbReceivedCell.Cum" do="daily:10;weekly:10" how="sum">
+		</field>
+		<field name="VS.AAL5NbReceivedCell.Max" do="daily:10;weekly:10" how="max">
+		</field>
+		<field name="VS.AAL5NbSentCell.Max" do="daily:10;weekly:10" how="max">
+		</field>
+		<field name="VS.AAL5NbSentCell.Avg" do="daily:10;weekly:10" how="sum(`VS.AAL5NbSentCell.Cum`)/sum(`VS.AAL5NbSentCell.NbEvt`)">
+		</field>
+		<field name="VS.AAL5NbReceivedCell.Min" do="daily:10;weekly:10" how="min">
+		</field>
+		<field name="VS.AAL5NbLengthErr" do="daily:10;weekly:10" how="sum">
+		</field>
+		<field name="VS.AAL5NbReceivedCell.NbEvt" do="daily:10;weekly:10" how="sum">
+		</field>
+		<field name="VS.AAL5NbCrcFrameErr" do="daily:10;weekly:10" how="sum">
+		</field>
+		<field name="VS.AAL5NbAbortErr" do="daily:10;weekly:10" how="sum">
+		</field>
+		<field name="VS.AAL5NbReceivedCell.Avg" do="daily:10;weekly:10" how="sum(`VS.AAL5NbReceivedCell.Cum`)/sum(`VS.AAL5NbReceivedCell.NbEvt`)">
+		</field>
+		<field name="VS.imaGroupNbReceivedCell.Avg" do="daily:11;weekly:11" how="sum(`VS.imaGroupNbReceivedCell.Cum`)/sum(`VS.imaGroupNbReceivedCell.NbEvt`)">
+		</field>
+		<field name="VS.imaGroupNbSentCell.Cum" do="daily:11;weekly:11" how="sum">
+		</field>
+		<field name="VS.imaGroupNbSentCell.Max" do="daily:11;weekly:11" how="max">
+		</field>
+		<field name="VS.imaGroupNbSentCell.Min" do="daily:11;weekly:11" how="min">
+		</field>
+		<field name="VS.imaGroupNbSentCell.NbEvt" do="daily:11;weekly:11" how="sum">
+		</field>
+		<field name="VS.imaGroupNbReceivedCell.Cum" do="daily:11;weekly:11" how="sum">
+		</field>
+		<field name="VS.imaGroupNeNumFailures" do="daily:11;weekly:11" how="sum">
+		</field>
+		<field name="VS.imaGroupNbReceivedCell.Max" do="daily:11;weekly:11" how="max">
+		</field>
+		<field name="VS.imaGroupNbSentCell.Avg" do="daily:11;weekly:11" how="sum(`VS.imaGroupNbSentCell.Cum`)/sum(`VS.imaGroupNbSentCell.NbEvt`)">
+		</field>
+		<field name="VS.imaGroupNbReceivedCell.NbEvt" do="daily:11;weekly:11" how="sum">
+		</field>
+		<field name="VS.imaGroupUnavailSecs" do="daily:11;weekly:11" how="sum">
+		</field>
+		<field name="VS.imaGroupNbReceivedCell.Min" do="daily:11;weekly:11" how="min">
+		</field>
+		<field name="VS.HsdpaUEsPerHBBU.Min" do="daily:11;weekly:11" how="min">
+		</field>
+		<field name="VS.HsdpaUEsPerHBBU.NbEvt" do="daily:11;weekly:11" how="sum">
+		</field>
+		<field name="VS.HsdpaUEsPerHBBU.Max" do="daily:11;weekly:11" how="max">
+		</field>
+		<field name="VS.HsdpaUEsPerHBBU.Avg" do="daily:11;weekly:11" how="sum(`VS.HsdpaUEsPerHBBU.Cum`)/sum(`VS.HsdpaUEsPerHBBU.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaUEsPerHBBU.Cum" do="daily:11;weekly:11" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF256.Max" do="daily:12;weekly:12" how="max">
+		</field>
+		<field name="VS.SIRperSF.SF64.Cum" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.CEMUsedDCH.Avg" do="daily:12;weekly:12" how="sum(`VS.CEMUsedDCH.Cum`)/sum(`VS.CEMUsedDCH.NbEvt`)">
+		</field>
+		<field name="VS.SIRperSF.SF64.Avg" do="daily:12;weekly:12" how="sum(`VS.SIRperSF.SF64.Cum`)/sum(`VS.SIRperSF.SF64.NbEvt`)">
+		</field>
+		<field name="VS.SIRperSF.SF32.Max" do="daily:12;weekly:12" how="max">
+		</field>
+		<field name="VS.SIRperSF.SF64.Max" do="daily:12;weekly:12" how="max">
+		</field>
+		<field name="VS.SIRperSF.SF4.Avg" do="daily:12;weekly:12" how="sum(`VS.SIRperSF.SF4.Cum`)/sum(`VS.SIRperSF.SF4.NbEvt`)">
+		</field>
+		<field name="VS.NodeBCidDchCollisionDetected" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF16.Avg" do="daily:12;weekly:12" how="sum(`VS.SIRperSF.SF16.Cum`)/sum(`VS.SIRperSF.SF16.NbEvt`)">
+		</field>
+		<field name="VS.SIRperSF.SF8.Cum" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF256.Min" do="daily:12;weekly:12" how="min">
+		</field>
+		<field name="VS.PCMthroughputCapacity.Config.Max" do="daily:12;weekly:12" how="max">
+		</field>
+		<field name="VS.CEMUsedDCH.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.PCMthroughputCapacity.Oper.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF8.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF128.Max" do="daily:12;weekly:12" how="max">
+		</field>
+		<field name="VS.SIRperSF.SF8.Avg" do="daily:12;weekly:12" how="sum(`VS.SIRperSF.SF8.Cum`)/sum(`VS.SIRperSF.SF8.NbEvt`)">
+		</field>
+		<field name="VS.SIRperSF.SF128.Avg" do="daily:12;weekly:12" how="sum(`VS.SIRperSF.SF128.Cum`)/sum(`VS.SIRperSF.SF128.NbEvt`)">
+		</field>
+		<field name="VS.SIRperSF.SF32.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF4.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF32.Min" do="daily:12;weekly:12" how="min">
+		</field>
+		<field name="VS.SIRperSF.SF32.Avg" do="daily:12;weekly:12" how="sum(`VS.SIRperSF.SF32.Cum`)/sum(`VS.SIRperSF.SF32.NbEvt`)">
+		</field>
+		<field name="VS.SIRperSF.SF32.Cum" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.PCMthroughputCapacity.Config.Min" do="daily:12;weekly:12" how="min">
+		</field>
+		<field name="VS.CEMUsedDCH.Cum" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF8.Max" do="daily:12;weekly:12" how="max">
+		</field>
+		<field name="VS.SIRperSF.SF16.Min" do="daily:12;weekly:12" how="min">
+		</field>
+		<field name="VS.CEMUsedDCH.Max" do="daily:12;weekly:12" how="max">
+		</field>
+		<field name="VS.PCMthroughputCapacity.Config.Avg" do="daily:12;weekly:12" how="sum(`VS.PCMthroughputCapacity.Config.Cum`)/sum(`VS.PCMthroughputCapacity.Config.NbEvt`)">
+		</field>
+		<field name="VS.PCMthroughputCapacity.Oper.Cum" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF4.Min" do="daily:12;weekly:12" how="min">
+		</field>
+		<field name="VS.SIRperSF.SF16.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.PCMthroughputCapacity.Config.Cum" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.PCMthroughputCapacity.Config.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF128.Min" do="daily:12;weekly:12" how="min">
+		</field>
+		<field name="VS.NodeBCidCtchCollisionDetected" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.PCMthroughputCapacity.Oper.Min" do="daily:12;weekly:12" how="min">
+		</field>
+		<field name="VS.SIRperSF.SF256.Avg" do="daily:12;weekly:12" how="sum(`VS.SIRperSF.SF256.Cum`)/sum(`VS.SIRperSF.SF256.NbEvt`)">
+		</field>
+		<field name="VS.PCMthroughputCapacity.Oper.Max" do="daily:12;weekly:12" how="max">
+		</field>
+		<field name="VS.SIRperSF.SF64.Min" do="daily:12;weekly:12" how="min">
+		</field>
+		<field name="VS.SIRperSF.SF4.Cum" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF8.Min" do="daily:12;weekly:12" how="min">
+		</field>
+		<field name="VS.SIRperSF.SF64.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF128.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.CEMUsedDCH.Min" do="daily:12;weekly:12" how="min">
+		</field>
+		<field name="VS.PCMthroughputCapacity.Oper.Avg" do="daily:12;weekly:12" how="sum(`VS.PCMthroughputCapacity.Oper.Cum`)/sum(`VS.PCMthroughputCapacity.Oper.NbEvt`)">
+		</field>
+		<field name="VS.SIRperSF.SF16.Cum" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF128.Cum" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF256.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF256.Cum" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.SIRperSF.SF16.Max" do="daily:12;weekly:12" how="max">
+		</field>
+		<field name="VS.SIRperSF.SF4.Max" do="daily:12;weekly:12" how="max">
+		</field>
+		
+		<field name="VS.TRMSecondCarriersCapacity.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.TRMSecondCarriersCapacity.CumHWcapacity" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.TRMSecondCarriersCapacity.CumLicensing" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.TRMSecondCarriersCapacity.CumUsed" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.RRHSecondCarriersCapacity.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.RRHSecondCarriersCapacity.CumHWcapacity" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.RRHSecondCarriersCapacity.CumLicensing" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.RRHSecondCarriersCapacity.CumUsed" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.PAPowerCapacity.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.PAPowerCapacity.CumHWcapacity" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.PAPowerCapacity.CumLicensing" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.PAPowerCapacity.CumUsed" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.RRHPowerCapacity.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.RRHPowerCapacity.CumHWcapacity" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.RRHPowerCapacity.CumLicensing" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.RRHPowerCapacity.CumUsed" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.R99CECapacity.NbEvt" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.R99CECapacity.CumHWcapacity" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.R99CECapacity.CumLicensing" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.R99CECapacity.CumUsed" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.R99CECapacity.AllocSuccess" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.R99CECapacity.AllocLicensingRefusal" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.R99CECapacity.AllocHWfail" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.HsdpaTotalFramesReceived.OverIP" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.HsdpaTotalFramesReceived.OverATM" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.HsdpaFramesWithFrameLoss.OverIP" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.HsdpaFramesWithFrameLoss.OverATM" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.HsdpaFramesWithDelayBuildUp.OverIP" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.HsdpaFramesWithDelayBuildUp.OverATM" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Eq100" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge95_Lt100" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge90_Lt95" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge85_Lt90" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge80_Lt85" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge70_Lt80" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge60_Lt70" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge50_Lt60" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge25_Lt50" do="daily:12;weekly:12" how="sum">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Lt25" do="daily:12;weekly:12" how="sum">
+		</field>
+		
+		<field name="VS.AAL2NbReceivedCell.Cum" do="daily:13;weekly:13" how="sum">
+		</field>
+		<field name="VS.AAL2NbCPSHecErr" do="daily:13;weekly:13" how="sum">
+		</field>
+		<field name="VS.AAL2NbSentCell.Avg" do="daily:13;weekly:13" how="sum(`VS.AAL2NbSentCell.Cum`)/sum(`VS.AAL2NbSentCell.NbEvt`)">
+		</field>
+		<field name="VS.AAL2NbReceivedCell.NbEvt" do="daily:13;weekly:13" how="sum">
+		</field>
+		<field name="VS.AAL2NbCpsLengthMismatch" do="daily:13;weekly:13" how="sum">
+		</field>
+		<field name="VS.AAL2NbLostCPS" do="daily:13;weekly:13" how="sum">
+		</field>
+		<field name="VS.AAL2NbSentCell.Cum" do="daily:13;weekly:13" how="sum">
+		</field>
+		<field name="VS.AAL2NbSTFParityErr" do="daily:13;weekly:13" how="sum">
+		</field>
+		<field name="VS.AAL2NbSentCell.Max" do="daily:13;weekly:13" how="max">
+		</field>
+		<field name="VS.AAL2NbSentCell.Min" do="daily:13;weekly:13" how="min">
+		</field>
+		<field name="VS.AAL2NbSequenceNumberErr" do="daily:13;weekly:13" how="sum">
+		</field>
+		<field name="VS.AAL2NbCPSLengthErr" do="daily:13;weekly:13" how="sum">
+		</field>
+		<field name="VS.AAL2NbReceivedCell.Min" do="daily:13;weekly:13" how="min">
+		</field>
+		<field name="VS.AAL2NbOSFBiggerThan47" do="daily:13;weekly:13" how="sum">
+		</field>
+		<field name="VS.AAL2NbSentCell.NbEvt" do="daily:13;weekly:13" how="sum">
+		</field>
+		<field name="VS.AAL2NbReceivedCell.Max" do="daily:13;weekly:13" how="max">
+		</field>
+		<field name="VS.AAL2NbReceivedCell.Avg" do="daily:13;weekly:13" how="sum(`VS.AAL2NbReceivedCell.Cum`)/sum(`VS.AAL2NbReceivedCell.NbEvt`)">
+		</field>
+		<field name="VS.PAPwr.Max" do="daily:14;weekly:14" how="max">
+		</field>
+		<field name="VS.PAPwr.Min" do="daily:14;weekly:14" how="min">
+		</field>
+		<field name="VS.PAPwr.Avg" do="daily:14;weekly:14" how="sum(`VS.PAPwr.Cum`)/sum(`VS.PAPwr.NbEvt`)">
+		</field>
+		<field name="VS.PAPwr.NbEvt" do="daily:14;weekly:14" how="sum">
+		</field>
+		<field name="VS.PAPwr.Cum" do="daily:14;weekly:14" how="sum">
+		</field>
+		<field name="VS.HsdpaUEsPerHBBU.Cum" do="daily:15;weekly:15" how="sum">
+		</field>
+		<field name="VS.HsdpaUEsPerHBBU.Avg" do="daily:15;weekly:15" how="sum(`VS.HsdpaUEsPerHBBU.Cum`)/sum(`VS.HsdpaUEsPerHBBU.NbEvt`)">
+		</field>
+		<field name="VS.HsdpaUEsPerHBBU.Min" do="daily:15;weekly:15" how="min">
+		</field>
+		<field name="VS.HsdpaUEsPerHBBU.Max" do="daily:15;weekly:15" how="max">
+		</field>
+		<field name="VS.HsdpaUEsPerHBBU.NbEvt" do="daily:15;weekly:15" how="sum">
+		</field>
+		<field name="VS.eDCHcommonChannelsTxPower.Cum" do="daily:16" how="sum">
+		</field>
+    <field name="VS.eDCHcommonChannelsTxPower.Avg" do="daily:16" how="sum(`VS.eDCHcommonChannelsTxPower.Cum`)/sum(`VS.eDCHcommonChannelsTxPower.NbEvt`)">
+    </field>
+    <field name="VS.eDCHcommonChannelsTxPower.NbEvt" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHcommonChannelsTxPower.Max" do="daily:16" how="max">
+    </field>
+    <field name="VS.eDCHcommonChannelsTxPower.Min" do="daily:16" how="min">
+    </field>
+    <field name="VS.eDCHdataBitSentToRNC.Cum" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHdataBitSentToRNC.Avg" do="daily:16" how="sum(`VS.eDCHdataBitSentToRNC.Cum`)/sum(`VS.eDCHdataBitSentToRNC.NbEvt`)">
+    </field>
+    <field name="VS.eDCHdataBitSentToRNC.NbEvt" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHdataBitSentToRNC.Max" do="daily:16" how="max">
+    </field>
+    <field name="VS.eDCHdataBitSentToRNC.Min" do="daily:16" how="min">
+    </field>
+    <field name="VS.eDCHretransBlocks.Cum" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHretransBlocks.Avg" do="daily:16" how="sum(`VS.eDCHretransBlocks.Cum`)/sum(`VS.eDCHretransBlocks.NbEvt`)">
+    </field>
+    <field name="VS.eDCHretransBlocks.NbEvt" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHretransBlocks.Max" do="daily:16" how="max">
+    </field>
+    <field name="VS.eDCHretransBlocks.Min" do="daily:16" how="min">
+    </field>
+    <field name="VS.eDCHdataBitRec.Cum" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHdataBitRec.Avg" do="daily:16" how="sum(`VS.eDCHdataBitRec.Cum`)/sum(`VS.eDCHdataBitRec.NbEvt`)">
+    </field>
+    <field name="VS.eDCHdataBitRec.NbEvt" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHdataBitRec.Max" do="daily:16" how="max">
+    </field>
+    <field name="VS.eDCHdataBitRec.Min" do="daily:16" how="min">
+    </field>
+    <field name="VS.eDCHactiveUsers.Cum" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHactiveUsers.Avg" do="daily:16" how="sum(`VS.eDCHactiveUsers.Cum`)/sum(`VS.eDCHactiveUsers.NbEvt`)">
+    </field>
+    <field name="VS.eDCHactiveUsers.NbEvt" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHactiveUsers.Max" do="daily:16" how="max">
+    </field>
+    <field name="VS.eDCHactiveUsers.Min" do="daily:16" how="min">
+    </field>
+    <field name="VS.eDCHriseOverThermal.Cum" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHriseOverThermal.Avg" do="daily:16" how="sum(`VS.eDCHriseOverThermal.Cum`)/sum(`VS.eDCHriseOverThermal.NbEvt`)">
+    </field>
+    <field name="VS.eDCHriseOverThermal.NbEvt" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHriseOverThermal.Max" do="daily:16" how="max">
+    </field>
+    <field name="VS.eDCHriseOverThermal.Min" do="daily:16" how="min">
+    </field>
+    <field name="VS.eDCHstatus.Cum" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHstatus.Avg" do="daily:16" how="sum(`VS.eDCHstatus.Cum`)/sum(`VS.eDCHstatus.NbEvt`)">
+    </field>
+    <field name="VS.eDCHstatus.NbEvt" do="daily:16" how="sum">
+    </field>
+    <field name="VS.eDCHstatus.Max" do="daily:16" how="max">
+    </field>
+    <field name="VS.eDCHstatus.Min" do="daily:16" how="min">
+    </field>
+    
+    <field name="VS.eDCHactiveUsers.2ms_users.Cum" do="daily:16" how="sum">
+		</field>
+		<field name="VS.eDCHactiveUsers.2ms_users.Avg" do="daily:16" how="sum(`VS.eDCHactiveUsers.2ms_users.Cum`)/sum(`VS.eDCHactiveUsers.2ms_users.NbEvt`)">
+		</field>
+		<field name="VS.eDCHactiveUsers.2ms_users.NbEvt" do="daily:16" how="sum">
+		</field>
+		<field name="VS.eDCHactiveUsers.2ms_users.Max" do="daily:16" how="max">
+		</field>
+		<field name="VS.eDCHactiveUsers.2ms_users.Min" do="daily:16" how="min">
+		</field>
+		<field name="VS.eDCHactiveUsers.10ms_users.Cum" do="daily:16" how="sum">
+		</field>
+		<field name="VS.eDCHactiveUsers.10ms_users.Avg" do="daily:16" how="sum(`VS.eDCHactiveUsers.10ms_users.Cum`)/sum(`VS.eDCHactiveUsers.10ms_users.NbEvt`)">
+		</field>
+		<field name="VS.eDCHactiveUsers.10ms_users.NbEvt" do="daily:16" how="sum">
+		</field>
+		<field name="VS.eDCHactiveUsers.10ms_users.Max" do="daily:16" how="max">
+		</field>
+		<field name="VS.eDCHactiveUsers.10ms_users.Min" do="daily:16" how="min">
+		</field>
+		<field name="VS.eDCHSFupsizingDuringCompressedMode" do="daily:16" how="sum">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eAGCH.Cum" do="daily:16" how="sum">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eAGCH.Avg" do="daily:16" how="sum(`VS.eDCHCommonChannelUsage.eAGCH.Cum`)/sum(`VS.eDCHCommonChannelUsage.eAGCH.NbEvt`)">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eAGCH.NbEvt" do="daily:16" how="sum">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eAGCH.Max" do="daily:16" how="max">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eAGCH.Min" do="daily:16" how="min">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eRGCHServing.Cum" do="daily:16" how="sum">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eRGCHServing.Avg" do="daily:16" how="sum(`VS.eDCHCommonChannelUsage.eRGCHServing.Cum`)/sum(`VS.eDCHCommonChannelUsage.eRGCHServing.NbEvt`)">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eRGCHServing.NbEvt" do="daily:16" how="sum">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eRGCHServing.Max" do="daily:16" how="max">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eRGCHServing.Min" do="daily:16" how="min">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.Cum" do="daily:16" how="sum">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.Avg" do="daily:16" how="sum(`VS.eDCHCommonChannelUsage.eRGCHNonServing.Cum`)/sum(`VS.eDCHCommonChannelUsage.eRGCHNonServing.NbEvt`)">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.NbEvt" do="daily:16" how="sum">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.Max" do="daily:16" how="max">
+		</field>
+		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.Min" do="daily:16" how="min">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat13" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat14" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat15" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat16" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat17" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaTTIperUEcat.UEcat18" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat13" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat14" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat15" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat16" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat17" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat18" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaModulationType.CumUsers16QAM" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaModulationType.CumUsers64QAM" do="daily:17" how="sum">
+		</field>
+		<field name="VS.HsdpaModulationType.CumUsersQPSK" do="daily:17" how="sum">
+		</field>
+		<field name="VS.ifInUserPlaneOctets" do="daily:18" how="sum">
+      	</field>
+      	<field name="VS.ifOutUserPlaneOctets" do="daily:18" how="sum">
+      	</field>
+	</aggregate>
+</aggregation>

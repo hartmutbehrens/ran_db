@@ -1,0 +1,688 @@
+<aggregation>
+	<aggregate name="daily">
+		 <step name="1" from="BS_PHY_H" to="BS_PHY_D"  groupfrom="NAME,giveDayStart(SDATETIME),OMC_ID,PHY" groupto="NAME,SDATETIME,OMC_ID,PHY" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="2" from="BS_MS_PHY_H" to="BS_MS_PHY_D"  groupfrom="NAME,giveDayStart(SDATETIME),OMC_ID,MS_PHY" groupto="NAME,SDATETIME,OMC_ID,MS_PHY" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="3" from="BS_MAC_H" to="BS_MAC_D"  groupfrom="NAME,giveDayStart(SDATETIME),OMC_ID,MAC" groupto="NAME,SDATETIME,OMC_ID,MAC" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="4" from="BS_BSCELL_CSN_LINK_H" to="BS_BSCELL_CSN_LINK_D"  groupfrom="NAME,giveDayStart(SDATETIME),OMC_ID,BSCELL_CSN_LINK" groupto="NAME,SDATETIME,OMC_ID,BSCELL_CSN_LINK" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+	</aggregate>
+	<aggregate name="fields">
+		<field name="L1DL0051" do="daily:1" how="sum">
+		</field>
+		<field name="L1DL0052" do="daily:1" how="sum">
+		</field>
+		<field name="L1DL0053" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0011" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0012" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0013" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0014" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0021" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0022" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0023" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0024" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0031" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0032" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0033" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0034" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0041" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0042" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0043" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0044" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0051" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0052" do="daily:1" how="sum">
+		</field>
+		<field name="L1UL0053" do="daily:1" how="sum"> 
+		</field>
+		<field name="L1DL0011" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0012" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0013" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0014" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0021" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0022" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0023" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0024" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0031" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0032" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0033" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0034" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0041" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0042" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0043" do="daily:2" how="sum">
+		</field>
+		<field name="L1DL0044" do="daily:2" how="sum">
+		</field>
+		<field name="L1UL0001" do="daily:2" how="sum">
+		</field>
+		<field name="L1UL0002" do="daily:2" how="sum">
+		</field>
+		<field name="L1UL0003" do="daily:2" how="sum">
+		</field>
+		<field name="L1UL0004" do="daily:2" how="sum"> 
+		</field>
+		<field name="L1DL0100" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0101" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0102" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0103" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0104" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0105" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0120" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0125" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0130" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0201" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0202" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0211" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0212" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0221" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0222" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0223" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0300" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0301" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0311" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0312" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0321" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0322" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0323" do="daily:3" how="sum">
+		</field>
+		<field name="L1DL0324" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0100" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0101" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0102" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0103" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0104" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0105" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0120" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0125" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0130" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0201" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0202" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0211" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0212" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0221" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0301" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0302" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0311" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0312" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0313" do="daily:3" how="sum">
+		</field>
+		<field name="L1UL0321" do="daily:3" how="sum">
+		</field>
+		<field name="NE0010" do="daily:3" how="sum">
+		</field>
+		<field name="NE0011" do="daily:3" how="sum">
+		</field>
+		<field name="NE0012" do="daily:3" how="sum">
+		</field>
+		<field name="NE0100" do="daily:3" how="sum">
+		</field>
+		<field name="NE0101" do="daily:3" how="sum">
+		</field>
+		<field name="NE0102" do="daily:3" how="sum">
+		</field>
+		<field name="NE0103" do="daily:3" how="sum">
+		</field>
+		<field name="NE0110" do="daily:3" how="sum">
+		</field>
+		<field name="NE0111" do="daily:3" how="sum">
+		</field>
+		<field name="NE0112" do="daily:3" how="sum">
+		</field>
+		<field name="NE0113" do="daily:3" how="sum">
+		</field>
+		<field name="NE0120" do="daily:3" how="sum">
+		</field>
+		<field name="NE0130" do="daily:3" how="sum">
+		</field>
+		<field name="NE0140" do="daily:3" how="sum">
+		</field>
+		<field name="NE0150" do="daily:3" how="sum">
+		</field>
+		<field name="NE0160" do="daily:3" how="sum">
+		</field>
+		<field name="NE0170" do="daily:3" how="sum">
+		</field>
+		<field name="MS0110" do="daily:3" how="sum">
+		</field>
+		<field name="MS0120" do="daily:3" how="sum">
+		</field>
+		<field name="MS0130" do="daily:3" how="sum">
+		</field>
+		<field name="MS0135" do="daily:3" how="sum">
+		</field>
+		<field name="MS0140" do="daily:3" how="sum">
+		</field>
+		<field name="MS0150" do="daily:3" how="sum">
+		</field>
+		<field name="MS0155" do="daily:3" how="sum">
+		</field>
+		<field name="MS0160" do="daily:3" how="sum">
+		</field>
+		<field name="PACDL0100" do="daily:3" how="sum">
+		</field>
+		<field name="PACDL0110" do="daily:3" how="sum">
+		</field>
+		<field name="PACDL0150" do="daily:3" how="sum">
+		</field>
+		<field name="PACDL0151" do="daily:3" how="sum">
+		</field>
+		<field name="PACDL0152" do="daily:3" how="sum">
+		</field>
+		<field name="PACUL0100" do="daily:3" how="sum">
+		</field>
+		<field name="PACUL0110" do="daily:3" how="sum">
+		</field>
+		<field name="PACUL0150" do="daily:3" how="sum">
+		</field>
+		<field name="PACUL0151" do="daily:3" how="sum">
+		</field>
+		<field name="PACUL0152" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0010" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0060" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0070" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0080" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0090" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0110" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0120" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0130" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0140" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0160" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0170" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0180" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0190" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0200" do="daily:3" how="sum">
+		</field>
+		<field name="MOB_BS_C0210" do="daily:3" how="sum">
+		</field>
+		<field name="IM_BS_C0010" do="daily:3" how="sum">
+		</field>
+		<field name="IM_BS_C0020" do="daily:3" how="sum">
+		</field>
+		<field name="IM_BS_C0030" do="daily:3" how="sum">
+		</field>
+		<field name="IM_BS_C0040" do="daily:3" how="sum">
+		</field>
+		<field name="IM_BS_C0050" do="daily:3" how="sum">
+		</field>
+		<field name="IM_BS_C0060" do="daily:3" how="sum">
+		</field>
+		<field name="IM_BS_C0070" do="daily:3" how="sum">
+		</field>
+		<field name="IM_BS_C0080" do="daily:3" how="sum">
+		</field>
+		<field name="IM_BS_C0090" do="daily:3" how="sum">
+		</field>
+		<field name="IM_BS_C0100" do="daily:3" how="sum"> 
+		</field>
+		<field name="MS0101" do="daily:4" how="sum">
+		</field>
+		<field name="MS0102" do="daily:4" how="sum">
+		</field>
+		<field name="MS0103" do="daily:4" how="sum">
+		</field>
+		<field name="MS0104" do="daily:4" how="sum">
+		</field>
+		<field name="MS0105" do="daily:4" how="sum">
+		</field>
+		<field name="MS0106" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0100" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0101" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0102" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0103" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0104" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0110" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0111" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0112" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0113" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0114" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0120" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0121" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0122" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0123" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0124" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0140" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0141" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0142" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0143" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0144" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0150" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0151" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0152" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0153" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0154" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0160" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0161" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0162" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0163" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0164" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0190" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0191" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0192" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0193" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0194" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0200" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0201" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0202" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0203" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0204" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0210" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0211" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0212" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0213" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0214" do="daily:4" how="sum">
+		</field>
+		<field name="SFDL0300" do="daily:4" how="avg">
+		</field>
+		<field name="SFDL0301" do="daily:4" how="avg">
+		</field>
+		<field name="SFDL0302" do="daily:4" how="avg">
+		</field>
+		<field name="SFDL0303" do="daily:4" how="avg">
+		</field>
+		<field name="SFDL0304" do="daily:4" how="avg">
+		</field>
+		<field name="SFUL0100" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0101" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0102" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0103" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0104" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0110" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0111" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0112" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0113" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0114" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0120" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0121" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0122" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0123" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0124" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0140" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0141" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0142" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0143" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0144" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0150" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0151" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0152" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0153" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0154" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0160" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0161" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0162" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0163" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0164" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0190" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0191" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0192" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0193" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0194" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0200" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0201" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0202" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0203" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0204" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0210" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0211" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0212" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0213" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0214" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0300" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0301" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0302" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0303" do="daily:4" how="sum">
+		</field>
+		<field name="SFUL0304" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0140" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0141" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0142" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0143" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0144" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0160" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0161" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0162" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0163" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0164" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0165" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0166" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0167" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0168" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0169" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0170" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0171" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0172" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0173" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0174" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0175" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0176" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0177" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0178" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0179" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0200" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0201" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0202" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0203" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0204" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0205" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0206" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0220" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0221" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0222" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0223" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0224" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0225" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0226" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0227" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0300" do="daily:4" how="sum">
+		</field>
+		<field name="PACDL0301" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0140" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0141" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0142" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0143" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0144" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0145" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0146" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0147" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0148" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0149" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0160" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0161" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0162" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0163" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0164" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0165" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0166" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0167" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0168" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0169" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0170" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0171" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0172" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0173" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0174" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0175" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0176" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0177" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0178" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0179" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0200" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0201" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0202" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0203" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0204" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0220" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0221" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0222" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0223" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0224" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0225" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0300" do="daily:4" how="sum">
+		</field>
+		<field name="PACUL0301" do="daily:4" how="sum"> 
+		</field>
+	</aggregate>
+</aggregation>

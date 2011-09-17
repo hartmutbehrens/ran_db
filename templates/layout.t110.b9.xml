@@ -1,0 +1,442 @@
+<layout name="t110" version="b9">
+	<blocktype name="1110" loadtable="T110_SECTOR_H" index="BTS_ID,SECTOR" indexlength="2">
+			<counter name="MC01" offset="0" length="4">
+			</counter>
+			<counter name="MC02" offset="4" length="4">
+			</counter>
+			<counter name="MC02a" offset="8" length="4">
+			</counter>
+			<counter name="MC02b" offset="12" length="4">
+			</counter>
+			<counter name="MC02c" offset="16" length="4">
+			</counter>
+			<counter name="MC02d" offset="20" length="4">
+			</counter>
+			<counter name="MC02e" offset="24" length="4">
+			</counter>
+			<counter name="MC02f" offset="28" length="4">
+			</counter>
+			<counter name="MC02g" offset="32" length="4">
+			</counter>
+			<counter name="MC02h" offset="36" length="4">
+			</counter>
+			<counter name="MC03" offset="40" length="4">
+			</counter>
+			<counter name="MC04" offset="44" length="4">
+			</counter>
+			<counter name="MC07" offset="48" length="4">
+			</counter>
+			<counter name="MC10" offset="52" length="4">
+			</counter>
+			<counter name="MC13a" offset="56" length="4">
+			</counter>
+			<counter name="MC13b" offset="60" length="4">
+			</counter>
+			<counter name="MC14a" offset="64" length="4">
+			</counter>
+			<counter name="MC14c" offset="68" length="4">
+			</counter>
+			<counter name="MC15a" offset="72" length="4">
+			</counter>
+			<counter name="MC15b" offset="76" length="4">
+			</counter>
+			<counter name="MC137" offset="80" length="4">
+			</counter>
+			<counter name="MC138" offset="84" length="4">
+			</counter>
+			<counter name="MC147" offset="88" length="4">
+			</counter>
+			<counter name="MC148" offset="92" length="4">
+			</counter>
+			<counter name="MC149" offset="96" length="4">
+			</counter>
+			<counter name="MC24" offset="100" length="2">
+			</counter>
+			<counter name="MC27" offset="102" length="2">
+			</counter>
+			<counter name="MC141" offset="104" length="2">
+			</counter>
+			<counter name="MC8a" offset="106" length="4">
+			</counter>
+			<counter name="MC8b" offset="110" length="4">
+			</counter>
+			<counter name="MC8c" offset="114" length="4">
+			</counter>
+			<counter name="MC8d" offset="118" length="4">
+			</counter>
+			<counter name="MC541a" offset="122" length="2">
+			</counter>
+			<counter name="MC41b" offset="124" length="2">
+			</counter>
+			<counter name="MC586a" offset="126" length="4">
+			</counter>
+			<counter name="MC586b" offset="130" length="4">
+			</counter>
+			<counter name="MC586c" offset="134" length="4">
+			</counter>
+			<counter name="MC142e" offset="138" length="4">
+			</counter>
+			<counter name="MC142f" offset="142" length="4">
+			</counter>
+			<counter name="MC144e" offset="146" length="4">
+			</counter>
+			<counter name="MC144f" offset="150" length="4">
+			</counter>
+			<counter name="MC850" offset="154" length="4">
+			</counter>
+			<counter name="MC151" offset="158" length="4">
+			</counter>
+			<counter name="MC153" offset="162" length="4">
+			</counter>
+			<counter name="MC555" offset="166" length="2">
+			</counter>
+			<counter name="MC196" offset="168" length="4">
+			</counter>
+			<counter name="MC197" offset="172" length="4">
+			</counter>
+			<counter name="MC170" offset="176" length="4">
+			</counter>
+			<counter name="MC461" offset="180" length="4">
+			</counter>
+			<counter name="MC921a" offset="184" length="2">
+			</counter>
+			<counter name="MC921b" offset="186" length="2">
+			</counter>
+			<counter name="MC921c" offset="188" length="2">
+			</counter>
+			<counter name="MC921d" offset="190" length="2">
+			</counter>
+			<counter name="MC921e" offset="192" length="2">
+			</counter>
+	</blocktype>
+	<blocktype name="1120" loadtable="T110_SECTOR_H" index="BTS_ID,SECTOR" indexlength="2">
+			<counter name="MC607" offset="0" length="4">
+			</counter>
+			<counter name="MC812" offset="4" length="4">
+			</counter>
+			<counter name="MC612a" offset="8" length="4">
+			</counter>
+			<counter name="MC612b" offset="12" length="4">
+			</counter>
+			<counter name="MC612c" offset="16" length="4">
+			</counter>
+			<counter name="MC612d" offset="20" length="4">
+			</counter>
+			<counter name="MC541" offset="24" length="2">
+			</counter>
+			<counter name="MC81" offset="26" length="2">
+			</counter>
+			<counter name="MC642" offset="28" length="4">
+			</counter>
+			<counter name="MC643" offset="32" length="2">
+			</counter>
+			<counter name="MC645a" offset="34" length="4">
+			</counter>
+			<counter name="MC646" offset="38" length="4">
+			</counter>
+			<counter name="MC647" offset="42" length="2">
+			</counter>
+			<counter name="MC648" offset="44" length="2">
+			</counter>
+			<counter name="MC650" offset="46" length="4">
+			</counter>
+			<counter name="MC551" offset="50" length="2">
+			</counter>
+			<counter name="MC91" offset="52" length="2">
+			</counter>
+			<counter name="MC652" offset="54" length="4">
+			</counter>
+			<counter name="MC653" offset="58" length="2">
+			</counter>
+			<counter name="MC655a" offset="60" length="4">
+			</counter>
+			<counter name="MC656" offset="64" length="4">
+			</counter>
+			<counter name="MC657" offset="68" length="2">
+			</counter>
+			<counter name="MC658" offset="70" length="2">
+			</counter>
+			<counter name="MC660" offset="72" length="4">
+			</counter>
+			<counter name="MC561" offset="76" length="2">
+			</counter>
+			<counter name="MC101" offset="78" length="2">
+			</counter>
+			<counter name="MC662" offset="80" length="4">
+			</counter>
+			<counter name="MC663" offset="84" length="2">
+			</counter>
+			<counter name="MC667" offset="86" length="2">
+			</counter>
+			<counter name="MC670" offset="88" length="4">
+			</counter>
+			<counter name="MC671" offset="92" length="4">
+			</counter>
+			<counter name="MC672" offset="96" length="4">
+			</counter>
+			<counter name="MC673" offset="100" length="4">
+			</counter>
+			<counter name="MC674" offset="104" length="4">
+			</counter>
+			<counter name="MC675" offset="108" length="4">
+			</counter>
+			<counter name="MC676" offset="112" length="4">
+			</counter>
+			<counter name="MC677" offset="116" length="4">
+			</counter>
+			<counter name="MC678" offset="120" length="4">
+			</counter>
+			<counter name="MC679" offset="124" length="4">
+			</counter>
+			<counter name="MC706" offset="128" length="4">
+			</counter>
+			<counter name="MC785a" offset="132" length="4">
+			</counter>
+			<counter name="MC785d" offset="136" length="4">
+			</counter>
+			<counter name="MC785e" offset="140" length="4">
+			</counter>
+			<counter name="MC785f" offset="144" length="4">
+			</counter>
+			<counter name="MC820" offset="148" length="4">
+			</counter>
+			<counter name="MC320a" offset="152" length="2">
+			</counter>
+			<counter name="MC320b" offset="154" length="2">
+			</counter>
+			<counter name="MC320c" offset="156" length="2">
+			</counter>
+			<counter name="MC320d" offset="158" length="2">
+			</counter>
+			<counter name="MC320e" offset="160" length="2">
+			</counter>
+			<counter name="MC821" offset="162" length="4">
+			</counter>
+			<counter name="MC250" offset="166" length="2">
+			</counter>
+			<counter name="MC26" offset="168" length="2">
+			</counter>
+			<counter name="MC28a" offset="170" length="2">
+			</counter>
+			<counter name="MC29a" offset="172" length="2">
+			</counter>
+			<counter name="MC830" offset="174" length="4">
+			</counter>
+			<counter name="MC831" offset="178" length="4">
+			</counter>
+			<counter name="MC34" offset="182" length="2">
+			</counter>
+			<counter name="MC31" offset="184" length="2">
+			</counter>
+			<counter name="MC870" offset="186" length="4">
+			</counter>
+			<counter name="MC871" offset="190" length="4">
+			</counter>
+			<counter name="MC803" offset="194" length="2">
+			</counter>
+			<counter name="MC1040" offset="196" length="4">
+			</counter>
+			<counter name="MC1044" offset="200" length="4">
+			</counter>
+			<counter name="MC1050" offset="204" length="4">
+			</counter>
+			<counter name="MC161" offset="208" length="4">
+			</counter>
+			<counter name="MC162" offset="208" length="4">
+			</counter>
+	</blocktype>
+	<blocktype name="1122" loadtable="T110_SECTOR_H" index="BTS_ID,SECTOR" indexlength="2">
+			<counter name="MC448a" offset="0" length="4">
+			</counter>
+			<counter name="MC448b" offset="4" length="4">
+			</counter>
+			<counter name="MC449" offset="8" length="4">
+			</counter>
+			<counter name="MC701a" offset="12" length="4">
+			</counter>
+			<counter name="MC701b" offset="16" length="4">
+			</counter>
+			<counter name="MC701c" offset="20" length="4">
+			</counter>
+			<counter name="MC701d" offset="24" length="4">
+			</counter>
+			<counter name="MC701e" offset="28" length="4">
+			</counter>
+			<counter name="MC702a" offset="32" length="4">
+			</counter>
+			<counter name="MC702b" offset="36" length="4">
+			</counter>
+			<counter name="MC702c" offset="40" length="4">
+			</counter>
+			<counter name="MC704a" offset="44" length="4">
+			</counter>
+			<counter name="MC704b" offset="48" length="4">
+			</counter>
+			<counter name="MC705" offset="52" length="4">
+			</counter>
+			<counter name="MC901" offset="56" length="4">
+			</counter>
+			<counter name="MC902" offset="60" length="4">
+			</counter>
+			<counter name="MC903" offset="64" length="4">
+			</counter>
+			<counter name="MC140a" offset="68" length="4">
+			</counter>
+			<counter name="MC140b" offset="72" length="4">
+			</counter>
+			<counter name="MC460a" offset="76" length="4">
+			</counter>
+			<counter name="MC922a" offset="80" length="4">
+			</counter>
+			<counter name="MC922b" offset="84" length="4">
+			</counter>
+			<counter name="MC922c" offset="88" length="4">
+			</counter>
+			<counter name="MC922d" offset="92" length="4">
+			</counter>
+			<counter name="MC800" offset="96" length="2">
+			</counter>
+			<counter name="MC801a" offset="98" length="2">
+			</counter>
+			<counter name="MC801b" offset="100" length="2">
+			</counter>
+			<counter name="MC802a" offset="102" length="2">
+			</counter>
+			<counter name="MC802b" offset="104" length="2">
+			</counter>
+			<counter name="MC804a" offset="106" length="4">
+			</counter>
+			<counter name="MC804b" offset="110" length="4">
+			</counter>
+			<counter name="MC805a" offset="114" length="4">
+			</counter>
+			<counter name="MC805b" offset="118" length="4">
+			</counter>
+			<counter name="MC923a" offset="122" length="4">
+			</counter>
+			<counter name="MC923b" offset="126" length="4">
+			</counter>
+			<counter name="MC923c" offset="130" length="4">
+			</counter>
+			<counter name="MC923d" offset="134" length="4">
+			</counter>
+			<counter name="MC02i" offset="138" length="4">
+			</counter>
+			<counter name="MC462a" offset="142" length="2">
+			</counter>
+			<counter name="MC462b" offset="144" length="2">
+			</counter>
+			<counter name="MC462c" offset="146" length="2">
+			</counter>
+			<counter name="MC463a" offset="148" length="2">
+			</counter>
+			<counter name="MC463b" offset="150" length="2">
+			</counter>
+			<counter name="MC463c" offset="152" length="2">
+			</counter>
+			<counter name="MC922e" offset="154" length="2">
+			</counter>
+			<counter name="MC922f" offset="156" length="2">
+			</counter>
+			<counter name="MC922g" offset="158" length="2">
+			</counter>
+			<counter name="MC922h" offset="160" length="2">
+			</counter>
+			<counter name="MC480" offset="162" length="2">
+			</counter>
+			<counter name="MC481" offset="164" length="2">
+			</counter>
+			<counter name="MC924a" offset="166" length="2">
+			</counter>
+			<counter name="MC924b" offset="168" length="2">
+			</counter>
+			<counter name="MC924c" offset="170" length="2">
+			</counter>
+			<counter name="MC924d" offset="172" length="2">
+			</counter>
+			<counter name="MC924e" offset="174" length="2">
+			</counter>
+			<counter name="MC924f" offset="176" length="2">
+			</counter>
+			<counter name="MC924g" offset="178" length="2">
+			</counter>
+			<counter name="MC924h" offset="180" length="2">
+			</counter>
+			<counter name="MC924i" offset="182" length="2">
+			</counter>
+			<counter name="MC924j" offset="184" length="2">
+			</counter>
+			<counter name="MC924k" offset="186" length="2">
+			</counter>
+	</blocktype>
+	<blocktype name="1125" loadtable="T110_SECTOR_H" index="BTS_ID,SECTOR" indexlength="2">
+	</blocktype>
+	<blocktype name="1130" loadtable="T110_TRX_H" index="BTS_ID,SECTOR,TRX" indexlength="3">
+			<counter name="FILLER" offset="0" length="1">
+			</counter>
+			<counter name="MC621" offset="1" length="2">
+			</counter>
+			<counter name="MC703" offset="3" length="2">
+			</counter>
+			<counter name="MC710" offset="5" length="2">
+			</counter>
+			<counter name="MC711" offset="7" length="2">
+			</counter>
+			<counter name="MC712" offset="9" length="2">
+			</counter>
+			<counter name="MC713" offset="11" length="2">
+			</counter>
+			<counter name="MC714" offset="13" length="2">
+			</counter>
+			<counter name="MC717a" offset="15" length="2">
+			</counter>
+			<counter name="MC717b" offset="17" length="2">
+			</counter>
+			<counter name="MC718" offset="19" length="2">
+			</counter>
+			<counter name="MC736" offset="21" length="2">
+			</counter>
+			<counter name="MC739" offset="23" length="2">
+			</counter>
+			<counter name="MC746b" offset="25" length="2">
+			</counter>
+			<counter name="MC370a" offset="27" length="6">
+			</counter>
+			<counter name="MC370b" offset="33" length="6">
+			</counter>
+			<counter name="MC380a" offset="39" length="6">
+			</counter>
+			<counter name="MC380b" offset="45" length="6">
+			</counter>
+			<counter name="MC380c" offset="51" length="6">
+			</counter>
+			<counter name="MC380d" offset="57" length="6">
+			</counter>
+			<counter name="MC380e" offset="63" length="6">
+			</counter>
+			<counter name="MC380f" offset="69" length="6">
+			</counter>
+			<counter name="MC381" offset="75" length="6">
+			</counter>
+			<counter name="MC390" offset="81" length="6">
+			</counter>
+			<counter name="MC400" offset="87" length="6">
+			</counter>
+	</blocktype>
+	<blocktype name="1135" loadtable="none" index="LINK" indexlength="2">
+			<counter name="MN1.1" offset="0" length="4">
+			</counter>
+			<counter name="MC350" offset="4" length="4">
+			</counter>
+			<counter name="MC351" offset="8" length="4">
+			</counter>	
+	</blocktype>
+	<blocktype name="1140" loadtable="none" index="none" indexlength="0">
+			<counter name="MC19" offset="0" length="4">
+			</counter>
+			<counter name="MC35" offset="4" length="4">
+			</counter>
+			<counter name="MC36" offset="8" length="4">
+			</counter>	
+	</blocktype>
+</layout>

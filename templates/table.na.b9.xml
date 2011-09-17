@@ -1,0 +1,74 @@
+<tables>
+	<table name="NEIGHBOUR_ANALYSIS">
+		<field name="IMPORTDATE_RMS" type="date" counter="no">
+		</field>
+		<field name="IMPORTDATE_ADJ" type="date" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC_TGT" type="int" counter="no">
+		</field>
+		<field name="CI_TGT" type="varchar(20)" counter="no">
+		</field>
+		<field name="PATCHED" type="int" counter="no">
+		</field>
+		<field name="CERTAINTY_RMS" type="varchar(30)" counter="no">
+		</field>
+		<field name="CERTAINTY_ADJ" type="varchar(30)" counter="no">
+		</field>
+		<field name="DISTANCE" type="float" counter="no">
+		</field>
+		<field name="AVG_C401_PER_DAY" type="float" counter="no">
+		</field>
+		<field name="AVG_C401_SHARE" type="float" counter="no">
+		</field>
+		<field name="AVG_IFPROB_PER_DAY" type="float" counter="no">
+		</field>
+		<field name="AVG_IFPROB_SHARE" type="float" counter="no">
+		</field>
+		<field name="C401_DURATION" type="int" counter="no">
+		</field>
+		<field name="C401_DURATION_DETAILS" type="text" counter="no">
+		</field>
+		<field name="IFPROB_DURATION" type="int" counter="no">
+		</field>
+		<field name="IFPROB_DURATION_DETAILS" type="text" counter="no">
+		</field>
+		<field name="HoMargin" type="int" counter="no">
+		</field>
+		<field name="HoMarginLevel" type="int" counter="no">
+		</field>
+		<field name="HoMarginQual" type="int" counter="no">
+		</field>
+		<field name="SOURCE_TARGET_RELATIONSHIP" type="varchar(20)" counter="no">
+		</field>
+		<field name="SOURCE_FREQ_LAYER" type="varchar(10)" counter="no">
+		</field>
+		<field name="TARGET_FREQ_LAYER" type="varchar(10)" counter="no">
+		</field>
+		<field name="TARGET_CELL_TYPE" type="varchar(20)" counter="no">
+		</field>
+		<field name="SOURCE_CELL_TYPE" type="varchar(20)" counter="no">
+		</field>
+		<field name="SOURCE_CELL_NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="TARGET_CELL_NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="SOURCE_BSIC" type="varchar(100)" counter="no">
+		</field>
+		<field name="TARGET_BSIC" type="varchar(100)" counter="no">
+		</field>
+		<field name="SOURCE_BCCH" type="varchar(100)" counter="no">
+		</field>
+		<field name="TARGET_BCCH" type="varchar(100)" counter="no">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,CI_TGT,LAC_TGT</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>

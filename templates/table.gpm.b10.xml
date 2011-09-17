@@ -1,0 +1,4757 @@
+﻿<tables>	
+	<table name="GPM_PVC_H">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="ITFVERSION" type="int" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="Bearer" type="int" counter="no">
+		</field>
+		<field name="PVC" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P4" type="int" counter="yes">
+		</field>
+		<field name="P5" type="int" counter="yes">
+		</field>
+		<field name="P23" type="int" counter="yes">
+		</field>
+		<field name="P34" type="int" counter="yes">
+		</field>
+		<field name="P45" type="int" counter="yes">
+		</field>
+		<field name="P46" type="int" counter="yes">
+		</field>
+		<field name="P6c" type="int" counter="yes">
+		</field>
+		<field name="P6d" type="int" counter="yes">
+		</field>
+		<index name="pvc">
+			<order>PVC,Bearer,TP,MFS,OMC_ID,STARTDATE,STARTTIME</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>PVC,Bearer,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+		
+	</table>	
+	<table name="GPM_BSC_H">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="ITFVERSION" type="int" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="GCSF" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P104" type="int" counter="yes">
+		</field>
+		<field name="P106" type="int" counter="yes">
+		</field>
+		<field name="P107" type="int" counter="yes">
+		</field>
+		<field name="P201" type="int" counter="yes">
+		</field>
+		<field name="P202" type="int" counter="yes">
+		</field>
+		<field name="P391a" type="int" counter="yes">
+		</field>
+		<field name="P391b" type="int" counter="yes">
+		</field>
+		<field name="P392a" type="int" counter="yes">
+		</field>
+		<field name="P392b" type="int" counter="yes">
+		</field>
+		<field name="P402" type="int" counter="yes">
+		</field>
+		<field name="P450a" type="int" counter="yes">
+		</field>
+		<field name="P450b" type="int" counter="yes">
+		</field>
+		<field name="P450c" type="int" counter="yes">
+		</field>
+		<field name="P450d" type="int" counter="yes">
+		</field>
+		<field name="P450e" type="int" counter="yes">
+		</field>
+		<field name="P450f" type="int" counter="yes">
+		</field>
+		<field name="P450g" type="int" counter="yes">
+		</field>
+		<field name="P450h" type="int" counter="yes">
+		</field>
+		<field name="P500" type="int" counter="yes">
+		</field>
+		<field name="P530a_1" type="int" counter="yes">
+		</field>
+		<field name="P530a_2" type="int" counter="yes">
+		</field>
+		<field name="P530a_3" type="int" counter="yes">
+		</field>
+		<field name="P530a_4" type="int" counter="yes">
+		</field>
+		<field name="P530a_5" type="int" counter="yes">
+		</field>
+		<field name="P530b_5" type="int" counter="yes">
+		</field>
+		<field name="P594" type="int" counter="yes">
+		</field>
+		<field name="P76a" type="int" counter="yes">
+		</field>
+		<field name="P77a" type="int" counter="yes">
+		</field>
+    <field name="P7a" type="int" counter="yes">
+		</field>
+		<field name="P7b" type="int" counter="yes">
+		</field>
+		<field name="P7c_1" type="int" counter="yes">
+		</field>
+		<field name="P7c_2" type="int" counter="yes">
+		</field>
+		<field name="P7d" type="int" counter="yes">
+		</field>
+		<field name="P7e" type="int" counter="yes">
+		</field>
+		<field name="P7f" type="int" counter="yes">
+		</field>
+		<field name="P7g" type="int" counter="yes">
+		</field>
+		<field name="P7h" type="int" counter="yes">
+		</field>
+		<field name="P7i" type="int" counter="yes">
+		</field>
+		<index name="bss">
+			<order>BSS,FABRIC,MFS,OMC_ID,STARTDATE,STARTTIME</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSS,FABRIC,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_BSCTDM_H">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="ITFVERSION" type="int" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P100f" type="int" counter="yes">
+		</field>
+		<field name="P101" type="int" counter="yes">
+		</field>
+		<field name="P103" type="int" counter="yes">
+		</field>
+		<field name="P383a" type="int" counter="yes">
+		</field>
+		<field name="P383b" type="int" counter="yes">
+		</field>
+		<field name="P384" type="int" counter="yes">
+		</field>
+		<field name="P474" type="int" counter="yes">
+		</field>
+		<field name="P486" type="int" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>BSS,FABRIC,MFS,OMC_ID,STARTDATE,STARTTIME</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSS,FABRIC,SF,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_BEARERCHANNEL_H">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="ITFVERSION" type="int" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="Bearer" type="int" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P33" type="int" counter="yes">
+		</field>
+		<field name="P3a" type="int" counter="yes">
+		</field>
+		<field name="P3b" type="int" counter="yes">
+		</field>
+		<field name="P6a" type="int" counter="yes">
+		</field>
+		<field name="P6b" type="int" counter="yes">
+		</field>
+		<index name="bearer">
+			<order>Bearer,TP,MFS,OMC_ID,STARTDATE,STARTTIME</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>Bearer,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_LAPD_H">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="ITFVERSION" type="int" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="GSL" type="int" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P2a" type="int" counter="yes">
+		</field>
+		<field name="P2b" type="int" counter="yes">
+		</field>
+		<field name="P2c" type="int" counter="yes">
+		</field>
+		<field name="P2d" type="int" counter="yes">
+		</field>
+		<field name="P32" type="int" counter="yes">
+		</field>
+		<field name="P41" type="int" counter="yes">
+		</field>
+		<field name="P42" type="int" counter="yes">
+		</field>
+		<index name="lapd">
+			<order>BSS,GSL,TP,MFS,OMC_ID,STARTDATE,STARTTIME</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSS,GSL,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_BTS_H">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="ITFVERSION" type="int" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BTS" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="BTS_NB_EXTRA_ABIS_TS" type="int" counter="no">
+		</field>
+		<field name="P472" type="int" counter="yes">
+		</field>
+		<field name="P484" type="int" counter="yes">
+		</field>
+		<index name="bts">
+			<order>BSS,BTS,FABRIC,MFS,OMC_ID,STARTDATE,STARTTIME</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSS,BTS,FABRIC,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_CELL_H">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="ITFVERSION" type="int" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BTS" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="BS_PBCCH_BLKS" type="int" counter="no">
+		</field>
+		<field name="BS_PRACH_BLKS" type="int" counter="no">
+		</field>
+		<field name="CSSF" type="int" counter="no">
+		</field>
+		<field name="MAX_PDCH" type="int" counter="no">
+		</field>
+		<field name="MIN_PDCH" type="int" counter="no">
+		</field>
+		<field name="P10" type="int" counter="yes">
+		</field>
+		<field name="P100c" type="int" counter="yes">
+		</field>
+		<field name="P100d" type="int" counter="yes">
+		</field>
+		<field name="P100e" type="int" counter="yes">
+		</field>
+		<field name="P105c" type="int" counter="yes">
+		</field>
+		<field name="P105d" type="int" counter="yes">
+		</field>
+		<field name="P105e" type="int" counter="yes">
+		</field>
+		<field name="P105f" type="int" counter="yes">
+		</field>
+		<field name="P105g" type="int" counter="yes">
+		</field>
+		<field name="P105h" type="int" counter="yes">
+		</field>
+		<field name="P105i" type="int" counter="yes">
+		</field>
+		<field name="P105j" type="int" counter="yes">
+		</field>
+		<field name="P105k" type="int" counter="yes">
+		</field>
+		<field name="P105l" type="int" counter="yes">
+		</field>
+		<field name="P11" type="int" counter="yes">
+		</field>
+		<field name="P129a" type="int" counter="yes">
+		</field>
+		<field name="P129b" type="int" counter="yes">
+		</field>
+		<field name="P129c" type="int" counter="yes">
+		</field>
+		<field name="P129d" type="int" counter="yes">
+		</field>
+		<field name="P13" type="int" counter="yes">
+		</field>
+		<field name="P14" type="int" counter="yes">
+		</field>
+		<field name="P146" type="int" counter="yes">
+		</field>
+		<field name="P147" type="int" counter="yes">
+		</field>
+		<field name="P15" type="int" counter="yes">
+		</field>
+		<field name="P16" type="int" counter="yes">
+		</field>
+		<field name="P160" type="int" counter="yes">
+		</field>
+		<field name="P161" type="int" counter="yes">
+		</field>
+		<field name="P162" type="int" counter="yes">
+		</field>
+		<field name="P163" type="int" counter="yes">
+		</field>
+		<field name="P164" type="int" counter="yes">
+		</field>
+		<field name="P165" type="int" counter="yes">
+		</field>
+		<field name="P200" type="int" counter="yes">
+		</field>
+		<field name="P203" type="int" counter="yes">
+		</field>
+		<field name="P204" type="int" counter="yes">
+		</field>
+		<field name="P209" type="int" counter="yes">
+		</field>
+		<field name="P210" type="int" counter="yes">
+		</field>
+		<field name="P211" type="int" counter="yes">
+		</field>
+		<field name="P212" type="int" counter="yes">
+		</field>
+		<field name="P213" type="int" counter="yes">
+		</field>
+		<field name="P214" type="int" counter="yes">
+		</field>
+		<field name="P215" type="int" counter="yes">
+		</field>
+		<field name="P22" type="int" counter="yes">
+		</field>
+		<field name="P220" type="int" counter="yes">
+		</field>
+		<field name="P221" type="int" counter="yes">
+		</field>
+		<field name="P222" type="int" counter="yes">
+		</field>
+		<field name="P223" type="int" counter="yes">
+		</field>
+		<field name="P224" type="int" counter="yes">
+		</field>
+		<field name="P225" type="int" counter="yes">
+		</field>
+		<field name="P226" type="int" counter="yes">
+		</field>
+		<field name="P227" type="int" counter="yes">
+		</field>
+		<field name="P228" type="int" counter="yes">
+		</field>
+		<field name="P229" type="int" counter="yes">
+		</field>
+    <field name="P231" type="int" counter="yes">
+		</field>
+		<field name="P232" type="int" counter="yes">
+		</field>
+		<field name="P24" type="int" counter="yes">
+		</field>
+		<field name="P26" type="int" counter="yes">
+		</field>
+		<field name="P27" type="int" counter="yes">
+		</field>
+		<field name="P28" type="int" counter="yes">
+		</field>
+		<field name="P302b_1" type="int" counter="yes">
+		</field>
+		<field name="P302b_2" type="int" counter="yes">
+		</field>
+		<field name="P302c_1" type="int" counter="yes">
+		</field>
+		<field name="P302c_2" type="int" counter="yes">
+		</field>
+		<field name="P302c_3" type="int" counter="yes">
+		</field>
+		<field name="P302c_4" type="int" counter="yes">
+		</field>
+		<field name="P303a" type="int" counter="yes">
+		</field>
+		<field name="P303b" type="int" counter="yes">
+		</field>
+		<field name="P30a" type="int" counter="yes">
+		</field>
+		<field name="P30b" type="int" counter="yes">
+		</field>
+		<field name="P30c" type="int" counter="yes">
+		</field>
+		<field name="P30d" type="int" counter="yes">
+		</field>
+		<field name="P35" type="int" counter="yes">
+		</field>
+		<field name="P36" type="int" counter="yes">
+		</field>
+		<field name="P385a" type="int" counter="yes">
+		</field>
+		<field name="P385b" type="int" counter="yes">
+		</field>
+		<field name="P38b" type="int" counter="yes">
+		</field>
+		<field name="P38c" type="int" counter="yes">
+		</field>
+		<field name="P38e" type="int" counter="yes">
+		</field>
+		<field name="P38f" type="int" counter="yes">
+		</field>
+		<field name="P39" type="int" counter="yes">
+		</field>
+		<field name="P396a" type="int" counter="yes">
+		</field>
+		<field name="P396b" type="int" counter="yes">
+		</field>
+		<field name="P397" type="int" counter="yes">
+		</field>
+		<field name="P399" type="int" counter="yes">
+		</field>
+		<field name="P40" type="int" counter="yes">
+		</field>
+		<field name="P400" type="int" counter="yes">
+		</field>
+		<field name="P401" type="int" counter="yes">
+		</field>
+		<field name="P403a" type="int" counter="yes">
+		</field>
+		<field name="P403b" type="int" counter="yes">
+		</field>
+		<field name="P403c" type="int" counter="yes">
+		</field>
+		<field name="P403d" type="int" counter="yes">
+		</field>
+		<field name="P404a" type="int" counter="yes">
+		</field>
+		<field name="P404b" type="int" counter="yes">
+		</field>
+		<field name="P404c" type="int" counter="yes">
+		</field>
+		<field name="P404d" type="int" counter="yes">
+		</field>
+		<field name="P405a" type="int" counter="yes">
+		</field>
+		<field name="P405b" type="int" counter="yes">
+		</field>
+		<field name="P405c" type="int" counter="yes">
+		</field>
+		<field name="P405d" type="int" counter="yes">
+		</field>
+		<field name="P406a" type="int" counter="yes">
+		</field>
+		<field name="P406b" type="int" counter="yes">
+		</field>
+		<field name="P406c" type="int" counter="yes">
+		</field>
+		<field name="P406d" type="int" counter="yes">
+		</field>
+		<field name="P407a" type="int" counter="yes">
+		</field>
+		<field name="P407b" type="int" counter="yes">
+		</field>
+		<field name="P407c" type="int" counter="yes">
+		</field>
+		<field name="P407d" type="int" counter="yes">
+		</field>
+		<field name="P408a" type="int" counter="yes">
+		</field>
+		<field name="P408b" type="int" counter="yes">
+		</field>
+		<field name="P408c" type="int" counter="yes">
+		</field>
+		<field name="P408d" type="int" counter="yes">
+		</field>
+		<field name="P409" type="int" counter="yes">
+		</field>
+		<field name="P410" type="int" counter="yes">
+		</field>
+		<field name="P411" type="int" counter="yes">
+		</field>
+		<field name="P412" type="int" counter="yes">
+		</field>
+		<field name="P413" type="int" counter="yes">
+		</field>
+		<field name="P414bis" type="int" counter="yes">
+		</field>
+		<field name="P415bis" type="int" counter="yes">
+		</field>
+		<field name="P416bis" type="int" counter="yes">
+		</field>
+		<field name="P417" type="int" counter="yes">
+		</field>
+		<field name="P419" type="int" counter="yes">
+		</field>
+		<field name="P420" type="int" counter="yes">
+		</field>
+		<field name="P422" type="int" counter="yes">
+		</field>
+		<field name="P423a" type="int" counter="yes">
+		</field>
+		<field name="P423b" type="int" counter="yes">
+		</field>
+		<field name="P423c" type="int" counter="yes">
+		</field>
+		<field name="P423d" type="int" counter="yes">
+		</field>
+		<field name="P424a" type="int" counter="yes">
+		</field>
+		<field name="P424b" type="int" counter="yes">
+		</field>
+		<field name="P424c" type="int" counter="yes">
+		</field>
+		<field name="P424d" type="int" counter="yes">
+		</field>
+		<field name="P425a" type="int" counter="yes">
+		</field>
+		<field name="P425b" type="int" counter="yes">
+		</field>
+		<field name="P425c" type="int" counter="yes">
+		</field>
+		<field name="P425d" type="int" counter="yes">
+		</field>
+		<field name="P426a" type="int" counter="yes">
+		</field>
+		<field name="P426b" type="int" counter="yes">
+		</field>
+		<field name="P426c" type="int" counter="yes">
+		</field>
+		<field name="P426d" type="int" counter="yes">
+		</field>
+		<field name="P43" type="int" counter="yes">
+		</field>
+		<field name="P431a" type="int" counter="yes">
+		</field>
+		<field name="P431b" type="int" counter="yes">
+		</field>
+		<field name="P431c" type="int" counter="yes">
+		</field>
+		<field name="P432a" type="int" counter="yes">
+		</field>
+		<field name="P432b" type="int" counter="yes">
+		</field>
+		<field name="P432c" type="int" counter="yes">
+		</field>
+		<field name="P433a" type="int" counter="yes">
+		</field>
+		<field name="P433b" type="int" counter="yes">
+		</field>
+		<field name="P433c" type="int" counter="yes">
+		</field>
+		<field name="P433d" type="int" counter="yes">
+		</field>
+		<field name="P434a" type="int" counter="yes">
+		</field>
+		<field name="P434b" type="int" counter="yes">
+		</field>
+		<field name="P434c" type="int" counter="yes">
+		</field>
+		<field name="P434d" type="int" counter="yes">
+		</field>
+		<field name="P435a" type="int" counter="yes">
+		</field>
+		<field name="P435b" type="int" counter="yes">
+		</field>
+		<field name="P435c" type="int" counter="yes">
+		</field>
+		<field name="P435d" type="int" counter="yes">
+		</field>
+		<field name="P436" type="int" counter="yes">
+		</field>
+		<field name="P437a" type="int" counter="yes">
+		</field>
+		<field name="P437b" type="int" counter="yes">
+		</field>
+		<field name="P438a" type="int" counter="yes">
+		</field>
+		<field name="P438b" type="int" counter="yes">
+		</field>
+		<field name="P438c" type="int" counter="yes">
+		</field>
+		<field name="P438d" type="int" counter="yes">
+		</field>
+		<field name="P439" type="int" counter="yes">
+		</field>
+		<field name="P43a" type="int" counter="yes">
+		</field>
+		<field name="P43b" type="int" counter="yes">
+		</field>
+		<field name="P43c" type="int" counter="yes">
+		</field>
+		<field name="P43d" type="int" counter="yes">
+		</field>
+		<field name="P44" type="int" counter="yes">
+		</field>
+		<field name="P440a" type="int" counter="yes">
+		</field>
+		<field name="P440b" type="int" counter="yes">
+		</field>
+		<field name="P440c" type="int" counter="yes">
+		</field>
+		<field name="P441a" type="int" counter="yes">
+		</field>
+		<field name="P441b" type="int" counter="yes">
+		</field>
+		<field name="P441c" type="int" counter="yes">
+		</field>
+		<field name="P44a" type="int" counter="yes">
+		</field>
+		<field name="P44b" type="int" counter="yes">
+		</field>
+		<field name="P44c" type="int" counter="yes">
+		</field>
+		<field name="P44d" type="int" counter="yes">
+		</field>
+		<field name="P451a" type="int" counter="yes">
+		</field>
+		<field name="P451b" type="int" counter="yes">
+		</field>
+		<field name="P452" type="int" counter="yes">
+		</field>
+		<field name="P456" type="int" counter="yes">
+		</field>
+		<field name="P458" type="int" counter="yes">
+		</field>
+		<field name="P460a" type="int" counter="yes">
+		</field>
+		<field name="P460b" type="int" counter="yes">
+		</field>
+		<field name="P460c" type="int" counter="yes">
+		</field>
+		<field name="P461" type="int" counter="yes">
+		</field>
+		<field name="P463" type="int" counter="yes">
+		</field>
+		<field name="P464" type="int" counter="yes">
+		</field>
+		<field name="P465" type="int" counter="yes">
+		</field>
+		<field name="P466" type="int" counter="yes">
+		</field>
+		<field name="P469" type="int" counter="yes">
+		</field>
+		<field name="P470" type="int" counter="yes">
+		</field>
+		<field name="P471" type="int" counter="yes">
+		</field>
+		<field name="P488" type="int" counter="yes">
+		</field>
+		<field name="P489" type="int" counter="yes">
+		</field>
+		<field name="P49" type="int" counter="yes">
+		</field>
+		<field name="P490" type="int" counter="yes">
+		</field>
+		<field name="P491" type="int" counter="yes">
+		</field>
+		<field name="P492" type="int" counter="yes">
+		</field>
+		<field name="P493" type="int" counter="yes">
+		</field>
+		<field name="P494" type="int" counter="yes">
+		</field>
+		<field name="P495" type="int" counter="yes">
+		</field>
+		<field name="P496" type="int" counter="yes">
+		</field>
+		<field name="P497" type="int" counter="yes">
+		</field>
+		<field name="P498" type="int" counter="yes">
+		</field>
+		<field name="P499" type="int" counter="yes">
+		</field>
+		<field name="P501" type="int" counter="yes">
+		</field>
+		<field name="P502" type="int" counter="yes">
+		</field>
+		<field name="P503" type="int" counter="yes">
+		</field>
+		<field name="P504" type="int" counter="yes">
+		</field>
+		<field name="P505" type="int" counter="yes">
+		</field>
+		<field name="P505a" type="int" counter="yes">
+		</field>
+		<field name="P506" type="int" counter="yes">
+		</field>
+		<field name="P506a" type="int" counter="yes">
+		</field>
+		<field name="P507" type="int" counter="yes">
+		</field>
+		<field name="P507a" type="int" counter="yes">
+		</field>
+		<field name="P508" type="int" counter="yes">
+		</field>
+		<field name="P508a" type="int" counter="yes">
+		</field>
+		<field name="P509" type="int" counter="yes">
+		</field>
+		<field name="P509a" type="int" counter="yes">
+		</field>
+		<field name="P510" type="int" counter="yes">
+		</field>
+		<field name="P510a" type="int" counter="yes">
+		</field>
+		<field name="P511" type="int" counter="yes">
+		</field>
+		<field name="P512" type="int" counter="yes">
+		</field>
+		<field name="P513" type="int" counter="yes">
+		</field>
+		<field name="P514" type="int" counter="yes">
+		</field>
+		<field name="P515" type="int" counter="yes">
+		</field>
+		<field name="P516" type="int" counter="yes">
+		</field>
+		<field name="P518" type="int" counter="yes">
+		</field>
+		<field name="P519" type="int" counter="yes">
+		</field>
+		<field name="P520" type="int" counter="yes">
+		</field>
+		<field name="P521" type="int" counter="yes">
+		</field>
+		<field name="P52a" type="int" counter="yes">
+		</field>
+		<field name="P52b" type="int" counter="yes">
+		</field>
+		<field name="P52c" type="int" counter="yes">
+		</field>
+		<field name="P52d" type="int" counter="yes">
+		</field>
+		<field name="P53a" type="int" counter="yes">
+		</field>
+		<field name="P53b" type="int" counter="yes">
+		</field>
+		<field name="P53c" type="int" counter="yes">
+		</field>
+		<field name="P595" type="int" counter="yes">
+		</field>
+		<field name="P596" type="int" counter="yes">
+		</field>
+		<field name="P597" type="int" counter="yes">
+		</field>
+		<field name="P598" type="int" counter="yes">
+		</field>
+		<field name="P61" type="int" counter="yes">
+		</field>
+		<field name="P61a" type="int" counter="yes">
+		</field>
+		<field name="P61b" type="int" counter="yes">
+		</field>
+		<field name="P62a" type="int" counter="yes">
+		</field>
+		<field name="P62b" type="int" counter="yes">
+		</field>
+		<field name="P62c" type="int" counter="yes">
+		</field>
+		<field name="P62d" type="int" counter="yes">
+		</field>
+		<field name="P65" type="int" counter="yes">
+		</field>
+		<field name="P66" type="int" counter="yes">
+		</field>
+		<field name="P67" type="int" counter="yes">
+		</field>
+		<field name="P74" type="int" counter="yes">
+		</field>
+		<field name="P75" type="int" counter="yes">
+		</field>
+		<field name="P9" type="int" counter="yes">
+		</field>
+		<field name="P90a" type="int" counter="yes">
+		</field>
+		<field name="P90b" type="int" counter="yes">
+		</field>
+		<field name="P90c" type="int" counter="yes">
+		</field>
+		<field name="P90d" type="int" counter="yes">
+		</field>
+		<field name="P90e" type="int" counter="yes">
+		</field>
+		<field name="P90f" type="int" counter="yes">
+		</field>
+		<field name="P90g" type="int" counter="yes">
+		</field>
+		<field name="P91a" type="int" counter="yes">
+		</field>
+		<field name="P91b" type="int" counter="yes">
+		</field>
+		<field name="P91c" type="int" counter="yes">
+		</field>
+		<field name="P91d" type="int" counter="yes">
+		</field>
+		<field name="P91e" type="int" counter="yes">
+		</field>
+		<field name="P91f" type="int" counter="yes">
+		</field>
+		<field name="P91g" type="int" counter="yes">
+		</field>
+		<field name="P95" type="int" counter="yes">
+		</field>
+		<field name="P96" type="int" counter="yes">
+		</field>
+		<field name="P97" type="int" counter="yes">
+		</field>
+		<field name="P98a" type="int" counter="yes">
+		</field>
+		<field name="P98b" type="int" counter="yes">
+		</field>
+		<field name="P98c" type="int" counter="yes">
+		</field>
+		<field name="P98d" type="int" counter="yes">
+		</field>
+		<field name="P98e" type="int" counter="yes">
+		</field>
+		<field name="P98f" type="int" counter="yes">
+		</field>
+		<field name="P99" type="int" counter="yes">
+		</field>
+		<index name="laci">
+			<order>CI,LAC,STARTDATE,STARTTIME,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>CI,LAC,SDATE,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx9">
+			<order>BSS,FABRIC,MFS,OMC_ID,SDATE</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="GPM_CELLPTU_H">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="ITFVERSION" type="int" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BTS" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P207" type="int" counter="yes">
+		</field>
+		<field name="P208" type="int" counter="yes">
+		</field>
+		<field name="P20a" type="int" counter="yes">
+		</field>
+		<field name="P20b" type="int" counter="yes">
+		</field>
+		<field name="P20c" type="int" counter="yes">
+		</field>
+		<field name="P20d" type="int" counter="yes">
+		</field>
+		<field name="P20f" type="int" counter="yes">
+		</field>
+		<field name="P20g" type="int" counter="yes">
+		</field>
+		<field name="P20h" type="int" counter="yes">
+		</field>
+		<field name="P20i" type="int" counter="yes">
+		</field>
+		<field name="P20j" type="int" counter="yes">
+		</field>
+		<field name="P20k" type="int" counter="yes">
+		</field>
+		<field name="P20l" type="int" counter="yes">
+		</field>
+		<field name="P20m" type="int" counter="yes">
+		</field>
+		<field name="P20n" type="int" counter="yes">
+		</field>
+		<field name="P21a" type="int" counter="yes">
+		</field>
+		<field name="P21b" type="int" counter="yes">
+		</field>
+		<field name="P21c" type="int" counter="yes">
+		</field>
+		<field name="P21d" type="int" counter="yes">
+		</field>
+		<field name="P21f" type="int" counter="yes">
+		</field>
+		<field name="P21g" type="int" counter="yes">
+		</field>
+		<field name="P21h" type="int" counter="yes">
+		</field>
+		<field name="P21i" type="int" counter="yes">
+		</field>
+		<field name="P21j" type="int" counter="yes">
+		</field>
+		<field name="P21k" type="int" counter="yes">
+		</field>
+		<field name="P21l" type="int" counter="yes">
+		</field>
+		<field name="P21m" type="int" counter="yes">
+		</field>
+		<field name="P21n" type="int" counter="yes">
+		</field>
+		<field name="P310a" type="int" counter="yes">
+		</field>
+		<field name="P310b" type="int" counter="yes">
+		</field>
+		<field name="P310c" type="int" counter="yes">
+		</field>
+		<field name="P310d" type="int" counter="yes">
+		</field>
+		<field name="P335" type="int" counter="yes">
+		</field>
+		<field name="P336" type="int" counter="yes">
+		</field>
+		<field name="P350a" type="int" counter="yes">
+		</field>
+		<field name="P350b" type="int" counter="yes">
+		</field>
+		<field name="P351a" type="int" counter="yes">
+		</field>
+		<field name="P351b" type="int" counter="yes">
+		</field>
+		<field name="P352a" type="int" counter="yes">
+		</field>
+		<field name="P352b" type="int" counter="yes">
+		</field>
+		<field name="P421" type="int" counter="yes">
+		</field>
+		<field name="P457" type="int" counter="yes">
+		</field>
+		<field name="P459" type="int" counter="yes">
+		</field>
+		<field name="P462" type="int" counter="yes">
+		</field>
+		<field name="P55a" type="int" counter="yes">
+		</field>
+		<field name="P55b" type="int" counter="yes">
+		</field>
+		<field name="P55c" type="int" counter="yes">
+		</field>
+		<field name="P55d" type="int" counter="yes">
+		</field>
+		<field name="P55e" type="int" counter="yes">
+		</field>
+		<field name="P55f" type="int" counter="yes">
+		</field>
+		<field name="P55g" type="int" counter="yes">
+		</field>
+		<field name="P55h" type="int" counter="yes">
+		</field>
+		<field name="P55i" type="int" counter="yes">
+		</field>
+		<field name="P55j" type="int" counter="yes">
+		</field>
+		<field name="P55k" type="int" counter="yes">
+		</field>
+		<field name="P55l" type="int" counter="yes">
+		</field>
+		<field name="P55m" type="int" counter="yes">
+		</field>
+		<field name="P57a" type="int" counter="yes">
+		</field>
+		<field name="P57b" type="int" counter="yes">
+		</field>
+		<field name="P57c" type="int" counter="yes">
+		</field>
+		<field name="P57d" type="int" counter="yes">
+		</field>
+		<field name="P57e" type="int" counter="yes">
+		</field>
+		<field name="P57f" type="int" counter="yes">
+		</field>
+		<field name="P57g" type="int" counter="yes">
+		</field>
+		<field name="P57h" type="int" counter="yes">
+		</field>
+		<field name="P57i" type="int" counter="yes">
+		</field>
+		<field name="P57j" type="int" counter="yes">
+		</field>
+		<field name="P57k" type="int" counter="yes">
+		</field>
+		<field name="P57l" type="int" counter="yes">
+		</field>
+		<field name="P57m" type="int" counter="yes">
+		</field>
+		<field name="P59" type="int" counter="yes">
+		</field>
+		<field name="P60" type="int" counter="yes">
+		</field>
+		<field name="P72c" type="int" counter="yes">
+		</field>
+		<field name="P72d" type="int" counter="yes">
+		</field>
+		<field name="P73c" type="int" counter="yes">
+		</field>
+		<field name="P73d" type="int" counter="yes">
+		</field>
+		<index name="laci">
+			<order>CI,LAC,STARTDATE,STARTTIME,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>CI,LAC,SDATE,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_DISTCELL_H">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="ITFVERSION" type="int" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="DSF" type="int" counter="no">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_1" type="int" counter="no">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_10" type="int" counter="no">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_11" type="int" counter="no">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_2" type="int" counter="no">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_3" type="int" counter="no">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_4" type="int" counter="no">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_5" type="int" counter="no">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_6" type="int" counter="no">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_7" type="int" counter="no">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_8" type="int" counter="no">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_9" type="int" counter="no">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_1" type="int" counter="no">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_10" type="int" counter="no">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_2" type="int" counter="no">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_3" type="int" counter="no">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_4" type="int" counter="no">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_5" type="int" counter="no">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_6" type="int" counter="no">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_7" type="int" counter="no">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_8" type="int" counter="no">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_9" type="int" counter="no">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_1" type="int" counter="no">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_2" type="int" counter="no">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_3" type="int" counter="no">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_4" type="int" counter="no">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_5" type="int" counter="no">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_6" type="int" counter="no">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_7" type="int" counter="no">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_8" type="int" counter="no">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_9" type="int" counter="no">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_10" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_1" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_2" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_3" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_4" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_5" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_6" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_7" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_8" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_9" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_10" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_1" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_2" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_3" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_4" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_5" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_6" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_7" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_8" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_9" type="int" counter="no">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_10" type="int" counter="no">
+		</field>	
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_1" type="int" counter="no">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_2" type="int" counter="no">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_3" type="int" counter="no">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_4" type="int" counter="no">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_5" type="int" counter="no">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_6" type="int" counter="no">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_7" type="int" counter="no">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_8" type="int" counter="no">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_9" type="int" counter="no">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_10" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_1" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_2" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_3" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_4" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_5" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_6" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_7" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_8" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_9" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_10" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_1" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_2" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_3" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_4" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_5" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_6" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_7" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_8" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_9" type="int" counter="no">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_10" type="int" counter="no">
+		</field>
+		<field name="P453a_1" type="int" counter="yes">
+		</field>
+		<field name="P453a_2" type="int" counter="yes">
+		</field>
+		<field name="P453a_3" type="int" counter="yes">
+		</field>
+		<field name="P453a_4" type="int" counter="yes">
+		</field>
+		<field name="P453a_5" type="int" counter="yes">
+		</field>
+		<field name="P453a_6" type="int" counter="yes">
+		</field>
+		<field name="P453a_7" type="int" counter="yes">
+		</field>
+		<field name="P453a_8" type="int" counter="yes">
+		</field>
+		<field name="P453a_9" type="int" counter="yes">
+		</field>
+		<field name="P453a_10" type="int" counter="yes">
+		</field>
+		<field name="P453b_1" type="int" counter="yes">
+		</field>
+		<field name="P453b_2" type="int" counter="yes">
+		</field>
+		<field name="P453b_3" type="int" counter="yes">
+		</field>
+		<field name="P453b_4" type="int" counter="yes">
+		</field>
+		<field name="P453b_5" type="int" counter="yes">
+		</field>
+		<field name="P453b_6" type="int" counter="yes">
+		</field>
+		<field name="P453b_7" type="int" counter="yes">
+		</field>
+		<field name="P453b_8" type="int" counter="yes">
+		</field>
+		<field name="P453b_9" type="int" counter="yes">
+		</field>
+		<field name="P453b_10" type="int" counter="yes">
+		</field>
+		<field name="P454a_1" type="int" counter="yes">
+		</field>
+		<field name="P454a_2" type="int" counter="yes">
+		</field>
+		<field name="P454a_3" type="int" counter="yes">
+		</field>
+		<field name="P454a_4" type="int" counter="yes">
+		</field>
+		<field name="P454a_5" type="int" counter="yes">
+		</field>
+		<field name="P454a_6" type="int" counter="yes">
+		</field>
+		<field name="P454a_7" type="int" counter="yes">
+		</field>
+		<field name="P454a_8" type="int" counter="yes">
+		</field>
+		<field name="P454a_9" type="int" counter="yes">
+		</field>
+		<field name="P454a_10" type="int" counter="yes">
+		</field>
+		<field name="P454b_1" type="int" counter="yes">
+		</field>
+		<field name="P454b_2" type="int" counter="yes">
+		</field>
+		<field name="P454b_3" type="int" counter="yes">
+		</field>
+		<field name="P454b_4" type="int" counter="yes">
+		</field>
+		<field name="P454b_5" type="int" counter="yes">
+		</field>
+		<field name="P454b_6" type="int" counter="yes">
+		</field>
+		<field name="P454b_7" type="int" counter="yes">
+		</field>
+		<field name="P454b_8" type="int" counter="yes">
+		</field>
+		<field name="P454b_9" type="int" counter="yes">
+		</field>
+		<field name="P454b_10" type="int" counter="yes">
+		</field>
+		<field name="P455a_1" type="int" counter="yes">
+		</field>
+		<field name="P455a_2" type="int" counter="yes">
+		</field>
+		<field name="P455a_3" type="int" counter="yes">
+		</field>
+		<field name="P455a_4" type="int" counter="yes">
+		</field>
+		<field name="P455a_5" type="int" counter="yes">
+		</field>
+		<field name="P455a_6" type="int" counter="yes">
+		</field>
+		<field name="P455a_7" type="int" counter="yes">
+		</field>
+		<field name="P455a_8" type="int" counter="yes">
+		</field>
+		<field name="P455a_9" type="int" counter="yes">
+		</field>
+		<field name="P455a_10" type="int" counter="yes">
+		</field>
+		<field name="P455b_1" type="int" counter="yes">
+		</field>
+		<field name="P455b_2" type="int" counter="yes">
+		</field>
+		<field name="P455b_3" type="int" counter="yes">
+		</field>
+		<field name="P455b_4" type="int" counter="yes">
+		</field>
+		<field name="P455b_5" type="int" counter="yes">
+		</field>
+		<field name="P455b_6" type="int" counter="yes">
+		</field>
+		<field name="P455b_7" type="int" counter="yes">
+		</field>
+		<field name="P455b_8" type="int" counter="yes">
+		</field>
+		<field name="P455b_9" type="int" counter="yes">
+		</field>
+		<field name="P455b_10" type="int" counter="yes">
+		</field>
+		<field name="P531a_1" type="int" counter="yes">
+		</field>
+		<field name="P531a_10" type="int" counter="yes">
+		</field>
+		<field name="P531a_11" type="int" counter="yes">
+		</field>
+		<field name="P531a_2" type="int" counter="yes">
+		</field>
+		<field name="P531a_3" type="int" counter="yes">
+		</field>
+		<field name="P531a_4" type="int" counter="yes">
+		</field>
+		<field name="P531a_5" type="int" counter="yes">
+		</field>
+		<field name="P531a_6" type="int" counter="yes">
+		</field>
+		<field name="P531a_7" type="int" counter="yes">
+		</field>
+		<field name="P531a_8" type="int" counter="yes">
+		</field>
+		<field name="P531a_9" type="int" counter="yes">
+		</field>
+		<field name="P531b_1" type="int" counter="yes">
+		</field>
+		<field name="P531b_10" type="int" counter="yes">
+		</field>
+		<field name="P531b_11" type="int" counter="yes">
+		</field>
+		<field name="P531b_2" type="int" counter="yes">
+		</field>
+		<field name="P531b_3" type="int" counter="yes">
+		</field>
+		<field name="P531b_4" type="int" counter="yes">
+		</field>
+		<field name="P531b_5" type="int" counter="yes">
+		</field>
+		<field name="P531b_6" type="int" counter="yes">
+		</field>
+		<field name="P531b_7" type="int" counter="yes">
+		</field>
+		<field name="P531b_8" type="int" counter="yes">
+		</field>
+		<field name="P531b_9" type="int" counter="yes">
+		</field>
+		<field name="P532a_1" type="int" counter="yes">
+		</field>
+		<field name="P532a_10" type="int" counter="yes">
+		</field>
+		<field name="P532a_2" type="int" counter="yes">
+		</field>
+		<field name="P532a_3" type="int" counter="yes">
+		</field>
+		<field name="P532a_4" type="int" counter="yes">
+		</field>
+		<field name="P532a_5" type="int" counter="yes">
+		</field>
+		<field name="P532a_6" type="int" counter="yes">
+		</field>
+		<field name="P532a_7" type="int" counter="yes">
+		</field>
+		<field name="P532a_8" type="int" counter="yes">
+		</field>
+		<field name="P532a_9" type="int" counter="yes">
+		</field>
+		<field name="P532b_1" type="int" counter="yes">
+		</field>
+		<field name="P532b_10" type="int" counter="yes">
+		</field>
+		<field name="P532b_2" type="int" counter="yes">
+		</field>
+		<field name="P532b_3" type="int" counter="yes">
+		</field>
+		<field name="P532b_4" type="int" counter="yes">
+		</field>
+		<field name="P532b_5" type="int" counter="yes">
+		</field>
+		<field name="P532b_6" type="int" counter="yes">
+		</field>
+		<field name="P532b_7" type="int" counter="yes">
+		</field>
+		<field name="P532b_8" type="int" counter="yes">
+		</field>
+		<field name="P532b_9" type="int" counter="yes">
+		</field>
+		<index name="laci">
+			<order>CI,LAC,STARTDATE,STARTTIME,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>CI,LAC,SDATE,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_LCSCELL_H">
+	  <field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="ITFVERSION" type="int" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P800" type="int" counter="yes">
+		</field>
+		<field name="P801" type="int" counter="yes">
+		</field>
+		<field name="P802" type="int" counter="yes">
+		</field>
+		<field name="P803" type="int" counter="yes">
+		</field>
+		<field name="P804" type="int" counter="yes">
+		</field>
+		<field name="P805" type="int" counter="yes">
+		</field>
+		<field name="P806" type="int" counter="yes">
+		</field>
+		<field name="P807" type="int" counter="yes">
+		</field>
+		<field name="P808" type="int" counter="yes">
+		</field>
+		<field name="P809" type="int" counter="yes">
+		</field>
+		<field name="P821" type="int" counter="yes">
+		</field>
+		<field name="P810" type="int" counter="yes">
+		</field>
+		<field name="P811" type="int" counter="yes">
+		</field>
+		<field name="P812" type="int" counter="yes">
+		</field>
+		<field name="P813" type="int" counter="yes">
+		</field>
+		<field name="P814" type="int" counter="yes">
+		</field>
+		<field name="P815" type="int" counter="yes">
+		</field>
+		<field name="P816" type="int" counter="yes">
+		</field>
+		<field name="P817" type="int" counter="yes">
+		</field>
+		<field name="P818" type="int" counter="yes">
+		</field>
+		<field name="P819" type="int" counter="yes">
+		</field>
+		<field name="P820" type="int" counter="yes">
+		</field>
+		<field name="P822" type="int" counter="yes">
+		</field>
+		<field name="P823" type="int" counter="yes">
+		</field>
+		<field name="P824" type="int" counter="yes">
+		</field>
+		<field name="P825" type="int" counter="yes">
+		</field>
+		<field name="P826" type="int" counter="yes">
+		</field>
+		<field name="P827" type="int" counter="yes">
+		</field>
+		<field name="P828" type="int" counter="yes">
+		</field>
+		<field name="P829" type="int" counter="yes">
+		</field>
+		<field name="P830" type="int" counter="yes">
+		</field>
+		<field name="P831" type="int" counter="yes">
+		</field>
+		<field name="P832" type="int" counter="yes">
+		</field>
+		<field name="P833" type="int" counter="yes">
+		</field>
+		<field name="P834" type="int" counter="yes">
+		</field>
+		<field name="P835" type="int" counter="yes">
+		</field>
+		<field name="P836" type="int" counter="yes">
+		</field>
+		<field name="P837" type="int" counter="yes">
+		</field>
+		<index name="laci">
+			<order>CI,LAC,SDATE,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx3">
+			<order>BSS,MFS,OMC_ID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="GPM_PVC_D">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="Bearer" type="int" counter="no">
+		</field>
+		<field name="PVC" type="int" counter="no">
+		</field>
+		<field name="P4" type="int" counter="yes">
+		</field>
+		<field name="P5" type="int" counter="yes">
+		</field>
+		<field name="P23" type="int" counter="yes">
+		</field>
+		<field name="P34" type="int" counter="yes">
+		</field>
+		<field name="P45" type="int" counter="yes">
+		</field>
+		<field name="P46" type="int" counter="yes">
+		</field>
+		<field name="P6c" type="int" counter="yes">
+		</field>
+		<field name="P6d" type="int" counter="yes">
+		</field>
+		<index name="idx2">
+			<order>PVC,Bearer,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>	
+	<table name="GPM_BSC_D">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="P104" type="int" counter="yes">
+		</field>
+		<field name="P106" type="int" counter="yes">
+		</field>
+		<field name="P107" type="int" counter="yes">
+		</field>
+		<field name="P201" type="int" counter="yes">
+		</field>
+		<field name="P202" type="int" counter="yes">
+		</field>
+		<field name="P391a" type="int" counter="yes">
+		</field>
+		<field name="P391b" type="int" counter="yes">
+		</field>
+		<field name="P392a" type="int" counter="yes">
+		</field>
+		<field name="P392b" type="int" counter="yes">
+		</field>
+		<field name="P402" type="int" counter="yes">
+		</field>
+		<field name="P450a" type="int" counter="yes">
+		</field>
+		<field name="P450b" type="int" counter="yes">
+		</field>
+		<field name="P450c" type="int" counter="yes">
+		</field>
+		<field name="P450d" type="int" counter="yes">
+		</field>
+		<field name="P450e" type="int" counter="yes">
+		</field>
+		<field name="P450f" type="int" counter="yes">
+		</field>
+		<field name="P450g" type="int" counter="yes">
+		</field>
+		<field name="P450h" type="int" counter="yes">
+		</field>
+		<field name="P500" type="int" counter="yes">
+		</field>
+		<field name="P530a_1" type="int" counter="yes">
+		</field>
+		<field name="P530a_2" type="int" counter="yes">
+		</field>
+		<field name="P530a_3" type="int" counter="yes">
+		</field>
+		<field name="P530a_4" type="int" counter="yes">
+		</field>
+		<field name="P530a_5" type="int" counter="yes">
+		</field>
+		<field name="P530b_5" type="int" counter="yes">
+		</field>
+		<field name="P594" type="int" counter="yes">
+		</field>
+		<field name="P76a" type="int" counter="yes">
+		</field>
+		<field name="P77a" type="int" counter="yes">
+		</field>
+    <field name="P7a" type="int" counter="yes">
+		</field>
+		<field name="P7b" type="int" counter="yes">
+		</field>
+		<field name="P7c_1" type="int" counter="yes">
+		</field>
+		<field name="P7c_2" type="int" counter="yes">
+		</field>
+		<field name="P7d" type="int" counter="yes">
+		</field>
+		<field name="P7e" type="int" counter="yes">
+		</field>
+		<field name="P7f" type="int" counter="yes">
+		</field>
+		<field name="P7g" type="int" counter="yes">
+		</field>
+		<field name="P7h" type="int" counter="yes">
+		</field>
+		<field name="P7i" type="int" counter="yes">
+		</field>
+		<index name="idx2">
+			<order>BSS,FABRIC,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_BSCTDM_D">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P100f" type="int" counter="yes">
+		</field>
+		<field name="P101" type="int" counter="yes">
+		</field>
+		<field name="P103" type="int" counter="yes">
+		</field>
+		<field name="P383a" type="int" counter="yes">
+		</field>
+		<field name="P383b" type="int" counter="yes">
+		</field>
+		<field name="P384" type="int" counter="yes">
+		</field>
+		<field name="P474" type="int" counter="yes">
+		</field>
+		<field name="P486" type="int" counter="yes">
+		</field>
+		<index name="idx2">
+			<order>BSS,FABRIC,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_BEARERCHANNEL_D">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="Bearer" type="int" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="P33" type="int" counter="yes">
+		</field>
+		<field name="P3a" type="int" counter="yes">
+		</field>
+		<field name="P3b" type="int" counter="yes">
+		</field>
+		<field name="P6a" type="int" counter="yes">
+		</field>
+		<field name="P6b" type="int" counter="yes">
+		</field>
+		<index name="idx2">
+			<order>Bearer,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_LAPD_D">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="GSL" type="int" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="P2a" type="int" counter="yes">
+		</field>
+		<field name="P2b" type="int" counter="yes">
+		</field>
+		<field name="P2c" type="int" counter="yes">
+		</field>
+		<field name="P2d" type="int" counter="yes">
+		</field>
+		<field name="P32" type="int" counter="yes">
+		</field>
+		<field name="P41" type="int" counter="yes">
+		</field>
+		<field name="P42" type="int" counter="yes">
+		</field>
+		<index name="lapd">
+			<order>BSS,GSL,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_BTS_D">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BTS" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="P472" type="int" counter="yes">
+		</field>
+		<field name="P484" type="int" counter="yes">
+		</field>
+		<index name="idx2">
+			<order>BSS,BTS,FABRIC,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_CELL_D">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BTS" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="P10" type="int" counter="yes">
+		</field>
+		<field name="P100c" type="int" counter="yes">
+		</field>
+		<field name="P100d" type="int" counter="yes">
+		</field>
+		<field name="P100e" type="int" counter="yes">
+		</field>
+		<field name="P105c" type="int" counter="yes">
+		</field>
+		<field name="P105d" type="int" counter="yes">
+		</field>
+		<field name="P105e" type="int" counter="yes">
+		</field>
+		<field name="P105f" type="int" counter="yes">
+		</field>
+		<field name="P105g" type="int" counter="yes">
+		</field>
+		<field name="P105h" type="int" counter="yes">
+		</field>
+		<field name="P105i" type="int" counter="yes">
+		</field>
+		<field name="P105j" type="int" counter="yes">
+		</field>
+		<field name="P105k" type="int" counter="yes">
+		</field>
+		<field name="P105l" type="int" counter="yes">
+		</field>
+		<field name="P11" type="int" counter="yes">
+		</field>
+		<field name="P129a" type="int" counter="yes">
+		</field>
+		<field name="P129b" type="int" counter="yes">
+		</field>
+		<field name="P129c" type="int" counter="yes">
+		</field>
+		<field name="P129d" type="int" counter="yes">
+		</field>
+		<field name="P13" type="int" counter="yes">
+		</field>
+		<field name="P14" type="int" counter="yes">
+		</field>
+		<field name="P146" type="int" counter="yes">
+		</field>
+		<field name="P147" type="int" counter="yes">
+		</field>
+		<field name="P15" type="int" counter="yes">
+		</field>
+		<field name="P16" type="int" counter="yes">
+		</field>
+		<field name="P160" type="int" counter="yes">
+		</field>
+		<field name="P161" type="int" counter="yes">
+		</field>
+		<field name="P162" type="int" counter="yes">
+		</field>
+		<field name="P163" type="int" counter="yes">
+		</field>
+		<field name="P164" type="int" counter="yes">
+		</field>
+		<field name="P165" type="int" counter="yes">
+		</field>
+		<field name="P200" type="int" counter="yes">
+		</field>
+		<field name="P203" type="int" counter="yes">
+		</field>
+		<field name="P204" type="int" counter="yes">
+		</field>
+		<field name="P209" type="int" counter="yes">
+		</field>
+		<field name="P210" type="int" counter="yes">
+		</field>
+		<field name="P211" type="int" counter="yes">
+		</field>
+		<field name="P212" type="int" counter="yes">
+		</field>
+		<field name="P213" type="int" counter="yes">
+		</field>
+		<field name="P214" type="int" counter="yes">
+		</field>
+		<field name="P215" type="int" counter="yes">
+		</field>
+		<field name="P22" type="int" counter="yes">
+		</field>
+		<field name="P220" type="int" counter="yes">
+		</field>
+		<field name="P221" type="int" counter="yes">
+		</field>
+		<field name="P222" type="int" counter="yes">
+		</field>
+		<field name="P223" type="int" counter="yes">
+		</field>
+		<field name="P224" type="int" counter="yes">
+		</field>
+		<field name="P225" type="int" counter="yes">
+		</field>
+		<field name="P226" type="int" counter="yes">
+		</field>
+		<field name="P227" type="int" counter="yes">
+		</field>
+		<field name="P228" type="int" counter="yes">
+		</field>
+		<field name="P229" type="int" counter="yes">
+		</field>
+		<field name="P231" type="int" counter="yes">
+		</field>
+		<field name="P232" type="int" counter="yes">
+		</field>
+		<field name="P24" type="int" counter="yes">
+		</field>
+		<field name="P26" type="int" counter="yes">
+		</field>
+		<field name="P27" type="int" counter="yes">
+		</field>
+		<field name="P28" type="int" counter="yes">
+		</field>
+		<field name="P302b_1" type="int" counter="yes">
+		</field>
+		<field name="P302b_2" type="int" counter="yes">
+		</field>
+		<field name="P302c_1" type="int" counter="yes">
+		</field>
+		<field name="P302c_2" type="int" counter="yes">
+		</field>
+		<field name="P302c_3" type="int" counter="yes">
+		</field>
+		<field name="P302c_4" type="int" counter="yes">
+		</field>
+		<field name="P303a" type="int" counter="yes">
+		</field>
+		<field name="P303b" type="int" counter="yes">
+		</field>
+		<field name="P30a" type="int" counter="yes">
+		</field>
+		<field name="P30b" type="int" counter="yes">
+		</field>
+		<field name="P30c" type="int" counter="yes">
+		</field>
+		<field name="P30d" type="int" counter="yes">
+		</field>
+		<field name="P35" type="int" counter="yes">
+		</field>
+		<field name="P36" type="int" counter="yes">
+		</field>
+		<field name="P385a" type="int" counter="yes">
+		</field>
+		<field name="P385b" type="int" counter="yes">
+		</field>
+		<field name="P38b" type="int" counter="yes">
+		</field>
+		<field name="P38c" type="int" counter="yes">
+		</field>
+		<field name="P38e" type="int" counter="yes">
+		</field>
+		<field name="P38f" type="int" counter="yes">
+		</field>
+		<field name="P39" type="int" counter="yes">
+		</field>
+		<field name="P396a" type="int" counter="yes">
+		</field>
+		<field name="P396b" type="int" counter="yes">
+		</field>
+		<field name="P397" type="int" counter="yes">
+		</field>
+		<field name="P399" type="int" counter="yes">
+		</field>
+		<field name="P40" type="int" counter="yes">
+		</field>
+		<field name="P400" type="int" counter="yes">
+		</field>
+		<field name="P401" type="int" counter="yes">
+		</field>
+		<field name="P403a" type="int" counter="yes">
+		</field>
+		<field name="P403b" type="int" counter="yes">
+		</field>
+		<field name="P403c" type="int" counter="yes">
+		</field>
+		<field name="P403d" type="int" counter="yes">
+		</field>
+		<field name="P404a" type="int" counter="yes">
+		</field>
+		<field name="P404b" type="int" counter="yes">
+		</field>
+		<field name="P404c" type="int" counter="yes">
+		</field>
+		<field name="P404d" type="int" counter="yes">
+		</field>
+		<field name="P405a" type="int" counter="yes">
+		</field>
+		<field name="P405b" type="int" counter="yes">
+		</field>
+		<field name="P405c" type="int" counter="yes">
+		</field>
+		<field name="P405d" type="int" counter="yes">
+		</field>
+		<field name="P406a" type="int" counter="yes">
+		</field>
+		<field name="P406b" type="int" counter="yes">
+		</field>
+		<field name="P406c" type="int" counter="yes">
+		</field>
+		<field name="P406d" type="int" counter="yes">
+		</field>
+		<field name="P407a" type="int" counter="yes">
+		</field>
+		<field name="P407b" type="int" counter="yes">
+		</field>
+		<field name="P407c" type="int" counter="yes">
+		</field>
+		<field name="P407d" type="int" counter="yes">
+		</field>
+		<field name="P408a" type="int" counter="yes">
+		</field>
+		<field name="P408b" type="int" counter="yes">
+		</field>
+		<field name="P408c" type="int" counter="yes">
+		</field>
+		<field name="P408d" type="int" counter="yes">
+		</field>
+		<field name="P409" type="int" counter="yes">
+		</field>
+		<field name="P410" type="int" counter="yes">
+		</field>
+		<field name="P411" type="int" counter="yes">
+		</field>
+		<field name="P412" type="int" counter="yes">
+		</field>
+		<field name="P413" type="int" counter="yes">
+		</field>
+		<field name="P414bis" type="int" counter="yes">
+		</field>
+		<field name="P415bis" type="int" counter="yes">
+		</field>
+		<field name="P416bis" type="int" counter="yes">
+		</field>
+		<field name="P417" type="int" counter="yes">
+		</field>
+		<field name="P419" type="int" counter="yes">
+		</field>
+		<field name="P420" type="int" counter="yes">
+		</field>
+		<field name="P422" type="int" counter="yes">
+		</field>
+		<field name="P423a" type="int" counter="yes">
+		</field>
+		<field name="P423b" type="int" counter="yes">
+		</field>
+		<field name="P423c" type="int" counter="yes">
+		</field>
+		<field name="P423d" type="int" counter="yes">
+		</field>
+		<field name="P424a" type="int" counter="yes">
+		</field>
+		<field name="P424b" type="int" counter="yes">
+		</field>
+		<field name="P424c" type="int" counter="yes">
+		</field>
+		<field name="P424d" type="int" counter="yes">
+		</field>
+		<field name="P425a" type="int" counter="yes">
+		</field>
+		<field name="P425b" type="int" counter="yes">
+		</field>
+		<field name="P425c" type="int" counter="yes">
+		</field>
+		<field name="P425d" type="int" counter="yes">
+		</field>
+		<field name="P426a" type="int" counter="yes">
+		</field>
+		<field name="P426b" type="int" counter="yes">
+		</field>
+		<field name="P426c" type="int" counter="yes">
+		</field>
+		<field name="P426d" type="int" counter="yes">
+		</field>
+		<field name="P43" type="int" counter="yes">
+		</field>
+		<field name="P431a" type="int" counter="yes">
+		</field>
+		<field name="P431b" type="int" counter="yes">
+		</field>
+		<field name="P431c" type="int" counter="yes">
+		</field>
+		<field name="P432a" type="int" counter="yes">
+		</field>
+		<field name="P432b" type="int" counter="yes">
+		</field>
+		<field name="P432c" type="int" counter="yes">
+		</field>
+		<field name="P433a" type="int" counter="yes">
+		</field>
+		<field name="P433b" type="int" counter="yes">
+		</field>
+		<field name="P433c" type="int" counter="yes">
+		</field>
+		<field name="P433d" type="int" counter="yes">
+		</field>
+		<field name="P434a" type="int" counter="yes">
+		</field>
+		<field name="P434b" type="int" counter="yes">
+		</field>
+		<field name="P434c" type="int" counter="yes">
+		</field>
+		<field name="P434d" type="int" counter="yes">
+		</field>
+		<field name="P435a" type="int" counter="yes">
+		</field>
+		<field name="P435b" type="int" counter="yes">
+		</field>
+		<field name="P435c" type="int" counter="yes">
+		</field>
+		<field name="P435d" type="int" counter="yes">
+		</field>
+		<field name="P436" type="int" counter="yes">
+		</field>
+		<field name="P437a" type="int" counter="yes">
+		</field>
+		<field name="P437b" type="int" counter="yes">
+		</field>
+		<field name="P438a" type="int" counter="yes">
+		</field>
+		<field name="P438b" type="int" counter="yes">
+		</field>
+		<field name="P438c" type="int" counter="yes">
+		</field>
+		<field name="P438d" type="int" counter="yes">
+		</field>
+		<field name="P439" type="int" counter="yes">
+		</field>
+		<field name="P43a" type="int" counter="yes">
+		</field>
+		<field name="P43b" type="int" counter="yes">
+		</field>
+		<field name="P43c" type="int" counter="yes">
+		</field>
+		<field name="P43d" type="int" counter="yes">
+		</field>
+		<field name="P44" type="int" counter="yes">
+		</field>
+		<field name="P440a" type="int" counter="yes">
+		</field>
+		<field name="P440b" type="int" counter="yes">
+		</field>
+		<field name="P440c" type="int" counter="yes">
+		</field>
+		<field name="P441a" type="int" counter="yes">
+		</field>
+		<field name="P441b" type="int" counter="yes">
+		</field>
+		<field name="P441c" type="int" counter="yes">
+		</field>
+		<field name="P44a" type="int" counter="yes">
+		</field>
+		<field name="P44b" type="int" counter="yes">
+		</field>
+		<field name="P44c" type="int" counter="yes">
+		</field>
+		<field name="P44d" type="int" counter="yes">
+		</field>
+		<field name="P451a" type="int" counter="yes">
+		</field>
+		<field name="P451b" type="int" counter="yes">
+		</field>
+		<field name="P452" type="int" counter="yes">
+		</field>
+		<field name="P456" type="int" counter="yes">
+		</field>
+		<field name="P458" type="int" counter="yes">
+		</field>
+		<field name="P460a" type="int" counter="yes">
+		</field>
+		<field name="P460b" type="int" counter="yes">
+		</field>
+		<field name="P460c" type="int" counter="yes">
+		</field>
+		<field name="P461" type="int" counter="yes">
+		</field>
+		<field name="P463" type="int" counter="yes">
+		</field>
+		<field name="P464" type="int" counter="yes">
+		</field>
+		<field name="P465" type="int" counter="yes">
+		</field>
+		<field name="P466" type="int" counter="yes">
+		</field>
+		<field name="P469" type="int" counter="yes">
+		</field>
+		<field name="P470" type="int" counter="yes">
+		</field>
+		<field name="P471" type="int" counter="yes">
+		</field>
+		<field name="P488" type="int" counter="yes">
+		</field>
+		<field name="P489" type="int" counter="yes">
+		</field>
+		<field name="P49" type="int" counter="yes">
+		</field>
+		<field name="P490" type="int" counter="yes">
+		</field>
+		<field name="P491" type="int" counter="yes">
+		</field>
+		<field name="P492" type="int" counter="yes">
+		</field>
+		<field name="P493" type="int" counter="yes">
+		</field>
+		<field name="P494" type="int" counter="yes">
+		</field>
+		<field name="P495" type="int" counter="yes">
+		</field>
+		<field name="P496" type="int" counter="yes">
+		</field>
+		<field name="P497" type="int" counter="yes">
+		</field>
+		<field name="P498" type="int" counter="yes">
+		</field>
+		<field name="P499" type="int" counter="yes">
+		</field>
+		<field name="P501" type="int" counter="yes">
+		</field>
+		<field name="P502" type="int" counter="yes">
+		</field>
+		<field name="P503" type="int" counter="yes">
+		</field>
+		<field name="P504" type="int" counter="yes">
+		</field>
+		<field name="P505" type="int" counter="yes">
+		</field>
+		<field name="P505a" type="int" counter="yes">
+		</field>
+		<field name="P506" type="int" counter="yes">
+		</field>
+		<field name="P506a" type="int" counter="yes">
+		</field>
+		<field name="P507" type="int" counter="yes">
+		</field>
+		<field name="P507a" type="int" counter="yes">
+		</field>
+		<field name="P508" type="int" counter="yes">
+		</field>
+		<field name="P508a" type="int" counter="yes">
+		</field>
+		<field name="P509" type="int" counter="yes">
+		</field>
+		<field name="P509a" type="int" counter="yes">
+		</field>
+		<field name="P510" type="int" counter="yes">
+		</field>
+		<field name="P510a" type="int" counter="yes">
+		</field>
+		<field name="P511" type="int" counter="yes">
+		</field>
+		<field name="P512" type="int" counter="yes">
+		</field>
+		<field name="P513" type="int" counter="yes">
+		</field>
+		<field name="P514" type="int" counter="yes">
+		</field>
+		<field name="P515" type="int" counter="yes">
+		</field>
+		<field name="P516" type="int" counter="yes">
+		</field>
+		<field name="P518" type="int" counter="yes">
+		</field>
+		<field name="P519" type="int" counter="yes">
+		</field>
+		<field name="P520" type="int" counter="yes">
+		</field>
+		<field name="P521" type="int" counter="yes">
+		</field>
+		<field name="P52a" type="int" counter="yes">
+		</field>
+		<field name="P52b" type="int" counter="yes">
+		</field>
+		<field name="P52c" type="int" counter="yes">
+		</field>
+		<field name="P52d" type="int" counter="yes">
+		</field>
+		<field name="P53a" type="int" counter="yes">
+		</field>
+		<field name="P53b" type="int" counter="yes">
+		</field>
+		<field name="P53c" type="int" counter="yes">
+		</field>
+		<field name="P595" type="int" counter="yes">
+		</field>
+		<field name="P596" type="int" counter="yes">
+		</field>
+		<field name="P597" type="int" counter="yes">
+		</field>
+		<field name="P598" type="int" counter="yes">
+		</field>
+		<field name="P61" type="int" counter="yes">
+		</field>
+		<field name="P61a" type="int" counter="yes">
+		</field>
+		<field name="P61b" type="int" counter="yes">
+		</field>
+		<field name="P62a" type="int" counter="yes">
+		</field>
+		<field name="P62b" type="int" counter="yes">
+		</field>
+		<field name="P62c" type="int" counter="yes">
+		</field>
+		<field name="P62d" type="int" counter="yes">
+		</field>
+		<field name="P65" type="int" counter="yes">
+		</field>
+		<field name="P66" type="int" counter="yes">
+		</field>
+		<field name="P67" type="int" counter="yes">
+		</field>
+		<field name="P74" type="int" counter="yes">
+		</field>
+		<field name="P75" type="int" counter="yes">
+		</field>
+		<field name="P9" type="int" counter="yes">
+		</field>
+		<field name="P90a" type="int" counter="yes">
+		</field>
+		<field name="P90b" type="int" counter="yes">
+		</field>
+		<field name="P90c" type="int" counter="yes">
+		</field>
+		<field name="P90d" type="int" counter="yes">
+		</field>
+		<field name="P90e" type="int" counter="yes">
+		</field>
+		<field name="P90f" type="int" counter="yes">
+		</field>
+		<field name="P90g" type="int" counter="yes">
+		</field>
+		<field name="P91a" type="int" counter="yes">
+		</field>
+		<field name="P91b" type="int" counter="yes">
+		</field>
+		<field name="P91c" type="int" counter="yes">
+		</field>
+		<field name="P91d" type="int" counter="yes">
+		</field>
+		<field name="P91e" type="int" counter="yes">
+		</field>
+		<field name="P91f" type="int" counter="yes">
+		</field>
+		<field name="P91g" type="int" counter="yes">
+		</field>
+		<field name="P95" type="int" counter="yes">
+		</field>
+		<field name="P96" type="int" counter="yes">
+		</field>
+		<field name="P97" type="int" counter="yes">
+		</field>
+		<field name="P98a" type="int" counter="yes">
+		</field>
+		<field name="P98b" type="int" counter="yes">
+		</field>
+		<field name="P98c" type="int" counter="yes">
+		</field>
+		<field name="P98d" type="int" counter="yes">
+		</field>
+		<field name="P98e" type="int" counter="yes">
+		</field>
+		<field name="P98f" type="int" counter="yes">
+		</field>
+		<field name="P99" type="int" counter="yes">
+		</field>
+		<index name="idx2">
+			<order>CI,LAC,SDATE,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx3">
+			<order>BSS,BTS,MFS,OMC_ID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	
+	<table name="GPM_CELLPTU_D">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BTS" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P207" type="int" counter="yes">
+		</field>
+		<field name="P208" type="int" counter="yes">
+		</field>
+		<field name="P20a" type="int" counter="yes">
+		</field>
+		<field name="P20b" type="int" counter="yes">
+		</field>
+		<field name="P20c" type="int" counter="yes">
+		</field>
+		<field name="P20d" type="int" counter="yes">
+		</field>
+		<field name="P20f" type="int" counter="yes">
+		</field>
+		<field name="P20g" type="int" counter="yes">
+		</field>
+		<field name="P20h" type="int" counter="yes">
+		</field>
+		<field name="P20i" type="int" counter="yes">
+		</field>
+		<field name="P20j" type="int" counter="yes">
+		</field>
+		<field name="P20k" type="int" counter="yes">
+		</field>
+		<field name="P20l" type="int" counter="yes">
+		</field>
+		<field name="P20m" type="int" counter="yes">
+		</field>
+		<field name="P20n" type="int" counter="yes">
+		</field>
+		<field name="P21a" type="int" counter="yes">
+		</field>
+		<field name="P21b" type="int" counter="yes">
+		</field>
+		<field name="P21c" type="int" counter="yes">
+		</field>
+		<field name="P21d" type="int" counter="yes">
+		</field>
+		<field name="P21f" type="int" counter="yes">
+		</field>
+		<field name="P21g" type="int" counter="yes">
+		</field>
+		<field name="P21h" type="int" counter="yes">
+		</field>
+		<field name="P21i" type="int" counter="yes">
+		</field>
+		<field name="P21j" type="int" counter="yes">
+		</field>
+		<field name="P21k" type="int" counter="yes">
+		</field>
+		<field name="P21l" type="int" counter="yes">
+		</field>
+		<field name="P21m" type="int" counter="yes">
+		</field>
+		<field name="P21n" type="int" counter="yes">
+		</field>
+		<field name="P310a" type="int" counter="yes">
+		</field>
+		<field name="P310b" type="int" counter="yes">
+		</field>
+		<field name="P310c" type="int" counter="yes">
+		</field>
+		<field name="P310d" type="int" counter="yes">
+		</field>
+		<field name="P335" type="int" counter="yes">
+		</field>
+		<field name="P336" type="int" counter="yes">
+		</field>
+		<field name="P350a" type="int" counter="yes">
+		</field>
+		<field name="P350b" type="int" counter="yes">
+		</field>
+		<field name="P351a" type="int" counter="yes">
+		</field>
+		<field name="P351b" type="int" counter="yes">
+		</field>
+		<field name="P352a" type="int" counter="yes">
+		</field>
+		<field name="P352b" type="int" counter="yes">
+		</field>
+		<field name="P421" type="int" counter="yes">
+		</field>
+		<field name="P457" type="int" counter="yes">
+		</field>
+		<field name="P459" type="int" counter="yes">
+		</field>
+		<field name="P462" type="int" counter="yes">
+		</field>
+		<field name="P55a" type="int" counter="yes">
+		</field>
+		<field name="P55b" type="int" counter="yes">
+		</field>
+		<field name="P55c" type="int" counter="yes">
+		</field>
+		<field name="P55d" type="int" counter="yes">
+		</field>
+		<field name="P55e" type="int" counter="yes">
+		</field>
+		<field name="P55f" type="int" counter="yes">
+		</field>
+		<field name="P55g" type="int" counter="yes">
+		</field>
+		<field name="P55h" type="int" counter="yes">
+		</field>
+		<field name="P55i" type="int" counter="yes">
+		</field>
+		<field name="P55j" type="int" counter="yes">
+		</field>
+		<field name="P55k" type="int" counter="yes">
+		</field>
+		<field name="P55l" type="int" counter="yes">
+		</field>
+		<field name="P55m" type="int" counter="yes">
+		</field>
+		<field name="P57a" type="int" counter="yes">
+		</field>
+		<field name="P57b" type="int" counter="yes">
+		</field>
+		<field name="P57c" type="int" counter="yes">
+		</field>
+		<field name="P57d" type="int" counter="yes">
+		</field>
+		<field name="P57e" type="int" counter="yes">
+		</field>
+		<field name="P57f" type="int" counter="yes">
+		</field>
+		<field name="P57g" type="int" counter="yes">
+		</field>
+		<field name="P57h" type="int" counter="yes">
+		</field>
+		<field name="P57i" type="int" counter="yes">
+		</field>
+		<field name="P57j" type="int" counter="yes">
+		</field>
+		<field name="P57k" type="int" counter="yes">
+		</field>
+		<field name="P57l" type="int" counter="yes">
+		</field>
+		<field name="P57m" type="int" counter="yes">
+		</field>
+		<field name="P59" type="int" counter="yes">
+		</field>
+		<field name="P60" type="int" counter="yes">
+		</field>
+		<field name="P72c" type="int" counter="yes">
+		</field>
+		<field name="P72d" type="int" counter="yes">
+		</field>
+		<field name="P73c" type="int" counter="yes">
+		</field>
+		<field name="P73d" type="int" counter="yes">
+		</field>
+		<index name="idx2">
+			<order>CI,LAC,SDATE,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	
+	<table name="GPM_LCSCELL_D">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P800" type="int" counter="yes">
+		</field>
+		<field name="P801" type="int" counter="yes">
+		</field>
+		<field name="P802" type="int" counter="yes">
+		</field>
+		<field name="P803" type="int" counter="yes">
+		</field>
+		<field name="P804" type="int" counter="yes">
+		</field>
+		<field name="P805" type="int" counter="yes">
+		</field>
+		<field name="P806" type="int" counter="yes">
+		</field>
+		<field name="P807" type="int" counter="yes">
+		</field>
+		<field name="P808" type="int" counter="yes">
+		</field>
+		<field name="P809" type="int" counter="yes">
+		</field>
+		<field name="P821" type="int" counter="yes">
+		</field>
+		<field name="P810" type="int" counter="yes">
+		</field>
+		<field name="P811" type="int" counter="yes">
+		</field>
+		<field name="P812" type="int" counter="yes">
+		</field>
+		<field name="P813" type="int" counter="yes">
+		</field>
+		<field name="P814" type="int" counter="yes">
+		</field>
+		<field name="P815" type="int" counter="yes">
+		</field>
+		<field name="P816" type="int" counter="yes">
+		</field>
+		<field name="P817" type="int" counter="yes">
+		</field>
+		<field name="P818" type="int" counter="yes">
+		</field>
+		<field name="P819" type="int" counter="yes">
+		</field>
+		<field name="P820" type="int" counter="yes">
+		</field>
+		<field name="P822" type="int" counter="yes">
+		</field>
+		<field name="P823" type="int" counter="yes">
+		</field>
+		<field name="P824" type="int" counter="yes">
+		</field>
+		<field name="P825" type="int" counter="yes">
+		</field>
+		<field name="P826" type="int" counter="yes">
+		</field>
+		<field name="P827" type="int" counter="yes">
+		</field>
+		<field name="P828" type="int" counter="yes">
+		</field>
+		<field name="P829" type="int" counter="yes">
+		</field>
+		<field name="P830" type="int" counter="yes">
+		</field>
+		<field name="P831" type="int" counter="yes">
+		</field>
+		<field name="P832" type="int" counter="yes">
+		</field>
+		<field name="P833" type="int" counter="yes">
+		</field>
+		<field name="P834" type="int" counter="yes">
+		</field>
+		<field name="P835" type="int" counter="yes">
+		</field>
+		<field name="P836" type="int" counter="yes">
+		</field>
+		<field name="P837" type="int" counter="yes">
+		</field>
+		<index name="laci">
+			<order>CI,LAC,SDATE,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx3">
+			<order>BSS,MFS,OMC_ID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="GPM_PVC_W">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="Bearer" type="int" counter="no">
+		</field>
+		<field name="PVC" type="int" counter="no">
+		</field>
+		<field name="P4" type="int" counter="yes">
+		</field>
+		<field name="P5" type="int" counter="yes">
+		</field>
+		<field name="P23" type="int" counter="yes">
+		</field>
+		<field name="P34" type="int" counter="yes">
+		</field>
+		<field name="P45" type="int" counter="yes">
+		</field>
+		<field name="P46" type="int" counter="yes">
+		</field>
+		<field name="P6c" type="int" counter="yes">
+		</field>
+		<field name="P6d" type="int" counter="yes">
+		</field>
+		<index name="pvc">
+			<order>PVC,Bearer,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>	
+	<table name="GPM_BSC_W">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="P100f" type="int" counter="yes">
+		</field>
+		<field name="P101" type="int" counter="yes">
+		</field>
+		<field name="P103" type="int" counter="yes">
+		</field>
+		<field name="P104" type="int" counter="yes">
+		</field>
+		<field name="P106" type="int" counter="yes">
+		</field>
+		<field name="P107" type="int" counter="yes">
+		</field>
+		<field name="P201" type="int" counter="yes">
+		</field>
+		<field name="P202" type="int" counter="yes">
+		</field>
+		<field name="P383a" type="int" counter="yes">
+		</field>
+		<field name="P383b" type="int" counter="yes">
+		</field>
+		<field name="P384" type="int" counter="yes">
+		</field>
+		<field name="P391a" type="int" counter="yes">
+		</field>
+		<field name="P391b" type="int" counter="yes">
+		</field>
+		<field name="P392a" type="int" counter="yes">
+		</field>
+		<field name="P392b" type="int" counter="yes">
+		</field>
+		<field name="P402" type="int" counter="yes">
+		</field>
+		<field name="P450a" type="int" counter="yes">
+		</field>
+		<field name="P450b" type="int" counter="yes">
+		</field>
+		<field name="P450c" type="int" counter="yes">
+		</field>
+		<field name="P474" type="int" counter="yes">
+		</field>
+		<field name="P486" type="int" counter="yes">
+		</field>
+		<field name="P76a" type="int" counter="yes">
+		</field>
+		<field name="P77a" type="int" counter="yes">
+		</field>
+		<index name="bss">
+			<order>BSS,FABRIC,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_BEARERCHANNEL_W">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="Bearer" type="int" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="P33" type="int" counter="yes">
+		</field>
+		<field name="P3a" type="int" counter="yes">
+		</field>
+		<field name="P3b" type="int" counter="yes">
+		</field>
+		<field name="P6a" type="int" counter="yes">
+		</field>
+		<field name="P6b" type="int" counter="yes">
+		</field>
+		<index name="bearer">
+			<order>Bearer,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_LAPD_W">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="GSL" type="int" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="P2a" type="int" counter="yes">
+		</field>
+		<field name="P2b" type="int" counter="yes">
+		</field>
+		<field name="P2c" type="int" counter="yes">
+		</field>
+		<field name="P2d" type="int" counter="yes">
+		</field>
+		<field name="P32" type="int" counter="yes">
+		</field>
+		<field name="P41" type="int" counter="yes">
+		</field>
+		<field name="P42" type="int" counter="yes">
+		</field>
+		<index name="lapd">
+			<order>BSS,GSL,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_BTS_W">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BTS" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="P472" type="int" counter="yes">
+		</field>
+		<field name="P484" type="int" counter="yes">
+		</field>
+		<index name="bts">
+			<order>BSS,BTS,FABRIC,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_CELL_W">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BTS" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="P10" type="int" counter="yes">
+		</field>
+		<field name="P100c" type="int" counter="yes">
+		</field>
+		<field name="P100d" type="int" counter="yes">
+		</field>
+		<field name="P100e" type="int" counter="yes">
+		</field>
+		<field name="P105c" type="int" counter="yes">
+		</field>
+		<field name="P105d" type="int" counter="yes">
+		</field>
+		<field name="P105e" type="int" counter="yes">
+		</field>
+		<field name="P105f" type="int" counter="yes">
+		</field>
+		<field name="P105g" type="int" counter="yes">
+		</field>
+		<field name="P105h" type="int" counter="yes">
+		</field>
+		<field name="P105i" type="int" counter="yes">
+		</field>
+		<field name="P105j" type="int" counter="yes">
+		</field>
+		<field name="P105l" type="int" counter="yes">
+		</field>
+		<field name="P11" type="int" counter="yes">
+		</field>
+		<field name="P129a" type="int" counter="yes">
+		</field>
+		<field name="P129b" type="int" counter="yes">
+		</field>
+		<field name="P129c" type="int" counter="yes">
+		</field>
+		<field name="P129d" type="int" counter="yes">
+		</field>
+		<field name="P13" type="int" counter="yes">
+		</field>
+		<field name="P14" type="int" counter="yes">
+		</field>
+		<field name="P146" type="int" counter="yes">
+		</field>
+		<field name="P147" type="int" counter="yes">
+		</field>
+		<field name="P15" type="int" counter="yes">
+		</field>
+		<field name="P16" type="int" counter="yes">
+		</field>
+		<field name="P160" type="int" counter="yes">
+		</field>
+		<field name="P161" type="int" counter="yes">
+		</field>
+		<field name="P162" type="int" counter="yes">
+		</field>
+		<field name="P163" type="int" counter="yes">
+		</field>
+		<field name="P164" type="int" counter="yes">
+		</field>
+		<field name="P165" type="int" counter="yes">
+		</field>
+		<field name="P200" type="int" counter="yes">
+		</field>
+		<field name="P203" type="int" counter="yes">
+		</field>
+		<field name="P204" type="int" counter="yes">
+		</field>
+		<field name="P20a" type="int" counter="yes">
+		</field>
+		<field name="P20b" type="int" counter="yes">
+		</field>
+		<field name="P20c" type="int" counter="yes">
+		</field>
+		<field name="P20d" type="int" counter="yes">
+		</field>
+		<field name="P20e" type="int" counter="yes">
+		</field>
+		<field name="P21a" type="int" counter="yes">
+		</field>
+		<field name="P21b" type="int" counter="yes">
+		</field>
+		<field name="P21c" type="int" counter="yes">
+		</field>
+		<field name="P21d" type="int" counter="yes">
+		</field>
+		<field name="P21e" type="int" counter="yes">
+		</field>
+		<field name="P22" type="int" counter="yes">
+		</field>
+		<field name="P220" type="int" counter="yes">
+		</field>
+		<field name="P221" type="int" counter="yes">
+		</field>
+		<field name="P222" type="int" counter="yes">
+		</field>
+		<field name="P223" type="int" counter="yes">
+		</field>
+		<field name="P224" type="int" counter="yes">
+		</field>
+		<field name="P225" type="int" counter="yes">
+		</field>
+		<field name="P226" type="int" counter="yes">
+		</field>
+		<field name="P227" type="int" counter="yes">
+		</field>
+		<field name="P228" type="int" counter="yes">
+		</field>
+		<field name="P229" type="int" counter="yes">
+		</field>
+		<field name="P24" type="int" counter="yes">
+		</field>
+		<field name="P26" type="int" counter="yes">
+		</field>
+		<field name="P27" type="int" counter="yes">
+		</field>
+		<field name="P28" type="int" counter="yes">
+		</field>
+		<field name="P302b" type="int" counter="yes">
+		</field>
+		<field name="P302c" type="int" counter="yes">
+		</field>
+		<field name="P303a" type="int" counter="yes">
+		</field>
+		<field name="P303b" type="int" counter="yes">
+		</field>
+		<field name="P30a" type="int" counter="yes">
+		</field>
+		<field name="P30b" type="int" counter="yes">
+		</field>
+		<field name="P30c" type="int" counter="yes">
+		</field>
+		<field name="P30d" type="int" counter="yes">
+		</field>
+		<field name="P310a" type="int" counter="yes">
+		</field>
+		<field name="P310b" type="int" counter="yes">
+		</field>
+		<field name="P310c" type="int" counter="yes">
+		</field>
+		<field name="P310d" type="int" counter="yes">
+		</field>
+		<field name="P335" type="int" counter="yes">
+		</field>
+		<field name="P336" type="int" counter="yes">
+		</field>
+		<field name="P35" type="int" counter="yes">
+		</field>
+		<field name="P350a" type="int" counter="yes">
+		</field>
+		<field name="P350b" type="int" counter="yes">
+		</field>
+		<field name="P351a" type="int" counter="yes">
+		</field>
+		<field name="P351b" type="int" counter="yes">
+		</field>
+		<field name="P352a" type="int" counter="yes">
+		</field>
+		<field name="P352b" type="int" counter="yes">
+		</field>
+		<field name="P36" type="int" counter="yes">
+		</field>
+		<field name="P385a" type="int" counter="yes">
+		</field>
+		<field name="P385b" type="int" counter="yes">
+		</field>
+		<field name="P38b" type="int" counter="yes">
+		</field>
+		<field name="P38c" type="int" counter="yes">
+		</field>
+		<field name="P38e" type="int" counter="yes">
+		</field>
+		<field name="P38f" type="int" counter="yes">
+		</field>
+		<field name="P39" type="int" counter="yes">
+		</field>
+		<field name="P396a" type="int" counter="yes">
+		</field>
+		<field name="P396b" type="int" counter="yes">
+		</field>
+		<field name="P397" type="int" counter="yes">
+		</field>
+		<field name="P399" type="int" counter="yes">
+		</field>
+		<field name="P40" type="int" counter="yes">
+		</field>
+		<field name="P400" type="int" counter="yes">
+		</field>
+		<field name="P401" type="int" counter="yes">
+		</field>
+		<field name="P403a" type="int" counter="yes">
+		</field>
+		<field name="P403b" type="int" counter="yes">
+		</field>
+		<field name="P403c" type="int" counter="yes">
+		</field>
+		<field name="P403d" type="int" counter="yes">
+		</field>
+		<field name="P404a" type="int" counter="yes">
+		</field>
+		<field name="P404b" type="int" counter="yes">
+		</field>
+		<field name="P404c" type="int" counter="yes">
+		</field>
+		<field name="P404d" type="int" counter="yes">
+		</field>
+		<field name="P405a" type="int" counter="yes">
+		</field>
+		<field name="P405b" type="int" counter="yes">
+		</field>
+		<field name="P405c" type="int" counter="yes">
+		</field>
+		<field name="P405d" type="int" counter="yes">
+		</field>
+		<field name="P406a" type="int" counter="yes">
+		</field>
+		<field name="P406b" type="int" counter="yes">
+		</field>
+		<field name="P406c" type="int" counter="yes">
+		</field>
+		<field name="P406d" type="int" counter="yes">
+		</field>
+		<field name="P407a" type="int" counter="yes">
+		</field>
+		<field name="P407b" type="int" counter="yes">
+		</field>
+		<field name="P407c" type="int" counter="yes">
+		</field>
+		<field name="P407d" type="int" counter="yes">
+		</field>
+		<field name="P408a" type="int" counter="yes">
+		</field>
+		<field name="P408b" type="int" counter="yes">
+		</field>
+		<field name="P408c" type="int" counter="yes">
+		</field>
+		<field name="P408d" type="int" counter="yes">
+		</field>
+		<field name="P409" type="int" counter="yes">
+		</field>
+		<field name="P410" type="int" counter="yes">
+		</field>
+		<field name="P411" type="int" counter="yes">
+		</field>
+		<field name="P412" type="int" counter="yes">
+		</field>
+		<field name="P413" type="int" counter="yes">
+		</field>
+		<field name="P414bis" type="int" counter="yes">
+		</field>
+		<field name="P415bis" type="int" counter="yes">
+		</field>
+		<field name="P416bis" type="int" counter="yes">
+		</field>
+		<field name="P417" type="int" counter="yes">
+		</field>
+		<field name="P419" type="int" counter="yes">
+		</field>
+		<field name="P420" type="int" counter="yes">
+		</field>
+		<field name="P421" type="int" counter="yes">
+		</field>
+		<field name="P422" type="int" counter="yes">
+		</field>
+		<field name="P423a" type="int" counter="yes">
+		</field>
+		<field name="P423b" type="int" counter="yes">
+		</field>
+		<field name="P423c" type="int" counter="yes">
+		</field>
+		<field name="P423d" type="int" counter="yes">
+		</field>
+		<field name="P424a" type="int" counter="yes">
+		</field>
+		<field name="P424b" type="int" counter="yes">
+		</field>
+		<field name="P424c" type="int" counter="yes">
+		</field>
+		<field name="P424d" type="int" counter="yes">
+		</field>
+		<field name="P425a" type="int" counter="yes">
+		</field>
+		<field name="P425b" type="int" counter="yes">
+		</field>
+		<field name="P425c" type="int" counter="yes">
+		</field>
+		<field name="P425d" type="int" counter="yes">
+		</field>
+		<field name="P426a" type="int" counter="yes">
+		</field>
+		<field name="P426b" type="int" counter="yes">
+		</field>
+		<field name="P426c" type="int" counter="yes">
+		</field>
+		<field name="P426d" type="int" counter="yes">
+		</field>
+		<field name="P43" type="int" counter="yes">
+		</field>
+		<field name="P431a" type="int" counter="yes">
+		</field>
+		<field name="P431b" type="int" counter="yes">
+		</field>
+		<field name="P431c" type="int" counter="yes">
+		</field>
+		<field name="P432a" type="int" counter="yes">
+		</field>
+		<field name="P432b" type="int" counter="yes">
+		</field>
+		<field name="P432c" type="int" counter="yes">
+		</field>
+		<field name="P433a" type="int" counter="yes">
+		</field>
+		<field name="P433b" type="int" counter="yes">
+		</field>
+		<field name="P433c" type="int" counter="yes">
+		</field>
+		<field name="P433d" type="int" counter="yes">
+		</field>
+		<field name="P434a" type="int" counter="yes">
+		</field>
+		<field name="P434b" type="int" counter="yes">
+		</field>
+		<field name="P434c" type="int" counter="yes">
+		</field>
+		<field name="P434d" type="int" counter="yes">
+		</field>
+		<field name="P435a" type="int" counter="yes">
+		</field>
+		<field name="P435b" type="int" counter="yes">
+		</field>
+		<field name="P435c" type="int" counter="yes">
+		</field>
+		<field name="P435d" type="int" counter="yes">
+		</field>
+		<field name="P436" type="int" counter="yes">
+		</field>
+		<field name="P437a" type="int" counter="yes">
+		</field>
+		<field name="P437b" type="int" counter="yes">
+		</field>
+		<field name="P438a" type="int" counter="yes">
+		</field>
+		<field name="P438b" type="int" counter="yes">
+		</field>
+		<field name="P438c" type="int" counter="yes">
+		</field>
+		<field name="P438d" type="int" counter="yes">
+		</field>
+		<field name="P439" type="int" counter="yes">
+		</field>
+		<field name="P43a" type="int" counter="yes">
+		</field>
+		<field name="P43b" type="int" counter="yes">
+		</field>
+		<field name="P43c" type="int" counter="yes">
+		</field>
+		<field name="P43d" type="int" counter="yes">
+		</field>
+		<field name="P44" type="int" counter="yes">
+		</field>
+		<field name="P440a" type="int" counter="yes">
+		</field>
+		<field name="P440b" type="int" counter="yes">
+		</field>
+		<field name="P440c" type="int" counter="yes">
+		</field>
+		<field name="P441a" type="int" counter="yes">
+		</field>
+		<field name="P441b" type="int" counter="yes">
+		</field>
+		<field name="P441c" type="int" counter="yes">
+		</field>
+		<field name="P44a" type="int" counter="yes">
+		</field>
+		<field name="P44b" type="int" counter="yes">
+		</field>
+		<field name="P44c" type="int" counter="yes">
+		</field>
+		<field name="P44d" type="int" counter="yes">
+		</field>
+		<field name="P451a" type="int" counter="yes">
+		</field>
+		<field name="P451b" type="int" counter="yes">
+		</field>
+		<field name="P452" type="int" counter="yes">
+		</field>
+		<field name="P456" type="int" counter="yes">
+		</field>
+		<field name="P457" type="int" counter="yes">
+		</field>
+		<field name="P458" type="int" counter="yes">
+		</field>
+		<field name="P459" type="int" counter="yes">
+		</field>
+		<field name="P460a" type="int" counter="yes">
+		</field>
+		<field name="P460b" type="int" counter="yes">
+		</field>
+		<field name="P460c" type="int" counter="yes">
+		</field>
+		<field name="P461" type="int" counter="yes">
+		</field>
+		<field name="P462" type="int" counter="yes">
+		</field>
+		<field name="P463" type="int" counter="yes">
+		</field>
+		<field name="P464" type="int" counter="yes">
+		</field>
+		<field name="P465" type="int" counter="yes">
+		</field>
+		<field name="P466" type="int" counter="yes">
+		</field>
+		<field name="P469" type="int" counter="yes">
+		</field>
+		<field name="P470" type="int" counter="yes">
+		</field>
+		<field name="P471" type="int" counter="yes">
+		</field>
+		<field name="P488" type="int" counter="yes">
+		</field>
+		<field name="P489" type="int" counter="yes">
+		</field>
+		<field name="P49" type="int" counter="yes">
+		</field>
+		<field name="P490" type="int" counter="yes">
+		</field>
+		<field name="P491" type="int" counter="yes">
+		</field>
+		<field name="P492" type="int" counter="yes">
+		</field>
+		<field name="P493" type="int" counter="yes">
+		</field>
+		<field name="P494" type="int" counter="yes">
+		</field>
+		<field name="P495" type="int" counter="yes">
+		</field>
+		<field name="P496" type="int" counter="yes">
+		</field>
+		<field name="P497" type="int" counter="yes">
+		</field>
+		<field name="P498" type="int" counter="yes">
+		</field>
+		<field name="P499" type="int" counter="yes">
+		</field>
+		<field name="P52a" type="int" counter="yes">
+		</field>
+		<field name="P52b" type="int" counter="yes">
+		</field>
+		<field name="P52c" type="int" counter="yes">
+		</field>
+		<field name="P52d" type="int" counter="yes">
+		</field>
+		<field name="P55a" type="int" counter="yes">
+		</field>
+		<field name="P55b" type="int" counter="yes">
+		</field>
+		<field name="P55c" type="int" counter="yes">
+		</field>
+		<field name="P55d" type="int" counter="yes">
+		</field>
+		<field name="P55e" type="int" counter="yes">
+		</field>
+		<field name="P55f" type="int" counter="yes">
+		</field>
+		<field name="P55g" type="int" counter="yes">
+		</field>
+		<field name="P55h" type="int" counter="yes">
+		</field>
+		<field name="P55i" type="int" counter="yes">
+		</field>
+		<field name="P55j" type="int" counter="yes">
+		</field>
+		<field name="P55k" type="int" counter="yes">
+		</field>
+		<field name="P55l" type="int" counter="yes">
+		</field>
+		<field name="P55m" type="int" counter="yes">
+		</field>
+		<field name="P57a" type="int" counter="yes">
+		</field>
+		<field name="P57b" type="int" counter="yes">
+		</field>
+		<field name="P57c" type="int" counter="yes">
+		</field>
+		<field name="P57d" type="int" counter="yes">
+		</field>
+		<field name="P57e" type="int" counter="yes">
+		</field>
+		<field name="P57f" type="int" counter="yes">
+		</field>
+		<field name="P57g" type="int" counter="yes">
+		</field>
+		<field name="P57h" type="int" counter="yes">
+		</field>
+		<field name="P57i" type="int" counter="yes">
+		</field>
+		<field name="P57j" type="int" counter="yes">
+		</field>
+		<field name="P57k" type="int" counter="yes">
+		</field>
+		<field name="P57l" type="int" counter="yes">
+		</field>
+		<field name="P57m" type="int" counter="yes">
+		</field>
+		<field name="P59" type="int" counter="yes">
+		</field>
+		<field name="P60" type="int" counter="yes">
+		</field>
+		<field name="P61" type="int" counter="yes">
+		</field>
+		<field name="P61a" type="int" counter="yes">
+		</field>
+		<field name="P61b" type="int" counter="yes">
+		</field>
+		<field name="P62a" type="int" counter="yes">
+		</field>
+		<field name="P62b" type="int" counter="yes">
+		</field>
+		<field name="P62c" type="int" counter="yes">
+		</field>
+		<field name="P62d" type="int" counter="yes">
+		</field>
+		<field name="P65" type="int" counter="yes">
+		</field>
+		<field name="P66" type="int" counter="yes">
+		</field>
+		<field name="P67" type="int" counter="yes">
+		</field>
+		<field name="P72c" type="int" counter="yes">
+		</field>
+		<field name="P72d" type="int" counter="yes">
+		</field>
+		<field name="P73c" type="int" counter="yes">
+		</field>
+		<field name="P73d" type="int" counter="yes">
+		</field>
+		<field name="P74" type="int" counter="yes">
+		</field>
+		<field name="P75" type="int" counter="yes">
+		</field>
+		<field name="P9" type="int" counter="yes">
+		</field>
+		<field name="P90a" type="int" counter="yes">
+		</field>
+		<field name="P90b" type="int" counter="yes">
+		</field>
+		<field name="P90c" type="int" counter="yes">
+		</field>
+		<field name="P90d" type="int" counter="yes">
+		</field>
+		<field name="P90e" type="int" counter="yes">
+		</field>
+		<field name="P90f" type="int" counter="yes">
+		</field>
+		<field name="P90g" type="int" counter="yes">
+		</field>
+		<field name="P91a" type="int" counter="yes">
+		</field>
+		<field name="P91b" type="int" counter="yes">
+		</field>
+		<field name="P91c" type="int" counter="yes">
+		</field>
+		<field name="P91d" type="int" counter="yes">
+		</field>
+		<field name="P91e" type="int" counter="yes">
+		</field>
+		<field name="P91f" type="int" counter="yes">
+		</field>
+		<field name="P91g" type="int" counter="yes">
+		</field>
+		<field name="P95" type="int" counter="yes">
+		</field>
+		<field name="P96" type="int" counter="yes">
+		</field>
+		<field name="P97" type="int" counter="yes">
+		</field>
+		<field name="P98a" type="int" counter="yes">
+		</field>
+		<field name="P98b" type="int" counter="yes">
+		</field>
+		<field name="P98c" type="int" counter="yes">
+		</field>
+		<field name="P98d" type="int" counter="yes">
+		</field>
+		<field name="P98e" type="int" counter="yes">
+		</field>
+		<field name="P98f" type="int" counter="yes">
+		</field>
+		<field name="P99" type="int" counter="yes">
+		</field>
+		<index name="laci">
+			<order>CI,LAC,SDATE,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx3">
+			<order>BSS,BTS,MFS,OMC_ID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="GPM_LCSCELL_W">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P800" type="int" counter="yes">
+		</field>
+		<field name="P801" type="int" counter="yes">
+		</field>
+		<field name="P802" type="int" counter="yes">
+		</field>
+		<field name="P803" type="int" counter="yes">
+		</field>
+		<field name="P804" type="int" counter="yes">
+		</field>
+		<field name="P805" type="int" counter="yes">
+		</field>
+		<field name="P806" type="int" counter="yes">
+		</field>
+		<field name="P807" type="int" counter="yes">
+		</field>
+		<field name="P808" type="int" counter="yes">
+		</field>
+		<field name="P809" type="int" counter="yes">
+		</field>
+		<field name="P821" type="int" counter="yes">
+		</field>
+		<field name="P810" type="int" counter="yes">
+		</field>
+		<field name="P811" type="int" counter="yes">
+		</field>
+		<field name="P812" type="int" counter="yes">
+		</field>
+		<field name="P813" type="int" counter="yes">
+		</field>
+		<field name="P814" type="int" counter="yes">
+		</field>
+		<field name="P815" type="int" counter="yes">
+		</field>
+		<field name="P816" type="int" counter="yes">
+		</field>
+		<field name="P817" type="int" counter="yes">
+		</field>
+		<field name="P818" type="int" counter="yes">
+		</field>
+		<field name="P819" type="int" counter="yes">
+		</field>
+		<field name="P820" type="int" counter="yes">
+		</field>
+		<field name="P822" type="int" counter="yes">
+		</field>
+		<field name="P823" type="int" counter="yes">
+		</field>
+		<field name="P824" type="int" counter="yes">
+		</field>
+		<field name="P825" type="int" counter="yes">
+		</field>
+		<field name="P826" type="int" counter="yes">
+		</field>
+		<field name="P827" type="int" counter="yes">
+		</field>
+		<field name="P828" type="int" counter="yes">
+		</field>
+		<field name="P829" type="int" counter="yes">
+		</field>
+		<field name="P830" type="int" counter="yes">
+		</field>
+		<field name="P831" type="int" counter="yes">
+		</field>
+		<field name="P832" type="int" counter="yes">
+		</field>
+		<field name="P833" type="int" counter="yes">
+		</field>
+		<field name="P834" type="int" counter="yes">
+		</field>
+		<field name="P835" type="int" counter="yes">
+		</field>
+		<field name="P836" type="int" counter="yes">
+		</field>
+		<field name="P837" type="int" counter="yes">
+		</field>
+		<index name="laci">
+			<order>CI,LAC,SDATE,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx3">
+			<order>BSS,MFS,OMC_ID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="GPM_PVC_M">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="Bearer" type="int" counter="no">
+		</field>
+		<field name="PVC" type="int" counter="no">
+		</field>
+		<field name="P4" type="int" counter="yes">
+		</field>
+		<field name="P5" type="int" counter="yes">
+		</field>
+		<field name="P23" type="int" counter="yes">
+		</field>
+		<field name="P34" type="int" counter="yes">
+		</field>
+		<field name="P45" type="int" counter="yes">
+		</field>
+		<field name="P46" type="int" counter="yes">
+		</field>
+		<field name="P6c" type="int" counter="yes">
+		</field>
+		<field name="P6d" type="int" counter="yes">
+		</field>
+		<index name="pvc">
+			<order>PVC,Bearer,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>	
+	<table name="GPM_BSC_M">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="P100f" type="int" counter="yes">
+		</field>
+		<field name="P101" type="int" counter="yes">
+		</field>
+		<field name="P103" type="int" counter="yes">
+		</field>
+		<field name="P104" type="int" counter="yes">
+		</field>
+		<field name="P106" type="int" counter="yes">
+		</field>
+		<field name="P107" type="int" counter="yes">
+		</field>
+		<field name="P201" type="int" counter="yes">
+		</field>
+		<field name="P202" type="int" counter="yes">
+		</field>
+		<field name="P383a" type="int" counter="yes">
+		</field>
+		<field name="P383b" type="int" counter="yes">
+		</field>
+		<field name="P384" type="int" counter="yes">
+		</field>
+		<field name="P391a" type="int" counter="yes">
+		</field>
+		<field name="P391b" type="int" counter="yes">
+		</field>
+		<field name="P392a" type="int" counter="yes">
+		</field>
+		<field name="P392b" type="int" counter="yes">
+		</field>
+		<field name="P402" type="int" counter="yes">
+		</field>
+		<field name="P450a" type="int" counter="yes">
+		</field>
+		<field name="P450b" type="int" counter="yes">
+		</field>
+		<field name="P450c" type="int" counter="yes">
+		</field>
+		<field name="P474" type="int" counter="yes">
+		</field>
+		<field name="P486" type="int" counter="yes">
+		</field>
+		<field name="P76a" type="int" counter="yes">
+		</field>
+		<field name="P77a" type="int" counter="yes">
+		</field>
+		<index name="bss">
+			<order>BSS,FABRIC,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_BEARERCHANNEL_M">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="Bearer" type="int" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="P33" type="int" counter="yes">
+		</field>
+		<field name="P3a" type="int" counter="yes">
+		</field>
+		<field name="P3b" type="int" counter="yes">
+		</field>
+		<field name="P6a" type="int" counter="yes">
+		</field>
+		<field name="P6b" type="int" counter="yes">
+		</field>
+		<index name="bearer">
+			<order>Bearer,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_LAPD_M">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="GSL" type="int" counter="no">
+		</field>
+		<field name="TP" type="int" counter="no">
+		</field>
+		<field name="P2a" type="int" counter="yes">
+		</field>
+		<field name="P2b" type="int" counter="yes">
+		</field>
+		<field name="P2c" type="int" counter="yes">
+		</field>
+		<field name="P2d" type="int" counter="yes">
+		</field>
+		<field name="P32" type="int" counter="yes">
+		</field>
+		<field name="P41" type="int" counter="yes">
+		</field>
+		<field name="P42" type="int" counter="yes">
+		</field>
+		<index name="lapd">
+			<order>BSS,GSL,TP,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_BTS_M">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BTS" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="P472" type="int" counter="yes">
+		</field>
+		<field name="P484" type="int" counter="yes">
+		</field>
+		<index name="bts">
+			<order>BSS,BTS,FABRIC,MFS,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GPM_CELL_M">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BTS" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="P10" type="int" counter="yes">
+		</field>
+		<field name="P100c" type="int" counter="yes">
+		</field>
+		<field name="P100d" type="int" counter="yes">
+		</field>
+		<field name="P100e" type="int" counter="yes">
+		</field>
+		<field name="P105c" type="int" counter="yes">
+		</field>
+		<field name="P105d" type="int" counter="yes">
+		</field>
+		<field name="P105e" type="int" counter="yes">
+		</field>
+		<field name="P105f" type="int" counter="yes">
+		</field>
+		<field name="P105g" type="int" counter="yes">
+		</field>
+		<field name="P105h" type="int" counter="yes">
+		</field>
+		<field name="P105i" type="int" counter="yes">
+		</field>
+		<field name="P105j" type="int" counter="yes">
+		</field>
+		<field name="P105l" type="int" counter="yes">
+		</field>
+		<field name="P11" type="int" counter="yes">
+		</field>
+		<field name="P129a" type="int" counter="yes">
+		</field>
+		<field name="P129b" type="int" counter="yes">
+		</field>
+		<field name="P129c" type="int" counter="yes">
+		</field>
+		<field name="P129d" type="int" counter="yes">
+		</field>
+		<field name="P13" type="int" counter="yes">
+		</field>
+		<field name="P14" type="int" counter="yes">
+		</field>
+		<field name="P146" type="int" counter="yes">
+		</field>
+		<field name="P147" type="int" counter="yes">
+		</field>
+		<field name="P15" type="int" counter="yes">
+		</field>
+		<field name="P16" type="int" counter="yes">
+		</field>
+		<field name="P160" type="int" counter="yes">
+		</field>
+		<field name="P161" type="int" counter="yes">
+		</field>
+		<field name="P162" type="int" counter="yes">
+		</field>
+		<field name="P163" type="int" counter="yes">
+		</field>
+		<field name="P164" type="int" counter="yes">
+		</field>
+		<field name="P165" type="int" counter="yes">
+		</field>
+		<field name="P200" type="int" counter="yes">
+		</field>
+		<field name="P203" type="int" counter="yes">
+		</field>
+		<field name="P204" type="int" counter="yes">
+		</field>
+		<field name="P20a" type="int" counter="yes">
+		</field>
+		<field name="P20b" type="int" counter="yes">
+		</field>
+		<field name="P20c" type="int" counter="yes">
+		</field>
+		<field name="P20d" type="int" counter="yes">
+		</field>
+		<field name="P20e" type="int" counter="yes">
+		</field>
+		<field name="P21a" type="int" counter="yes">
+		</field>
+		<field name="P21b" type="int" counter="yes">
+		</field>
+		<field name="P21c" type="int" counter="yes">
+		</field>
+		<field name="P21d" type="int" counter="yes">
+		</field>
+		<field name="P21e" type="int" counter="yes">
+		</field>
+		<field name="P22" type="int" counter="yes">
+		</field>
+		<field name="P220" type="int" counter="yes">
+		</field>
+		<field name="P221" type="int" counter="yes">
+		</field>
+		<field name="P222" type="int" counter="yes">
+		</field>
+		<field name="P223" type="int" counter="yes">
+		</field>
+		<field name="P224" type="int" counter="yes">
+		</field>
+		<field name="P225" type="int" counter="yes">
+		</field>
+		<field name="P226" type="int" counter="yes">
+		</field>
+		<field name="P227" type="int" counter="yes">
+		</field>
+		<field name="P228" type="int" counter="yes">
+		</field>
+		<field name="P229" type="int" counter="yes">
+		</field>
+		<field name="P24" type="int" counter="yes">
+		</field>
+		<field name="P26" type="int" counter="yes">
+		</field>
+		<field name="P27" type="int" counter="yes">
+		</field>
+		<field name="P28" type="int" counter="yes">
+		</field>
+		<field name="P302b" type="int" counter="yes">
+		</field>
+		<field name="P302c" type="int" counter="yes">
+		</field>
+		<field name="P303a" type="int" counter="yes">
+		</field>
+		<field name="P303b" type="int" counter="yes">
+		</field>
+		<field name="P30a" type="int" counter="yes">
+		</field>
+		<field name="P30b" type="int" counter="yes">
+		</field>
+		<field name="P30c" type="int" counter="yes">
+		</field>
+		<field name="P30d" type="int" counter="yes">
+		</field>
+		<field name="P310a" type="int" counter="yes">
+		</field>
+		<field name="P310b" type="int" counter="yes">
+		</field>
+		<field name="P310c" type="int" counter="yes">
+		</field>
+		<field name="P310d" type="int" counter="yes">
+		</field>
+		<field name="P335" type="int" counter="yes">
+		</field>
+		<field name="P336" type="int" counter="yes">
+		</field>
+		<field name="P35" type="int" counter="yes">
+		</field>
+		<field name="P350a" type="int" counter="yes">
+		</field>
+		<field name="P350b" type="int" counter="yes">
+		</field>
+		<field name="P351a" type="int" counter="yes">
+		</field>
+		<field name="P351b" type="int" counter="yes">
+		</field>
+		<field name="P352a" type="int" counter="yes">
+		</field>
+		<field name="P352b" type="int" counter="yes">
+		</field>
+		<field name="P36" type="int" counter="yes">
+		</field>
+		<field name="P385a" type="int" counter="yes">
+		</field>
+		<field name="P385b" type="int" counter="yes">
+		</field>
+		<field name="P38b" type="int" counter="yes">
+		</field>
+		<field name="P38c" type="int" counter="yes">
+		</field>
+		<field name="P38e" type="int" counter="yes">
+		</field>
+		<field name="P38f" type="int" counter="yes">
+		</field>
+		<field name="P39" type="int" counter="yes">
+		</field>
+		<field name="P396a" type="int" counter="yes">
+		</field>
+		<field name="P396b" type="int" counter="yes">
+		</field>
+		<field name="P397" type="int" counter="yes">
+		</field>
+		<field name="P399" type="int" counter="yes">
+		</field>
+		<field name="P40" type="int" counter="yes">
+		</field>
+		<field name="P400" type="int" counter="yes">
+		</field>
+		<field name="P401" type="int" counter="yes">
+		</field>
+		<field name="P403a" type="int" counter="yes">
+		</field>
+		<field name="P403b" type="int" counter="yes">
+		</field>
+		<field name="P403c" type="int" counter="yes">
+		</field>
+		<field name="P403d" type="int" counter="yes">
+		</field>
+		<field name="P404a" type="int" counter="yes">
+		</field>
+		<field name="P404b" type="int" counter="yes">
+		</field>
+		<field name="P404c" type="int" counter="yes">
+		</field>
+		<field name="P404d" type="int" counter="yes">
+		</field>
+		<field name="P405a" type="int" counter="yes">
+		</field>
+		<field name="P405b" type="int" counter="yes">
+		</field>
+		<field name="P405c" type="int" counter="yes">
+		</field>
+		<field name="P405d" type="int" counter="yes">
+		</field>
+		<field name="P406a" type="int" counter="yes">
+		</field>
+		<field name="P406b" type="int" counter="yes">
+		</field>
+		<field name="P406c" type="int" counter="yes">
+		</field>
+		<field name="P406d" type="int" counter="yes">
+		</field>
+		<field name="P407a" type="int" counter="yes">
+		</field>
+		<field name="P407b" type="int" counter="yes">
+		</field>
+		<field name="P407c" type="int" counter="yes">
+		</field>
+		<field name="P407d" type="int" counter="yes">
+		</field>
+		<field name="P408a" type="int" counter="yes">
+		</field>
+		<field name="P408b" type="int" counter="yes">
+		</field>
+		<field name="P408c" type="int" counter="yes">
+		</field>
+		<field name="P408d" type="int" counter="yes">
+		</field>
+		<field name="P409" type="int" counter="yes">
+		</field>
+		<field name="P410" type="int" counter="yes">
+		</field>
+		<field name="P411" type="int" counter="yes">
+		</field>
+		<field name="P412" type="int" counter="yes">
+		</field>
+		<field name="P413" type="int" counter="yes">
+		</field>
+		<field name="P414bis" type="int" counter="yes">
+		</field>
+		<field name="P415bis" type="int" counter="yes">
+		</field>
+		<field name="P416bis" type="int" counter="yes">
+		</field>
+		<field name="P417" type="int" counter="yes">
+		</field>
+		<field name="P419" type="int" counter="yes">
+		</field>
+		<field name="P420" type="int" counter="yes">
+		</field>
+		<field name="P421" type="int" counter="yes">
+		</field>
+		<field name="P422" type="int" counter="yes">
+		</field>
+		<field name="P423a" type="int" counter="yes">
+		</field>
+		<field name="P423b" type="int" counter="yes">
+		</field>
+		<field name="P423c" type="int" counter="yes">
+		</field>
+		<field name="P423d" type="int" counter="yes">
+		</field>
+		<field name="P424a" type="int" counter="yes">
+		</field>
+		<field name="P424b" type="int" counter="yes">
+		</field>
+		<field name="P424c" type="int" counter="yes">
+		</field>
+		<field name="P424d" type="int" counter="yes">
+		</field>
+		<field name="P425a" type="int" counter="yes">
+		</field>
+		<field name="P425b" type="int" counter="yes">
+		</field>
+		<field name="P425c" type="int" counter="yes">
+		</field>
+		<field name="P425d" type="int" counter="yes">
+		</field>
+		<field name="P426a" type="int" counter="yes">
+		</field>
+		<field name="P426b" type="int" counter="yes">
+		</field>
+		<field name="P426c" type="int" counter="yes">
+		</field>
+		<field name="P426d" type="int" counter="yes">
+		</field>
+		<field name="P43" type="int" counter="yes">
+		</field>
+		<field name="P431a" type="int" counter="yes">
+		</field>
+		<field name="P431b" type="int" counter="yes">
+		</field>
+		<field name="P431c" type="int" counter="yes">
+		</field>
+		<field name="P432a" type="int" counter="yes">
+		</field>
+		<field name="P432b" type="int" counter="yes">
+		</field>
+		<field name="P432c" type="int" counter="yes">
+		</field>
+		<field name="P433a" type="int" counter="yes">
+		</field>
+		<field name="P433b" type="int" counter="yes">
+		</field>
+		<field name="P433c" type="int" counter="yes">
+		</field>
+		<field name="P433d" type="int" counter="yes">
+		</field>
+		<field name="P434a" type="int" counter="yes">
+		</field>
+		<field name="P434b" type="int" counter="yes">
+		</field>
+		<field name="P434c" type="int" counter="yes">
+		</field>
+		<field name="P434d" type="int" counter="yes">
+		</field>
+		<field name="P435a" type="int" counter="yes">
+		</field>
+		<field name="P435b" type="int" counter="yes">
+		</field>
+		<field name="P435c" type="int" counter="yes">
+		</field>
+		<field name="P435d" type="int" counter="yes">
+		</field>
+		<field name="P436" type="int" counter="yes">
+		</field>
+		<field name="P437a" type="int" counter="yes">
+		</field>
+		<field name="P437b" type="int" counter="yes">
+		</field>
+		<field name="P438a" type="int" counter="yes">
+		</field>
+		<field name="P438b" type="int" counter="yes">
+		</field>
+		<field name="P438c" type="int" counter="yes">
+		</field>
+		<field name="P438d" type="int" counter="yes">
+		</field>
+		<field name="P439" type="int" counter="yes">
+		</field>
+		<field name="P43a" type="int" counter="yes">
+		</field>
+		<field name="P43b" type="int" counter="yes">
+		</field>
+		<field name="P43c" type="int" counter="yes">
+		</field>
+		<field name="P43d" type="int" counter="yes">
+		</field>
+		<field name="P44" type="int" counter="yes">
+		</field>
+		<field name="P440a" type="int" counter="yes">
+		</field>
+		<field name="P440b" type="int" counter="yes">
+		</field>
+		<field name="P440c" type="int" counter="yes">
+		</field>
+		<field name="P441a" type="int" counter="yes">
+		</field>
+		<field name="P441b" type="int" counter="yes">
+		</field>
+		<field name="P441c" type="int" counter="yes">
+		</field>
+		<field name="P44a" type="int" counter="yes">
+		</field>
+		<field name="P44b" type="int" counter="yes">
+		</field>
+		<field name="P44c" type="int" counter="yes">
+		</field>
+		<field name="P44d" type="int" counter="yes">
+		</field>
+		<field name="P451a" type="int" counter="yes">
+		</field>
+		<field name="P451b" type="int" counter="yes">
+		</field>
+		<field name="P452" type="int" counter="yes">
+		</field>
+		<field name="P456" type="int" counter="yes">
+		</field>
+		<field name="P457" type="int" counter="yes">
+		</field>
+		<field name="P458" type="int" counter="yes">
+		</field>
+		<field name="P459" type="int" counter="yes">
+		</field>
+		<field name="P460a" type="int" counter="yes">
+		</field>
+		<field name="P460b" type="int" counter="yes">
+		</field>
+		<field name="P460c" type="int" counter="yes">
+		</field>
+		<field name="P461" type="int" counter="yes">
+		</field>
+		<field name="P462" type="int" counter="yes">
+		</field>
+		<field name="P463" type="int" counter="yes">
+		</field>
+		<field name="P464" type="int" counter="yes">
+		</field>
+		<field name="P465" type="int" counter="yes">
+		</field>
+		<field name="P466" type="int" counter="yes">
+		</field>
+		<field name="P469" type="int" counter="yes">
+		</field>
+		<field name="P470" type="int" counter="yes">
+		</field>
+		<field name="P471" type="int" counter="yes">
+		</field>
+		<field name="P488" type="int" counter="yes">
+		</field>
+		<field name="P489" type="int" counter="yes">
+		</field>
+		<field name="P49" type="int" counter="yes">
+		</field>
+		<field name="P490" type="int" counter="yes">
+		</field>
+		<field name="P491" type="int" counter="yes">
+		</field>
+		<field name="P492" type="int" counter="yes">
+		</field>
+		<field name="P493" type="int" counter="yes">
+		</field>
+		<field name="P494" type="int" counter="yes">
+		</field>
+		<field name="P495" type="int" counter="yes">
+		</field>
+		<field name="P496" type="int" counter="yes">
+		</field>
+		<field name="P497" type="int" counter="yes">
+		</field>
+		<field name="P498" type="int" counter="yes">
+		</field>
+		<field name="P499" type="int" counter="yes">
+		</field>
+		<field name="P52a" type="int" counter="yes">
+		</field>
+		<field name="P52b" type="int" counter="yes">
+		</field>
+		<field name="P52c" type="int" counter="yes">
+		</field>
+		<field name="P52d" type="int" counter="yes">
+		</field>
+		<field name="P55a" type="int" counter="yes">
+		</field>
+		<field name="P55b" type="int" counter="yes">
+		</field>
+		<field name="P55c" type="int" counter="yes">
+		</field>
+		<field name="P55d" type="int" counter="yes">
+		</field>
+		<field name="P55e" type="int" counter="yes">
+		</field>
+		<field name="P55f" type="int" counter="yes">
+		</field>
+		<field name="P55g" type="int" counter="yes">
+		</field>
+		<field name="P55h" type="int" counter="yes">
+		</field>
+		<field name="P55i" type="int" counter="yes">
+		</field>
+		<field name="P55j" type="int" counter="yes">
+		</field>
+		<field name="P55k" type="int" counter="yes">
+		</field>
+		<field name="P55l" type="int" counter="yes">
+		</field>
+		<field name="P55m" type="int" counter="yes">
+		</field>
+		<field name="P57a" type="int" counter="yes">
+		</field>
+		<field name="P57b" type="int" counter="yes">
+		</field>
+		<field name="P57c" type="int" counter="yes">
+		</field>
+		<field name="P57d" type="int" counter="yes">
+		</field>
+		<field name="P57e" type="int" counter="yes">
+		</field>
+		<field name="P57f" type="int" counter="yes">
+		</field>
+		<field name="P57g" type="int" counter="yes">
+		</field>
+		<field name="P57h" type="int" counter="yes">
+		</field>
+		<field name="P57i" type="int" counter="yes">
+		</field>
+		<field name="P57j" type="int" counter="yes">
+		</field>
+		<field name="P57k" type="int" counter="yes">
+		</field>
+		<field name="P57l" type="int" counter="yes">
+		</field>
+		<field name="P57m" type="int" counter="yes">
+		</field>
+		<field name="P59" type="int" counter="yes">
+		</field>
+		<field name="P60" type="int" counter="yes">
+		</field>
+		<field name="P61" type="int" counter="yes">
+		</field>
+		<field name="P61a" type="int" counter="yes">
+		</field>
+		<field name="P61b" type="int" counter="yes">
+		</field>
+		<field name="P62a" type="int" counter="yes">
+		</field>
+		<field name="P62b" type="int" counter="yes">
+		</field>
+		<field name="P62c" type="int" counter="yes">
+		</field>
+		<field name="P62d" type="int" counter="yes">
+		</field>
+		<field name="P65" type="int" counter="yes">
+		</field>
+		<field name="P66" type="int" counter="yes">
+		</field>
+		<field name="P67" type="int" counter="yes">
+		</field>
+		<field name="P72c" type="int" counter="yes">
+		</field>
+		<field name="P72d" type="int" counter="yes">
+		</field>
+		<field name="P73c" type="int" counter="yes">
+		</field>
+		<field name="P73d" type="int" counter="yes">
+		</field>
+		<field name="P74" type="int" counter="yes">
+		</field>
+		<field name="P75" type="int" counter="yes">
+		</field>
+		<field name="P9" type="int" counter="yes">
+		</field>
+		<field name="P90a" type="int" counter="yes">
+		</field>
+		<field name="P90b" type="int" counter="yes">
+		</field>
+		<field name="P90c" type="int" counter="yes">
+		</field>
+		<field name="P90d" type="int" counter="yes">
+		</field>
+		<field name="P90e" type="int" counter="yes">
+		</field>
+		<field name="P90f" type="int" counter="yes">
+		</field>
+		<field name="P90g" type="int" counter="yes">
+		</field>
+		<field name="P91a" type="int" counter="yes">
+		</field>
+		<field name="P91b" type="int" counter="yes">
+		</field>
+		<field name="P91c" type="int" counter="yes">
+		</field>
+		<field name="P91d" type="int" counter="yes">
+		</field>
+		<field name="P91e" type="int" counter="yes">
+		</field>
+		<field name="P91f" type="int" counter="yes">
+		</field>
+		<field name="P91g" type="int" counter="yes">
+		</field>
+		<field name="P95" type="int" counter="yes">
+		</field>
+		<field name="P96" type="int" counter="yes">
+		</field>
+		<field name="P97" type="int" counter="yes">
+		</field>
+		<field name="P98a" type="int" counter="yes">
+		</field>
+		<field name="P98b" type="int" counter="yes">
+		</field>
+		<field name="P98c" type="int" counter="yes">
+		</field>
+		<field name="P98d" type="int" counter="yes">
+		</field>
+		<field name="P98e" type="int" counter="yes">
+		</field>
+		<field name="P98f" type="int" counter="yes">
+		</field>
+		<field name="P99" type="int" counter="yes">
+		</field>
+		<index name="laci">
+			<order>CI,LAC,SDATE,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx3">
+			<order>BSS,BTS,MFS,OMC_ID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="GPM_LCSCELL_M">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="MFS" type="int" counter="no">
+		</field>
+		<field name="MFS_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="REGION" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSS" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="FABRIC" type="int" counter="no">
+		</field>
+		<field name="SF" type="int" counter="no">
+		</field>
+		<field name="P800" type="int" counter="yes">
+		</field>
+		<field name="P801" type="int" counter="yes">
+		</field>
+		<field name="P802" type="int" counter="yes">
+		</field>
+		<field name="P803" type="int" counter="yes">
+		</field>
+		<field name="P804" type="int" counter="yes">
+		</field>
+		<field name="P805" type="int" counter="yes">
+		</field>
+		<field name="P806" type="int" counter="yes">
+		</field>
+		<field name="P807" type="int" counter="yes">
+		</field>
+		<field name="P808" type="int" counter="yes">
+		</field>
+		<field name="P809" type="int" counter="yes">
+		</field>
+		<field name="P821" type="int" counter="yes">
+		</field>
+		<field name="P810" type="int" counter="yes">
+		</field>
+		<field name="P811" type="int" counter="yes">
+		</field>
+		<field name="P812" type="int" counter="yes">
+		</field>
+		<field name="P813" type="int" counter="yes">
+		</field>
+		<field name="P814" type="int" counter="yes">
+		</field>
+		<field name="P815" type="int" counter="yes">
+		</field>
+		<field name="P816" type="int" counter="yes">
+		</field>
+		<field name="P817" type="int" counter="yes">
+		</field>
+		<field name="P818" type="int" counter="yes">
+		</field>
+		<field name="P819" type="int" counter="yes">
+		</field>
+		<field name="P820" type="int" counter="yes">
+		</field>
+		<field name="P822" type="int" counter="yes">
+		</field>
+		<field name="P823" type="int" counter="yes">
+		</field>
+		<field name="P824" type="int" counter="yes">
+		</field>
+		<field name="P825" type="int" counter="yes">
+		</field>
+		<field name="P826" type="int" counter="yes">
+		</field>
+		<field name="P827" type="int" counter="yes">
+		</field>
+		<field name="P828" type="int" counter="yes">
+		</field>
+		<field name="P829" type="int" counter="yes">
+		</field>
+		<field name="P830" type="int" counter="yes">
+		</field>
+		<field name="P831" type="int" counter="yes">
+		</field>
+		<field name="P832" type="int" counter="yes">
+		</field>
+		<field name="P833" type="int" counter="yes">
+		</field>
+		<field name="P834" type="int" counter="yes">
+		</field>
+		<field name="P835" type="int" counter="yes">
+		</field>
+		<field name="P836" type="int" counter="yes">
+		</field>
+		<field name="P837" type="int" counter="yes">
+		</field>
+		<index name="laci">
+			<order>CI,LAC,SDATE,FABRIC</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx3">
+			<order>BSS,MFS,OMC_ID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+</tables>

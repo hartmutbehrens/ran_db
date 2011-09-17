@@ -1,0 +1,18 @@
+<layout name="t5" version="b9">
+	<blocktype name="50" loadtable="T5_CELL_H" index="BTS_ID,SECTOR" indexlength="2">
+	</blocktype>
+	<blocktype name="51" loadtable="T5_TRXTS_H" index="BTS_ID,SECTOR,TRX,TS" indexlength="4">
+			<counter name="C370a" offset="0" length="4">
+			</counter>
+			<counter name="C370b" offset="4" length="4">
+			</counter>
+			<counter name="C380a" offset="8" length="4">
+			</counter>
+			<counter name="C380b" offset="12" length="4">
+			</counter>
+			<counter name="C381a" offset="16" length="4">
+			</counter>
+			<counter name="C381b" offset="20" length="4">
+			</counter>
+	</blocktype>
+</layout>

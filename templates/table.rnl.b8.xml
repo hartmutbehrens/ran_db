@@ -1,0 +1,231 @@
+<tables>
+	<table name="Cell">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="CellInstanceIdentifier" type="varchar(255)">
+		</field>
+		<field name="CellGlobalIdentity" type="varchar(100)">
+		</field>
+		<field name="BCCHFrequency" type="int">
+		</field>
+		<field name="BSC_ID" type="int">
+		</field>
+		<field name="BTS_ID" type="int">
+		</field>
+		<field name="SECTOR" type="int">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="UserLabel" type="varchar(255)">
+		</field>
+		<field name="RnlSupportingSector" type="varchar(100)">
+		</field>
+		<field name="CellAllocation" type="varchar(255)">
+		</field>
+		<field name="CellAllocationDCS" type="varchar(255)">
+		</field>
+		<field name="BsIdentityCode" type="varchar(50)">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx2">
+			<order>CellInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx3">
+			<order>BSC_ID,BTS_ID,SECTOR,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RnlAlcatelMFS">
+		<field name="OMC_ID" type="varchar(50)" source="import">
+		</field>
+		<field name="IMPORTDATE" type="date" source="import">
+		</field>
+		<field name="RnlAlcatelMFSInstanceIdentifier" type="varchar(255)" source="import">
+		</field>
+		<field name="UserLabel" type="varchar(255)" source="import">
+		</field>
+		<index name="idx1">
+			<order>RnlAlcatelMFSInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RnlAlcatelSector">
+		<field name="OMC_ID" type="varchar(50)" source="import">
+		</field>
+		<field name="IMPORTDATE" type="date" source="import">
+		</field>
+		<field name="RnlAlcatelSectorInstanceIdentifier" type="varchar(255)" source="import">
+		</field>
+		<field name="UserLabel" type="varchar(255)" source="import">
+		</field>
+		<index name="idx1">
+			<order>RnlAlcatelSectorInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RnlAlcatelSiteManager">
+		<field name="OMC_ID" type="varchar(50)" source="import">
+		</field>
+		<field name="IMPORTDATE" type="date" source="import">
+		</field>
+		<field name="RnlAlcatelSiteManagerInstanceIdentifier" type="varchar(255)" source="import">
+		</field>
+		<field name="UserLabel" type="varchar(255)" source="import">
+		</field>
+		<index name="idx1">
+			<order>RnlAlcatelSiteManagerInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RnlBasebandTransceiver">
+		<field name="OMC_ID" type="varchar(50)" source="import">
+		</field>
+		<field name="IMPORTDATE" type="date" source="import">
+		</field>
+		<field name="RnlBasebandTransceiverInstanceIdentifier" type="varchar(255)" source="import">
+		</field>
+		<field name="UserLabel" type="varchar(255)" source="import">
+		</field>
+		<index name="idx1">
+			<order>RnlBasebandTransceiverInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RnlFrequencyHoppingSystem">
+		<field name="OMC_ID" type="varchar(50)" source="import">
+		</field>
+		<field name="IMPORTDATE" type="date" source="import">
+		</field>
+		<field name="RnlFrequencyHoppingSystemInstanceIdentifier" type="varchar(255)" source="import">
+		</field>
+		<field name="UserLabel" type="varchar(255)" source="import">
+		</field>
+		<field name="MobileAllocation" type="varchar(255)" source="import">
+		</field>
+		<index name="idx1">
+			<order>RnlFrequencyHoppingSystemInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RnlPowerControl">
+		<field name="OMC_ID" type="varchar(50)" source="import">
+		</field>
+		<field name="IMPORTDATE" type="date" source="import">
+		</field>
+		<field name="RnlPowerControlInstanceIdentifier" type="varchar(255)" source="import">
+		</field>
+		<field name="UserLabel" type="varchar(255)" source="import">
+		</field>
+		<index name="idx1">
+			<order>RnlPowerControlInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="SubNetwork">
+		<field name="OMC_ID" type="varchar(50)" source="import">
+		</field>
+		<field name="IMPORTDATE" type="date" source="import">
+		</field>
+		<field name="SubNetworkInstanceIdentifier" type="varchar(255)" source="import">
+		</field>
+		<field name="UserLabel" type="varchar(255)" source="import">
+		</field>
+		<index name="idx1">
+			<order>SubNetworkInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="Adjacency">
+		<field name="OMC_ID" type="varchar(50)" source="import">
+		</field>
+		<field name="IMPORTDATE" type="date" source="import">
+		</field>
+		<field name="AdjacencyInstanceIdentifier" type="varchar(255)" source="import">
+		</field>
+		<field name="LAC" type="int" source="calculated">
+		</field>
+		<field name="CI" type="int" source="calculated">
+		</field>
+		<field name="BCCH" type="int" source="calculated">
+		</field>
+		<field name="CELLNAME" type="varchar(255)" source="calculated">
+		</field>
+		<field name="LAC_TGT" type="int" source="calculated">
+		</field>
+		<field name="CI_TGT" type="int" source="calculated">
+		</field>
+		<field name="BCCH_TGT" type="int" source="calculated">
+		</field>
+		<field name="CELLNAME_TGT" type="varchar(255)" source="calculated">
+		</field>
+		<index name="idx1">
+			<order>AdjacencyInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="ExternalOmcCell">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="ExternalOmcCellInstanceIdentifier" type="varchar(255)">
+		</field>
+		<field name="BCCHFrequency" type="int">
+		</field>
+		<field name="CellGlobalIdentity" type="varchar(100)">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="UserLabel" type="varchar(255)">
+		</field>
+		<index name="idx1">
+			<order>LAC,CI</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx2">
+			<order>ExternalOmcCellInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="HoControl">
+		<field name="OMC_ID" type="varchar(50)" source="import">
+		</field>
+		<field name="IMPORTDATE" type="date" source="import">
+		</field>
+		<field name="HoControlInstanceIdentifier" type="varchar(255)" source="import">
+		</field>
+		<index name="idx1">
+			<order>HoControlInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+ 	<table name="RnlAlcatelBSC">
+		<field name="OMC_ID" type="varchar(50)" source="import">
+		</field>
+		<field name="IMPORTDATE" type="date" source="import">
+		</field>
+		<field name="RnlAlcatelBSCInstanceIdentifier" type="varchar(255)" source="import">
+		</field>
+		<field name="RMS_TEMPLATE_1" type="text" source="import">
+		</field>
+		<field name="RMS_TEMPLATE_NAME_1" type="varchar(50)" source="import">
+		</field>
+		<field name="UserLabel" type="varchar(255)" source="import">
+		</field>
+		<index name="idx1">
+			<order>RnlAlcatelBSCInstanceIdentifier,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>
+

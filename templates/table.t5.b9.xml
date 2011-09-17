@@ -1,0 +1,44 @@
+<tables>
+	<table name="T5_TRXTS_H">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_ID" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BTS_ID" type="int" counter="no">
+		</field>
+		<field name="SECTOR" type="int" counter="no">
+		</field>
+		<field name="TRX" type="int" counter="no">
+		</field>
+		<field name="TS" type="int" counter="no">
+		</field>
+		<field name="C370a" type="bigint" counter="yes">
+		</field>
+		<field name="C370b" type="bigint" counter="yes">
+		</field>
+		<field name="C380a" type="bigint" counter="yes">
+		</field>
+		<field name="C380b" type="bigint" counter="yes">
+		</field>
+		<field name="C381a" type="bigint" counter="yes">
+		</field>
+		<field name="C381b" type="bigint" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>BSC_ID,BTS_ID,SECTOR,TRX,TS,SDATE,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>

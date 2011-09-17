@@ -1,0 +1,32 @@
+<tables>
+	<table name="UmtsAlarms">
+		<field name="AlarmDate" type="date" source="import">
+		</field>
+		<field name="AlarmTime" type="time" source="import">
+		</field>
+		<field name="Date_Time" type="varchar(50)">
+		</field>
+		<field name="Region" type="varchar(50)">
+		</field>
+		<field name="SubRegion" type="varchar(50)">
+		</field>
+		<field name="NetworkElement" type="varchar(255)" source="import">
+		</field>
+		<field name="AlarmType" type="varchar(50)" source="import">
+		</field>
+		<field name="AlarmText" type="text" source="import">
+		</field>
+		<field name="Severity" type="varchar(255)" source="import">
+		</field>
+		<index name="idx1">
+			<order>AlarmDate,AlarmTime,NetworkElement</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>NetworkElement,AlarmText,AlarmDate</order>
+			<unique>no</unique>
+		</index>
+	</table>
+</tables>
+
+

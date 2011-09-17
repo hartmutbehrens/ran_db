@@ -1,0 +1,1109 @@
+<tables>
+	<table name="WAC_WAC_H" loadedfromcsv="yes" granularity="3600" idx="WAC">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="EDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="WAC" type="varchar(100)" counter="no">
+		</field>
+		<field name="CQOS8" type="bigint" counter="yes">
+		</field>
+    <field name="CQOS9" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS10" type="bigint" counter="yes">
+    </field>
+    <field name="CH2" type="bigint" counter="yes">
+    </field>
+    <field name="CH12" type="bigint" counter="yes">
+    </field>
+    <field name="CH13" type="bigint" counter="yes">
+    </field>
+    <field name="CH14" type="bigint" counter="yes">
+    </field>
+    <field name="CH30" type="bigint" counter="yes">
+    </field>
+    <field name="CH31" type="bigint" counter="yes">
+    </field>
+    <field name="CH32" type="bigint" counter="yes">
+    </field>
+    <field name="CRAU3" type="bigint" counter="yes">
+    </field>
+    <field name="CRAU4" type="bigint" counter="yes">
+    </field>
+    <field name="CH28" type="bigint" counter="yes">
+    </field>
+    <field name="CH29" type="bigint" counter="yes">
+    </field>
+    <field name="CI19" type="bigint" counter="yes">
+    </field>
+    <field name="CI20" type="bigint" counter="yes">
+    </field>
+    <field name="CI1" type="bigint" counter="yes">
+    </field>
+    <field name="CI2" type="bigint" counter="yes">
+    </field>
+    <field name="CI3" type="bigint" counter="yes">
+    </field>
+    <field name="CI4" type="bigint" counter="yes">
+    </field>
+    <field name="CI5" type="bigint" counter="yes">
+    </field>
+    <field name="CI6" type="bigint" counter="yes">
+    </field>
+    <field name="CI7" type="bigint" counter="yes">
+    </field>
+    <field name="CI8" type="bigint" counter="yes">
+    </field>
+    <field name="CI9" type="bigint" counter="yes">
+    </field>
+    <field name="CI10" type="bigint" counter="yes">
+    </field>
+    <field name="CI12" type="bigint" counter="yes">
+    </field>
+    <field name="CI13" type="bigint" counter="yes">
+    </field>
+    <field name="CI14" type="bigint" counter="yes">
+    </field>
+    <field name="CI15" type="bigint" counter="yes">
+    </field>
+    <field name="CI16" type="bigint" counter="yes">
+    </field>
+    <field name="CI17" type="bigint" counter="yes">
+    </field>
+    <field name="CI18" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS1" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS2" type="bigint" counter="yes">
+    </field>
+    <field name="LTL1" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS6" type="bigint" counter="yes">
+    </field>
+    <field name="UQOS2" type="bigint" counter="yes">
+    </field>
+    <field name="UTL5" type="bigint" counter="yes">
+    </field>
+    <field name="UTL6" type="bigint" counter="yes">
+    </field>
+    <field name="UTL7" type="bigint" counter="yes">
+    </field>
+    <field name="UTL8" type="bigint" counter="yes">
+    </field>
+    <field name="GQOS9" type="bigint" counter="yes">
+    </field>
+    <field name="GQOS10" type="bigint" counter="yes">
+    </field>
+    <field name="GQOS91" type="bigint" counter="yes">
+    </field>
+    <field name="GQOS92" type="bigint" counter="yes">
+    </field>
+    <field name="GDR1" type="bigint" counter="yes">
+    </field>
+    <field name="GDR2" type="bigint" counter="yes">
+    </field>
+    <field name="GDR3" type="bigint" counter="yes">
+    </field>
+    <field name="GDR4" type="bigint" counter="yes">
+    </field>
+    <field name="GDR5" type="bigint" counter="yes">
+    </field>
+    <field name="GDR6" type="bigint" counter="yes">
+    </field>
+    <field name="GDR7" type="bigint" counter="yes">
+    </field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,WAC</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="WAC_BS_H" loadedfromcsv="yes" granularity="3600" idx="BS">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="EDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="BS" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSID" type="varchar(100)" counter="no">
+		</field>
+		<field name="CQOS5" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS13" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS14" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS15" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS16" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS17" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS21" type="bigint" counter="yes">
+		</field>
+		<field name="CH10" type="bigint" counter="yes">
+		</field>
+		<field name="CH6" type="bigint" counter="yes">
+		</field>
+		<field name="CH15" type="bigint" counter="yes">
+		</field>
+		<field name="CH3" type="bigint" counter="yes">
+		</field>
+		<field name="CH4" type="bigint" counter="yes">
+		</field>
+		<field name="CH5" type="bigint" counter="yes">
+		</field>
+		<field name="CH33" type="bigint" counter="yes">
+		</field>
+		<field name="CH37" type="bigint" counter="yes">
+		</field>
+		<field name="CH38" type="bigint" counter="yes">
+		</field>
+		<field name="CI11" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS22" type="bigint" counter="yes">
+		</field>
+		<field name="UTL1" type="bigint" counter="yes">
+		</field>
+		<field name="UTL2" type="bigint" counter="yes">
+		</field>
+		<field name="UTL3" type="bigint" counter="yes">
+		</field>
+		<field name="UTL4" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS1" type="bigint" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,BS</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="WAC_PhysicalLink_H" loadedfromcsv="yes" granularity="3600" idx="PhysicalLink">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="EDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="PhysicalLink" type="varchar(100)" counter="no">
+		</field>
+		<field name="LTL2" type="bigint" counter="yes">
+		</field>
+    <field name="LTL3" type="bigint" counter="yes">
+    </field>
+    <field name="LTL4" type="bigint" counter="yes">
+    </field>
+    <field name="LTL5" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS3" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS4" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS5" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS7" type="bigint" counter="yes">
+    </field>
+    <index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,PhysicalLink</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="WAC_Processor_H" loadedfromcsv="yes" granularity="3600" idx="Processor">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="EDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="Processor" type="varchar(100)" counter="no">
+		</field>
+		<field name="CRAU1" type="bigint" counter="yes">
+    </field>
+    <field name="CRAU2" type="bigint" counter="yes">
+    </field>
+    <index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,Processor</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="WAC_AAA_H" loadedfromcsv="yes" granularity="3600" idx="AAA">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="EDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="AAA" type="varchar(100)" counter="no">
+		</field>
+		<field name="CQOS18" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS19" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS20" type="bigint" counter="yes">
+    </field>
+    <index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,AAA</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="WAC_WAC_CSN_LINK_H" loadedfromcsv="yes" granularity="3600" idx="WAC_CSN_LINK">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="EDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="WAC_CSN_LINK" type="varchar(100)" counter="no">
+		</field>
+		<field name="CQOS7" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS25" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS26" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS28" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS29" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS30" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS31" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS33" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS34" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS35" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS36" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS37" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS38" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS39" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS40" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS41" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS42" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS43" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS44" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS45" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS46" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS47" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS48" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS49" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS50" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS51" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS53" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS54" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS55" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS56" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS57" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS58" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS59" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS60" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS61" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS62" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS63" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS64" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS65" type="bigint" counter="yes">
+		</field>
+		<field name="UTL13" type="bigint" counter="yes">
+		</field>
+		<field name="UTL17" type="bigint" counter="yes">
+		</field>
+		<field name="UTL18" type="bigint" counter="yes">
+		</field>
+		<field name="UTL19" type="bigint" counter="yes">
+		</field>
+		<field name="UTL20" type="bigint" counter="yes">
+		</field>
+		<field name="UTL21" type="bigint" counter="yes">
+		</field>
+		<field name="UTL15" type="bigint" counter="yes">
+		</field>
+		<field name="UTL22" type="bigint" counter="yes">
+		</field>
+		<field name="UTL23" type="bigint" counter="yes">
+		</field>
+		<field name="UTL24" type="bigint" counter="yes">
+		</field>
+		<field name="UTL25" type="bigint" counter="yes">
+		</field>
+		<field name="UTL26" type="bigint" counter="yes">
+		</field>
+		<field name="UTL14" type="bigint" counter="yes">
+		</field>
+		<field name="UTL27" type="bigint" counter="yes">
+		</field>
+		<field name="UTL28" type="bigint" counter="yes">
+		</field>
+		<field name="UTL29" type="bigint" counter="yes">
+		</field>
+		<field name="UTL30" type="bigint" counter="yes">
+		</field>
+		<field name="UTL31" type="bigint" counter="yes">
+		</field>
+		<field name="UTL16" type="bigint" counter="yes">
+		</field>
+		<field name="UTL32" type="bigint" counter="yes">
+		</field>
+		<field name="UTL33" type="bigint" counter="yes">
+		</field>
+		<field name="UTL34" type="bigint" counter="yes">
+		</field>
+		<field name="UTL35" type="bigint" counter="yes">
+		</field>
+		<field name="UTL36" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS3" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS4" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS5" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS6" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS7" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS8" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS9" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS10" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS11" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS12" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS13" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS14" type="bigint" counter="yes">
+		</field>
+		<field name="DQOS1" type="bigint" counter="yes">
+		</field>
+		<field name="DQOS2" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS1" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS2" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS3" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS4" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS5" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS6" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS7" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS8" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS11" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS15" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS23" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS43" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS72" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS77" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS82" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS87" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS95" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS96" type="bigint" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,WAC_CSN_LINK</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="WAC_BSCELL_CSN_LINK_H" loadedfromcsv="yes" granularity="3600" idx="BSCELL_CSN_LINK">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="EDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSCELL_CSN_LINK" type="varchar(100)" counter="no">
+		</field>
+		<field name="CQOS1" type="bigint" counter="yes">
+		</field>
+    <field name="CQOS2" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS23" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS24" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS4" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS6" type="bigint" counter="yes">
+    </field>
+    <field name="UTL10" type="bigint" counter="yes">
+    </field>
+    <field name="UTL37" type="bigint" counter="yes">
+    </field>
+    <field name="UTL38" type="bigint" counter="yes">
+    </field>
+    <field name="UTL39" type="bigint" counter="yes">
+    </field>
+    <field name="UTL40" type="bigint" counter="yes">
+    </field>
+    <field name="UTL41" type="bigint" counter="yes">
+    </field>
+    <field name="UTL12" type="bigint" counter="yes">
+    </field>
+    <field name="UTL42" type="bigint" counter="yes">
+    </field>
+    <field name="UTL43" type="bigint" counter="yes">
+    </field>
+    <field name="UTL44" type="bigint" counter="yes">
+    </field>
+    <field name="UTL45" type="bigint" counter="yes">
+    </field>
+    <field name="UTL46" type="bigint" counter="yes">
+    </field>
+    <field name="UTL9" type="bigint" counter="yes">
+    </field>
+    <field name="UTL47" type="bigint" counter="yes">
+    </field>
+    <field name="UTL48" type="bigint" counter="yes">
+    </field>
+    <field name="UTL49" type="bigint" counter="yes">
+    </field>
+    <field name="UTL50" type="bigint" counter="yes">
+    </field>
+    <field name="UTL51" type="bigint" counter="yes">
+    </field>
+    <field name="UTL11" type="bigint" counter="yes">
+    </field>
+    <field name="UTL52" type="bigint" counter="yes">
+    </field>
+    <field name="UTL53" type="bigint" counter="yes">
+    </field>
+    <field name="UTL54" type="bigint" counter="yes">
+    </field>
+    <field name="UTL55" type="bigint" counter="yes">
+    </field>
+    <field name="UTL56" type="bigint" counter="yes">
+    </field>
+    <index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,BSCELL_CSN_LINK</order>
+			<unique>yes</unique>
+		</index>
+	</table>	
+	<table name="WAC_WAC_D">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="WAC" type="varchar(100)" counter="no">
+		</field>
+		<field name="CQOS8" type="bigint" counter="yes">
+		</field>
+    <field name="CQOS9" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS10" type="bigint" counter="yes">
+    </field>
+    <field name="CH2" type="bigint" counter="yes">
+    </field>
+    <field name="CH12" type="bigint" counter="yes">
+    </field>
+    <field name="CH13" type="bigint" counter="yes">
+    </field>
+    <field name="CH14" type="bigint" counter="yes">
+    </field>
+    <field name="CH30" type="bigint" counter="yes">
+    </field>
+    <field name="CH31" type="bigint" counter="yes">
+    </field>
+    <field name="CH32" type="bigint" counter="yes">
+    </field>
+    <field name="CRAU3" type="bigint" counter="yes">
+    </field>
+    <field name="CRAU4" type="bigint" counter="yes">
+    </field>
+    <field name="CH28" type="bigint" counter="yes">
+    </field>
+    <field name="CH29" type="bigint" counter="yes">
+    </field>
+    <field name="CI19" type="bigint" counter="yes">
+    </field>
+    <field name="CI20" type="bigint" counter="yes">
+    </field>
+    <field name="CI1" type="bigint" counter="yes">
+    </field>
+    <field name="CI2" type="bigint" counter="yes">
+    </field>
+    <field name="CI3" type="bigint" counter="yes">
+    </field>
+    <field name="CI4" type="bigint" counter="yes">
+    </field>
+    <field name="CI5" type="bigint" counter="yes">
+    </field>
+    <field name="CI6" type="bigint" counter="yes">
+    </field>
+    <field name="CI7" type="bigint" counter="yes">
+    </field>
+    <field name="CI8" type="bigint" counter="yes">
+    </field>
+    <field name="CI9" type="bigint" counter="yes">
+    </field>
+    <field name="CI10" type="bigint" counter="yes">
+    </field>
+    <field name="CI12" type="bigint" counter="yes">
+    </field>
+    <field name="CI13" type="bigint" counter="yes">
+    </field>
+    <field name="CI14" type="bigint" counter="yes">
+    </field>
+    <field name="CI15" type="bigint" counter="yes">
+    </field>
+    <field name="CI16" type="bigint" counter="yes">
+    </field>
+    <field name="CI17" type="bigint" counter="yes">
+    </field>
+    <field name="CI18" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS1" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS2" type="bigint" counter="yes">
+    </field>
+    <field name="LTL1" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS6" type="bigint" counter="yes">
+    </field>
+    <field name="UQOS2" type="bigint" counter="yes">
+    </field>
+    <field name="UTL5" type="bigint" counter="yes">
+    </field>
+    <field name="UTL6" type="bigint" counter="yes">
+    </field>
+    <field name="UTL7" type="bigint" counter="yes">
+    </field>
+    <field name="UTL8" type="bigint" counter="yes">
+    </field>
+    <field name="GQOS9" type="bigint" counter="yes">
+    </field>
+    <field name="GQOS10" type="bigint" counter="yes">
+    </field>
+    <field name="GQOS91" type="bigint" counter="yes">
+    </field>
+    <field name="GQOS92" type="bigint" counter="yes">
+    </field>
+    <field name="GDR1" type="bigint" counter="yes">
+    </field>
+    <field name="GDR2" type="bigint" counter="yes">
+    </field>
+    <field name="GDR3" type="bigint" counter="yes">
+    </field>
+    <field name="GDR4" type="bigint" counter="yes">
+    </field>
+    <field name="GDR5" type="bigint" counter="yes">
+    </field>
+    <field name="GDR6" type="bigint" counter="yes">
+    </field>
+    <field name="GDR7" type="bigint" counter="yes">
+    </field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,WAC</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="WAC_BS_D">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="BS" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSID" type="varchar(100)" counter="no">
+		</field>
+		<field name="CQOS5" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS13" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS14" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS15" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS16" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS17" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS21" type="bigint" counter="yes">
+		</field>
+		<field name="CH10" type="bigint" counter="yes">
+		</field>
+		<field name="CH6" type="bigint" counter="yes">
+		</field>
+		<field name="CH15" type="bigint" counter="yes">
+		</field>
+		<field name="CH3" type="bigint" counter="yes">
+		</field>
+		<field name="CH4" type="bigint" counter="yes">
+		</field>
+		<field name="CH5" type="bigint" counter="yes">
+		</field>
+		<field name="CH33" type="bigint" counter="yes">
+		</field>
+		<field name="CH37" type="bigint" counter="yes">
+		</field>
+		<field name="CH38" type="bigint" counter="yes">
+		</field>
+		<field name="CI11" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS22" type="bigint" counter="yes">
+		</field>
+		<field name="UTL1" type="bigint" counter="yes">
+		</field>
+		<field name="UTL2" type="bigint" counter="yes">
+		</field>
+		<field name="UTL3" type="bigint" counter="yes">
+		</field>
+		<field name="UTL4" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS1" type="bigint" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,BS</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>BSID</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="WAC_PhysicalLink_D">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="PhysicalLink" type="varchar(100)" counter="no">
+		</field>
+		<field name="LTL2" type="bigint" counter="yes">
+		</field>
+    <field name="LTL3" type="bigint" counter="yes">
+    </field>
+    <field name="LTL4" type="bigint" counter="yes">
+    </field>
+    <field name="LTL5" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS3" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS4" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS5" type="bigint" counter="yes">
+    </field>
+    <field name="LQOS7" type="bigint" counter="yes">
+    </field>
+    <index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,PhysicalLink</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="WAC_Processor_D">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="Processor" type="varchar(100)" counter="no">
+		</field>
+		<field name="CRAU1" type="bigint" counter="yes">
+    </field>
+    <field name="CRAU2" type="bigint" counter="yes">
+    </field>
+    <index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,Processor</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="WAC_AAA_D">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="AAA" type="varchar(100)" counter="no">
+		</field>
+		<field name="CQOS18" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS19" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS20" type="bigint" counter="yes">
+    </field>
+    <index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,AAA</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="WAC_WAC_CSN_LINK_D">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="WAC_CSN_LINK" type="varchar(100)" counter="no">
+		</field>
+		<field name="CQOS7" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS25" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS26" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS28" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS29" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS30" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS31" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS33" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS34" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS35" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS36" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS37" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS38" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS39" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS40" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS41" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS42" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS43" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS44" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS45" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS46" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS47" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS48" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS49" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS50" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS51" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS53" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS54" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS55" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS56" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS57" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS58" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS59" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS60" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS61" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS62" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS63" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS64" type="bigint" counter="yes">
+		</field>
+		<field name="CQOS65" type="bigint" counter="yes">
+		</field>
+		<field name="UTL13" type="bigint" counter="yes">
+		</field>
+		<field name="UTL17" type="bigint" counter="yes">
+		</field>
+		<field name="UTL18" type="bigint" counter="yes">
+		</field>
+		<field name="UTL19" type="bigint" counter="yes">
+		</field>
+		<field name="UTL20" type="bigint" counter="yes">
+		</field>
+		<field name="UTL21" type="bigint" counter="yes">
+		</field>
+		<field name="UTL15" type="bigint" counter="yes">
+		</field>
+		<field name="UTL22" type="bigint" counter="yes">
+		</field>
+		<field name="UTL23" type="bigint" counter="yes">
+		</field>
+		<field name="UTL24" type="bigint" counter="yes">
+		</field>
+		<field name="UTL25" type="bigint" counter="yes">
+		</field>
+		<field name="UTL26" type="bigint" counter="yes">
+		</field>
+		<field name="UTL14" type="bigint" counter="yes">
+		</field>
+		<field name="UTL27" type="bigint" counter="yes">
+		</field>
+		<field name="UTL28" type="bigint" counter="yes">
+		</field>
+		<field name="UTL29" type="bigint" counter="yes">
+		</field>
+		<field name="UTL30" type="bigint" counter="yes">
+		</field>
+		<field name="UTL31" type="bigint" counter="yes">
+		</field>
+		<field name="UTL16" type="bigint" counter="yes">
+		</field>
+		<field name="UTL32" type="bigint" counter="yes">
+		</field>
+		<field name="UTL33" type="bigint" counter="yes">
+		</field>
+		<field name="UTL34" type="bigint" counter="yes">
+		</field>
+		<field name="UTL35" type="bigint" counter="yes">
+		</field>
+		<field name="UTL36" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS3" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS4" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS5" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS6" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS7" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS8" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS9" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS10" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS11" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS12" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS13" type="bigint" counter="yes">
+		</field>
+		<field name="UQOS14" type="bigint" counter="yes">
+		</field>
+		<field name="DQOS1" type="bigint" counter="yes">
+		</field>
+		<field name="DQOS2" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS1" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS2" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS3" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS4" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS5" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS6" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS7" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS8" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS11" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS15" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS23" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS43" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS72" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS77" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS82" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS87" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS95" type="bigint" counter="yes">
+		</field>
+		<field name="GQOS96" type="bigint" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,WAC_CSN_LINK</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="WAC_BSCELL_CSN_LINK_D">
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="BSCELL_CSN_LINK" type="varchar(100)" counter="no">
+		</field>
+		<field name="CQOS1" type="bigint" counter="yes">
+		</field>
+    <field name="CQOS2" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS23" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS24" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS4" type="bigint" counter="yes">
+    </field>
+    <field name="CQOS6" type="bigint" counter="yes">
+    </field>
+    <field name="UTL10" type="bigint" counter="yes">
+    </field>
+    <field name="UTL37" type="bigint" counter="yes">
+    </field>
+    <field name="UTL38" type="bigint" counter="yes">
+    </field>
+    <field name="UTL39" type="bigint" counter="yes">
+    </field>
+    <field name="UTL40" type="bigint" counter="yes">
+    </field>
+    <field name="UTL41" type="bigint" counter="yes">
+    </field>
+    <field name="UTL12" type="bigint" counter="yes">
+    </field>
+    <field name="UTL42" type="bigint" counter="yes">
+    </field>
+    <field name="UTL43" type="bigint" counter="yes">
+    </field>
+    <field name="UTL44" type="bigint" counter="yes">
+    </field>
+    <field name="UTL45" type="bigint" counter="yes">
+    </field>
+    <field name="UTL46" type="bigint" counter="yes">
+    </field>
+    <field name="UTL9" type="bigint" counter="yes">
+    </field>
+    <field name="UTL47" type="bigint" counter="yes">
+    </field>
+    <field name="UTL48" type="bigint" counter="yes">
+    </field>
+    <field name="UTL49" type="bigint" counter="yes">
+    </field>
+    <field name="UTL50" type="bigint" counter="yes">
+    </field>
+    <field name="UTL51" type="bigint" counter="yes">
+    </field>
+    <field name="UTL11" type="bigint" counter="yes">
+    </field>
+    <field name="UTL52" type="bigint" counter="yes">
+    </field>
+    <field name="UTL53" type="bigint" counter="yes">
+    </field>
+    <field name="UTL54" type="bigint" counter="yes">
+    </field>
+    <field name="UTL55" type="bigint" counter="yes">
+    </field>
+    <field name="UTL56" type="bigint" counter="yes">
+    </field>
+    <index name="idx1">
+			<order>NAME,SDATETIME,OMC_ID,BSCELL_CSN_LINK</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>
+

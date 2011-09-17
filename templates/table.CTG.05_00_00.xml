@@ -1,0 +1,118 @@
+<tables>
+	<table name="TRACE_CTG">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="traceIdentifier" type="int">
+		</field>
+		<field name="callIdentifier" type="varchar(100)">
+		</field>
+		<field name="callStartTime" type="datetime">
+		</field>
+		<field name="Name" type="varchar(100)">
+		</field>
+		<field name="event" type="varchar(100)">
+		</field>
+		<field name="callType" type="varchar(100)">
+		</field>
+		<field name="cnDomain" type="varchar(100)">
+		</field>
+		<field name="eventTime" type="datetime">
+		</field>
+		<field name="aal2ifextid_aal2pathgroupid" type="bigint">
+		</field>
+		<field name="aal2ifextid_dsid" type="bigint">
+		</field>
+		<field name="aal2ifextid_netid" type="bigint">
+		</field>
+		<field name="aal2ifid_a2p" type="bigint">
+		</field>
+		<field name="aal2ifid_cid" type="bigint">
+		</field>
+		<field name="aluspconnid" type="bigint">
+		</field>
+		<field name="alusuconnid" type="bigint">
+		</field>
+		<field name="asconfid_dlasconfid" type="bigint">
+		</field>
+		<field name="asconfid_nbofpsibhsdpa" type="bigint">
+		</field>
+		<field name="asconfid_nbofpsstrmhsdpa" type="bigint">
+		</field>
+		<field name="asconfid_ulasconfid" type="bigint">
+		</field>
+		<field name="calledssn" type="bigint">
+		</field>
+		<field name="cause" type="varchar(100)">
+		</field>
+		<field name="causetype" type="varchar(100)">
+		</field>
+		<field name="cell_celltype" type="varchar(100)">
+		</field>
+		<field name="cell_cpen" type="bigint">
+		</field>
+		<field name="cell_cpichecno" type="bigint">
+		</field>
+		<field name="cell_cprp" type="bigint">
+		</field>
+		<field name="cell_csot" type="bigint">
+		</field>
+		<field name="cell_internalcellid" type="bigint">
+		</field>
+		<field name="cell_psc" type="bigint">
+		</field>
+		<field name="cellid" type="bigint">
+		</field>
+		<field name="connid" type="bigint">
+		</field>
+		<field name="conntype" type="varchar(100)">
+		</field>
+		<field name="corenetworkid" type="varchar(100)">
+		</field>
+		<field name="currhsdpausers" type="bigint">
+		</field>
+		<field name="cpichecno" type="bigint">
+		</field>
+		<field name="dluarfcn" type="bigint">
+		</field>
+		<field name="dpc" type="bigint">
+		</field>
+		<field name="frequencyinfo" type="bigint">
+		</field>
+		<field name="pdelay" type="bigint">
+		</field>
+		<field name="qos" type="bigint">
+		</field>
+		<field name="rbsetid_dlrbsetid" type="bigint">
+		</field>
+		<field name="rbsetid_ulrbsetid" type="bigint">
+		</field>
+		<field name="sccpcnxref" type="bigint">
+		</field>
+		<field name="sugr" type="bigint">
+		</field>
+		<field name="targetcellid" type="bigint">
+		</field>
+		<field name="transitiontype" type="varchar(100)">
+		</field>
+		<field name="type" type="varchar(100)">
+		</field>
+		<field name="ueid" type="varchar(100)">
+		</field>
+		<field name="ulrbrateadaprinfo_curasconfid" type="bigint">
+		</field>
+		<field name="ulrbrateadaprinfo_refpsrate" type="bigint">
+		</field>
+		<field name="ulrbrateadaprinfo_upthr" type="bigint">
+		</field>
+		<field name="usertype" type="varchar(100)">
+		</field>
+		<index name="idx10">
+			<order>Name,callIdentifier,event,eventTime,OMC_ID,traceIdentifier</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>
+
+												

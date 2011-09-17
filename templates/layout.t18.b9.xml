@@ -1,0 +1,46 @@
+<layout name="t5" version="b9">
+	<blocktype name="180" loadtable="T18_N7_H" index="none" indexlength="0">
+			<counter name="C180a" offset="0" length="4">
+			</counter>
+			<counter name="C180b" offset="4" length="4">
+			</counter>
+			<counter name="C180c" offset="8" length="4">
+			</counter>
+			<counter name="C180d" offset="12" length="4">
+			</counter>
+			<counter name="C180e" offset="16" length="4">
+			</counter>
+			<counter name="C181a" offset="20" length="4">
+			</counter>
+			<counter name="C181b" offset="24" length="4">
+			</counter>
+			<counter name="C181c" offset="28" length="4">
+			</counter>
+			<counter name="C181d" offset="32" length="4">
+			</counter>
+			<counter name="C181e" offset="36" length="4">
+			</counter>
+			<counter name="C181f" offset="40" length="4">
+			</counter>
+			<counter name="C181g" offset="44" length="4">
+			</counter>
+			<counter name="C181h" offset="48" length="4">
+			</counter>
+			<counter name="C181i" offset="52" length="4">
+			</counter>
+			<counter name="C181j" offset="56" length="4">
+			</counter>
+			<counter name="C181k" offset="60" length="4">
+			</counter>
+			<counter name="C181l" offset="64" length="4">
+			</counter>
+			<counter name="C182" offset="68" length="4">
+			</counter>
+	</blocktype>
+	<blocktype name="181" loadtable="T18_ACHANNEL_H" index="LINK" indexlength="2" bit-op="PCM=LSB5/MSB31,TS=LSB0/MSB4">
+			<counter name="C750" offset="0" length="4">
+			</counter>
+			<counter name="C751" offset="4" length="4">
+			</counter>
+	</blocktype>
+</layout>

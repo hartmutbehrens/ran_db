@@ -1,0 +1,1300 @@
+<tables>
+	<table name="INODE_ATMPORT_H" loadedfromcsv="yes" granularity="3600" idx="RncEquipment,INode,AtmPort">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="MANAGED_ELEMENT" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="AtmPort" type="bigint" counter="no">
+		</field>
+		<field name="VS.ProvRate" type="bigint" counter="yes">
+		</field>
+	    <field name="VS.ActualRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Cbr" type="bigint" counter="yes">
+	   	</field>
+	    <field name="VS.RxMaxCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Ubr" type="bigint" counter="yes">
+	    </field>
+		<index name="idx1">
+			<order>INode,AtmPort,SDATETIME,OMC_ID,RncEquipment</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_LPROCESSOR_H" loadedfromcsv="yes" granularity="3600" idx="RncEquipment,INode,Lp">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="MANAGED_ELEMENT" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lp" type="bigint" counter="no">
+		</field>
+		<field name="VS.CpuUtilAvg" type="bigint" counter="yes">
+		</field>
+	    <field name="VS.CpuUtilAvgMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.CpuUtilAvgMax" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryCapacity.FastRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryCapacity.NormalRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryCapacity.SharedRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvg.FastRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvg.NormalRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvg.SharedRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMin.FastRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMin.NormalRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMin.SharedRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMax.FastRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMax.NormalRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMax.SharedRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.SharedMsgBlockCapacity" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.SharedMsgBlockUsageAvg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.SharedMsgBlockUsageAvgMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.SharedMsgBlockUsageAvgMax" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LocalMsgBlockCapacity" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LocalMsgBlockUsageAvg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LocalMsgBlockUsageMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LocalMsgBlockUsageMax" type="bigint" counter="yes">
+	    </field>
+		<index name="idx1">
+			<order>INode,Lp,SDATETIME,OMC_ID,RncEquipment</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_APROCESSOR_H" loadedfromcsv="yes" granularity="3600" idx="RncEquipment,INode,Lp,Ap">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="MANAGED_ELEMENT" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lp" type="bigint" counter="no">
+		</field>
+		<field name="Ap" type="bigint" counter="no">
+		</field>
+		<field name="VS.ApCpuUtilizationHistogram.LT050" type="bigint" counter="yes">
+		</field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT060" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT070" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT080" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT085" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT090" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT095" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT100" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.EQ100" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationAvg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApMemoryCapacity" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApMemoryUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApMemoryUsageAvgMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApMemoryUsageAvgMax" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockCapacity" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockUsageAvg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockUsageAvgMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockUsageAvgMax" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockCapacity" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockUsageAvg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockUsageAvgMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockUsageAvgMax" type="bigint" counter="yes">
+	    </field>
+		<index name="idx1">
+			<order>INode,Lp,Ap,SDATETIME,OMC_ID,RncEquipment</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_ETHERNET_H" loadedfromcsv="yes" granularity="3600" idx="RncEquipment,INode,Lp,Ethernet">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lp" type="bigint" counter="no">
+		</field>
+		<field name="Ethernet" type="bigint" counter="no">
+		</field>
+		<field name="VS.framesTransmittedOk" type="bigint" counter="yes">
+		</field>
+	    <field name="VS.framesReceivedOk" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.octetsTransmittedOk" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.octetsReceivedOk" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.framesTooLong" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.fcsErrors" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.maxRxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.avgRxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.maxTxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.avgTxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <index name="idx1">
+			<order>INode,Lp,Ethernet,SDATETIME,OMC_ID,RncEquipment</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_ETHERNETMANAGER_H" loadedfromcsv="yes" granularity="3600" idx="RncEquipment,INode,Lp,Ethernet,TrafficManager,EmissionPriority">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lp" type="bigint" counter="no">
+		</field>
+		<field name="Ethernet" type="bigint" counter="no">
+		</field>
+		<field name="TrafficManager" type="bigint" counter="no">
+		</field>
+		<field name="EmissionPriority" type="bigint" counter="no">
+		</field>
+		<field name="VS.txBytesDp0" type="bigint" counter="yes">
+		</field>
+	    <field name="VS.txBytesDp1" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txBytesDp2" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txBytesDp3" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDp0" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDp1" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDp2" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDp3" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDiscDp0" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDiscDp1" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDiscDp2" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDiscDp3" type="bigint" counter="yes">
+	    </field>
+		<index name="idx1">
+			<order>RncEquipment,INode,Lp,Ethernet,TrafficManager,EmissionPriority,SDATETIME,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_LANSTATISTICS_H" loadedfromcsv="yes" granularity="3600" idx="RncEquipment,INode,Lan,EthernetStatistics">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lan" type="bigint" counter="no">
+		</field>
+		<field name="EthernetStatistics" type="bigint" counter="no">
+		</field>
+		<field name="VS.unknownVlanId" type="bigint" counter="yes">
+		</field>
+      	<field name="VS.rxFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.rxBytes" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txBytes" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.rxDiscFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txDiscFrames" type="bigint" counter="yes">
+      	</field>
+		<index name="idx1">
+			<order>RncEquipment,INode,Lan,EthernetStatistics,SDATETIME,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_VLANSTATISTICS_H" loadedfromcsv="yes" granularity="3600" idx="RncEquipment,INode,Lan,Vlan,EthernetStatistics">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lan" type="bigint" counter="no">
+		</field>
+		<field name="Vlan" type="bigint" counter="no">
+		</field>
+		<field name="EthernetStatistics" type="bigint" counter="no">
+		</field>
+      	<field name="VS.rxFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.rxBytes" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txBytes" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.rxDiscFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txDiscFrames" type="bigint" counter="yes">
+      	</field>
+		<index name="idx1">
+			<order>RncEquipment,INode,Lan,Vlan,EthernetStatistics,SDATETIME,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_VLANSTATISTICS_D">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lan" type="bigint" counter="no">
+		</field>
+		<field name="Vlan" type="bigint" counter="no">
+		</field>
+		<field name="EthernetStatistics" type="bigint" counter="no">
+		</field>
+      	<field name="VS.rxFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.rxBytes" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txBytes" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.rxDiscFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txDiscFrames" type="bigint" counter="yes">
+      	</field>
+		<index name="idx1">
+			<order>RncEquipment,INode,Lan,Vlan,EthernetStatistics,SDATETIME,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_LANSTATISTICS_D">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lan" type="bigint" counter="no">
+		</field>
+		<field name="EthernetStatistics" type="bigint" counter="no">
+		</field>
+		<field name="VS.unknownVlanId" type="bigint" counter="yes">
+		</field>
+      	<field name="VS.rxFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.rxBytes" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txBytes" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.rxDiscFrames" type="bigint" counter="yes">
+      	</field>
+      	<field name="VS.txDiscFrames" type="bigint" counter="yes">
+      	</field>
+		<index name="idx1">
+			<order>RncEquipment,INode,Lan,EthernetStatistics,SDATETIME,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_ETHERNETMANAGER_D">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lp" type="bigint" counter="no">
+		</field>
+		<field name="Ethernet" type="bigint" counter="no">
+		</field>
+		<field name="TrafficManager" type="bigint" counter="no">
+		</field>
+		<field name="EmissionPriority" type="bigint" counter="no">
+		</field>
+		<field name="VS.txBytesDp0" type="bigint" counter="yes">
+		</field>
+	    <field name="VS.txBytesDp1" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txBytesDp2" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txBytesDp3" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDp0" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDp1" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDp2" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDp3" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDiscDp0" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDiscDp1" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDiscDp2" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.txFramesDiscDp3" type="bigint" counter="yes">
+	    </field>
+		<index name="idx1">
+			<order>RncEquipment,INode,Lp,Ethernet,TrafficManager,EmissionPriority,SDATETIME,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_ETHERNET_D">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lp" type="bigint" counter="no">
+		</field>
+		<field name="Ethernet" type="bigint" counter="no">
+		</field>
+		<field name="VS.framesTransmittedOk" type="bigint" counter="yes">
+		</field>
+	    <field name="VS.framesReceivedOk" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.octetsTransmittedOk" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.octetsReceivedOk" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.framesTooLong" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.fcsErrors" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.maxRxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.avgRxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.maxTxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.avgTxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <index name="idx1">
+			<order>INode,Lp,Ethernet,SDATETIME,OMC_ID,RncEquipment</order>
+			<unique>yes</unique>
+		</index>
+	</table>	
+	<table name="INODE_ATMPORT_D">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="MANAGED_ELEMENT" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="AtmPort" type="bigint" counter="no">
+		</field>
+		<field name="VS.ProvRate" type="bigint" counter="yes">
+		</field>
+	    <field name="VS.ActualRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Cbr" type="bigint" counter="yes">
+	   	</field>
+	    <field name="VS.RxMaxCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscards.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscards.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Ubr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Cbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Rtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Nrtvbr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Abr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Ubr" type="bigint" counter="yes">
+	    </field>
+		<index name="idx1">
+			<order>INode,AtmPort,SDATETIME,OMC_ID,RncEquipment</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>INode,AtmPort,IMPORTDATE,OMC_ID,RncEquipment</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_LPROCESSOR_D">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="MANAGED_ELEMENT" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lp" type="bigint" counter="no">
+		</field>
+		<field name="VS.CpuUtilAvg" type="bigint" counter="yes">
+		</field>
+	    <field name="VS.CpuUtilAvgMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.CpuUtilAvgMax" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryCapacity.FastRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryCapacity.NormalRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryCapacity.SharedRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvg.FastRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvg.NormalRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvg.SharedRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMin.FastRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMin.NormalRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMin.SharedRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMax.FastRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMax.NormalRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMax.SharedRAM" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.SharedMsgBlockCapacity" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.SharedMsgBlockUsageAvg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.SharedMsgBlockUsageAvgMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.SharedMsgBlockUsageAvgMax" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LocalMsgBlockCapacity" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LocalMsgBlockUsageAvg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LocalMsgBlockUsageMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LocalMsgBlockUsageMax" type="bigint" counter="yes">
+	    </field>
+		<index name="idx1">
+			<order>INode,Lp,SDATETIME,OMC_ID,RncEquipment</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>INode,Lp,IMPORTDATE,OMC_ID,RncEquipment</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="INODE_APROCESSOR_D">
+		<field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="SDATETIME" type="datetime" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="NAME" type="varchar(100)" counter="no">
+		</field>
+		<field name="MANAGED_ELEMENT" type="varchar(100)" counter="no">
+		</field>
+		<field name="INode" type="varchar(100)" counter="no">
+		</field>
+		<field name="RncEquipment" type="bigint" counter="no">
+		</field>
+		<field name="Lp" type="bigint" counter="no">
+		</field>
+		<field name="Ap" type="bigint" counter="no">
+		</field>
+		<field name="VS.ApCpuUtilizationHistogram.LT050" type="bigint" counter="yes">
+		</field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT060" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT070" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT080" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT085" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT090" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT095" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT100" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.EQ100" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApCpuUtilizationAvg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApMemoryCapacity" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApMemoryUtilization" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApMemoryUsageAvgMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApMemoryUsageAvgMax" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockCapacity" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockUsageAvg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockUsageAvgMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockUsageAvgMax" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockCapacity" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockUsageAvg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockUsageAvgMin" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockUsageAvgMax" type="bigint" counter="yes">
+	    </field>
+		<index name="idx1">
+			<order>INode,Lp,Ap,SDATETIME,OMC_ID,RncEquipment</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>INode,Lp,Ap,IMPORTDATE,OMC_ID,RncEquipment</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>

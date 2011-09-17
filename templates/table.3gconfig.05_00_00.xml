@@ -1,0 +1,991 @@
+<tables>
+	<table name="Cell">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="locationAreaCode" type="int">
+		</field>
+		<field name="cellId" type="int">
+		</field>
+		<field name="CellName" type="varchar(100)">
+		</field>
+		<field name="NodeBName" type="varchar(100)">
+		</field>
+		<field name="RncName" type="varchar(100)">
+		</field>
+		<field name="routingAreaCode" type="int">
+		</field>
+		<field name="serviceAreaCode" type="int">
+		</field>
+		<field name="rdnId" type="int">
+		</field>
+		<field name="azimuthAntennaAngle" type="int">
+		</field>
+		<field name="ulFrequencyNumber" type="int">
+		</field>
+		<field name="dlFrequencyNumber" type="int">
+		</field>
+		<field name="primaryScramblingCode" type="int">
+		</field>
+		<field name="hoConfId" type="varchar(255)">
+		</field>
+		<field name="is3Gto2GRedirectForEmergencyAllowed" type="varchar(10)">
+		</field>
+		<field name="isCallEstabCausePerCellBasisActivated" type="varchar(10)">
+		</field>
+		<field name="isCompoundingCellListActivated" type="varchar(10)">
+		</field>
+		<field name="isEventTriggeredMeasAllowed" type="varchar(10)">
+		</field>
+		<field name="isFachPowerAdjustmentActivated" type="varchar(10)">
+		</field>
+		<field name="isHcsUsed" type="varchar(10)">
+		</field>
+		<field name="isQuickRepeatActivated" type="varchar(10)">
+		</field>
+		<field name="isSib11MeasReportingAllowed" type="varchar(10)">
+		</field>
+		<field name="isSysInfoUpdateDelayed" type="varchar(10)">
+		</field>
+		<field name="isUeBasedAgpsAllowed" type="varchar(10)">
+		</field>
+		<field name="hsdpaActivation" type="varchar(10)">
+		</field>
+		<field name="maxTxPower" type="float">
+		</field>
+		<field name="pcpichPower" type="float">
+		</field>
+		<field name="bchPowerRelativeToPcpich" type="float">
+		</field>
+		<field name="referenceRtwp" type="float">
+		</field>
+		<field name="tCell" type="int">
+		</field>
+		<field name="OCNSSpreadingFactor" type="varchar(100)">
+		</field>
+		<index name="idx10">
+			<order>cellId,locationAreaCode,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>CellName</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx3">
+			<order>NodeBName,rdnId</order>
+			<unique>no</unique>
+		</index>
+	</table>
+	<table name="Site">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="Site" type="varchar(100)">
+		</field>
+		<field name="Sector" type="int">
+		</field>
+		<field name="AntennaSystem" type="int">
+		</field>
+		<field name="latitude" type="float">
+		</field>
+		<field name="longitude" type="float">
+		</field>
+		<field name="altitude" type="float">
+		</field>
+		<field name="azimuth" type="float">
+		</field>
+		<field name="downTilt" type="float">
+		</field>
+		<field name="electricalDownTilt" type="float">
+		</field>
+		<index name="idx2">
+			<order>Site,Sector,AntennaSystem,IMPORTDATE,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="Antenna">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="BTSEquipment" type="varchar(100)">
+		</field>
+		<field name="AntennaAccess" type="int">
+		</field>
+		<field name="antennaConnection" type="varchar(100)">
+		</field>
+		<field name="antennaSystemRef" type="varchar(255)">
+		</field>
+		<field name="externalAttenuationDivDl" type="float">
+		</field>
+		<field name="externalAttenuationDivUl" type="float">
+		</field>
+		<field name="externalAttenuationMainDl" type="float">
+		</field>
+		<field name="externalAttenuationMainUl" type="float">
+		</field>
+		<field name="externalDlDelay" type="float">
+		</field>
+		<field name="externalUlDelay" type="float">
+		</field>
+		<field name="retPresence" type="varchar(10)">
+		</field>
+		<field name="rxCabling" type="varchar(100)">
+		</field>
+		<field name="tmaAccessType" type="varchar(100)">
+		</field>
+		<index name="idx2">
+			<order>BTSEquipment,AntennaAccess,IMPORTDATE,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="BTS">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="BTSEquipment" type="varchar(100)">
+		</field>
+		<field name="BTSCell" type="int">
+		</field>
+		<field name="CCLTimeout" type="varchar(100)">
+		</field>
+		<field name="aliasName" type="varchar(100)">
+		</field>
+		<field name="antennaConnectionList" type="varchar(100)">
+		</field>
+		<field name="antennaFaultDetectionActivation" type="varchar(100)">
+		</field>
+		<field name="antennaFaultMaxCounter" type="int">
+		</field>
+		<field name="antennaPowerMinSamples" type="int">
+		</field>
+		<field name="antennaThreshold" type="int">
+		</field>
+		<field name="asyncLine2InterfaceUsage" type="varchar(100)">
+		</field>
+		<field name="automaticUpgrade" type="varchar(100)">
+		</field>
+		<field name="bbVersion" type="varchar(100)">
+		</field>
+		<field name="callPCEMSlotNumber" type="int">
+		</field>
+		<field name="callPCommissionMode" type="int">
+		</field>
+		<field name="cellProfile" type="varchar(100)">
+		</field>
+		<field name="cellSize" type="varchar(100)">
+		</field>
+		<field name="clusterId" type="varchar(100)">
+		</field>
+		<field name="dbbuPoolMode" type="varchar(100)">
+		</field>
+		<field name="ebbuAllocationPriority" type="varchar(100)">
+		</field>
+		<field name="edchCMActivation" type="varchar(100)">
+		</field>
+		<field name="edchMaxNumberUserEbbu" type="int">
+		</field>
+		<field name="edchMaxNumberUserNodeB" type="int">
+		</field>
+		<field name="edchMaxNumberUserXcem" type="int">
+		</field>
+		<field name="edchMaxThroughputXcem" type="int">
+		</field>
+		<field name="edchRateSchedulerOptimisationTimer" type="int">
+		</field>
+		<field name="edchResourceActivation" type="varchar(100)">
+		</field>
+		<field name="edchSchedulerAlgorithm" type="varchar(100)">
+		</field>
+		<field name="frequencyBand" type="varchar(100)">
+		</field>
+		<field name="hsdpaMaxNumberQueueIdHbbu" type="int">
+		</field>
+		<field name="hsdpaMaxNumberUserHbbu" type="int">
+		</field>
+		<field name="hsdpaMaxNumberUserPerNodeB" type="int">
+		</field>
+		<field name="hsdpaMaxNumberUserXcem" type="int">
+		</field>
+		<field name="hsdpaMaxThroughputHbbu" type="int">
+		</field>
+		<field name="hsdpaMaxThroughputXcem" type="int">
+		</field>
+		<field name="hsdpaResourceActivation" type="varchar(100)">
+		</field>
+		<field name="hsxpaResourceId" type="int">
+		</field>
+		<field name="inVccGroup" type="int">
+		</field>
+		<field name="isRtwpAdjustmentForRnc" type="varchar(100)">
+		</field>
+		<field name="isRtwpReferenceSelfLearning" type="varchar(100)">
+		</field>
+		<field name="iubLossTimeOut" type="int">
+		</field>
+		<field name="localCellGroupId" type="int">
+		</field>
+		<field name="localCellId" type="int">
+		</field>
+		<field name="maximumPowerAmplification" type="varchar(100)">
+		</field>
+		<field name="mibSynchronization" type="varchar(100)">
+		</field>
+		<field name="modelName" type="varchar(100)">
+		</field>
+		<field name="nbPcm" type="int">
+		</field>
+		<field name="neId" type="int">
+		</field>
+		<field name="paRatio" type="int">
+		</field>
+		<field name="pmClusterId" type="varchar(100)">
+		</field>
+		<field name="pmObservationPeriod" type="int">
+		</field>
+		<field name="pmmActivation" type="varchar(100)">
+		</field>
+		<field name="r99MaxNumberCeXcem" type="int">
+		</field>
+		<field name="rakeMode" type="varchar(100)">
+		</field>
+		<field name="repeaterFiberLength" type="varchar(100)">
+		</field>
+		<field name="repetitionCommonNbap" type="int">
+		</field>
+		<field name="rmVersion" type="int">
+		</field>
+		<field name="rrhConnectionType" type="varchar(100)">
+		</field>
+		<field name="rtwpMargin" type="float">
+		</field>
+		<field name="rtwpMaxCellLoadCacActivation" type="varchar(100)">
+		</field>
+		<field name="rtwpMaxCellLoadNonEdch" type="int">
+		</field>
+		<field name="rtwpReference" type="float">
+		</field>
+		<field name="rtwpTimeDetection" type="int">
+		</field>
+		<field name="rxDemodulation" type="int">
+		</field>
+		<field name="securityMode" type="int">
+		</field>
+		<field name="siActivityTimer" type="int">
+		</field>
+		<field name="siteName" type="varchar(100)">
+		</field>
+		<field name="supervisedExternalAlarmMask" type="varchar(100)">
+		</field>
+		<field name="supervisedUserAlarmMask" type="varchar(100)">
+		</field>
+		<field name="testFrequency" type="int">
+		</field>
+		<field name="timerAlcapCellValidity" type="int">
+		</field>
+		<field name="timerBtsOmcbNeConnectRequest" type="int">
+		</field>
+		<field name="timerCellImpactNoCcp" type="int">
+		</field>
+		<field name="timerCommonNbap" type="int">
+		</field>
+		<field name="timerNodeBCPCellValidity" type="int">
+		</field>
+		<field name="userSpecificInfo" type="varchar(100)">
+		</field>
+		<index name="idx1">
+			<order>BTSEquipment,BTSCell,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="NodeB">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="NodeBName" type="varchar(100)">
+		</field>
+		<field name="RncName" type="varchar(100)">
+		</field>
+		<field name="connectionMode" type="varchar(100)">
+		</field>
+		<field name="endPoint" type="int">
+		</field>
+		<field name="ibSgDataEncodingVariant" type="varchar(100)">
+		</field>
+		<field name="isNbapCommonMeasRtwpAllowed" type="varchar(10)">
+		</field>
+		<field name="isSilentModeAllowed" type="varchar(10)">
+		</field>
+		<field name="iubIfId" type="int">
+		</field>
+		<field name="maxCell" type="int">
+		</field>
+		<field name="nodeBConfClassId" type="varchar(100)">
+		</field>
+		<field name="nodebCapability" type="int">
+		</field>
+		<field name="softShutdownTimer" type="int">
+		</field>
+		<field name="startPoint" type="int">
+		</field>
+		<field name="sttdIndicator" type="varchar(10)">
+		</field>
+		<field name="userSpecificInfo" type="varchar(100)">
+		</field>
+		<index name="idx1">
+			<order>NodeBName,RncName,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="RNC">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="RncName" type="varchar(100)">
+		</field>
+		<field name="aliasName" type="varchar(100)">
+		</field>
+		<field name="clusterId" type="varchar(100)">
+		</field>
+		<field name="cnodeCapacity" type="int">
+		</field>
+		<field name="frequencyBandList" type="varchar(100)">
+		</field>
+		<field name="isSysInfoChangeNotifMobilesFach" type="varchar(10)">
+		</field>
+		<field name="isSysInfoChangeNotifMobilesIdle" type="varchar(10)">
+		</field>
+		<field name="modelName" type="varchar(10)">
+		</field>
+		<field name="outageGranularity" type="int">
+		</field>
+		<field name="pmClusterId" type="varchar(100)">
+		</field>
+		<field name="rncFamily" type="varchar(20)">
+		</field>
+		<field name="rncId" type="int">
+		</field>
+		<index name="idx1">
+			<order>RncName,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="LProcessor">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="RncName" type="varchar(100)">
+		</field>
+		<field name="RNCEquipment" type="bigint">
+		</field>
+		<field name="INode" type="varchar(100)">
+		</field>
+		<field name="EM" type="varchar(100)">
+		</field>
+		<field name="Lp" type="bigint">
+		</field>
+		<field name="customerIdentifier" type="bigint">
+		</field>
+		<field name="logicalProcessorType" type="varchar(100)">
+		</field>
+		<field name="mainCard" type="varchar(100)">
+		</field>
+		<field name="oneForNSparingBehavior" type="varchar(100)">
+		</field>
+		<field name="spareCard" type="varchar(100)">
+		</field>
+		<index name="idx1">
+			<order>RncName,IMPORTDATE,RncEquipment,INode,EM,Lp</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="NeighbouringRNC">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="RncName" type="varchar(100)">
+		</field>
+		<field name="NeighbouringRNC" type="int">
+		</field>
+		<field name="appAltitude" type="int">
+		</field>
+		<field name="appAltitudeUncertainty" type="int">
+		</field>
+		<field name="appDirection" type="varchar(100)">
+		</field>
+		<field name="cacConfClassId" type="varchar(100)">
+		</field>
+		<field name="cellIdPositioningMethodAccuracy" type="int">
+		</field>
+		<field name="defaultDlIrmCellColour" type="varchar(20)">
+		</field>
+		<field name="defaultUlIrmCellColour" type="varchar(20)">
+		</field>
+		<field name="hoConfClassId" type="varchar(100)">
+		</field>
+		<field name="isBlindHoGsmAllowed" type="varchar(10)">
+		</field>
+		<field name="isCompoundingCellListActivated" type="varchar(10)">
+		</field>
+		<field name="isHsdpaAllowed" type="varchar(10)">
+		</field>
+		<field name="isIncoming3Gto3GWithIurAllowedForCsConversational" type="varchar(10)">
+		</field>
+		<field name="isIncoming3Gto3GWithIurAllowedForCsStreaming" type="varchar(10)">
+		</field>
+		<field name="isIncoming3Gto3GWithIurAllowedForPsBackground" type="varchar(10)">
+		</field>
+		<field name="isIncoming3Gto3GWithIurAllowedForPsInteractive" type="varchar(10)">
+		</field>
+		<field name="isIncoming3Gto3GWithIurAllowedForPsStreaming" type="varchar(10)">
+		</field>
+		<field name="isNeighbouringCellOffsetAllowed" type="varchar(10)">
+		</field>
+		<field name="isOutgoing3Gto3GWithIurAllowedForCsConversational" type="varchar(10)">
+		</field>
+		<field name="isOutgoing3Gto3GWithIurAllowedForCsStreaming" type="varchar(10)">
+		</field>
+		<field name="isOutgoing3Gto3GWithIurAllowedForPsBackground" type="varchar(10)">
+		</field>
+		<field name="isOutgoing3Gto3GWithIurAllowedForPsInteractive" type="varchar(10)">
+		</field>
+		<field name="isOutgoing3Gto3GWithIurAllowedForPsStreaming" type="varchar(10)">
+		</field>
+		<field name="isUeBasedAgpsAllowed" type="varchar(10)">
+		</field>
+		<field name="iurIfId" type="int">
+		</field>
+		<field name="userSpecificInfo" type="varchar(100)">
+		</field>
+		<index name="idx1">
+			<order>RncName,NeighbouringRNC,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="UMTSNeighbourCells">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="locationAreaCode" type="int">
+		</field>
+		<field name="cellId" type="int">
+		</field>
+		<field name="CellName" type="varchar(100)">
+		</field>
+		<field name="NodeBName" type="varchar(100)">
+		</field>
+		<field name="RncName" type="varchar(100)">
+		</field>
+		<field name="NeighbourCell" type="varchar(100)">
+		</field>
+		<field name="NeighbourCellName" type="varchar(100)">
+		</field>
+		<field name="tgtLAC" type="int">
+		</field>
+		<field name="tgtCI" type="int">
+		</field>
+		<field name="cellIndivOffset" type="float">
+		</field>
+    <field name="dlFrequencyNumber" type="int">
+    </field>
+    <field name="intraFreqNeighCellOffset" type="float">
+    </field>
+    <field name="isHsdpaAllowed" type="varchar(10)">
+    </field>
+    <field name="maxAllowedUlTxPower" type="int">
+    </field>
+    <field name="neighbouringCellOffset" type="varchar(10)">
+    </field>
+    <field name="primaryScramblingCode" type="int">
+    </field>
+    <field name="qOffset1sn" type="int">
+    </field>
+    <field name="qOffset2sn" type="int">
+    </field>
+    <field name="qQualMin" type="int">
+    </field>
+    <field name="qRxLevMin" type="int">
+    </field>
+    <field name="routingAreaCode" type="int">
+    </field>
+    <field name="sib11OrDchUsage" type="varchar(100)">
+    </field>
+    <field name="ulFrequencyNumber" type="int">
+    </field>
+    <field name="userSpecificInfo" type="varchar(100)">
+		</field>
+		<field name="Distance" type="float">
+    </field>
+		<index name="idx1">
+			<order>cellId,locationAreaCode,tgtCI,tgtLAC,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GSMNeighbourCells">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="locationAreaCode" type="int">
+		</field>
+		<field name="cellId" type="int">
+		</field>
+		<field name="CellName" type="varchar(100)">
+		</field>
+		<field name="NodeBName" type="varchar(100)">
+		</field>
+		<field name="RncName" type="varchar(100)">
+		</field>
+		<field name="NeighbourCell" type="varchar(100)">
+		</field>
+		<field name="tgtLAC" type="int">
+		</field>
+		<field name="tgtCI" type="int">
+		</field>
+		<field name="gsmCellIndivOffset" type="int">
+		</field>
+    <field name="qOffset1sn" type="int">
+    </field>
+    <field name="qRxLevMin" type="int">
+    </field>
+    <field name="sib11OrDchUsage" type="varchar(100)">
+    </field>
+    <field name="Distance" type="float">
+    </field>
+		<index name="idx1">
+			<order>cellId,locationAreaCode,tgtCI,tgtLAC,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="AtmIf">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="RncName" type="varchar(50)">
+		</field>
+		<field name="RNCEquipment" type="int">
+		</field>
+		<field name="INode" type="varchar(50)">
+		</field>
+		<field name="EM" type="varchar(50)">
+		</field>
+		<field name="AtmIf" type="int">
+		</field>
+		<field name="Atm_ctdCalculation" type="varchar(10)">
+		</field>
+		<field name="Atm_customerIdentifier" type="int">
+		</field>
+		<field name="Atm_endToEndLoopback" type="varchar(10)">
+		</field>
+		<field name="Atm_faultHoldOffTime" type="int">
+		</field>
+		<field name="Atm_interfaceName" type="varchar(50)">
+		</field>
+		<field name="Atm_maxVpiBits" type="int">
+		</field>
+		<field name="Atm_oamSegmentBoundary" type="varchar(50)">
+		</field>
+		<field name="Atm_remoteAtmInterfaceLabel" type="varchar(50)">
+		</field>
+		<field name="Atm_rxCellDiscardThreshold" type="int">
+		</field>
+		<field name="Atm_rxFrameDiscardThreshold" type="int">
+		</field>
+		<field name="Atm_segLinkSideLoopback" type="varchar(50)">
+		</field>
+		<field name="Atm_segSwitchSideLoopback" type="varchar(50)">
+		</field>
+		<field name="Atm_txCellDiscardThreshold" type="int">
+		</field>
+		<field name="Atm_txCellMemory" type="int">
+		</field>
+		<field name="Atm_txFrameDiscardThreshold" type="int">
+		</field>
+		<field name="CA_bandwidthPool_0" type="int">
+		</field>
+		<field name="CA_bandwidthPool_1" type="int">
+		</field>
+		<field name="CA_bandwidthPool_2" type="int">
+		</field>
+		<field name="CA_bandwidthPool_3" type="int">
+		</field>
+		<field name="CA_bandwidthPool_4" type="int">
+		</field>
+		<field name="CA_maxAutoSelectedVciForNonZeroVpi" type="int">
+		</field>
+		<field name="CA_maxAutoSelectedVciForVpiZero" type="int">
+		</field>
+		<field name="CA_maxAutoSelectedVpi" type="int">
+		</field>
+		<field name="CA_maxMulticastBranches" type="varchar(50)">
+		</field>
+		<field name="CA_maxVccs" type="int">
+		</field>
+		<field name="CA_maxVpcs" type="int">
+		</field>
+		<field name="CA_maxVpts" type="int">
+		</field>
+		<field name="CA_minAutoSelectedVciForNonZeroVpi" type="int">
+		</field>
+		<field name="CA_minAutoSelectedVciForVpiZero" type="int">
+		</field>
+		<field name="CA_minAutoSelectedVpi" type="int">
+		</field>
+		<field name="CA_minMulticastBranches" type="int">
+		</field>
+		<field name="CA_permittedAtmServiceCategories_0" type="varchar(50)">
+		</field>
+		<field name="CA_permittedAtmServiceCategories_1" type="varchar(50)">
+		</field>
+		<field name="CA_permittedAtmServiceCategories_2" type="varchar(50)">
+		</field>
+		<field name="CA_permittedAtmServiceCategories_3" type="varchar(50)">
+		</field>
+		<field name="Cbr_cdv" type="int">
+		</field>
+		<field name="Cbr_cdvt" type="int">
+		</field>
+		<field name="Cbr_cellLossRatio" type="int">
+		</field>
+		<field name="Cbr_emissionPriority" type="int">
+		</field>
+		<field name="Cbr_forceTagging" type="varchar(50)">
+		</field>
+		<field name="Cbr_holdingPriority" type="int">
+		</field>
+		<field name="Cbr_maxCtd" type="int">
+		</field>
+		<field name="Cbr_minPerVcQueueLimit" type="int">
+		</field>
+		<field name="Cbr_perVcQueueLimitReferenceRate" type="varchar(50)">
+		</field>
+		<field name="Cbr_pool" type="varchar(50)">
+		</field>
+		<field name="Cbr_rxCellDiscardThreshold" type="int">
+		</field>
+		<field name="Cbr_rxFrameDiscardThreshold" type="int">
+		</field>
+		<field name="Cbr_shapeRecoupPolicy" type="varchar(50)">
+		</field>
+		<field name="Cbr_svcMpHoldingPriority" type="int">
+		</field>
+		<field name="Cbr_trafficShaping" type="varchar(50)">
+		</field>
+		<field name="Cbr_txCellDiscardThreshold" type="int">
+		</field>
+		<field name="Cbr_txFrameDiscardThreshold" type="int">
+		</field>
+		<field name="Cbr_txQueueLimit" type="varchar(50)">
+		</field>
+		<field name="Cbr_unshapedTransmitQueueing" type="varchar(50)">
+		</field>
+		<field name="Cbr_usageParameterControl" type="varchar(50)">
+		</field>
+		<field name="Cbr_weightPolicy" type="varchar(50)">
+		</field>
+		<field name="NrtVbr_cdv" type="int">
+		</field>
+		<field name="NrtVbr_cdvt" type="int">
+		</field>
+		<field name="NrtVbr_cellLossRatio" type="int">
+		</field>
+		<field name="NrtVbr_emissionPriority" type="int">
+		</field>
+		<field name="NrtVbr_forceTagging" type="varchar(50)">
+		</field>
+		<field name="NrtVbr_holdingPriority" type="int">
+		</field>
+		<field name="NrtVbr_maxCtd" type="int">
+		</field>
+		<field name="NrtVbr_minPerVcQueueLimit" type="int">
+		</field>
+		<field name="NrtVbr_perVcQueueLimitReferenceRate" type="varchar(50)">
+		</field>
+		<field name="NrtVbr_pool" type="varchar(50)">
+		</field>
+		<field name="NrtVbr_rxCellDiscardThreshold" type="int">
+		</field>
+		<field name="NrtVbr_rxFrameDiscardThreshold" type="int">
+		</field>
+		<field name="NrtVbr_shapeRecoupPolicy" type="varchar(50)">
+		</field>
+		<field name="NrtVbr_svcMpHoldingPriority" type="int">
+		</field>
+		<field name="NrtVbr_trafficShaping" type="varchar(50)">
+		</field>
+		<field name="NrtVbr_txCellDiscardThreshold" type="int">
+		</field>
+		<field name="NrtVbr_txFrameDiscardThreshold" type="int">
+		</field>
+		<field name="NrtVbr_txQueueLimit" type="varchar(50)">
+		</field>
+		<field name="NrtVbr_unshapedTransmitQueueing" type="varchar(50)">
+		</field>
+		<field name="NrtVbr_usageParameterControl" type="varchar(50)">
+		</field>
+		<field name="NrtVbr_weightPolicy" type="varchar(50)">
+		</field>
+		<field name="RtVbr_cdv" type="int">
+		</field>
+		<field name="RtVbr_cdvt" type="int">
+		</field>
+		<field name="RtVbr_cellLossRatio" type="int">
+		</field>
+		<field name="RtVbr_emissionPriority" type="int">
+		</field>
+		<field name="RtVbr_forceTagging" type="varchar(50)">
+		</field>
+		<field name="RtVbr_holdingPriority" type="int">
+		</field>
+		<field name="RtVbr_maxCtd" type="int">
+		</field>
+		<field name="RtVbr_minPerVcQueueLimit" type="int">
+		</field>
+		<field name="RtVbr_perVcQueueLimitReferenceRate" type="varchar(50)">
+		</field>
+		<field name="RtVbr_pool" type="varchar(50)">
+		</field>
+		<field name="RtVbr_rxCellDiscardThreshold" type="int">
+		</field>
+		<field name="RtVbr_rxFrameDiscardThreshold" type="int">
+		</field>
+		<field name="RtVbr_shapeRecoupPolicy" type="varchar(50)">
+		</field>
+		<field name="RtVbr_svcMpHoldingPriority" type="int">
+		</field>
+		<field name="RtVbr_trafficShaping" type="varchar(50)">
+		</field>
+		<field name="RtVbr_txCellDiscardThreshold" type="int">
+		</field>
+		<field name="RtVbr_txFrameDiscardThreshold" type="int">
+		</field>
+		<field name="RtVbr_txQueueLimit" type="varchar(50)">
+		</field>
+		<field name="RtVbr_unshapedTransmitQueueing" type="varchar(50)">
+		</field>
+		<field name="RtVbr_usageParameterControl" type="varchar(50)">
+		</field>
+		<field name="RtVbr_weightPolicy" type="varchar(50)">
+		</field>
+		<field name="Ubr_cdv" type="int">
+		</field>
+		<field name="Ubr_cdvt" type="int">
+		</field>
+		<field name="Ubr_cellLossRatio" type="int">
+		</field>
+		<field name="Ubr_emissionPriority" type="int">
+		</field>
+		<field name="Ubr_forceTagging" type="varchar(50)">
+		</field>
+		<field name="Ubr_holdingPriority" type="int">
+		</field>
+		<field name="Ubr_maxCtd" type="int">
+		</field>
+		<field name="Ubr_minPerVcQueueLimit" type="int">
+		</field>
+		<field name="Ubr_perVcQueueLimitReferenceRate" type="varchar(50)">
+		</field>
+		<field name="Ubr_pool" type="varchar(50)">
+		</field>
+		<field name="Ubr_rxCellDiscardThreshold" type="int">
+		</field>
+		<field name="Ubr_rxFrameDiscardThreshold" type="int">
+		</field>
+		<field name="Ubr_shapeRecoupPolicy" type="varchar(50)">
+		</field>
+		<field name="Ubr_svcMpHoldingPriority" type="int">
+		</field>
+		<field name="Ubr_trafficShaping" type="varchar(50)">
+		</field>
+		<field name="Ubr_txCellDiscardThreshold" type="int">
+		</field>
+		<field name="Ubr_txFrameDiscardThreshold" type="int">
+		</field>
+		<field name="Ubr_txQueueLimit" type="varchar(50)">
+		</field>
+		<field name="Ubr_unshapedTransmitQueueing" type="varchar(50)">
+		</field>
+		<field name="Ubr_usageParameterControl" type="varchar(50)">
+		</field>
+		<field name="Ubr_weightPolicy" type="varchar(50)">
+		</field>
+		<index name="idx1">
+			<order>RncName,RNCEquipment,INode,EM,AtmIf,IMPORTDATE,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="AtmIf_Vpt">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="RncName" type="varchar(50)">
+		</field>
+		<field name="RNCEquipment" type="int">
+		</field>
+		<field name="INode" type="varchar(50)">
+		</field>
+		<field name="EM" type="varchar(50)">
+		</field>
+		<field name="AtmIf" type="int">
+		</field>
+		<field name="Vpt" type="int">
+		</field>
+		<field name="abrConnectionType" type="varchar(50)">
+		</field>
+		<field name="atmServiceCategory" type="varchar(50)">
+		</field>
+		<field name="bearerClassBbc" type="varchar(50)">
+		</field>
+		<field name="bestEffort" type="varchar(50)">
+		</field>
+		<field name="bwdQosClass" type="varchar(50)">
+		</field>
+		<field name="bwdQosParameters_0" type="int">
+		</field>
+		<field name="bwdQosParameters_1" type="int">
+		</field>
+		<field name="clippingBbc" type="varchar(50)">
+		</field>
+		<field name="endToEndLoopback" type="varchar(50)">
+		</field>
+		<field name="forceTagging" type="varchar(50)">
+		</field>
+		<field name="fwdQosClass" type="int">
+		</field>
+		<field name="fwdQosParameters_0" type="int">
+		</field>
+		<field name="fwdQosParameters_1" type="int">
+		</field>
+		<field name="fwdQosParameters_2" type="int">
+		</field>
+		<field name="holdingPriority" type="int">
+		</field>
+		<field name="mCastConnectionType" type="varchar(50)">
+		</field>
+		<field name="rxPacketWiseDiscard" type="varchar(50)">
+		</field>
+		<field name="rxTrafficDescParm_0" type="int">
+		</field>
+		<field name="rxTrafficDescParm_1" type="int">
+		</field>
+		<field name="rxTrafficDescParm_2" type="int">
+		</field>
+		<field name="rxTrafficDescParm_3" type="int">
+		</field>
+		<field name="rxTrafficDescParm_4" type="int">
+		</field>
+		<field name="rxTrafficDescType" type="varchar(50)">
+		</field>
+		<field name="segLinkSideLoopback" type="varchar(50)">
+		</field>
+		<field name="segSwitchSideLoopback" type="varchar(50)">
+		</field>
+		<field name="trafficShaping" type="varchar(50)">
+		</field>
+		<field name="transferCapabilityBbc" type="varchar(50)">
+		</field>
+		<field name="txPacketWiseDiscard" type="varchar(50)">
+		</field>
+		<field name="txQueueLimit" type="varchar(50)">
+		</field>
+		<field name="txTrafficDescParm_0" type="int">
+		</field>
+		<field name="txTrafficDescParm_1" type="int">
+		</field>
+		<field name="txTrafficDescParm_2" type="int">
+		</field>
+		<field name="txTrafficDescParm_3" type="int">
+		</field>
+		<field name="txTrafficDescParm_4" type="int">
+		</field>
+		<field name="txTrafficDescType" type="int">
+		</field>
+		<field name="txWredMode" type="varchar(50)">
+		</field>
+		<field name="txWredThreshold" type="int">
+		</field>
+		<field name="unshapedTransmitQueueing" type="varchar(50)">
+		</field>
+		<field name="usageParameterControl" type="varchar(50)">
+		</field>
+		<field name="vptType" type="varchar(50)">
+		</field>
+		<field name="weight" type="varchar(50)">
+		</field>
+		<index name="idx1">
+			<order>RncName,RNCEquipment,INode,EM,AtmIf,Vpt,IMPORTDATE,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="GSMCell">
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="NETWORK" type="varchar(10)" counter="no">
+		</field>
+		<field name="IMPORTDATE" type="date">
+		</field>
+		<field name="GSMCell" type="varchar(100)">
+		</field>
+		<field name="RncName" type="varchar(100)">
+		</field>
+		<field name="GSMNeighbour" type="int">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="MCC" type="int">
+		</field>
+		<field name="MNC" type="int">
+		</field>
+		<field name="bcchFrequency" type="int">
+		</field>
+		<field name="maxAllowedUlTxPower" type="int">
+		</field>
+		<field name="bcc" type="int">
+		</field>
+		<field name="ncc" type="int">
+		</field>
+		<field name="Distance" type="float">
+    </field>
+		<index name="idx1">
+			<order>CI,LAC,IMPORTDATE,RncName</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>
+

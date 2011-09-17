@@ -1,0 +1,39 @@
+<tables>
+	<table name="alcatelAlarms">
+		<field name="AlarmDate" type="date" source="import">
+		</field>
+		<field name="AlarmTime" type="time" source="import">
+		</field>
+		<field name="FRDNAME" type="varchar(255)" source="import">
+		</field>
+		<field name="EVTTYPE" type="varchar(255)" source="import">
+		</field>
+		<field name="PBCAUSE" type="varchar(255)" source="import">
+		</field>
+		<field name="SPECPB" type="varchar(255)" source="import">
+		</field>
+		<field name="SEV" type="varchar(255)" source="import">
+		</field>
+		<field name="CLRSTS" type="varchar(255)" source="import">
+		</field>
+		<field name="CLRTIME" type="varchar(50)" source="import">
+		</field>
+		<field name="AVLSTS" type="varchar(255)" source="import">
+		</field>
+		<field name="ADMSTS" type="varchar(255)" source="import">
+		</field>
+		<field name="OPSTS" type="varchar(255)" source="import">
+		</field>
+		<field name="ALMSTS" type="varchar(255)" source="import">
+		</field>
+		<field name="Region" type="varchar(10)" source="import">
+		</field>
+		<field name="SubRegion" type="varchar(10)" source="import">
+		</field>
+		<index name="idx1">
+			<order>AlarmDate,AlarmTime,FRDNAME</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>
+

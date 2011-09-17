@@ -1,0 +1,1886 @@
+﻿<tables>
+	<table name="T31_CELL_D">
+	  <field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_ID" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BTS_ID" type="int" counter="no">
+		</field>
+		<field name="SECTOR" type="int" counter="no">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL" type="text">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL_0" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL_1" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL_2" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL_3" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL_4" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL_5" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL_6" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL_7" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL_8" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL_9" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_LEVEL_10" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I" type="text">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I_0" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I_1" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I_2" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I_3" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I_4" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I_5" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I_6" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I_7" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I_8" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I_9" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_C_I_10" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI" type="text">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI_0" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI_1" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI_2" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI_3" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI_4" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI_5" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI_6" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI_7" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI_8" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI_9" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_BFI_10" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S" type="text">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S_0" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S_1" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S_2" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S_3" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S_4" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S_5" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S_6" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S_7" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S_8" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S_9" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_S_10" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE" type="text">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE_0" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE_1" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE_2" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE_3" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE_4" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE_5" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE_6" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE_7" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE_8" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE_9" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_PATH_BALANCE_10" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA" type="text">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA_0" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA_1" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA_2" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA_3" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA_4" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA_5" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA_6" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA_7" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA_8" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA_9" type="bigint">
+		</field>
+		<field name="TAB_PAR_MEAS_STAT_TA_10" type="bigint">
+		</field>
+		<field name="PAR_EN_BALANCED" type="int">
+		</field>
+		<field name="PAR_TA_STAT" type="int">
+		</field>
+		<field name="PAR_VQ_AVERAGE" type="int">
+		</field>
+		<field name="PAR_VQ_RXLEV" type="int">
+		</field>
+		<field name="PAR_VQ_RXQUAL" type="int">
+		</field>
+		<field name="PAR_VQ_RXQUAL_VS_RXFER" type="int">
+		</field>
+		<field name="PAR_VQ_GOOD_RXFER" type="int">
+		</field>
+		<field name="PAR_VQ_BAD_RXFER" type="int">
+		</field>
+		<field name="PAR_VQ_INTF_THRESHOLD" type="int">
+		</field>
+		<field name="PAR_VQ_FER_THRESHOLD" type="int">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_TRX_D">
+	  <field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="LAC" type="int" counter="no">
+		</field>
+		<field name="CI" type="int" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_ID" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="BTS_ID" type="int" counter="no">
+		</field>
+		<field name="SECTOR" type="int" counter="no">
+		</field>
+		<field name="TRX" type="int" counter="no">
+		</field>
+		<field name="TRE_BAND" type="int" counter="no">
+		</field>
+		<field name="IND_RMS_RESTARTED" type="int" counter="no">
+		</field>
+		<field name="BS_TX_PWRMAX" type="int" counter="no">
+		</field>
+		<field name="MS_TX_PWRMAX" type="int">
+		</field>
+		<field name="IND_TRE_OVERLOAD" type="int">
+		</field>
+		<field name="IND_CI_PARTIAL_OBSERVATION" type="int">
+		</field>
+		<field name="IND_CI_OVERFLOW" type="int">
+		</field>
+		<field name="TOT_SEIZ_TCH" type="bigint">
+		</field>
+		<field name="TOT_MEAS" type="bigint">
+		</field>
+		<field name="TOT_MEAS_L1INFO_NOL3INFO" type="bigint">
+		</field>
+		<field name="TOT_MEAS_DTX_UL" type="bigint">
+		</field>
+		<field name="TOT_MEAS_DTX_DL" type="bigint">
+		</field>
+		<field name="PERC_TA_GT_TA_STAT" type="bigint">
+		</field>
+		<field name="MAX_TA" type="bigint">
+		</field>
+		<field name="TOT_EMR" type="bigint">
+		</field>
+		<field name="VQ_NOISY_UL_INTERFERENCE" type="bigint">
+		</field>
+		<field name="VQ_NOISY_DL_INTERFERENCE" type="bigint">
+		</field>
+		<field name="VQ_NOISY_UL_COVERAGE" type="bigint">
+		</field>
+		<field name="VQ_NOISY_DL_COVERAGE" type="bigint">
+		</field>
+		<field name="VQ_NOISY_UL_UNDEFINED" type="bigint">
+		</field>
+		<field name="VQ_NOISY_DL_UNDEFINED" type="bigint">
+		</field>
+		<field name="VQ_NOISY_UL_BAD_FER" type="bigint">
+		</field>
+		<field name="VQ_NOISY_UL_GOOD_FER" type="bigint">
+		</field>
+		<field name="VQ_ABNORMAL_BAD_FER" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_UL_RXLEV_UL" type="text">
+		</field>
+		<field name="TMR_RXQUAL_UL_RXLEV_UL_01" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_UL_RXLEV_UL_02" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_UL_RXLEV_UL_03" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_UL_RXLEV_UL_04" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_UL_RXLEV_UL_05" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_UL_RXLEV_UL_06" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_UL_RXLEV_UL_07" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_UL_RXLEV_UL_08" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_UL_RXLEV_UL_09" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_UL_RXLEV_UL_10" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_DL_RXLEV_DL" type="text">
+		</field>
+		<field name="TMR_RXQUAL_DL_RXLEV_DL_01" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_DL_RXLEV_DL_02" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_DL_RXLEV_DL_03" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_DL_RXLEV_DL_04" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_DL_RXLEV_DL_05" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_DL_RXLEV_DL_06" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_DL_RXLEV_DL_07" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_DL_RXLEV_DL_08" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_DL_RXLEV_DL_09" type="bigint">
+		</field>
+		<field name="TMR_RXQUAL_DL_RXLEV_DL_10" type="bigint">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,TRX,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_UL_D">
+	  <field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="SDATE" type="datetime">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="BSC_ID" type="int">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)">
+		</field>
+		<field name="BTS_ID" type="int">
+		</field>
+		<field name="SECTOR" type="int">
+		</field>
+		<field name="TRX" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL" type="text">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_01_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_02_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_03_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_04_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_05_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_06_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_07_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_08_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_09_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_UL_RXLEV_UL_10_8_3" type="int">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,TRX,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_DL_D">
+	  <field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="SDATE" type="datetime">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="BSC_ID" type="int">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)">
+		</field>
+		<field name="BTS_ID" type="int">
+		</field>
+		<field name="SECTOR" type="int">
+		</field>
+		<field name="TRX" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL" type="text">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_01_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_02_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_03_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_04_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_05_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_06_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_07_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_08_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_09_8_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_1_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_1_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_1_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_2_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_2_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_2_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_3_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_3_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_3_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_4_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_4_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_4_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_5_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_5_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_5_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_6_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_6_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_6_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_7_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_7_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_7_3" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_8_1" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_8_2" type="int">
+		</field>
+		<field name="TPR_RXQUAL_DL_RXLEV_DL_10_8_3" type="int">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,TRX,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_BFI_D">
+	 <field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="SDATE" type="datetime">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="BSC_ID" type="int">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)">
+		</field>
+		<field name="BTS_ID" type="int">
+		</field>
+		<field name="SECTOR" type="int">
+		</field>
+		<field name="TRX" type="int">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL" type="text">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_01" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_02" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_03" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_04" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_05" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_06" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_07" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_08" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_09" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_10" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_11" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_12" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_13" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_14" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_15" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_16" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_17" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_18" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_19" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_20" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_21" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_22" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_23" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_24" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_25" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_26" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_27" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_28" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_29" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_30" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_31" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_32" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_33" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_34" type="bigint">
+		</field>
+		<field name="TMR_BFI_RXLEV_UL_35" type="bigint">
+		</field>
+		<field name="TPR_BFI_RXLEV_UL" type="text">
+		</field>
+		<field name="TPR_BFI_RXLEV_UL_01_1" type="int">
+		</field>
+		<field name="TPR_BFI_RXLEV_UL_02_2" type="int">
+		</field>
+		<field name="TPR_BFI_RXLEV_UL_03_3" type="int">
+		</field>
+		<field name="TPR_BFI_RXLEV_UL_04_4" type="int">
+		</field>
+		<field name="TPR_BFI_RXLEV_UL_05_5" type="int">
+		</field>
+		<field name="TPR_BFI_RXLEV_UL_06_6" type="int">
+		</field>
+		<field name="TPR_BFI_RXLEV_UL_07_7" type="int">
+		</field>
+		<field name="TPR_BFI_RXLEV_UL_08_8" type="int">
+		</field>
+		<field name="TPR_BFI_RXLEV_UL_09_9" type="int">
+		</field>
+		<field name="TPR_BFI_RXLEV_UL_10_10" type="int">
+		</field>
+		<field name="TPR_RADIO_LINK" type="text">
+		</field>
+		<field name="TPR_RADIO_LINK_01" type="int">
+		</field>
+		<field name="TPR_RADIO_LINK_02" type="int">
+		</field>
+		<field name="TPR_RADIO_LINK_03" type="int">
+		</field>
+		<field name="TPR_RADIO_LINK_04" type="int">
+		</field>
+		<field name="TPR_RADIO_LINK_05" type="int">
+		</field>
+		<field name="TPR_RADIO_LINK_06" type="int">
+		</field>
+		<field name="TPR_RADIO_LINK_07" type="int">
+		</field>
+		<field name="TPR_RADIO_LINK_08" type="int">
+		</field>
+		<field name="TPR_RADIO_LINK_09" type="int">
+		</field>
+		<field name="TPR_RADIO_LINK_10" type="int">
+		</field>
+		<field name="MAX_RADIO_LINK" type="bigint">
+		</field>
+		<field name="TPR_PATH_BALANCE" type="text">
+		</field>
+		<field name="TPR_PATH_BALANCE_01" type="int">
+		</field>
+		<field name="TPR_PATH_BALANCE_02" type="int">
+		</field>
+		<field name="TPR_PATH_BALANCE_03" type="int">
+		</field>
+		<field name="TPR_PATH_BALANCE_04" type="int">
+		</field>
+		<field name="TPR_PATH_BALANCE_05" type="int">
+		</field>
+		<field name="TPR_PATH_BALANCE_06" type="int">
+		</field>
+		<field name="TPR_PATH_BALANCE_07" type="int">
+		</field>
+		<field name="TPR_PATH_BALANCE_08" type="int">
+		</field>
+		<field name="TPR_PATH_BALANCE_09" type="int">
+		</field>
+		<field name="TPR_PATH_BALANCE_10" type="int">
+		</field>
+		<field name="MAX_PATH_BALANCE" type="bigint">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,TRX,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_BFI_AMR_TA_D">
+	  <field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="SDATE" type="datetime">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="BSC_ID" type="int">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)">
+		</field>
+		<field name="BTS_ID" type="int">
+		</field>
+		<field name="SECTOR" type="int">
+		</field>
+		<field name="TRX" type="int">
+		</field>
+		<field name="TPR_TIMING_ADVANCE" type="text">
+		</field>
+		<field name="TPR_TIMING_ADVANCE_01" type="int">
+		</field>
+		<field name="TPR_TIMING_ADVANCE_02" type="int">
+		</field>
+		<field name="TPR_TIMING_ADVANCE_03" type="int">
+		</field>
+		<field name="TPR_TIMING_ADVANCE_04" type="int">
+		</field>
+		<field name="TPR_TIMING_ADVANCE_05" type="int">
+		</field>
+		<field name="TPR_TIMING_ADVANCE_06" type="int">
+		</field>
+		<field name="TPR_TIMING_ADVANCE_07" type="int">
+		</field>
+		<field name="TPR_TIMING_ADVANCE_08" type="int">
+		</field>
+		<field name="TPR_TIMING_ADVANCE_09" type="int">
+		</field>
+		<field name="TPR_TIMING_ADVANCE_10" type="int">
+		</field>
+		<field name="MAX_TIMING_ADVANCE" type="bigint">
+		</field>
+		<field name="TPR_UL_RXLEV_TA_BAND" type="text">
+		</field>
+		<field name="TPR_UL_RXLEV_TA_BAND_01" type="text">
+		</field>
+		<field name="TPR_UL_RXLEV_TA_BAND_02" type="text">
+		</field>
+		<field name="TPR_UL_RXLEV_TA_BAND_03" type="text">
+		</field>
+		<field name="TPR_UL_RXLEV_TA_BAND_04" type="text">
+		</field>
+		<field name="TPR_UL_RXLEV_TA_BAND_05" type="text">
+		</field>
+		<field name="TPR_UL_RXLEV_TA_BAND_06" type="text">
+		</field>
+		<field name="TPR_UL_RXLEV_TA_BAND_07" type="text">
+		</field>
+		<field name="TPR_UL_RXLEV_TA_BAND_08" type="text">
+		</field>
+		<field name="TPR_UL_RXLEV_TA_BAND_09" type="text">
+		</field>
+		<field name="TPR_UL_RXLEV_TA_BAND_10" type="text">
+		</field>
+		<field name="TPR_DL_RXLEV_TA_BAND" type="text">
+		</field>
+		<field name="TPR_DL_RXLEV_TA_BAND_01" type="text">
+		</field>
+		<field name="TPR_DL_RXLEV_TA_BAND_02" type="text">
+		</field>
+		<field name="TPR_DL_RXLEV_TA_BAND_03" type="text">
+		</field>
+		<field name="TPR_DL_RXLEV_TA_BAND_04" type="text">
+		</field>
+		<field name="TPR_DL_RXLEV_TA_BAND_05" type="text">
+		</field>
+		<field name="TPR_DL_RXLEV_TA_BAND_06" type="text">
+		</field>
+		<field name="TPR_DL_RXLEV_TA_BAND_07" type="text">
+		</field>
+		<field name="TPR_DL_RXLEV_TA_BAND_08" type="text">
+		</field>
+		<field name="TPR_DL_RXLEV_TA_BAND_09" type="text">
+		</field>
+		<field name="TPR_DL_RXLEV_TA_BAND_10" type="text">
+		</field>
+		<field name="TPR_UL_RXQUAL_TA_BAND" type="text">
+		</field>
+		<field name="TPR_UL_RXQUAL_TA_BAND_01" type="text">
+		</field>
+		<field name="TPR_UL_RXQUAL_TA_BAND_02" type="text">
+		</field>
+		<field name="TPR_UL_RXQUAL_TA_BAND_03" type="text">
+		</field>
+		<field name="TPR_UL_RXQUAL_TA_BAND_04" type="text">
+		</field>
+		<field name="TPR_UL_RXQUAL_TA_BAND_05" type="text">
+		</field>
+		<field name="TPR_UL_RXQUAL_TA_BAND_06" type="text">
+		</field>
+		<field name="TPR_UL_RXQUAL_TA_BAND_07" type="text">
+		</field>
+		<field name="TPR_UL_RXQUAL_TA_BAND_08" type="text">
+		</field>
+		<field name="TPR_UL_RXQUAL_TA_BAND_09" type="text">
+		</field>
+		<field name="TPR_UL_RXQUAL_TA_BAND_10" type="text">
+		</field>
+		<field name="TPR_DL_RXQUAL_TA_BAND" type="text">
+		</field>
+		<field name="TPR_DL_RXQUAL_TA_BAND_01" type="text">
+		</field>
+		<field name="TPR_DL_RXQUAL_TA_BAND_02" type="text">
+		</field>
+		<field name="TPR_DL_RXQUAL_TA_BAND_03" type="text">
+		</field>
+		<field name="TPR_DL_RXQUAL_TA_BAND_04" type="text">
+		</field>
+		<field name="TPR_DL_RXQUAL_TA_BAND_05" type="text">
+		</field>
+		<field name="TPR_DL_RXQUAL_TA_BAND_06" type="text">
+		</field>
+		<field name="TPR_DL_RXQUAL_TA_BAND_07" type="text">
+		</field>
+		<field name="TPR_DL_RXQUAL_TA_BAND_08" type="text">
+		</field>
+		<field name="TPR_DL_RXQUAL_TA_BAND_09" type="text">
+		</field>
+		<field name="TPR_DL_RXQUAL_TA_BAND_10" type="text">
+		</field>
+		<field name="AMR_FR_UL_BAD" type="text">
+		</field>
+		<field name="AMR_FR_UL_BAD_01" type="int">
+		</field>
+		<field name="AMR_FR_UL_BAD_02" type="int">
+		</field>
+		<field name="AMR_FR_UL_BAD_03" type="int">
+		</field>
+		<field name="AMR_FR_UL_BAD_04" type="int">
+		</field>
+		<field name="AMR_FR_UL_BAD_05" type="int">
+		</field>
+		<field name="AMR_FR_UL_BAD_06" type="int">
+		</field>
+		<field name="AMR_FR_UL_BAD_07" type="int">
+		</field>
+		<field name="AMR_FR_UL_BAD_08" type="int">
+		</field>
+		<field name="MAX_AMR_FR_UL_BAD" type="bigint">
+		</field>
+		<field name="AMR_HR_UL_BAD" type="text">
+		</field>
+		<field name="AMR_HR_UL_BAD_01" type="int">
+		</field>
+		<field name="AMR_HR_UL_BAD_02" type="int">
+		</field>
+		<field name="AMR_HR_UL_BAD_03" type="int">
+		</field>
+		<field name="AMR_HR_UL_BAD_04" type="int">
+		</field>
+		<field name="AMR_HR_UL_BAD_05" type="int">
+		</field>
+		<field name="AMR_HR_UL_BAD_06" type="int">
+		</field>
+		<field name="AMR_HR_UL_BAD_07" type="int">
+		</field>
+		<field name="AMR_HR_UL_BAD_08" type="int">
+		</field>
+		<field name="MAX_AMR_HR_UL_BAD" type="bigint">
+		</field>
+		<field name="MAX_POWER_PER_TRX" type="bigint">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,TRX,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_CIN_D">
+	  <field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="SDATE" type="datetime">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="BSC_ID" type="int">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)">
+		</field>
+		<field name="BTS_ID" type="int">
+		</field>
+		<field name="SECTOR" type="int">
+		</field>
+		<field name="TRX" type="int">
+		</field>
+		<field name="BCCH" type="int">
+		</field>
+		<field name="BSIC" type="int">
+		</field>
+		<field name="TPR_CIN" type="text">
+		</field>
+		<field name="TPR_CIN_01" type="int">
+		</field>
+		<field name="TPR_CIN_02" type="int">
+		</field>
+		<field name="TPR_CIN_03" type="int">
+		</field>
+		<field name="TPR_CIN_04" type="int">
+		</field>
+		<field name="TPR_CIN_05" type="int">
+		</field>
+		<field name="TPR_CIN_06" type="int">
+		</field>
+		<field name="TPR_CIN_07" type="int">
+		</field>
+		<field name="TPR_CIN_08" type="int">
+		</field>
+		<field name="TPR_CIN_09" type="int">
+		</field>
+		<field name="TPR_CIN_10" type="int">
+		</field>
+		<field name="MR_CIN" type="bigint">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,TRX,SDATE,BCCH,BSIC</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_CIF_D">
+	  <field name="STARTDATE" type="date" counter="no">
+		</field>
+		<field name="STARTTIME" type="time" counter="no">
+		</field>
+		<field name="ENDDATE" type="date" counter="no">
+		</field>
+		<field name="ENDTIME" type="time" counter="no">
+		</field>
+		<field name="VERSION" type="varchar(10)" counter="no">
+		</field>
+		<field name="SDATE" type="datetime">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="BSC_ID" type="int">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)">
+		</field>
+		<field name="BTS_ID" type="int">
+		</field>
+		<field name="SECTOR" type="int">
+		</field>
+		<field name="TRX" type="int">
+		</field>
+		<field name="ARFCN" type="int">
+		</field>
+		<field name="TPR_CIF" type="text">
+		</field>
+		<field name="TPR_CIF_01" type="int">
+		</field>
+		<field name="TPR_CIF_02" type="int">
+		</field>
+		<field name="TPR_CIF_03" type="int">
+		</field>
+		<field name="TPR_CIF_04" type="int">
+		</field>
+		<field name="TPR_CIF_05" type="int">
+		</field>
+		<field name="TPR_CIF_06" type="int">
+		</field>
+		<field name="TPR_CIF_07" type="int">
+		</field>
+		<field name="TPR_CIF_08" type="int">
+		</field>
+		<field name="TPR_CIF_09" type="int">
+		</field>
+		<field name="TPR_CIF_10" type="int">
+		</field>
+		<field name="MR_CIF" type="bigint">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,TRX,SDATE,ARFCN</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_CIN_CELL_D">
+		<field name="SDATE" type="datetime">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)">
+		</field>
+		<field name="BCCH" type="int">
+		</field>
+		<field name="BSIC" type="int">
+		</field>
+		<field name="TOTAL" type="bigint">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,SDATE,BCCH,BSIC</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T31_CIN_HO_D">
+		<field name="SDATE" type="datetime">
+		</field>
+		<field name="LAC" type="int">
+		</field>
+		<field name="CI" type="int">
+		</field>
+		<field name="OMC_ID" type="varchar(50)">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)">
+		</field>
+		<field name="BCCH" type="int">
+		</field>
+		<field name="BSIC" type="int">
+		</field>
+		<field name="TOTAL" type="bigint">
+		</field>
+		<index name="idx1">
+			<order>CI,LAC,SDATE,BCCH,BSIC</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+</tables>

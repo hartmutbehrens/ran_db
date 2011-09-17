@@ -1,0 +1,6 @@
+<layout name="t180" version="b9">
+	<blocktype name="1800" loadtable="T180_ADJ_D" index="BTS_ID,SECTOR" indexlength="2">
+	</blocktype>
+	<blocktype name="1810" loadtable="T180_ADJ_D" index="none" indexlength="0">
+	</blocktype>
+</layout>

@@ -1,0 +1,64 @@
+﻿<tables>
+  <table name="BSC_CAPACITY">
+    <field name="DATE" type="date">
+		</field>
+		<field name="OMC_ID" type="varchar(20)">
+		</field>
+		<field name="BSC_ID" type="int">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)">
+		</field>
+		<field name="RACK" type="int">
+		</field>
+		<field name="SHELF" type="int">
+		</field>
+		<field name="SLOT" type="int">
+		</field>
+		<field name="En4DrTrePerTcu" type="varchar(10)">
+		</field>
+		<field name="ActiveStandbyMode" type="varchar(10)">
+		</field>
+		<field name="FR_RSL" type="int">
+		</field>
+		<field name="DR_RSL" type="int">
+		</field>
+		<field name="EQ_FR" type="int">
+		</field>
+		<field name="FREE_RSL" type="int">
+		</field>
+		<index name="idx1">
+			<order>BSC_NAME,RACK,SHELF,SLOT,DATE,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+  </table>
+  <table name="MFS_CAPACITY">
+    <field name="DATE" type="date">
+    </field>
+    <field name="OMC_ID" type="varchar(20)">
+		</field>
+		<field name="BSS" type="int">
+		</field>
+		<field name="MFS" type="int">
+		</field>
+		<field name="GP" type="varchar(10)">
+		</field>
+		<field name="ADDITIONAL_GP_REQUIRED" type="int">
+		</field>
+		<field name="PMU_PROBLEM" type="int">
+		</field>
+		<field name="PTIME_PMU_PROBLEM" type="float">
+		</field>
+		<field name="PTU_PROBLEM" type="int">
+		</field>
+		<field name="PTIME_PTU_PROBLEM" type="float">
+		</field>
+		<field name="MSCONTEXT_PROBLEM" type="int">
+		</field>
+		<field name="PTIME_MSCONTEXT_PROBLEM" type="float">
+		</field>
+		<index name="idx1">
+			<order>BSS,MFS,GP,DATE,OMC_ID</order>
+			<unique>yes</unique>
+		</index>
+  </table>
+</tables>

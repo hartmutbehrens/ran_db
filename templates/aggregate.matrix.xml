@@ -1,0 +1,16 @@
+<aggregation>
+	<aggregate name="weekly">
+		 <step name="1" from="T31_MATRIX_D" to="T31_MATRIX_W"  groupfrom="CI,LAC,CI_TGT,LAC_TGT,PATCHED,giveRollingLastWeek(IMPORTDATE),CERTAINTY" groupto="CI,LAC,CI_TGT,LAC_TGT,PATCHED,IMPORTDATE,CERTAINTY" limit="1" limitfrom="giveRollingLastWeek(IMPORTDATE)" limitto="IMPORTDATE">
+		 </step>
+	</aggregate>
+	<aggregate name="fields">
+		<field name="IFPROB" do="weekly:1" how="sum">
+		</field>
+		<field name="IFPROB_SUM" do="weekly:1" how="sum">
+		</field>
+		<field name="IFPROB_MAX_FR" do="weekly:1" how="max">
+		</field>
+		<field name="IFPROB_MAX_F" do="weekly:1" how="max">
+		</field>
+	</aggregate>
+</aggregation>

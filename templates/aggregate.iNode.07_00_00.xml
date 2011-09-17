@@ -1,0 +1,424 @@
+<aggregation>
+	<aggregate name="daily">
+		 <step name="1" from="INODE_ATMPORT_H" to="INODE_ATMPORT_D"  groupfrom="INode,AtmPort,giveDayStart(SDATETIME),OMC_ID,RncEquipment,NAME" groupto="INode,AtmPort,SDATETIME,OMC_ID,RncEquipment,NAME" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="2" from="INODE_LPROCESSOR_H" to="INODE_LPROCESSOR_D" groupfrom="INode,Lp,giveDayStart(SDATETIME),OMC_ID,RncEquipment,NAME" groupto="INode,Lp,SDATETIME,OMC_ID,RncEquipment,NAME" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="3" from="INODE_APROCESSOR_H" to="INODE_APROCESSOR_D" groupfrom="INode,Lp,Ap,giveDayStart(SDATETIME),OMC_ID,RncEquipment,NAME" groupto="INode,Lp,Ap,SDATETIME,OMC_ID,RncEquipment,NAME" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="4" from="INODE_ETHERNET_H" to="INODE_ETHERNET_D" groupfrom="INode,Lp,Ethernet,giveDayStart(SDATETIME),OMC_ID,RncEquipment,NAME" groupto="INode,Lp,Ethernet,SDATETIME,OMC_ID,RncEquipment,NAME" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="5" from="INODE_ETHERNETMANAGER_H" to="INODE_ETHERNETMANAGER_D" groupfrom="RncEquipment,INode,Lp,Ethernet,TrafficManager,EmissionPriority,giveDayStart(SDATETIME),OMC_ID,NAME" groupto="RncEquipment,INode,Lp,Ethernet,TrafficManager,EmissionPriority,SDATETIME,OMC_ID,NAME" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="6" from="INODE_LANSTATISTICS_H" to="INODE_LANSTATISTICS_D" groupfrom="RncEquipment,INode,Lan,EthernetStatistics,giveDayStart(SDATETIME),OMC_ID,NAME" groupto="RncEquipment,INode,Lan,EthernetStatistics,SDATETIME,OMC_ID,NAME" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+		 <step name="7" from="INODE_VLANSTATISTICS_H" to="INODE_VLANSTATISTICS_D" groupfrom="RncEquipment,INode,Lan,Vlan,EthernetStatistics,giveDayStart(SDATETIME),OMC_ID,NAME" groupto="RncEquipment,INode,Lan,Vlan,EthernetStatistics,SDATETIME,OMC_ID,NAME" limit="2" limitfrom="giveDayStart(SDATETIME)" limitto="SDATETIME">
+		 </step>
+	</aggregate>
+	<aggregate name="weekly">
+		 <step name="1" from="INODE_ATMPORT_H" to="INODE_ATMPORT_W"  groupfrom="INode,AtmPort,giveStartDate(SDATETIME),OMC_ID,RncEquipment,NAME" groupto="INode,AtmPort,SDATE,OMC_ID,RncEquipment,NAME" limit="2" limitfrom="giveStartDate(SDATETIME)" limitto="SDATE">
+		 </step>
+		 <step name="2" from="INODE_LPROCESSOR_H" to="INODE_LPROCESSOR_W" groupfrom="INode,Lp,giveStartDate(SDATETIME),OMC_ID,RncEquipment,NAME" groupto="INode,Lp,SDATE,OMC_ID,RncEquipment,NAME" limit="2" limitfrom="giveStartDate(SDATETIME)" limitto="SDATE">
+		 </step>
+		 <step name="3" from="INODE_APROCESSOR_H" to="INODE_APROCESSOR_W" groupfrom="INode,Lp,Ap,giveStartDate(SDATETIME),OMC_ID,RncEquipment,NAME" groupto="INode,Lp,Ap,SDATE,OMC_ID,RncEquipment,NAME" limit="2" limitfrom="giveStartDate(SDATETIME)" limitto="SDATE">
+		 </step>
+	</aggregate>
+	<aggregate name="fields">
+		<field name="VS.ProvRate" do="daily:1;weekly:1" how="avg">
+		</field>
+	    <field name="VS.ActualRate" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxUtilization" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxUtilization" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxMaxCellRate" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMinCellRate" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxAvgCellRate" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxMaxCellRate" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.RxMinCellRate" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxAvgCellRate" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMinCellRateClp" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.RxMinCellRateClp" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxCellDiscards" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscards" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscards" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscards" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Cbr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Rtvbr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Nrtvbr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Abr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMaxCellRate.Ubr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMinCellRate.Cbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxMinCellRate.Rtvbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxMinCellRate.Nrtvbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxMinCellRate.Abr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxMinCellRate.Ubr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Cbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Rtvbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Nrtvbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Abr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxAvgCellRate.Ubr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Cbr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Rtvbr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Nrtvbr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Abr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.RxMaxCellRate.Ubr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.RxMinCellRate.Cbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxMinCellRate.Rtvbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxMinCellRate.Nrtvbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxMinCellRate.Abr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxMinCellRate.Ubr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Cbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Rtvbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Nrtvbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Abr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxAvgCellRate.Ubr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Cbr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Rtvbr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Nrtvbr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Abr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMaxCellRateClp.Ubr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Cbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Rtvbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Nrtvbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Abr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxMinCellRateClp.Ubr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Cbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Rtvbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Nrtvbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Abr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxAvgCellRateClp.Ubr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Cbr" do="daily:1;weekly:1" how="max">
+	   	</field>
+	    <field name="VS.RxMaxCellRateClp.Rtvbr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Nrtvbr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Abr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.RxMaxCellRateClp.Ubr" do="daily:1;weekly:1" how="max">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Cbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Rtvbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Nrtvbr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Abr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxMinCellRateClp.Ubr" do="daily:1;weekly:1" how="min">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Cbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Rtvbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Nrtvbr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Abr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.RxAvgCellRateClp.Ubr" do="daily:1;weekly:1" how="avg">
+	    </field>
+	    <field name="VS.TxCellDiscards.Cbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxCellDiscards.Rtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxCellDiscards.Nrtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxCellDiscards.Abr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxCellDiscards.Ubr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscards.Cbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscards.Rtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscards.Nrtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscards.Abr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscards.Ubr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Cbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Rtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Nrtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Abr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscards.Ubr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Cbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Rtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Nrtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Abr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscards.Ubr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Cbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Rtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Nrtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Abr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxCellDiscardsClp.Ubr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Cbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Rtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Nrtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Abr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxCellDiscardsClp.Ubr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Cbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Rtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Nrtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Abr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.TxFrameDiscardsClp.Ubr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Cbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Rtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Nrtvbr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Abr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.RxFrameDiscardsClp.Ubr" do="daily:1;weekly:1" how="sum">
+	    </field>
+	    <field name="VS.CpuUtilAvg" do="daily:2;weekly:2" how="avg">
+			</field>
+	    <field name="VS.CpuUtilAvgMin" do="daily:2;weekly:2" how="min">
+	    </field>
+	    <field name="VS.CpuUtilAvgMax" do="daily:2;weekly:2" how="max">
+	    </field>
+	    <field name="VS.MemoryCapacity.FastRAM" do="daily:2;weekly:2" how="sum">
+	    </field>
+	    <field name="VS.MemoryCapacity.NormalRAM" do="daily:2;weekly:2" how="sum">
+	    </field>
+	    <field name="VS.MemoryCapacity.SharedRAM" do="daily:2;weekly:2" how="sum">
+	    </field>
+	    <field name="VS.MemoryUsageAvg.FastRAM" do="daily:2;weekly:2" how="avg">
+	    </field>
+	    <field name="VS.MemoryUsageAvg.NormalRAM" do="daily:2;weekly:2" how="avg">
+	    </field>
+	    <field name="VS.MemoryUsageAvg.SharedRAM" do="daily:2;weekly:2" how="avg">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMin.FastRAM" do="daily:2;weekly:2" how="avg">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMin.NormalRAM" do="daily:2;weekly:2" how="avg">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMin.SharedRAM" do="daily:2;weekly:2" how="avg">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMax.FastRAM" do="daily:2;weekly:2" how="avg">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMax.NormalRAM" do="daily:2;weekly:2" how="avg">
+	    </field>
+	    <field name="VS.MemoryUsageAvgMax.SharedRAM" do="daily:2;weekly:2" how="avg">
+	    </field>
+	    <field name="VS.SharedMsgBlockCapacity" do="daily:2;weekly:2" how="sum">
+	    </field>
+	    <field name="VS.SharedMsgBlockUsageAvg" do="daily:2;weekly:2" how="avg">
+	    </field>
+	    <field name="VS.SharedMsgBlockUsageAvgMin" do="daily:2;weekly:2" how="min">
+	    </field>
+	    <field name="VS.SharedMsgBlockUsageAvgMax" do="daily:2;weekly:2" how="max">
+	    </field>
+	    <field name="VS.LocalMsgBlockCapacity" do="daily:2;weekly:2" how="sum">
+	    </field>
+	    <field name="VS.LocalMsgBlockUsageAvg" do="daily:2;weekly:2" how="avg">
+	    </field>
+	    <field name="VS.LocalMsgBlockUsageMin" do="daily:2;weekly:2" how="min">
+	    </field>
+	    <field name="VS.LocalMsgBlockUsageMax" do="daily:2;weekly:2" how="max">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT050" do="daily:3;weekly:3" how="sum">
+			</field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT060" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT070" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT080" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT085" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT090" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT095" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.LT100" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApCpuUtilizationHistogram.EQ100" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApCpuUtilizationAvg" do="daily:3;weekly:3" how="avg">
+	    </field>
+	    <field name="VS.ApMemoryCapacity" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApMemoryUtilization" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApMemoryUsageAvgMin" do="daily:3;weekly:3" how="min">
+	    </field>
+	    <field name="VS.ApMemoryUsageAvgMax" do="daily:3;weekly:3" how="max">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockCapacity" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockUsageAvg" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockUsageAvgMin" do="daily:3;weekly:3" how="min">
+	    </field>
+	    <field name="VS.ApSharedMsgBlockUsageAvgMax" do="daily:3;weekly:3" how="max">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockCapacity" do="daily:3;weekly:3" how="sum">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockUsageAvg" do="daily:3;weekly:3" how="avg">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockUsageAvgMin" do="daily:3;weekly:3" how="avg">
+	    </field>
+	    <field name="VS.ApLocalMsgBlockUsageAvgMax" do="daily:3;weekly:3" how="avg">
+	    </field>
+	    <field name="VS.framesTransmittedOk" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.framesReceivedOk" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.octetsTransmittedOk" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.octetsReceivedOk" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.framesTooLong" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.fcsErrors" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.maxRxUtilization" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.avgRxUtilization" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.maxTxUtilization" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.avgTxUtilization" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="VS.txBytesDp0" do="daily:5;weekly:5" how="sum">
+		</field>
+	    <field name="VS.txBytesDp1" do="daily:5;weekly:5" how="sum">
+	    </field>
+	    <field name="VS.txBytesDp2" do="daily:5;weekly:5" how="sum">
+	    </field>
+	    <field name="VS.txBytesDp3" do="daily:5;weekly:5" how="sum">
+	    </field>
+	    <field name="VS.txFramesDp0" do="daily:5;weekly:5" how="sum">
+	    </field>
+	    <field name="VS.txFramesDp1" do="daily:5;weekly:5" how="sum">
+	    </field>
+	    <field name="VS.txFramesDp2" do="daily:5;weekly:5" how="sum">
+	    </field>
+	    <field name="VS.txFramesDp3" do="daily:5;weekly:5" how="sum">
+	    </field>
+	    <field name="VS.txFramesDiscDp0" do="daily:5;weekly:5" how="sum">
+	    </field>
+	    <field name="VS.txFramesDiscDp1" do="daily:5;weekly:5" how="sum">
+	    </field>
+	    <field name="VS.txFramesDiscDp2" do="daily:5;weekly:5" how="sum">
+	    </field>
+	    <field name="VS.txFramesDiscDp3" do="daily:5;weekly:5" how="sum">
+	    </field>
+	    <field name="VS.unknownVlanId" do="daily:6;weekly:6" how="sum">
+		</field>
+      	<field name="VS.rxFrames" do="daily:6,7;weekly:6,7" how="sum">
+      	</field>
+      	<field name="VS.txFrames" do="daily:6,7;weekly:6,7" how="sum">
+      	</field>
+      	<field name="VS.rxBytes" do="daily:6,7;weekly:6,7" how="sum">
+      	</field>
+      	<field name="VS.txBytes" do="daily:6,7;weekly:6,7" how="sum">
+      	</field>
+      	<field name="VS.rxDiscFrames" do="daily:6,7;weekly:6,7" how="sum">
+      	</field>
+      	<field name="VS.txDiscFrames" do="daily:6,7;weekly:6,7" how="sum">
+      	</field>
+	</aggregate>
+</aggregation>
