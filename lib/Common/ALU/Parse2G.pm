@@ -1,8 +1,12 @@
-package Common::ALU::Parse;
+package Common::ALU::Parse2G;
 
 =head1 NAME
-Common::ALU::Parse;
+Common::ALU::Parse2G;
 =cut
+
+#pragmas
+use strict;
+use warnings;
 
 #read PM header records to figure out version, date, time, etc
 sub alu_pm_info {

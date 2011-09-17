@@ -7,7 +7,7 @@ Parse::Command::alupm;
 use strict;
 use warnings;
 #modules
-use Common::ALU::Parse;
+use Common::ALU::Parse2G;
 use Common::CSV;
 use Common::XML;
 use Data::Dumper;
@@ -44,8 +44,8 @@ sub execute {
 	
 	for my $pmfile (@$args) {
 		
-		my $info = Common::ALU::Parse::alu_pm_info($pmfile);
-		my ($pm,$counters) = Common::ALU::Parse::decode_t180($pmfile);
+		my $info = Common::ALU::Parse2G::alu_pm_info($pmfile);
+		my ($pm,$counters) = Common::ALU::Parse2G::decode_t180($pmfile);
 		warn "Warning: No data was retrieved after parsing $pmfile. This may not be a problem but should be investigated."	unless (scalar(keys %$counters) > 0);
 	
 		my $success = Common::CSV::to_csv($pm,$counters,$info,$opt->{omc},'t180',$opt->{outdir});

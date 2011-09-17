@@ -13,6 +13,7 @@ sub to_csv {
 	my ($pm,$counters,$info,$source,$type,$outdir,$warn_on) = @_;
 	$warn_on = 0 unless defined $warn_on;
 	my $rv = 0;
+	return $rv unless (scalar(keys %$counters) > 0);
 	my @icols = keys %{$info};
 	
 	foreach my $table (keys %{$pm}) {
