@@ -1,0 +1,5 @@
+Set of scripts to manage retrieval, parsing, loading of config and PM files from ALU management systems.
+
+Currently contains:
+	* xparthse.pl : given an XPATH, extract the relevant nodes' text value from an xml file
+	* parse.pl : parse ALU PM files
