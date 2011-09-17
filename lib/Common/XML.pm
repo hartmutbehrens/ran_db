@@ -9,6 +9,14 @@ use strict;
 use warnings;
 #modules
 use XML::LibXML;
+use XML::Simple;
+
+# read xml and return hash ref containing  info
+sub read_xml {
+	my $file = shift;
+	my $config = XMLin($file,forcearray => 1);
+	return $config;
+}
 
 sub get_text_contents {
 	my ($node,$strip) = @_;

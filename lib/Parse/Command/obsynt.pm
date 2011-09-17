@@ -23,7 +23,7 @@ sub opt_spec {
 	[ "rsep|r=s",	"input record separator", { default => "\n" }],
 	[ "fsep|f=s",	"input field separator", { default => "\t" }],
 	[ "ofsep|of=s",	"output field separator", { default => ";" }],
-	[ "outdir|d=s",	"directory to store parsed csv file in", { default => "" }],
+	[ "outdir|d=s",	"directory to store parsed csv file(s) in", { default => "" }],
 	[ "omc|o=s",	"OMC-R name", { required => 1 }],
 	[ "type|t=s",	"PM file type being parsed", { required => 1 }],
 	[ "classifiers|c=s@",	"section classifiers [table,unique_col1,unique_col2,..]. Repeat switch and argument to add more classifiers.", 
@@ -51,7 +51,7 @@ sub execute {
 		for (1..$#$sections) {
 			my ($table,$cols,$data) = parse_section($sections->[$_],$opt->{rsep},$opt->{fsep},$opt->{classifiers});
 			if ($table) {
-				remap_cols($opt->{remap},$table,$cols);	#to conform to already existing naming conventions
+				remap_cols($opt->{remap},$table,$cols);	#make remapping of column names possiblem, to conform to possibly already existing naming conventions
 				counter_ll_lc($cols); #trailing letters of counters need to be lowercase
 				to_csv($opt->{outdir},$opt->{ofsep},$opt->{omc},$opt->{type},$bsc,$sdt,$edt,$bsc_id,$table,$cols,$data);	
 			}	
