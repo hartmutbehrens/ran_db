@@ -1,7 +1,7 @@
 package Parse::Command::t180;
 
 =head1 NAME
-Parse::Command::alupm;
+Parse::Command::t180;
 =cut
 #pragmas
 use strict;

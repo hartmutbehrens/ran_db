@@ -24,6 +24,7 @@ sub usage_desc {
 
 sub opt_spec {
 	my @one_of = (
+		["t5", "Parse pmtype PMRES-05 (TRX TS)"],
 		["t18", "Parse pmtype PMRES-18 (A-Channel)"],
 		["t19", "Parse pmtype PMRES-19 (SMS)"],
 		["t31", "Parse pmtype PMRES-31 (Radio Measurements)"],

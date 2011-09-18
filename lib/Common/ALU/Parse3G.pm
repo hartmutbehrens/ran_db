@@ -110,5 +110,110 @@ sub parse_3GPM {
 	unlink $tmp_dir.$outfile;	
 }
 
+#parse call traces - can be used to parse CTN,CTG
+sub parse_3GCT {
+	my ($f,$table) = @_;
+	print "Parsing: $f\n";
+	my $parser = XML::LibXML->new();
+	my $doc = undef;
+	my %info = ();
+	my %trace = ();
+	my %col = ();
+	if ($f =~ /gz$/) {
+		my @gz = ();
+		my $gz = gzopen($f, "rb") or die "Cannot open $f: $!\n";
+		while ($gz->gzreadline($_) > 0) {
+			chomp;
+			push(@gz,$_);
+		}
+		$gz->gzclose();
+		my $contents = join('',@gz);
+		$doc = $parser->parse_string($contents);
+	}
+	else {
+		$doc = $parser->parse_file($f);
+	}
+	
+	my $sender;
+	
+	for my $traceCollection ($doc->childNodes) {
+		my %attribs = map {$_->nodeName => $_->to_literal } $traceCollection->attributes();
+		next unless exists $attribs{'collectionBeginTime'};
+		my ($syear,$smon,$sday,$shr,$smin,$ssec,undef) = unpack('a4a2a2a2a2a2a*',$attribs{'collectionBeginTime'});
+		my $collectTime = join('-',$syear,$smon,$sday).' '.join(':',$shr,$smin,$ssec);
+		$syear -= 1900;	#get year into format required by localtime
+		$smon--;				#got month into format required by localtime
+		for my $traceRec ($traceCollection->childNodes) {
+			($sender) = ($traceRec->to_literal =~ /ManagedElement=(.*)$/) if $traceRec->nodeName eq 'sender';
+			@info{qw/SENDER COLLECTIONBEGINTIME/} = ($sender,$collectTime);
+			next unless $traceRec->nodeName eq 'traceRecSession';
+			my %tattribs = map {$_->nodeName => $_->to_literal } $traceRec->attributes();
+			my ($year,$mon,$day,$hr,$min,$sec,undef) = unpack('a4a2a2a2a2a2a*',$tattribs{'stime'});	
+			my $callTime = join('-',$year,$mon,$day).' '.join(':',$hr,$min,$sec);
+		
+			for my $evt ($traceRec->childNodes) {
+				next unless $evt->nodeName eq 'evt';
+				my %ie;
+				my %eattribs = map {$_->nodeName => $_->to_literal } $evt->attributes();
+				my ($csec,$cmin,$chour,$cday,$cmon,$cyear) =  map(sprintf("%02d",$_),localtime(timelocal_nocheck($ssec,$smin,$shr,$sday,$smon,$syear) + $eattribs{'changeTime'}));
+				$cyear += 1900;
+				$cmon++;
+				my $evtTime = join('-',$cyear,$cmon,$cday).' '.join(':',$chour,$cmin,$csec);
+				IEwalk($evt,\%ie);
+				$ie{'callStartTime'} = $callTime;
+				if (exists $ie{'detectedcell_psc'}) {		#UA05 to UA06 work-around
+					$ie{'detectedcell'} = $ie{'detectedcell_psc'};
+					delete $ie{'detectedcell_psc'};
+				}
+				@{$trace{$table}{'Name,callIdentifier,event,eventTime,traceIdentifier='.join(',',$sender,$tattribs{'traceRecSessionRef'},$eattribs{'name'},$evtTime,$tattribs{'traceSessionRef'})}}{keys %ie} = (values %ie);
+				@{$col{$table}}{keys %ie} = (values %ie);
+			}	
+		}
+	}
+	return(\%trace,\%col,\%info);
+}
+
+#recursive sub to walk through and gather IE and IEGroup elements of a CTN trace
+sub IEwalk {
+	my ($eNode,$dref,$prefix) =@_;
+	$prefix = '' if not defined $prefix;
+	return undef if not defined $eNode;
+	
+	for my $iNode ($eNode->childNodes) {
+		if ($iNode->nodeName eq 'IE') {
+			my $iname = $iNode->attributes()->getNamedItem('name')->to_literal;
+			my $iename = $prefix ne '' ? join('_',$prefix,$iname) : $iname;
+			$dref->{lc($iename)} = decode($iename,$iNode->to_literal);
+		}
+		if ($iNode->nodeName eq 'IEGroup') {
+			my $iegname = $iNode->attributes()->getNamedItem('name')->to_literal;
+			IEwalk($iNode,$dref,$prefix ne '' ? join('_',$prefix,$iegname) : $iegname);
+		}
+		if ($iNode->nodeName eq 'object') {
+			my $objname = $iNode->attributes()->getNamedItem('type')->to_literal;
+			my $id = $iNode->attributes()->getNamedItem('id')->to_literal;
+			my $newprefix = $prefix ne '' ? join('_',$prefix,$objname) : $objname;
+			$dref->{lc($newprefix.'id')} = $id;
+			IEwalk($iNode,$dref,$newprefix);
+		}
+	}
+}
+
+#decode scrambling code, etc into something that can be looked up in the UTRAN snapshot
+sub decode {
+	my ($name,$val) = @_;
+	my @change = qw/primaryCell initialAccess_initAccessCell newPrimaryCell prePrimaryCell targetCell/;
+	my @bsic = qw/targetcell_gsmcellinfo_cellid/;
+	if (grep{/^$name$/i} @change) {
+		$val = $val % 65536	
+	}
+	if (grep{/^$name$/i} @bsic) {
+		my $bcc = $val & 15;
+		my $ncc = ($val-$bcc)>>16;
+		$val = $ncc*8 + $bcc;
+	}
+	return $val;
+}
+
 
 1;
