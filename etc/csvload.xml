@@ -1,0 +1,102 @@
+<csvloader>
+	<setting name="rnl" fieldseparator=";">
+		<line name="1" columns="VERSION;IMPORTDATE">
+		</line>
+		<line name="2" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="t5" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="t110" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="t180" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="t31" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="t18" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="gpm" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="umtsAlarms" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="cellpositions" fieldseparator=",">
+		<line name="1" columns="retrieve_from_line" whitespace="remove">
+		</line>
+	</setting>
+	<setting name="cellpositions3g" fieldseparator=",">
+		<line name="1" columns="retrieve_from_line" whitespace="remove">
+		</line>
+	</setting>
+	<setting name="3gcellpositions" fieldseparator=",">
+		<line name="1" columns="retrieve_from_line" whitespace="remove">
+		</line>
+	</setting>
+	<setting name="RNCCN" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="3galarms" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="nodeB" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="iNode" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="CTN" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="CTG" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="3gconfig" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="BS" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="WAC" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="wimaxconfig" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="huaweipm" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="huaweiconfig" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+	<setting name="swap" fieldseparator=",">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
+</csvloader>
+
+
