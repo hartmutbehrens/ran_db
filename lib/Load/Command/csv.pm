@@ -10,7 +10,6 @@ use warnings;
 #modules
 use Common::MySQL;
 use Common::CSV;
-use File::Path qw(make_path);
 use Load -command;
 
 sub abstract {
