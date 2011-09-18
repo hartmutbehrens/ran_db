@@ -732,10 +732,6 @@
 			<order>NodeBName,RncName,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
-		<index name="idx2">
-			<order>localCellId,IMPORTDATE</order>
-			<unique>no</unique>
-		</index>
 	</table>
 	<table name="RNC">
 		<field name="OMC_ID" type="varchar(50)">
@@ -801,7 +797,7 @@
 		<field name="spareCard" type="varchar(100)">
 		</field>
 		<index name="idx1">
-			<order>RncName,IMPORTDATE,RncEquipment,INode,EM,Lp</order>
+			<order>RncName,IMPORTDATE,RNCEquipment,INode,EM,Lp</order>
 			<unique>yes</unique>
 		</index>
 	</table>
