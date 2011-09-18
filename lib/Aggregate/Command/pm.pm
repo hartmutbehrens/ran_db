@@ -63,8 +63,7 @@ sub do_aggregation {
 	my %have = ();
 	my %seen = ();
 	my %cmap = ();
-	#print Dumper($config->{'aggregate'}->{'daily'});
-	#exit;
+	
 	foreach my $col (keys %{$config->{'aggregate'}->{'fields'}->{'field'}}) {
 		my @op = split(';',$config->{'aggregate'}->{'fields'}->{'field'}->{$col}->{'do'});
 		my $how = defined($config->{'aggregate'}->{'fields'}->{'field'}->{$col}->{$atime}) ? $config->{'aggregate'}->{'fields'}->{'field'}->{$col}->{$atime} : $config->{'aggregate'}->{'fields'}->{'field'}->{$col}->{'how'};
