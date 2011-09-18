@@ -17,7 +17,7 @@ sub abstract {
 }
 
 sub usage_desc {
-	return "%c csv %o [ filename(s) ]";
+	return "%c csv %o";
 }
 
 sub opt_spec {
