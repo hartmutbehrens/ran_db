@@ -26,7 +26,7 @@ sub opt_spec {
 	return (
 	[ "outdir|d=s",	"directory to store parsed csv file(s) in", { default => "../csvload" }],
 	[ "wnms|w=s",	"WNMS name", { required => 1 }],
-	[ "country|c=s",	"Country", { required => 1 }],
+	[ "country|c=s",	"Country descriptor (eg. ZA)", { required => 1 }],
 	[ "delete|D",	"Delete file(s) after parsing"],
   );
 }

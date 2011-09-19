@@ -36,7 +36,7 @@ sub find_node {
 sub get_value {
 	my ($node,$xpath) = @_;
 	my $match = find_node($node,$xpath);
-	my $value = defined($match) ? getTextContents($match) : undef;
+	my $value = defined($match) ? get_text_contents($match) : undef;
 	return $value;
 }
 
