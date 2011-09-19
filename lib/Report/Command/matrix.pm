@@ -80,7 +80,7 @@ sub execute {
 		my $resolved = 0;
 		for (@$sourceref) {
 			my @row = split (',',$_);
-			my $ci1 = get_best_bcch_bsic_candidate(@row[0..2],$qdate);
+			my $ci1 = get_best_bcch_bsic_candidate(@row[0..2],$qdate,$bsicref,$adjref);
 			if ($ci1 !~ /^u/i) {	# no luck - try recursion into immediate neighoburs
 				print "SCI: $row[0]   NBRCI: $ci1   BCCH/BSIC: $row[1];$row[2]\n" if ($opt->{debug});
 				$nw{$row[0]}{"$row[1];$row[2]"} = [ $ci1, "Adjacency" ];	# certainty 100%
@@ -204,7 +204,7 @@ sub get_interference {
 		}
 		$processed++;
 	}
-	return \@source;
+	return (\@source,$processed);
 }
 
 sub get_dates {
