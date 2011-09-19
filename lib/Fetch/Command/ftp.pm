@@ -56,7 +56,10 @@ sub execute {
 	(my $lock = $opt->{from}.$opt->{what}) =~ s/\W//g;
 	Common::Lock::get_lock('.'.$lock) or Common::Lock::bail('.'.$lock);
 	
-	my $have = fetched_already($opt);
+	my $have;
+	unless ($opt->{ignore}) { 
+		$have = fetched_already($opt);
+	}
 	my $ftp = open_connection($opt->{from},$opt->{user},$opt->{pwd},$opt->{debug});
 	ftp_files($ftp, $opt, $have);
 	$ftp->quit;
@@ -75,8 +78,8 @@ sub ftp_files {
 			my $fl = $dir{$dir}{$file};
 			my ($attr,$sf) = ($fl =~ /^(.{15})(.*?)$/);
 			if (exists $have->{$sf}) {
-				$count++;
-				next;	
+					$count++;
+					next;
 			} #file was already copied
 			 
 			my $lf = $file;
