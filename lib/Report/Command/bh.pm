@@ -73,7 +73,7 @@ sub execute {
 sub get_data {
 	my ($dbh,$bh_ref,$date,$table,$date_col,$time_col,$counter) = @_;
 	my %d = ();
-	print "Calculating busy hour on $table for $date using $counter ..\n";
+	print "\nCalculating busy hour on $table for $date using $counter ..\n";
 	my @cols = (qw(LAC CI),$time_col,$counter);
 	my $sql = 'select '.join(',',@cols).' from '.$table.' where '.$date_col.' = ?';
 	my $sth = $dbh->prepare($sql);
