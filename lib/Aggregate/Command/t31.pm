@@ -8,6 +8,7 @@ use strict;
 use warnings;
 
 #modules
+use Common::Lock;
 use Common::MySQL;
 use Aggregate -command;
 
@@ -47,6 +48,8 @@ sub execute {
 	unless ($connected) {
 		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
 	}
+	my $lock = '.'.$opt->{db}.'t31';
+	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 	if ($opt->{which} eq 'cell') {
 		do_T31($dbh,undef,'T31_CIN_CELL_D');
 	}

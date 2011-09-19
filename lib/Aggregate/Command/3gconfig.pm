@@ -8,6 +8,7 @@ use strict;
 use warnings;
 
 #modules
+use Common::Lock;
 use Common::MySQL;
 use Common::Distance;
 use Aggregate -command;
@@ -48,6 +49,9 @@ sub execute {
 	unless ($connected) {
 		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
 	}
+	my $lock = '.'.$opt->{db}.'3gconfig';
+	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
+	
 	aggregate_3gconfig($dbh);
 	if ($opt->{update}) {
 		my $connected2g = Common::MySQL::connect(\$dbh2g,@{$opt}{qw/2guser 2gpass 2ghost 2gport 2gdb/});

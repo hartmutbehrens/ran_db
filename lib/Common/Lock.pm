@@ -3,6 +3,7 @@ package Common::Lock;
 =head1 NAME
 Common::Lock;
 =cut
+#sometimes its necessary to prevent two long running proceses from starting at the same time..prevent this with locks
 
 #pragmas
 use strict;
@@ -18,7 +19,7 @@ sub get_lock {
 
 sub bail {
 	my $name = shift;
-	print "a process with lockfile $name is already running";
+	warn "a process with lockfile $name is already running";
 	exit(1);
 }
 

@@ -7,6 +7,7 @@ Aggregate::Command::pm;
 use strict;
 use warnings;
 #modules
+use Common::Lock;
 use Common::XML;
 use Aggregate -command;
 
@@ -50,6 +51,9 @@ sub execute {
 		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
 	}
 	for my $template (@$args) {
+		my $lock = $template;
+		$lock =~ s/\W//g;
+		Common::Lock::get_lock('.'.$lock) or Common::Lock::bail('.'.$lock);
 		do_aggregation($dbh,$template,$opt->{time},$opt->{limit});
 	}
 }
