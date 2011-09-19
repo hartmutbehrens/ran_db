@@ -27,6 +27,8 @@ sub opt_spec {
 	[ "minfo=s",	"minimum first order sample share", { hidden => 1, default => 20 }],
 	[ "minso=s",	"minimum second order sample share", { hidden => 1, default => 20 }],
 	[ "numdays|n=s","limit calculation numdays data only", { hidden => 1, default => 1 }],
+	[ "table|t=s","table name to store results in", { hidden => 1, default => 'T31_MATRIX_D' }],
+	[ "patch","patch BCCH-BCCH measurement gaps"],
 	[ "debug",	"debug output"],
 	[ "user|u=s",	"database user", { required => 1 }],
 	[ "pass|x=s",	"database password", { required => 1 }],
@@ -61,7 +63,7 @@ sub execute {
 	my @dates = get_dates($dbh);
 	print "Found usable data for the following days : @dates\n";
 	my ($Passes,$count) = (1,0); # should be 2 or 3!!!
-	my ($processed,$resolved) = (0,0);
+	#my ($processed,$resolved) = (0,0);
 	
 	foreach my $qdate (@dates) {	
 		last if ($count == $opt->{numdays});
@@ -69,50 +71,31 @@ sub execute {
 		print "Querying for $qdate ..\n";
 		$count++;
 		# initialise data
-		@source = ();
-		%nw = ();
-		$processed = 0;
-		$sth = $dbh->prepare("select concat(LAC,'~',CI), BCCH, BSIC, sum(TOTAL), DATE(SDATE) from T31_CIN_CELL_D where DATE(SDATE) = ? group by LAC,CI,BCCH,BSIC;");
-		if ($sth) {
-			$sth->execute($qdate);
-			while ( @row = $sth->fetchrow_array ) {
-				# loevenstein problem mod : ignore own bcch scanned by badly placed dummy neighbour
-				# $bcch{$row[0]}{$row[3]} = [ $row[1], $row[4] ];
-				if ((exists ($bcch{$row[0]}{$row[4]})) && ($bcch{$row[0]}{$row[4]}->[0] eq $row[1])) {
-					print "~" if (DEBUG);
-				}
-				else {
-					$row[3] = int($row[3]);
-					push (@source, join (',', @row[0..3]));
-				}
-				$processed++;
-			}
-		}
-		else {
-			$dbh->disconnect;
-			finish($dbh->errstr);
-		}
-		
+		#@source = ();
+		my %nw = ();
+		#$processed = 0;
+		my ($sourceref,$processed) = get_interference($dbh,$qdate,$bcchref);
+		#$processed
 		# start resolving for this day
-		$resolved = 0;
-		for (@source) {
-			@row = split (',',$_);
+		my $resolved = 0;
+		for (@$sourceref) {
+			my @row = split (',',$_);
 			my $ci1 = get_best_bcch_bsic_candidate(@row[0..2],$qdate);
 			if ($ci1 !~ /^u/i) {	# no luck - try recursion into immediate neighoburs
-				print "SCI: $row[0]   NBRCI: $ci1   BCCH/BSIC: $row[1];$row[2]\n" if (DEBUG);
+				print "SCI: $row[0]   NBRCI: $ci1   BCCH/BSIC: $row[1];$row[2]\n" if ($opt->{debug});
 				$nw{$row[0]}{"$row[1];$row[2]"} = [ $ci1, "Adjacency" ];	# certainty 100%
 				$resolved++;
 			}
 		}
-		print "\tResolved $resolved out of $processed\n" if (VERBOSE);
+		print "\tResolved $resolved out of $processed\n";
 	
-		print "Second Order C/I...\n" if (VERBOSE);
+		print "Second Order C/I...\n";
 		for my $pass (1..$Passes) {
 			$processed = 0;
 			$resolved = 0;
-			print "Pass $pass...\n" if (VERBOSE);
-			for (@source) {
-				@row = split (',',$_);
+			print "Pass $pass...\n";
+			for (@$sourceref) {
+				my @row = split (',',$_);
 				unless (exists $nw{$row[0]}->{"$row[1];$row[2]"}) {
 					$processed++;
 					for my $nbrbb (keys %{$nw{$row[0]}}) { # my neighbours - can't use each - fiddling with nw in the loop
@@ -120,22 +103,22 @@ sub execute {
 						if (defined (my $ci2ref = $nw{$nbrci}->{"$row[1];$row[2]"})) {
 							my $ci2 = $ci2ref->[0];
 							next if ($ci2 eq $row[0]);	# avoid circular references
-							print "NBR: $nbrci had it...\n" if (DEBUG);
-							$nw{$row[0]}{"$row[1];$row[2]"} = [ $ci2, ($pass+1)."-Order/".(scalar keys (%{$bsic{"$row[1];$row[2]"}->{$qdate}})) ];	# certainty 80%
+							print "NBR: $nbrci had it...\n" if ($opt->{debug});
+							$nw{$row[0]}{"$row[1];$row[2]"} = [ $ci2, ($pass+1)."-Order/".(scalar keys (%{$bsicref->{"$row[1];$row[2]"}->{$qdate}})) ];	# certainty 80%
 							$resolved++;
 							last;
 						}
 					}
 				}
 			}
-			print "\tResolved $resolved out of $processed\n" if (VERBOSE);
+			print "\tResolved $resolved out of $processed\n";
 		}
 		
 		# now pop everything resolved and unresolved into the ci matrix
 		%citemp = ();
 		my $tot_discarded = 0;
-		for (@source) {
-			@row = split (',',$_);
+		for (@$sourceref) {
+			my @row = split (',',$_);
 			my $ci2 = "-1~BCCH$row[1]"."BSIC$row[2]";
 			my $certainty = 0;
 			if (exists $nw{$row[0]}->{"$row[1];$row[2]"}) {
@@ -143,16 +126,16 @@ sub execute {
 				$certainty = $nw{$row[0]}->{"$row[1];$row[2]"}->[1];
 			}
 			else {
-				$certainty = (scalar keys (%{$bsic{"$row[1];$row[2]"}->{$qdate}}))." Possbl"
+				$certainty = (scalar keys (%{$bsicref->{"$row[1];$row[2]"}->{$qdate}}))." Possbl"
 			}
 			#$citemp{$row[0]}{$ci2}[0] += $row[3];
 			# special condition : if BSIC = 0 and certainty is low - double check...
 			my $discard = 0;
 			if (($row[2] == 0) && ($row[1] < 30) && (($certainty =~ /Possbl/) || ($certainty =~ /[2345]\-Order/)) ){
 				# if there is a similar TCH within second order, discard the measurement
-				for my $foci (keys %{$adj{$row[0]}}) {
-					for my $soci (keys %{$adj{$foci}}) {	# rely on back-reference to avoid checking twice
-						my ($testbcch, $testca) = @{$bcch{$soci}->{$qdate}}[0,1];
+				for my $foci (keys %{$adjref->{$row[0]}}) {
+					for my $soci (keys %{$adjref->{$foci}}) {	# rely on back-reference to avoid checking twice
+						my ($testbcch, $testca) = @{$bcchref->{$soci}->{$qdate}}[0,1];
 						next if ((!defined $testca) || (!defined $testbcch));
 						$testca =~ s/[\{\} ]//g;
 						next if ($testca !~ /\d/);
@@ -174,13 +157,13 @@ sub execute {
 			$tot_discarded += $discard;
 		}
 
-		print "Discarded $tot_discarded dodgy measurements\n" if (VERBOSE);
+		print "Discarded $tot_discarded dodgy measurements\n";
 		
 		# plug the bcch-bcch gaps
-		patch($qdate) if ($Patch);
+		patch($qdate,$bcchref,$opt) if ($opt->{patch});
 		#pop citemp into db
 		
-		
+		my $Patch = $opt->{patch} ? 1 : 0;
 		# aggregate days ... also pop into db
 		for my $ci1 (keys %citemp) {
 			my ($la,$c) = split('~',$ci1);
@@ -190,10 +173,10 @@ sub execute {
 				my $val = $vref->[0];
 				my $cer = $vref->[1];
 				
-				$days{$ci1}{$ci2}{$qdate} = 1;
+				#$days{$ci1}{$ci2}{$qdate} = 1;
 					
 				@e{qw/LAC CI PATCHED LAC_TGT CI_TGT IMPORTDATE CERTAINTY IFPROB/} = ($la,$c,$Patch,$tla,$tc,$qdate,$cer,$val);
-				my $sql = 'replace into '.$table.' ('.join(',',map('`'.$_.'`',keys %e)).') values ('.join(',',map('\''.$_.'\'',values %e)).')';
+				my $sql = 'replace into '.$opt->{table}.' ('.join(',',map('`'.$_.'`',keys %e)).') values ('.join(',',map('\''.$_.'\'',values %e)).')';
 				$dbh->do($sql) || die ($dbh->errstr);
 				#print "$sql \n";
 					
@@ -201,6 +184,27 @@ sub execute {
 			}
 		}
 	}
+}
+
+sub get_interference {
+	my ($dbh,$date,$bcchref) = @_;
+	my $processed = 0;
+	my @source;
+	my $sth = $dbh->prepare("select concat(LAC,'~',CI), BCCH, BSIC, sum(TOTAL), DATE(SDATE) from T31_CIN_CELL_D where DATE(SDATE) = ? group by LAC,CI,BCCH,BSIC;");
+	$sth->execute($date);
+	while ( my @row = $sth->fetchrow_array ) {
+		# loevenstein problem mod : ignore own bcch scanned by badly placed dummy neighbour
+		# $bcch{$row[0]}{$row[3]} = [ $row[1], $row[4] ];
+		if ((exists ($bcchref->{$row[0]}{$row[4]})) && ($bcchref->{$row[0]}{$row[4]}->[0] eq $row[1])) {
+			#print "~" if (DEBUG);
+		}
+		else {
+			$row[3] = int($row[3]);
+			push (@source, join (',', @row[0..3]));
+		}
+		$processed++;
+	}
+	return \@source;
 }
 
 sub get_dates {
@@ -216,9 +220,8 @@ sub get_dates {
 }
 
 sub patch {
-	
 	my ($date,$bcchref,$opt) = @_;
-	
+	print "Patching BCCH-BCCH measurement gaps\n";
 	my $patched = 0;
 	my $unpatched = 0;
 	
