@@ -9,8 +9,8 @@ use warnings;
 #modules
 use Archive::Zip qw( :ERROR_CODES :CONSTANTS );
 use Common::CSV;
+use Common::Lock;
 use Common::XML;
-
 use File::Path qw(make_path);
 use Parse -command;
 
@@ -42,6 +42,9 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
+	
+	my $lock = '.'.$opt->{wnms}.'3gconfig';
+	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 	
 	for my $file (@$args) {
 		my ($config,$cols,$info) = parse_snapshot($file,$opt->{country});

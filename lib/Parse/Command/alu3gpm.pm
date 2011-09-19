@@ -9,6 +9,7 @@ use warnings;
 #modules
 use Common::ALU::Parse3G;
 use Common::CSV;
+use Common::Lock;
 use Common::XML;
 use Data::Dumper;
 use File::Path qw(make_path);
@@ -52,6 +53,9 @@ sub execute {
 	$opt->{pmtype} = 'RNCCN' if $opt->{pmtype} eq 'rnccn';
 	$opt->{pmtype} = 'nodeB' if $opt->{pmtype} eq 'nodeb';
 	$opt->{pmtype} = 'iNode' if $opt->{pmtype} eq 'inode';
+	
+	my $lock = '.'.$opt->{wnms}.$opt->{pmtype};
+	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 	
 	for my $pmfile (@$args) {
 		

@@ -16,4 +16,10 @@ sub get_lock {
 	flock($fhpid, LOCK_EX|LOCK_NB) or bail($name);
 }
 
+sub bail {
+	my $name = shift;
+	print "a process with lockfile $name is already running";
+	exit(1);
+}
+
 1;

@@ -40,7 +40,7 @@ sub execute {
 	my ($self, $opt, $args) = @_;
 	
 	my $today = Common::Date::today();
-	my $lock = '.'.$opt->{country}.$opt->customer;
+	my $lock = '.'.$opt->{country}.$opt->{customer};
 	Common::Lock::get_lock($lock);
 	
 	my $office = join('_',$opt->{country},$opt->{customer},$today).'.xml';

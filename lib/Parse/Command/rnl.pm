@@ -8,6 +8,7 @@ use strict;
 use warnings;
 #modules
 use Archive::Tar;
+use Common::Lock;
 use File::Path qw(make_path);
 use Parse -command;
 
@@ -39,6 +40,8 @@ sub validate_args {
 sub execute {
 	my ($self, $opt, $args) = @_;
 	
+	my $lock = '.'.$opt->{omc}.'rnl';
+	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 	for my $file (@$args) {
 		
 		my $success = parse_rnl($file,$opt->{omc},$opt->{outdir});

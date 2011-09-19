@@ -9,6 +9,7 @@ use warnings;
 #modules
 use Common::ALU::Parse3G;
 use Common::CSV;
+use Common::Lock;
 use Common::XML;
 use File::Path qw(make_path);
 use Parse -command;
@@ -41,6 +42,8 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
+	my $lock = '.'.$opt->{omc}.'CTG';
+	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 	
 	for my $file (@$args) {
 		

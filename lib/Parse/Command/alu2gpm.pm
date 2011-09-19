@@ -9,6 +9,7 @@ use warnings;
 #modules
 use Common::ALU::Parse2G;
 use Common::CSV;
+use Common::Lock;
 use Common::XML;
 use Data::Dumper;
 use File::Path qw(make_path);
@@ -50,6 +51,8 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
+	my $lock = '.'.$opt->{omc}.$opt->{pmtype};
+	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 	
 	for my $pmfile (@$args) {
 		
