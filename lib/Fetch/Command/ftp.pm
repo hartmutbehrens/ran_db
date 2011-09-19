@@ -90,7 +90,7 @@ sub ftp_files {
 			log_ftp($opt,$fl) if $success;
 		}
 	}
-	warn "$count files were not copied because they were already copied previously - see ftplog in \"$opt->{log}\".\n" if $count > 0;	
+	warn "$count files were not copied because they were already copied previously - see ftplog in \"$opt->{log}\" (or use --ignore command line option).\n" if $count > 0;	
 }
 
 sub log_ftp {
