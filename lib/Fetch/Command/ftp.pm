@@ -36,7 +36,7 @@ sub opt_spec {
     [ "pwd|p=s", 	"Password", { required => 1}],
     [ "dir|d=s",	"Local directory to store files", { default => '../data'}],
     [ "log|l=s", 	"Log directory", { default => '../ftplog'}],
-    [ "maxdays", 	"Only copy files that are up to maxdays old", { default => 2}],
+    [ "maxdays", 	"Only scan subdirectories recursively that are up to maxdays old", { default => 2}],		#wNMS keeps PM files forever..
     [ "debug", 	"Debug FTP"],
   );
 }
@@ -65,6 +65,7 @@ sub ftp_files {
 	my ($ftp,$opt,$have) = @_;
 	my %dir = ();
 	find_recursively($ftp,\%dir,$opt->{where},$opt->{what},$opt->{maxdays});
+	warn "Nothing was found that could be copied (files that have already been copied are not copied again - see ftplog in \"$opt->{log}\").\n" unless (scalar(keys %dir) > 0);
 	#print Dumper(\%dir);
 	foreach my $dir (keys %dir) {
 		$ftp->cwd($dir);
