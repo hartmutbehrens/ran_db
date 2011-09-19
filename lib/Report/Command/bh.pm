@@ -63,8 +63,8 @@ sub execute {
 		push(@dates,$row[0]);
 	}
 	for my $date (@dates[1..$#dates]) {
-		get_data($dbh,\%bh,$date,$opt->{cstable},$opt->{date},$opt->{time},$opt->{cf});
-		get_data($dbh,\%bh,$date,$opt->{pstable},$opt->{date},$opt->{time},$opt->{pf});
+		get_data($dbh,\%bh,$date,$opt->{cstable},$opt->{date},$opt->{time},$opt->{csformula});
+		get_data($dbh,\%bh,$date,$opt->{pstable},$opt->{date},$opt->{time},$opt->{psformula});
 		populate_table($dbh,\%bh);
 		%bh = ();
 	}
