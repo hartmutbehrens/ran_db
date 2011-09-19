@@ -64,24 +64,29 @@ sub execute {
 sub ftp_files {
 	my ($ftp,$opt,$have) = @_;
 	my %dir = ();
+	my $count = 0;
 	find_recursively($ftp,\%dir,$opt->{where},$opt->{what},$opt->{maxdays});
-	warn "Nothing was found that could be copied (files that have already been copied are not copied again - see ftplog in \"$opt->{log}\").\n" unless (scalar(keys %dir) > 0);
+	
 	#print Dumper(\%dir);
 	foreach my $dir (keys %dir) {
 		$ftp->cwd($dir);
 		foreach my $file (keys %{$dir{$dir}}) {
 			my $fl = $dir{$dir}{$file};
 			my ($attr,$sf) = ($fl =~ /^(.{15})(.*?)$/);
-			next if (exists $have->{$sf}); #file was already copied
+			if (exists $have->{$sf}) {
+				$count++;
+				next;	
+			} #file was already copied
+			 
 			my $lf = $file;
 			$lf =~ s/\:/\_/g if ($^O =~ /win/i);		#remove characters that are not allowed in a windows filename
 			$lf =~ s/\s/\_/g;
 			print "GET: $file\n";
 			my $success = $ftp->get($file,$opt->{dir}.'/'.$opt->{name}.'/'.$lf);
 			log_ftp($opt,$fl) if $success;
-			
 		}
-	}	
+	}
+	warn "$count files were not copied because they were already copied previously - see ftplog in \"$opt->{log}\".\n" if $count > 0;	
 }
 
 sub log_ftp {
