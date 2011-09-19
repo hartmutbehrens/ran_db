@@ -37,6 +37,7 @@ sub opt_spec {
     [ "dir|d=s",	"Local directory to store files", { default => '../data'}],
     [ "log|l=s", 	"Log directory", { default => '../ftplog'}],
     [ "maxdays", 	"Only scan subdirectories recursively that are up to maxdays old", { default => 2}],		#wNMS keeps PM files forever..
+    [ "ignore", 	"Copy files, even if they were already ftpd (ftpd files are logged)."],
     [ "debug", 	"Debug FTP"],
   );
 }
@@ -141,7 +142,7 @@ sub open_connection {
 	my $ftp = Net::FTP->new($host, TimeOut => 10, Debug => $debug, Passive => 0);
 	die "Could not establish an ftp connection to $host: $@\n" unless defined $ftp;
 	$ftp->login($user,$pwd) || die "Cannot login: ",$ftp->message,"\n";
-	#$ftp->type('I');
+	$ftp->type('I');
 	return $ftp;
 }
 
