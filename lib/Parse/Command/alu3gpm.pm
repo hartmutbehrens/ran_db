@@ -7,7 +7,7 @@ Parse::Command::alu3gpm;
 use strict;
 use warnings;
 #modules
-use Common::ALU::Parse3G;
+use Common::ALU::Parse::3G;
 use Common::CSV;
 use Common::Lock;
 use Common::XML;
@@ -59,7 +59,7 @@ sub execute {
 	
 	for my $pmfile (@$args) {
 		
-		my ($pm,$counters,$info) = Common::ALU::Parse3G::parse_3GPM($pmfile,$opt->{templatedir},$opt->{pmtype});
+		my ($pm,$counters,$info) = Common::ALU::Parse::3G::parse_3GPM($pmfile,$opt->{templatedir},$opt->{pmtype});
 		warn "Warning: No data was retrieved after parsing $pmfile. Did you select the correct pmtype? (current choice = $opt->{pmtype})\n"	unless (scalar(keys %$counters) > 0);
 	
 		my $success = Common::CSV::to_csv($pm,$counters,$info,$opt->{wnms},$opt->{pmtype},$opt->{outdir});

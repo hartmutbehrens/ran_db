@@ -7,7 +7,7 @@ Parse::Command::alu2gpm;
 use strict;
 use warnings;
 #modules
-use Common::ALU::Parse2G;
+use Common::ALU::Parse::2G;
 use Common::CSV;
 use Common::Lock;
 use Common::XML;
@@ -56,14 +56,14 @@ sub execute {
 	
 	for my $pmfile (@$args) {
 		
-		my $info = Common::ALU::Parse2G::alu_pm_info($pmfile);
+		my $info = Common::ALU::Parse::2G::alu_pm_info($pmfile);
 		my $layout_file = $opt->{templatedir}.'/layout.'.lc($opt->{pmtype}).'.'.lc($info->{'VERSION'}).'.xml';
 		unless ((-f $layout_file) && (-s $layout_file)) {
 			print "The file $pmfile with version $info->{VERSION} cannot be decoded because no layout file could be found (looking for $layout_file) !\n";
 			next;
 		}
 		my $layout = Common::XML::read_xml($layout_file);
-		my ($pm,$counters) = Common::ALU::Parse2G::decode_binary($pmfile,$layout);
+		my ($pm,$counters) = Common::ALU::Parse::2G::decode_binary($pmfile,$layout);
 		warn "Warning: No data was retrieved after parsing $pmfile. Did you select the correct pmtype? (current choice = $opt->{pmtype})\n"	unless (scalar(keys %$counters) > 0);
 	
 		my $success = Common::CSV::to_csv($pm,$counters,$info,$opt->{omc},$opt->{pmtype},$opt->{outdir});

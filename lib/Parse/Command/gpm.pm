@@ -7,6 +7,7 @@ Parse::Command::gpm;
 use strict;
 use warnings;
 #modules
+use Common::ALU::Parse::2G;
 use Common::CSV;
 use Common::Lock;
 use Common::XML;
@@ -48,7 +49,7 @@ sub execute {
 	
 	for my $pmfile (@$args) {
 		
-		my ($pm,$counters,$info) = Common::ALU::Parse2G::parse_gpm($pmfile,$opt->{templatedir});
+		my ($pm,$counters,$info) = Common::ALU::Parse::2G::parse_gpm($pmfile,$opt->{templatedir});
 		warn "Warning: No data was retrieved after parsing $pmfile. This may not be a problem but should be investigated."	unless (scalar(keys %$counters) > 0);
 	
 		my $success = Common::CSV::to_csv($pm,$counters,$info,$opt->{omc},'gpm',$opt->{outdir});

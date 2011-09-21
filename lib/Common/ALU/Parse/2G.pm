@@ -1,7 +1,7 @@
-package Common::ALU::Parse2G;
+package Common::ALU::Parse::2G;
 
 =head1 NAME
-Common::ALU::Parse2G;
+Common::ALU::Parse::2G;
 =cut
 
 #pragmas

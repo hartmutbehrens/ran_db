@@ -7,7 +7,7 @@ Parse::Command::CTG;
 use strict;
 use warnings;
 #modules
-use Common::ALU::Parse3G;
+use Common::ALU::Parse::3G;
 use Common::CSV;
 use Common::Lock;
 use Common::XML;
@@ -47,7 +47,7 @@ sub execute {
 	
 	for my $file (@$args) {
 		
-		my ($trace,$cols,$info) = Common::ALU::Parse3G::parse_3GCT($file,$opt->{table});
+		my ($trace,$cols,$info) = Common::ALU::Parse::3G::parse_3GCT($file,$opt->{table});
 		warn "Warning: No data was retrieved after parsing $file. This should be investigated."	unless (scalar(keys %$cols) > 0);
 	
 		my $success = Common::CSV::to_csv($trace,$cols,$info,$opt->{omc},'CTG',$opt->{outdir});
