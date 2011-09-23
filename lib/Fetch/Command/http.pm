@@ -30,6 +30,7 @@ sub opt_spec {
     [ "parameter|p=s@", "Specify URL parameter (repeat as required)"],
     [ "filename|f=s", "Specify file name to store retrieved document in", { required => 1 }],
     [ "log|l=s", 	"log directory", { default => '../httplog'}],
+    [ "verbose", 	"be chatty"],
   );
 }
 
@@ -49,8 +50,11 @@ sub execute {
 	$lock =~ s/\W+//g;
 	Common::Lock::get_lock('.'.$lock) || Common::Lock::bail('.'.$lock);
 	
-	my $response = getstore($opt->{url}.'?'.$param,"$opt->{log}/$opt->{filename}");
-	if ($response != HTTP_OK) {
+	my $response = getstore($opt->{url}.'?'.$param,$opt->{filename});
+	if ($response == HTTP_OK) {
+		print "$opt->{url}.'?'.$param was succesfully stored in $opt->{filename}\n" if $opt->{verbose};
+	}
+	else {
 		warn "Could not retrieve $opt->{url}. Error: ",status_message($response),"\n"
 	}
 	
