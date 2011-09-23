@@ -10,14 +10,14 @@ URL=$1
 COUNTRY=$2
 CUSTOMER=$3
 BASEDIR="$( cd "$( dirname "$0" )" && cd .. && pwd )"
-XML_DIR=$BASEDIR/xml
-PM_DIR=$BASEDIR/pm
+XML_DIR=$BASEDIR/data/$COUNTRY/$CUSTOMER
+PM_DIR=$BASEDIR/data
 OFFICE_FILE=$DATE.$COUNTRY$CUSTOMER.xml
 DATE_FILE=DATES.$DATE.xml
 
 if [ ! -e $XML_DIR ]
 then
-	`mkdir $XML_DIR`
+	`mkdir -p $XML_DIR`
 fi
 #first get the list of available elements
 echo Retrieving list of offices available on $DATE
