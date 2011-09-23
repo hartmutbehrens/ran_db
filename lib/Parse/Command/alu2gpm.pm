@@ -57,6 +57,7 @@ sub execute {
 	for my $pmfile (@$args) {
 		
 		my $info = Common::ALU::Parse::2G::alu_pm_info($pmfile);
+		#print Dumper($info);
 		my $layout_file = $opt->{templatedir}.'/layout.'.lc($opt->{pmtype}).'.'.lc($info->{'VERSION'}).'.xml';
 		unless ((-f $layout_file) && (-s $layout_file)) {
 			print "The file $pmfile with version $info->{VERSION} cannot be decoded because no layout file could be found (looking for $layout_file) !\n";
