@@ -10,8 +10,7 @@ use warnings;
 #modules
 use Common::Lock;
 use Common::Date;
-use Data::Dumper;
-use Digest::SHA1 qw(sha1);
+
 use Fetch -command;
 use File::Path qw(make_path);
 use HTTP::Status qw(:constants :is status_message);
