@@ -29,7 +29,7 @@ sub opt_spec {
 	return (
 	[ "url|u=s",	"Specify URL", { required => 1}],
     [ "parameter|p=s@", "Specify URL parameter (repeat as required)"],
-    [ "filename|f=s@", "Specify file name to store retrieved document in"],
+    [ "filename|f=s@", "Specify file name to store retrieved document in", { required => 1 }],
     [ "log|l=s", 	"log directory", { default => '../httplog'}],
   );
 }
