@@ -1,7 +1,7 @@
-package Fetch::Command::cloud_xml;
+package Fetch::Command::http;
 
 =head1 NAME
-Fetch::Command::cloud_xml
+Fetch::Command::http
 =cut
 
 #pragmas
@@ -18,18 +18,19 @@ use HTTP::Status qw(:constants :is status_message);
 use LWP::Simple;
 
 sub abstract {
-	return 'fetch xml office and date files from ALU cloud log server';
+	return 'fetch documents via http';
 }
 
 sub usage_desc {
-	return "%c cloud_xml %o";
+	return "%c http %o";
 }
 
 sub opt_spec {
 	return (
-	[ "url|f=s",	"Specify URL", { required => 1}],
+	[ "url|u=s",	"Specify URL", { required => 1}],
     [ "parameter|p=s@", "Specify URL parameter (repeat as required)"],
-    [ "log|l=s", 	"log directory", { default => '../xmllog'}],
+    [ "filename|f=s@", "Specify file name to store retrieved document in"],
+    [ "log|l=s", 	"log directory", { default => '../httplog'}],
   );
 }
 
@@ -48,13 +49,12 @@ sub execute {
 	my $lock = $param;
 	$lock =~ s/\W+//g;
 	Common::Lock::get_lock('.'.$lock) || Common::Lock::bail('.'.$lock);
-	my $office = $today.'.'.$lock.'.xml';
-	unless (-e "$opt->{log}/$office") {
-		my $response = getstore($opt->{url},"$opt->{log}/$office");
-		if ($response != HTTP_OK) {
-			warn "Could not retrieve $opt->{url}. Error: ",status_message($response),"\n"
-		}
+	
+	my $response = getstore($opt->{url},"$opt->{log}/$opt->{filename}");
+	if ($response != HTTP_OK) {
+		warn "Could not retrieve $opt->{url}. Error: ",status_message($response),"\n"
 	}
+	
 }
 
 1;
