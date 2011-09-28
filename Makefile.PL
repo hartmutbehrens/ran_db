@@ -8,6 +8,7 @@ abstract		'Collection of scripts to manage retrieval, parsing, loading of config
 author			'Hartmut Behrens <hartmut.behrens@gmail.com>';
 version			'0.01';			
 license			'Alcatel-Lucent';
+repository		'git://github.com/hartmutbehrens/ran_db.git';
  
 # Specific dependencies
 requires       'App::Cmd'  => 0;
