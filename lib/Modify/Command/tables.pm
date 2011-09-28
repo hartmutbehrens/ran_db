@@ -11,7 +11,7 @@ use warnings;
 use Common::MakeIt;
 use Common::MySQL;
 use Common::XML;
-use MakeIt -command;
+use Modify -command;
 
 sub abstract {
 	return "modify database tables from xml templates.";
@@ -26,7 +26,7 @@ sub opt_spec {
 	[ "user|u=s",	"database user", { required => 1 }],
 	[ "pass|x=s",	"database password", { required => 1 }],
 	[ "host|h=s",	"database host IP address", { required => 1 }],
-	[ "db|d=s",	"database name in which tables will be created", { required => 1 }],
+	[ "db|d=s",	"database name in which tables will be modified", { required => 1 }],
 	[ "port|P=s",	"database port", { hidden => 1, default => 3306 }],
   );
 }

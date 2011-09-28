@@ -9,7 +9,6 @@ use warnings;
 #modules
 use Common::Lock;
 use Common::Date;
-use Data::Dumper;
 use Fcntl qw(:flock);
 use Fetch -command;
 use File::Path qw(make_path);

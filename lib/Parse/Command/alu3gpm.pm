@@ -11,7 +11,6 @@ use Common::ALU::Parse::3G;
 use Common::CSV;
 use Common::Lock;
 use Common::XML;
-use Data::Dumper;
 use File::Path qw(make_path);
 use Parse -command;
 

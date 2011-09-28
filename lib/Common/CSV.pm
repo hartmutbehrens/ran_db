@@ -10,7 +10,6 @@ use warnings;
 #modules
 use Common::MySQL;
 use Common::XML;
-use Data::Dumper;
 
 #converts hash ref from decode sub into CSV
 sub to_csv {
