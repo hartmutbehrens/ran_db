@@ -23,7 +23,7 @@ requires       'Memoize'  => 0;
 requires       'Net::FTP'  => 0;
 requires       'Time::Local'  => 0;
 requires       'XML::Bare'  => 0;
-requires       'XML::LibXML'  => 0;
+#requires       'XML::LibXML'  => 0;
 requires       'XML::Simple'  => 0;
 
 no_index       'directory'   => 'templates';
