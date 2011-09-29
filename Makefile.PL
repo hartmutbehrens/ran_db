@@ -20,6 +20,7 @@ requires       'Fcntl'  => 0;
 requires       'File::Path'  => 0;
 requires       'IO::Uncompress::Gunzip'  => 0;
 requires       'Memoize'  => 0;
+requires	   'Module::Pluggable'  => 0;
 requires       'Net::FTP'  => 0;
 requires       'Time::Local'  => 0;
 requires       'XML::Bare'  => 0;
