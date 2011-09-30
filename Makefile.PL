@@ -12,6 +12,7 @@ repository		'git://github.com/hartmutbehrens/ran_db.git';
  
 # Specific dependencies
 requires       'App::Cmd'  => 0;
+requires       'Archive::Zip'  => 0;
 requires       'Archive::Tar'  => 0;
 requires       'Compress::Zlib'  => 0;
 requires       'DBI'  => 0;
@@ -24,7 +25,7 @@ requires	   'Module::Pluggable'  => 0;
 requires       'Net::FTP'  => 0;
 requires       'Time::Local'  => 0;
 requires       'XML::Bare'  => 0;
-#requires       'XML::LibXML'  => 0;
+requires       'XML::LibXML'  => 0;
 requires       'XML::Simple'  => 0;
 
 no_index       'directory'   => 'templates';
