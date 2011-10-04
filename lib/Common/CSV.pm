@@ -17,6 +17,7 @@ sub to_csv {
 	$warn_on = 0 unless defined $warn_on;
 	my $rv = 0;
 	return $rv unless (scalar(keys %$counters) > 0);
+	$info->{'OMC_ID'} = $source;
 	my @icols = keys %{$info};
 	
 	foreach my $table (keys %{$pm}) {
@@ -85,7 +86,8 @@ sub load_csv {
 	
 	my %d = ();
 	my %only = ();
-	$d{'OMC_ID'} = $source;	#need to find a better solution to this
+	#fixed in to_csv
+	#$d{'OMC_ID'} = $source;	#need to find a better solution to this
 	my @cols = ();
 	open my $in ,"<","$indir/$file" || die "Could not open $indir/$file for reading:$!\n";
 	while(<$in>) {
@@ -97,7 +99,8 @@ sub load_csv {
 			my @row = split($sep,$_);
 			@cols = ($config->{$type}->{'line'}->{$.}->{'columns'} eq 'retrieve_from_line') ? @row : split($sep,$config->{$type}->{'line'}->{$.}->{'columns'});
 			@d{@cols} = @row;
-			foreach my $c (@cols,'OMC_ID') {
+			#foreach my $c (@cols,'OMC_ID') {
+			foreach my $c (@cols) {
 				$only{$c} = 1 if exists($def{$c});
 			}
 		}
