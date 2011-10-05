@@ -1,4 +1,4 @@
-<tables>
+﻿<tables>
 	<table name="INODE_ATMPORT_H" loadedfromcsv="yes" granularity="3600" idx="RncEquipment,INode,AtmPort">
 		<field name="STARTDATE" type="date" counter="no">
 		</field>
@@ -274,8 +274,8 @@
 	    </field>
 	    <field name="VS.RxFrameDiscardsClp.Ubr" type="bigint" counter="yes">
 	    </field>
-		<index name="idx1">
-			<order>INode,AtmPort,SDATETIME,OMC_ID,RncEquipment</order>
+		<index name="atm">
+			<order>RncEquipment,INode,AtmPort,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -352,8 +352,8 @@
 	    </field>
 	    <field name="VS.LocalMsgBlockUsageMax" type="bigint" counter="yes">
 	    </field>
-		<index name="idx1">
-			<order>INode,Lp,SDATETIME,OMC_ID,RncEquipment</order>
+		<index name="lp">
+			<order>RncEquipment,INode,Lp,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -430,8 +430,8 @@
 	    </field>
 	    <field name="VS.ApLocalMsgBlockUsageAvgMax" type="bigint" counter="yes">
 	    </field>
-		<index name="idx1">
-			<order>INode,Lp,Ap,SDATETIME,OMC_ID,RncEquipment</order>
+		<index name="ap">
+			<order>RncEquipment,INode,Lp,Ap,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -482,8 +482,8 @@
 	    </field>
 	    <field name="VS.avgTxUtilization" type="bigint" counter="yes">
 	    </field>
-	    <index name="idx1">
-			<order>INode,Lp,Ethernet,SDATETIME,OMC_ID,RncEquipment</order>
+	    <index name="eth">
+			<order>RncEquipment,INode,Lp,Ethernet,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -542,8 +542,8 @@
 	    </field>
 	    <field name="VS.txFramesDiscDp3" type="bigint" counter="yes">
 	    </field>
-		<index name="idx1">
-			<order>RncEquipment,INode,Lp,Ethernet,TrafficManager,EmissionPriority,SDATETIME,OMC_ID</order>
+		<index name="ethman">
+			<order>RncEquipment,INode,Lp,Ethernet,TrafficManager,EmissionPriority,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -588,8 +588,8 @@
       	</field>
       	<field name="VS.txDiscFrames" type="bigint" counter="yes">
       	</field>
-		<index name="idx1">
-			<order>RncEquipment,INode,Lan,EthernetStatistics,SDATETIME,OMC_ID</order>
+		<index name="ethstat">
+			<order>RncEquipment,INode,Lan,EthernetStatistics,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -634,8 +634,8 @@
       	</field>
       	<field name="VS.txDiscFrames" type="bigint" counter="yes">
       	</field>
-		<index name="idx1">
-			<order>RncEquipment,INode,Lan,Vlan,EthernetStatistics,SDATETIME,OMC_ID</order>
+		<index name="vlanstat">
+			<order>RncEquipment,INode,Lan,Vlan,EthernetStatistics,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -680,8 +680,8 @@
       	</field>
       	<field name="VS.txDiscFrames" type="bigint" counter="yes">
       	</field>
-		<index name="idx1">
-			<order>RncEquipment,INode,Lan,Vlan,EthernetStatistics,SDATETIME,OMC_ID</order>
+		<index name="vlanstat">
+			<order>RncEquipment,INode,Lan,Vlan,EthernetStatistics,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -726,8 +726,8 @@
       	</field>
       	<field name="VS.txDiscFrames" type="bigint" counter="yes">
       	</field>
-		<index name="idx1">
-			<order>RncEquipment,INode,Lan,EthernetStatistics,SDATETIME,OMC_ID</order>
+		<index name="lanstat">
+			<order>RncEquipment,INode,Lan,EthernetStatistics,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -786,8 +786,8 @@
 	    </field>
 	    <field name="VS.txFramesDiscDp3" type="bigint" counter="yes">
 	    </field>
-		<index name="idx1">
-			<order>RncEquipment,INode,Lp,Ethernet,TrafficManager,EmissionPriority,SDATETIME,OMC_ID</order>
+		<index name="ethman">
+			<order>RncEquipment,INode,Lp,Ethernet,TrafficManager,EmissionPriority,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -838,8 +838,8 @@
 	    </field>
 	    <field name="VS.avgTxUtilization" type="bigint" counter="yes">
 	    </field>
-	    <index name="idx1">
-			<order>INode,Lp,Ethernet,SDATETIME,OMC_ID,RncEquipment</order>
+	    <index name="lp">
+			<order>RncEquipment,INode,Lp,Ethernet,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>	
@@ -1121,11 +1121,11 @@
 	    <field name="VS.RxFrameDiscardsClp.Ubr" type="bigint" counter="yes">
 	    </field>
 		<index name="idx1">
-			<order>INode,AtmPort,SDATETIME,OMC_ID,RncEquipment</order>
+			<order>RncEquipment,INode,AtmPort,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
-			<order>INode,AtmPort,IMPORTDATE,OMC_ID,RncEquipment</order>
+			<order>RncEquipment,INode,AtmPort,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -1205,11 +1205,11 @@
 	    <field name="VS.LocalMsgBlockUsageMax" type="bigint" counter="yes">
 	    </field>
 		<index name="idx1">
-			<order>INode,Lp,SDATETIME,OMC_ID,RncEquipment</order>
+			<order>RncEquipment,INode,Lp,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
-			<order>INode,Lp,IMPORTDATE,OMC_ID,RncEquipment</order>
+			<order>RncEquipment,INode,Lp,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -1289,11 +1289,11 @@
 	    <field name="VS.ApLocalMsgBlockUsageAvgMax" type="bigint" counter="yes">
 	    </field>
 		<index name="idx1">
-			<order>INode,Lp,Ap,SDATETIME,OMC_ID,RncEquipment</order>
+			<order>RncEquipment,INode,Lp,Ap,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
-			<order>INode,Lp,Ap,IMPORTDATE,OMC_ID,RncEquipment</order>
+			<order>RncEquipment,INode,Lp,Ap,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
