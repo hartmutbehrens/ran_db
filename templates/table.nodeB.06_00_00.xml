@@ -1,4 +1,4 @@
-<tables>
+﻿<tables>
 	<table name="NODEB_LOCALCELLGROUP_H" loadedfromcsv="yes" granularity="3600" idx="NodeBEquipment,LocalCellGroup">
 		<field name="STARTDATE" type="date" counter="no">
 		</field>
@@ -92,7 +92,6 @@
 		</field>
 		<field name="VS.HsdpaUEsPerLCG.Max" type="bigint" counter="yes"> 
 		</field>
-		
 		<field name="VS.CEMAlloc.FailSetup" type="bigint" counter="yes">
 		</field>
 		<field name="VS.CEMAlloc.FailReconf" type="bigint" counter="yes">
@@ -185,13 +184,8 @@
 		</field>
 		<field name="VS.CEMAllocFailedBothDL.SF256" type="bigint" counter="yes">
 		</field>
-
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,LocalCellGroup</order>
-			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,LocalCellGroup</order>
+		<index name="lcell">
+			<order>NAME,NodeBEquipment,LocalCellGroup,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 		<index name="idx3">
@@ -238,12 +232,8 @@
 		</field>
 		<field name="VS.cpuLoad.Avg" type="float" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,Board,CCM</order>
-			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,Board,CCM</order>
+		<index name="ccm">
+			<order>NAME,NodeBEquipment,Board,CCM,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -296,12 +286,8 @@
 		</field>
 		<field name="VS.ifOutUcastPkts" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,IPinterface</order>
-			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,IPinterface</order>
+		<index name="ipif">
+			<order>NAME,NodeBEquipment,IPinterface,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -350,8 +336,8 @@
       	</field>
       	<field name="VS.ifOutUserPlaneOctets" type="bigint" counter="yes">
       	</field>
-      	<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,IpRan</order>
+      	<index name="ipran">
+			<order>NAME,NodeBEquipment,IpRan,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -404,12 +390,8 @@
 		</field>
 		<field name="VS.PCMATMnbReceivedCell.Max" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,PcmLink,Atm</order>
-			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,PcmLink,Atm</order>
+		<index name="atm">
+			<order>NAME,NodeBEquipment,PcmLink,Atm,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -625,9 +607,7 @@
 		<field name="VS.HsdpaReceivedCQI.level26" type="bigint" counter="yes">
 		</field>
 		<field name="VS.HsdpaDataBufferedNodeB.Min" type="bigint" counter="yes">
-		</field>	
-	
-	
+		</field>
 		<field name="VS.HsdpaTTIperUEcat.UEcat1" type="bigint" counter="yes">
 		</field>
 		<field name="VS.HsdpaTTIperUEcat.UEcat2" type="bigint" counter="yes">
@@ -922,7 +902,6 @@
 		</field>
 		<field name="VS.HsdpaGbrSatisfiedFlows.NbPeriods" type="bigint" counter="yes">
 		</field>
-		
 		<field name="VS.HsdpaReceivedCQI.Level0" table-alias="VS.HsdpaReceivedCQI.level0" type="bigint" counter="yes">
 		</field>
 		<field name="VS.HsdpaReceivedCQI.Level1" table-alias="VS.HsdpaReceivedCQI.level1" type="bigint" counter="yes">
@@ -987,12 +966,8 @@
 		</field>
 		<field name="VS.HsdpaReceivedCQI.NotDecoded" table-alias="VS.HsdpaReceivedCQI.notDecoded" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,BtsCell,HSDPAService</order>
-			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,BtsCell,HSDPAService</order>
+		<index name="hsdser">
+			<order>NAME,NodeBEquipment,BtsCell,HSDPAService,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 		<index name="lacci">
@@ -1104,8 +1079,6 @@
     </field>
     <field name="VS.eDCHstatus.Min" type="bigint" counter="yes">
     </field>
-    
-    
 		<field name="VS.eDCHactiveUsers.2ms_users.Cum" type="bigint" counter="yes">
 		</field>
 		<field name="VS.eDCHactiveUsers.2ms_users.Avg" type="bigint" counter="yes">
@@ -1158,8 +1131,8 @@
 		</field>
 		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.Min" type="bigint" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,BtsCell,HSUPAService</order>
+		<index name="hsuserv">
+			<order>NAME,NodeBEquipment,BtsCell,HSUPAService,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 		<index name="lacci">
@@ -1206,12 +1179,8 @@
 		</field>
 		<field name="VS.cpuLoad.Avg" type="float" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,Board,TRM</order>
-			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,Board,TRM</order>
+		<index name="trm">
+			<order>NAME,NodeBEquipment,Board,TRM,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -1322,7 +1291,6 @@
 		</field>
 		<field name="VS.RadioTxCarrierPwr.Used.Cum" type="bigint" counter="yes">
 		</field>
-		
 		<field name="VS.CellULload.Total.Cum" type="bigint" counter="yes">
 		</field>
 		<field name="VS.CellULload.Total.Avg" type="bigint" counter="yes">
@@ -1343,9 +1311,9 @@
 		</field>
 		<field name="VS.CellULload.eDCH.Min" type="bigint" counter="yes">
 		</field>
-		<index name="idx3">
-			<order>NAME,SDATETIME,RncName</order>
-			<unique>no</unique>
+		<index name="btscell">
+			<order>NAME,NodeBEquipment,BtsCell,OMC_ID,SDATETIME</order>
+			<unique>yes</unique>
 		</index>
 		<index name="unlaci">
 			<order>LAC,CI,SDATETIME</order>
@@ -1429,15 +1397,11 @@
 		</field>
 		<field name="VS.imaLinkNeUnavailSecs" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,PcmLink</order>
-			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,PcmLink</order>
+		<index name="pcm">
+			<order>NAME,NodeBEquipment,PcmLink,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
-		<index name="idx3">
+		<index name="pcmrnc">
 			<order>NAME,RncName,SDATETIME</order>
 			<unique>no</unique>
 		</index>
@@ -1481,7 +1445,6 @@
 		</field>
 		<field name="VS.cpuLoad.Avg" type="float" counter="yes">
 		</field>
-		
 		<field name="VS.HsdpaUsersCapacity.NbEvt" type="bigint" counter="yes">
 		</field>
 		<field name="VS.HsdpaUsersCapacity.CumHWcapacity" type="bigint" counter="yes">
@@ -1542,8 +1505,8 @@
 			<order>NAME,SDATETIME,RncName</order>
 			<unique>no</unique>
 		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,Board,CEM</order>
+		<index name="cem">
+			<order>NAME,NodeBEquipment,Board,CEM,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -1604,12 +1567,8 @@
 		</field>
 		<field name="VS.AAL5NbReceivedCell.Avg" type="float" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,AtmVcc,Aal5</order>
-			<unique>no</unique>
-		</index>
 		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,AtmVcc,Aal5</order>
+			<order>NAME,NodeBEquipment,AtmVcc,Aal5,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -1742,12 +1701,8 @@
 		</field>
 		<field name="VS.HsdpaUEsPerHBBU.Cum" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,IMAGroup</order>
-			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,NodeBEquipment,IMAGroup</order>
+		<index name="ima">
+			<order>NAME,NodeBEquipment,IMAGroup,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -1880,7 +1835,6 @@
 		</field>
 		<field name="VS.SIRperSF.SF4.Max" type="bigint" counter="yes">
 		</field>
-		
 		<field name="VS.TRMSecondCarriersCapacity.NbEvt" type="bigint" counter="yes">
 		</field>
 		<field name="VS.TRMSecondCarriersCapacity.CumHWcapacity" type="bigint" counter="yes">
@@ -1959,12 +1913,8 @@
 		</field>
 		<field name="VS.eDCHBLReductionFactor.IuBFactor_Lt25" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment</order>
-			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment</order>
+		<index name="equip">
+			<order>NAME,NodeBEquipment,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -2031,12 +1981,8 @@
 		</field>
 		<field name="VS.AAL2NbReceivedCell.Avg" type="float" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,AtmVcc,Aal2</order>
-			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,AtmVcc,Aal2</order>
+		<index name="aal2">
+			<order>NAME,NodeBEquipment,AtmVcc,Aal2,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -2079,12 +2025,8 @@
 		</field>
 		<field name="VS.PAPwr.Cum" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,PassiveComponent,PA</order>
-			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,PassiveComponent,PA</order>
+		<index name="pa">
+			<order>NAME,NodeBEquipment,PassiveComponent,PA,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -2125,12 +2067,8 @@
 		</field>
 		<field name="VS.HsdpaUEsPerHBBU.NbEvt" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,HSDPAresource</order>
-			<unique>no</unique>
-		</index>
 		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,HSDPAresource</order>
+			<order>NAME,NodeBEquipment,HSDPAresource,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -2183,12 +2121,8 @@
 		</field>
 		<field name="VS.PAPwr.Avg" type="float" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,Board,RRH</order>
-			<unique>no</unique>
-		</index>
 		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,Board,RRH</order>
+			<order>NAME,NodeBEquipment,Board,RRH,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -2275,7 +2209,6 @@
 		</field>
 		<field name="VS.HsdpaUEsPerLCG.Max" type="bigint" counter="yes"> 
 		</field>
-		
 		<field name="VS.CEMAlloc.FailSetup" type="bigint" counter="yes">
 		</field>
 		<field name="VS.CEMAlloc.FailReconf" type="bigint" counter="yes">
@@ -2368,9 +2301,8 @@
 		</field>
 		<field name="VS.CEMAllocFailedBothDL.SF256" type="bigint" counter="yes">
 		</field>
-
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,LocalCellGroup</order>
+		<index name="lcell">
+			<order>NAME,NodeBEquipment,LocalCellGroup,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 		<index name="idx3">
@@ -2407,8 +2339,8 @@
 		</field>
 		<field name="VS.cpuLoad.Avg" type="float" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,Board,CCM</order>
+		<index name="ccm">
+			<order>NAME,NodeBEquipment,Board,CCM,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -2451,8 +2383,8 @@
 		</field>
 		<field name="VS.ifOutUcastPkts" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,IPinterface</order>
+		<index name="ipif">
+			<order>NAME,NodeBEquipment,IPinterface,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -2502,7 +2434,7 @@
       	<field name="VS.ifOutUserPlaneOctets" type="bigint" counter="yes">
       	</field>
       	<index name="idx2">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,IpRan</order>
+			<order>NAME,NodeBEquipment,IpRan,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -2545,8 +2477,8 @@
 		</field>
 		<field name="VS.PCMATMnbReceivedCell.Max" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,PcmLink,Atm</order>
+		<index name="atm">
+			<order>NAME,NodeBEquipment,PcmLink,Atm,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -2753,1864 +2685,6 @@
 		</field>
 		<field name="VS.HsdpaDataBufferedNodeB.Min" type="bigint" counter="yes">
 		</field>
-		
-				<field name="VS.HsdpaTTIperUEcat.UEcat1" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIperUEcat.UEcat2" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIperUEcat.UEcat3" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIperUEcat.UEcat4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIperUEcat.UEcat5" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIperUEcat.UEcat6" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIperUEcat.UEcat7" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIperUEcat.UEcat8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIperUEcat.UEcat9" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIperUEcat.UEcat10" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIperUEcat.UEcat11" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIperUEcat.UEcat12" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat1" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat2" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat3" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat5" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat6" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat7" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat9" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat10" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat11" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitPerUEcat.UEcat12" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaPDUnumber.MAChs" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaPDUnumber.MACd" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaNbUserWithDataTTI.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaNbUserWithDataTTI.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaNbUserWithDataTTI.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaNbUserWithDataTTI.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaNbUserWithDataTTI.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaBufferDelay.Delay0" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaBufferDelay.Delay1" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaBufferDelay.Delay2" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaBufferDelay.Delay3" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaBufferDelay.Delay4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaBufferDelay.Delay5" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaBufferDelay.Delay6" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaBufferDelay.Delay7" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaBufferDelay.Delay8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaBufferDelay.Delay9" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaBufferDelay.DelayGT1sec" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaMACdPDUAckBitsForGbr.NbTTI" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaMACdPDUAckBitsForGbr.AckedBits" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaFullCodeUsageByGbr" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrPowerUsage.PowerEq100" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrPowerUsage.PowerGe95_Lt100" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrPowerUsage.PowerGe85_Lt95" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrPowerUsage.PowerGe70_Lt85" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrPowerUsage.PowerLt70" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI0.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI0.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI0.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI0.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI0.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI1.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI1.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI1.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI1.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI1.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI2.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI2.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI2.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI2.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI2.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI3.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI3.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI3.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI3.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI3.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI4.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI4.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI4.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI4.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI4.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI5.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI5.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI5.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI5.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI5.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI6.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI6.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI6.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI6.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI6.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI7.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI7.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI7.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI7.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI7.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI8.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI8.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI8.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI8.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI8.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI9.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI9.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI9.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI9.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI9.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI10.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI10.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI10.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI10.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI10.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI11.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI11.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI11.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI11.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI11.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI12.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI12.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI12.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI12.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI12.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI13.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI13.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI13.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI13.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI13.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI14.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI14.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI14.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI14.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI14.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI15.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI15.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI15.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI15.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrDeficitRatioPerSpi.SPI15.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI0" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI1" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI2" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI3" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI5" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI6" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI7" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI9" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI10" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI11" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI12" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI13" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI14" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.SPI15" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaGbrSatisfiedFlows.NbPeriods" type="bigint" counter="yes">
-		</field>
-		
-		<field name="VS.HsdpaReceivedCQI.Level0" table-alias="VS.HsdpaReceivedCQI.level0" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level1" table-alias="VS.HsdpaReceivedCQI.level1" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level2" table-alias="VS.HsdpaReceivedCQI.level2" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level3" table-alias="VS.HsdpaReceivedCQI.level3" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level4" table-alias="VS.HsdpaReceivedCQI.level4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level5" table-alias="VS.HsdpaReceivedCQI.level5" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level6" table-alias="VS.HsdpaReceivedCQI.level6" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level7" table-alias="VS.HsdpaReceivedCQI.level7" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level8" table-alias="VS.HsdpaReceivedCQI.level8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level9" table-alias="VS.HsdpaReceivedCQI.level9" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level10" table-alias="VS.HsdpaReceivedCQI.level10" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level11" table-alias="VS.HsdpaReceivedCQI.level11" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level12" table-alias="VS.HsdpaReceivedCQI.level12" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level13" table-alias="VS.HsdpaReceivedCQI.level13" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level14" table-alias="VS.HsdpaReceivedCQI.level14" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level15" table-alias="VS.HsdpaReceivedCQI.level15" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level16" table-alias="VS.HsdpaReceivedCQI.level16" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level17" table-alias="VS.HsdpaReceivedCQI.level17" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level18" table-alias="VS.HsdpaReceivedCQI.level18" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level19" table-alias="VS.HsdpaReceivedCQI.level19" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level20" table-alias="VS.HsdpaReceivedCQI.level20" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level21" table-alias="VS.HsdpaReceivedCQI.level21" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level22" table-alias="VS.HsdpaReceivedCQI.level22" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level23" table-alias="VS.HsdpaReceivedCQI.level23" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level24" table-alias="VS.HsdpaReceivedCQI.level24" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level25" table-alias="VS.HsdpaReceivedCQI.level25" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level26" table-alias="VS.HsdpaReceivedCQI.level26" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level27" table-alias="VS.HsdpaReceivedCQI.level27" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level28" table-alias="VS.HsdpaReceivedCQI.level28" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level29" table-alias="VS.HsdpaReceivedCQI.level29" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.Level30" table-alias="VS.HsdpaReceivedCQI.level30" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.NotDecoded" table-alias="VS.HsdpaReceivedCQI.notDecoded" type="bigint" counter="yes">
-		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,BtsCell,HSDPAService</order>
-			<unique>yes</unique>
-		</index>
-		<index name="lacci">
-			<order>LAC,CI,IMPORTDATE</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_HSUPASERVICE_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
-		<field name="GRANULARITY" type="bigint" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="BtsCell" type="bigint" counter="no">
-		</field>
-		<field name="LAC" type="int" counter="no">
-		</field>
-		<field name="CI" type="int" counter="no">
-		</field>
-		<field name="HSUPAService" type="bigint" counter="no">
-		</field>
-		<field name="VS.eDCHcommonChannelsTxPower.Cum" type="bigint" counter="yes">
-		</field>
-    <field name="VS.eDCHcommonChannelsTxPower.Avg" type="float" counter="yes">
-    </field>
-    <field name="VS.eDCHcommonChannelsTxPower.NbEvt" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHcommonChannelsTxPower.Max" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHcommonChannelsTxPower.Min" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHdataBitSentToRNC.Cum" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHdataBitSentToRNC.Avg" type="float" counter="yes">
-    </field>
-    <field name="VS.eDCHdataBitSentToRNC.NbEvt" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHdataBitSentToRNC.Max" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHdataBitSentToRNC.Min" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHretransBlocks.Cum" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHretransBlocks.Avg" type="float" counter="yes">
-    </field>
-    <field name="VS.eDCHretransBlocks.NbEvt" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHretransBlocks.Max" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHretransBlocks.Min" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHdataBitRec.Cum" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHdataBitRec.Avg" type="float" counter="yes">
-    </field>
-    <field name="VS.eDCHdataBitRec.NbEvt" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHdataBitRec.Max" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHdataBitRec.Min" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHactiveUsers.Cum" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHactiveUsers.Avg" type="float" counter="yes">
-    </field>
-    <field name="VS.eDCHactiveUsers.NbEvt" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHactiveUsers.Max" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHactiveUsers.Min" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHriseOverThermal.Cum" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHriseOverThermal.Avg" type="float" counter="yes">
-    </field>
-    <field name="VS.eDCHriseOverThermal.NbEvt" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHriseOverThermal.Max" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHriseOverThermal.Min" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHstatus.Cum" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHstatus.Avg" type="float" counter="yes">
-    </field>
-    <field name="VS.eDCHstatus.NbEvt" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHstatus.Max" type="bigint" counter="yes">
-    </field>
-    <field name="VS.eDCHstatus.Min" type="bigint" counter="yes">
-    </field>
-    
-    
-		<field name="VS.eDCHactiveUsers.2ms_users.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHactiveUsers.2ms_users.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHactiveUsers.2ms_users.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHactiveUsers.2ms_users.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHactiveUsers.2ms_users.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHactiveUsers.10ms_users.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHactiveUsers.10ms_users.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHactiveUsers.10ms_users.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHactiveUsers.10ms_users.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHactiveUsers.10ms_users.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHSFupsizingDuringCompressedMode" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eAGCH.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eAGCH.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eAGCH.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eAGCH.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eAGCH.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eRGCHServing.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eRGCHServing.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eRGCHServing.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eRGCHServing.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eRGCHServing.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.Min" type="bigint" counter="yes">
-		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,BtsCell,HSUPAService</order>
-			<unique>yes</unique>
-		</index>
-		<index name="lacci">
-			<order>LAC,CI,IMPORTDATE</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_TRM_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
-		<field name="GRANULARITY" type="bigint" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="Board" type="bigint" counter="no">
-		</field>
-		<field name="TRM" type="bigint" counter="no">
-		</field>
-		<field name="VS.cpuLoad.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Avg" type="float" counter="yes">
-		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,Board,TRM</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_BTSCELL_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
-		<field name="GRANULARITY" type="bigint" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="BtsCell" type="bigint" counter="no">
-		</field>
-		<field name="LAC" type="int" counter="no">
-		</field>
-		<field name="CI" type="int" counter="no">
-		</field>
-		<field name="VS.RachNack.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioWBandRxDivPwr.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioTxCarrierPwr.Oper.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RachNack.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioTxCarrierPwr.Oper.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RachNack.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.FailedAdmissionDueToULload.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioWBandRxDivPwr.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioTxCarrierPwr.Used.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioTxCarrierPwr.Oper.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioWBandRxMainPwr.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.FailedAdmissionDueToULload.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioTxCarrierPwr.Used.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioTxCarrierPwr.Oper.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.FailedAdmissionDueToULload.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.RadioWBandRxDivPwr.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.RadioWBandRxMainPwr.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioTxCarrierPwr.Oper.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.RadioWBandRxMainPwr.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.FailedAdmissionDueToULload.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioWBandRxMainPwr.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.RadioTxCarrierPwr.Used.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.RadioWBandRxDivPwr.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RachNackSquare" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RachNack.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioTxCarrierPwr.Used.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RachAckSquare" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RachAck" type="bigint" counter="yes">
-		</field>
-		<field name="VS.FailedAdmissionDueToULload.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioWBandRxMainPwr.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RadioWBandRxDivPwr.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RachNack.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.RadioTxCarrierPwr.Used.Cum" type="bigint" counter="yes">
-		</field>
-		
-		<field name="VS.CellULload.Total.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.Total.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.Total.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.Total.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.Total.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.eDCH.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.eDCH.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.eDCH.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.eDCH.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CellULload.eDCH.Min" type="bigint" counter="yes">
-		</field>
-		<index name="unlaci">
-			<order>LAC,CI,IMPORTDATE</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_PCMLINK_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
-		<field name="GRANULARITY" type="bigint" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="PcmLink" type="bigint" counter="no">
-		</field>
-		<field name="VS.imaLinkFeUnavailSecs" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaLinkNeTxUnusableSecs" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmBpvp" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmFe" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmFas" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmCrc" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaLinkImaViolations" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmLfa" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaLinkFeSevErroredSecs" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaLinkNeRxUnusableSecs" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmEs" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaLinkFeTxUnusableSecs" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmRai" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmBbe" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmUas" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaLinkFeRxUnusableSecs" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmSes" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmEbits" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaLinkNeTxNumFailures" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmLos" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaLinkNeRxNumFailures" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaLinkNeSevErroredSecs" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmSlip" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PcmAis" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaLinkNeUnavailSecs" type="bigint" counter="yes">
-		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,PcmLink</order>
-			<unique>yes</unique>
-		</index>
-		<index name="idx3">
-			<order>NAME,RncName,IMPORTDATE</order>
-			<unique>no</unique>
-		</index>
-	</table>
-	<table name="NODEB_CEM_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
-		<field name="GRANULARITY" type="bigint" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="Board" type="bigint" counter="no">
-		</field>
-		<field name="CEM" type="bigint" counter="no">
-		</field>
-		<field name="VS.cpuLoad.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Avg" type="float" counter="yes">
-		</field>
-		
-		<field name="VS.HsdpaUsersCapacity.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUsersCapacity.CumHWcapacity" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUsersCapacity.CumLicensing" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUsersCapacity.CumUsed" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUsersCapacity.AllocSuccess" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUsersCapacity.AllocLicensingRefusal" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUsersCapacity.AllocHWfail" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaThroughputCapacity.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaThroughputCapacity.CumHWcapacity" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaThroughputCapacity.CumLicensing" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaThroughputCapacity.CumUsed" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaThroughputCapacity.AllocSuccess" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaThroughputCapacity.AllocLicensingRefusal" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaThroughputCapacity.AllocHWfail" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHUsersCapacity.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHUsersCapacity.CumHWcapacity" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHUsersCapacity.CumLicensing" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHUsersCapacity.CumUsed" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHUsersCapacity.AllocSuccess" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHUsersCapacity.AllocLicensingRefusal" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHUsersCapacity.AllocHWfail" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHThroughputCapacity.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHThroughputCapacity.CumHWcapacity" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHThroughputCapacity.CumLicensing" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHThroughputCapacity.CumUsed" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHThroughputCapacity.AllocSuccess" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHThroughputCapacity.AllocLicensingRefusal" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHThroughputCapacity.AllocHWfail" type="bigint" counter="yes">
-		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,Board,CEM</order>
-			<unique>yes</unique>
-		</index>
-		<index name="idx3">
-			<order>NAME,IMPORTDATE,RncName</order>
-			<unique>no</unique>
-		</index>
-	</table>
-	<table name="NODEB_AAL5_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
-		<field name="GRANULARITY" type="bigint" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="AtmVcc" type="varchar(10)" counter="no">
-		</field>
-		<field name="Aal5" type="bigint" counter="no">
-		</field>
-		<field name="VS.AAL5NbInvalidSize" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbSentCell.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbSentCell.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbSentCell.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbReceivedCell.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbReceivedCell.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbSentCell.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbSentCell.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.AAL5NbReceivedCell.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbLengthErr" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbReceivedCell.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbCrcFrameErr" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbAbortErr" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL5NbReceivedCell.Avg" type="float" counter="yes">
-		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,AtmVcc,Aal5</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_IMAGROUP_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
-		<field name="GRANULARITY" type="bigint" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="IMAGroup" type="varchar(5)" counter="no">
-		</field>
-		<field name="VS.imaGroupNbReceivedCell.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.imaGroupNbSentCell.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaGroupNbSentCell.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaGroupNbSentCell.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaGroupNbSentCell.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaGroupNbReceivedCell.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaGroupNeNumFailures" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaGroupNbReceivedCell.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaGroupNbSentCell.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.imaGroupNbReceivedCell.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaGroupUnavailSecs" type="bigint" counter="yes">
-		</field>
-		<field name="VS.imaGroupNbReceivedCell.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifOutErrors" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifOutOctets" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifInDiscards" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifInUcastPkts" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifInUnknownProtos" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifInOctets" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifInErrors" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifOutNUcastPkts" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifOutDiscards" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifInNUcastPkts" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifOutUcastPkts" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAlloc.success" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAlloc.Success" table-alias="VS.CEMAlloc.success" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeDL.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeUL.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeDL.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeUL.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeUL.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeDL.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedDL.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedUL.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeUL.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedDL.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.CEMAlloc.fail" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeDL.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeDL.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeUL.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedUL.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedDL.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedUL.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedUL.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedUL.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedDL.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedDL.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUEsPerHBBU.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUEsPerHBBU.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUEsPerHBBU.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUEsPerHBBU.Avg" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUEsPerHBBU.Cum" type="bigint" counter="yes">
-		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,IMAGroup</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_NODEBEQUIPMENT_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
-		<field name="GRANULARITY" type="bigint" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="VS.SIRperSF.SF256.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF64.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMUsedDCH.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF64.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF32.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF64.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF4.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.NodeBCidDchCollisionDetected" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF16.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF8.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF256.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMthroughputCapacity.Config.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMUsedDCH.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMthroughputCapacity.Oper.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF8.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF128.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF8.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF128.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF32.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF4.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF32.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF32.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF32.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMthroughputCapacity.Config.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMUsedDCH.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF8.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF16.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMUsedDCH.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMthroughputCapacity.Config.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.PCMthroughputCapacity.Oper.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF4.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF16.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMthroughputCapacity.Config.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMthroughputCapacity.Config.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF128.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.NodeBCidCtchCollisionDetected" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMthroughputCapacity.Oper.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF256.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.PCMthroughputCapacity.Oper.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF64.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF4.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF8.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF64.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF128.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMUsedDCH.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMthroughputCapacity.Oper.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF16.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF128.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF256.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF256.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF16.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.SIRperSF.SF4.Max" type="bigint" counter="yes">
-		</field>
-		
-		<field name="VS.TRMSecondCarriersCapacity.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.TRMSecondCarriersCapacity.CumHWcapacity" type="bigint" counter="yes">
-		</field>
-		<field name="VS.TRMSecondCarriersCapacity.CumLicensing" type="bigint" counter="yes">
-		</field>
-		<field name="VS.TRMSecondCarriersCapacity.CumUsed" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RRHSecondCarriersCapacity.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RRHSecondCarriersCapacity.CumHWcapacity" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RRHSecondCarriersCapacity.CumLicensing" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RRHSecondCarriersCapacity.CumUsed" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PAPowerCapacity.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PAPowerCapacity.CumHWcapacity" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PAPowerCapacity.CumLicensing" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PAPowerCapacity.CumUsed" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RRHPowerCapacity.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RRHPowerCapacity.CumHWcapacity" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RRHPowerCapacity.CumLicensing" type="bigint" counter="yes">
-		</field>
-		<field name="VS.RRHPowerCapacity.CumUsed" type="bigint" counter="yes">
-		</field>
-		<field name="VS.R99CECapacity.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.R99CECapacity.CumHWcapacity" type="bigint" counter="yes">
-		</field>
-		<field name="VS.R99CECapacity.CumLicensing" type="bigint" counter="yes">
-		</field>
-		<field name="VS.R99CECapacity.CumUsed" type="bigint" counter="yes">
-		</field>
-		<field name="VS.R99CECapacity.AllocSuccess" type="bigint" counter="yes">
-		</field>
-		<field name="VS.R99CECapacity.AllocLicensingRefusal" type="bigint" counter="yes">
-		</field>
-		<field name="VS.R99CECapacity.AllocHWfail" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTotalFramesReceived.OverIP" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTotalFramesReceived.OverATM" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaFramesWithFrameLoss.OverIP" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaFramesWithFrameLoss.OverATM" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaFramesWithDelayBuildUp.OverIP" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaFramesWithDelayBuildUp.OverATM" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHBLReductionFactor.IuBFactor_Eq100" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge95_Lt100" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge90_Lt95" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge85_Lt90" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge80_Lt85" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge70_Lt80" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge60_Lt70" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge50_Lt60" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge25_Lt50" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHBLReductionFactor.IuBFactor_Lt25" type="bigint" counter="yes">
-		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment</order>
-			<unique>yes</unique>
-		</index>
-		<index name="idx2">
-			<order>RncName</order>
-			<unique>no</unique>
-		</index>
-	</table>
-	<table name="NODEB_AAL2_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
-		<field name="GRANULARITY" type="bigint" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="AtmVcc" type="varchar(10)" counter="no">
-		</field>
-		<field name="Aal2" type="bigint" counter="no">
-		</field>
-		<field name="VS.AAL2NbReceivedCell.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbCPSHecErr" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbSentCell.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.AAL2NbReceivedCell.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbCpsLengthMismatch" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbLostCPS" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbSentCell.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbSTFParityErr" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbSentCell.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbSentCell.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbSequenceNumberErr" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbCPSLengthErr" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbReceivedCell.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbOSFBiggerThan47" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbSentCell.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbReceivedCell.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.AAL2NbReceivedCell.Avg" type="float" counter="yes">
-		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,AtmVcc,Aal2</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_PASSIVECOMPONENTPA_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
-		<field name="GRANULARITY" type="bigint" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="PassiveComponent" type="bigint" counter="no">
-		</field>
-		<field name="PA" type="bigint" counter="no">
-		</field>
-		<field name="VS.PAPwr.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PAPwr.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PAPwr.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.PAPwr.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PAPwr.Cum" type="bigint" counter="yes">
-		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,PassiveComponent,PA</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_HSDPARESOURCE_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
-		<field name="GRANULARITY" type="bigint" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="HSDPAresource" type="bigint" counter="no">
-		</field>
-		<field name="VS.HsdpaUEsPerHBBU.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUEsPerHBBU.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.HsdpaUEsPerHBBU.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUEsPerHBBU.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaUEsPerHBBU.NbEvt" type="bigint" counter="yes">
-		</field>
-		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,HSDPAresource</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_LOCALCELLGROUP_W">
-		<field name="SDATE" type="datetime" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="LocalCellGroup" type="bigint" counter="no">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedUL.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeUL.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedDL.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.CEMAlloc.fail" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeDL.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeDL.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeUL.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeUL.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedDL.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeDL.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAlloc.success" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAlloc.Success" table-alias="VS.CEMAlloc.success" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeUL.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedDL.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedUL.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeUL.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeDL.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.FreeDL.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedDL.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedUL.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedUL.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedUL.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.LocalCellGroupLoad.UsedDL.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHUEsPerLCG.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHUEsPerLCG.NbEvt" type="bigint" counter="yes"> 
-		</field>
-		<field name="VS.eDCHUEsPerLCG.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.eDCHUEsPerLCG.Avg" type="float" counter="yes"> 
-		</field>
-		<field name="VS.HsdpaUEsPerLCG.Cum" type="bigint" counter="yes"> 
-		</field>
-		<field name="VS.HsdpaUEsPerLCG.Min" type="bigint" counter="yes"> 
-		</field>
-		<field name="VS.eDCHUEsPerLCG.Min" type="bigint" counter="yes"> 
-		</field>
-		<field name="VS.HsdpaUEsPerLCG.NbEvt" type="bigint" counter="yes"> 
-		</field>
-		<field name="VS.HsdpaUEsPerLCG.Avg" type="float" counter="yes"> 
-		</field>
-		<field name="VS.HsdpaUEsPerLCG.Max" type="bigint" counter="yes"> 
-		</field>
-		
-		<field name="VS.CEMAlloc.FailSetup" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAlloc.FailReconf" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAlloc.FailSetupLock" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAlloc.FailReconfLock" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessUL.SF4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessUL.SF8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessUL.SF16" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessUL.SF32" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessUL.SF64" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessUL.SF128" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessUL.SF256" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessDL.SF4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessDL.SF8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessDL.SF16" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessDL.SF32" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessDL.SF64" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessDL.SF128" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocSuccessDL.SF256" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedUL.SF4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedUL.SF8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedUL.SF16" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedUL.SF32" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedUL.SF64" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedUL.SF128" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedUL.SF256" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedDL.SF4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedDL.SF8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedDL.SF16" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedDL.SF32" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedDL.SF64" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedDL.SF128" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedDL.SF256" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothUL.SF4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothUL.SF8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothUL.SF16" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothUL.SF32" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothUL.SF64" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothUL.SF128" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothUL.SF256" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothDL.SF4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothDL.SF8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothDL.SF16" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothDL.SF32" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothDL.SF64" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothDL.SF128" type="bigint" counter="yes">
-		</field>
-		<field name="VS.CEMAllocFailedBothDL.SF256" type="bigint" counter="yes">
-		</field>
-
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,LocalCellGroup</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_CCM_W">
-		<field name="SDATE" type="datetime" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="Board" type="bigint" counter="no">
-		</field>
-		<field name="CCM" type="bigint" counter="no">
-		</field>
-		<field name="VS.cpuLoad.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.cpuLoad.Avg" type="float" counter="yes">
-		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,Board,CCM</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_IPINTERFACE_W">
-		<field name="SDATE" type="datetime" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="IPinterface" type="varchar(10)" counter="no">
-		</field>
-		<field name="VS.ifInNUcastPkts" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifInOctets" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifOutOctets" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifInDiscards" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifInErrors" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifOutNUcastPkts" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifOutErrors" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifInUcastPkts" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifInUnknownProtos" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifOutDiscards" type="bigint" counter="yes">
-		</field>
-		<field name="VS.ifOutUcastPkts" type="bigint" counter="yes">
-		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,IPinterface</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_ATM_W">
-		<field name="SDATE" type="datetime" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="PcmLink" type="bigint" counter="no">
-		</field>
-		<field name="Atm" type="bigint" counter="no">
-		</field>
-		<field name="VS.PCMATMnbSentCell.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMATMnbReceivedCell.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMATMnbSentCell.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.PCMATMnbReceivedCell.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMATMnbSentCell.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMATMnbReceivedCell.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMATMnbSentCell.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMATMnbReceivedCell.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.PCMATMnbSentCell.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.PCMATMnbReceivedCell.Max" type="bigint" counter="yes">
-		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,PcmLink,Atm</order>
-			<unique>yes</unique>
-		</index>
-	</table>
-	<table name="NODEB_HSDPASERVICE_W">
-		<field name="SDATE" type="datetime" counter="no">
-		</field>
-		<field name="OMC_ID" type="varchar(50)" counter="no">
-		</field>
-		<field name="NETWORK" type="varchar(10)" counter="no">
-		</field>
-		<field name="NAME" type="varchar(100)" counter="no">
-		</field>
-		<field name="RncName" type="varchar(100)" counter="no">
-		</field>
-		<field name="NodeBEquipment" type="bigint" counter="no">
-		</field>
-		<field name="BtsCell" type="bigint" counter="no">
-		</field>
-		<field name="LAC" type="int" counter="no">
-		</field>
-		<field name="CI" type="int" counter="no">
-		</field>
-		<field name="HSDPAService" type="bigint" counter="no">
-		</field>
-		<field name="VS.HsdpaMACdPDUAckBits.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level27" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level25" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level18" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaDataBufferedNodeB.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitsSchedTotal.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitsMAChs.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSPDSCHCodesPerTTI.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level20" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitsSchedTotal.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSSCCHTxPwr.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level9" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaDataBufferedNodeB.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaDiscMACdPDUsTimerExpiry" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaDiscTransportBlocksOnMaxRetrans" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaMeanNbrRetrans.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.Hsdpa16QAMUsage" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaMeanNbrRetrans.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSSCCHCodesPerTTI.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSPDSCHTxPwr.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level28" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSPDSCHCodesPerTTI.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSPDSCHTxPwr.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level10" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitsSchedTotal.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level0" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaMeanNbrRetrans.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSSCCHTxPwr.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSSCCHTxPwr.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.HsdpaMeanNbrRetrans.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSPDSCHCodesPerTTI.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitsMAChs.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level24" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level7" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSPDSCHTxPwr.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaRxDataBitsMAChs.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaRxDataBitsMAChs.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level5" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaDataBufferedNodeB.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.HsdpaMACdPDUAckBits.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaMeanNbrRetrans.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level21" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaRxDataBitsMAChs.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level2" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaRxDataBitsMAChs.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level8" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level23" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level6" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSSCCHCodesPerTTI.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSSCCHTxPwr.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaNbrACKRcv" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaNbrNACKRcv" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level3" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level11" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitsMAChs.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSPDSCHTxPwr.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level14" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level13" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitsSchedTotal.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTTIsUsed" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level29" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level4" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitsMAChs.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitsMAChs.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level12" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level16" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level22" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level15" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaTxDataBitsSchedTotal.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaDataBufferedNodeB.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSSCCHCodesPerTTI.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level19" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSSCCHCodesPerTTI.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaNbrDTX" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaPAOverload" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSSCCHTxPwr.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaRxDataBitsMAChs.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaMACdPDUAckBits.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.notDecoded" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level1" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level17" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaMACdPDUAckBits.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSSCCHCodesPerTTI.NbEvt" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaMACdPDUAckBits.Max" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSPDSCHTxPwr.Min" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSPDSCHCodesPerTTI.Cum" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaHSPDSCHCodesPerTTI.Avg" type="float" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level30" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaReceivedCQI.level26" type="bigint" counter="yes">
-		</field>
-		<field name="VS.HsdpaDataBufferedNodeB.Min" type="bigint" counter="yes">
-		</field>
-		
 		<field name="VS.HsdpaTTIperUEcat.UEcat1" type="bigint" counter="yes">
 		</field>
 		<field name="VS.HsdpaTTIperUEcat.UEcat2" type="bigint" counter="yes">
@@ -4905,7 +2979,6 @@
 		</field>
 		<field name="VS.HsdpaGbrSatisfiedFlows.NbPeriods" type="bigint" counter="yes">
 		</field>
-		
 		<field name="VS.HsdpaReceivedCQI.Level0" table-alias="VS.HsdpaReceivedCQI.level0" type="bigint" counter="yes">
 		</field>
 		<field name="VS.HsdpaReceivedCQI.Level1" table-alias="VS.HsdpaReceivedCQI.level1" type="bigint" counter="yes">
@@ -4970,13 +3043,17 @@
 		</field>
 		<field name="VS.HsdpaReceivedCQI.NotDecoded" table-alias="VS.HsdpaReceivedCQI.notDecoded" type="bigint" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,BtsCell,HSDPAService</order>
+		<index name="hsdserv">
+			<order>NAME,NodeBEquipment,BtsCell,HSDPAService,OMC_ID,IMPORTDATE</order>
+			<unique>yes</unique>
+		</index>
+		<index name="lacci">
+			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
-	<table name="NODEB_HSUPASERVICE_W">
-		<field name="SDATE" type="datetime" counter="no">
+	<table name="NODEB_HSUPASERVICE_D">
+		<field name="IMPORTDATE" type="date" counter="no">
 		</field>
 		<field name="GRANULARITY" type="bigint" counter="no">
 		</field>
@@ -5068,8 +3145,6 @@
     </field>
     <field name="VS.eDCHstatus.Min" type="bigint" counter="yes">
     </field>
-    
-    
 		<field name="VS.eDCHactiveUsers.2ms_users.Cum" type="bigint" counter="yes">
 		</field>
 		<field name="VS.eDCHactiveUsers.2ms_users.Avg" type="bigint" counter="yes">
@@ -5122,17 +3197,19 @@
 		</field>
 		<field name="VS.eDCHCommonChannelUsage.eRGCHNonServing.Min" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,BtsCell,HSUPAService</order>
+		<index name="hsuserv">
+			<order>NAME,NodeBEquipment,BtsCell,HSUPAService,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 		<index name="lacci">
-			<order>LAC,CI,SDATE</order>
+			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
-	<table name="NODEB_TRM_W">
-		<field name="SDATE" type="datetime" counter="no">
+	<table name="NODEB_TRM_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
 		</field>
 		<field name="OMC_ID" type="varchar(50)" counter="no">
 		</field>
@@ -5158,13 +3235,15 @@
 		</field>
 		<field name="VS.cpuLoad.Avg" type="float" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,Board,TRM</order>
+		<index name="trm">
+			<order>NAME,NodeBEquipment,Board,TRM,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
-	<table name="NODEB_BTSCELL_W">
-		<field name="SDATE" type="datetime" counter="no">
+	<table name="NODEB_BTSCELL_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
 		</field>
 		<field name="OMC_ID" type="varchar(50)" counter="no">
 		</field>
@@ -5258,7 +3337,6 @@
 		</field>
 		<field name="VS.RadioTxCarrierPwr.Used.Cum" type="bigint" counter="yes">
 		</field>
-		
 		<field name="VS.CellULload.Total.Cum" type="bigint" counter="yes">
 		</field>
 		<field name="VS.CellULload.Total.Avg" type="bigint" counter="yes">
@@ -5279,17 +3357,19 @@
 		</field>
 		<field name="VS.CellULload.eDCH.Min" type="bigint" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,BtsCell</order>
+		<index name="btscell">
+			<order>NAME,NodeBEquipment,BtsCell,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
-		<index name="laci">
-			<order>LAC,CI</order>
-			<unique>no</unique>
+		<index name="unlaci">
+			<order>LAC,CI,IMPORTDATE</order>
+			<unique>yes</unique>
 		</index>
 	</table>
-	<table name="NODEB_PCMLINK_W">
-		<field name="SDATE" type="datetime" counter="no">
+	<table name="NODEB_PCMLINK_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
 		</field>
 		<field name="OMC_ID" type="varchar(50)" counter="no">
 		</field>
@@ -5353,13 +3433,19 @@
 		</field>
 		<field name="VS.imaLinkNeUnavailSecs" type="bigint" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,PcmLink</order>
+		<index name="pcm">
+			<order>NAME,NodeBEquipment,PcmLink,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
+		<index name="idx3">
+			<order>NAME,RncName,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
 	</table>
-	<table name="NODEB_CEM_W">
-		<field name="SDATE" type="datetime" counter="no">
+	<table name="NODEB_CEM_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
 		</field>
 		<field name="OMC_ID" type="varchar(50)" counter="no">
 		</field>
@@ -5385,7 +3471,6 @@
 		</field>
 		<field name="VS.cpuLoad.Avg" type="float" counter="yes">
 		</field>
-		
 		<field name="VS.HsdpaUsersCapacity.NbEvt" type="bigint" counter="yes">
 		</field>
 		<field name="VS.HsdpaUsersCapacity.CumHWcapacity" type="bigint" counter="yes">
@@ -5442,13 +3527,19 @@
 		</field>
 		<field name="VS.eDCHThroughputCapacity.AllocHWfail" type="bigint" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,Board,CEM</order>
+		<index name="cem">
+			<order>NAME,NodeBEquipment,Board,CEM,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
+		<index name="idx3">
+			<order>NAME,IMPORTDATE,RncName</order>
+			<unique>no</unique>
+		</index>
 	</table>
-	<table name="NODEB_AAL5_W">
-		<field name="SDATE" type="datetime" counter="no">
+	<table name="NODEB_AAL5_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
 		</field>
 		<field name="OMC_ID" type="varchar(50)" counter="no">
 		</field>
@@ -5492,13 +3583,15 @@
 		</field>
 		<field name="VS.AAL5NbReceivedCell.Avg" type="float" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,AtmVcc,Aal5</order>
+		<index name="aal5">
+			<order>NAME,NodeBEquipment,AtmVcc,Aal5,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
-	<table name="NODEB_IMAGROUP_W">
-		<field name="SDATE" type="datetime" counter="no">
+	<table name="NODEB_IMAGROUP_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
 		</field>
 		<field name="OMC_ID" type="varchar(50)" counter="no">
 		</field>
@@ -5510,7 +3603,7 @@
 		</field>
 		<field name="NodeBEquipment" type="bigint" counter="no">
 		</field>
-		<field name="IMAGroup" type="bigint" counter="no">
+		<field name="IMAGroup" type="varchar(5)" counter="no">
 		</field>
 		<field name="VS.imaGroupNbReceivedCell.Avg" type="float" counter="yes">
 		</field>
@@ -5614,13 +3707,15 @@
 		</field>
 		<field name="VS.HsdpaUEsPerHBBU.Cum" type="bigint" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,IMAGroup</order>
+		<index name="idx1">
+			<order>NAME,NodeBEquipment,IMAGroup,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
-	<table name="NODEB_NODEBEQUIPMENT_W">
-		<field name="SDATE" type="datetime" counter="no">
+	<table name="NODEB_NODEBEQUIPMENT_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
 		</field>
 		<field name="OMC_ID" type="varchar(50)" counter="no">
 		</field>
@@ -5736,13 +3831,97 @@
 		</field>
 		<field name="VS.SIRperSF.SF4.Max" type="bigint" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment</order>
+		<field name="VS.TRMSecondCarriersCapacity.NbEvt" type="bigint" counter="yes">
+		</field>
+		<field name="VS.TRMSecondCarriersCapacity.CumHWcapacity" type="bigint" counter="yes">
+		</field>
+		<field name="VS.TRMSecondCarriersCapacity.CumLicensing" type="bigint" counter="yes">
+		</field>
+		<field name="VS.TRMSecondCarriersCapacity.CumUsed" type="bigint" counter="yes">
+		</field>
+		<field name="VS.RRHSecondCarriersCapacity.NbEvt" type="bigint" counter="yes">
+		</field>
+		<field name="VS.RRHSecondCarriersCapacity.CumHWcapacity" type="bigint" counter="yes">
+		</field>
+		<field name="VS.RRHSecondCarriersCapacity.CumLicensing" type="bigint" counter="yes">
+		</field>
+		<field name="VS.RRHSecondCarriersCapacity.CumUsed" type="bigint" counter="yes">
+		</field>
+		<field name="VS.PAPowerCapacity.NbEvt" type="bigint" counter="yes">
+		</field>
+		<field name="VS.PAPowerCapacity.CumHWcapacity" type="bigint" counter="yes">
+		</field>
+		<field name="VS.PAPowerCapacity.CumLicensing" type="bigint" counter="yes">
+		</field>
+		<field name="VS.PAPowerCapacity.CumUsed" type="bigint" counter="yes">
+		</field>
+		<field name="VS.RRHPowerCapacity.NbEvt" type="bigint" counter="yes">
+		</field>
+		<field name="VS.RRHPowerCapacity.CumHWcapacity" type="bigint" counter="yes">
+		</field>
+		<field name="VS.RRHPowerCapacity.CumLicensing" type="bigint" counter="yes">
+		</field>
+		<field name="VS.RRHPowerCapacity.CumUsed" type="bigint" counter="yes">
+		</field>
+		<field name="VS.R99CECapacity.NbEvt" type="bigint" counter="yes">
+		</field>
+		<field name="VS.R99CECapacity.CumHWcapacity" type="bigint" counter="yes">
+		</field>
+		<field name="VS.R99CECapacity.CumLicensing" type="bigint" counter="yes">
+		</field>
+		<field name="VS.R99CECapacity.CumUsed" type="bigint" counter="yes">
+		</field>
+		<field name="VS.R99CECapacity.AllocSuccess" type="bigint" counter="yes">
+		</field>
+		<field name="VS.R99CECapacity.AllocLicensingRefusal" type="bigint" counter="yes">
+		</field>
+		<field name="VS.R99CECapacity.AllocHWfail" type="bigint" counter="yes">
+		</field>
+		<field name="VS.HsdpaTotalFramesReceived.OverIP" type="bigint" counter="yes">
+		</field>
+		<field name="VS.HsdpaTotalFramesReceived.OverATM" type="bigint" counter="yes">
+		</field>
+		<field name="VS.HsdpaFramesWithFrameLoss.OverIP" type="bigint" counter="yes">
+		</field>
+		<field name="VS.HsdpaFramesWithFrameLoss.OverATM" type="bigint" counter="yes">
+		</field>
+		<field name="VS.HsdpaFramesWithDelayBuildUp.OverIP" type="bigint" counter="yes">
+		</field>
+		<field name="VS.HsdpaFramesWithDelayBuildUp.OverATM" type="bigint" counter="yes">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Eq100" type="bigint" counter="yes">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge95_Lt100" type="bigint" counter="yes">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge90_Lt95" type="bigint" counter="yes">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge85_Lt90" type="bigint" counter="yes">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge80_Lt85" type="bigint" counter="yes">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge70_Lt80" type="bigint" counter="yes">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge60_Lt70" type="bigint" counter="yes">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge50_Lt60" type="bigint" counter="yes">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Ge25_Lt50" type="bigint" counter="yes">
+		</field>
+		<field name="VS.eDCHBLReductionFactor.IuBFactor_Lt25" type="bigint" counter="yes">
+		</field>
+		<index name="equip">
+			<order>NAME,NodeBEquipment,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
+		<index name="idx2">
+			<order>RncName</order>
+			<unique>no</unique>
+		</index>
 	</table>
-	<table name="NODEB_AAL2_W">
-		<field name="SDATE" type="datetime" counter="no">
+	<table name="NODEB_AAL2_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
 		</field>
 		<field name="OMC_ID" type="varchar(50)" counter="no">
 		</field>
@@ -5792,13 +3971,15 @@
 		</field>
 		<field name="VS.AAL2NbReceivedCell.Avg" type="float" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,AtmVcc,Aal2</order>
+		<index name="aal2">
+			<order>NAME,NodeBEquipment,AtmVcc,Aal2,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
-	<table name="NODEB_PASSIVECOMPONENTPA_W">
-		<field name="SDATE" type="datetime" counter="no">
+	<table name="NODEB_PASSIVECOMPONENTPA_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
 		</field>
 		<field name="OMC_ID" type="varchar(50)" counter="no">
 		</field>
@@ -5824,13 +4005,15 @@
 		</field>
 		<field name="VS.PAPwr.Cum" type="bigint" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,PassiveComponent,PA</order>
+		<index name="pa">
+			<order>NAME,NodeBEquipment,PassiveComponent,PA,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
-	<table name="NODEB_HSDPARESOURCE_W">
-		<field name="SDATE" type="datetime" counter="no">
+	<table name="NODEB_HSDPARESOURCE_D">
+		<field name="IMPORTDATE" type="date" counter="no">
+		</field>
+		<field name="GRANULARITY" type="bigint" counter="no">
 		</field>
 		<field name="OMC_ID" type="varchar(50)" counter="no">
 		</field>
@@ -5854,8 +4037,8 @@
 		</field>
 		<field name="VS.HsdpaUEsPerHBBU.NbEvt" type="bigint" counter="yes">
 		</field>
-		<index name="idx2">
-			<order>NAME,SDATE,OMC_ID,NodeBEquipment,HSDPAresource</order>
+		<index name="hsdres">
+			<order>NAME,NodeBEquipment,HSDPAresource,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -5922,13 +4105,9 @@
 		</field>
 		<field name="VS.HsdpaModulationType.CumUsersQPSK" type="bigint" counter="yes">
 		</field>
-		<index name="idx1">
-			<order>NAME,STARTDATE,STARTTIME,OMC_ID,NodeBEquipment,BtsCell,HSDPAService</order>
+		<index name="hsdser">
+			<order>NAME,NodeBEquipment,BtsCell,HSDPAService,OMC_ID,SDATETIME</order>
 			<unique>no</unique>
-		</index>
-		<index name="idx2">
-			<order>NAME,SDATETIME,OMC_ID,NodeBEquipment,BtsCell,HSDPAService</order>
-			<unique>yes</unique>
 		</index>
 		<index name="lacci">
 			<order>LAC,CI,SDATETIME</order>
@@ -5989,7 +4168,7 @@
 		<field name="VS.HsdpaModulationType.CumUsersQPSK" type="bigint" counter="yes">
 		</field>
 		<index name="idx1">
-			<order>NAME,IMPORTDATE,OMC_ID,NodeBEquipment,BtsCell,HSDPAService</order>
+			<order>NAME,NodeBEquipment,BtsCell,HSDPAService,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
 		<index name="lacci">
