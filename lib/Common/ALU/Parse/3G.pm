@@ -52,14 +52,15 @@ sub parse_3GPM {
 	my %info = ();
 	my %pm = ();
 	my %counters = ();
-	 
+	my $splitter = $^O =~ /win/i ? quotemeta('\\') : '/'; 
 	my $tmp_dir = '../tmp/';
 	make_path($tmp_dir, { verbose => 1 }) unless -e $tmp_dir;
 	
-	my @file = split('/',$f);
+	my @file = split($splitter,$f);
 	my $outfile = $file[$#file].'.xml';
-	gunzip $f => $tmp_dir.$outfile unless -e $outfile;
 	
+	gunzip $f => $tmp_dir.$outfile unless -e $outfile;
+	die "Parsing cannot continue because the temporary file $tmp_dir.$outfile could not be created. Please complain!\n" unless -e $tmp_dir.$outfile;
 	my $bare = new XML::Bare( file => $tmp_dir.$outfile );
 	my $xml = $bare->parse();
 	
