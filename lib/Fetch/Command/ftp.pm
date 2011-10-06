@@ -13,6 +13,7 @@ use Fcntl qw(:flock);
 use Fetch -command;
 use File::Path qw(make_path);
 use Net::FTP;
+use Time::Local qw(timelocal);
 
 my @month = qw/Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec/;
 my %month = map {$month[$_] => $_+1 } (0..$#month);
@@ -46,6 +47,7 @@ sub validate_args {
 	
 	$self->usage_error("No arguments allowed") if @$args;
 	$opt->{log} = $1 if $opt->{log} =~ /(.*)\/$/;	#remove trailing slash
+	$opt->{where} .= '/' unless $opt->{where} =~ /\/$/;	#in case no ending backslash was provided
 	make_path($opt->{dir},$opt->{log},$opt->{dir}.'/'.$opt->{name}, { verbose => 1 });
 }
 
