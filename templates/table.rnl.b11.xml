@@ -806,7 +806,7 @@
 		<field name="OMC_ID" type="varchar(50)" source="import"></field>
 		<field name="IMPORTDATE" type="date" source="import"></field>
 		<field name="REGION" type="varchar(50)"></field>
-		<field name="RnlAlcatelBSCInstanceIdentifier" type="varchar(255)" source="import"></field>
+		<field name="RnlAlcatelBSCInstanceIdentifier" type="varchar(50)" source="import"></field>
 		<field name="UserLabel" type="varchar(255)" source="import"></field>
 		<field name="AGprsAterUsageThreshold" type="int" source="import"></field> 
 		<field name="AGprsBestEffortPriority" type="int" source="import"></field> 
@@ -1055,38 +1055,6 @@
 	  <field name="OperationalState" type="varchar(100)" source="import"/>
 	  <field name="PREFERRED_BAND" type="varchar(100)" source="import"/>
 	  <field name="ProceduralStatus" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_1" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_10" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_11" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_12" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_13" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_14" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_15" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_16" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_2" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_3" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_4" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_5" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_6" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_7" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_8" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_9" type="text" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_1" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_10" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_11" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_12" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_13" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_14" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_15" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_16" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_2" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_3" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_4" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_5" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_6" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_7" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_8" type="varchar(100)" source="import"/>
-	  <field name="RMS_TEMPLATE_NAME_9" type="varchar(100)" source="import"/>
 	  <field name="ROT" type="varchar(100)" source="import"/>
 	  <field name="RelatedEMLObject" type="varchar(100)" source="import"/>
 	  <field name="ReplacementJobStatus" type="varchar(100)" source="import"/>

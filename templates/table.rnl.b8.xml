@@ -1,4 +1,4 @@
-<tables>
+﻿<tables>
 	<table name="Cell">
 		<field name="OMC_ID" type="varchar(50)">
 		</field>
@@ -215,10 +215,6 @@
 		<field name="IMPORTDATE" type="date" source="import">
 		</field>
 		<field name="RnlAlcatelBSCInstanceIdentifier" type="varchar(255)" source="import">
-		</field>
-		<field name="RMS_TEMPLATE_1" type="text" source="import">
-		</field>
-		<field name="RMS_TEMPLATE_NAME_1" type="varchar(50)" source="import">
 		</field>
 		<field name="UserLabel" type="varchar(255)" source="import">
 		</field>
