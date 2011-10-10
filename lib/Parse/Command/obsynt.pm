@@ -70,6 +70,7 @@ sub validate_args {
 	for (@$args) {
 		die "The file $_ does not exist!\n" unless -e $_;	
 	}
+	
 }
 
 sub execute {
@@ -78,7 +79,7 @@ sub execute {
 
 		my $sections = get_sections($opt->{ssep},$infile);
 		my $header = parse_header($sections->[0],$opt->{rsep}); #assume first section is header, naughty naughty
-		
+	
 		for (1..$#$sections) {
 			my ($table,$cols,$data) = parse_section($sections->[$_],$opt->{rsep},$opt->{fsep},$opt->{classifiers});
 			if ($table) {
