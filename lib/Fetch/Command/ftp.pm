@@ -72,9 +72,9 @@ sub ftp_files {
 	my $count = 0;
 	find_recursively($ftp,\%dir,$opt->{where},$opt->{what},$opt->{maxdays});
 	
-	#print Dumper(\%dir);
-	foreach my $dir (keys %dir) {
+	foreach my $dir (sort keys %dir) {
 		$ftp->cwd($dir);
+		(my $prefix = $dir) =~ s/\//_/g; 	#guarantee unique file name if two files have same name
 		foreach my $file (keys %{$dir{$dir}}) {
 			my $fl = $dir{$dir}{$file};
 			my ($attr,$sf) = ($fl =~ /^(.{15})(.*?)$/);
@@ -86,8 +86,8 @@ sub ftp_files {
 			my $lf = $file;
 			$lf =~ s/\:/\_/g if ($^O =~ /win/i);		#remove characters that are not allowed in a windows filename
 			$lf =~ s/\s/\_/g;
-			print "GET: $file\n";
-			my $success = $ftp->get($file,$opt->{dir}.'/'.$opt->{name}.'/'.$lf);
+			print "GET: $file from $dir\n";
+			my $success = $ftp->get($file,$opt->{dir}.'/'.$opt->{name}.'/'.$prefix.$lf);
 			log_ftp($opt,$fl) if $success;
 		}
 	}
