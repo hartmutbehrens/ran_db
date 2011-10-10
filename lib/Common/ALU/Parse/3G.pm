@@ -9,6 +9,7 @@ use strict;
 use warnings;
 #modules
 use Common::Date;
+use Common::File;
 use File::Path qw(make_path);
 use IO::Uncompress::Gunzip qw(gunzip $GunzipError);
 use XML::Bare;
@@ -52,11 +53,11 @@ sub parse_3GPM {
 	my %info = ();
 	my %pm = ();
 	my %counters = ();
-	my $splitter = $^O =~ /win/i ? quotemeta('\\') : '/'; 
+	#my $splitter = $^O =~ /win/i ? quotemeta('\\') : '/'; 
 	my $tmp_dir = '../tmp/';
 	make_path($tmp_dir, { verbose => 1 }) unless -e $tmp_dir;
 	
-	my @file = split($splitter,$f);
+	my @file = Common::File::split_path($f);
 	my $outfile = $file[$#file].'.xml';
 	
 	gunzip $f => $tmp_dir.$outfile unless -e $outfile;
