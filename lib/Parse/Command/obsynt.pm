@@ -33,7 +33,7 @@ sub opt_spec {
 	[ "delete|D",	"Delete file(s) after parsing"],
 	[ "classifiers|c=s@",	"section classifiers [table,unique_col1,unique_col2,..]. Repeat switch and argument to add more classifiers.", 
 			{ default => classifiers() } ],
-	[ "remap|m=s@",	"remap column names [table,old_col,new_col]. Repeat switch and argument to add more column remappings.", 
+	[ "remap|m=s@",	"change column names [table,old_col_name,new_col_name]. Repeat switch and argument to add more column name changes.", 
 			{ default => remaps() } ],
   );
 }
