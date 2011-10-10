@@ -7,6 +7,7 @@ Parse::Command::obsynt;
 use strict;
 use warnings;
 #modules
+use Data::Dumper;
 use Parse -command;
 
 sub abstract {
@@ -18,24 +19,48 @@ sub usage_desc {
 }
 
 sub opt_spec {
+	my ($ssep,$rsep,$fsep) = ("\n\n\n","\n","\t");
+
 	return (
-	[ "ssep|s=s",	"input section separator", { default => "\n\n\n" }],
-	[ "rsep|r=s",	"input record separator", { default => "\n" }],
-	[ "fsep|f=s",	"input field separator", { default => "\t" }],
+	[ "ssep|s=s",	'input section separator (default \n\n\n)', { default => $ssep }],
+	[ "rsep|r=s",	'input record separator (default \n)', { default => $rsep }],
+	[ "fsep|f=s",	'input field separator (default \t)', { default => $fsep }],
 	[ "ofsep|of=s",	"output field separator", { default => ";" }],
-	[ "outdir|d=s",	"directory to store parsed csv file(s) in", { default => "" }],
+	[ "outdir|d=s",	"directory to store parsed csv file(s) in", { default => "../csvload" }],
 	[ "omc|o=s",	"OMC-R name", { required => 1 }],
 	[ "type|t=s",	"PM file type being parsed", { required => 1 }],
 	[ "classifiers|c=s@",	"section classifiers [table,unique_col1,unique_col2,..]. Repeat switch and argument to add more classifiers.", 
-			{ default => [ 'T110_TRX_H,TRXID','T110_SECTOR_H,MC01,MC02','T110_LINK_H,LINK_ID','T110_BSC_H,MC19,MC35'] } ],
+			{ default => classifiers() } ],
 	[ "remap|m=s@",	"remap column names [table,old_col,new_col]. Repeat switch and argument to add more column remappings.", 
-			{ default => [ 'T110_TRX_H,BTS_INDEX,BTS_ID','T110_TRX_H,BTS_SECTOR,SECTOR','T110_TRX_H,CELL_CI,CI','T110_TRX_H,CELL_LAC,LAC','T110_TRX_H,TRXID,TRX',
-							'T110_SECTOR_H,BTS_INDEX,BTS_ID','T110_SECTOR_H,BTS_SECTOR,SECTOR','T110_SECTOR_H,CELL_CI,CI','T110_SECTOR_H,CELL_LAC,LAC'] } ],
+			{ default => remaps() } ],
   );
 }
 
+sub classifiers {
+	my @classifiers;
+	push @classifiers,$_ for t110_classifier();	#add more classifiers here - (more elegant solution required)
+	return \@classifiers
+}
+
+sub remaps {
+	my @remap;
+	push @remap,$_ for t110_remap(); #add more remaps here - (more elegant solution required)
+	return \@remap;
+}
+
+sub t110_classifier {
+	return ('T110_TRX_H,TRXID','T110_SECTOR_H,MC01,MC02','T110_LINK_H,LINK_ID','T110_BSC_H,MC19,MC35','T110_MSC_H,MSC_NAME,MSC_SBL,MC1101');
+}
+
+sub t110_remap {
+	return ('T110_TRX_H,BTS_INDEX,BTS_ID','T110_TRX_H,BTS_SECTOR,SECTOR','T110_TRX_H,CELL_CI,CI','T110_TRX_H,CELL_LAC,LAC','T110_TRX_H,TRXID,TRX',
+				'T110_SECTOR_H,BTS_INDEX,BTS_ID','T110_SECTOR_H,BTS_SECTOR,SECTOR','T110_SECTOR_H,CELL_CI,CI','T110_SECTOR_H,CELL_LAC,LAC');
+}
+
 sub validate_args {
-	my ($self, $opt, $args) = @_;	
+	my ($self, $opt, $args) = @_;
+	#print Dumper($opt);	
+	#exit;
 	$self->usage_error("At least one file name is required") unless @$args;
 	for (@$args) {
 		die "The file $_ does not exist!\n" unless -e $_;	
@@ -44,8 +69,8 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-	for (@$args) {
-		my $sections = get_sections($opt->{ssep},$_);
+	for my $infile (@$args) {
+		my $sections = get_sections($opt->{ssep},$infile);
 		my ($bsc,$release,$sdt,$edt,$bsc_id) = parse_header($sections->[0],$opt->{rsep}); #assume first section is header, naughty naughty
 		
 		for (1..$#$sections) {
@@ -53,7 +78,12 @@ sub execute {
 			if ($table) {
 				remap_cols($opt->{remap},$table,$cols);	#make remapping of column names possiblem, to conform to possibly already existing naming conventions
 				counter_ll_lc($cols); #trailing letters of counters need to be lowercase
-				to_csv($opt->{outdir},$opt->{ofsep},$opt->{omc},$opt->{type},$bsc,$sdt,$edt,$bsc_id,$table,$cols,$data);	
+				if (scalar @$data > 0) {
+					to_csv($opt->{outdir},$opt->{ofsep},$opt->{omc},$opt->{type},$bsc,$sdt,$edt,$bsc_id,$table,$cols,$data);
+				}
+				else {
+					warn "No data was found in $infile for the section belonging to table $table\n";
+				}	
 			}	
 		}
 	}		
@@ -65,7 +95,8 @@ sub to_csv {
 	my ($edate,$etime) = split(' ',$edt);
 	my $file = join('.',$omc,$type,$table,$bsc,$sdt,$edt,'csv');
 	$file =~ s/\:/_/g;	#windows does not like : in file name
-	open my $out,'>',$outdir.$file || die "Could not open $outdir.$file for writing due to error: $!\n";
+	print "Writing output to $outdir/$file\n";
+	open my $out,'>',"$outdir/$file" || die "Could not open $outdir/$file for writing due to error: $!\n";
 	print $out join($sep,qw(OMC_ID BSC_NAME BSC_ID STARTDATE STARTTIME ENDDATE ENDTIME SDATE),@$cols ),"\n";
 	for my $vals (@$data) {
 		print $out join($sep,$omc,$bsc,$bsc_id,$sdate,$stime,$edate,$etime,$sdt,@$vals ),"\n";	
