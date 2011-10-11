@@ -86,8 +86,8 @@ sub execute {
 sub activate_plugin {
 	my ($plugin,$opt,$header) = @_;
 	$plugin->process_header($header) if $plugin->can('process_header');
-	$plugin->add_classifiers($opt) if $plugin->can('add_classifiers');
-	$plugin->add_remaps($opt) if $plugin->can('add_remaps');
+	$plugin->add_classifiers($opt,$header) if $plugin->can('add_classifiers');
+	$plugin->add_remaps($opt,$header) if $plugin->can('add_remaps');
 }
 
 sub to_csv {
