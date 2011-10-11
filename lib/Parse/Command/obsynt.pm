@@ -40,10 +40,6 @@ sub opt_spec {
   );
 }
 
-sub gpm_classifier {
-	return ('GPM_BEARERCHANNEL_H,BEARER,P33','GPM_PVC_H,PVC,P23','GPM_LAPD_H,GSL,P2A','GPM_CELL_H,CI,LAC,P38B','GPM_BTS_H,BTS_NB_EXTRA_ABIS_TS,P472');
-}
-
 sub validate_args {
 	my ($self, $opt, $args) = @_;
 	
