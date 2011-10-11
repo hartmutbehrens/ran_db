@@ -21,7 +21,7 @@ my @month = qw/Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec/;
 my %month = map {$month[$_] => $_+1 } (0..$#month);
 
 sub abstract {
-	return 'copy data from source';
+	return 'copy data and log';
 }
 
 sub usage_desc {
@@ -75,7 +75,6 @@ sub copy_files {
 			}
 			else {
 				my ($name,$path) = fileparse($file);
-				
 				(my $prefix = $path) =~ s/\W/_/g; 	#guarantee unique file name if two files have same name
 				my $outfile = $opt->{dir}.'/'.$prefix.$name;
 				print "Copy: $file to $outfile\n";
