@@ -9,6 +9,10 @@ use warnings;
 #modules
 use Parse -command;
 
+sub abstract {
+	return '(internal - cannot be used from command line)';
+}
+
 sub new {
 	my $class = shift;
 	return bless {}, $class;
@@ -37,7 +41,7 @@ sub add_classifiers {
 }
 
 sub classify_7 {
-	return ('GPM_BEARERCHANNEL_H,BEARER,P33','GPM_PVC_H,PVC,P23','GPM_LAPD_H,GSL,P2A','GPM_CELL_H,CI,LAC,P38B','GPM_BTS_H,BTS_NB_EXTRA_ABIS_TS,P472','GPM_BSC_H,BSS,FABRIC,P392A,P392B'); 
+	return ('GPM_BEARERCHANNEL_H,BEARER,P33','GPM_PVC_H,PVC,P23','GPM_LAPD_H,GSL,P2A','GPM_CELL_H,CI,LAC,P38B','GPM_BTS_H,BTS_NB_EXTRA_ABIS_TS,P472','GPM_BSC_H,BSS,FABRIC,P392A,P392B','GPM_GBIP_H,SGSNIPENDPOINT,SGSN_IP_ADDRESS'); 
 }
 
 sub generic {
