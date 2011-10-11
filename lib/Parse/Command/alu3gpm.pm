@@ -1,7 +1,7 @@
 package Parse::Command::alu3gpm;
 
 =head1 NAME
-Parse::Command::alu3gpm;
+Parse::Command::alu3gpm
 =cut
 #pragmas
 use strict;
