@@ -9,7 +9,9 @@ use warnings;
 #modules
 use Common::File;
 use Data::Dumper;
+use Module::Pluggable;
 use Parse -command;
+
 
 sub abstract {
 	return 'parse Obsynt output from Alcatel-Lucent OMC-R into csv files';
@@ -29,38 +31,17 @@ sub opt_spec {
 	[ "ofsep|of=s",	"output field separator", { default => ";" }],
 	[ "outdir|d=s",	"directory to store parsed csv file(s) in", { default => "../csvload" }],
 	[ "omc|o=s",	"OMC-R name", { required => 1 }],
-	[ "type|t=s",	"PM file type being parsed", { required => 1 }],
+	[ "type|t=s",	"PM file type being parsed", { default => 'unknown', hidden => 1 }],
 	[ "delete|D",	"Delete file(s) after parsing"],
 	[ "classifiers|c=s@",	"section classifiers [table,unique_col1,unique_col2,..]. Repeat switch and argument to add more classifiers.", 
-			{ default => classifiers() } ],
+			{ default => [] } ],
 	[ "remap|m=s@",	"change column names [table,old_col_name,new_col_name]. Repeat switch and argument to add more column name changes.", 
-			{ default => remaps() } ],
+			{ default => [] } ],
   );
-}
-
-sub classifiers {
-	my @classifiers;
-	push @classifiers,$_ for t110_classifier(),gpm_classifier();	#add more classifiers here - (more elegant solution required)
-	return \@classifiers
-}
-
-sub remaps {
-	my @remap;
-	push @remap,$_ for t110_remap(); #add more remaps here - (more elegant solution required)
-	return \@remap;
-}
-
-sub t110_classifier {
-	return ('T110_TRX_H,TRXID','T110_SECTOR_H,MC01,MC02','T110_LINK_H,LINK_ID','T110_BSC_H,MC19,MC35','T110_MSC_H,MSC_NAME,MSC_SBL,MC1101');
 }
 
 sub gpm_classifier {
 	return ('GPM_BEARERCHANNEL_H,BEARER,P33','GPM_PVC_H,PVC,P23','GPM_LAPD_H,GSL,P2A','GPM_CELL_H,CI,LAC,P38B','GPM_BTS_H,BTS_NB_EXTRA_ABIS_TS,P472');
-}
-
-sub t110_remap {
-	return ('T110_TRX_H,BTS_INDEX,BTS_ID','T110_TRX_H,BTS_SECTOR,SECTOR','T110_TRX_H,CELL_CI,CI','T110_TRX_H,CELL_LAC,LAC','T110_TRX_H,TRXID,TRX',
-				'T110_SECTOR_H,BTS_INDEX,BTS_ID','T110_SECTOR_H,BTS_SECTOR,SECTOR','T110_SECTOR_H,CELL_CI,CI','T110_SECTOR_H,CELL_LAC,LAC');
 }
 
 sub validate_args {
@@ -70,16 +51,18 @@ sub validate_args {
 	for (@$args) {
 		die "The file $_ does not exist!\n" unless -e $_;	
 	}
-	
 }
 
 sub execute {
 	my ($self, $opt, $args) = @_;
 	for my $infile (@$args) {
-
 		my $sections = get_sections($opt->{ssep},$infile);
 		my $header = parse_header($sections->[0],$opt->{rsep}); #assume first section is header, naughty naughty
-	
+		
+		for my $plugin (plugins()) {
+			activate_plugin($plugin,$opt,$header) if ($plugin->can('recognize') && $plugin->recognize($header));
+		}
+		
 		for (1..$#$sections) {
 			my ($table,$cols,$data) = parse_section($sections->[$_],$opt->{rsep},$opt->{fsep},$opt->{classifiers});
 			if ($table) {
@@ -98,6 +81,13 @@ sub execute {
 			unlink($infile);
 		}
 	}		
+}
+
+sub activate_plugin {
+	my ($plugin,$opt,$header) = @_;
+	$plugin->process_header($header) if $plugin->can('process_header');
+	$plugin->add_classifiers($opt) if $plugin->can('add_classifiers');
+	$plugin->add_remaps($opt) if $plugin->can('add_remaps');
 }
 
 sub to_csv {
@@ -201,7 +191,7 @@ sub has_all_cols {
 	return $rv;
 }
 
-#single Obsynt T110 files are not expected to be very big, so go for the risky approach of reading the whole file into memory and then splitting into fragments
+#single Obsynt files are not expected to be very big, so go for the "risky" approach of reading the whole file into memory and then splitting into fragments
 sub get_sections {
 	my ($sep,$file) = @_;
 	open my $in ,'<', $file || die "Could not open input file $file due to error: $! \n";
