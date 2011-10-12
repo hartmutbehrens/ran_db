@@ -9,17 +9,18 @@ Common::Lock;
 use strict;
 use warnings;
 #modules
-use Fcntl qw(:flock);
+use Fcntl qw(LOCK_EX LOCK_NB);
+use File::NFSLock;
 
 sub get_lock {
-	my $name = shift;	
-	open my $fhpid, '>', '.'.$name || die "Error opening lockfile .$name: $!\n";
-	flock($fhpid, LOCK_EX|LOCK_NB) or bail($name);
+	my $name = shift;
+	my $lock = File::NFSLock->new($name, LOCK_EX|LOCK_NB);
+	die "A process with lockfile $name is already running!\n" unless $lock; 	
 }
 
 sub bail {
 	my $name = shift;
-	warn "a process with lockfile $name is already running";
+	warn "A process with lockfile $name is already running!\n";
 	exit(1);
 }
 
