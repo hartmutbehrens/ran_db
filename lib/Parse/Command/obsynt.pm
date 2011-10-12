@@ -25,18 +25,19 @@ sub opt_spec {
 	my ($ssep,$rsep,$fsep) = ("\n\n\n","\n","\t");
 
 	return (
-	[ "ssep|s=s",	'input section separator (default \n\n\n)', { default => $ssep }],
-	[ "rsep|r=s",	'input record separator (default \n)', { default => $rsep }],
-	[ "fsep|f=s",	'input field separator (default \t)', { default => $fsep }],
-	[ "ofsep|of=s",	"output field separator", { default => ";" }],
+	[ "ssep|s=s",	'input section separator (default \n\n\n)', { default => $ssep, hidden => 1 }],
+	[ "rsep|r=s",	'input record separator (default \n)', { default => $rsep, hidden => 1 }],
+	[ "fsep|f=s",	'input field separator (default \t)', { default => $fsep, hidden => 1 }],
+	[ "ofsep|of=s",	"output field separator", { default => ";", hidden => 1 }],
 	[ "outdir|d=s",	"directory to store parsed csv file(s) in", { default => "../csvload" }],
 	[ "omc|o=s",	"OMC-R name", { required => 1 }],
 	[ "type|t=s",	"PM file type being parsed", { default => 'unknown', hidden => 1 }],
+	[ "identifier|i=s",	"Optional output filename identifier", { default => ''}],
 	[ "delete|D",	"Delete file(s) after parsing"],
 	[ "classifiers|c=s@",	"section classifiers [table,unique_col1,unique_col2,..]. Repeat switch and argument to add more classifiers.", 
-			{ default => [] } ],
+			{ default => [], hidden => 1 } ],
 	[ "remap|m=s@",	"change column names [table,old_col_name,new_col_name]. Repeat switch and argument to add more column name changes.", 
-			{ default => [] } ],
+			{ default => [], hidden => 1 } ],
   );
 }
 
@@ -89,12 +90,12 @@ sub activate_plugin {
 sub to_csv {
 	my ($file,$opt,$header,$table,$cols,$data) = @_;
 	
-	my ($outdir,$sep,$omc,$type) = @{$opt}{qw/outdir ofsep omc type/};
+	my ($outdir,$sep,$omc,$type,$id) = @{$opt}{qw/outdir ofsep omc type identifier/};
 	my @hcols = sort keys %$header;
 	my @hvals = @$header{@hcols};
 	
 	my @file = Common::File::split_path($file);
-	my $outfile = join('.',$omc,$type,$table,$file[$#file],'csv');	#if input filename is unique, then output filename should also be unique
+	my $outfile = join('.',$omc,$type,$table,$file[$#file],$id,'csv');
 	$file =~ s/\:/_/g;	#windows does not like : in file name
 	print "Writing output to $outdir/$outfile\n";
 	open my $out,'>',"$outdir/$outfile" || die "Could not open $outdir/$outfile for writing due to error: $!\n";
