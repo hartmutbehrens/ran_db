@@ -9,6 +9,7 @@ use warnings;
 #modules
 use Common::Lock;
 use Common::Date;
+use Data::Dumper;
 use Fcntl qw(:flock);
 use Fetch -command;
 use File::Basename;
@@ -33,8 +34,9 @@ sub opt_spec {
     [ "what=s", 	"Files to retrieve, can be regex or filename", { required => 1}],
     [ "where=s", 	"Directory to start looking for files", { required => 1}],
     [ "dir|d=s",	"Local directory to store files", { default => '../data'}],
-    [ "log|l=s", 	"Log directory", { default => '../cplog'}],
+    [ "log|l=s", 	"Log directory", { default => '../copylog'}],
     [ "ignore", 	"Copy files, even if they were already copied (copied files are logged)."],
+    [ "maxdays|m=s", 	"Only copy files that are up to maxdays old"],		#sometimes, you just dont want to copy everything..
   );
 }
 
@@ -62,6 +64,8 @@ sub execute {
 
 sub copy_files {
 	my ($opt,$have) = @_;
+	#print Dumper($opt);
+	#exit;
 	my %dir = ();
 	my $count = 0;
 	my $dw = File::DirWalk->new();
@@ -74,12 +78,18 @@ sub copy_files {
 					$count++;
 			}
 			else {
-				my ($name,$path) = fileparse($file);
-				(my $prefix = $path) =~ s/\W/_/g; 	#guarantee unique file name if two files have same name
-				my $outfile = $opt->{dir}.'/'.$prefix.$name;
-				print "Copy: $file to $outfile\n";
-				my $success = copy($file,$outfile);
-				logit($opt,$file,$size) if $success;	#need to record file sizes as well
+				if (  (! exists $opt->{maxdays}) ||  ( (exists $opt->{maxdays}) && (-M $file < $opt->{maxdays}) )  ) {
+					my ($name,$path) = fileparse($file);
+					(my $prefix = $path) =~ s/\W/_/g; 	#guarantee unique file name if two files have same name
+					my $outfile = $opt->{dir}.'/'.$prefix.$name;
+					print "Copy: $file to $outfile\n";
+					my $success = copy($file,$outfile);
+					logit($opt,$file,$size) if $success;	#need to record file sizes as well
+				}
+				else {
+					my $day = $opt->{maxdays} == 1 ? 'day' : 'days';
+					warn "Skipping $file because it is older than $opt->{maxdays} $day and --maxdays command line option was provided.\n";
+				}
 			}
 		}              
 		return File::DirWalk::SUCCESS; 
