@@ -79,10 +79,10 @@ sub instructions {
 			my ($time,$step) = split(':',$do);	#e.g. daily:1
 			next unless $time eq $opt->{time};
 			if ($step =~ /(\d+)-(\d+)/) {	#allow for syntax like daily:1-3
-				$todo{$_}{$counter}{$how} = 1 for ($1..$2);
+				$todo{$_}{$counter} = $how for ($1..$2);
 			}
 			else {
-				$todo{$_}{$counter}{$how} = 1 for split(',',$step);	#allow for syntax like daily:1,2,3 - in case same ocunter name exists in multiple tables
+				$todo{$_}{$counter} = $how for split(',',$step);	#allow for syntax like daily:1,2,3 - in case same ocunter name exists in multiple tables
 			}
 		}
 	}
@@ -109,14 +109,37 @@ sub aggregate {
 		
 		for my $day (@$dates) {
 			print "Starting aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters) for $day\n";
-			my $elements = get_elements($dbh,$sconfig->{from},$sconfig->{identifier},$sconfig->{groupfrom},$day);
-			for my $id (@$elements) {
-				print "element: @$id \n";
+			my $items = get_ids($dbh,$sconfig,$day);
+			for my $id (@$items) {
+				my $values = get_grouped_values($dbh,$sconfig,$todo->{$step},$id,$day);	
+				
 			}	
 		}
 		
 		
 	}
+}
+
+sub get_grouped_values {
+	my ($dbh,$sconfig,$todo,$id_vals,$groupval) = @_;
+	my %values;
+	my $sth;
+	
+	foreach my $counter (keys %$todo) {
+		
+		my $what = ($todo->{$counter} =~ /[\+|\-|\*|\/]/) ? $todo->{$counter} : $todo->{$counter}.'(`'.$counter.'`)' ; #translate xml instruction to something that can run in sql
+		my $where = join(' and ',map("$_ = ?", split(',',$sconfig->{identifier}),$sconfig->{groupfrom} ) );
+		my $sql = "select $what from $sconfig->{from} where $where";
+		#print $sql,"\n";
+		$sth = $dbh->prepare($sql);
+		$sth->execute(@$id_vals,$groupval);
+		my @row = $sth->fetchrow_array;
+		my $val = $row[0] || '';
+		print $sql,"\n";
+		print "@$id_vals $groupval :  $val \n";
+		
+	}
+	return \%values;
 }
 
 sub get_dates {
@@ -130,13 +153,13 @@ sub get_dates {
 	return \@group;
 }
 
-sub get_elements {
-	my ($dbh,$table,$identifier,$groupcol,$day) = @_;
+sub get_ids {
+	my ($dbh,$sconfig,$groupval) = @_;
 	my $rows = []; # cache for batches of rows
 	my @elements;
 	# get row from cache, or reload cache:
-	my $sth = $dbh->prepare("select distinct $identifier from $table where $groupcol = ?");
-	$sth->execute($day);
+	my $sth = $dbh->prepare("select distinct $sconfig->{identifier} from $sconfig->{from} where $sconfig->{groupfrom} = ?");
+	$sth->execute($groupval);
 	while( my $row = ( shift(@$rows) || shift(@{$rows=$sth->fetchall_arrayref(undef,10_000)||[]}) ) ) {
 		push @elements, $row;
 	}
