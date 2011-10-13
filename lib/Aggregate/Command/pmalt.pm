@@ -66,43 +66,44 @@ sub execute {
 
 #retrieve instructions from xml on hoe to aggregate counters: e.g. sum, avg, min, max
 sub instructions {
-	my ($template,$opt) = @_;
-	my $atime = $opt->{time};	#hourly, daily?
+	my ($config,$opt) = @_;
 	my %todo;
 	
-	my $config = Common::XML::read_xml($template);
-	for my $counter (keys %{$config->{'aggregate'}->{'fields'}->{'field'}}) {
-		my @op = split(';',$config->{'aggregate'}->{'fields'}->{'field'}->{$counter}->{'do'});	#daily, weekly, instruction
-		my $how = defined($config->{'aggregate'}->{'fields'}->{'field'}->{$counter}->{$atime}) ? $config->{'aggregate'}->{'fields'}->{'field'}->{$counter}->{$atime} : $config->{'aggregate'}->{'fields'}->{'field'}->{$counter}->{'how'};
-		foreach my $op (@op) {
-			my ($type,$which) = split(':',$op);	#e.g. daily:1
-			next unless ($type eq $atime);
-			if ($which =~ /(\d+)-(\d+)/) {	#allow for syntax like daily:1-3
-				$todo{$how}{$_}{$counter} = 1 for ($1..$2);
+	for my $counter (keys %$config) {
+		if (config_bad($config->{$counter},['how','do'])) {
+			warn "Skipping aggregation for counter $counter because the instructions in the template are not complete.\n";
+			next;
+		}
+		my $how = $config->{$counter}->{how};
+		foreach my $do ( split(';',$config->{$counter}->{do}) ) {
+			my ($time,$step) = split(':',$do);	#e.g. daily:1
+			next unless $time eq $opt->{time};
+			if ($step =~ /(\d+)-(\d+)/) {	#allow for syntax like daily:1-3
+				$todo{$_}{$counter}{$how} = 1 for ($1..$2);
 			}
 			else {
-				$todo{$how}{$_}{$counter} = 1 for split(',',$which);	#allow for syntax like daily:1,2,3 - in case same ocunter name exists in multiple tables
+				$todo{$_}{$counter}{$how} = 1 for split(',',$step);	#allow for syntax like daily:1,2,3 - in case same ocunter name exists in multiple tables
 			}
 		}
 	}
-	#next unless exists $config->{'aggregate'}->{$atime}->{'step'}->{$step};
-	#my ($from,$to,$groupFrom,$groupTo,$limitTo,$limitFrom,$limit) = @{$config->{'aggregate'}->{$atime}->{'step'}->{$step}}{qw/from to groupfrom groupto limitto limitfrom limit/};
 	return \%todo;
 }
 
 sub aggregate {
 	my ($dbh,$template,$opt) = @_;
 	my $today = Common::Date::today();
-	my $todo = instructions($template,$opt);
-	warn "According to the template \"$template\", nothing needs to be done for \"$opt->{time}\" aggregation.\n" unless (scalar(keys %$todo) > 0);
-	my @required = qw/from to identifier groupfrom groupto limit/;
 	my $config = Common::XML::read_xml($template);
-	my $atime = $opt->{time};
-	for my $step (sort keys %{$config->{'aggregate'}->{$atime}->{'step'}}) {
-		my $sconfig = $config->{'aggregate'}->{$atime}->{'step'}->{$step};
+	my @required = qw/from to identifier groupfrom groupto limit/;
+	my $todo = instructions($config->{aggregate}->{fields}->{field},$opt);
+	
+	for my $step (sort {$a <=> $b} keys %{$config->{aggregate}->{$opt->{time}}->{step}}) {
+		my $sconfig = $config->{aggregate}->{$opt->{time}}->{step}->{$step};
 		if (config_bad($sconfig,\@required)) {
-			warn "Skipped step $step because a required field is missing from the template \"$template\" \n";	
+			warn "Skipped step $step because the instructions in the template are not complete.\n";
+			next;	
 		}
+		my $num = scalar keys %{$todo->{$step}};
+		print "Aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters)\n";
 		
 	}
 }

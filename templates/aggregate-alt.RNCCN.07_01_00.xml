@@ -38,6 +38,30 @@
 		</step>
 		<step name="3" from="RNCCN_UTRANCELL_H" to="RNCCN_UTRANCELL_D" identifier="UtranCell,RncFunction,NAME,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
 		</step>
+		<step name="4" from="RNCCN_UTRANCELL_A1_H" to="RNCCN_UTRANCELL_A1_D" identifier="UtranCell,RncFunction,NAME,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="5" from="RNCCN_TMU_H" to="RNCCN_TMU_D" identifier="NAME,RncEquipment,CNode,TMU,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="6" from="RNCCN_NEIGHBOURINGRNC_H" to="RNCCN_NEIGHBOURINGRNC_D" identifier="NAME,RncFunction,NeighbouringRnc,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="7" from="RNCCN_UTRANCELL_A2_H" to="RNCCN_UTRANCELL_A2_D" identifier="UtranCell,RncFunction,NAME,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="8" from="RNCCN_UTRANCELL_A3_H" to="RNCCN_UTRANCELL_A3_D" identifier="UtranCell,RncFunction,NAME,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="9" from="RNCCN_IUBIFAAL2_H" to="RNCCN_IUBIFAAL2_D" identifier="NAME,RncFunction,IubIf,Aal2IfBP,OMC_ID" groupfrom="STARTDATE" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="10" from="RNCCN_UTRANCELL_A4_H" to="RNCCN_UTRANCELL_A4_D" identifier="UtranCell,RncFunction,NAME,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="11" from="RNCCN_NEIGHBOURINGRNC_A1_H" to="RNCCN_NEIGHBOURINGRNC_A1_D" identifier="NAME,RncFunction,NeighbouringRnc,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="12" from="RNCCN_RNCFUNCTION_A2_H" to="RNCCN_RNCFUNCTION_A2_D" identifier="NAME,RncFunction,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="13" from="RNCCN_RNCFUNCTION_A3_H" to="RNCCN_RNCFUNCTION_A3_D" identifier="NAME,RncFunction,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="14" from="RNCCN_IPIFBP_H" to="RNCCN_IPIFBP_D" identifier="NAME,RncFunction,IubIf,IpIfBP,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="15" from="RNCCN_UTRANCELL_A5_H" to="RNCCN_UTRANCELL_A5_D" identifier="UtranCell,RncFunction,NAME,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
 	</aggregate>
 	<aggregate name="fields">
 		<field name="VS.ActiveSetUpdatePerRnc" do="daily:1;weekly:1" how="sum">
