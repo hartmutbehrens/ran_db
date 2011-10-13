@@ -103,9 +103,44 @@ sub aggregate {
 			next;	
 		}
 		my $num = scalar keys %{$todo->{$step}};
-		print "Aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters)\n";
+		
+		my $dates = get_dates($dbh,$sconfig->{from},$sconfig->{groupfrom},$sconfig->{limit});
+		print "$sconfig->{from} has data for @$dates\n";
+		
+		for my $day (@$dates) {
+			print "Starting aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters) for $day\n";
+			my $elements = get_elements($dbh,$sconfig->{from},$sconfig->{identifier},$sconfig->{groupfrom},$day);
+			for my $id (@$elements) {
+				print "element: @$id \n";
+			}	
+		}
+		
 		
 	}
+}
+
+sub get_dates {
+	my ($dbh,$table,$group_col,$limit) = @_;
+	my @group;
+	my $sth = $dbh->prepare("select distinct $group_col from $table order by $group_col desc limit $limit");
+	$sth->execute();
+	while (my @row = $sth->fetchrow_array) {
+		push(@group,$row[0]);
+	}
+	return \@group;
+}
+
+sub get_elements {
+	my ($dbh,$table,$identifier,$groupcol,$day) = @_;
+	my $rows = []; # cache for batches of rows
+	my @elements;
+	# get row from cache, or reload cache:
+	my $sth = $dbh->prepare("select distinct $identifier from $table where $groupcol = ?");
+	$sth->execute($day);
+	while( my $row = ( shift(@$rows) || shift(@{$rows=$sth->fetchall_arrayref(undef,10_000)||[]}) ) ) {
+		push @elements, $row;
+	}
+	return \@elements;
 }
 
 sub config_bad {
