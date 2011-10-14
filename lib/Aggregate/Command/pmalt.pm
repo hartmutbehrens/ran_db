@@ -71,7 +71,11 @@ sub instructions {
 	my %todo;
 	
 	for my $counter (keys %$config) {
-		warn "Skipping aggregation for counter $counter because the instructions in the template are not complete.\n" && next if config_bad($config->{$counter},['how','do']);
+		if (config_bad($config->{$counter},['how','do'])) {
+			warn "Skipping aggregation for counter $counter because the instructions in the template are not complete.\n";
+			next;
+		}
+		 
 		my $how = $config->{$counter}->{how};
 		foreach my $do ( split(';',$config->{$counter}->{do}) ) {
 			my ($time,$step) = split(':',$do);	#e.g. daily:1
@@ -95,15 +99,22 @@ sub aggregate {
 	my $todo = instructions($config->{aggregate}->{fields}->{field},$opt);
 	
 	for my $step (sort {$a <=> $b} keys %{$config->{aggregate}->{$opt->{time}}->{step}}) {
-		warn "Skipping step $step because command line option \"--step $opt->{step}\" was provided.\n" && next if ( ( defined $opt->{step} ) && ($step != $opt->{step}) );
-		
+		if ( ( defined $opt->{step} ) && ($step != $opt->{step}) ) {
+			warn "Skipping step $step because command line option \"--step $opt->{step}\" was provided.\n";
+			next;	
+		}
+		 
 		my $sconfig = $config->{aggregate}->{$opt->{time}}->{step}->{$step};
-		warn "Skipped step $step because the instructions in the template are not complete.\n" && next if config_bad($sconfig,['from','to','identifier','groupfrom','groupto','limit']);
-		
+		if (config_bad($sconfig,['from','to','identifier','groupfrom','groupto','limit'])) {
+			warn "Skipped step $step because the instructions in the template are not complete.\n";
+			next;	
+		}
+		my $count = 0;
 		for my $day (get_dates($dbh,$sconfig)) {
+			$count++;
 			my $items = get_ids($dbh,$sconfig,$day);
 			my $num = scalar keys %{$todo->{$step}};
-			print "Starting aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters, $#{$items} identifiers) for $day\n";
+			print "Starting aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters, ".($#{$items}+1)." identifiers) for $day\n";
 			
 			my $select = make_select_sql($sconfig,$todo->{$step});
 			my $sth = $dbh->prepare($select);
@@ -111,17 +122,13 @@ sub aggregate {
 				print "@$id $day\n" if $opt->{debug};
 				$sth->execute(@$id,$day);
 				my @row = $sth->fetchrow_array;
-				update_db($dbh,$sconfig,[split(',',$sconfig->{identifier}),keys %{$todo->{$step}}],[@$id,@row]);
+				update_db( $dbh, $sconfig, [split(',',$sconfig->{identifier}),keys %{$todo->{$step}}], [@$id,@row] );
 			} 	
 		}
+		warn "No data found in table $sconfig->{from} for aggregation step $step\n" if $count == 0;
 	}
 }
 
-sub get_additional {
-	my ($opt,$sconfig,$id,$day) = @_;
-	my (@cols,@vals);
-	return (\@cols,\@vals);
-}
 
 sub update_db {
 	my ($dbh,$sconfig,$cols,$vals) = @_;
@@ -162,7 +169,7 @@ sub get_ids {
 	# get row from cache, or reload cache:
 	my $sth = $dbh->prepare("select distinct $sconfig->{identifier} from $sconfig->{from} where $sconfig->{groupfrom} = ?");
 	$sth->execute($groupval);
-	while( my $row = ( shift(@$rows) || shift(@{$rows=$sth->fetchall_arrayref(undef,10_000)||[]}) ) ) {
+	while( my $row = ( shift(@$rows) || shift(@{$rows=$sth->fetchall_arrayref(undef,10000)||[]}) ) ) {
 		push @elements, $row;
 	}
 	return \@elements;

@@ -54,13 +54,15 @@
 		</step>
 		<step name="11" from="RNCCN_NEIGHBOURINGRNC_A1_H" to="RNCCN_NEIGHBOURINGRNC_A1_D" identifier="NAME,RncFunction,NeighbouringRnc,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
 		</step>
-		<step name="12" from="RNCCN_RNCFUNCTION_A2_H" to="RNCCN_RNCFUNCTION_A2_D" identifier="NAME,RncFunction,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		<step name="12" from="RNCCN_NEIGHBOURINGRNC_A2_H" to="RNCCN_NEIGHBOURINGRNC_A2_D" identifier="NAME,RncFunction,NeighbouringRnc,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
 		</step>
 		<step name="13" from="RNCCN_RNCFUNCTION_A3_H" to="RNCCN_RNCFUNCTION_A3_D" identifier="NAME,RncFunction,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
 		</step>
 		<step name="14" from="RNCCN_IPIFBP_H" to="RNCCN_IPIFBP_D" identifier="NAME,RncFunction,IubIf,IpIfBP,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
 		</step>
 		<step name="15" from="RNCCN_UTRANCELL_A5_H" to="RNCCN_UTRANCELL_A5_D" identifier="UtranCell,RncFunction,NAME,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
+		</step>
+		<step name="16" from="RNCCN_RNCFUNCTION_A2_H" to="RNCCN_RNCFUNCTION_A2_D" identifier="NAME,RncFunction,OMC_ID" groupfrom="DATE(SDATETIME)" groupto="IMPORTDATE" limit="2">
 		</step>
 	</aggregate>
 	<aggregate name="fields">
@@ -12557,13 +12559,13 @@
 		</field>
 		<field name="VS.RadioBearerReconfigurationSuccessNeighbRnc.RbCsSpeech" do="daily:11;weekly:11" how="sum">
 		</field>
-		<field name="VS.RadioBearerReconfigurationSuccessNeighbRnc.RbCsSpeechPsDch" table-alias="VS.RadioBearerReconfigSuccessNeighbRnc.RbCsSpeechPsDch" do="daily:11;weekly:11" how="sum">
+		<field name="VS.RadioBearerReconfigSuccessNeighbRnc.RbCsSpeechPsDch" do="daily:11;weekly:11" how="sum">
 		</field>
 		<field name="VS.RadioBearerReconfigurationSuccessNeighbRnc.RbCsSpeechPsHsdpa" do="daily:11;weekly:11" how="sum">
 		</field>
-		<field name="VS.RadioBearerReconfigurationSuccessNeighbRnc.RbCsSpeechPsDchHsdpa" table-alias="VS.RadioBearerReconfigSuccessNeighbRnc.RbCsSpeechPsDchHsdpa" do="daily:11;weekly:11" how="sum">
+		<field name="VS.RadioBearerReconfigSuccessNeighbRnc.RbCsSpeechPsDchHsdpa" do="daily:11;weekly:11" how="sum">
 		</field>
-		<field name="VS.RadioBearerReconfigurationSuccessNeighbRnc.RbCsSpeechPsDchPsDch" table-alias="VS.RadioBearerReconfigSuccessNeighbRnc.RbCsSpeechPsDchPsDch" do="daily:11;weekly:11" how="sum">
+		<field name="VS.RadioBearerReconfigSuccessNeighbRnc.RbCsSpeechPsDchPsDch" do="daily:11;weekly:11" how="sum">
 		</field>
 		<field name="VS.RadioBearerReconfigurationSuccessNeighbRnc.RbCsData" do="daily:11;weekly:11" how="sum">
 		</field>
@@ -12579,7 +12581,7 @@
 		</field>
 		<field name="VS.RadioBearerReconfigurationSuccessNeighbRnc.RbPsHsdpaDlDchUl" do="daily:11;weekly:11" how="sum">
 		</field>
-		<field name="VS.RadioBearerReconfigurationSuccessNeighbRnc.RbPsHsdpaDlDchEdchUl" table-alias="VS.RadioBearerReconfigSuccessNeighbRnc.RbPsHsdpaDlDchEdchUl" do="daily:11;weekly:11" how="sum">
+		<field name="VS.RadioBearerReconfigSuccessNeighbRnc.RbPsHsdpaDlDchEdchUl" do="daily:11;weekly:11" how="sum">
 		</field>
 		<field name="VS.RadioBearerReconfigurationSuccessNeighbRnc.RbPsDchPsDch" do="daily:11;weekly:11" how="sum">
 		</field>
@@ -12671,15 +12673,15 @@
 		</field>
 		<field name="VS.RAB.MeanCellDCH.PS.Multiple.NeighbRnc.1IB1S_DCH_HSDSCH.Min" do="daily:11;weekly:11" how="sum">
 		</field>
-		<field name="VS.RAB.MeanCellDCH.PS.Multiple.NeighbRnc.Other_Multi_RAB_Combo.Cum" table-alias="RAB.MeanCellDCH.PS.Multi.NeighbRnc.Other_Multi_RAB_Combo.Cum" do="daily:11;weekly:11" how="sum">
+		<field name="RAB.MeanCellDCH.PS.Multi.NeighbRnc.Other_Multi_RAB_Combo.Cum" do="daily:11;weekly:11" how="sum">
 		</field>
-		<field name="VS.RAB.MeanCellDCH.PS.Multiple.NeighbRnc.Other_Multi_RAB_Combo.Avg" table-alias="RAB.MeanCellDCH.PS.Multi.NeighbRnc.Other_Multi_RAB_Combo.Avg" do="daily:11;weekly:11" how="sum">
+		<field name="RAB.MeanCellDCH.PS.Multi.NeighbRnc.Other_Multi_RAB_Combo.Avg" do="daily:11;weekly:11" how="sum">
 		</field>
-		<field name="VS.RAB.MeanCellDCH.PS.Multiple.NeighbRnc.Other_Multi_RAB_Combo.NbEvt" table-alias="RAB.MeanCellDCH.PS.Multi.NeighbRnc.Other_Multi_RAB_Combo.NbEvt" do="daily:11;weekly:11" how="sum">
+		<field name="RAB.MeanCellDCH.PS.Multi.NeighbRnc.Other_Multi_RAB_Combo.NbEvt" do="daily:11;weekly:11" how="sum">
 		</field>
-		<field name="VS.RAB.MeanCellDCH.PS.Multiple.NeighbRnc.Other_Multi_RAB_Combo.Max" table-alias="RAB.MeanCellDCH.PS.Multi.NeighbRnc.Other_Multi_RAB_Combo.Max" do="daily:11;weekly:11" how="sum">
+		<field name="RAB.MeanCellDCH.PS.Multi.NeighbRnc.Other_Multi_RAB_Combo.Max" do="daily:11;weekly:11" how="sum">
 		</field>
-		<field name="VS.RAB.MeanCellDCH.PS.Multiple.NeighbRnc.Other_Multi_RAB_Combo.Min" table-alias="RAB.MeanCellDCH.PS.Multi.NeighbRnc.Other_Multi_RAB_Combo.Min" do="daily:11;weekly:11" how="sum">
+		<field name="RAB.MeanCellDCH.PS.Multi.NeighbRnc.Other_Multi_RAB_Combo.Min" do="daily:11;weekly:11" how="sum">
 		</field>	
 		<field name="RAB.NegotAllowedRABAssign.NeighbRnc.IntactBgrd" do="daily:11;weekly:11" how="sum">
 		</field>
@@ -12903,7 +12905,7 @@
 		</field>
 		<field name="RAB.SuccEstab.PS.TrChn.NeighbRnc.DCH_HSDSCH" do="daily:11;weekly:11" how="sum">
 		</field>
-		<field name="VS.RAB.SuccEstab.PS.ReqNotGranted.NeighbRnc.DCH_HSDSCH_GrantedDCH_DCH" table-alias="VS.RAB.SuccEst.PS.ReqNotGranted.NbRnc.DCH_HSDSCH_GrantedDCH_DCH" do="daily:11;weekly:11" how="sum">
+		<field name="VS.RAB.SuccEst.PS.ReqNotGranted.NbRnc.DCH_HSDSCH_GrantedDCH_DCH" do="daily:11;weekly:11" how="sum">
 		</field>
 		<field name="RAB.FailEstab.CS.NeighbRnc.RLFailOther" do="daily:11;weekly:11" how="sum">
 		</field>
@@ -13313,21 +13315,21 @@
 		</field>
 		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NeighbRnc.DlRabSRB" do="daily:12;weekly:12" how="sum">
 		</field>
-		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NeighbRnc.DlRabCsSpeech" table-alias="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabCsSpeech" do="daily:12;weekly:12" how="sum">
+		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabCsSpeech" do="daily:12;weekly:12" how="sum">
 		</field>
-		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NeighbRnc.DlRabCsData64" table-alias="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabCsData64" do="daily:12;weekly:12" how="sum">
+		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabCsData64" do="daily:12;weekly:12" how="sum">
 		</field>
 		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NeighbRnc.DlRabCsStr" do="daily:12;weekly:12" how="sum">
 		</field>
 		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NeighbRnc.DlRabHsdpa" do="daily:12;weekly:12" how="sum">
 		</field>
-		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NeighbRnc.DlRabPsStr128" table-alias="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabPsStr128" do="daily:12;weekly:12" how="sum">
+		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabPsStr128" do="daily:12;weekly:12" how="sum">
 		</field>
-		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NeighbRnc.DlRabPsStr256" table-alias="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabPsStr256" do="daily:12;weekly:12" how="sum">
+		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabPsStr256" do="daily:12;weekly:12" how="sum">
 		</field>
-		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NeighbRnc.DlRabPsStr384" table-alias="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabPsStr384" do="daily:12;weekly:12" how="sum">
+		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabPsStr384" do="daily:12;weekly:12" how="sum">
 		</field>
-		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NeighbRnc.DlRabPsStrOther" table-alias="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabPsStrOther" do="daily:12;weekly:12" how="sum">
+		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NbRnc.DlRabPsStrOther" do="daily:12;weekly:12" how="sum">
 		</field>
 		<field name="VS.DedicatedDownlinkRetransmittedPdusRlc.NeighbRnc.DlRabPsIb8" do="daily:12;weekly:12" how="sum">
 		</field>
@@ -14025,5 +14027,1221 @@
     </field>
     <field name="VS.Edch2msTtiTo10msTtiFallbackUnsuccess" do="daily:15;weekly:15" how="sum">
     </field>
+    <field name="VS.UeInvRelocPrepAtt.IntraCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UeInvRelocPrepAtt.InterCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UeInvRelocPrepSucc.IntraCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UeInvRelocPrepSucc.InterCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UeInvRelocPrepFailure.IntraCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UeInvRelocPrepFailure.InterCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UeInvRelocSucc.IntraCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UeInvRelocSucc.InterCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RelocFailurebySRNC.IntraCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RelocFailurebySRNC.InterCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RelocFailurebyUE.IntraCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RelocFailurebyUE.InterCN" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId16.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId16.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId16.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId16.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId16.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId17.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId17.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId17.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId17.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId17.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId18.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId18.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId18.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId18.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId18.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId19.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId19.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId19.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId19.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId19.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId20.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId20.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId20.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId20.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId20.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId21.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId21.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId21.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId21.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId21.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId22.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId22.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId22.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId22.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId22.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId23.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId23.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId23.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId23.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxCs.RdnId23.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId16.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId16.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId16.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId16.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId16.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId17.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId17.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId17.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId17.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId17.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId18.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId18.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId18.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId18.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId18.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId19.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId19.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId19.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId19.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId19.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId20.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId20.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId20.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId20.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId20.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId21.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId21.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId21.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId21.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId21.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId22.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId22.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId22.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId22.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId22.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId23.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId23.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId23.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId23.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IuAvgNbrSccpCnxPs.RdnId23.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IupsMbmsBcstSsnStartReq" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IupsMbmsBcstSsnStartSuc" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IupsMbmsBcstSsnStartUnsuc.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IupsMbmsBcstSsnStartUnsuc.NoRsrcAvail" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IupsMbmsBcstSsnStartUnsuc.UnsupRabParm" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IupsMbmsEBcstSsnStartReq" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IupsMbmsEBcstSsnStartSuc" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IupsMbmsEBcstSsnStartUnsuc.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IupsMbmsEBcstSsnStartUnsuc.NoRsrcAvail" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IupsMbmsEBcstSsnStartUnsuc.UnsupRabParm" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModAttPerTC.psInt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModAttPerTC.hsInt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModAttPerTC.psBkg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModAttPerTC.hsBkg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModSuccPerTC.psInt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModSuccPerTC.hsInt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModSuccPerTC.psBkg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModSuccPerTC.hsBkg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.CsLocationUebasedAgpsUnsuccess.UePositioningError" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.CsLocationUebasedAgpsUnsuccess.IsmlcAssDataTooLong" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.PsLocationUebasedAgpsUnsuccess.UePositioningError" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.PsLocationUebasedAgpsUnsuccess.IsmlcAssDataTooLong" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.PsLocationReportSuccessGeoLsWithinQos.CIDRTT" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.PsLocationReportSuccessGeoLsOutsideQos.CIDRTT" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.CsLocationReportSuccessGeoLsOutsideQos.CIDRTT" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.CsLocationReportSuccessGeoLsWithinQoS.CIDRTT" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RrcAvgNbrCellPch.FromUraPch.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RrcAvgNbrCellPch.FromUraPch.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RrcAvgNbrCellPch.FromUraPch.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RrcAvgNbrCellPch.FromUraPch.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RrcAvgNbrCellPch.FromUraPch.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.CmActivationSuccess.GSMAndInterFrequency" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.CmActivationFailure.GSMAndInterFrequency" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkKbytesRlc.UlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkKbytesRlc.UlRabPsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkKbytesRlc.UlRabPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkKbytesRlc.UlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkKbytesRlc.UlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkKbytesRlc.DlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkKbytesRlc.DlRabPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkKbytesRlc.DlRabPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkKbytesRlc.DlRabPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkKbytesRlc.DlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkKbytesRlc.DlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkPduRlc.UlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkPduRlc.UlRabPsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkPduRlc.UlRabPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkPduRlc.UlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkPduRlc.UlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPduRlc.DlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPduRlc.DlRabPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPduRlc.DlRabPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPduRlc.DlRabPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPduRlc.DlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPduRlc.DlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkSduRlc.UlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkSduRlc.UlRabPsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkSduRlc.UlRabPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkSduRlc.UlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkSduRlc.UlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkSduRlc.DlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkSduRlc.DlRabPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkSduRlc.DlRabPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkSduRlc.DlRabPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkSduRlc.DlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkSduRlc.DlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkMissingPduRlc.UlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkMissingPduRlc.UlRabPsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkMissingPduRlc.UlRabPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkMissingPduRlc.UlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkMissingPduRlc.UlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkDiscardSduRlc.DlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkDiscardSduRlc.DlRabPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkDiscardSduRlc.DlRabPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkDiscardSduRlc.DlRabPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkDiscardSduRlc.DlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkDiscardSduRlc.DlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPaddingSduRlc.DlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPaddingSduRlc.DlRabPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPaddingSduRlc.DlRabPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPaddingSduRlc.DlRabPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPaddingSduRlc.DlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedDownlinkPaddingSduRlc.DlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkBadPdus.UlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkBadPdus.UlRabPsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkBadPdus.UlRabPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkBadPdus.UlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DedicatedUplinkBadPdus.UlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DlDiscardNonConfTraffic.DlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DlDiscardNonConfTraffic.DlRabPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DlDiscardNonConfTraffic.DlRabPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DlDiscardNonConfTraffic.DlRabPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DlDiscardNonConfTraffic.DlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.DlDiscardNonConfTraffic.DlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlDiscardNonConfTraffic.UlRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlDiscardNonConfTraffic.UlRabPsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlDiscardNonConfTraffic.UlRabPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlDiscardNonConfTraffic.UlRabPsStrOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlDiscardNonConfTraffic.UlRabPsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.AmrRabModSucc" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.AmrRabModUnsucc" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.AmrWbRabModSucc" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.AmrWbRabModUnsucc" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentModifSuc.CSDataToAnyAmr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentModifSuc.AnyAmrToCSData" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentModifFailure.CSDataToAnyAmr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentModifFailure.AnyAmrToCSData" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstablishmentRequestsPerRabType.ReqRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstabRequestsPerRabType.ReqRabPsStrLowRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstabRequestsPerRabType.ReqRabPsStrHiRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstabSuccessPerRequestedRabType.ReqRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstabSuccessPerRequestedRabType.ReqRabPsStrLowRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstSuccessPerRequestedRabType.ReqRabPsStrHiRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstablishmentSuccessPerGrantedRabType.GrantedRabOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstabSuccessPerGrantedRabType.GrantedRabCSSpeechConv" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstablishmentSuccessPerGrantedRabType.GrantedRabCsConv64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstablishmentSuccessPerGrantedRabType.GrantedRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstabSuccessPerGrantedRabType.GrantedRabPsLowRateInter" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstabSuccessPerGrantedRabType.GrantedRabPsLowRateBgnd" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstabSuccessPerGrantedRabType.GrantedRabPsHighRateInter" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstabSuccessPerGrantedRabType.GrantedRabPsHighRateBgnd" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstabSuccessPerGrantedRabType.GrantedRabPsStrLowRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabEstabSuccessPerGrantedRabType.GrantedRabPsStrHiRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabReleaseRequest.GrantedRabOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabReleaseRequest.GrantedRabCSSpeechConv" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabReleaseRequest.GrantedRabCsConv64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabReleaseRequest.GrantedRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabReleaseRequest.GrantedRabPsLowRateInter" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabReleaseRequest.GrantedRabPsLowRateBgnd" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabReleaseRequest.GrantedRabPsHighRateInter" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabReleaseRequest.GrantedRabPsHighRateBgnd" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabReleaseRequest.GrantedRabPsStrLowRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabReleaseRequest.GrantedRabPsStrHiRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabOther.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabOther.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabOther.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabOther.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabOther.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCSSpeechConv.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCSSpeechConv.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCSSpeechConv.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCSSpeechConv.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCSSpeechConv.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCsConv64.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCsConv64.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCsConv64.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCsConv64.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCsConv64.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCsStr.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCsStr.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCsStr.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCsStr.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabCsStr.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsLowRateInter.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsLowRateInter.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsLowRateInter.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsLowRateInter.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsLowRateInter.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsLowRateBgnd.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsLowRateBgnd.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsLowRateBgnd.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsLowRateBgnd.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsLowRateBgnd.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsHighRateInter.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsHighRateInter.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsHighRateInter.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsHighRateInter.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsHighRateInter.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsHighRateBgnd.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsHighRateBgnd.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsHighRateBgnd.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsHighRateBgnd.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsHighRateBgnd.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsStrLowRateStr.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsStrLowRateStr.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsStrLowRateStr.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsStrLowRateStr.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsStrLowRateStr.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsStrHiRateStr.Cum" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsStrHiRateStr.Avg" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsStrHiRateStr.NbEvt" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsStrHiRateStr.Max" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.NumberOfRabEstablished.GrantedRabPsStrHiRateStr.Min" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabNormalRelease.GrantedRabOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabNormalRelease.GrantedRabCSSpeechConv" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabNormalRelease.GrantedRabCsConv64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabNormalRelease.GrantedRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabNormalRelease.GrantedRabPsLowRateInter" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabNormalRelease.GrantedRabPsLowRateBgnd" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabNormalRelease.GrantedRabPsHighRateInter" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabNormalRelease.GrantedRabPsHighRateBgnd" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabNormalRelease.GrantedRabPsStrLowRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabNormalRelease.GrantedRabPsStrHiRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentSetupUnsuccess.ReqRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentSetupUnsuccess.ReqRabPsStrLowRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentSetupUnsuccess.ReqRabPsStrHiRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentReleaseSuccess.ReqRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentReleaseSuccess.ReqRabPsStrLowRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentReleaseSuccess.ReqRabPsStrHiRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentReleaseUnsuccess.ReqRabCsStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentReleaseUnsuccess.ReqRabPsStrLowRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabAssignmentReleaseUnsuccess.ReqRabPsStrHiRateStr" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEDlRBRateAdapActiv.PsRB16D" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEDlRBRateAdapDeactiv.PsRB16D" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEUlRBRateAdapActiv.PsRB16U" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEUlRBRateAdapDeactiv.PsRB16U" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEDlRBRateAdapDownReq.PsRB16D" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEDlRBRateAdapUpReq.PsRB16D" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEDlRBRateAdapDownSucc.PsRB16D" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEDlRBRateAdapUpSucc.PsRB16D" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEUlRBRateAdapDownReq.PsRB16U" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEUlRBRateAdapUpReq.PsRB16U" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEUlRBRateAdapDownSucc.PsRB16U" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UEUlRBRateAdapUpSucc.PsRB16U" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModifReq.ARPPL" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModifReq.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModifSucc.ARPPL" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RabModifSucc.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="RAB.RelPS.Multiple" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="RAB.RelPS.Multiple.Inactivity" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedGold.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedGold.PsIb8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedGold.PsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedGold.PsIb32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedGold.PsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedGold.PsStr32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedGold.PsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedGold.PsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedSilver.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedSilver.PsIb8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedSilver.PsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedSilver.PsIb32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedSilver.PsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedSilver.PsStr32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedSilver.PsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedSilver.PsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedBronze.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedBronze.PsIb8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedBronze.PsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedBronze.PsIb32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedBronze.PsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedBronze.PsStr32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedBronze.PsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacMaintainedBronze.PsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedGold.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedGold.PsIb8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedGold.PsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedGold.PsIb32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedGold.PsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedGold.PsStr32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedGold.PsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedGold.PsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedSilver.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedSilver.PsIb8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedSilver.PsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedSilver.PsIb32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedSilver.PsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedSilver.PsStr32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedSilver.PsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedSilver.PsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedBronze.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedBronze.PsIb8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedBronze.PsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedBronze.PsIb32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedBronze.PsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedBronze.PsStr32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedBronze.PsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacDowngradedBronze.PsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.PsOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.PsIb8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.PsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.PsIb32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.PsIb64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.PsIb128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.PsIb384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.PsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.PsStr32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.PsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedGold.PsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.PsOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.PsIb8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.PsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.PsIb32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.PsIb64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.PsIb128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.PsIb384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.PsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.PsStr32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.PsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedSilver.PsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.Other" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.PsOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.PsIb8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.PsIb16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.PsIb32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.PsIb64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.PsIb128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.PsIb384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.PsStr16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.PsStr32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.PsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.UlIrmcacRejectedBronze.PsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedHighPriority.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedHighPriority.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedHighPriority.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedMediumPriority.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedMediumPriority.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedMediumPriority.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacMaintainedLowPriority.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacDowngradedLowPriority.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmcacRejectedLowPriority.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityDowngraded.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbHighPriorityRejected.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityDowngraded.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbMediumPriorityRejected.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityDowngraded.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbOther" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsStrLt64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsStr64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsStr128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsStr256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsStr384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsIB8" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsIB16" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsIB32" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsIB64" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsIB128" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsIB256" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.IrmPreemptionRbLowPriorityRejected.DlRbPsIB384" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.PagingRsp.Paging" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="RAB.AttModPSRNC.Strm.UeTxPwrExcd6A" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="RAB.AttModPSRNC.Strm.DLCodePwrNotSust" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="RAB.AttModPSRNC.Strm.DLcongCtrl" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="RAB.AttModPSRNC.Strm.ULcongCtrl" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RESERVED21" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RESERVED22" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RESERVED23" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RESERVED24" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RESERVED25" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RESERVED26" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RESERVED27" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RESERVED28" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RESERVED29" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.RESERVED30" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.ReconfAtt.HSDSCH.DCH.CauseComp" do="daily:16;weekly:16" how="sum">
+		</field>
+		<field name="VS.ReconfAtt.EDCH.DCH.CauseComp" do="daily:16;weekly:16" how="sum">
+		</field>
 	</aggregate>
 </aggregation>
