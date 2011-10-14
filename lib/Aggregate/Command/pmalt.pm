@@ -122,7 +122,7 @@ sub aggregate {
 				print "@$id $day\n" if $opt->{debug};
 				$sth->execute(@$id,$day);
 				my @row = $sth->fetchrow_array;
-				update_db( $dbh, $sconfig, [split(',',$sconfig->{identifier}),keys %{$todo->{$step}}], [@$id,@row] );
+				update_db( $dbh, $sconfig, [split(',',$sconfig->{identifier}),keys %{$todo->{$step}},$sconfig->{groupto}], [@$id,@row,$day] );
 			} 	
 		}
 		warn "No data found in table $sconfig->{from} for aggregation step $step\n" if $count == 0;
