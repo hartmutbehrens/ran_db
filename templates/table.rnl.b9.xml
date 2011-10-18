@@ -75,16 +75,13 @@
 		<field name="ACmbPanDec" type="int" source="import"></field>	
 		<field name="ACmbPanInc" type="int" source="import"></field>	
 		<field name="ACmbPanMax" type="int" source="import"></field>	
-		<field name="ACmbPriorityAccessThreshold" type="int" source="import"></field>	
 		<field name="ACmbQsearch" type="int" source="import"></field>	
 		<field name="ACmbRaCode" type="int" source="import"></field>	
 		<field name="ACmbT3168" type="int" source="import"></field>	
 		<field name="ACmbT3192" type="int" source="import"></field>	
 		<field name="ACmbTPagCs" type="int" source="import"></field>	
 		<field name="ACmbTPagPs" type="int" source="import"></field>	
-		<field name="ADDITIONAL_RESELECT_PARAM" type="int" source="import"></field>	
 		<field name="AEcnoHo" type="int" source="import"></field>	
-		<field name="AG_PREMPT_PCH" type="int" source="import"></field>	
 		<field name="AGprsAccessBurstType" type="int" source="import"></field>	
 		<field name="AGprsBepPeriod" type="int" source="import"></field>	
 		<field name="AGprsBsPagBlksRes" type="int" source="import"></field>	
@@ -93,18 +90,6 @@
 		<field name="AGprsC31Hyst" type="int" source="import"></field>	
 		<field name="AGprsC32Qual" type="int" source="import"></field>	
 		<field name="AGprsCsMaxIdlePeriod" type="int" source="import"></field>	
-		<field name="AGprsEnConvGps" type="int" source="import"></field>	
-		<field name="AGprsEnCsAdaptationAck" type="int" source="import"></field>	
-		<field name="AGprsEnCsAdaptationNack" type="int" source="import"></field>	
-		<field name="AGprsEnExtendedUlTbf" type="int" source="import"></field>	
-		<field name="AGprsEnFastInitialGprsAccess" type="int" source="import"></field>	
-		<field name="AGprsEnMsAssistedAgps" type="int" source="import"></field>	
-		<field name="AGprsEnMsBasedAgps" type="int" source="import"></field>	
-		<field name="AGprsEnNacc" type="int" source="import"></field>	
-		<field name="AGprsEnOutgoingGprsRedir" type="int" source="import"></field>	
-		<field name="AGprsEnPsiStatus" type="int" source="import"></field>	
-		<field name="AGprsEnSolsa" type="int" source="import"></field>	
-		<field name="AGprsEnStreaming" type="int" source="import"></field>	
 		<field name="AGprsFddGprsQoffset" type="int" source="import"></field>	
 		<field name="AGprsGchRedFactorHighAterUsage" type="int" source="import"></field>	
 		<field name="AGprsGprsCellReselectHysteresis" type="int" source="import"></field>	
@@ -188,8 +173,7 @@
 	  <field name="AMR_HR_THR3" type="int" source="import"/>
 	  <field name="ARFN_CU_Mapping" type="text" source="import"/>
 	  <field name="AccessClassBarringThreshold" type="int" source="import"/>
-	  <field name="ActiveRadioConfig" type="int" source="import"/>
-	  <field name="AdministrativeState" type="int" source="import"/>
+	  <field name="AdministrativeState" type="varchar(20)" source="import"/>
 	  <field name="AlarmStatus" type="varchar(100)" source="import"/>
 	  <field name="AlarmsAcknowledgementStatus" type="varchar(100)" source="import"/>
 	  <field name="AlignmentStatus" type="varchar(100)" source="import"/>
@@ -248,9 +232,8 @@
 	  <field name="KEEP_CODEC_HO" type="varchar(100)" source="import"/>
 	  <field name="LSA_OFFSET" type="int" source="import"/>
 	  <field name="LoadEvPeriodGPRS" type="int" source="import"/>
-	  <field name="LocationName" type="varchar(100)" source="import"/>
 	  <field name="MSTxPwrMaxCCH" type="int" source="import"/>
-	  <field name="MateCellId" type="int" source="import"/>
+	  <field name="MateCellId" type="varchar(100)" source="import"/>
 	  <field name="MaxGprsCs" type="int" source="import"/>
 	  <field name="MaxNumberRetransmission" type="varchar(100)" source="import"/>
 	  <field name="MaxVgcsTs" type="varchar(100)" source="import"/>
@@ -281,10 +264,9 @@
 	  <field name="NumberOfSlotsSpreadTrans" type="int" source="import"/>
 	  <field name="Ny1" type="int" source="import"/>
 	  <field name="Ny2" type="int" source="import"/>
-	  <field name="OperationalState" type="int" source="import"/>
+	  <field name="OperationalState" type="varchar(50)" source="import"/>
 	  <field name="PENALTY_TIME" type="int" source="import"/>
 	  <field name="PRIO_THR" type="int" source="import"/>
-	  <field name="PWRC" type="int" source="import"/>
 	  <field name="PercentageSDCCHavailable" type="int" source="import"/>
 	  <field name="PercentageTCHavailable" type="int" source="import"/>
 	  <field name="PeriodCCCHLoadIndication" type="varchar(100)" source="import"/>
@@ -306,18 +288,7 @@
 	  <field name="RnlNetworkCellID" type="varchar(100)" source="import"/>
 	  <field name="SCHEDULE_PERIOD" type="int" source="import"/>
 	  <field name="SCHEDULE_PERIOD_E_CBCH" type="int" source="import"/>
-	  <field name="SolsaFunctLevel" type="int" source="import"/>
 	  <field name="StartUplinkReply" type="int" source="import"/>
-	  <field name="T3105_D" type="int" source="import"/>
-	  <field name="T3105_D_STOP" type="int" source="import"/>
-	  <field name="T3105_F_FR" type="int" source="import"/>
-	  <field name="T3105_F_HR" type="int" source="import"/>
-	  <field name="T3105_F_STOP" type="int" source="import"/>
-	  <field name="T3106_D" type="int" source="import"/>
-	  <field name="T3106_D_STOP" type="int" source="import"/>
-	  <field name="T3106_F" type="int" source="import"/>
-	  <field name="T3106_F_STOP" type="int" source="import"/>
-	  <field name="T3115" type="int" source="import"/>
 	  <field name="TEMPORARY_OFFSET" type="int" source="import"/>
 	  <field name="TRepetitionChannelRelease" type="int" source="import"/>
 	  <field name="TRepetitionUplinkFree" type="int" source="import"/>
@@ -440,7 +411,6 @@
 		<field name="EN_MS_PC" type="varchar(10)" source="import"></field> 
 		<field name="EmePwrMaxDcs" type="int" source="import"></field> 
 		<field name="EmePwrMaxGsm" type="int" source="import"></field> 
-		<field name="LocationName" type="int" source="import"></field> 
 		<field name="MS_P_CON_ACK" type="int" source="import"></field> 
 		<field name="MS_P_CON_INT" type="int" source="import"></field> 
 		<field name="MS_TXPWR_MAX" type="int" source="import"></field> 
@@ -699,8 +669,6 @@
 	   </field>
 	  <field name="HoThresholdQualParam" type="varchar(100)" source="import">
 	   </field>
-	  <field name="InterferenceAveragingParam" type="varchar(100)" source="import">
-	   </field>
 	  <field name="L_LOAD_OBJ" type="varchar(100)" source="import">
 	   </field>
 	  <field name="L_RXLEV_NCELL_DRn" type="varchar(100)" source="import"> 
@@ -728,8 +696,6 @@
 	  <field name="Loadlevel_3" type="varchar(100)" source="import"> 
 	  </field>
 	  <field name="Loadlevel_4" type="varchar(100)" source="import"> 
-	  </field>
-	  <field name="LocationName" type="varchar(100)" source="import"> 
 	  </field>
 	  <field name="LowTrafficLoadGPRS" type="varchar(100)" source="import"> 
 	  </field>
@@ -962,7 +928,6 @@
 	  <field name="AMR_HR_SUBSET" type="varchar(255)" source="import"/>
 	  <field name="AMR_START_MODE_FR" type="int" source="import"/>
 	  <field name="AMR_START_MODE_HR" type="int" source="import"/>
-	  <field name="AUT_BAR" type="int" source="import"/>
 	  <field name="AdministrativeState" type="varchar(100)" source="import"/>
 	  <field name="AlarmSeverityAssignmentProfilePointer" type="varchar(100)" source="import"/>
 	  <field name="AlarmStatus" type="varchar(100)" source="import"/>
@@ -989,9 +954,6 @@
 	  <field name="BssMapT8" type="varchar(100)" source="import"/>
 	  <field name="BssMapTimerT11Forced" type="varchar(100)" source="import"/>
 	  <field name="CBC_CallUserDataSel" type="varchar(100)" source="import"/>
-	  <field name="CBC_OPERATOR" type="int" source="import"/>
-	  <field name="CBC_PASSWORD" type="int" source="import"/>
-	  <field name="CBC_WINDOW" type="int" source="import"/>
 	  <field name="CGI_REQD" type="varchar(100)" source="import"/>
 	  <field name="Cgi3gReqd" type="varchar(100)" source="import"/>
 	  <field name="CurrentSessionStatus" type="varchar(100)" source="import"/>
@@ -1030,7 +992,6 @@
 	  <field name="Ignore_2Mbit_Failure" type="varchar(100)" source="import"/>
 	  <field name="IphoSupported" type="varchar(100)" source="import"/>
 	  <field name="L_MIN_DWELL_TIME" type="varchar(100)" source="import"/>
-	  <field name="LocationName" type="varchar(100)" source="import"/>
 	  <field name="M1" type="int" source="import"/>
 	  <field name="M2" type="int" source="import"/>
 	  <field name="MTP3_WB_INTERWORKING" type="varchar(100)" source="import"/>
