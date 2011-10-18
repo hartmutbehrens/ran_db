@@ -60,7 +60,7 @@ sub parse_rnl {
 	foreach my $fl (@files) {
 		next unless ($fl =~ /csv$/);
 		print "Parsing $fl from $omc and placing output in $outdir.\n";
-		my $content = $tar->get_content($fl);
+		my $content = $tar->get_content($fl); 
 		open(OUTFILE,">>".$outdir."/".$omc.'.rnl.'.$fl) || die "Could not open $outdir $omc.$fl for writing: $!\n";
 		print OUTFILE $content;
 		close OUTFILE;

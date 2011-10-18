@@ -47,17 +47,15 @@ sub execute {
 	aggregate_rnl($dbh);
 }
 
-#"aggregate" rnl info - mostly just fill in LAC,CI, etc into the table...
-sub aggregate_rnl {
+
+sub do_RnlAlcatelBSC {
 	my $dbh = shift;
-	#cell,bsc updates
 	$dbh->do("lock tables Cell LOW_PRIORITY write, RnlAlcatelBSC LOW_PRIORITY write");
 	my @cols1 = qw/CellGlobalIdentity CellInstanceIdentifier OMC_ID IMPORTDATE/;
 	my $sth1 = $dbh->prepare("select ".join(',',@cols1)." from Cell where CI is null");
 	my $sth2 = $dbh->prepare("update Cell set CI=?,LAC=? where CellInstanceIdentifier=? and OMC_ID=? and IMPORTDATE=?");
-	my %d = ();
-	my %e = ();
-	my %cell = ();
+	my (%d,%e,%cell);
+	
 	$sth1->execute();
 	print "Updating Cell,RnlAlcatelBSC columns..\n";
 	while (my @row = $sth1->fetchrow_array) {
@@ -79,9 +77,13 @@ sub aggregate_rnl {
 		$bscName =~ s/\"//g;
 		$sth4->execute($bsc,$bts,$sector,$bscName,@d{qw/CellInstanceIdentifier OMC_ID IMPORTDATE/});
 	}
-	$dbh->do("unlock tables");		
-	#external OMC Cell updates
+	$dbh->do("unlock tables");	
+}
+
+sub do_ExternalOmcCell {
+	my $dbh = shift;
 	print "Updating External OMC Cell columns..\n";
+	my %d;
 	my @cols0 = qw/CellGlobalIdentity ExternalOmcCellInstanceIdentifier OMC_ID IMPORTDATE/;
 	my $sth8 = $dbh->prepare("select ".join(',',@cols0)." from ExternalOmcCell where CI is null");
 	my $sth9 = $dbh->prepare("update ExternalOmcCell set CI=?,LAC=? where ExternalOmcCellInstanceIdentifier=? and OMC_ID=? and IMPORTDATE=?");
@@ -106,9 +108,15 @@ sub aggregate_rnl {
 		my ($ci,$lac) = $sth12->fetchrow_array;
 		$sth13->execute($ci,$lac,@d{@cols6});
 	}
-	#Power Control
+}
+
+sub do_RnlPowerControl {
+	my $dbh = shift;
+	my %d;
 	print "Updating PowerControl columns..\n";
+	my @cols7 = qw/CI LAC/;
 	my @cols8 = qw/RnlPowerControlInstanceIdentifier OMC_ID/;
+	my $sth12 = $dbh->prepare("select ".join(',',@cols7)." from Cell where CellInstanceIdentifier=? and OMC_ID=? limit 1");
 	my $sth14 = $dbh->prepare("select ".join(',',@cols8)." from RnlPowerControl where CI is null");
 	my $sth15 = $dbh->prepare("update RnlPowerControl set CI=?,LAC=? where RnlPowerControlInstanceIdentifier=? and OMC_ID=?");
 	$sth14->execute();
@@ -119,9 +127,15 @@ sub aggregate_rnl {
 		my ($ci,$lac) = $sth12->fetchrow_array;
 		$sth15->execute($ci,$lac,@d{@cols8});
 	}
-	#BasebandTransceiver
+}
+
+sub do_RnlBasebandTransceiver {
+	my $dbh = shift;
 	print "Updating RnlBasebandTransceiver columns..\n";
+	my %d;
+	my @cols7 = qw/CI LAC/;
 	my @cols9 = qw/RnlBasebandTransceiverInstanceIdentifier OMC_ID/;
+	my $sth12 = $dbh->prepare("select ".join(',',@cols7)." from Cell where CellInstanceIdentifier=? and OMC_ID=? limit 1");
 	my $sth16 = $dbh->prepare("select ".join(',',@cols9)." from RnlBasebandTransceiver where CI is null");
 	my $sth17 = $dbh->prepare("update RnlBasebandTransceiver set CI=?,LAC=? where RnlBasebandTransceiverInstanceIdentifier=? and OMC_ID=?");
 	$sth16->execute();
@@ -133,8 +147,12 @@ sub aggregate_rnl {
 		my ($ci,$lac) = $sth12->fetchrow_array;
 		$sth17->execute($ci,$lac,@d{@cols9});
 	}
+}
+
+sub do_Adjacency {
+	my $dbh = shift;
+	my (%d,%cell);
 	
-	#adjacency updates
 	print "Updating Adjacency columns..\n";
 	my @cols3 = qw/AdjacencyInstanceIdentifier OMC_ID IMPORTDATE/;
 	my @cols4 = qw/CI LAC CellInstanceIdentifier OMC_ID BCCHFrequency UserLabel/;
@@ -162,9 +180,11 @@ sub aggregate_rnl {
 		next if not exists($cell{$tid});
 		$sth7->execute(@{$cell{$cid}}{qw/CI LAC UserLabel BCCHFrequency/},@{$cell{$tid}}{qw/CI LAC UserLabel BCCHFrequency/},@d{qw/AdjacencyInstanceIdentifier OMC_ID IMPORTDATE/});	
 	}
-	
-	#NbrTCHinner update
-	my %def = ();
+}
+
+sub do_tchinner {
+	my $dbh = shift;
+	my (%d,%e,%def);
 	Common::MySQL::get_table_definition($dbh,'Cell',\%def);
 	if (exists $def{'NbrTCHinner'}) {
 		print "Updating NbrTCHinner in Cell table..\n";
@@ -194,6 +214,28 @@ sub aggregate_rnl {
 			$sth21->execute($inner_total,@d{qw/CI LAC/},$date);
 		}
 	}
+}
+
+#"aggregate" rnl info - mostly just fill in LAC,CI, etc into the table...
+sub aggregate_rnl {
+	my $dbh = shift;
+	
+	unless (Common::MySQL::has_table($dbh,'Cell')) {
+		die "Cannot continue aggregation because the table \"Cell\" is not available\n";
+	}
+	#cell,bsc updates
+	for (qw/RnlAlcatelBSC ExternalOmcCell RnlPowerControl RnlBasebandTransceiver Adjacency/) {
+		my $subname = 'do_'.$_;
+		my $sub = \&$subname;
+		if (Common::MySQL::has_table($dbh,$_)) {
+			$sub->($dbh);
+		}
+		else {
+			warn "Table \"$_\" is not present, so aggregation for this step will not be run.\n";	
+		}	
+	}
+	#NbrTCHinner update
+	do_tchinner($dbh); #only depends on Cell table
 	
 }
 
