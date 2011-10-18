@@ -86,8 +86,6 @@ sub load_csv {
 	
 	my %d = ();
 	my %only = ();
-	#fixed in to_csv
-	#$d{'OMC_ID'} = $source;	#need to find a better solution to this
 	my @cols = ();
 	open my $in ,"<","$indir/$file" || die "Could not open $indir/$file for reading:$!\n";
 	while(<$in>) {
@@ -107,13 +105,16 @@ sub load_csv {
 		}
 		else {
 			@d{@cols} = split($sep,$_);
-			
 			my %e = ();
 			@e{keys %only} = @d{keys %only};
 			#remove clutter
 			foreach my $k (keys %e) {
 				delete $e{$k} if (defined($e{$k}) && (uc($e{$k}) eq 'NULL'));
 				delete $e{$k} if (defined($e{$k}) && (length($e{$k}) == 0) );
+			}
+			#fixed in to_csv for most file types, but not for rnl (because it is extracted as-is out of the archive coming from the OMC-R)
+			if (exists $def{'OMC_ID'}) {
+				$e{'OMC_ID'} = exists $e{'OMC_ID'} ? $e{'OMC_ID'} : $source;	
 			}
 			
 			my @vals = values %e;
