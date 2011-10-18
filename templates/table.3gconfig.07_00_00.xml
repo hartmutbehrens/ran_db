@@ -1,4 +1,4 @@
-<tables>
+﻿<tables>
 	<table name="Cell">
 		<field name="OMC_ID" type="varchar(50)">
 		</field>
@@ -72,10 +72,6 @@
 		</field>
 		<field name="maxDlAmrRateConfigured" type="float">
 		</field>
-		<field name="OCNSActivation" type="varchar(10)">
-		</field>
-		<field name="OCNSSpreadingFactor" type="varchar(10)">
-		</field>
 		<field name="pcpichPower" type="float">
 		</field>
 		<field name="pcpichTransmitDiversityIndicator" type="varchar(10)">
@@ -94,7 +90,7 @@
 		</field>
 		<field name="qRxLevMin" type="int">
 		</field>
-		<field name="qualMeas" type="varchar(10)">
+		<field name="qualMeas" type="varchar(20)">
 		</field>
 		<field name="referenceRtwp" type="float">
 		</field>
@@ -148,8 +144,6 @@
 		</field>
 		<field name="ulFrequencyNumber" type="int">
 		</field>
-		<field name="userSpecificInfo" type="varchar(20)">
-		</field>
 		<field name="waitTime3Gto2GRedirectFailure" type="int">
 		</field>
 		<index name="idx10">
@@ -178,9 +172,9 @@
 		</field>
 		<field name="AntennaSystem" type="int">
 		</field>
-		<field name="latitude" type="float">
+		<field name="latitude" type="double">
 		</field>
-		<field name="longitude" type="float">
+		<field name="longitude" type="double">
 		</field>
 		<field name="altitude" type="float">
 		</field>
@@ -266,7 +260,7 @@
 		</field>
 		<field name="callPCEMSlotNumber" type="int">
 		</field>
-		<field name="callPCommissionMode" type="int">
+		<field name="callPCommissionMode" type="varchar(20)">
 		</field>
 		<field name="cellProfile" type="varchar(100)">
 		</field>

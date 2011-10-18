@@ -1,4 +1,4 @@
-<tables>
+﻿<tables>
 	<table name="Cell">
 		<field name="OMC_ID" type="varchar(50)">
 		</field>
@@ -64,8 +64,6 @@
 		</field>
 		<field name="tCell" type="int">
 		</field>
-		<field name="OCNSSpreadingFactor" type="varchar(100)">
-		</field>
 		<index name="idx10">
 			<order>cellId,locationAreaCode,IMPORTDATE</order>
 			<unique>yes</unique>
@@ -92,9 +90,9 @@
 		</field>
 		<field name="AntennaSystem" type="int">
 		</field>
-		<field name="latitude" type="float">
+		<field name="latitude" type="double">
 		</field>
-		<field name="longitude" type="float">
+		<field name="longitude" type="double">
 		</field>
 		<field name="altitude" type="float">
 		</field>
@@ -180,7 +178,7 @@
 		</field>
 		<field name="callPCEMSlotNumber" type="int">
 		</field>
-		<field name="callPCommissionMode" type="int">
+		<field name="callPCommissionMode" type="varchar(20)">
 		</field>
 		<field name="cellProfile" type="varchar(100)">
 		</field>
@@ -538,8 +536,6 @@
     </field>
     <field name="ulFrequencyNumber" type="int">
     </field>
-    <field name="userSpecificInfo" type="varchar(100)">
-		</field>
 		<field name="Distance" type="float">
     </field>
 		<index name="idx1">

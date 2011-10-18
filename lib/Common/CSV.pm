@@ -99,22 +99,23 @@ sub load_csv {
 			my @row = split($sep,$_);
 			@cols = ($config->{$type}->{'line'}->{$.}->{'columns'} eq 'retrieve_from_line') ? @row : split($sep,$config->{$type}->{'line'}->{$.}->{'columns'});
 			@d{@cols} = @row;
-			#foreach my $c (@cols,'OMC_ID') {
+			
+			#only load columns that exist in $table
 			foreach my $c (@cols) {
 				$only{$c} = 1 if exists($def{$c});
 			}
 		}
 		else {
 			@d{@cols} = split($sep,$_);
-			#only load columns that exist in $table
+			
 			my %e = ();
 			@e{keys %only} = @d{keys %only};
+			#remove clutter
 			foreach my $k (keys %e) {
-				if (defined($e{$k}) && (uc($e{$k}) eq 'NULL')) {
-					delete $e{$k};
-				}
+				delete $e{$k} if (defined($e{$k}) && (uc($e{$k}) eq 'NULL'));
+				delete $e{$k} if (defined($e{$k}) && (length($e{$k}) == 0) );
 			}
-			#my @vals = map(defined($_)? quotemeta($_): '0',values %e);
+			
 			my @vals = values %e;
 			#my $sql = 'replace into '.$table.' ('.join(',',map('`'.$_.'`',keys %e)).') values ('.join(',',map('\''.$_.'\'',@vals)).')';
 			my $sql = 'replace into '.$table.' ('.join(',',map('`'.$_.'`',keys %e)).') values ('.join(',',map('?',@vals)).')';
