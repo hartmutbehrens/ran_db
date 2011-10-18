@@ -8,6 +8,7 @@ Common::MySQL;
 use strict;
 use warnings;
 #modules
+use Carp qw(croak);
 use DBI;
 
 
@@ -33,6 +34,7 @@ sub connect {
 
 sub get_table_definition {
 	my ($dbh,$table,$defRef,$idxRef) = @_;
+	croak "Need a valid database handle. The one you provided is not defined!\n" unless defined $dbh;
 	my $hasTable = 0;
 	my $sth = $dbh->prepare("show tables");
 	$sth->execute();
@@ -56,6 +58,15 @@ sub get_table_definition {
 		${$idxRef->{$d{'idxName'}.';'.$unique}}[--$d{'sequence'}] = $d{'col'};		
 	}
 	return $hasTable;	
+}
+
+sub has_table {
+	my ($dbh,$table) = @_;
+	croak "Need a valid database handle. The one you provided is not defined!\n" unless defined $dbh;
+	my $rv = 0;
+	my @tables = @{$dbh->selectcol_arrayref("show tables")};
+	$rv = 1 if (grep {/^$table/i} @tables);
+	return $rv;
 }
 
 1;
