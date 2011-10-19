@@ -9,6 +9,7 @@ use warnings;
 #modules
 use Common::Date;
 use Common::Lock;
+use Common::MySQL;
 use Common::XML;
 use Aggregate -command;
 use Data::Dumper;
@@ -110,19 +111,19 @@ sub aggregate {
 			next;	
 		}
 		my $count = 0;
-		for my $day (get_dates($dbh,$sconfig)) {
+		for my $day (get_dates($dbh,$sconfig,$opt)) {
 			$count++;
 			my $items = get_ids($dbh,$sconfig,$day);
 			my $num = scalar keys %{$todo->{$step}};
 			print "Starting aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters, ".($#{$items}+1)." identifiers) for $day\n";
 			
-			my $select = make_select_sql($sconfig,$todo->{$step});
+			my ($select,$cols) = make_select_sql($sconfig,$todo->{$step},$dbh);
 			my $sth = $dbh->prepare($select);
 			for my $id (@$items) {
 				print "@$id $day\n" if $opt->{debug};
 				$sth->execute(@$id,$day);
 				my @row = $sth->fetchrow_array;
-				update_db( $dbh, $sconfig, [split(',',$sconfig->{identifier}),keys %{$todo->{$step}},$sconfig->{groupto}], [@$id,@row,$day] );
+				update_db( $dbh, $sconfig, [split(',',$sconfig->{identifier}),@$cols,$sconfig->{groupto}], [@$id,@row,$day] );
 			} 	
 		}
 		warn "No data found in table $sconfig->{from} for aggregation step $step\n" if $count == 0;
@@ -140,21 +141,33 @@ sub update_db {
 
 
 sub make_select_sql {
-	my ($sconfig,$todo) = @_;
-	my @what;
+	my ($sconfig,$todo,$dbh) = @_;
+	my (@what,%from,%to,@cols);
+	Common::MySQL::get_table_definition($dbh,$sconfig->{from},\%from);
+	Common::MySQL::get_table_definition($dbh,$sconfig->{to},\%to);
 	my $where = join(' and ',map("$_ = ?", split(',',$sconfig->{identifier}),$sconfig->{groupfrom} ) );
 	for my $counter (keys %$todo) {
-		my $what = ($todo->{$counter} =~ /[\+|\-|\*|\/]/) ? $todo->{$counter} : $todo->{$counter}.'(`'.$counter.'`)';
-		push @what, $what;
+		if ( (exists $from{$counter}) && (exists $to{$counter}) ) {
+			my $what = ($todo->{$counter} =~ /[\+|\-|\*|\/]/) ? $todo->{$counter} : $todo->{$counter}.'(`'.$counter.'`)';
+			push @what, $what;
+			push @cols, $counter;	
+		}
+		else {
+			warn "Counter $counter will be skipped from aggregation because it is not present in either $sconfig->{from} or $sconfig->{to}.\n";
+		}
+		
 	}
 	my $sql = "select ".join(',',@what)." from $sconfig->{from} where $where";
-	return $sql;
+	return ($sql,\@cols);
 }
 
 sub get_dates {
-	my ($dbh,$sconfig) = @_;
+	my ($dbh,$sconfig,$opt) = @_;
 	my @group;
-	my $sth = $dbh->prepare("select distinct $sconfig->{groupfrom} from $sconfig->{from} order by $sconfig->{groupfrom} desc limit $sconfig->{limit}");
+	my $limit = defined $opt->{limit} ? $opt->{limit} : $sconfig->{limit};
+	warn "Overriding limit with command line specified --limit value of \"$opt->{limit}\".\n" if defined $opt->{limit};
+	
+	my $sth = $dbh->prepare("select distinct $sconfig->{groupfrom} from $sconfig->{from} order by $sconfig->{groupfrom} desc limit $limit");
 	$sth->execute();
 	while (my @row = $sth->fetchrow_array) {
 		push(@group,$row[0]);
