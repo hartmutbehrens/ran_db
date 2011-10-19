@@ -164,10 +164,8 @@ sub remap_cols {
 sub counter_ll_lc {
 	my $cols = shift;
 	for (0..$#$cols) {
-		if ($cols->[$_] =~ /^MC/) {
-			my @chars = split('',$cols->[$_]);
-			$chars[$#chars] = lc($chars[$#chars]);
-			$cols->[$_] = join('',@chars);
+		if ( ($cols->[$_] =~ /^(MC\d+)(.*?)$/) || ($cols->[$_] =~ /^(P\d+)(.*?)$/) ) {
+			$cols->[$_] = $1.lc($2);
 		}
 	}
 }
