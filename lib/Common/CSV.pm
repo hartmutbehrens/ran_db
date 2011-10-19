@@ -110,6 +110,7 @@ sub load_csv {
 			#remove clutter
 			foreach my $k (keys %e) {
 				delete $e{$k} if (defined($e{$k}) && (uc($e{$k}) eq 'NULL'));
+				delete $e{$k} if (defined($e{$k}) && (uc($e{$k}) eq '?'));	#obsynt
 				delete $e{$k} if (defined($e{$k}) && (length($e{$k}) == 0) );
 			}
 			#fixed in to_csv for most file types, but not for rnl (because it is extracted as-is out of the archive coming from the OMC-R)
