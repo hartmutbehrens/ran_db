@@ -714,6 +714,8 @@
 		</field>
 		<field name="MC1226" type="int" couter="yes" patch="yes">
 		</field>
+			<field name="MC1227" type="int" couter="yes" patch="yes">
+		</field>
 		<index name="idx10">
 			<order>BSC_ID,BTS_ID,SECTOR,OMC_ID,STARTDATE,STARTTIME</order>
 			<unique>yes</unique>
@@ -826,53 +828,53 @@
 		</field>
 		<field name="TRX" type="int" counter="no">
 		</field>
-		<field name="MC621" type="int" counter="yes">
+		<field name="MC621" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC703" type="int" counter="yes">
+		<field name="MC703" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC710" type="int" counter="yes">
+		<field name="MC710" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC711" type="int" counter="yes">
+		<field name="MC711" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC712" type="int" counter="yes">
+		<field name="MC712" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC713" type="int" counter="yes">
+		<field name="MC713" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC714" type="int" counter="yes">
+		<field name="MC714" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC717a" type="int" counter="yes">
+		<field name="MC717a" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC717b" type="int" counter="yes">
+		<field name="MC717b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC718" type="int" counter="yes">
+		<field name="MC718" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC736" type="int" counter="yes">
+		<field name="MC736" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC739" type="int" counter="yes">
+		<field name="MC739" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC746b" type="int" counter="yes">
+		<field name="MC746b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC370a" type="int" counter="yes">
+		<field name="MC370a" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC370b" type="int" counter="yes">
+		<field name="MC370b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380a" type="int" counter="yes">
+		<field name="MC380a" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380b" type="int" counter="yes">
+		<field name="MC380b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380c" type="int" counter="yes">
+		<field name="MC380c" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380d" type="int" counter="yes">
+		<field name="MC380d" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380e" type="int" counter="yes">
+		<field name="MC380e" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380f" type="int" counter="yes">
+		<field name="MC380f" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC381" type="int" counter="yes">
+		<field name="MC381" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC390" type="int" counter="yes">
+		<field name="MC390" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC400" type="int" counter="yes">
+		<field name="MC400" type="int" counter="yes" patch="yes">
 		</field>
 		<field name="MC990" type="int" counter="yes" patch="yes">
 		</field>
@@ -933,6 +935,8 @@
 		<field name="MC1225" type="int" counter="yes" patch="yes">
 		</field>
 		<field name="MC1226" type="int" couter="yes" patch="yes">
+		</field>
+		<field name="MC1227" type="int" couter="yes" patch="yes">
 		</field>
 		<index name="idx10">
 			<order>BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,IMPORTDATE</order>
@@ -1502,6 +1506,8 @@
 		</field>
 		<field name="MC1226" type="int" couter="yes" patch="yes">
 		</field>
+			<field name="MC1227" type="int" couter="yes" patch="yes">
+		</field>
 		<index name="idx10">
 			<order>BSC_ID,BTS_ID,SECTOR,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
@@ -1572,53 +1578,53 @@
 		</field>
 		<field name="TRX" type="int" counter="no">
 		</field>
-		<field name="MC621" type="int" counter="yes">
+		<field name="MC621" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC703" type="int" counter="yes">
+		<field name="MC703" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC710" type="int" counter="yes">
+		<field name="MC710" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC711" type="int" counter="yes">
+		<field name="MC711" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC712" type="int" counter="yes">
+		<field name="MC712" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC713" type="int" counter="yes">
+		<field name="MC713" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC714" type="int" counter="yes">
+		<field name="MC714" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC717a" type="int" counter="yes">
+		<field name="MC717a" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC717b" type="int" counter="yes">
+		<field name="MC717b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC718" type="int" counter="yes">
+		<field name="MC718" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC736" type="int" counter="yes">
+		<field name="MC736" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC739" type="int" counter="yes">
+		<field name="MC739" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC746b" type="int" counter="yes">
+		<field name="MC746b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC370a" type="int" counter="yes">
+		<field name="MC370a" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC370b" type="int" counter="yes">
+		<field name="MC370b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380a" type="int" counter="yes">
+		<field name="MC380a" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380b" type="int" counter="yes">
+		<field name="MC380b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380c" type="int" counter="yes">
+		<field name="MC380c" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380d" type="int" counter="yes">
+		<field name="MC380d" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380e" type="int" counter="yes">
+		<field name="MC380e" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380f" type="int" counter="yes">
+		<field name="MC380f" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC381" type="int" counter="yes">
+		<field name="MC381" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC390" type="int" counter="yes">
+		<field name="MC390" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC400" type="int" counter="yes">
+		<field name="MC400" type="int" counter="yes" patch="yes">
 		</field>
 		<field name="MC990" type="int" counter="yes" patch="yes">
 		</field>
@@ -1679,6 +1685,8 @@
 		<field name="MC1225" type="int" counter="yes" patch="yes">
 		</field>
 		<field name="MC1226" type="int" couter="yes" patch="yes">
+		</field>
+		<field name="MC1227" type="int" couter="yes" patch="yes">
 		</field>
 		<index name="idx4">
 			<order>BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,BSC_NAME,SDATE</order>
@@ -2250,6 +2258,8 @@
 		</field>
 		<field name="MC1226" type="int" couter="yes" patch="yes">
 		</field>
+			<field name="MC1227" type="int" couter="yes" patch="yes">
+		</field>
 		<index name="idx4">
 			<order>BSC_ID,BTS_ID,SECTOR,OMC_ID,BSC_NAME,SDATE</order>
 			<unique>yes</unique>
@@ -2326,53 +2336,53 @@
 		</field>
 		<field name="TRX" type="int" counter="no">
 		</field>
-		<field name="MC621" type="int" counter="yes">
+		<field name="MC621" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC703" type="int" counter="yes">
+		<field name="MC703" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC710" type="int" counter="yes">
+		<field name="MC710" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC711" type="int" counter="yes">
+		<field name="MC711" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC712" type="int" counter="yes">
+		<field name="MC712" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC713" type="int" counter="yes">
+		<field name="MC713" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC714" type="int" counter="yes">
+		<field name="MC714" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC717a" type="int" counter="yes">
+		<field name="MC717a" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC717b" type="int" counter="yes">
+		<field name="MC717b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC718" type="int" counter="yes">
+		<field name="MC718" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC736" type="int" counter="yes">
+		<field name="MC736" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC739" type="int" counter="yes">
+		<field name="MC739" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC746b" type="int" counter="yes">
+		<field name="MC746b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC370a" type="int" counter="yes">
+		<field name="MC370a" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC370b" type="int" counter="yes">
+		<field name="MC370b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380a" type="int" counter="yes">
+		<field name="MC380a" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380b" type="int" counter="yes">
+		<field name="MC380b" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380c" type="int" counter="yes">
+		<field name="MC380c" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380d" type="int" counter="yes">
+		<field name="MC380d" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380e" type="int" counter="yes">
+		<field name="MC380e" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC380f" type="int" counter="yes">
+		<field name="MC380f" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC381" type="int" counter="yes">
+		<field name="MC381" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC390" type="int" counter="yes">
+		<field name="MC390" type="int" counter="yes" patch="yes">
 		</field>
-		<field name="MC400" type="int" counter="yes">
+		<field name="MC400" type="int" counter="yes" patch="yes">
 		</field>
 		<field name="MC990" type="int" counter="yes" patch="yes">
 		</field>
@@ -2433,6 +2443,8 @@
 		<field name="MC1225" type="int" counter="yes" patch="yes">
 		</field>
 		<field name="MC1226" type="int" couter="yes" patch="yes">
+		</field>
+		<field name="MC1227" type="int" couter="yes" patch="yes">
 		</field>
 		<index name="idx3">
 			<order>BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,SDATE</order>
@@ -2999,6 +3011,8 @@
 		<field name="MC1225" type="int" counter="yes" patch="yes">
 		</field>
 		<field name="MC1226" type="int" couter="yes" patch="yes">
+		</field>
+			<field name="MC1227" type="int" couter="yes" patch="yes">
 		</field>
 		<index name="idx3">
 			<order>BSC_ID,BTS_ID,SECTOR,OMC_ID,BSC_NAME,SDATE</order>
