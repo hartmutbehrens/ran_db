@@ -112,7 +112,7 @@ sub modify_table {
 		}
 		else {	#table does not exist, create it !
 			printf "Table $t does not exist .. creating it !\n";
-			Common::MakeIt::make($make,$dbh,$t);
+			Common::MakeIt::make_table($make,$dbh,$t);
 		}
 	}
 }
