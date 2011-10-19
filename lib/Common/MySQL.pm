@@ -47,15 +47,17 @@ sub get_table_definition {
 	while (my @def = $sth->fetchrow_array) {
 		$defRef->{$def[0]} = 1;	
 	}
-	my @idx = qw/table non_unique idxName sequence col/;
-	my %d = ();
-	my @d = ();
-	$sth = $dbh->prepare("show index from $table");
-	$sth->execute();
-	while (my @row = $sth->fetchrow_array) {
-		@d{@idx} = @row;
-		my $unique = ($d{'non_unique'} == 0) ? 'yes' : 'no';
-		${$idxRef->{$d{'idxName'}.';'.$unique}}[--$d{'sequence'}] = $d{'col'};		
+	if (defined $idxRef) {
+		my @idx = qw/table non_unique idxName sequence col/;
+		my %d = ();
+		my @d = ();
+		$sth = $dbh->prepare("show index from $table");
+		$sth->execute();
+		while (my @row = $sth->fetchrow_array) {
+			@d{@idx} = @row;
+			my $unique = ($d{'non_unique'} == 0) ? 'yes' : 'no';
+			${$idxRef->{$d{'idxName'}.';'.$unique}}[--$d{'sequence'}] = $d{'col'};		
+		}
 	}
 	return $hasTable;	
 }
