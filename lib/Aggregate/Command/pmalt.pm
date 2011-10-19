@@ -27,6 +27,7 @@ sub opt_spec {
 	my @which = (
 		["hourly", "hourly aggregation"],
 		["daily", "daily aggregation"],
+		["weekly", "daily aggregation"],
 	);
 	return (
 	[ "user|u=s",	"database user", { required => 1 }],
@@ -155,7 +156,6 @@ sub make_select_sql {
 		else {
 			warn "Counter $counter will be skipped from aggregation because it is not present in either $sconfig->{from} or $sconfig->{to}.\n";
 		}
-		
 	}
 	my $sql = "select ".join(',',@what)." from $sconfig->{from} where $where";
 	return ($sql,\@cols);
