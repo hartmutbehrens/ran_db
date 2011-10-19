@@ -1,0 +1,1400 @@
+﻿<aggregation>
+	<aggregate name="daily">
+	    <step name="1" from="GPM_PVC_H" to="GPM_PVC_D" identifier="PVC,Bearer,TP,MFS,OMC_ID" groupfrom="STARTDATE" groupto="SDATE" limit="2">
+		 </step>
+		 <step name="2" from="GPM_BSC_H" to="GPM_BSC_D" identifier="BSS,FABRIC,MFS,OMC_ID" groupfrom="STARTDATE" groupto="SDATE" limit="2">
+		 </step>
+		 <step name="3" from="GPM_LAPD_H" to="GPM_LAPD_D" identifier="BSS,GSL,TP,MFS,OMC_ID" groupfrom="STARTDATE" groupto="SDATE" limit="2">
+		 </step>
+		 <step name="4" from="GPM_BTS_H" to="GPM_BTS_D" identifier="BSS,BTS,FABRIC,MFS,OMC_ID" groupfrom="STARTDATE" groupto="SDATE" limit="2">
+		 </step>
+		 <step name="5" from="GPM_CELL_H" to="GPM_CELL_D" identifier="CI,LAC,FABRIC,MFS,OMC_ID,BSS,BTS" groupfrom="STARTDATE" groupto="SDATE" limit="2">
+		 </step>
+	</aggregate>
+	<aggregate name="weekly">
+	    <step name="1" from="GPM_PVC_D" to="GPM_PVC_W" identifier="PVC,Bearer,TP,MFS,OMC_ID" groupfrom="DATE_SUB(SDATE,INTERVAL WEEKDAY(SDATE) DAY)" groupto="SDATE" limit="2">
+		 </step>
+		 <step name="2" from="GPM_BSC_D" to="GPM_BSC_W" identifier="BSS,FABRIC,MFS,OMC_ID" groupfrom="DATE_SUB(SDATE,INTERVAL WEEKDAY(SDATE) DAY)" groupto="SDATE" limit="2">
+		 </step>
+		 <step name="3" from="GPM_LAPD_D" to="GPM_LAPD_W" identifier="BSS,GSL,TP,MFS,OMC_ID" groupfrom="DATE_SUB(SDATE,INTERVAL WEEKDAY(SDATE) DAY)" groupto="SDATE" limit="2">
+		 </step>
+		 <step name="4" from="GPM_BTS_D" to="GPM_BTS_W" identifier="BSS,BTS,FABRIC,MFS,OMC_ID" groupfrom="DATE_SUB(SDATE,INTERVAL WEEKDAY(SDATE) DAY)" groupto="SDATE" limit="2">
+		 </step>
+		 <step name="5" from="GPM_CELL_D" to="GPM_CELL_W" identifier="CI,LAC,FABRIC,MFS,OMC_ID,BSS,BTS" groupfrom="DATE_SUB(SDATE,INTERVAL WEEKDAY(SDATE) DAY)" groupto="SDATE" limit="2">
+		 </step>
+	</aggregate>
+	<aggregate name="fields">
+		<field name="P4" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="P5" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="P23" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="P34" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="P45" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="P46" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="P6c" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="P6d" do="daily:1;weekly:1" how="sum">
+		</field>
+		<field name="P100f" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P101" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P103" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P104" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P106" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P107" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P201" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P202" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P383a" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P383b" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P384ter" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P390a" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P391a" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P391b" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P391c" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P392a" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P392b" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P402" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P450a" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P450b" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P450c" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P450d" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P450e" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P450f" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P450g" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P450h" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P474" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P486" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P487" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P500" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P530a_1" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P530a_2" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P530a_3" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P530a_4" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P530a_5" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P530b_5" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P594" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P76a" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P77a" do="daily:2;weekly:2" how="sum">
+		</field>
+    <field name="P7a" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P7b" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P7c_1" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P7c_2" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P7d" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P7e" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P7f" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P7g" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P7h" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P7i" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P7j" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P7k" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P2a" do="daily:3;weekly:3" how="sum">
+		</field>
+		<field name="P2b" do="daily:3;weekly:3" how="sum">
+		</field>
+		<field name="P2c" do="daily:3;weekly:3" how="sum">
+		</field>
+		<field name="P2d" do="daily:3;weekly:3" how="sum">
+		</field>
+		<field name="P32" do="daily:3;weekly:3" how="sum">
+		</field>
+		<field name="P41" do="daily:3;weekly:3" how="sum">
+		</field>
+		<field name="P42" do="daily:3;weekly:3" how="sum">
+		</field>
+		<field name="P201bis" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P202bis" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P384bis" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P472" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P484" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P541a" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P541b" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P541d" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P542a" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P542b" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P542d" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P543a" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="P543d" do="daily:4;weekly:4" how="sum">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_1" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_10" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_11" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_2" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_3" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_4" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_5" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_6" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_7" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_8" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="EGPRS_LLC_THROUGHPUT_THR_9" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_1" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_10" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_2" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_3" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_4" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_5" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_6" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_7" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_8" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="GPRS_LLC_THROUGHPUT_THR_9" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="BS_PBCCH_BLKS" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="BS_PRACH_BLKS" do="daily:5;weekly:5" how="max">
+		</field>
+    <field name="MAX_PDCH" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="MIN_PDCH" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="P10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P100c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P100d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P100e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105f" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105g" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105h" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105i" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105j" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105k" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105l" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105m" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105n" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105o" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P105p" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P11" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P129a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P129b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P129c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P129d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P13" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P14" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P146" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P147" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P15" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P16" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P160" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P161" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P162" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P163" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P164" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P165" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P181a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P181b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P182a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P182b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P182f" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P200" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P203" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P204" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P207" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P208" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P209" do="daily:5;weekly:5" how="sum">
+		</field>
+			<field name="P20a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20f" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20g" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20h" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20i" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20j" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20k" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20l" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20m" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P20n" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P210" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P211" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P212" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P213" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P214" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P215" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21f" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21g" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21h" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21i" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21j" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21k" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21l" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21m" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P21n" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P22" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P220" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P221" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P222" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P223" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P224" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P225" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P226" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P227" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P228" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P229" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P22a" do="daily:5;weekly:5" how="sum">
+		</field>
+    	<field name="P231" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P232" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P24" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P26" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P27" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P28" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P310a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P310b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P310c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P310d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P335" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P336" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P350a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P350b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P351a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P351b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P352a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P352b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P302b_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P302b_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P302c_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P302c_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P302c_3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P302c_4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P303a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P303b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P30a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P30b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P30c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P30d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P30e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P35" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P36" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P385a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P385b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P38b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P38c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P38e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P38f" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P39" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P390b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P396a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P396b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P397" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P399" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P421" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P457" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P459" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P462" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P40" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P400" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P401" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P403a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P403b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P403c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P403d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P404a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P404b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P404c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P404d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P405a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P405b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P405c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P405d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P406a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P406b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P406c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P406d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P407a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P407b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P407c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P407d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P408a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P408b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P408c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P408d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P409" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P410" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P411" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P412" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P413" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P414bis" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P415bis" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P416bis" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P417" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P419" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P420" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P422" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P423a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P423b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P423c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P423d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P424a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P424b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P424c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P424d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P425a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P425b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P425c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P425d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P426a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P426b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P426c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P426d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P43" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P431a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P431b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P431c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P432a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P432b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P432c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P433a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P433b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P433c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P433d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P434a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P434b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P434c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P434d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P435a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P435b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P435c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P435d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P436" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P437a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P437b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P438a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P438b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P438c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P438d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P439" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P43a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P43b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P43c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P43d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P44" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P440a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P440b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P440c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P441a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P441b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P441c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P44a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P44b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P44c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P44d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P451a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P451b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P452" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453a_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453a_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453a_3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453a_4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453a_5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453a_6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453a_7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453a_8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453a_9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453a_10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453b_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453b_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453b_3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453b_4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453b_5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453b_6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453b_7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453b_8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453b_9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P453b_10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454a_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454a_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454a_3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454a_4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454a_5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454a_6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454a_7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454a_8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454a_9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454a_10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454b_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454b_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454b_3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454b_4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454b_5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454b_6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454b_7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454b_8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454b_9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P454b_10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455a_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455a_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455a_3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455a_4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455a_5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455a_6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455a_7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455a_8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455a_9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455a_10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455b_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455b_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455b_3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455b_4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455b_5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455b_6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455b_7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455b_8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455b_9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P455b_10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P456" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P458" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P460a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P460b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P460c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P461" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P463" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P464" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P465" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P466" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P469" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P470" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P471" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P488" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P489" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P49" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P490" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P491" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P492" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P493" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P494" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P495" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P496" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P497" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P498" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P499" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P501" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P502" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P503" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P504" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P505" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P505a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P506" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P506a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P507" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P507a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P508" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P508a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P509" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P509a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P510" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P510a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P511" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P512" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P513" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P514" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P515" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P516" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P518" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P519" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P520" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P521" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55f" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55g" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55h" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55i" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55j" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55k" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55l" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P55m" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57f" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57g" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57h" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57i" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57j" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57k" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57l" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P57m" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P59" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P52a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P52b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P52c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P52d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P53a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P53b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P53c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P53d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531a_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531a_10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531a_11" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531a_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531a_3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531a_4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531a_5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531a_6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531a_7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531a_8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531a_9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531b_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531b_10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531b_11" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531b_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531b_3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531b_4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531b_5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531b_6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531b_7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531b_8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P531b_9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532a_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532a_10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532a_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532a_3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532a_4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532a_5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532a_6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532a_7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532a_8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532a_9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532b_1" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532b_10" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532b_2" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532b_3" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532b_4" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532b_5" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532b_6" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532b_7" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532b_8" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P532b_9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P540b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P540c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P540d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P540e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P595" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P596" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P597" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P598" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P61" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P60" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P61a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P61b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P62a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P62b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P62c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P62d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P62e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P65" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P66" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P67" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P72c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P72d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P73c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P73d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P74" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P75" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P800" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P801" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P802" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P803" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P804" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P805" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P806" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P807" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P808" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P809" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P821" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P810" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P811" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P812" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P813" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P814" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P815" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P816" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P817" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P818" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P819" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P820" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P822" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P823" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P824" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P825" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P826" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P827" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P828" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P829" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P830" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P831" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P832" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P833" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P834" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P835" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P836" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P837" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P9" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P90a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P90b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P90c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P90d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P90e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P90f" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P90g" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P90h" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P90i" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P91a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P91b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P91c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P91d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P91e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P91f" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P91g" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P91h" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P91i" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P95" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P96" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P97" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P98a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P98b" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P98c" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P98d" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P98e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P98f" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P99" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P9a" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_1" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_2" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_3" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_4" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_5" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_6" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_7" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_8" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_9" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_PDCH_UNIT_ALLOC_THR_10" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_1" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_2" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_3" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_4" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_5" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_6" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_7" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_8" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_9" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_DURATION_THR_10" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_1" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_2" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_3" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_4" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_5" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_6" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_7" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_8" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_9" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_DL_TBF_VOLUME_THR_10" do="daily:5;weekly:5" how="max">
+		</field>	
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_1" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_2" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_3" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_4" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_5" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_6" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_7" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_8" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_9" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_PDCH_UNIT_ALLOC_THR_10" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_1" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_2" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_3" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_4" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_5" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_6" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_7" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_8" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_9" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_DURATION_THR_10" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_1" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_2" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_3" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_4" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_5" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_6" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_7" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_8" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_9" do="daily:5;weekly:5" how="max">
+		</field>
+		<field name="PD_UL_TBF_VOLUME_THR_10" do="daily:5;weekly:5" how="max">
+		</field>
+	</aggregate>
+</aggregation>
