@@ -53,25 +53,30 @@ sub validate_args {
 sub execute {
 	my ($self, $opt, $args) = @_;
 	for my $infile (@$args) {
-		my $sections = get_sections($opt->{ssep},$infile);
-		my $header = parse_header($sections->[0],$opt->{rsep}); #assume first section is header, naughty naughty
-		
-		for my $plugin (plugins()) {
-			activate_plugin($plugin,$opt,$header) if ($plugin->can('recognize') && $plugin->recognize($header));
-		}
-		
-		for (1..$#$sections) {
-			my ($table,$cols,$data) = parse_section($sections->[$_],$opt->{rsep},$opt->{fsep},$opt->{classifiers});
-			if ($table) {
-				remap_cols($opt->{remap},$table,$cols);	#make remapping of column names possible, to conform to possibly already existing naming conventions
-				counter_ll_lc($cols); #trailing letters of counters need to be lowercase
-				if (scalar @$data > 0) {
-					to_csv($infile,$opt,$header,$table,$cols,$data);
-				}
-				else {
-					warn "No data was found in $infile for the section belonging to table $table\n";
+		if (-s $infile) {
+			my $sections = get_sections($opt->{ssep},$infile);
+			my $header = parse_header($sections->[0],$opt->{rsep}); #assume first section is header, naughty naughty
+			
+			for my $plugin (plugins()) {
+				activate_plugin($plugin,$opt,$header) if ($plugin->can('recognize') && $plugin->recognize($header));
+			}
+			
+			for (1..$#$sections) {
+				my ($table,$cols,$data) = parse_section($sections->[$_],$opt->{rsep},$opt->{fsep},$opt->{classifiers});
+				if ($table) {
+					remap_cols($opt->{remap},$table,$cols);	#make remapping of column names possible, to conform to possibly already existing naming conventions
+					counter_ll_lc($cols); #trailing letters of counters need to be lowercase
+					if (scalar @$data > 0) {
+						to_csv($infile,$opt,$header,$table,$cols,$data);
+					}
+					else {
+						warn "No data was found in $infile for the section belonging to table $table\n";
+					}	
 				}	
-			}	
+			}
+		}
+		else {
+			warn "File $infile will not be parsed because it has zero size!\n";
 		}
 		if ($opt->{delete}) {
 			print "Deleting: $infile (-D command line option was provided)\n";
