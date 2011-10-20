@@ -8,7 +8,7 @@
 		 </step>
 		 <step name="4" from="GPM_BTS_H" to="GPM_BTS_D" identifier="BSS,BTS,FABRIC,MFS,OMC_ID" groupfrom="STARTDATE" groupto="SDATE" limit="2">
 		 </step>
-		 <step name="5" from="GPM_CELL_H" to="GPM_CELL_D" identifier="CI,LAC,FABRIC,MFS,OMC_ID,BSS,BTS" groupfrom="STARTDATE" groupto="SDATE" limit="2">
+		 <step name="5" from="GPM_CELL_H" to="GPM_CELL_D" identifier="CI,LAC,FABRIC,MFS,OMC_ID,BSS,BTS,MCC,MNC" groupfrom="STARTDATE" groupto="SDATE" limit="2">
 		 </step>
 	</aggregate>
 	<aggregate name="weekly">
@@ -20,7 +20,7 @@
 		 </step>
 		 <step name="4" from="GPM_BTS_D" to="GPM_BTS_W" identifier="BSS,BTS,FABRIC,MFS,OMC_ID" groupfrom="DATE_SUB(SDATE,INTERVAL WEEKDAY(SDATE) DAY)" groupto="SDATE" limit="2">
 		 </step>
-		 <step name="5" from="GPM_CELL_D" to="GPM_CELL_W" identifier="CI,LAC,FABRIC,MFS,OMC_ID,BSS,BTS" groupfrom="DATE_SUB(SDATE,INTERVAL WEEKDAY(SDATE) DAY)" groupto="SDATE" limit="2">
+		 <step name="5" from="GPM_CELL_D" to="GPM_CELL_W" identifier="CI,LAC,FABRIC,MFS,OMC_ID,BSS,BTS,MCC,MNC" groupfrom="DATE_SUB(SDATE,INTERVAL WEEKDAY(SDATE) DAY)" groupto="SDATE" limit="2">
 		 </step>
 	</aggregate>
 	<aggregate name="fields">
@@ -59,6 +59,8 @@
 		<field name="P383a" do="daily:2;weekly:2" how="sum">
 		</field>
 		<field name="P383b" do="daily:2;weekly:2" how="sum">
+		</field>
+		<field name="P384" do="daily:2;weekly:2" how="sum">
 		</field>
 		<field name="P384ter" do="daily:2;weekly:2" how="sum">
 		</field>
@@ -361,6 +363,14 @@
 		<field name="P214" do="daily:5;weekly:5" how="sum">
 		</field>
 		<field name="P215" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P216" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P217" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P218" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P219" do="daily:5;weekly:5" how="sum">
 		</field>
 		<field name="P21a" do="daily:5;weekly:5" how="sum">
 		</field>
@@ -1095,6 +1105,60 @@
 		<field name="P540d" do="daily:5;weekly:5" how="sum">
 		</field>
 		<field name="P540e" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P558" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P559" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P560" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P561" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P562" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P563" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P564" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P565" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P566" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P567" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P568" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P569" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P570" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P571" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P572" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P573" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P574" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P575" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P576" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P577" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P578" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P579" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P595" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P596" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P597" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P598" do="daily:5;weekly:5" how="sum">
+		</field>
+		<field name="P599" do="daily:5;weekly:5" how="sum">
 		</field>
 		<field name="P595" do="daily:5;weekly:5" how="sum">
 		</field>
