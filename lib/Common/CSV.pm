@@ -84,9 +84,7 @@ sub load_csv {
 	my $sep = $config->{$type}->{'fieldseparator'};
 	my $i = 0;
 	
-	my %d = ();
-	my %only = ();
-	my @cols = ();
+	my (%d,%only,@cols);
 	open my $in ,"<","$indir/$file" || die "Could not open $indir/$file for reading:$!\n";
 	while(<$in>) {
 		chomp;
@@ -100,7 +98,12 @@ sub load_csv {
 			
 			#only load columns that exist in $table
 			foreach my $c (@cols) {
-				$only{$c} = 1 if exists($def{$c});
+				if (exists $def{$c}) {
+					$only{$c} = 1;	
+				}
+				else {
+					#warn "Data for $c will not be loaded because no suitable column exists in $table.\n"; 
+				}
 			}
 		}
 		else {
