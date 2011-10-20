@@ -14,6 +14,7 @@ use Common::XML;
 use Aggregate -command;
 use Data::Dumper;
 use File::Path qw(make_path);
+use Time::Local qw(timelocal);
 
 sub abstract {
 	return "aggregate various pm tables using an xml defined aggregation template (alternative)";
@@ -118,17 +119,26 @@ sub aggregate {
 			my $num = scalar keys %{$todo->{$step}};
 			print "Starting aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters, ".($#{$items}+1)." identifiers) for $day\n";
 			
+			my ($success,$id) = (0,join('.',$day,$step,$sconfig->{from},$sconfig->{to}));
 			my ($select,$cols) = make_select_sql($sconfig,$todo->{$step},$dbh);
 			my $sth = $dbh->prepare($select);
 			for my $id (@$items) {
 				print "@$id $day\n" if $opt->{debug};
 				$sth->execute(@$id,$day);
 				my @row = $sth->fetchrow_array;
-				update_db( $dbh, $sconfig, [split(',',$sconfig->{identifier}),@$cols,$sconfig->{groupto}], [@$id,@row,$day] );
-			} 	
+				$success++ if update_db( $dbh, $sconfig, [split(',',$sconfig->{identifier}),@$cols,$sconfig->{groupto}], [@$id,@row,$day] );
+			}
+			log_done($opt,$id) if ($success == ($#{$items}+1)); 	
 		}
 		warn "No data found in table $sconfig->{from} for aggregation step $step\n" if $count == 0;
 	}
+}
+
+sub log_done {
+	my ($opt,$name) = @_;
+	open my $log ,'>>', $opt->{log}.'/'.$name;
+	print $log join(' ', localtime(time)),"\n";
+	close $log;
 }
 
 
@@ -137,7 +147,13 @@ sub update_db {
 	#print $cols,"\n";
 	my @values = map( defined $_ ? $_ : 'NULL', @$vals);
 	my $replace = 'replace into '.$sconfig->{to}.' ('.join(',',map('`'.$_.'`',@$cols)).') values ('.join(',',map($_ eq 'NULL' ? 'NULL' :  '\''.$_.'\'',@values)).')';
-	$dbh->do($replace) || die $replace;
+	if ($dbh->do($replace)) {
+		return 1;
+	}
+	else {
+		die $replace;
+		return 0;
+	} 
 }
 
 
