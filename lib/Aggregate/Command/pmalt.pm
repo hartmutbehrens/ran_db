@@ -40,6 +40,7 @@ sub opt_spec {
 	[ "time|t=s",	"level of aggregation that should be run (specified in aggregation template)", { required => 1, hidden => 1, one_of => \@which}],
 	[ "limit|l=s",	"optionally increase/decrease amount of days to use in aggregation operation"],
 	[ "step|s=s",	"only perform operations from specified step in aggregation template"],
+	[ "skip",	"skip aggregation steps that have already been completed according to log files"],
 	[ "debug",	"generate debug output"],
   );
 }
@@ -117,9 +118,16 @@ sub aggregate {
 			$count++;
 			my $items = get_ids($dbh,$sconfig,$day);
 			my $num = scalar keys %{$todo->{$step}};
-			print "Starting aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters, ".($#{$items}+1)." identifiers) for $day\n";
+			
 			
 			my ($success,$id) = (0,join('.',$day,$step,$sconfig->{from},$sconfig->{to}));
+			if ( (defined $opt->{skip}) && aggregation_done($opt,$id)) {
+				warn "Skipping aggregation step $step: from $sconfig->{from} to $sconfig->{to} for $day because it is already done according to log files in $opt->{log} and --skip command line option was provided.\n";
+				next;
+			}
+			else {
+				print "Starting aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters, ".($#{$items}+1)." identifiers) for $day\n";	
+			}
 			my ($select,$cols) = make_select_sql($sconfig,$todo->{$step},$dbh);
 			my $sth = $dbh->prepare($select);
 			for my $id (@$items) {
@@ -132,6 +140,12 @@ sub aggregate {
 		}
 		warn "No data found in table $sconfig->{from} for aggregation step $step\n" if $count == 0;
 	}
+}
+
+sub aggregation_done {
+	my ($opt,$id) = @_;
+	my $rv = -e $opt->{log}.'/'.$id ? 1 : 0;
+	return $rv;
 }
 
 sub log_done {
