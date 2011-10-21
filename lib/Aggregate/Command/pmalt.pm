@@ -117,16 +117,16 @@ sub aggregate {
 		for my $day (get_dates($dbh,$sconfig,$opt)) {
 			$count++;
 			my $items = get_ids($dbh,$sconfig,$day);
-			my $num = scalar keys %{$todo->{$step}};
+			my ($num,$num_id) = (scalar keys %{$todo->{$step}},$#{$items} + 1);
 			
 			
-			my ($success,$id) = (0,join('.',$day,$step,$sconfig->{from},$sconfig->{to}));
+			my ($success,$id) = (0,join('.',$day,$step,$sconfig->{from},$sconfig->{to}),$items,$num_id);
 			if ( (defined $opt->{skip}) && aggregation_done($opt,$id)) {
 				warn "Skipping aggregation step $step: from $sconfig->{from} to $sconfig->{to} for $day because it is already done according to log files in $opt->{log} and --skip command line option was provided.\n";
 				next;
 			}
 			else {
-				print "Starting aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters, ".($#{$items}+1)." identifiers) for $day\n";	
+				print "Starting aggregation step $step: from $sconfig->{from} to $sconfig->{to} ($num counters, $num_id identifiers) for $day\n";	
 			}
 			my ($select,$cols) = make_select_sql($sconfig,$todo->{$step},$dbh);
 			my $sth = $dbh->prepare($select);
@@ -136,7 +136,7 @@ sub aggregate {
 				my @row = $sth->fetchrow_array;
 				$success++ if update_db( $dbh, $sconfig, [split(',',$sconfig->{identifier}),@$cols,$sconfig->{groupto}], [@$id,@row,$day] );
 			}
-			log_done($opt,$id) if ($success == ($#{$items}+1)); 	
+			log_done($opt,$id) if ($success == $num_id); 	
 		}
 		warn "No data found in table $sconfig->{from} for aggregation step $step\n" if $count == 0;
 	}
