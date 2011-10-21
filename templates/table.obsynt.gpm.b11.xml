@@ -1746,6 +1746,10 @@
 			<order>CI,LAC,FABRIC,MFS,OMC_ID,SDATE</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rev">
+			<order>LAC,CI</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="GPM_PVC_D">
 		<field name="SDATE" type="datetime" counter="no">
@@ -3420,6 +3424,10 @@
 			<order>CI,LAC,MFS,OMC_ID,FABRIC,SDATE</order>
 			<unique>yes</unique>
 		</index>
+			<index name="rev">
+			<order>LAC,CI</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="GPM_PVC_W">
 		<field name="SDATE" type="datetime" counter="no">
@@ -5093,6 +5101,10 @@
 		<index name="cilac">
 			<order>CI,LAC,FABRIC,MFS,OMC_ID,SDATE</order>
 			<unique>yes</unique>
+		</index>
+			<index name="rev">
+			<order>LAC,CI</order>
+			<unique>no</unique>
 		</index>
 	</table>
 	</tables>

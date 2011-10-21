@@ -143,7 +143,7 @@
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
-			<order>CI,LAC</order>
+			<order>LAC,CI</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -721,7 +721,7 @@
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
-			<order>CI,LAC</order>
+			<order>LAC,CI</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -943,7 +943,7 @@
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
-			<order>CI,LAC</order>
+			<order>LAC,CI</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -1513,7 +1513,7 @@
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
-			<order>CI,LAC</order>
+			<order>LAC,CI</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -1693,7 +1693,7 @@
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
-			<order>CI,LAC</order>
+			<order>LAC,CI</order>
 			<unique>no</unique>
 		</index>
 		<index name="idx3">
@@ -2265,7 +2265,7 @@
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
-			<order>CI,LAC</order>
+			<order>LAC,CI</order>
 			<unique>no</unique>
 		</index>
 		<index name="idx3">
@@ -2451,7 +2451,7 @@
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
-			<order>CI,LAC</order>
+			<order>LAC,CI</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -3019,7 +3019,7 @@
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
-			<order>CI,LAC</order>
+			<order>LAC,CI</order>
 			<unique>no</unique>
 		</index>
 	</table>
