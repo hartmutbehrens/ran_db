@@ -8,7 +8,7 @@ use strict;
 use warnings;
 #modules
 use Common::File;
-use Data::Dumper;
+use File::Path qw(make_path);
 use Module::Pluggable;
 use Parse -command;
 
@@ -45,6 +45,7 @@ sub validate_args {
 	my ($self, $opt, $args) = @_;
 	
 	$self->usage_error("At least one file name is required") unless @$args;
+	make_path($opt->{outdir}, { verbose => 1 });
 	for (@$args) {
 		die "The file $_ does not exist!\n" unless -e $_;	
 	}
@@ -62,7 +63,7 @@ sub execute {
 			}
 			
 			for (1..$#$sections) {
-				my ($table,$cols,$data) = parse_section($sections->[$_],$opt->{rsep},$opt->{fsep},$opt->{classifiers});
+				my ($table,$cols,$data) = parse_section($sections->[$_],$opt);
 				if ($table) {
 					remap_cols($opt->{remap},$table,$cols);	#make remapping of column names possible, to conform to possibly already existing naming conventions
 					counter_ll_lc($cols); #trailing letters of counters need to be lowercase
@@ -124,13 +125,13 @@ sub parse_header {
 }
 
 sub parse_section {
-	my ($section,$rsep,$fsep,$classifiers) = @_;
+	my ($section,$opt) = @_;
 	my (@cols,@data);
 	my $table = undef;
-	for my $line ( split($rsep,$section)  ) {
+	for my $line ( split($opt->{rsep},$section)  ) {
 		next unless $line =~ /\w+/;
-		my @fields = split($fsep,$line);
-		my $id = classify(\@fields,$classifiers);
+		my @fields = split($opt->{fsep},$line);
+		my $id = classify(\@fields,$opt->{classifiers});
 		
 		if ($id) {
 			$table = $id;
@@ -161,6 +162,7 @@ sub remap_cols {
 	}
 }
 
+#last letters to lowercase
 sub counter_ll_lc {
 	my $cols = shift;
 	for (0..$#$cols) {
