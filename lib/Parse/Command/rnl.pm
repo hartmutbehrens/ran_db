@@ -44,8 +44,8 @@ sub execute {
 	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 	for my $file (@$args) {
 		
-		my $success = parse_rnl($file,$opt->{omc},$opt->{outdir});
-		if ($success && $opt->{delete}) {
+		parse_rnl($file,$opt->{omc},$opt->{outdir});
+		if ($opt->{delete}) {
 			print "Deleting: $file (-D command line option was provided)\n";
 			unlink($file);
 		}
