@@ -1,4 +1,4 @@
-<tables>
+﻿<tables>
 	<table name="T18_N7_H">
 		<field name="SDATE" type="datetime" counter="no">
 		</field>
@@ -53,7 +53,7 @@
 		<field name="C182" type="bigint" counter="yes">
 		</field>
 		<index name="idx1">
-			<order>BSC_ID,SDATE,OMC_ID</order>
+			<order>BSC_ID,OMC_ID,SDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -85,7 +85,7 @@
 		<field name="C751" type="bigint" counter="yes">
 		</field>
 		<index name="idx1">
-			<order>BSC_ID,LINK,SDATE,OMC_ID</order>
+			<order>BSC_ID,LINK,OMC_ID,SDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -135,7 +135,7 @@
 		<field name="C182" type="bigint" counter="yes">
 		</field>
 		<index name="idx1">
-			<order>BSC_ID,SDATE,OMC_ID</order>
+			<order>BSC_ID,OMC_ID,SDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
@@ -159,7 +159,81 @@
 		<field name="C751" type="bigint" counter="yes">
 		</field>
 		<index name="idx1">
-			<order>BSC_ID,LINK,SDATE,OMC_ID</order>
+			<order>BSC_ID,LINK,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T18_N7_W">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_ID" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="C180a" type="bigint" counter="yes">
+		</field>
+		<field name="C180b" type="bigint" counter="yes">
+		</field>
+		<field name="C180c" type="bigint" counter="yes">
+		</field>
+		<field name="C180d" type="bigint" counter="yes">
+		</field>
+		<field name="C180e" type="bigint" counter="yes">
+		</field>
+		<field name="C181a" type="bigint" counter="yes">
+		</field>
+		<field name="C181b" type="bigint" counter="yes">
+		</field>
+		<field name="C181c" type="bigint" counter="yes">
+		</field>
+		<field name="C181d" type="bigint" counter="yes">
+		</field>
+		<field name="C181e" type="bigint" counter="yes">
+		</field>
+		<field name="C181f" type="bigint" counter="yes">
+		</field>
+		<field name="C181g" type="bigint" counter="yes">
+		</field>
+		<field name="C181h" type="bigint" counter="yes">
+		</field>
+		<field name="C181i" type="bigint" counter="yes">
+		</field>
+		<field name="C181j" type="bigint" counter="yes">
+		</field>
+		<field name="C181k" type="bigint" counter="yes">
+		</field>
+		<field name="C181l" type="bigint" counter="yes">
+		</field>
+		<field name="C182" type="bigint" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>BSC_ID,OMC_ID,SDATE</order>
+			<unique>yes</unique>
+		</index>
+	</table>
+	<table name="T18_ACHANNEL_W">
+		<field name="SDATE" type="datetime" counter="no">
+		</field>
+		<field name="OMC_ID" type="varchar(50)" counter="no">
+		</field>
+		<field name="BSC_ID" type="int" counter="no">
+		</field>
+		<field name="BSC_NAME" type="varchar(50)" counter="no">
+		</field>
+		<field name="LINK" type="int" counter="no">
+		</field>
+		<field name="PCM" type="int" counter="no">
+		</field>
+		<field name="TS" type="int" counter="no">
+		</field>
+		<field name="C750" type="bigint" counter="yes">
+		</field>
+		<field name="C751" type="bigint" counter="yes">
+		</field>
+		<index name="idx1">
+			<order>BSC_ID,LINK,OMC_ID,SDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>
