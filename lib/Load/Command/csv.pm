@@ -52,7 +52,8 @@ sub execute {
 	}
 	opendir my $dir, $opt->{csvdir} || die "Could not open $opt->{csvdir} for reading: $!\n";
 	while (my $file = readdir $dir) {
-		next unless ($file =~ /$opt->{nms}/) && ($file =~ /$opt->{type}/);
+		my $match = "$opt->{nms}.$opt->{type}.";
+		next unless ($file =~ /$match/);
 		print "About to load: $file\n";
 		 my $success = Common::CSV::load_csv($dbh,$opt->{csvdir},$file,$opt->{config});
 		 $count++ if $success;
