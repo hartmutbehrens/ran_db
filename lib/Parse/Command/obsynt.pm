@@ -58,8 +58,14 @@ sub execute {
 			my $sections = get_sections($opt->{ssep},$infile);
 			my $header = parse_header($sections->[0],$opt->{rsep}); #assume first section is header, naughty naughty
 			
+			my @known;
 			for my $plugin (plugins()) {
-				activate_plugin($plugin,$opt,$header) if ($plugin->can('recognize') && $plugin->recognize($header));
+				if ( $plugin->can('recognize') && $plugin->recognize($header) ) {
+					$plugin->process_header($header) if $plugin->can('process_header');
+					$plugin->add_classifiers($opt,$header) if $plugin->can('add_classifiers');
+					$plugin->add_remaps($opt,$header) if $plugin->can('add_remaps');
+					push @known, $plugin;	
+				}
 			}
 			
 			for (1..$#$sections) {
@@ -67,7 +73,11 @@ sub execute {
 				if ($table) {
 					remap_cols($opt->{remap},$table,$cols);	#make remapping of column names possible, to conform to possibly already existing naming conventions
 					counter_ll_lc($cols); #trailing letters of counters need to be lowercase
+					
 					if (scalar @$data > 0) {
+						for my $plugin (@known) {
+							$plugin->parse_section($table,$cols,$data) if $plugin->can('parse_section');
+						}
 						to_csv($infile,$opt,$header,$table,$cols,$data);
 					}
 					else {
@@ -84,13 +94,6 @@ sub execute {
 			unlink($infile);
 		}
 	}		
-}
-
-sub activate_plugin {
-	my ($plugin,$opt,$header) = @_;
-	$plugin->process_header($header) if $plugin->can('process_header');
-	$plugin->add_classifiers($opt,$header) if $plugin->can('add_classifiers');
-	$plugin->add_remaps($opt,$header) if $plugin->can('add_remaps');
 }
 
 sub to_csv {
@@ -166,7 +169,7 @@ sub remap_cols {
 sub counter_ll_lc {
 	my $cols = shift;
 	for (0..$#$cols) {
-		if ( ($cols->[$_] =~ /^(MC\d+)(.*?)$/) || ($cols->[$_] =~ /^(P\d+)(.*?)$/) ) {
+		if ( ($cols->[$_] =~ /^(MC\d+)(.*?)$/) || ($cols->[$_] =~ /^(P\d+)(.*?)$/) || ($cols->[$_] =~ /^(C\d+)(.*?)$/) ) {
 			$cols->[$_] = $1.lc($2);
 		}
 	}
