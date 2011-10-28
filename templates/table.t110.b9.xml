@@ -548,8 +548,6 @@
 		</index>
 	</table>
 	<table name="T110_TRX_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
 		<field name="SDATE" type="datetime" counter="no">
 		</field>
 		<field name="LAC" type="int" counter="no">
@@ -617,7 +615,7 @@
 		<field name="MC400" type="int" counter="yes">
 		</field>
 		<index name="idx10">
-			<order>BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,IMPORTDATE</order>
+			<order>BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,SDATE</order>
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
@@ -626,8 +624,6 @@
 		</index>
 	</table>
 	<table name="T110_SECTOR_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
 		<field name="SDATE" type="datetime" counter="no">
 		</field>
 		<field name="LAC" type="int" counter="no">
@@ -1023,7 +1019,7 @@
 		<field name="MC400" type="int" counter="yes">
 		</field>
 		<index name="idx10">
-			<order>BSC_ID,BTS_ID,SECTOR,OMC_ID,IMPORTDATE</order>
+			<order>BSC_ID,BTS_ID,SECTOR,OMC_ID,SDATE</order>
 			<unique>yes</unique>
 		</index>
 		<index name="idx2">
@@ -1032,8 +1028,6 @@
 		</index>
 	</table>
 	<table name="T110_BSC_D">
-		<field name="IMPORTDATE" type="date" counter="no">
-		</field>
 		<field name="SDATE" type="datetime" counter="no">
 		</field>
 		<field name="OMC_ID" type="varchar(50)" counter="no">
@@ -1069,7 +1063,7 @@
 		<field name="MC945" type="int" counter="yes">
 		</field>
 		<index name="idx10">
-			<order>BSC_ID,OMC_ID,IMPORTDATE</order>
+			<order>BSC_ID,OMC_ID,SDATE</order>
 			<unique>yes</unique>
 		</index>
 	</table>

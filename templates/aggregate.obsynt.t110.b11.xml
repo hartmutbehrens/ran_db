@@ -1,18 +1,18 @@
 ﻿<aggregation>
 	<aggregate name="daily">
-		 <step name="1" from="T110_TRX_H" to="T110_TRX_D" identifier="BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,BSC_NAME,LAC,CI" groupfrom="STARTDATE" groupto="IMPORTDATE" limit="2">
+		 <step name="1" from="T110_TRX_H" to="T110_TRX_D" identifier="BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,BSC_NAME,LAC,CI" groupfrom="STARTDATE" groupto="SDATE" limit="2">
 		 </step>
-		 <step name="2" from="T110_SECTOR_H" to="T110_SECTOR_D" identifier="BSC_ID,BTS_ID,SECTOR,OMC_ID,BSC_NAME,LAC,CI" groupfrom="STARTDATE" groupto="IMPORTDATE" limit="2">
+		 <step name="2" from="T110_SECTOR_H" to="T110_SECTOR_D" identifier="BSC_ID,BTS_ID,SECTOR,OMC_ID,BSC_NAME,LAC,CI" groupfrom="STARTDATE" groupto="SDATE" limit="2">
 		 </step>
-		 <step name="3" from="T110_BSC_H" to="T110_BSC_D" identifier="BSC_ID,OMC_ID,BSC_NAME" groupfrom="STARTDATE" groupto="IMPORTDATE" limit="2">
+		 <step name="3" from="T110_BSC_H" to="T110_BSC_D" identifier="BSC_ID,OMC_ID,BSC_NAME" groupfrom="STARTDATE" groupto="SDATE" limit="2">
 		 </step>
 	</aggregate>
 	<aggregate name="weekly">
-		 <step name="1" from="T110_TRX_D" to="T110_TRX_W" identifier="BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,BSC_NAME,LAC,CI" groupfrom="CONCAT(DATE_SUB(IMPORTDATE,INTERVAL WEEKDAY(IMPORTDATE) DAY),' 00:00:00')" groupto="SDATE" limit="2">
+		 <step name="1" from="T110_TRX_D" to="T110_TRX_W" identifier="BSC_ID,BTS_ID,SECTOR,TRX,OMC_ID,BSC_NAME,LAC,CI" groupfrom="CONCAT(DATE_SUB(SDATE,INTERVAL WEEKDAY(SDATE) DAY),' 00:00:00')" groupto="SDATE" limit="2">
 		 </step>
-		 <step name="2" from="T110_SECTOR_D" to="T110_SECTOR_W" identifier="BSC_ID,BTS_ID,SECTOR,OMC_ID,BSC_NAME,LAC,CI" groupfrom="CONCAT(DATE_SUB(IMPORTDATE,INTERVAL WEEKDAY(IMPORTDATE) DAY),' 00:00:00')" groupto="SDATE" limit="2">
+		 <step name="2" from="T110_SECTOR_D" to="T110_SECTOR_W" identifier="BSC_ID,BTS_ID,SECTOR,OMC_ID,BSC_NAME,LAC,CI" groupfrom="CONCAT(DATE_SUB(SDATE,INTERVAL WEEKDAY(SDATE) DAY),' 00:00:00')" groupto="SDATE" limit="2">
 		 </step>
-		 <step name="3" from="T110_BSC_D" to="T110_BSC_W" identifier="BSC_ID,OMC_ID,BSC_NAME" groupfrom="CONCAT(DATE_SUB(IMPORTDATE,INTERVAL WEEKDAY(IMPORTDATE) DAY),' 00:00:00')" groupto="SDATE" limit="2">
+		 <step name="3" from="T110_BSC_D" to="T110_BSC_W" identifier="BSC_ID,OMC_ID,BSC_NAME" groupfrom="CONCAT(DATE_SUB(SDATE,INTERVAL WEEKDAY(SDATE) DAY),' 00:00:00')" groupto="SDATE" limit="2">
 		 </step>
 	</aggregate>
 	<aggregate name="fields">
