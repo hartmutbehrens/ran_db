@@ -184,34 +184,40 @@ sub do_Adjacency {
 
 sub do_tchinner {
 	my $dbh = shift;
-	my (%d,%e,%def);
+	my (%d,%e,%def,@dates);
 	Common::MySQL::get_table_definition($dbh,'Cell',\%def);
 	if (exists $def{'NbrTCHinner'}) {
-		print "Updating NbrTCHinner in Cell table..\n";
-		my $sth18 = $dbh->prepare('select max(IMPORTDATE) from RnlBasebandTransceiver');
-		$sth18->execute;
-		my ($date) = $sth18->fetchrow_array;
-		my @cols6 = qw/LAC CI NbrTCH RnlCellType/;
-		my @cols7 = qw/ListOfRadioChannels ZONE_TYPE/;
-		my $sth19 = $dbh->prepare('select '.join(',',@cols6).' from Cell where IMPORTDATE = ?');
-		$sth19->execute($date);
-		my $sth20 = $dbh->prepare('select '.join(',',@cols7).' from RnlBasebandTransceiver where CI = ? and LAC = ? and IMPORTDATE = ?');
-		my $sth21 = $dbh->prepare('update Cell set NbrTCHinner=? where CI=? and LAC=? and IMPORTDATE=?');
-		while (my @row = $sth19->fetchrow_array) {
-			@d{@cols6} = @row;
-			my $inner_total = 0;
-			if ($d{'RnlCellType'} eq 'concentric') {
-				$sth20->execute(@d{qw/CI LAC/},$date);
-				while (my @b_row = $sth20->fetchrow_array) {
-					@e{@cols7} = @b_row;
-					my $tch_inner = 0;
-					if ($e{'ZONE_TYPE'} eq 'inner') {
-						$tch_inner = () = $e{'ListOfRadioChannels'} =~ /tCH/g;
-						$inner_total += $tch_inner;
-					} 
-				}	
+		my $sth1 = $dbh->prepare('select distinct IMPORTDATE from Cell where NbrTCHinner is null');
+		$sth1->execute;
+		while (my @row = $sth1->fetchrow_array) {
+			push @dates,$row[0];
+		}
+		
+		for my $date (@dates) {	
+			print "Updating NbrTCHinner in Cell table for $date..\n";
+			
+			my @cols6 = qw/LAC CI NbrTCH RnlCellType/;
+			my @cols7 = qw/ListOfRadioChannels ZONE_TYPE/;
+			my $sth19 = $dbh->prepare('select '.join(',',@cols6).' from Cell where IMPORTDATE = ?');
+			$sth19->execute($date);
+			my $sth20 = $dbh->prepare('select '.join(',',@cols7).' from RnlBasebandTransceiver where CI = ? and LAC = ? and IMPORTDATE = ?');
+			my $sth21 = $dbh->prepare('update Cell set NbrTCHinner=? where CI=? and LAC=? and IMPORTDATE=?');
+			while (my @row = $sth19->fetchrow_array) {
+				@d{@cols6} = @row;
+				my $inner_total = 0;
+				if ($d{'RnlCellType'} eq 'concentric') {
+					$sth20->execute(@d{qw/CI LAC/},$date);
+					while (my @b_row = $sth20->fetchrow_array) {
+						@e{@cols7} = @b_row;
+						my $tch_inner = 0;
+						if ($e{'ZONE_TYPE'} eq 'inner') {
+							$tch_inner = () = $e{'ListOfRadioChannels'} =~ /tCH/g;
+							$inner_total += $tch_inner;
+						} 
+					}	
+				}
+				$sth21->execute($inner_total,@d{qw/CI LAC/},$date);
 			}
-			$sth21->execute($inner_total,@d{qw/CI LAC/},$date);
 		}
 	}
 }
