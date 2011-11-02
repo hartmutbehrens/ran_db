@@ -63,7 +63,7 @@ sub execute {
 		}
 	}
 	if ($count == 0) {
-		warn "No files of type \"$opt->{type}\" from \"$opt->{nms}\" could be found in \"$opt->{csvdir}\" !\n";
+		warn "No files of type \"$opt->{type}\" from \"$opt->{nms}\" could be loaded from \"$opt->{csvdir}\" !\n";
 	}
 }
 
