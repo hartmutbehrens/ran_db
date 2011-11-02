@@ -39,7 +39,7 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-	my $lock = '.'.$opt->{wnms}.'3gconfig';
+	my $lock = '.'.$opt->{wnms}.'3galarms';
 	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 	for my $file (@$args) {
 		
