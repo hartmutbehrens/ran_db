@@ -49,6 +49,10 @@
 		<line name="1" columns="retrieve_from_line">
 		</line>
 	</setting>
+	<setting name="2galarms" fieldseparator=";">
+		<line name="1" columns="retrieve_from_line">
+		</line>
+	</setting>
 	<setting name="3galarms" fieldseparator=";">
 		<line name="1" columns="retrieve_from_line">
 		</line>
