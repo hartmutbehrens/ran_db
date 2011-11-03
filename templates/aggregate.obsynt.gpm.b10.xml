@@ -72,9 +72,9 @@
 		</field>
 		<field name="P391c" do="daily:2;weekly:2" how="sum">
 		</field>
-		<field name="P392a" do="daily:2;weekly:2" how="sum">
+		<field name="P392a" do="daily:2;weekly:2" how="max">
 		</field>
-		<field name="P392b" do="daily:2;weekly:2" how="sum">
+		<field name="P392b" do="daily:2;weekly:2" how="max">
 		</field>
 		<field name="P402" do="daily:2;weekly:2" how="sum">
 		</field>
