@@ -27,6 +27,7 @@ sub opt_spec {
 	[ "fsep|f=s",	'input field separator (default ;)', { default => ';' }],
 	[ "hline=s",	'specify header line. [line#, col1, col2, ..] to specify header column names', ],
 	[ "cline=s",	'specify column line. [line#, col1, col2, ..] to manually specify column names or [line#, auto] to extract column names automatically', { required => 1 }],
+	[ "remap|r=s@",	'[table,old_col,new_col] remap old col column name to new_col column name. Repeat switch and argument to add more remaps'],
 	[ "user|u=s",	"database user", { required => 1 }],
 	[ "pass|x=s",	"database password", { required => 1 }],
 	[ "host|h=s",	"database host IP address", { required => 1 }],
@@ -74,28 +75,26 @@ sub execute {
 
 sub load_csv {
 	my ($dbh,$opt,$file) = @_;
-	my ($source,$type,$table) = split('\.',$file);
 	
+	my ($source,$type,$table) = split('\.',$file);
 	unless (defined($source) && defined($type) && defined($table)) {
 		warn "$file does not conform to the naming convetion \"source.type.table\" and will be skipped ..\n";
 		return 0;
 	}
 	
-	#check if table exists
 	return 0 unless Common::MySQL::has_table($dbh,$table);
-	#get table definition
 	my $def = Common::MySQL::get_definition($dbh,$table);
+	
 	$dbh->do("lock tables $table write") || die($dbh->errstr) ;
 	print "Loading: ($file) $table from $source ($type)..\n";
 	
 	my ($i,$has_cols) = (0,0);
-	
 	my (%d,%only,@cols);
 	open my $in ,"<",$opt->{csvdir}.'/'.$file || die "Could not open $opt->{csvdir}/$file for reading:$!\n";
 	while(<$in>) {
 		chomp;
 		
-		if (defined $opt ->{hline} && ($opt->{hline} =~ /^$./) ) {
+		if (defined $opt ->{hline} && ($opt->{hline} =~ /^$./) ) {	#we have a header line
 			my (undef,@hcols) = split('\W+',$opt->{hline});
 			@d{@hcols} = split($opt->{fsep}, $_);
 			for (@hcols) {
@@ -104,9 +103,10 @@ sub load_csv {
 			next;
 		}
 		
-		if ($opt->{cline} =~ /^$./) {
+		if ($opt->{cline} =~ /^$./) {		#we have a column line
 			my (undef,@ccols) = split('\W+',$opt->{cline});
 			@cols = lc($ccols[0]) eq 'auto' ? split($opt->{fsep}, $_) : @ccols;
+			remap_cols($opt->{remap},$table,\@cols) if defined $opt->{remap};
 			for (@cols) {
 				$only{$_} = 1 if exists $def->{$_};
 			}
@@ -116,18 +116,11 @@ sub load_csv {
 		
 		next unless $has_cols;
 		@d{@cols} = split($opt->{fsep}, $_);
-		my %e = ();
-		@e{keys %only} = @d{keys %only};
-		#remove clutter
-		foreach my $k (keys %e) {
-			delete $e{$k} if (defined($e{$k}) && (uc($e{$k}) eq 'NULL'));
-			delete $e{$k} if (defined($e{$k}) && (uc($e{$k}) eq '?'));	#obsynt
-			delete $e{$k} if (defined($e{$k}) && (length($e{$k}) == 0) );
-		}
-		#fixed in to_csv for most file types, but not for rnl (because it is extracted as-is out of the archive coming from the OMC-R)
-		if (exists $def->{'OMC_ID'}) {
-			$e{'OMC_ID'} = exists $e{'OMC_ID'} ? $e{'OMC_ID'} : $source;	
-		}
+		my %e = map { $_ => $d{$_}  } keys %only;
+
+		clean(\%e); #remove problematic fields		
+		$e{'OMC_ID'} = exists $e{'OMC_ID'} ? $e{'OMC_ID'} : $source if exists $def->{OMC_ID}; #fixed in to_csv for most file types, but not for rnl (because it is extracted as-is out of the archive coming from the OMC-R)
+		
 		my @vals = values %e;
 		#my $sql = 'replace into '.$table.' ('.join(',',map('`'.$_.'`',keys %e)).') values ('.join(',',map('\''.$_.'\'',@vals)).')';
 		my $sql = 'replace into '.$table.' ('.join(',',map('`'.$_.'`',keys %e)).') values ('.join(',',map('?',@vals)).')';
@@ -141,6 +134,30 @@ sub load_csv {
 	$dbh->do("unlock tables") || die($dbh->errstr) ;
 	print "Loaded $i records.\n";
 	return 1;	
+}
+
+sub clean {
+	my $href = shift;
+	for my $k (keys %$href) {
+		delete $href->{$k} if (defined($href->{$k}) && (uc($href->{$k}) eq 'NULL'));
+		delete $href->{$k} if (defined($href->{$k}) && (uc($href->{$k}) eq '?'));	#obsynt
+		delete $href->{$k} if (defined($href->{$k}) && (length($href->{$k}) == 0) );
+	}
+}
+
+sub remap_cols {
+	my ($map,$table,$cols) = @_;
+	print "Running remap \n";
+	my %map;
+	for (@$map) {
+		my ($table,$old,$new) = split('\W+',$_);
+		$map{$table.','.$old} = $new;
+	}
+
+	for (0..$#$cols) {
+		my $index = $table.','.$cols->[$_];
+		$cols->[$_] = $map{$index} if exists $map{$index};
+	}
 }
 
 1;
