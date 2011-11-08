@@ -9,8 +9,6 @@ use warnings;
 
 #modules
 use Common::MySQL;
-#use Common::CSV;
-use Data::Dumper;
 use Load -command;
 
 sub abstract {
@@ -59,7 +57,6 @@ sub execute {
 		my $match = "$opt->{nms}.$opt->{type}.";
 		next unless ($file =~ /$match/);
 		print "About to load: $file\n";
-		 #my $success = Common::CSV::load_csv($dbh,$opt->{csvdir},$file,$opt->{config});
 		 my $success = load_csv($dbh,$opt,$file);
 		 $count++ if $success;
 		 if ($success && $opt->{delete}) {
@@ -85,7 +82,6 @@ sub load_csv {
 	my $def = Common::MySQL::get_definition($dbh,$table);
 	
 	$dbh->do("lock tables $table write") || die($dbh->errstr) ;
-	
 	
 	my ($i,$has_cols) = (0,0);
 	my (%d,%only,@cols);
