@@ -86,7 +86,7 @@ sub load_csv {
 	my $def = Common::MySQL::get_definition($dbh,$table);
 	
 	$dbh->do("lock tables $table write") || die($dbh->errstr) ;
-	print "Loading: ($file) $table from $source ($type)..\n";
+	
 	
 	my ($i,$has_cols) = (0,0);
 	my (%d,%only,@cols);
@@ -132,7 +132,7 @@ sub load_csv {
 	}
 	close $in;
 	$dbh->do("unlock tables") || die($dbh->errstr) ;
-	print "Loaded $i records.\n";
+	print "Loaded $i records from $file into $table.\n";
 	return 1;	
 }
 
