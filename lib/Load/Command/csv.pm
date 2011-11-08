@@ -26,7 +26,7 @@ sub opt_spec {
 	[ "csvdir|c=s",	"directory to load csv files from", { default => "../csvload" }],
 	[ "fsep|f=s",	'input field separator (default ;)', { default => ';' }],
 	[ "hline=s",	'specify header line. [line#, col1, col2, ..] to specify header column names', ],
-	[ "cline=s",	'specify column line. [line#, col1, col2, ..] to manually specify column names or [line#, auto] to extract column names automatically', { required => 1 }],
+	[ "cline=s",	'specify column line. [line#, col1, col2, ..] to manually specify column names or [line#,auto] to extract column names automatically', { required => 1 }],
 	[ "remap|r=s@",	'[table,old_col,new_col] remap old col column name to new_col column name. Repeat switch and argument to add more remaps'],
 	[ "user|u=s",	"database user", { required => 1 }],
 	[ "pass|x=s",	"database password", { required => 1 }],
@@ -35,16 +35,15 @@ sub opt_spec {
 	[ "port|P=s",	"database port", { hidden => 1, default => 3306 }],
 	[ "nms|n=s",	"load files from this OMC-R or WNMS name (will be used to match against csv file name)", { required => 1 }],
 	[ "type|t=s",	"file type to be loaded (will be used to match against csv file name) - e.g. t110,RNCCN..", { required => 1 }],
-	[ "config|C=s",	"file describing csv record separator, etc", { hidden => 1, default => '../etc/csvload.xml' }],
 	[ "delete|D",	"Delete file(s) after parsing"],
   );
 }
 
 sub validate_args {
 	my ($self, $opt, $args) = @_;
-	unless (-e $opt->{config}) {
-		die "The file \"$opt->{config}\", which describes how to load csv files of type \"$opt->{type}\" is not present!\n";
-	}	
+	if (defined $opt->{hline} && substr($opt->{hline},0,1) eq  substr($opt->{cline},0,1)) {
+		die "Header line and column line cannot both be on the same line. Please fix the command line arguments!\n";
+	}		
 }
 
 sub execute {
