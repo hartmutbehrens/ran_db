@@ -35,14 +35,10 @@ sub connect {
 sub get_table_definition {
 	my ($dbh,$table,$defRef,$idxRef) = @_;
 	croak "Need a valid database handle. The one you provided is not defined!\n" unless defined $dbh;
-	my $hasTable = 0;
-	my $sth = $dbh->prepare("show tables");
-	$sth->execute();
-	while (my @def = $sth->fetchrow_array) {
-		$hasTable = 1 if (lc($def[0]) eq lc($table));
-	}
-	return $hasTable if not $hasTable;
-	$sth = $dbh->prepare("describe $table");
+	
+	return 0 unless has_table($dbh,$table);
+	
+	my $sth = $dbh->prepare("describe $table");
 	$sth->execute();
 	while (my @def = $sth->fetchrow_array) {
 		$defRef->{$def[0]} = 1;	
@@ -59,7 +55,14 @@ sub get_table_definition {
 			${$idxRef->{$d{'idxName'}.';'.$unique}}[--$d{'sequence'}] = $d{'col'};		
 		}
 	}
-	return $hasTable;	
+	return 1;	
+}
+
+sub get_definition {
+	my ($dbh,$table) = @_;
+	my (%def,%index);
+	get_table_definition($dbh,$table,\%def,\%index);
+	return wantarray ? (\%def,\%index) : \%def;
 }
 
 sub has_table {
