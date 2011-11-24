@@ -1,7 +1,7 @@
-package Parse::Command::obsynt::Plugin::gpm_plugin;
+package Parse::Plugin::obsynt_gpm;
 
 =head1 NAME
-Parse::Command::obsynt::Plugin::gpm_plugin
+Parse::Plugin::obsynt_gpm
 =cut
 #pragmas
 use strict;
