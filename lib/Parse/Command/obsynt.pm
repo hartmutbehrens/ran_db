@@ -9,9 +9,6 @@ use warnings;
 #modules
 use Common::File;
 use File::Path qw(make_path);
-#use constant plugin_search_path => 'Parse::Plugin';
-
-#use Module::Pluggable;
 use Parse -command;
 use Module::Pluggable search_path => ['Plugin'], require => 1;
 
