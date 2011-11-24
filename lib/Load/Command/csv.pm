@@ -12,7 +12,7 @@ use Common::MySQL;
 use Load -command;
 
 sub abstract {
-	return "load CSV files into a DB";
+	return "load CSV files into a (MySQL) DB";
 }
 
 sub usage_desc {
@@ -142,7 +142,6 @@ sub clean {
 
 sub remap_cols {
 	my ($map,$table,$cols) = @_;
-	print "Running remap \n";
 	my %map;
 	for (@$map) {
 		my ($table,$old,$new) = split('\W+',$_);
