@@ -9,8 +9,11 @@ use warnings;
 #modules
 use Common::File;
 use File::Path qw(make_path);
-use Module::Pluggable search_path => ['Parse::Plugin'];
+#use constant plugin_search_path => 'Parse::Plugin';
+
+#use Module::Pluggable;
 use Parse -command;
+use Module::Pluggable search_path => ['Plugin'], require => 1;
 
 
 sub abstract {
@@ -61,13 +64,13 @@ sub execute {
 			my @known;
 			for my $plugin (plugins()) {
 				if ( $plugin->can('recognize') && $plugin->recognize($header) ) {
+				
 					$plugin->process_header($header) if $plugin->can('process_header');
 					$plugin->add_classifiers($opt,$header) if $plugin->can('add_classifiers');
 					$plugin->add_remaps($opt,$header) if $plugin->can('add_remaps');
 					push @known, $plugin;	
 				}
 			}
-			
 			for (1..$#$sections) {
 				my ($table,$cols,$data) = parse_section($sections->[$_],$opt);
 				if ($table) {
