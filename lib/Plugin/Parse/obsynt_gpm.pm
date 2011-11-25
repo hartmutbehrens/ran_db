@@ -1,4 +1,4 @@
-package Plugin::obsynt_gpm;
+package Plugin::Parse::obsynt_gpm;
 
 =head1 NAME
 Parse::Plugin::obsynt_gpm

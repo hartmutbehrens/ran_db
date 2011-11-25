@@ -10,7 +10,7 @@ use warnings;
 use Common::File;
 use File::Path qw(make_path);
 use Parse -command;
-use Module::Pluggable search_path => ['Plugin'], require => 1;
+use Module::Pluggable search_path => ['Plugin::Parse'], require => 1;
 
 
 sub abstract {

@@ -1,12 +1,13 @@
-package Plugin::obsynt_t18;
+package Plugin::Parse::obsynt_t180;
 
 =head1 NAME
-Parse::Plugin::obsynt_t18
+Parse::Plugin::obsynt_t180
 =cut
 #Moudle::Pluggable package names should not class with App::Cmd commands
 #pragmas
 use strict;
 use warnings;
+
 
 sub abstract {
 	return '(internal - cannot be used from command line)';
@@ -20,13 +21,13 @@ sub new {
 sub recognize {
 	my ($self,$header) = @_;
 	my $rv = 0;
-	$rv = 1 if ( (exists $header->{'Type_of_measurement'}) && ($header->{'Type_of_measurement'} =~ /rt18_a/i ) );
+	$rv = 1 if ( (exists $header->{'Type_of_measurement'}) && ($header->{'Type_of_measurement'} =~ /rt180/i ) );
 	return $rv;
 }
 
 sub add_classifiers {
 	my ($self,$opt,$header) = @_;
-	$opt->{type} = 't18';
+	$opt->{type} = 't180';
 	
 	my $release = defined $header->{'BSS_release'} ? $header->{'BSS_release'} : 'unknown';
 	my $classify = 'classify_'.$release;
@@ -34,55 +35,30 @@ sub add_classifiers {
 		push @{$opt->{classifiers}}, $_ for $self->$classify;
 	}
 	else {
-		warn "No classifier has been defined in the t18 plugin for the obsynt file with release version \"$release\". A generic one will be used.\n";
+		warn "No classifier has been defined in the $opt->{type} plugin for the obsynt file with release version \"$release\". A generic one will be used.\n";
 		push @{$opt->{classifiers}}, $_ for $self->generic();
 	}
 }
 
 sub classify_11 {
-	return ('T18_N7_H,C180A','T18_ACHANNEL_H,LINK_ID,C750'); 
+	return ('T180_ADJ_H,C400,C401,C402'); 
 }
 
 sub classify_10 {
-	return ('T18_N7_H,C180A','T18_ACHANNEL_H,LINK_ID,C750'); 
+	return ('T180_ADJ_H,C400,C401,C402'); 
 }
 
 sub classifiy_9 {
-	return ('T18_N7_H,C180A','T18_ACHANNEL_H,LINK_ID,C750'); 
+	return ('T180_ADJ_H,C400,C401,C402'); 
 }
 
 sub generic {
-	return ('T18_N7_H,C180A','T18_ACHANNEL_H,LINK_ID,C750');
+	return ('T180_ADJ_H,C400,C401,C402');
 }
 
 sub add_remaps {
 	my ($self,$opt,$header) = @_;
-	push @{$opt->{remap}}, $_ for ('T18_ACHANNEL_H,LINK_ID,LINK'); 
-}
-
-sub parse_section {
-	my ($self,$table,$cols,$data) = @_;
-	add_pcm_ts($cols,$data) if $table eq 'T18_ACHANNEL_H';
-}
-
-sub add_pcm_ts {
-	my ($cols,$data) = @_;
-	push @$cols, qw/TS PCM/;
-	my %d;
-	for my $vals (@$data) {
-		@d{@$cols} = @$vals;
-		my $ts = extract_val($d{'LINK'},0,4);
-		my $pcm = extract_val($d{'LINK'},5,31);
-		push @$vals,$ts,$pcm;
-	}
-}
-
-sub extract_val {
-	my ($num,$lsb,$msb) = @_;
-	my $mask = 0;
-	$mask += 2**$_ for ($lsb..$msb);
-	my $rv = ($num & $mask) >> $lsb;
-	return $rv;
+	push @{$opt->{remap}}, $_ for ('T180_ADJ_H,CELL_CI_ADJ,TARGET_CI','T180_ADJ_H,CELL_LAC_ADJ,TARGET_LAC','T180_ADJ_H,CELL_CI,CI','T180_ADJ_H,CELL_LAC,LAC'); 
 }
 
 sub process_header {

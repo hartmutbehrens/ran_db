@@ -1,4 +1,4 @@
-package Plugin::obsynt_t110;
+package Plugin::Parse::obsynt_t110;
 
 =head1 NAME
 Parse::Plugin::obsynt_t110
