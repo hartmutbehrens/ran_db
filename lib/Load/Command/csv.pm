@@ -117,7 +117,6 @@ sub load_csv {
 		$e{'OMC_ID'} = exists $e{'OMC_ID'} ? $e{'OMC_ID'} : $source if exists $def->{OMC_ID}; #fixed in to_csv for most file types, but not for rnl (because it is extracted as-is out of the archive coming from the OMC-R)
 		
 		my @vals = values %e;
-		#my $sql = 'replace into '.$table.' ('.join(',',map('`'.$_.'`',keys %e)).') values ('.join(',',map('\''.$_.'\'',@vals)).')';
 		my $sql = 'replace into '.$table.' ('.join(',',map('`'.$_.'`',keys %e)).') values ('.join(',',map('?',@vals)).')';
 		my $sth = $dbh->prepare($sql);
 		$sth->execute(@vals);
