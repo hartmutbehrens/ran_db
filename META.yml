@@ -33,4 +33,6 @@ requires:
   XML::Bare: 0
   XML::LibXML: 0
   XML::Simple: 0
+resources:
+  repository: git://github.com/hartmutbehrens/ran_db.git
 version: 0.01
