@@ -9,6 +9,7 @@ use warnings;
 
 #modules
 use Common::CouchDB qw(couch_exists);
+use Data::Dumper;
 use Load -command;
 use Module::Pluggable search_path => ['Plugin::Load::CouchDB'], require => 1;
 
@@ -30,10 +31,12 @@ sub opt_spec {
 
 sub validate_args {
 	my ($self, $opt, $args) = @_;
-	my $couch = Common::CouchDB->new;
-	unless ($couch->exists($opt->{uri})) {
-		die "A connection to $opt->{uri} could not be established. Check that the provided URI is correct.\nAlso check network connection / proxy settings.\n";
-	}	
+	$opt->{uri} .= '/' unless $opt->{uri} =~ m{/$};
+	my $couch = Common::CouchDB->new(uri => $opt->{uri});
+	unless ( $couch->exists() ) {
+		die "A connection to $opt->{uri} could not be established. Check that the provided URI is correct.\nAlso check network connection / proxy settings (detected ",join(' / ',$couch->{ua}->http_proxy, $couch->{ua}->https_proxy),").\n";
+	}
+		
 }
 
 sub execute {
