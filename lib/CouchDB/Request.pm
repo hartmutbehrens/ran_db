@@ -9,6 +9,7 @@ use strict;
 use warnings;
 
 #modules
+use Data::Dumper;
 use Moo;
 use Mojo::JSON;
 use Mojo::UserAgent;
@@ -42,8 +43,8 @@ sub get {
 }
 
 sub put {
-	my $self = shift;
-	return $self->_do('put');
+	my ($self,$content) = @_;
+	return $self->_do('put',$content);
 }
 
 sub post {
