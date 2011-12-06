@@ -10,19 +10,26 @@ use warnings;
 
 #modules
 use Moo;
+use Mojo::JSON;
 use Mojo::UserAgent;
 
 has uri => ( is => 'rw', required => 1 );
 has ua => ( is => 'rw', default => sub { return Mojo::UserAgent->new->detect_proxy->connect_timeout(5) } );
 has headers => (is => 'rw', default => sub { return { 'Cache-Control' => 'no-cache' } } );
+has json => ( is => 'rw', default => sub { return Mojo::JSON->new } );
 has max_retry => ( is => 'rw', default => sub { return 2 } );
 
 
 sub _do {
-	my ($self,$method) = @_;
+	my ($self,$method,$content) = @_;
 	my ($count,$response) = (0,undef);
+	 
+	if (ref $content) {
+        $content = $self->json->encode($content);
+        $self->headers({ 'Cache-Control' => 'no-cache', 'Content-Type' => 'application/json' });
+    }
 	
-	while ( $response = $self->ua->$method($self->uri => $self->headers )->res ) {
+	while ( $response = $self->ua->$method($self->uri => $self->headers => $content )->res ) {
 		$count++;
 		last if (defined $response->code) || ($count > $self->max_retry);
 	} 
