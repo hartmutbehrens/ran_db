@@ -61,27 +61,4 @@ sub _name_check {
 	$_[1] .= '/' unless $_[1] =~ m{/$};
 }
 
-sub get_doc {
-	
-}
-
-sub doc_head {
-	
-}
-
-#store a doc in couchdb with _id defined
-sub put_doc {
-	
-}
-
-#store a doc in couchdb and let couchdb come up with a unique id
-sub post_doc {
-	
-}
-
-sub delete_doc {
-	
-}
-
-
 1;

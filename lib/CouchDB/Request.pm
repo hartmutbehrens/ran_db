@@ -10,16 +10,26 @@ use warnings;
 
 #modules
 use Carp qw(confess);
+use Data::Dumper;
 use Moo;
 use Mojo::UserAgent;
 
 has ua => ( is => 'rw', default => sub { return Mojo::UserAgent->new->detect_proxy->connect_timeout(5) } );
 has uri => ( is => 'rw', required => 1 );
+has max_retry => ( is => 'rw', default => sub { return 2 } );
 
 
 sub _do {
 	my ($self,$method) = @_;
-	return $self->ua->$method($self->uri => {'Cache-Control' => 'no-cache'} )->res;
+	my $count = 0;
+	my $response = $self->ua->$method($self->uri => {'Cache-Control' => 'no-cache'} )->res;
+	
+	while ( ! defined $response->code ) {
+		$count++;
+		last if $count > $self->max_retry;
+		$response = $self->ua->$method($self->uri => {'Cache-Control' => 'no-cache'} )->res;
+	} 
+	return $response;
 }
 
 sub get {
