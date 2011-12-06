@@ -1,7 +1,7 @@
-package CouchDB::Connector;
+package CouchDB::Database;
 
 =head1 NAME
-CouchDB::Connector;
+CouchDB::Database;
 =cut
 
 #pragmas
@@ -11,17 +11,13 @@ use warnings;
 #modules
 use Carp qw(confess);
 use CouchDB::Request;
-use Data::Dumper;
 use Moo;
 
 has uri => ( is => 'rw', isa => \&connected, required => 1 );
 
-before 'uri' => sub {
-	$_[0]->{uri} .= '/' unless $_[0]->{uri} =~ m{/$};
-};
-
-before 'create_db' => \&_name_check;
-before 'del_db' => \&_name_check;
+before 'uri' => sub { _add_slash($_[0]->{uri}) };
+before 'create_db' => \&_check_name;
+before 'del_db' => \&_check_name;
 
 sub connected {
 	my $response = CouchDB::Request->new(uri => $_[0])->get;
@@ -46,19 +42,23 @@ sub create_db {
 	my ($self,$name) = @_;
 	my $response = CouchDB::Request->new(uri => $self->uri.$name)->put;
 	return 1 if (defined $response->code) && ($response->code == 201);
-	confess "Database $name could not be created. Response code 201 was not received.\n";	
+	confess "Database $name could not be created. Expected response code 201 was not received.\n";	
 }
 
 sub del_db {
 	my ($self,$name) = @_;
 	my $response = CouchDB::Request->new(uri => $self->uri.$name)->delete;
 	return 1 if (defined $response->code) && ($response->code == 200);
-	confess "Database $name could not be created. Response code 200 was not received.\n";
+	confess "Database $name could not be created. Expected response code 200 was not received.\n";
 }
 
-sub _name_check {
+sub _check_name {
 	confess "A database name is required.\n" unless defined $_[1];
-	$_[1] .= '/' unless $_[1] =~ m{/$};
+	_add_slash($_[1]);
+}
+
+sub _add_slash {
+	$_[0] .= '/' unless $_[0] =~ m{/$};
 }
 
 1;

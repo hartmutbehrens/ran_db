@@ -9,25 +9,22 @@ use strict;
 use warnings;
 
 #modules
-use Carp qw(confess);
-use Data::Dumper;
 use Moo;
 use Mojo::UserAgent;
 
-has ua => ( is => 'rw', default => sub { return Mojo::UserAgent->new->detect_proxy->connect_timeout(5) } );
 has uri => ( is => 'rw', required => 1 );
+has ua => ( is => 'rw', default => sub { return Mojo::UserAgent->new->detect_proxy->connect_timeout(5) } );
+has headers => (is => 'rw', default => sub { return { 'Cache-Control' => 'no-cache' } } );
 has max_retry => ( is => 'rw', default => sub { return 2 } );
 
 
 sub _do {
 	my ($self,$method) = @_;
-	my $count = 0;
-	my $response = $self->ua->$method($self->uri => {'Cache-Control' => 'no-cache'} )->res;
+	my ($count,$response) = (0,undef);
 	
-	while ( ! defined $response->code ) {
+	while ( $response = $self->ua->$method($self->uri => $self->headers )->res ) {
 		$count++;
-		last if $count > $self->max_retry;
-		$response = $self->ua->$method($self->uri => {'Cache-Control' => 'no-cache'} )->res;
+		last if (defined $response->code) || ($count > $self->max_retry);
 	} 
 	return $response;
 }
