@@ -13,17 +13,10 @@ use Carp qw(confess);
 use CouchDB::Request;
 use Moo;
 
-has uri => ( is => 'rw', isa => \&connected, required => 1 );
+extends 'CouchDB::Connector';
 
-before 'uri' => sub { _add_slash($_[0]->{uri}) };
 before 'create_db' => \&_check_name;
 before 'del_db' => \&_check_name;
-
-sub connected {
-	my $response = CouchDB::Request->new(uri => $_[0])->get;
-	return 1 if (defined $response->code) && ($response->code == 200);
-	confess "A connection to $_[0] could not be established.\n";
-}
 
 sub all_dbs {
 	my $self = shift;
@@ -54,11 +47,7 @@ sub del_db {
 
 sub _check_name {
 	confess "A database name is required.\n" unless defined $_[1];
-	_add_slash($_[1]);
-}
-
-sub _add_slash {
-	$_[0] .= '/' unless $_[0] =~ m{/$};
+	$_[1] .= '/' unless $_[1] =~ m{/$};
 }
 
 1;

@@ -14,9 +14,7 @@ use CouchDB::Request;
 use Data::Dumper;
 use Moo;
 
-extends 'CouchDB::Database';
-
-
+extends 'CouchDB::Connector';
 
 before 'get' => \&_check_for_id;
 before 'put' => \&_check_put;
