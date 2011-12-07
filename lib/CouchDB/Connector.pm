@@ -19,9 +19,10 @@ has uri => ( is => 'rw', isa => \&connected, required => 1 );
 before 'uri' => sub { $_[0]->{uri} .= '/' unless $_[0]->{uri} =~ m{/$}; };
 
 sub connected {
-	my $response = CouchDB::Request->new(uri => $_[0])->get;
+	my $request = CouchDB::Request->new(uri => $_[0], method => 'get');
+	my $response = $request->execute;
 	return 1 if (defined $response->code) && ($response->code == 200);
-	confess "A connection to $_[0] could not be established.\n";
+	$request->complain($response);
 }
 
 

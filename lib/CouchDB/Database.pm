@@ -21,9 +21,10 @@ has debug => (is => 'rw', default => sub { return 0} );
 
 sub all_dbs {
 	my $self = shift;
-	my $response = CouchDB::Request->new(uri => $self->uri.'_all_dbs', debug => $self->debug)->get;
+	my $request = CouchDB::Request->new(uri => $self->uri.'_all_dbs', debug => $self->debug, method => 'get');
+	my $response = $request->execute;
 	return $response->json if defined $response->json;
-	_complain($self->uri.'_all_dbs',$response,'get');
+	$request->complain($response);
 }
 
 sub has_db {
@@ -33,18 +34,18 @@ sub has_db {
 
 sub create_db {
 	my $self = shift;
-	my $response = CouchDB::Request->new(uri => $self->db_uri, debug => $self->debug)->put;
-	
+	my $request = CouchDB::Request->new(uri => $self->db_uri, debug => $self->debug, method => 'put');
+	my $response = $request->execute;
 	return 1 if $response->code == 201;
-	_complain($self->db_uri,$response,'put');	
+	$request->complain($response);	
 }
 
 sub del_db {
 	my $self = shift;
-	my $response = CouchDB::Request->new(uri => $self->db_uri, debug => $self->debug)->delete;
-	
+	my $request = CouchDB::Request->new(uri => $self->db_uri, debug => $self->debug, method => 'delete');
+	my $response = $request->execute;
 	return 1 if $response->code == 200;
-	_complain($self->db_uri,$response,'delete');
+	$request->complain($response);
 }
 
 sub db_uri {
@@ -55,14 +56,6 @@ sub db_uri {
 sub new_doc {
 	my ($self,$id) = @_;
 	return CouchDB::Document->new(id => $id, db => $self);
-}
-
-sub _complain {
-	my ($uri,$response,$method) = @_;
-	if (defined $response->code) {
-		confess uc($method)," $uri could not be completed. Response code was: \"",$response->code,"\".\n";
-	}
-	confess uc($method)," $uri could not be completed. Message was: \"",$response->message,"\".\n";
 }
 
 

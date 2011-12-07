@@ -17,6 +17,7 @@ use Mojo::JSON;
 use Mojo::UserAgent;
 
 has uri => ( is => 'rw', required => 1 );
+has method => ( is => 'rw', required => 1 );
 has debug => (is => 'rw', default => sub { return 0} );
 has ua => ( is => 'rw', default => sub { return Mojo::UserAgent->new->detect_proxy->connect_timeout(5) } );
 has headers => (is => 'rw', default => sub { return { 'Cache-Control' => 'no-cache' } } );
@@ -24,15 +25,16 @@ has json => ( is => 'rw', default => sub { return Mojo::JSON->new } );
 has max_retry => ( is => 'rw', default => sub { return 2 } );
 
 
-sub _do {
-	my ($self,$method,$content) = @_;
+sub execute {
+	my ($self,$content) = @_;
 	my ($count,$response) = (0,undef);
+	my $method = $self->method;
 	 
 	if (ref $content) {	
         $content = $self->json->encode($content);
         $self->headers({ 'Cache-Control' => 'no-cache', 'Content-Type' => 'application/json' });
     }
-	say uc($method), " : ", $self->uri,"\n" if $self->debug;
+	say uc($self->method), " : ", $self->uri,"\n" if $self->debug;
 	
 	while ( $response = $self->ua->$method($self->uri => $self->headers => $content )->res ) {
 		$count++;
@@ -42,24 +44,12 @@ sub _do {
 	return $response;
 }
 
-sub get {
-	my $self = shift;
-	return $self->_do('get');
-}
-
-sub put {
-	my ($self,$content) = @_;
-	return $self->_do('put',$content);
-}
-
-sub post {
-	my $self = shift;
-	return $self->_do('post');
-}
-
-sub delete {
-	my $self = shift;
-	return $self->_do('delete');
+sub complain {
+	my ($self,$response) = @_;
+	if (defined $response->code) {
+		confess uc($self->method)," $self->uri could not be completed. Response code was: \"",$response->code,"\".\n";
+	}
+	confess uc($self->method)," $self->uri could not be completed. Message was: \"",$response->message,"\".\n";
 }
 
 1;
