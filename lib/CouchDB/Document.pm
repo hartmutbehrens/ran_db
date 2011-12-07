@@ -23,14 +23,11 @@ before 'put' => \&_check_put;
 
 sub get {
 	my $self = shift;
-	my $uri = $self->db->db_uri().$self->id;
+	my $uri = $self->db->db_uri.$self->id;
 	my $response = CouchDB::Request->new(uri => $uri, debug => $self->debug)->get;
 	
 	return $response->json if defined $response->json && $response->code == 200;
-	if (defined $response->code) {
-		confess "$uri could not be retrieved. Response code was: \"",$response->code,"\".\n";
-	}
-	confess "$uri could not be retrieved. Message was: \"",$response->message,"\".\n";
+	_complain($uri,$response,'get');
 }
 
 sub head {
@@ -40,11 +37,10 @@ sub head {
 #store a doc in couchdb with _id defined
 sub put {
 	my ($self,$doc) = @_;
-	my $response = CouchDB::Request->new(uri => $self->uri.$self->id, debug => $self->debug)->put($doc);
+	my $uri = $self->db->db_uri.$self->id;
+	my $response = CouchDB::Request->new(uri => $uri, debug => $self->debug)->put($doc);
 	return 1 if (defined $response->code) && ($response->code == 201);
-	confess "The document \"",$self->id,"\" already exists.\nCheck that the correct _rev was specified.\n" if (defined $response->code) && ($response->code == 409);
-	confess "The document \"",$self->id,"\" could not be PUT. The response was: \"",$response->message,"\"\n";
-	
+	_complain($uri,$response,'put');
 }
 
 #store a doc in couchdb and let couchdb come up with a unique id
@@ -58,6 +54,14 @@ sub delete {
 
 sub _check_put {
 	confess "Doc parameter has not been provided for PUT.\n" unless defined $_[1];
+}
+
+sub _complain {
+	my ($uri,$response,$method) = @_;
+	if (defined $response->code) {
+		confess uc($method)," $uri could not be completed. Response code was: \"",$response->code,"\".\n";
+	}
+	confess uc($method)," $uri could not be completed. Message was: \"",$response->message,"\".\n";
 }
 
 1;
