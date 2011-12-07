@@ -8,14 +8,16 @@ use Test::More;
 use Test::Exception;
 use FindBin;
 use lib "$FindBin::Bin/../lib";
-use CouchDB::Document;
+use CouchDB::Database;
 
-my $uri = 'http://hartmut:vodacom@hartmut.iriscouch.com/docs_testing';
-my $doc = new_ok('CouchDB::Document' => [uri => $uri]);
+my $uri = 'http://hartmut:vodacom@hartmut.iriscouch.com/';
+my ($name,$doc_id) = ('docs_testing','first_doc');
+my $couch = new_ok('CouchDB::Database' => [uri => $uri, name => $name]);
 
-my $id = 'first_doc';
-my $data = {'name' => 'hartmut', 'surname' => 'behrens'};
-print "Data:",Dumper($data),"\n";
-is($doc->put($id,$data), 1, "Document PUT OK");
+$couch->create_db unless $couch->has_db;
+my $doc = $couch->new_doc($doc_id);
+$doc->debug(1);
+my $data = $doc->get;
+print Dumper($data);
 
 done_testing();
