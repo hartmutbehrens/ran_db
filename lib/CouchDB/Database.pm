@@ -17,7 +17,7 @@ use Moo;
 extends 'CouchDB::Connector';
 
 has 'name' => (is => 'rw', required => 1);
-has debug => (is => 'rw', isa => sub { confess "Only 0 or 1 allowed." unless ($_[0] == 0) || ($_[0] == 1) } );
+has debug => (is => 'rw', default => sub { return 0} );
 
 sub all_dbs {
 	my $self = shift;
@@ -59,6 +59,7 @@ sub db_uri {
 
 sub new_doc {
 	my ($self,$id) = @_;
+	print "new document with id $id \n";
 	return CouchDB::Document->new(id => $id, db => $self);
 }
 

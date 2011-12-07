@@ -13,9 +13,7 @@ use CouchDB::Database;
 my $uri = 'http://hartmut:vodacom@hartmut.iriscouch.com';	#left out ending / on pupose for testing
 my $name = 'testing';
 my $couch = new_ok('CouchDB::Database' => [uri => $uri, name => $name]);
-$couch->debug(1);
 is($couch->uri, $uri.'/','Absence of / handled OK');
-
 
 subtest 'Connection to invalid URI' => sub {
 	dies_ok { CouchDB::Database->new(uri => 'http://rub.i.sh/', name => $name) }, "Connection to invalid URI handled OK" ;	

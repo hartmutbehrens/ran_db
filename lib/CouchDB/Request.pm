@@ -17,7 +17,7 @@ use Mojo::JSON;
 use Mojo::UserAgent;
 
 has uri => ( is => 'rw', required => 1 );
-has debug => (is => 'rw', isa => sub { confess "Only 0 or 1 allowed." unless ($_[0] == 0) || ($_[0] == 1) } );
+has debug => (is => 'rw', default => sub { return 0} );
 has ua => ( is => 'rw', default => sub { return Mojo::UserAgent->new->detect_proxy->connect_timeout(5) } );
 has headers => (is => 'rw', default => sub { return { 'Cache-Control' => 'no-cache' } } );
 has json => ( is => 'rw', default => sub { return Mojo::JSON->new } );
@@ -38,6 +38,7 @@ sub _do {
 		$count++;
 		last if (defined $response->code) || ($count > $self->max_retry);
 	} 
+	say "Response : ", $response->code,"\n" if $self->debug && defined $response->code;
 	return $response;
 }
 

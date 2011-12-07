@@ -16,18 +16,21 @@ use Moo;
 
 has id => ( is => 'rw');
 has rev => (is => 'rw');
-has debug => (is => 'rw', isa => sub { confess "Only 0 or 1 allowed." unless ($_[0] == 0) || ($_[0] == 1) } );
+has debug => (is => 'rw', default => sub { return 0} );
 has db => ( is => 'rw', isa => sub { confess "CouchDB::Database required" unless ref $_[0] eq 'CouchDB::Database' }, required => 1 );
-
 
 before 'put' => \&_check_put;
 
 sub get {
 	my $self = shift;
-	my $response = CouchDB::Request->new(uri => $self->db->db_uri().$self->id, debug => $self->debug)->get;
-	print "code : ",$response->code,"\n";
-	return $response->json if defined $response->json;
-	confess "A response was not received when getting doc \"$self->id\".\n";
+	my $uri = $self->db->db_uri().$self->id;
+	my $response = CouchDB::Request->new(uri => $uri, debug => $self->debug)->get;
+	
+	return $response->json if defined $response->json && $response->code == 200;
+	if (defined $response->code) {
+		confess "$uri could not be retrieved. Response code was: \"",$response->code,"\".\n";
+	}
+	confess "$uri could not be retrieved. Message was: \"",$response->message,"\".\n";
 }
 
 sub head {
