@@ -55,7 +55,7 @@ sub db_uri {
 
 sub new_doc {
 	my ($self,$id) = @_;
-	return CouchDB::Document->new(id => $id, db => $self);
+	return CouchDB::Document->new(_id => $id, db => $self);
 }
 
 
