@@ -13,6 +13,7 @@ use Carp qw(confess);
 use CouchDB::Request;
 use CouchDB::Document;
 use Moo;
+use Try::Tiny;
 
 extends 'CouchDB::Connector';
 
@@ -56,6 +57,19 @@ sub db_uri {
 sub new_doc {
 	my ($self,$id) = @_;
 	return CouchDB::Document->new(_id => $id, db => $self);
+}
+
+sub exists_doc {
+	my ($self,$id) = @_;
+	my $doc = CouchDB::Document->new(_id => $id, db => $self);
+	
+	try {
+		$doc->get;
+	}
+	catch {
+		return undef;
+	}
+	return $doc->rev;
 }
 
 
