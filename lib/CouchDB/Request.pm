@@ -18,6 +18,7 @@ use Mojo::UserAgent;
 
 has uri => ( is => 'rw', required => 1 );
 has method => ( is => 'rw', required => 1 );
+has content => ( is => 'rw' );
 has debug => (is => 'rw', default => sub { return 0} );
 has ua => ( is => 'rw', default => sub { return Mojo::UserAgent->new->detect_proxy->connect_timeout(5) } );
 has headers => (is => 'rw', default => sub { return { 'Cache-Control' => 'no-cache' } } );
@@ -26,9 +27,10 @@ has max_retry => ( is => 'rw', default => sub { return 2 } );
 
 
 sub execute {
-	my ($self,$content) = @_;
+	my $self = shift;
 	my ($count,$response) = (0,undef);
 	my $method = $self->method;
+	my $content = $self->content;
 	 
 	if (ref $content) {	
         $content = $self->json->encode($content);
@@ -51,5 +53,7 @@ sub complain {
 	}
 	confess uc($self->method)," $self->uri could not be completed. Message was: \"",$response->message,"\".\n";
 }
+
+
 
 1;

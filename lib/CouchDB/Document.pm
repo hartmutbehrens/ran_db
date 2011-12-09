@@ -16,6 +16,7 @@ use Moo;
 
 has _id => ( is => 'rw' );
 has _rev => ( is => 'rw' );
+has content => ( is => 'rw' );
 has debug => (is => 'rw', default => sub { return 0} );
 has db => ( is => 'rw', isa => sub { confess "CouchDB::Database required" unless ref $_[0] eq 'CouchDB::Database' }, required => 1 );
 
@@ -55,9 +56,8 @@ sub doc_uri {
 
 #store a doc in couchdb with _id defined
 sub put {
-	my ($self,$id,$doc) = @_;
-	confess "Doc parameter has not been provided for PUT.\n" unless defined $doc; 
-	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'put');
+	my $self = shift; 
+	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'put', content => $self->content);
 	my $response = $request->execute;
 	return 1 if (defined $response->code) && ($response->code == 201);
 	$request->complain($response);
