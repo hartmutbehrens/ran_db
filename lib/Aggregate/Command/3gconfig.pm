@@ -29,11 +29,11 @@ sub opt_spec {
 	[ "db|d=s",	"database name", { required => 1 }],
 	[ "port|P=s",	"database port", { hidden => 1, default => 3306 }],
 	[ "update|U",	"update distances with data from 2G (also required 2G database credentials to be provided)", { hidden => 1}],
-	[ "2guser|2gu=s",	"optional 2G database user", { hidden => 1 }],
-	[ "2gpass|2gx=s",	"optional 2G database password", { hidden => 1 }],
-	[ "2ghost|2gh=s",	"optional 2G database host IP address", { hidden => 1 }],
-	[ "2gdb|2gd=s",	"optional 2G database name", { hidden => 1 }],
-	[ "2gport|2gP=s",	"optional 2G database port", { hidden => 1, default => 3306 }],
+	[ "user2g|u2g=s",	"optional 2G database user", { hidden => 1 }],
+	[ "pass2g|x2g=s",	"optional 2G database password", { hidden => 1 }],
+	[ "host2g|h2g=s",	"optional 2G database host IP address", { hidden => 1 }],
+	[ "db2g|d2g=s",	"optional 2G database name", { hidden => 1 }],
+	[ "port2g|P2g=s",	"optional 2G database port", { hidden => 1, default => 3306 }],
   );
 }
 
@@ -54,7 +54,7 @@ sub execute {
 	
 	aggregate_3gconfig($dbh);
 	if ($opt->{update}) {
-		my $connected2g = Common::MySQL::connect(\$dbh2g,@{$opt}{qw/2guser 2gpass 2ghost 2gport 2gdb/});
+		my $connected2g = Common::MySQL::connect(\$dbh2g,@{$opt}{qw/user2g pass2g host2g port2g db2g/});
 		if ($connected2g) {
 			update_with_2g($dbh,$dbh2g);
 		}
