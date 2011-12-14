@@ -49,11 +49,9 @@ sub execute {
 sub complain {
 	my ($self,$response) = @_;
 	if (defined $response->code) {
-		confess uc($self->method)," $self->uri could not be completed. Response code was: \"",$response->code,"\".\n";
+		confess uc($self->method)," ",$self->uri," could not be completed. Response code was: \"",$response->code,"\".\n";
 	}
-	confess uc($self->method)," $self->uri could not be completed. Message was: \"",$response->message,"\".\n";
+	confess uc($self->method)," ",$self->uri," could not be completed. Message was: \"",$response->message,"\".\n";
 }
-
-
 
 1;

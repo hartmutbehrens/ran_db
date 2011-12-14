@@ -55,21 +55,18 @@ sub db_uri {
 }
 
 sub new_doc {
-	my ($self,$id) = @_;
-	return CouchDB::Document->new(_id => $id, db => $self);
+	my ($self,$id,$content) = @_;
+	return CouchDB::Document->new(_id => $id, db => $self, content => $content);
 }
 
 sub exists_doc {
 	my ($self,$id) = @_;
 	my $doc = CouchDB::Document->new(_id => $id, db => $self);
-	
+	my $rv = undef;
 	try {
-		$doc->get;
-	}
-	catch {
-		return undef;
-	}
-	return $doc->rev;
+		$rv = $doc->rev;
+	};
+	return defined $rv ? 1 : 0;
 }
 
 

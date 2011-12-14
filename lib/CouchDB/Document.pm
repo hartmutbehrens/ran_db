@@ -59,7 +59,10 @@ sub put {
 	my $self = shift; 
 	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'put', content => $self->content);
 	my $response = $request->execute;
-	return 1 if (defined $response->code) && ($response->code == 201);
+	if (defined $response->json && $response->code == 201) {
+		$self->_rev($response->json->{rev});
+		return 1;
+	}
 	$request->complain($response);
 }
 
@@ -69,7 +72,14 @@ sub post {
 }
 
 sub delete {
-	
+	my $self = shift;
+	my $rev = $self->rev;
+	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'delete');
+	my $response = $request->execute;
+	if (defined $response->json && $response->code == 200) {
+		return $response->json;
+	}
+	$request->complain($response);
 }
 
 sub _check_put {
