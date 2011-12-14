@@ -23,6 +23,7 @@ has db => ( is => 'rw', isa => sub { confess "CouchDB::Database required" unless
 before 'put' => \&_check_id;
 before 'get' => \&_check_id;
 before 'rev' => \&_check_id;
+before 'delete' => \&_check_id;
 before 'doc_uri' => \&_check_id;
 
 sub get {
