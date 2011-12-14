@@ -38,9 +38,23 @@ subtest 'Document GET' => sub {
 
 subtest 'Document PUT' => sub {
 	my $data = {'name' => 'lauren','surname' => 'snyman'};
-	$couch->new_doc('second_doc')->delete if  $couch->exists_doc('second_doc');
+	$couch->new_doc('second_doc')->delete if $couch->exists_doc('second_doc');
 	my $doc = $couch->new_doc('second_doc',$data);
 	is($doc->put, 1, 'Document PUT OK');
+	is(defined $doc->rev, 1, 'Document revision defined OK');
+};
+
+subtest 'Document DELETE' => sub {
+	my $data = {'name' => 'vanish','surname' => 'now'};
+	if ($couch->exists_doc('delete_doc')) {
+		is($couch->new_doc('delete_doc')->delete, 1, 'Document deletion OK');
+	}
+	else {
+		my $doc = $couch->new_doc('delete_doc',$data);
+		$doc->put;
+		is($doc->delete, 1, 'Document deletion OK');
+	}
+	
 };
 
 done_testing();

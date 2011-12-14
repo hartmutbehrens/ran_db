@@ -69,5 +69,14 @@ sub exists_doc {
 	return defined $rv ? 1 : 0;
 }
 
+sub delete_doc {
+	my ($self,$id) = @_;
+	if ($self->exists_doc($id)) {
+		CouchDB::Document->new(_id => $id, db => $self)->delete;
+		return 1;
+	}
+	return 0;
+}
+
 
 1;

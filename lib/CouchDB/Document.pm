@@ -76,9 +76,7 @@ sub delete {
 	my $rev = $self->rev;
 	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'delete');
 	my $response = $request->execute;
-	if (defined $response->json && $response->code == 200) {
-		return $response->json;
-	}
+	return 1 if (defined $response->code) && ($response->code == 200);
 	$request->complain($response);
 }
 
