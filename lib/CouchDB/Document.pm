@@ -32,7 +32,8 @@ sub get {
 	my $response = $request->execute;
 	if (defined $response->json && $response->code == 200) {
 		$self->_rev($response->json->{_rev});
-		return $response->json;
+		$self->content($response->json);
+		return $self;
 	}
 	$request->complain($response);
 }
