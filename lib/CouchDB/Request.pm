@@ -11,7 +11,6 @@ use feature qw(say);
 
 #modules
 use Carp qw(confess);
-use Data::Dumper;
 use Moo;
 use Mojo::JSON;
 use Mojo::UserAgent;

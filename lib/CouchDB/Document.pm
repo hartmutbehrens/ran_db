@@ -31,11 +31,8 @@ sub get {
 	 
 	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'get');
 	my $response = $request->execute;
-	if (defined $response->json && $response->code == 200) {
-		$self->_rev($response->json->{_rev});
-		$self->content($response->json);
-		return $self;
-	}
+	return $self if $self->_response_ok($response,200);
+	
 	$request->complain($response);
 }
 
@@ -61,16 +58,18 @@ sub put {
 	my $self = shift; 
 	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'put', content => $self->content);
 	my $response = $request->execute;
-	if (defined $response->json && $response->code == 201) {
-		$self->_rev($response->json->{rev});
-		return 1;
-	}
+	return $self if $self->_response_ok($response,201);
 	$request->complain($response);
 }
 
 #store a doc in couchdb and let couchdb come up with a unique id
 sub post {
+	my $self = shift;
+	my $request = CouchDB::Request->new(uri => $self->db->db_uri, debug => $self->debug, method => 'post', content => $self->content);
+	my $response = $request->execute;
+	return $self if $self->_response_ok($response,201);
 	
+	$request->complain($response);
 }
 
 sub delete {
@@ -78,12 +77,32 @@ sub delete {
 	my $rev = $self->rev;
 	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'delete');
 	my $response = $request->execute;
-	return 1 if (defined $response->code) && ($response->code == 200);
+	return $self if $self->_response_ok($response,200);
+	
 	$request->complain($response);
 }
 
-sub _check_put {
-	
+sub _response_ok {
+	my ($self,$response,$expected) = @_;
+	if (defined $response->json && $response->code == $expected) {
+		$self->content($response->json);
+		$self->_set_id;
+		$self->_set_rev;
+		return 1;
+	}
+	return 0; 
+}
+
+sub _set_id {
+	my $self = shift;
+	$self->_id($self->content->{id}) if defined $self->content->{id};
+	$self->_id($self->content->{_id}) if defined $self->content->{_id};
+}
+
+sub _set_rev {
+	my $self = shift;
+	$self->_rev($self->content->{rev}) if defined $self->content->{rev};
+	$self->_rev($self->content->{_rev}) if defined $self->content->{_rev};
 }
 
 sub _check_id {
