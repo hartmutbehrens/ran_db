@@ -28,11 +28,9 @@ before 'doc_uri' => \&_check_id;
 
 sub get {
 	my $self = shift;
-	 
 	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'get');
 	my $response = $request->execute;
 	return $self if $self->_response_ok($response,200);
-	
 	$request->complain($response);
 }
 
@@ -50,8 +48,6 @@ sub doc_uri {
 	$uri .= '?rev='.$self->_rev if defined $self->_rev;
 	return $uri; 
 }
-
-
 
 #store a doc in couchdb with _id defined
 sub put {
@@ -74,11 +70,9 @@ sub post {
 
 sub delete {
 	my $self = shift;
-	my $rev = $self->rev;
 	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'delete');
 	my $response = $request->execute;
 	return $self if $self->_response_ok($response,200);
-	
 	$request->complain($response);
 }
 
