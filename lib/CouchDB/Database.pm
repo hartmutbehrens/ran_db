@@ -37,7 +37,7 @@ sub create_db {
 	my $self = shift;
 	my $request = CouchDB::Request->new(uri => $self->db_uri, debug => $self->debug, method => 'put');
 	my $response = $request->execute;
-	return 1 if $response->code == 201;
+	return $self if $response->code == 201;
 	$request->complain($response);	
 }
 
@@ -45,7 +45,7 @@ sub del_db {
 	my $self = shift;
 	my $request = CouchDB::Request->new(uri => $self->db_uri, debug => $self->debug, method => 'delete');
 	my $response = $request->execute;
-	return 1 if $response->code == 200;
+	return $self if $response->code == 200;
 	$request->complain($response);
 }
 
@@ -56,6 +56,7 @@ sub db_uri {
 
 sub new_doc {
 	my ($self,$id,$content) = @_;
+	confess "id required.\n" unless defined $id;
 	return $self->get_doc($id)  || CouchDB::Document->new(_id => $id, db => $self, content => $content, debug => $self->debug); 
 }
 

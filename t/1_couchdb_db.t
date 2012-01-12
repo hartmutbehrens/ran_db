@@ -19,17 +19,16 @@ subtest 'Connection to invalid URI' => sub {
 	dies_ok { CouchDB::Database->new(uri => 'http://rub.i.sh/', name => $name) }, "Connection to invalid URI handled OK" ;	
 };
 
-
-is($couch->del_db, 1, "Database deletion OK") if $couch->has_db;
+lives_ok { $couch->del_db } "Database deletion OK" if $couch->has_db;	 
 
 my $db = $couch->all_dbs;
 ok( grep(/testing/, @{$db} ), "all_dbs works ( @{$db} )"  );
 subtest 'Trying to create a database when one already exists' => sub {
-	is($couch->create_db, 1, "Database creation OK");
-	dies_ok { $couch->create_db }, "Creating a database when one already exists handled OK" ;	
+	lives_ok { $couch->create_db } "Database creation OK";
+	dies_ok { $couch->create_db } "Creating a database when one already exists handled OK" ;	
 };
 
-is($couch->del_db, 1, "Database deletion OK");
+lives_ok { $couch->del_db } "Database deletion OK";
 is($couch->has_db, 0, "has_db test with database that does not exist OK");
 
 done_testing();

@@ -34,7 +34,6 @@ sub get {
 	$request->complain($response);
 }
 
-
 sub doc_uri {
 	my $self = shift;
 	my $uri = $self->db->db_uri.$self->_id;
@@ -98,7 +97,6 @@ sub _set_rev {
 }
 
 sub _check_id {
-	$_[0]->_id($_[1]) if defined $_[1];
 	confess "_id required.\n" unless defined $_[0]->_id;
 }
 
