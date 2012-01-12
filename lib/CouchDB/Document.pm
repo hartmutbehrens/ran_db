@@ -7,6 +7,7 @@ CouchDB::Document;
 #pragmas
 use strict;
 use warnings;
+use feature qw(say);
 
 #modules
 use Carp qw(confess);
@@ -22,7 +23,6 @@ has db => ( is => 'rw', isa => sub { confess "CouchDB::Database required" unless
 
 before 'put' => \&_check_id;
 before 'get' => \&_check_id;
-before 'rev' => \&_check_id;
 before 'delete' => \&_check_id;
 before 'doc_uri' => \&_check_id;
 
@@ -30,17 +30,10 @@ sub get {
 	my $self = shift;
 	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'get');
 	my $response = $request->execute;
-	return $self if $self->_response_ok($response,200);
+	return $self->_update($response) if _response_ok($response,200);
 	$request->complain($response);
 }
 
-
-sub rev {
-	my $self = shift;
-	return $self->_rev if defined $self->_rev;
-	$self->get; 
-	return $self->_rev;
-}
 
 sub doc_uri {
 	my $self = shift;
@@ -54,7 +47,7 @@ sub put {
 	my $self = shift; 
 	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'put', content => $self->content);
 	my $response = $request->execute;
-	return $self if $self->_response_ok($response,201);
+	return $self->_update($response) if _response_ok($response,201);
 	$request->complain($response);
 }
 
@@ -63,27 +56,32 @@ sub post {
 	my $self = shift;
 	my $request = CouchDB::Request->new(uri => $self->db->db_uri, debug => $self->debug, method => 'post', content => $self->content);
 	my $response = $request->execute;
-	return $self if $self->_response_ok($response,201);
-	
+	return $self->_update($response) if _response_ok($response,201);
 	$request->complain($response);
 }
 
 sub delete {
 	my $self = shift;
+	
 	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'delete');
 	my $response = $request->execute;
-	return $self if $self->_response_ok($response,200);
+	return $self->_update($response) if _response_ok($response,200);
 	$request->complain($response);
 }
 
-sub _response_ok {
-	my ($self,$response,$expected) = @_;
-	if (defined $response->json && $response->code == $expected) {
+sub _update {
+	my ($self,$response) = @_;
+	if (defined $response->json) {
 		$self->content($response->json);
 		$self->_set_id;
 		$self->_set_rev;
-		return 1;
 	}
+	return $self;
+}
+
+sub _response_ok {
+	my ($response,$expected) = @_;
+	return 1 if (defined $response->code && $response->code == $expected);
 	return 0; 
 }
 

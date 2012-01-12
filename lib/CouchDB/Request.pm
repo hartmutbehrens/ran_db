@@ -37,20 +37,27 @@ sub execute {
     }
 	say uc($self->method), " : ", $self->uri,"\n" if $self->debug;
 	
+	
+	#$self->ua->$method($self->uri => $self->headers => $content => sub {
+	#	my ($ua, $tx) = @_;
+	#	$response = $tx->res;
+	#	Mojo::IOLoop->stop;
+	#});
+	#Mojo::IOLoop->start;
 	while ( $response = $self->ua->$method($self->uri => $self->headers => $content )->res ) {
 		$count++;
 		last if (defined $response->code) || ($count > $self->max_retry);
 	} 
-	say "Response : ", $response->code,"\n" if $self->debug && defined $response->code;
+	say "Response : ", $response->code if $self->debug && defined $response->code;
 	return $response;
 }
 
 sub complain {
 	my ($self,$response) = @_;
-	if (defined $response->code) {
-		confess uc($self->method)," ",$self->uri," could not be completed. Response code was: \"",$response->code,"\".\n";
-	}
-	confess uc($self->method)," ",$self->uri," could not be completed. Message was: \"",$response->message,"\".\n";
+	say uc($self->method)," ",$self->uri," could not be completed.";
+	confess "Response code was: \"",$response->code,"\ (",$response->message,").\n" if defined $response->code;
+	confess "Message was: \"",$response->message,"\".\n" if defined $response->message;
+	confess "Error was: \"",$response->error,"\".\n" if defined $response->error;
 }
 
 1;

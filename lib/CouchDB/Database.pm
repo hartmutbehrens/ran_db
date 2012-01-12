@@ -56,27 +56,29 @@ sub db_uri {
 
 sub new_doc {
 	my ($self,$id,$content) = @_;
-	return CouchDB::Document->new(_id => $id, db => $self, content => $content);
+	return $self->get_doc($id)  || CouchDB::Document->new(_id => $id, db => $self, content => $content, debug => $self->debug); 
 }
 
 sub exists_doc {
 	my ($self,$id) = @_;
-	my $doc = CouchDB::Document->new(_id => $id, db => $self);
+	return 1 if $self->get_doc($id);
+	return 0;
+}
+
+sub get_doc {
+	my ($self,$id) = @_;
+	my $doc = CouchDB::Document->new(_id => $id, db => $self, debug => $self->debug);
 	my $rv = undef;
 	try {
-		$rv = $doc->rev;
+		$rv = $doc->get;
 	};
-	return defined $rv ? 1 : 0;
+	return $rv;
 }
 
 sub delete_doc {
 	my ($self,$id) = @_;
-	if ($self->exists_doc($id)) {
-		CouchDB::Document->new(_id => $id, db => $self)->delete;
-		return 1;
-	}
-	return 0;
+	my $doc = $self->get_doc($id);
+	$doc->delete if $doc;
 }
-
 
 1;
