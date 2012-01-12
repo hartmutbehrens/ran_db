@@ -56,7 +56,7 @@ sub db_uri {
 
 sub new_doc {
 	my ($self,$id,$content) = @_;
-	confess "id required.\n" unless defined $id;
+	#confess "id required.\n" unless defined $id;
 	return $self->get_doc($id)  || CouchDB::Document->new(_id => $id, db => $self, content => $content, debug => $self->debug); 
 }
 
