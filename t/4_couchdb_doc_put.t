@@ -16,20 +16,23 @@ my $couch = new_ok('CouchDB::Database' => [uri => $uri, name => 'docs_testing', 
 
 subtest 'Document PUT' => sub {
 	my $data = {'name' => 'lauren','surname' => 'snyman'};
-	my $new_data = {'name' => 'hartmut', 'surname' => 'behrens'};
 	
 	$couch->delete_doc('second_doc');
 	my $doc = $couch->new_doc('second_doc',$data);
 	
 	lives_ok { $doc->put } 'Document PUT OK';
-	is(defined $doc->_rev, 1, 'Document revision defined OK');
 	my $fetched = $doc->get;
 	is($fetched->content->{name},$data->{name}, 'Document content OK');
 	
-	$doc->content($new_data);
+	$doc->content->{name} = 'hartmut';
+	lives_ok { $doc->put } 'Document PUT with updated content OK';
+	$fetched = $doc->get;
+	is($fetched->content->{name},'hartmut', 'Document content update OK');
+	
+	$doc->content->{address} = 'sunningdale';
 	lives_ok { $doc->put } 'Document PUT with new content OK';
 	$fetched = $doc->get;
-	is($fetched->content->{name},$new_data->{name}, 'Document content update OK');
+	is($fetched->content->{address},'sunningdale', 'Document new content update OK');
 };
 
 done_testing();
