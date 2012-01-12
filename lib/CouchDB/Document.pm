@@ -43,7 +43,9 @@ sub doc_uri {
 
 #store a doc in couchdb with _id defined
 sub put {
-	my $self = shift; 
+	my $self = shift;
+	$self->content->{_rev} = $self->_rev if defined $self->_rev;	#to update an existing document, the doc body must contain the latest revision
+
 	my $request = CouchDB::Request->new(uri => $self->doc_uri, debug => $self->debug, method => 'put', content => $self->content);
 	my $response = $request->execute;
 	return $self->_update($response) if _response_ok($response,201);
@@ -53,6 +55,7 @@ sub put {
 #store a doc in couchdb and let couchdb come up with a unique id
 sub post {
 	my $self = shift;
+	
 	my $request = CouchDB::Request->new(uri => $self->db->db_uri, debug => $self->debug, method => 'post', content => $self->content);
 	my $response = $request->execute;
 	return $self->_update($response) if _response_ok($response,201);
