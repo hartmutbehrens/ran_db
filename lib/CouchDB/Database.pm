@@ -59,21 +59,40 @@ sub db_uri {
 sub _fetch {
 	my ($self,$ids,$path) = @_; 
 	confess "An arrray reference is expected" unless ref $ids eq 'ARRAY';
-	my $content = {'keys' => $ids};
-	my $request = CouchDB::Request->new(uri => $self->db_uri.$path, content => $content, debug => $self->debug, method => 'post');
+	
+	my $request = CouchDB::Request->new(uri => $self->db_uri.$path, content => {'keys' => $ids}, debug => $self->debug, method => 'post');
 	my $response = $request->execute;
 	return $response->json if $response->code == 200;
 	$request->complain($response);
 }
 
-sub fetch {
+sub get_multiple {
 	my ($self,$ids) = @_;
+	
 	return $self->_fetch($ids,'_all_docs');
 }
 
-sub fetch_with_doc {
+sub get_multiple_with_doc {
 	my ($self,$ids) = @_;
 	return $self->_fetch($ids,'_all_docs?include_docs=true');
+}
+
+sub insert {
+	my ($self,$docs) = @_;
+	confess "An arrray reference is expected" unless ref $docs eq 'ARRAY';
+	$self->_insert_rev($docs);
+	
+	
+}
+
+#insert revision, if one is available
+sub _insert_rev {
+	my ($self,$docs) = @_;
+	my @ids = map($_->{_id}  ,@$docs);
+	my $ids = $self->get_multiple(\@ids);
+	for my $i (0..$#ids) { 
+		$docs->[$i]->{_rev} = $ids->{rows}->[$i]->{value}->{rev} if defined $ids->{rows}->[$i]->{value};
+	}
 }
 
 sub new_doc {
