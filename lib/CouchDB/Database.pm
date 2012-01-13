@@ -7,11 +7,13 @@ CouchDB::Database;
 #pragmas
 use strict;
 use warnings;
+use feature qw(say);
 
 #modules
 use Carp qw(confess);
 use CouchDB::Request;
 use CouchDB::Document;
+use Data::Dumper;
 use Moo;
 use Try::Tiny;
 
@@ -52,6 +54,26 @@ sub del_db {
 sub db_uri {
 	my $self = shift;
 	return $self->uri.$self->name.'/'; 
+}
+
+sub _fetch {
+	my ($self,$ids,$path) = @_; 
+	confess "An arrray reference is expected" unless ref $ids eq 'ARRAY';
+	my $content = {'keys' => $ids};
+	my $request = CouchDB::Request->new(uri => $self->db_uri.$path, content => $content, debug => $self->debug, method => 'post');
+	my $response = $request->execute;
+	return $response->json if $response->code == 200;
+	$request->complain($response);
+}
+
+sub fetch {
+	my ($self,$ids) = @_;
+	return $self->_fetch($ids,'_all_docs');
+}
+
+sub fetch_with_doc {
+	my ($self,$ids) = @_;
+	return $self->_fetch($ids,'_all_docs?include_docs=true');
 }
 
 sub new_doc {
