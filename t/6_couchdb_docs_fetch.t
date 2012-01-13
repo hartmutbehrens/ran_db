@@ -23,6 +23,14 @@ subtest 'Multiple Document FETCH' => sub {
 	lives_ok { $data = $couch->fetch_with_doc(['first_doc','second_doc']) } 'Multiple doc fetch OK';
 	@ids = map( $_->{id} , @{$data->{rows}} );
 	is_deeply(\@ids,\@want,'Retrieved ids from fetch_with_doc are OK');
+	
+	lives_ok { $data = $couch->fetch(['third_doc']) } 'Doc fetch with bogus id handled OK';
+	is( defined $data->{rows}->[0]->{error}, 1, 'Unknown doc id generates error OK' );
+	
+	push @want, 'third_doc';
+	lives_ok { $data = $couch->fetch(\@want) } 'Multiple doc fetch with bogus id handled OK';
+	is( defined $data->{rows}->[2]->{error}, 1, 'Unknown doc id generates error OK' );
+	
 };
 
 done_testing();
