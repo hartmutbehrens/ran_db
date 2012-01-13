@@ -17,18 +17,21 @@ my $couch = new_ok('CouchDB::Database' => [uri => $uri, name => 'docs_testing', 
 subtest 'Multiple Document FETCH' => sub {
 	my $data;
 	my @want = qw(first_doc second_doc);
-	lives_ok { $data = $couch->fetch(\@want) } 'Multiple doc id and rev fetch OK';
+	lives_ok { $data = $couch->get_multiple(\@want) } 'Multiple doc id and rev fetch OK';
 	my @ids = map( $_->{id} , @{$data->{rows}} );
 	is_deeply(\@ids,\@want,'Retrieved ids from fetch are OK');
-	lives_ok { $data = $couch->fetch_with_doc(['first_doc','second_doc']) } 'Multiple doc fetch OK';
+	lives_ok { $data = $couch->get_multiple_with_doc(['first_doc','second_doc']) } 'Multiple doc fetch OK';
 	@ids = map( $_->{id} , @{$data->{rows}} );
 	is_deeply(\@ids,\@want,'Retrieved ids from fetch_with_doc are OK');
 	
-	lives_ok { $data = $couch->fetch(['third_doc']) } 'Doc fetch with bogus id handled OK';
+	lives_ok { $data = $couch->get_multiple(['third_doc']) } 'Doc fetch with bogus id handled OK';
 	is( defined $data->{rows}->[0]->{error}, 1, 'Unknown doc id generates error OK' );
 	
 	push @want, 'third_doc';
-	lives_ok { $data = $couch->fetch(\@want) } 'Multiple doc fetch with bogus id handled OK';
+	lives_ok { $data = $couch->get_multiple(\@want) } 'Multiple doc fetch with bogus id handled OK';
+	is( defined $data->{rows}->[2]->{error}, 1, 'Unknown doc id generates error OK' );
+	
+	lives_ok { $data = $couch->get_multiple_with_doc(\@want) } 'Multiple doc fetch with bogus id handled OK';
 	is( defined $data->{rows}->[2]->{error}, 1, 'Unknown doc id generates error OK' );
 	
 };
