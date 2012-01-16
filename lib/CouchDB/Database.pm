@@ -67,37 +67,49 @@ sub _fetch {
 }
 
 sub get_multiple {
-	my ($self,$ids) = @_;
-	
-	return $self->_fetch($ids,'_all_docs');
+	my ($self,$ids,$params) = @_;
+	return $self->_fetch($ids,'_all_docs'.$self->par_to_string($params));
 }
 
 sub get_multiple_with_doc {
-	my ($self,$ids) = @_;
-	return $self->_fetch($ids,'_all_docs?include_docs=true');
+	my ($self,$ids,$params) = @_;
+	return $self->_fetch($ids,'_all_docs?include_docs=true'.$self->par_to_string($params));
+}
+
+sub update {
+	my ($self,$docs) = @_;
+	$self->insert($docs);
 }
 
 sub insert {
 	my ($self,$docs) = @_;
 	confess "An arrray reference is expected" unless ref $docs eq 'ARRAY';
 	$self->_insert_rev($docs);
-	
-	
+	say Dumper($docs);	
+}
+
+sub par_to_string {
+	my ($self,$params) = @_;
+	my $string = defined $params ? '&'.join( '&' ,map($_.'="'.$params->{$_}."'" ,keys %$params)) : '';
+	return $string;
 }
 
 #insert revision, if one is available
 sub _insert_rev {
 	my ($self,$docs) = @_;
-	my @ids = map($_->{_id}  ,@$docs);
-	my $ids = $self->get_multiple(\@ids);
-	for my $i (0..$#ids) { 
-		$docs->[$i]->{_rev} = $ids->{rows}->[$i]->{value}->{rev} if defined $ids->{rows}->[$i]->{value};
+	my %index;
+	for my $i (0..$#$docs) {
+		$index{$docs->[$i]->{_id}} = $i if defined $docs->[$i]->{_id};	#some docs may not have _id defined (POST request to Couch will assign _id)
+	}
+	my $ids = $self->get_multiple( [keys %index] );
+	for my $id (@{$ids->{rows}}) {
+		next unless defined $id->{value};
+		$docs->[$index{$id->{id}}]->{_rev} = $id->{value}->{rev};	
 	}
 }
 
 sub new_doc {
 	my ($self,$id,$content) = @_;
-	#confess "id required.\n" unless defined $id;
 	return $self->get_doc($id)  || CouchDB::Document->new(_id => $id, db => $self, content => $content, debug => $self->debug); 
 }
 
