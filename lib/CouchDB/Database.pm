@@ -84,8 +84,11 @@ sub update {
 sub insert {
 	my ($self,$docs) = @_;
 	confess "An arrray reference is expected" unless ref $docs eq 'ARRAY';
-	$self->_insert_rev($docs);
-	say Dumper($docs);	
+	$self->_get_rev($docs);
+	my $request = CouchDB::Request->new(uri => $self->db_uri.'_bulk_docs', content => {'docs' => $docs}, debug => $self->debug, method => 'post');
+	my $response = $request->execute;
+	return $response->json if $response->code == 201;
+	$request->complain($response);
 }
 
 sub par_to_string {
@@ -94,8 +97,8 @@ sub par_to_string {
 	return $string;
 }
 
-#insert revision, if one is available
-sub _insert_rev {
+#get revision, if one is available
+sub _get_rev {
 	my ($self,$docs) = @_;
 	my %index;
 	for my $i (0..$#$docs) {
