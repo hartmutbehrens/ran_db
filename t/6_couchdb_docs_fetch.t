@@ -34,6 +34,9 @@ subtest 'Multiple Document FETCH' => sub {
 	lives_ok { $data = $couch->get_multiple_with_doc(\@want) } 'Multiple doc fetch with bogus id handled OK';
 	is( defined $data->{rows}->[2]->{error}, 1, 'Unknown doc id generates error OK' );
 	
+	lives_ok { $data = $couch->get_multiple(['']) } 'Doc fetch with no id handled OK';
+	is( defined $data->{rows}->[0]->{error}, 1, 'No doc id generates error OK' );
+	
 };
 
 done_testing();
