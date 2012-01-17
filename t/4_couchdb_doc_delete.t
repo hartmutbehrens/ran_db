@@ -14,12 +14,13 @@ use CouchDB::Database;
 my $uri = 'http://hartmut:vodacom@hartmut.iriscouch.com/';
 my $couch = new_ok('CouchDB::Database' => [uri => $uri, name => 'docs_testing', debug => 1]);
 
-subtest 'Document POST' => sub {
-	my $content = {'name' => 'laurenhartmut','surname' => 'snymanbehrens'};
-	
-	my $data = $couch->post_doc({id => 'first_doc', content => $content});
-	is(defined $data->{ok} && $data->{ok} == 1, 1, 'Document POST OK');
-	is(defined $data->{id}, 1, 'Document POST assigned id OK');
+subtest 'Document DELETE' => sub {
+	SKIP: {
+		skip 'first_doc not available for deletion', 1 unless $couch->exists_doc({id => 'first_doc'});
+		my $data = $couch->delete_doc({id => 'first_doc'});
+		is(defined $data->{ok} && $data->{ok} == 1, 1, 'Document deletion OK');
+		say Dumper($data);
+	}
 };
 
 done_testing();

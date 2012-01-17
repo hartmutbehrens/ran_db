@@ -36,23 +36,24 @@ sub execute {
         $content = $self->json->encode($content);
         $self->headers({ 'Cache-Control' => 'no-cache', 'Content-Type' => 'application/json' });
     }
-	say uc($self->method), " : ", $self->uri if $self->debug;
 	
 	while ( $response = $self->ua->$method($self->uri => $self->headers => $content )->res ) {
 		$count++;
+		say "Request repeat $count" if $count > 1 && $self->debug;
 		last if (defined $response->code) || ($count > $self->max_retry);
 	}
-	
-	say "Response : ", $response->code if $self->debug && defined $response->code;
+	$self->describe($response) if $self->debug;
 	return $response;
 }
 
-sub complain {
+sub describe {
 	my ($self,$response) = @_;
-	say "Response code was: \"",$response->code,"\ (",$response->message,")" if defined $response->code;
-	say "Message was: \"",$response->message,"\"." if defined $response->message;
-	say "Error was: \"",$response->error,"\"." if defined $response->error;
-	confess uc($self->method)," ",$self->uri," could not be completed.";
+	say "\tRequest:  ", uc($self->method)," ",$self->uri;
+	say "\tSent Content:  ", $self->json->encode($self->content);
+	say "\tResponse code was: \"",$response->code,"\ (",$response->message,")" if defined $response->code;
+	say "\tMessage was: \"",$response->message,"\"." if defined $response->message;
+	say "\tError was: \"",$response->error,"\"." if defined $response->error;
+	say "";
 }
 
 1;

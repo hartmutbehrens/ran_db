@@ -56,6 +56,13 @@ sub db_uri {
 	return $self->uri.$self->name.'/'; 
 }
 
+sub doc_uri {
+	my ($self,$par) = @_;
+	my $uri = $self->db_uri.$par->{id};
+	$uri .= '?rev='.$par->{rev} if defined $par->{rev};
+	return $uri; 
+}
+
 sub _fetch {
 	my ($self,$ids,$path) = @_; 
 	confess "An arrray reference is expected" unless ref $ids eq 'ARRAY';
@@ -111,31 +118,59 @@ sub _get_rev {
 	}
 }
 
-sub new_doc {
-	my ($self,$id,$content) = @_;
-	return $self->get_doc($id)  || CouchDB::Document->new(_id => $id, db => $self, content => $content, debug => $self->debug); 
-}
-
 sub exists_doc {
-	my ($self,$id) = @_;
-	return 1 if $self->get_doc($id);
+	my ($self,$params) = @_;
+	return 1 if $self->get_doc($params);
 	return 0;
 }
 
 sub get_doc {
-	my ($self,$id) = @_;
-	my $doc = CouchDB::Document->new(_id => $id, db => $self, debug => $self->debug);
-	my $rv = undef;
-	try {
-		$rv = $doc->get;
-	};
-	return $rv;
+	my ($self,$params) = @_;
+	my $request = CouchDB::Request->new(uri => $self->doc_uri($params), debug => $self->debug, method => 'get');
+	my $response = $request->execute;
+	my $rv = $self->is_response($response,200);
+	return defined $rv ? $rv->json : undef; 
+}
+
+sub is_response {
+	my ($self,$response,$expected) = @_;
+	if ($response) {
+		return $response if defined $response->code && $response->code == $expected;
+	}
+	return undef;
+}
+
+sub put_doc {
+	my ($self,$params) = @_;
+	
+	my $doc = $self->get_doc($params);
+	$params->{content}->{_rev} = $doc->{_rev} if $doc;	#if doc already exists, then fill in revision number unless it was provided
+	
+	my $request = CouchDB::Request->new(uri => $self->doc_uri($params), debug => $self->debug, method => 'put', content => $params->{content});
+	my $response = $request->execute;
+	my $rv = $self->is_response($response,201);
+	return defined $rv ? $rv->json : undef; 
+}
+
+sub post_doc {
+	my ($self,$params) = @_;
+	my $request = CouchDB::Request->new(uri => $self->db_uri, debug => $self->debug, method => 'post', content => $params->{content});
+	my $response = $request->execute;
+	my $rv = $self->is_response($response,201);
+	return defined $rv ? $rv->json : undef; 
 }
 
 sub delete_doc {
-	my ($self,$id) = @_;
-	my $doc = $self->get_doc($id);
-	$doc->delete if $doc;
+	my ($self,$params) = @_;
+	my $doc = $self->get_doc($params);
+	if ($doc) {
+		$params->{rev} = $doc->{_rev};
+		my $request = CouchDB::Request->new(uri => $self->doc_uri($params), debug => $self->debug, method => 'delete');
+		my $response = $request->execute;
+		my $rv = $self->is_response($response,200);
+		return defined $rv ? $rv->json : undef;
+	}
+	return undef;
 }
 
 1;
