@@ -7,3 +7,5 @@ aggregationlog/*
 bin/..*
 copylog/*
 
+.carton/
+local/
