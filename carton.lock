@@ -595,6 +595,83 @@
          },
          "version" : "0.13"
       },
+      "DBD::mysql" : {
+         "dist" : "DBD-mysql-4.020",
+         "module" : "DBD::mysql",
+         "mymeta" : {
+            "abstract" : "A MySQL driver for the Perl5 Database Interface (DBI)",
+            "author" : [
+               "Rudy Lippan <rlippan@remotelinux.com>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.54, CPAN::Meta::Converter version 2.112150",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "DBD-mysql",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "Test::More" : 0
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "DBI" : "1.08"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "DBI" : "1.08",
+                     "Data::Dumper" : 0,
+                     "perl" : "5.005"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "repository" : {
+                  "url" : "https://github.com/CaptTofu/DBD-mysql"
+               }
+            },
+            "version" : "4.020"
+         },
+         "name" : "DBD::mysql",
+         "pathname" : "C/CA/CAPTTOFU/DBD-mysql-4.020.tar.gz",
+         "provides" : {
+            "Bundle::DBD::mysql" : {
+               "file" : "Bundle/DBD/mysql.pm",
+               "version" : "4.004"
+            },
+            "DBD::mysql" : {
+               "file" : "DBD/mysql.pm",
+               "version" : "4.020"
+            },
+            "DBD::mysql::GetInfo" : {
+               "file" : "DBD/mysql/GetInfo.pm"
+            },
+            "DBD::mysql::db" : {
+               "file" : "DBD/mysql.pm"
+            },
+            "DBD::mysql::dr" : {
+               "file" : "DBD/mysql.pm"
+            },
+            "DBD::mysql::st" : {
+               "file" : "DBD/mysql.pm"
+            }
+         },
+         "version" : "4.020"
+      },
       "DBI" : {
          "dist" : "DBI-1.617",
          "module" : "DBI",
