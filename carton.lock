@@ -1722,6 +1722,52 @@
          },
          "version" : "6.62"
       },
+      "File::DirWalk" : {
+         "dist" : "File-DirWalk-0.3",
+         "module" : "File::DirWalk",
+         "mymeta" : {
+            "abstract" : "unknown",
+            "author" : [
+               "unknown"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.30, CPAN::Meta::Converter version 2.112150",
+            "license" : [
+               "unknown"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "File-DirWalk",
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "File::Basename" : 0,
+                     "File::Spec" : 0
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "0.3",
+            "x_installdirs" : "site",
+            "x_version_from" : "DirWalk.pm"
+         },
+         "name" : "File::DirWalk",
+         "pathname" : "J/JE/JENSL/File-DirWalk-0.3.tar.gz",
+         "provides" : {
+            "File::DirWalk" : {
+               "file" : "File/DirWalk.pm",
+               "version" : "0.3"
+            }
+         },
+         "version" : "0.3"
+      },
       "File::Listing" : {
          "dist" : "File-Listing-6.03",
          "module" : "File::Listing",
@@ -1797,6 +1843,49 @@
             }
          },
          "version" : "6.03"
+      },
+      "File::NFSLock" : {
+         "dist" : "File-NFSLock-1.21",
+         "module" : "File::NFSLock",
+         "mymeta" : {
+            "abstract" : "unknown",
+            "author" : [
+               "unknown"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.30, CPAN::Meta::Converter version 2.112150",
+            "license" : [
+               "unknown"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "File-NFSLock",
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {}
+               }
+            },
+            "release_status" : "stable",
+            "version" : "1.21",
+            "x_installdirs" : "site",
+            "x_version_from" : "lib/File/NFSLock.pm"
+         },
+         "name" : "File::NFSLock",
+         "pathname" : "B/BB/BBB/File-NFSLock-1.21.tar.gz",
+         "provides" : {
+            "File::NFSLock" : {
+               "file" : "File/NFSLock.pm",
+               "version" : "1.21"
+            }
+         },
+         "version" : "1.21"
       },
       "Getopt::Long::Descriptive" : {
          "dist" : "Getopt-Long-Descriptive-0.090",
