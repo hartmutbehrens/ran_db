@@ -10,6 +10,7 @@ use warnings;
 #modules
 use Common::MySQL;
 use Load -command;
+use Parallel::ForkManager;
 
 sub abstract {
 	return "load CSV files into a (MySQL) DB";
@@ -33,6 +34,8 @@ sub opt_spec {
 	[ "port|P=s",	"database port", { hidden => 1, default => 3306 }],
 	[ "nms|n=s",	"load files from this OMC-R or WNMS name (will be used to match against csv file name)", { required => 1 }],
 	[ "type|t=s",	"file type to be loaded (will be used to match against csv file name) - e.g. t110,RNCCN..", { required => 1 }],
+	[ "parallel|P=s", 	"number of files to load in parallel (default = 1). Cannot be used with the --lock option when > 1", { default => 1}],
+	[ "lock|l",	"lock tables during write"],
 	[ "delete|D",	"Delete file(s) after parsing"],
   );
 }
@@ -41,7 +44,10 @@ sub validate_args {
 	my ($self, $opt, $args) = @_;
 	if (defined $opt->{hline} && substr($opt->{hline},0,1) eq  substr($opt->{cline},0,1)) {
 		die "Header line and column line cannot both be on the same line. Please fix the command line arguments!\n";
-	}		
+	}	
+	if ($opt->{lock} and $opt->{parallel} > 1) {
+		die "Use of table locking when loading more than one file in parallel is not possible!\n";
+	}	
 }
 
 sub execute {
@@ -53,7 +59,9 @@ sub execute {
 		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
 	}
 	opendir my $dir, $opt->{csvdir} || die "Could not open $opt->{csvdir} for reading: $!\n";
+	my $pm = Parallel::ForkManager->new($opt->{parallel});
 	while (my $file = readdir $dir) {
+		$pm->start and next; # do the fork
 		my $match = "$opt->{nms}.$opt->{type}.";
 		next unless ($file =~ /$match/);
 		print "About to load: $file\n";
@@ -63,7 +71,9 @@ sub execute {
 			print "Deleting: $file (-D command line option was provided)\n";
 			unlink($opt->{csvdir}.'/'.$file);
 		}
+		$pm->finish; # do the exit in the child process
 	}
+	$pm->wait_all_children;
 	if ($count == 0) {
 		warn "No files of type \"$opt->{type}\" from \"$opt->{nms}\" could be loaded from \"$opt->{csvdir}\" !\n";
 	}
@@ -81,7 +91,7 @@ sub load_csv {
 	return 0 unless Common::MySQL::has_table($dbh,$table);
 	my $def = Common::MySQL::get_definition($dbh,$table);
 	
-	$dbh->do("lock tables $table write") || die($dbh->errstr) ;
+	$dbh->do("lock tables $table write") || die($dbh->errstr) if $opt->{lock};
 	
 	my ($i,$has_cols) = (0,0);
 	my (%d,%only,@cols);
@@ -125,7 +135,7 @@ sub load_csv {
 		
 	}
 	close $in;
-	$dbh->do("unlock tables") || die($dbh->errstr) ;
+	$dbh->do("unlock tables") || die($dbh->errstr) if $opt->{lock};
 	print "Loaded $i records from $file into $table.\n";
 	return 1;	
 }
