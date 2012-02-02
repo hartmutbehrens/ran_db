@@ -124,20 +124,31 @@ sub find_recursively {
 	
 	print "Checking : $loc\n";
 	foreach my $i ($ftp->dir($loc)) {
-		my ($attr,$j) = ($i =~ /^(.{15})(.*?)$/);
-		next unless defined $j;
-		my (undef,undef,$fsiz,$mon,$day,$year_or_time,@rest) = split(' ',$j);
-		my $name = join(' ',@rest);
+		my ($name,$is_directory,$mon,$day,$year_or_time) = parse_entry($i);
+	
+		next unless defined $name;
 		next if ($name =~ /^\./);			#skip . and .. subdirectories
 		
-		if ($attr =~ /^d/) {  #found directory ? carry on recursing ..
+		if ($is_directory) {  #found directory ? 
 			next if too_old($mon,$day,$year_or_time,$opt->{maxdays});	#directory is old
-			find_recursively($ftp,$opt,$dref,$loc.$name.'/');
+			find_recursively($ftp,$opt,$dref,$loc.$name.'/');			#carry on looking ..
 		}
 		else {
 			$dref->{$loc}->{$name} = $i	if ($name =~ /$opt->{what}/); 	#found file ? save into hashref	
 		}
 	}
+}
+
+sub parse_entry {
+	my $entry = shift;
+	my ($attr,$j) = ($entry =~ /^(.{15})(.*?)$/);
+	my ($name,$is_directory,$fsiz,$mon,$day,$year_or_time,@rest);
+	if (defined $j) {
+		(undef,undef,$fsiz,$mon,$day,$year_or_time,@rest) = split(' ',$j);
+		$name = join(' ',@rest);
+		$is_directory = $attr =~ /^d/ ? 1 : 0;
+	} 
+	return ($name,$is_directory,$mon,$day,$year_or_time);
 }
 
 sub too_old {
