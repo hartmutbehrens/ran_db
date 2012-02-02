@@ -13,6 +13,7 @@ use Fcntl qw(:flock);
 use Fetch -command;
 use File::Path qw(make_path);
 use Net::FTP;
+use Parallel::ForkManager;
 use Time::Local qw(timelocal);
 
 my @month = qw/Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec/;
@@ -37,6 +38,7 @@ sub opt_spec {
     [ "dir|d=s",	"Local directory to store files", { default => '../data'}],
     [ "log|l=s", 	"Log directory", { default => '../ftplog'}],
     [ "maxdays|m=s", 	"Only scan subdirectories recursively that are up to maxdays old", { default => 2}],		#wNMS keeps PM files forever..
+    [ "parallel|P=s", 	"number of parallel ftp's to start (1 = not used) ", { default => 1}],		#wNMS keeps PM files forever..
     [ "ignore", 	"Copy files, even if they were already ftpd (ftpd files are logged)."],
     [ "debug", 	"Debug FTP"],
   );
@@ -61,37 +63,50 @@ sub execute {
 	unless ($opt->{ignore}) { 
 		$have = fetched_already($opt);
 	}
-	my $ftp = open_connection($opt->{from},$opt->{user},$opt->{pwd},$opt->{debug});
-	ftp_files($ftp, $opt, $have);
+	my %dir;
+	my $ftp = open_connection(@{$opt}{qw(from user pwd debug)});
+	find_recursively($ftp,$opt,\%dir,$opt->{where});
 	$ftp->quit;
+	ftp_files($opt, $have, \%dir);
 }
 
 sub ftp_files {
-	my ($ftp,$opt,$have) = @_;
-	my %dir = ();
-	my $count = 0;
-	find_recursively($ftp,\%dir,$opt->{where},$opt->{what},$opt->{maxdays});
+	my ($opt,$have,$dir) = @_;
 	
-	foreach my $dir (sort keys %dir) {
-		$ftp->cwd($dir);
-		(my $prefix = $dir) =~ s/\//_/g; 	#guarantee unique file name if two files have same name
-		foreach my $file (keys %{$dir{$dir}}) {
-			my $fl = $dir{$dir}{$file};
+	my $count = 0;
+	
+	my $pm = Parallel::ForkManager->new($opt->{parallel});
+	foreach my $dirname (sort keys %$dir) {
+		$pm->start and next; # do the fork
+		my $ftp = open_connection(@{$opt}{qw(from user pwd debug)});
+		$ftp->cwd($dirname);
+		(my $prefix = $dirname) =~ s/\//_/g; 	#guarantee unique file name if two files have same name
+		foreach my $file (keys %{$dir->{$dirname}}) {
+			my $fl = $dir->{$dirname}->{$file};
+			
 			my ($attr,$sf) = ($fl =~ /^(.{15})(.*?)$/);
 			if (exists $have->{$sf}) {
 					$count++;
 					next;
 			} #file was already copied
 			 
-			my $lf = $file;
-			$lf =~ s/\:/\_/g if ($^O =~ /win/i);		#remove characters that are not allowed in a windows filename
-			$lf =~ s/\s/\_/g;
-			print "GET: $file from $dir\n";
+			my $lf = gen_local_name($file);
+			print "GET: $file from $dirname\n";
 			my $success = $ftp->get($file,$opt->{dir}.'/'.$opt->{name}.'/'.$prefix.$lf);
 			log_ftp($opt,$fl) if $success;
 		}
+		$ftp->quit;
+		$pm->finish; # do the exit in the child process
 	}
+	$pm->wait_all_children;
 	warn "$count files were not copied because they were already copied previously - see ftplog in \"$opt->{log}\" (or use --ignore command line option).\n" if $count > 0;	
+}
+
+sub gen_local_name {
+	my $name = shift;
+	$name =~ s/\:/\_/g if ($^O =~ /win/i);		#remove characters that are not allowed in a windows filename
+	$name =~ s/\s/\_/g;
+	return $name
 }
 
 sub log_ftp {
@@ -105,35 +120,38 @@ sub log_ftp {
 
 #go through sub and all subs below to log files that need to be ftpd
 sub find_recursively {
-	my ($ftp,$dref,$loc,$mask,$maxdays) = @_;
-	my ($today,$epsec_today,$gyear,$gmon,$gmday) = Common::Date::today();
+	my ($ftp,$opt,$dref,$loc) = @_;
+	
 	print "Checking : $loc\n";
-	my @items = $ftp->dir($loc);
-	foreach my $i (@items) {
+	foreach my $i ($ftp->dir($loc)) {
 		my ($attr,$j) = ($i =~ /^(.{15})(.*?)$/);
 		next unless defined $j;
 		my (undef,undef,$fsiz,$mon,$day,$year_or_time,@rest) = split(' ',$j);
 		my $name = join(' ',@rest);
 		next if ($name =~ /^\./);			#skip . and .. subdirectories
-		$dref->{$loc}->{$name} = $i if ($name =~ /$mask/);		#found file ? save into hashref
-		if ($attr =~ /^d/) {  #found directory ? carry on recursing ..
-			if ($year_or_time =~ /\:/) {  #*nix servers return dates as e.g. Jul 2 2009 for older files and e.g. Jul 28 14:21 for newer files - this test is to compensate for that
-				$year_or_time = $month{$mon} > $gmon+1 ? $gyear +1900 -1 : $gyear + 1900;	#the above condition can also occur when changing from Dec 31/YEAR to Jan 1/YEAR+1 - this line is to compensate for that 
-			}
-			my $date = $year_or_time.'-'.sprintf("%.2d",$month{$mon}).'-'.sprintf("%.2d",$day);
-			#print "Date is $date for directory $name\n";
-			unless ($date =~ /\:/) {
-				my $epsec_date = timelocal(0,0,0,$day,($month{$mon}-1),($year_or_time-1900));
-				my $delta = int(($epsec_today - $epsec_date)/86400);				
-				#print "SKIP: $loc $name days difference between $today and $date is $delta days\n";
-				next if ($delta > $maxdays);
-			}
-			find_recursively($ftp,$dref,$loc.$name.'/',$mask,$maxdays);
-		}
 		
+		if ($attr =~ /^d/) {  #found directory ? carry on recursing ..
+			next if too_old($mon,$day,$year_or_time,$opt->{maxdays});	#directory is old
+			find_recursively($ftp,$opt,$dref,$loc.$name.'/');
+		}
+		else {
+			$dref->{$loc}->{$name} = $i	if ($name =~ /$opt->{what}/); 	#found file ? save into hashref	
+		}
 	}
-	
 }
+
+sub too_old {
+	my ($mon,$day,$year_or_time,$max_age) = @_;
+	my ($today,$epsec_today,$gyear,$gmon,$gmday) = Common::Date::today();
+	if ($year_or_time =~ /\:/) {  #*nix servers return dates as e.g. Jul 2 2009 for older files and e.g. Jul 28 14:21 for newer files - this test is to compensate for that
+		$year_or_time = $month{$mon} > $gmon+1 ? $gyear +1900 -1 : $gyear + 1900;	#the above condition can also occur when changing from Dec 31/YEAR to Jan 1/YEAR+1 - this line is to compensate for that 
+	}
+	my $epsec_date = timelocal(0,0,0,$day,($month{$mon}-1),($year_or_time-1900));
+	my $delta = int(($epsec_today - $epsec_date)/86400);				
+	return 1 if $delta > $max_age;
+	return 0;
+}
+
 
 sub file_exists_or_die {
 	my $file = shift;
