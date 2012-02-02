@@ -4096,6 +4096,58 @@
          },
          "version" : "0.25"
       },
+      "Parallel::ForkManager" : {
+         "dist" : "Parallel-ForkManager-0.7.9",
+         "module" : "Parallel::ForkManager",
+         "mymeta" : {
+            "abstract" : "unknown",
+            "author" : [
+               "unknown"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.48, CPAN::Meta::Converter version 2.112150",
+            "license" : [
+               "unknown"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Parallel-ForkManager",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {}
+               }
+            },
+            "release_status" : "stable",
+            "version" : "0.7.9"
+         },
+         "name" : "Parallel::ForkManager",
+         "pathname" : "D/DL/DLUX/Parallel-ForkManager-0.7.9.tar.gz",
+         "provides" : {
+            "Parallel::ForkManager" : {
+               "file" : "Parallel/ForkManager.pm",
+               "version" : "v0.7.9"
+            }
+         },
+         "version" : "v0.7.9"
+      },
       "Params::Classify" : {
          "dist" : "Params-Classify-0.013",
          "module" : "Params::Classify",
