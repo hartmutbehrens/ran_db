@@ -9,8 +9,9 @@ use warnings;
 #modules
 use Common::File;
 use File::Path qw(make_path);
-use Parse -command;
 use Module::Pluggable search_path => ['Plugin::Parse'], require => 1;
+use Parallel::ForkManager; 
+use Parse -command;
 
 
 sub abstract {
@@ -34,6 +35,7 @@ sub opt_spec {
 	[ "type|t=s",	"PM file type being parsed", { default => 'unknown', hidden => 1 }],
 	[ "identifier|i=s",	"Optional output filename identifier", { default => ''}],
 	[ "delete|D",	"Delete file(s) after parsing"],
+	[ "parallel|P=s", 	"number of files to process in parallel (default = 1) ", { default => 1}],	
 	[ "classifiers|c=s@",	"section classifiers [table,unique_col1,unique_col2,..]. Repeat switch and argument to add more classifiers.", 
 			{ default => [], hidden => 1 } ],
 	[ "remap|m=s@",	"change column names [table,old_col_name,new_col_name]. Repeat switch and argument to add more column name changes.", 
@@ -53,7 +55,9 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
+	my $pm = Parallel::ForkManager->new($opt->{parallel});
 	for my $infile (@$args) {
+		$pm->start and next; # do the fork
 		if (-s $infile) {
 			my $sections = get_sections($opt->{ssep},$infile);
 			my $header = parse_header($sections->[0],$opt->{rsep}); #assume first section is header, naughty naughty
@@ -93,7 +97,9 @@ sub execute {
 			print "Deleting: $infile (-D command line option was provided)\n";
 			unlink($infile);
 		}
-	}		
+		$pm->finish; # do the exit in the child process
+	}
+	$pm->wait_all_children;		
 }
 
 sub to_csv {
