@@ -23,7 +23,7 @@ sub usage_desc {
 }
 
 sub opt_spec {
-	my ($ssep,$rsep,$fsep) = ("\n\n\n","\n","\t");
+	my ($ssep,$rsep,$fsep,$np) = ("\n\n\n","\n","\t",4);
 
 	return (
 	[ "ssep|s=s",	'input section separator (default \n\n\n)', { default => $ssep, hidden => 1 }],
@@ -35,7 +35,7 @@ sub opt_spec {
 	[ "type|t=s",	"PM file type being parsed", { default => 'unknown', hidden => 1 }],
 	[ "identifier|i=s",	"Optional output filename identifier", { default => ''}],
 	[ "delete|D",	"Delete file(s) after parsing"],
-	[ "parallel|P=s", 	"number of files to process in parallel (default = 1) ", { default => 1}],	
+	[ "parallel|P=s", 	"number of files to process in parallel (default = $np) ", { default => $np}],	
 	[ "classifiers|c=s@",	"section classifiers [table,unique_col1,unique_col2,..]. Repeat switch and argument to add more classifiers.", 
 			{ default => [], hidden => 1 } ],
 	[ "remap|m=s@",	"change column names [table,old_col_name,new_col_name]. Repeat switch and argument to add more column name changes.", 
