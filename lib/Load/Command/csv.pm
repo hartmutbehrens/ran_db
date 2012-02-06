@@ -57,26 +57,39 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-	
 	my $count = 0;
-	my $dbh; 
-	die "Could not connect to database\n" unless Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
-	opendir my $dir, $opt->{csvdir} || die "Could not open $opt->{csvdir} for reading: $!\n";
-
-	while (my $file = readdir $dir) {
-		my $match = "$opt->{nms}.$opt->{type}.";
-		next unless ($file =~ /$match/);
+	my $files = get_filenames($opt);
+	my $pm = Parallel::ForkManager->new($opt->{parallel});
+	for my $file (@$files) {
+		$pm->start and next; # do the fork
 		print "About to load: $file\n";
+		my $dbh; 
+		die "Could not connect to database\n" unless Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
 		 my $success = load_csv($dbh,$opt,$file);
 		 $count++ if $success;
 		 if ($success && $opt->{delete}) {
 			print "Deleting: $file (-D command line option was provided)\n";
 			unlink($opt->{csvdir}.'/'.$file);
 		}
+		$pm->finish;
 	}
+	$pm->wait_all_children;		
 	if ($count == 0) {
 		warn "No files of type \"$opt->{type}\" from \"$opt->{nms}\" could be loaded from \"$opt->{csvdir}\" !\n";
 	}
+}
+
+sub get_filenames {
+	my $opt = shift;
+	my @files;
+	opendir my $dir, $opt->{csvdir} || die "Could not open $opt->{csvdir} for reading: $!\n";
+	while (my $file = readdir $dir) {
+		my $match = "$opt->{nms}.$opt->{type}.";
+		next unless ($file =~ /$match/);
+		push @files, $file;
+	}
+	closedir $dir;
+	return \@files;
 }
 
 sub load_csv {
