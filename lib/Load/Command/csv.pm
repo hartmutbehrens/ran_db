@@ -17,10 +17,11 @@ sub abstract {
 }
 
 sub usage_desc {
-	return "%c csv %o";
+	return "%c csv %o [ filename(s) ]";
 }
 
 sub opt_spec {
+	my $np = 4;
 	return (
 	[ "csvdir|c=s",	"directory to load csv files from", { default => "../csvload" }],
 	[ "fsep|f=s",	'input field separator (default ;)', { default => ';' }],
@@ -34,7 +35,7 @@ sub opt_spec {
 	[ "port|P=s",	"database port", { hidden => 1, default => 3306 }],
 	[ "nms|n=s",	"load files from this OMC-R or WNMS name (will be used to match against csv file name)", { required => 1 }],
 	[ "type|t=s",	"file type to be loaded (will be used to match against csv file name) - e.g. t110,RNCCN..", { required => 1 }],
-	[ "parallel|P=s", 	"number of files to load in parallel (default = 1). Cannot be used with the --lock option when > 1", { default => 1}],
+	[ "parallel|P=s", 	"number of files to load in parallel (default = $np). Cannot be used with the --lock option when > 0", { default => $np}],
 	[ "lock|l",	"lock tables during write"],
 	[ "delete|D",	"Delete file(s) after parsing"],
   );
@@ -45,23 +46,24 @@ sub validate_args {
 	if (defined $opt->{hline} && substr($opt->{hline},0,1) eq  substr($opt->{cline},0,1)) {
 		die "Header line and column line cannot both be on the same line. Please fix the command line arguments!\n";
 	}	
-	if ($opt->{lock} and $opt->{parallel} > 1) {
+	if ($opt->{lock} and $opt->{parallel} > 0) {
 		die "Use of table locking when loading more than one file in parallel is not possible!\n";
-	}	
+	}
+	#$self->usage_error("At least one file name is required") unless @$args;
+	#for (@$args) {
+	#	die "The file $_ does not exist!\n" unless -e $_;	
+	#}	
 }
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-	my $dbh;
+	
 	my $count = 0;
-	my $connected = Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
-	unless ($connected) {
-		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
-	}
+	my $dbh; 
+	die "Could not connect to database\n" unless Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
 	opendir my $dir, $opt->{csvdir} || die "Could not open $opt->{csvdir} for reading: $!\n";
-	my $pm = Parallel::ForkManager->new($opt->{parallel});
+
 	while (my $file = readdir $dir) {
-		$pm->start and next; # do the fork
 		my $match = "$opt->{nms}.$opt->{type}.";
 		next unless ($file =~ /$match/);
 		print "About to load: $file\n";
@@ -71,9 +73,7 @@ sub execute {
 			print "Deleting: $file (-D command line option was provided)\n";
 			unlink($opt->{csvdir}.'/'.$file);
 		}
-		$pm->finish; # do the exit in the child process
 	}
-	$pm->wait_all_children;
 	if ($count == 0) {
 		warn "No files of type \"$opt->{type}\" from \"$opt->{nms}\" could be loaded from \"$opt->{csvdir}\" !\n";
 	}
@@ -87,7 +87,6 @@ sub load_csv {
 		warn "$file does not conform to the naming convetion \"source.type.table\" and will be skipped ..\n";
 		return 0;
 	}
-	
 	return 0 unless Common::MySQL::has_table($dbh,$table);
 	my $def = Common::MySQL::get_definition($dbh,$table);
 	
