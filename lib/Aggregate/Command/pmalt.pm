@@ -120,7 +120,7 @@ sub aggregate {
 			my ($num,$num_id) = (scalar keys %{$todo->{$step}},$#{$items} + 1);
 			
 			
-			my ($success,$id) = (0,join('.',$day,$step,$sconfig->{from},$sconfig->{to}),$items,$num_id);
+			my ($success,$id) = (0,join('.',$day,$step,$sconfig->{from},$sconfig->{to},$num_id));
 			$id =~ s/\:/_/g;		#windows does not like ':' in a filename
 			if ( (defined $opt->{skip}) && aggregation_done($opt,$id)) {
 				warn "Skipping aggregation step $step: from $sconfig->{from} to $sconfig->{to} for $day because it is already done according to log files in $opt->{log} and --skip command line option was provided.\n";
