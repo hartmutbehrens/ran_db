@@ -1,6 +1,6 @@
 ﻿<deletions>
 	<delete name="hourly">
-		 <step name="1" from="T180_ADJ_H" identifier="CI,LAC,TARGET_CI,TARGET_LAC,BSC_NAME,OMC_ID" using="STARTDATE" keep="3">
+		 <step name="1" from="T180_ADJ_H" identifier="CI,LAC,TARGET_CI,TARGET_LAC,BSC_NAME,OMC_ID" using="STARTDATE" keep="7">
 		 </step>
 	</delete>
 	<delete name="daily">
