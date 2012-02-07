@@ -64,10 +64,17 @@ sub execute {
 		my $lock = $template;
 		$lock =~ s/\W//g;
 		Common::Lock::get_lock('.'.$lock) or Common::Lock::bail('.'.$lock);
-		delete_rows($dbh,$template,$opt);
+		my @tables = delete_rows($dbh,$template,$opt);
+		optimize($dbh,\@tables);
 	}
 }
 
+sub optimize {
+	my ($dbh,$tables) = @_;
+	foreach my $table(@$tables) {
+		$dbh->do("optimize table $table");
+	}
+}
 
 
 sub delete_rows {
@@ -75,6 +82,8 @@ sub delete_rows {
 	
 	my $today = Common::Date::today();
 	my $config = Common::XML::read_xml($template);
+	
+	my %tables;
 	
 	for my $step (sort {$a <=> $b} keys %{$config->{delete}->{$opt->{time}}->{step}}) {
 		if ( ( defined $opt->{step} ) && ($step != $opt->{step}) ) {
@@ -108,10 +117,12 @@ sub delete_rows {
 				print "@$id $day\n" if $opt->{debug};
 				my $deld = $sth->execute(@$id,$day); 
 			}
-			log_done($opt,$id); 	
+			log_done($opt,$id); 
+			$tables{$sconfig->{from}}++;	
 		}
 		warn "No data matching the specified criteria was found in table $sconfig->{from} to delete\n" if $count == 0;
 	}
+	return keys %tables;
 }
 
 sub aggregation_done {
