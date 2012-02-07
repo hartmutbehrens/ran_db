@@ -26,9 +26,9 @@ sub usage_desc {
 
 sub opt_spec {
 	my @which = (
-		["hourly", "hourly aggregation"],
-		["daily", "daily aggregation"],
-		["weekly", "daily aggregation"],
+		["hourly", "delete hourly data"],
+		["daily", "delete daily data"],
+		["weekly", "delete weekly data"],
 	);
 	return (
 	[ "user|u=s",	"database user", { required => 1 }],
