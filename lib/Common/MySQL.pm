@@ -10,6 +10,14 @@ use warnings;
 #modules
 use Carp qw(croak);
 use DBI;
+use DBIx::Connector;
+
+sub get_connection {
+	my ($user,$pass,$host,$port,$db) = @_;
+	my $dsn = 'DBI:mysql:'.$db.';host='.$host.';port='.$port;
+	my $conn = DBIx::Connector->new($dsn, $user, $pass, {RaiseError => 1,AutoCommit => 1,});
+	return $conn;
+}
 
 
 sub connect {

@@ -49,23 +49,23 @@ sub validate_args {
 	if ($opt->{lock} and $opt->{parallel} > 0) {
 		die "Use of table locking when loading more than one file in parallel is not possible!\n";
 	}
-	#$self->usage_error("At least one file name is required") unless @$args;
-	#for (@$args) {
-	#	die "The file $_ does not exist!\n" unless -e $_;	
-	#}	
+	
 }
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-	#my $count = 0;
+
 	my $files = get_filenames($opt);
+	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db/});
 	my $pm = Parallel::ForkManager->new($opt->{parallel});
 	
 	for my $file (@$files) {
 		$pm->start and next; # do the fork
+		
+		my $dbh = $conn->dbh;
+		die "Could not get a database handle\n" unless defined $dbh;
+		 
 		print "About to load: $file\n";
-		my $dbh; 
-		die "Could not connect to database\n" unless Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
 		 my $success = load_csv($dbh,$opt,$file);
 		 if ($success && $opt->{delete}) {
 			print "Deleting: $file (-D command line option was provided)\n";
@@ -74,9 +74,6 @@ sub execute {
 		$pm->finish;
 	}
 	$pm->wait_all_children;		
-	#if ($count == 0) {
-	#	warn "No files of type \"$opt->{type}\" from \"$opt->{nms}\" could be loaded from \"$opt->{csvdir}\" !\n";
-	#}
 }
 
 sub get_filenames {
