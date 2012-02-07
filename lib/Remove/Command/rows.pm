@@ -46,7 +46,7 @@ sub opt_spec {
 
 sub validate_args {
 	my ($self, $opt, $args) = @_;	
-	$self->usage_error("At least one aggregation template file name is required") unless @$args;
+	$self->usage_error("At least one template file name is required") unless @$args;
 	make_path($opt->{log}, { verbose => 1 });
 	for (@$args) {
 		die "The file $_ does not exist!\n" unless -e $_;	
