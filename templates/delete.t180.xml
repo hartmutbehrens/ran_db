@@ -4,7 +4,7 @@
 		 </step>
 	</delete>
 	<delete name="daily">
-		 <step name="1" from="T110_TRX_D" identifier="CI,LAC,TARGET_CI,TARGET_LAC,BSC_NAME,OMC_ID" using="SDATE" keep="14">
+		 <step name="1" from="T180_ADJ_D" identifier="CI,LAC,TARGET_CI,TARGET_LAC,BSC_NAME,OMC_ID" using="SDATE" keep="14">
 		 </step>
 	</delete>
 </deletions>
