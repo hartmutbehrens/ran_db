@@ -1043,6 +1043,157 @@
          },
          "version" : "1.617"
       },
+      "DBIx::Connector" : {
+         "dist" : "DBIx-Connector-0.47",
+         "module" : "DBIx::Connector",
+         "mymeta" : {
+            "abstract" : "Fast, safe DBI connection and transaction management",
+            "author" : [
+               "David E. Wheeler <david@kineticode.com>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.112150",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "DBIx-Connector",
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "Module::Build" : "0.30",
+                     "Test::MockModule" : "0.05",
+                     "Test::More" : "0.88"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "Module::Build" : "0.30"
+                  }
+               },
+               "runtime" : {
+                  "recommends" : {
+                     "DBI" : "1.614",
+                     "Test::Pod" : "1.41",
+                     "Test::Pod::Coverage" : "1.06"
+                  },
+                  "requires" : {
+                     "DBI" : "1.605",
+                     "perl" : "5.006002"
+                  }
+               }
+            },
+            "provides" : {
+               "DBIx::Connector" : {
+                  "file" : "lib/DBIx/Connector.pm",
+                  "version" : "0.47"
+               },
+               "DBIx::Connector::Driver" : {
+                  "file" : "lib/DBIx/Connector/Driver.pm",
+                  "version" : "0.47"
+               },
+               "DBIx::Connector::Driver::MSSQL" : {
+                  "file" : "lib/DBIx/Connector/Driver/MSSQL.pm",
+                  "version" : "0.47"
+               },
+               "DBIx::Connector::Driver::Oracle" : {
+                  "file" : "lib/DBIx/Connector/Driver/Oracle.pm",
+                  "version" : "0.47"
+               },
+               "DBIx::Connector::Driver::Pg" : {
+                  "file" : "lib/DBIx/Connector/Driver/Pg.pm",
+                  "version" : "0.47"
+               },
+               "DBIx::Connector::Driver::SQLite" : {
+                  "file" : "lib/DBIx/Connector/Driver/SQLite.pm",
+                  "version" : "0.47"
+               },
+               "DBIx::Connector::Driver::mysql" : {
+                  "file" : "lib/DBIx/Connector/Driver/mysql.pm",
+                  "version" : "0.47"
+               },
+               "DBIx::Connector::Proxy" : {
+                  "file" : "lib/DBIx/Connector.pm",
+                  "version" : "0.47"
+               },
+               "DBIx::Connector::RollbackError" : {
+                  "file" : "lib/DBIx/Connector/Driver.pm",
+                  "version" : 0
+               },
+               "DBIx::Connector::SvpRollbackError" : {
+                  "file" : "lib/DBIx/Connector/Driver.pm",
+                  "version" : 0
+               },
+               "DBIx::Connector::TxnRollbackError" : {
+                  "file" : "lib/DBIx/Connector/Driver.pm",
+                  "version" : 0
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "bugtracker" : {
+                  "web" : "http://github.com/theory/dbix-connector/issues/"
+               },
+               "homepage" : "http://search.cpan.org/dist/DBIx-Connector/",
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ],
+               "repository" : {
+                  "url" : "http://github.com/theory/dbix-connector/tree/"
+               }
+            },
+            "version" : "0.47"
+         },
+         "name" : "DBIx::Connector",
+         "pathname" : "D/DW/DWHEELER/DBIx-Connector-0.47.tar.gz",
+         "provides" : {
+            "DBIx::Connector" : {
+               "file" : "DBIx/Connector.pm",
+               "version" : "0.47"
+            },
+            "DBIx::Connector::Driver" : {
+               "file" : "DBIx/Connector/Driver.pm",
+               "version" : "0.47"
+            },
+            "DBIx::Connector::Driver::MSSQL" : {
+               "file" : "DBIx/Connector/Driver/MSSQL.pm",
+               "version" : "0.47"
+            },
+            "DBIx::Connector::Driver::Oracle" : {
+               "file" : "DBIx/Connector/Driver/Oracle.pm",
+               "version" : "0.47"
+            },
+            "DBIx::Connector::Driver::Pg" : {
+               "file" : "DBIx/Connector/Driver/Pg.pm",
+               "version" : "0.47"
+            },
+            "DBIx::Connector::Driver::SQLite" : {
+               "file" : "DBIx/Connector/Driver/SQLite.pm",
+               "version" : "0.47"
+            },
+            "DBIx::Connector::Driver::mysql" : {
+               "file" : "DBIx/Connector/Driver/mysql.pm",
+               "version" : "0.47"
+            },
+            "DBIx::Connector::Proxy" : {
+               "file" : "DBIx/Connector.pm",
+               "version" : "0.47"
+            },
+            "DBIx::Connector::RollbackError" : {
+               "file" : "DBIx/Connector/Driver.pm"
+            },
+            "DBIx::Connector::SvpRollbackError" : {
+               "file" : "DBIx/Connector/Driver.pm"
+            },
+            "DBIx::Connector::TxnRollbackError" : {
+               "file" : "DBIx/Connector/Driver.pm"
+            }
+         },
+         "version" : "0.47"
+      },
       "Data::OptList" : {
          "dist" : "Data-OptList-0.107",
          "module" : "Data::OptList",
@@ -4981,6 +5132,61 @@
             }
          },
          "version" : "0.008"
+      },
+      "Test::MockModule" : {
+         "dist" : "Test-MockModule-0.05",
+         "module" : "Test::MockModule",
+         "mymeta" : {
+            "abstract" : "Override subroutines in a module for unit testing",
+            "author" : [
+               "Simon Flack"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.112150",
+            "license" : [
+               "unknown"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Test-MockModule",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Scalar::Util" : 0,
+                     "Test::More" : "0.45"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "0.05"
+         },
+         "name" : "Test::MockModule",
+         "pathname" : "S/SI/SIMONFLK/Test-MockModule-0.05.tar.gz",
+         "provides" : {
+            "Test::MockModule" : {
+               "file" : "Test/MockModule.pm",
+               "version" : "0.05"
+            }
+         },
+         "version" : "0.05"
       },
       "Test::Requires" : {
          "dist" : "Test-Requires-0.06",
