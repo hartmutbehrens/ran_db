@@ -49,8 +49,11 @@ sub validate_args {
 	$self->usage_error("At least one template file name is required") unless @$args;
 	make_path($opt->{log}, { verbose => 1 });
 	for (@$args) {
-		die "The file $_ does not exist!\n" unless -e $_;	
+		die "The file $_ does not exist!\n" unless -e $_;
+		my $config = Common::XML::read_xml($_);
+		die "No config section found for $opt->{time} level in file $_ " unless exists $config->{delete}->{$opt->{time}};
 	}
+	
 }
 
 sub execute {
@@ -84,7 +87,6 @@ sub delete_rows {
 	my $config = Common::XML::read_xml($template);
 	
 	my %tables;
-	
 	for my $step (sort {$a <=> $b} keys %{$config->{delete}->{$opt->{time}}->{step}}) {
 		if ( ( defined $opt->{step} ) && ($step != $opt->{step}) ) {
 			warn "Skipping step $step because command line option \"--step $opt->{step}\" was provided.\n";
