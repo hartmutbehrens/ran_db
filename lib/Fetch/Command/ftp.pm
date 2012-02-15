@@ -36,7 +36,7 @@ sub opt_spec {
     [ "user|u=s", 	"User", { required => 1}],
     [ "pwd|p=s", 	"Password", { required => 1}],
     [ "dir|d=s",	"Local directory to store files", { default => '../data'}],
-    [ "log|l=s", 	"Log directory", { default => '../ftplog'}],
+    [ "log|l=s", 	"Log directory", { default => '../log'}],
     [ "maxdays|m=s", 	"Only scan subdirectories recursively that are up to maxdays old", { default => 2}],		#wNMS keeps PM files forever..
     [ "parallel|P=s", 	"number of parallel ftp's to start (default = 1) ", { default => 1}],		
     [ "ignore", 	"Copy files, even if they were already ftpd (ftpd files are logged)."],
