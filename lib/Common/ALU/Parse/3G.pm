@@ -108,8 +108,8 @@ sub parse_3GPM {
 			}
 		}
 	}
-	return(\%pm,\%counters,\%info);
 	unlink $tmp_dir.$outfile;	
+	return(\%pm,\%counters,\%info);
 }
 
 #parse call traces - can be used to parse CTN,CTG
