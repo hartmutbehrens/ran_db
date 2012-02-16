@@ -2,7 +2,7 @@
 	<delete name="hourly">
 		 <step name="1" from="RNCCN_IPIFBP_H" identifier="NAME,RncFunction,IubIf,IpIfBP,OMC_ID" using="DATE(SDATETIME)" keep="14">
 		 </step>
-		 <step name="2" from="RNCCN_IPIFBP_H" identifier="NAME,RncFunction,IubIf,Aal2IfBP,OMC_ID" using="STARTDATE" keep="14">
+		 <step name="2" from="RNCCN_IUBIFAAL2_H" identifier="NAME,RncFunction,IubIf,Aal2IfBP,OMC_ID" using="STARTDATE" keep="14">
 		 </step>
 		 <step name="3" from="RNCCN_NEIGHBOURINGRNC_A1_H" identifier="NAME,RncFunction,NeighbouringRnc,OMC_ID" using="STARTDATE" keep="14">
 		 </step>
@@ -29,6 +29,38 @@
 		 <step name="14" from="RNCCN_UTRANCELL_A5_H" identifier="UtranCell,RncFunction,NAME,OMC_ID" using="STARTDATE" keep="14">
 		 </step>
 		 <step name="15" from="RNCCN_UTRANCELL_H" identifier="UtranCell,RncFunction,NAME,OMC_ID" using="STARTDATE" keep="14">
+		 </step>
+	</delete>
+	<delete name="daily">
+		 <step name="1" from="RNCCN_IPIFBP_D" identifier="NAME,RncFunction,IubIf,IpIfBP,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="2" from="RNCCN_IUBIFAAL2_D" identifier="NAME,RncFunction,IubIf,Aal2IfBP,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="3" from="RNCCN_NEIGHBOURINGRNC_A1_H" identifier="NAME,RncFunction,NeighbouringRnc,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="4" from="RNCCN_NEIGHBOURINGRNC_A2_H" identifier="NAME,RncFunction,NeighbouringRnc,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="5" from="RNCCN_NEIGHBOURINGRNC_H" identifier="NAME,RncFunction,NeighbouringRnc,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="6" from="RNCCN_RNCFUNCTION_A1_H" identifier="NAME,RncFunction,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="7" from="RNCCN_RNCFUNCTION_A2_H" identifier="NAME,RncFunction,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="8" from="RNCCN_RNCFUNCTION_H" identifier="NAME,RncFunction,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="9" from="RNCCN_TMU_H" identifier="NAME,RncEquipment,CNode,TMU,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="10" from="RNCCN_UTRANCELL_A1_H" identifier="UtranCell,RncFunction,NAME,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="11" from="RNCCN_UTRANCELL_A2_H" identifier="UtranCell,RncFunction,NAME,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="12" from="RNCCN_UTRANCELL_A3_H" identifier="UtranCell,RncFunction,NAME,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="13" from="RNCCN_UTRANCELL_A4_H" identifier="UtranCell,RncFunction,NAME,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="14" from="RNCCN_UTRANCELL_A5_H" identifier="UtranCell,RncFunction,NAME,OMC_ID" using="IMPORTDATE" keep="366">
+		 </step>
+		 <step name="15" from="RNCCN_UTRANCELL_H" identifier="UtranCell,RncFunction,NAME,OMC_ID" using="IMPORTDATE" keep="366">
 		 </step>
 	</delete>
 </deletions>
