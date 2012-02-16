@@ -20,7 +20,7 @@
 		 </step>
 		 <step name="10" from="LProcessor" identifier="RncName,RNCEquipment,INode,EM,Lp" using="IMPORTDATE" keep="7">
 		 </step>
-		 <step name="11" from="UMTSNeighbourCells" identifier="cellIid,locationAreaCode,tgtCI,tgtLAC" using="IMPORTDATE" keep="7">
+		 <step name="11" from="UMTSNeighbourCells" identifier="cellId,locationAreaCode,tgtCI,tgtLAC" using="IMPORTDATE" keep="7">
 		 </step>
 		 <step name="12" from="Site" identifier="Site,Sector,AntennaSystem,OMC_ID" using="IMPORTDATE" keep="7">
 		 </step>
