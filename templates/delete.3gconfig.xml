@@ -1,0 +1,28 @@
+﻿<deletions>
+	<delete name="daily">
+		 <step name="1" from="Cell" identifier="cellId,locationAreaCode,OMC_ID" using="IMPORTDATE" keep="7">
+		 </step>
+		 <step name="2" from="BTS" identifier="BTSEquipment,BTSCell" using="IMPORTDATE" keep="7">
+		 </step>
+		 <step name="3" from="AtmIf" identifier="RncName,RNCEquipment,INode,EM,AtmIf,OMC_ID" using="IMPORTDATE" keep="7">
+		 </step>
+		 <step name="4" from="AtmIf_Vpt" identifier="RncName,RNCEquipment,INode,EM,AtmIf,Vpt,OMC_ID" using="IMPORTDATE" keep="7">
+		 </step>
+		 <step name="5" from="RNC" identifier="RncName" using="IMPORTDATE" keep="7">
+		 </step>
+		 <step name="6" from="NodeB" identifier="NodeBName,RncName,OMC_ID" using="IMPORTDATE" keep="7">
+		 </step>
+		 <step name="7" from="GSMCell" identifier="CI,LAC,RncName" using="IMPORTDATE" keep="7">
+		 </step>
+		 <step name="8" from="GSMNeighbourCells" identifier="cellId,locationAreaCode,tgtCI,tgtLAC" using="IMPORTDATE" keep="7">
+		 </step>
+		 <step name="9" from="NeighbouringRNC" identifier="RncName,NeighbouringRNC" using="IMPORTDATE" keep="7">
+		 </step>
+		 <step name="10" from="LProcessor" identifier="RncName,RNCEquipment,INode,EM,Lp" using="IMPORTDATE" keep="7">
+		 </step>
+		 <step name="11" from="UMTSNeighbourCells" identifier="cellIid,locationAreaCode,tgtCI,tgtLAC" using="IMPORTDATE" keep="7">
+		 </step>
+		 <step name="12" from="Site" identifier="Site,Sector,AntennaSystem,OMC_ID" using="IMPORTDATE" keep="7">
+		 </step>
+	</delete>
+</deletions>
