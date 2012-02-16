@@ -684,6 +684,10 @@
 			<order>BTSEquipment,BTSCell,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
+		<index name="cellid">
+			<order>localCellId,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="NodeB">
 		<field name="OMC_ID" type="varchar(50)">
@@ -725,6 +729,10 @@
 		<index name="idx1">
 			<order>NodeBName,RncName,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>iubIfId,RncName</order>
+			<unique>no</unique>
 		</index>
 	</table>
 	<table name="RNC">

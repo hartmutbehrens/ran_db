@@ -19192,6 +19192,10 @@
 			<order>NAME,RncFunction,IubIf,Aal2IfBP,STARTDATE,STARTTIME,OMC_ID</order>
 			<unique>yes</unique>
 		</index>
+		<index name="idx2">
+			<order>IubIf,NAME</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	
 	<table name="RNCCN_IUBIFAAL2_D">
@@ -19336,6 +19340,10 @@
 		<index name="iubif">
 			<order>NAME,RncFunction,IubIf,Aal2IfBP,IMPORTDATE,OMC_ID</order>
 			<unique>yes</unique>
+		</index>
+		<index name="idx2">
+			<order>IubIf,NAME</order>
+			<unique>no</unique>
 		</index>
 	</table>
 	
