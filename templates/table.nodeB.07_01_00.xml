@@ -1933,6 +1933,10 @@
 			<order>NAME,NodeBEquipment,OMC_ID,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
+		<index name="idx2">
+			<order>NAME,SDATETIME,RncName</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="NODEB_AAL2_H" loadedfromcsv="yes" granularity="3600" idx="NodeBEquipment,AtmVcc,Aal2">
 		<field name="STARTDATE" type="date" counter="no">
@@ -3382,6 +3386,10 @@
 			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
+		<index name="idx3">
+			<order>NAME,IMPORTDATE,RncName</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="NODEB_PCMLINK_D">
 		<field name="IMPORTDATE" type="date" counter="no">
@@ -3932,6 +3940,10 @@
 		</index>
 		<index name="idx2">
 			<order>RncName</order>
+			<unique>no</unique>
+		</index>
+		<index name="idx3">
+			<order>NAME,SDATETIME,RncName</order>
 			<unique>no</unique>
 		</index>
 	</table>
