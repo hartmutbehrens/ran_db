@@ -3959,7 +3959,7 @@
 			<unique>no</unique>
 		</index>
 		<index name="idx3">
-			<order>NAME,SDATETIME,RncName</order>
+			<order>NAME,IMPORTDATE,RncName</order>
 			<unique>no</unique>
 		</index>
 	</table>
