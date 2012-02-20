@@ -6747,6 +6747,10 @@
 			<order>LAC,CI,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rnc">
+			<order>NAME,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="RNCCN_UTRANCELL_A1_H" loadedfromcsv="yes" granularity="3600" idx="RncFunction,UtranCell">
 		<field name="STARTDATE" type="date" counter="no">
@@ -8699,8 +8703,11 @@
 			<order>LAC,CI,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rnc">
+			<order>NAME,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
-	
 	<table name="RNCCN_UTRANCELL_A2_H" loadedfromcsv="yes" granularity="3600" idx="RncFunction,UtranCell">
 		<field name="STARTDATE" type="date" counter="no">
 		</field>
@@ -10783,6 +10790,10 @@
 			<order>LAC,CI,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rnc">
+			<order>NAME,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	
 	<table name="RNCCN_UTRANCELL_A2_D">
@@ -12858,6 +12869,10 @@
 		<index name="lacidate">
 			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
+		</index>
+		<index name="rnc">
+			<order>NAME,IMPORTDATE</order>
+			<unique>no</unique>
 		</index>
 	</table>
 	
@@ -15222,8 +15237,11 @@
 			<order>LAC,CI,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rnc">
+			<order>NAME,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
-	
 	<table name="RNCCN_UTRANCELL_A3_D">
 		<field name="IMPORTDATE" type="date" counter="no">
 		</field>
@@ -17576,6 +17594,10 @@
 		<index name="lacidate">
 			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
+		</index>
+		<index name="rnc">
+			<order>NAME,IMPORTDATE</order>
+			<unique>no</unique>
 		</index>
 	</table>
 	
@@ -24371,6 +24393,10 @@
 			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rnc">
+			<order>NAME,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="RNCCN_UTRANCELL_A1_D">
 		<field name="IMPORTDATE" type="date" counter="no">
@@ -26314,6 +26340,10 @@
 		<index name="lacidate">
 			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
+		</index>
+		<index name="rnc">
+			<order>NAME,IMPORTDATE</order>
+			<unique>no</unique>
 		</index>
 	</table>
 	<table name="RNCCN_TMU_D">
@@ -28596,8 +28626,11 @@
 			<order>LAC,CI,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rnc">
+			<order>NAME,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
-	
 	<table name="RNCCN_UTRANCELL_A4_D">
 		<field name="IMPORTDATE" type="date" counter="no">
 		</field>
@@ -29815,8 +29848,11 @@
 			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rnc">
+			<order>NAME,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
 	</table>
-	
 	<table name="RNCCN_NEIGHBOURINGRNC_A2_H" loadedfromcsv="yes" granularity="3600" idx="RncFunction,NeighbouringRnc">
 		<field name="STARTDATE" type="date" counter="no">
 		</field>
@@ -31305,6 +31341,10 @@
 			<order>LAC,CI,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rnc">
+			<order>NAME,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
   <table name="RNCCN_UTRANCELL_A5_D">
     <field name="IMPORTDATE" type="date" counter="no">
@@ -31566,6 +31606,10 @@
 		<index name="lacidate">
 			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
+		</index>
+		<index name="rnc">
+			<order>NAME,IMPORTDATE</order>
+			<unique>no</unique>
 		</index>
 	</table>
 </tables>
