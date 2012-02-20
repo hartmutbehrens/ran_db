@@ -986,6 +986,10 @@
 			<order>LAC,CI,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rnc">
+			<order>RncName,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	
 	<table name="NODEB_HSUPASERVICE_H" loadedfromcsv="yes" granularity="3600" idx="NodeBEquipment,BtsCell,HSUPAService">
@@ -1150,6 +1154,10 @@
 		<index name="lacci">
 			<order>LAC,CI,SDATETIME</order>
 			<unique>yes</unique>
+		</index>
+		<index name="rnc">
+			<order>RncName,SDATETIME</order>
+			<unique>no</unique>
 		</index>
 	</table>
 	<table name="NODEB_TRM_H" loadedfromcsv="yes" granularity="3600" idx="NodeBEquipment,Board,TRM">
@@ -3072,6 +3080,10 @@
 			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rnc">
+			<order>RncName,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="NODEB_HSUPASERVICE_D">
 		<field name="IMPORTDATE" type="date" counter="no">
@@ -3225,6 +3237,10 @@
 		<index name="lacci">
 			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
+		</index>
+		<index name="rnc">
+			<order>RncName,IMPORTDATE</order>
+			<unique>no</unique>
 		</index>
 	</table>
 	<table name="NODEB_TRM_D">
@@ -3943,7 +3959,7 @@
 			<unique>no</unique>
 		</index>
 		<index name="idx3">
-			<order>NAME,IMPORTDATE,RncName</order>
+			<order>NAME,SDATETIME,RncName</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -4142,6 +4158,10 @@
 			<order>LAC,CI,SDATETIME</order>
 			<unique>yes</unique>
 		</index>
+		<index name="rnc">
+			<order>RncName,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="NODEB_HSDPASERVICE_A1_D">
 		<field name="IMPORTDATE" type="date" counter="no">
@@ -4203,6 +4223,10 @@
 		<index name="lacci">
 			<order>LAC,CI,IMPORTDATE</order>
 			<unique>yes</unique>
+		</index>
+		<index name="rnc">
+			<order>RncName,IMPORTDATE</order>
+			<unique>no</unique>
 		</index>
 	</table>
 </tables>
