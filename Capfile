@@ -17,7 +17,6 @@ set :copy_exclude, [".git", "Capfile", "config"]
 
 set :use_sudo, false
 set :deploy_to, "/home/wahl/#{application}"
-set :production_db, "orange_ug_3g"
 ssh_options[:forward_agent] = true
 
 role :hosts, "wahl@10.101.11.218"
@@ -33,15 +32,22 @@ end
 namespace :db do
 	desc "Create MySQL database"
 	task :setup, :roles => :db do
-		set :db_user do
-			Capistrano::CLI.ui.ask "MySQL username: "
+		set :production_db do
+			Capistrano::CLI.ui.ask "Database name: "
 		end
-		set :db_pass do
+		set :db_superuser do
+			Capistrano::CLI.ui.ask "MySQL username (with CREATE privilege): "
+		end
+		set :db_superpass do
 			Capistrano::CLI.password_prompt "MySQL password: "
 		end
 
 		create_command = "CREATE DATABASE IF NOT EXISTS #{production_db}"
-		run "mysql --user=#{db_user} -p#{db_pass} --execute=\"#{create_command}\""
+		run "/usr/local/mysql/bin/mysql --user=#{db_superuser} -p#{db_superpass} --execute=\"#{create_command}\""
+	end
+
+	desc "Create MySQL user"
+	task :create_user, :roles => :db do
 	end
 end
 
