@@ -11,6 +11,7 @@ use Common::ALU::Parse::2G;
 use Common::CSV;
 use Common::Lock;
 use Common::XML;
+use Parallel::ForkManager; 
 
 use File::Path qw(make_path);
 use Parse -command;
@@ -31,12 +32,14 @@ sub opt_spec {
 		["t31", "Parse pmtype PMRES-31 (Radio Measurements)"],
 		["t110", "Parse pmtype PMRES110 (Overview Measurements)"],
 	);
+	my $np = 4;
 	return (
 	[ "outdir|d=s",	"directory to store parsed csv file(s) in", { default => "../csvload" }],
 	[ "templatedir|t=s",	"directory containing xml templates for decoding pm file", { default => "../templates" }],
 	[ "pmtype|p=s",	"type of binary pm file being parsed", { required => 1, hidden => 1, one_of => \@one_of}],
 	[ "omc|o=s",	"OMC-R name", { required => 1 }],
 	[ "delete|D",	"Delete file(s) after parsing"],
+	[ "parallel|P=s", 	"number of files to process in parallel (default = $np) ", { default => $np}],	
   );
 }
 
@@ -53,11 +56,12 @@ sub execute {
 	my ($self, $opt, $args) = @_;
 	my $lock = '.'.$opt->{omc}.$opt->{pmtype};
 	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
-	
+
+	my $pm = Parallel::ForkManager->new($opt->{parallel});
 	for my $pmfile (@$args) {
-		
+		$pm->start and next; # do the fork
+
 		my $info = Common::ALU::Parse::2G::alu_pm_info($pmfile);
-		#print Dumper($info);
 		my $layout_file = $opt->{templatedir}.'/layout.'.lc($opt->{pmtype}).'.'.lc($info->{'VERSION'}).'.xml';
 		unless ((-f $layout_file) && (-s $layout_file)) {
 			print "The file $pmfile with version $info->{VERSION} cannot be decoded because no layout file could be found (looking for $layout_file) !\n";
@@ -72,7 +76,9 @@ sub execute {
 			print "Deleting: $pmfile (-D command line option was provided)\n";
 			unlink($pmfile);
 		}
+		$pm->finish; # do the exit in the child process
 	}
+	$pm->wait_all_children;		
 }
 
 1;
