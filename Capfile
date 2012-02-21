@@ -82,5 +82,17 @@ namespace :application do
 			run "#{current_path}/bin/rdb-make tables -u #{db_user} -x #{db_pass} -h localhost -d #{production_db} -D #{current_path}/templates/table.#{table}.#{bss_ver}.xml"
 		end
 	end
+
+	desc "Add triggers to GSM tables"
+	task :add_gsm_triggers, :roles => :db do
+		for item in ['2G','distance','giveDayStart'] do
+			run "#{mysql_path} --user=#{db_user} -p#{db_pass} --database=#{production_db} < #{current_path}/templates/functions.#{item}.sql"
+		end
+		run "#{mysql_path} --user=#{db_user} -p#{db_pass} --database=#{production_db} < #{current_path}/templates/triggers.2G.sql"
+	end
+
+	desc "Make shell wrappers, suitable for crontab use"
+	task :make_wrappers, :roles => :hosts do
+	end
 end
 	
