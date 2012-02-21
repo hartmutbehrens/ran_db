@@ -268,6 +268,7 @@ sub decode_binary {
 							$vector = 'no' if not defined($vector);
 							my $readPos = $bytecounter + $offset;
 							my (undef,@ary) = unpack("a".$readPos.$tmplt{$usize}.$len,$_);
+							next unless defined $ary[0];
 							unless (($ary[0] == 255) && ($ary[$#ary] == 255)) {
 								if ($vector eq 'no') {
 									$pm{$table}{$idx}{$counter} = calc_val($ordering,@ary); #values in Alcatel PM file are always LSB,MSB,LSB,MSB...etc. (except for PMRES-31)
