@@ -57,9 +57,9 @@ sub execute {
 	my $lock = '.'.$opt->{omc}.$opt->{pmtype};
 	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 
-	my $pm = Parallel::ForkManager->new($opt->{parallel});
+	my $pmf = Parallel::ForkManager->new($opt->{parallel});
 	for my $pmfile (@$args) {
-		$pm->start and next; # do the fork
+		$pmf->start and next; # do the fork
 
 		my $info = Common::ALU::Parse::2G::alu_pm_info($pmfile);
 		my $layout_file = $opt->{templatedir}.'/layout.'.lc($opt->{pmtype}).'.'.lc($info->{'VERSION'}).'.xml';
@@ -76,9 +76,9 @@ sub execute {
 			print "Deleting: $pmfile (-D command line option was provided)\n";
 			unlink($pmfile);
 		}
-		$pm->finish; # do the exit in the child process
+		$pmf->finish; # do the exit in the child process
 	}
-	$pm->wait_all_children;		
+	$pmf->wait_all_children;		
 }
 
 1;
