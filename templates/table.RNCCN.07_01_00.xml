@@ -6751,6 +6751,10 @@
 			<order>NAME,SDATETIME</order>
 			<unique>no</unique>
 		</index>
+		<index name="nodeb">
+			<order>NodeBName,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="RNCCN_UTRANCELL_A1_H" loadedfromcsv="yes" granularity="3600" idx="RncFunction,UtranCell">
 		<field name="STARTDATE" type="date" counter="no">
@@ -8705,6 +8709,10 @@
 		</index>
 		<index name="rnc">
 			<order>NAME,SDATETIME</order>
+			<unique>no</unique>
+		</index>
+		<index name="nodeb">
+			<order>NodeBName,SDATETIME</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -10794,6 +10802,10 @@
 			<order>NAME,SDATETIME</order>
 			<unique>no</unique>
 		</index>
+		<index name="nodeb">
+			<order>NodeBName,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	
 	<table name="RNCCN_UTRANCELL_A2_D">
@@ -12872,6 +12884,10 @@
 		</index>
 		<index name="rnc">
 			<order>NAME,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
+		<index name="nodeb">
+			<order>NodeBName,IMPORTDATE</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -15241,6 +15257,10 @@
 			<order>NAME,SDATETIME</order>
 			<unique>no</unique>
 		</index>
+		<index name="nodeb">
+			<order>NodeBName,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="RNCCN_UTRANCELL_A3_D">
 		<field name="IMPORTDATE" type="date" counter="no">
@@ -17597,6 +17617,10 @@
 		</index>
 		<index name="rnc">
 			<order>NAME,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
+		<index name="nodeb">
+			<order>NodeBName,IMPORTDATE</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -24397,6 +24421,10 @@
 			<order>NAME,IMPORTDATE</order>
 			<unique>no</unique>
 		</index>
+		<index name="nodeb">
+			<order>NodeBName,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="RNCCN_UTRANCELL_A1_D">
 		<field name="IMPORTDATE" type="date" counter="no">
@@ -26343,6 +26371,10 @@
 		</index>
 		<index name="rnc">
 			<order>NAME,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
+		<index name="nodeb">
+			<order>NodeBName,IMPORTDATE</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -28630,6 +28662,10 @@
 			<order>NAME,SDATETIME</order>
 			<unique>no</unique>
 		</index>
+		<index name="nodeb">
+			<order>NodeBName,SDATETIME</order>
+			<unique>no</unique>
+		</index>
 	</table>
 	<table name="RNCCN_UTRANCELL_A4_D">
 		<field name="IMPORTDATE" type="date" counter="no">
@@ -29850,6 +29886,10 @@
 		</index>
 		<index name="rnc">
 			<order>NAME,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
+		<index name="nodeb">
+			<order>NodeBName,IMPORTDATE</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -31104,232 +31144,232 @@
 		<field name="CI" type="bigint" counter="no">
 		</field>
 		<field name="VS.RadioLinkSetupUnsuccess.MultiCellNotAvailable" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RadioLinkSetupUnsuccess.TMUUnbalance" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RadioLinkReconfigurationPrepareUnsuccess.MultiCellNotAvailable" table-alias="VS.RadioLinkReconfigPrepareUnsuccess.MultiCellNotAvailable" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RadioLinkFirstSetupFailure.MultiCellNotAvailable" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RadioLinkFirstSetupFailure.TMUUnbalance" type="bigint" counter="yes">
-    </field>
-    <field name="RLM.AttRLSetupIur.PS" type="bigint" counter="yes">
-    </field>
-    <field name="RLM.AttRLSetupIur.CS" type="bigint" counter="yes">
-    </field>
-    <field name="RLM.AttRLSetupIur" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Unavailability.Cell.Sum" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Unavailability.Cell.CellFail" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Unavailability.Cell.OperatorLock" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Unavailability.Cell.IubFail" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RRC.ConnectionReAttempt.3G2GRedirectEmergency" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RRC.ConnectionReAttempt.3G2GRedirectCellLoad" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IuRelocationRequests.Ps4Gto3GRelocation" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionDueToFailureInTargetSystem" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectDueToFailInTgtSys" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionCannotEstablishLocation" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectCantEstablishLoc" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionDueToRabMatchingFailure" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectDueToRabMatchFail" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionOtherCauses" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.NonHsdpaToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToNonHsdpa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.NonHsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToNonHsdpaInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.NonHsdpaToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToNonHsdpa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.NonHsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToNonHsdpaInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayLt6Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe6Lt9Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe9Lt15Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe15Lt18Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe18Lt27Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe27Lt51Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe51Lt129Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe129Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe6Lt15Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe15Lt62Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe62Lt129Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe129Lt384Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe384Lt767Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.EventDetectedCellAttemptAddToActiveSet.DetectedCellEvent1A" type="bigint" counter="yes">
-    </field>
-    <field name="VS.EventDetectedCellAttemptAddToActiveSet.DetectedCellEvent1C" type="bigint" counter="yes">
-    </field>
-    <field name="VS.EventDetectedCellSuccessfulAddToActiveSet.DetectedCellEvent1A" type="bigint" counter="yes">
-    </field>
-    <field name="VS.EventDetectedCellSuccessfulAddToActiveSet.DetectedCellEvent1C" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsupaCACSuccess" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsupaCACUnsuccess.MaxNumEdchUsers" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IurDrncRadioLinkReconfigurationPrepareUnsuccess.EdchTti2msNotSupported" table-alias="VS.IurDrncRadioLinkReconfPrepareUnsuccess.EdchTti2msNoSupport" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkBadPdusRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkKbytesRlcActiveCells.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkKbytesRlcReferenceCell.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkPdusRlcReferenceCell.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkSduRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkActivityRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RncRepDlRateCtrlAmrLr" type="bigint" counter="yes">
-    </field>
-    <field name="VS.ReconfAtt.0kbps.DCH" type="bigint" counter="yes">
-    </field>
-    <field name="VS.ReconfAtt.0kbps.HSDSCH" type="bigint" counter="yes">
-    </field>
-    <field name="VS.ReconfAtt.0kbps.EDCH" type="bigint" counter="yes">
-    </field>
-    <field name="VS.CallAttWithUeCatPerCell.UeCategory21" type="bigint" counter="yes">
-    </field>
-    <field name="VS.CallAttWithUeCatPerCell.UeCategory22" type="bigint" counter="yes">
-    </field>
-    <field name="VS.CallAttWithUeCatPerCell.UeCategory23" type="bigint" counter="yes">
-    </field>
-    <field name="VS.CallAttWithUeCatPerCell.UeCategory24" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutCS.ConfUnaccept" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutCS.PhyChnFail" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutCS.ProtErr" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutCS.IRATProtErr" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutCS.Unspec" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutPS.ConfUnaccept" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutPS.PhyChnFail" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutPS.ProtErr" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutPS.Unspec" type="bigint" counter="yes">
-    </field>
-    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_HSDSCH" type="bigint" counter="yes">
-    </field>
-    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
-    </field>
-    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
-    </field>
-    <field name="RAB.AttEstab.PS.DCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Cum" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Avg" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.NbEvt" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Max" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Min" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RRC.RBReconfigCancel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.AttEstabCS.MULTIAMRV2" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.SuccEstabCS.MULTIAMRV2.HrMultiRate" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.SuccEstabCS.MULTIAMRV2.LrMultiRate" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSAtt.EmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSucc.EmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSCancel.EmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSAttCS.NEmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSuccCS.NEmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSCancelCS.NEmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFail.EmSrv.Timeout.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSFailCS.NEmSrv.Timeout.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFail.EmSrv.NotEnoughSatellites.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSFailCS.NEmSrv.NotEnoughSatellites.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFail.EmSrv.Timeout" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSFailCS.NEmSrv.Timeout" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFail.EmSrv.NotEnoughSatellites" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFail.EmSrv.PoorAccuracy" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSFailCS.NEmSrv.NotEnoughSatellites" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFailCS.NEmSrv.PoorAccuracy" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Edch2msTtiTo10msTtiFallbackSuccess" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Edch2msTtiTo10msTtiFallbackUnsuccess" type="bigint" counter="yes">
-    </field>
-    <index name="ucell">
+	    </field>
+	    <field name="VS.RadioLinkSetupUnsuccess.TMUUnbalance" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RadioLinkReconfigurationPrepareUnsuccess.MultiCellNotAvailable" table-alias="VS.RadioLinkReconfigPrepareUnsuccess.MultiCellNotAvailable" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RadioLinkFirstSetupFailure.MultiCellNotAvailable" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RadioLinkFirstSetupFailure.TMUUnbalance" type="bigint" counter="yes">
+	    </field>
+	    <field name="RLM.AttRLSetupIur.PS" type="bigint" counter="yes">
+	    </field>
+	    <field name="RLM.AttRLSetupIur.CS" type="bigint" counter="yes">
+	    </field>
+	    <field name="RLM.AttRLSetupIur" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Unavailability.Cell.Sum" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Unavailability.Cell.CellFail" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Unavailability.Cell.OperatorLock" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Unavailability.Cell.IubFail" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RRC.ConnectionReAttempt.3G2GRedirectEmergency" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RRC.ConnectionReAttempt.3G2GRedirectCellLoad" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IuRelocationRequests.Ps4Gto3GRelocation" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionDueToFailureInTargetSystem" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectDueToFailInTgtSys" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionCannotEstablishLocation" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectCantEstablishLoc" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionDueToRabMatchingFailure" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectDueToRabMatchFail" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionOtherCauses" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.NonHsdpaToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToNonHsdpa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.NonHsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToNonHsdpaInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.NonHsdpaToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToNonHsdpa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.NonHsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToNonHsdpaInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayLt6Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe6Lt9Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe9Lt15Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe15Lt18Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe18Lt27Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe27Lt51Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe51Lt129Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe129Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe6Lt15Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe15Lt62Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe62Lt129Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe129Lt384Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe384Lt767Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.EventDetectedCellAttemptAddToActiveSet.DetectedCellEvent1A" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.EventDetectedCellAttemptAddToActiveSet.DetectedCellEvent1C" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.EventDetectedCellSuccessfulAddToActiveSet.DetectedCellEvent1A" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.EventDetectedCellSuccessfulAddToActiveSet.DetectedCellEvent1C" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsupaCACSuccess" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsupaCACUnsuccess.MaxNumEdchUsers" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IurDrncRadioLinkReconfigurationPrepareUnsuccess.EdchTti2msNotSupported" table-alias="VS.IurDrncRadioLinkReconfPrepareUnsuccess.EdchTti2msNoSupport" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkBadPdusRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkKbytesRlcActiveCells.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkKbytesRlcReferenceCell.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkPdusRlcReferenceCell.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkSduRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkActivityRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RncRepDlRateCtrlAmrLr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ReconfAtt.0kbps.DCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ReconfAtt.0kbps.HSDSCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ReconfAtt.0kbps.EDCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.CallAttWithUeCatPerCell.UeCategory21" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.CallAttWithUeCatPerCell.UeCategory22" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.CallAttWithUeCatPerCell.UeCategory23" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.CallAttWithUeCatPerCell.UeCategory24" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutCS.ConfUnaccept" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutCS.PhyChnFail" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutCS.ProtErr" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutCS.IRATProtErr" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutCS.Unspec" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutPS.ConfUnaccept" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutPS.PhyChnFail" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutPS.ProtErr" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutPS.Unspec" type="bigint" counter="yes">
+	    </field>
+	    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_HSDSCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="RAB.AttEstab.PS.DCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Cum" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Avg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.NbEvt" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Max" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Min" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RRC.RBReconfigCancel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.AttEstabCS.MULTIAMRV2" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.SuccEstabCS.MULTIAMRV2.HrMultiRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.SuccEstabCS.MULTIAMRV2.LrMultiRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSAtt.EmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSucc.EmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSCancel.EmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSAttCS.NEmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSuccCS.NEmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSCancelCS.NEmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFail.EmSrv.Timeout.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSFailCS.NEmSrv.Timeout.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFail.EmSrv.NotEnoughSatellites.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSFailCS.NEmSrv.NotEnoughSatellites.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFail.EmSrv.Timeout" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSFailCS.NEmSrv.Timeout" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFail.EmSrv.NotEnoughSatellites" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFail.EmSrv.PoorAccuracy" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSFailCS.NEmSrv.NotEnoughSatellites" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFailCS.NEmSrv.PoorAccuracy" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Edch2msTtiTo10msTtiFallbackSuccess" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Edch2msTtiTo10msTtiFallbackUnsuccess" type="bigint" counter="yes">
+	    </field>
+    	<index name="ucell">
 			<order>UtranCell,RncFunction,NAME,OMC_ID,STARTDATE,STARTTIME</order>
 			<unique>yes</unique>
 		</index>
@@ -31343,6 +31383,10 @@
 		</index>
 		<index name="rnc">
 			<order>NAME,SDATETIME</order>
+			<unique>no</unique>
+		</index>
+		<index name="nodeb">
+			<order>NodeBName,SDATETIME</order>
 			<unique>no</unique>
 		</index>
 	</table>
@@ -31370,232 +31414,232 @@
 		<field name="CI" type="bigint" counter="no">
 		</field>
 		<field name="VS.RadioLinkSetupUnsuccess.MultiCellNotAvailable" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RadioLinkSetupUnsuccess.TMUUnbalance" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RadioLinkReconfigurationPrepareUnsuccess.MultiCellNotAvailable" table-alias="VS.RadioLinkReconfigPrepareUnsuccess.MultiCellNotAvailable" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RadioLinkFirstSetupFailure.MultiCellNotAvailable" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RadioLinkFirstSetupFailure.TMUUnbalance" type="bigint" counter="yes">
-    </field>
-    <field name="RLM.AttRLSetupIur.PS" type="bigint" counter="yes">
-    </field>
-    <field name="RLM.AttRLSetupIur.CS" type="bigint" counter="yes">
-    </field>
-    <field name="RLM.AttRLSetupIur" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Unavailability.Cell.Sum" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Unavailability.Cell.CellFail" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Unavailability.Cell.OperatorLock" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Unavailability.Cell.IubFail" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RRC.ConnectionReAttempt.3G2GRedirectEmergency" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RRC.ConnectionReAttempt.3G2GRedirectCellLoad" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IuRelocationRequests.Ps4Gto3GRelocation" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionDueToFailureInTargetSystem" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectDueToFailInTgtSys" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionCannotEstablishLocation" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectCantEstablishLoc" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionDueToRabMatchingFailure" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectDueToRabMatchFail" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionOtherCauses" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.NonHsdpaToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToNonHsdpa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.NonHsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToNonHsdpaInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.NonHsdpaToHsdpaDC" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToNonHsdpa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.NonHsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToNonHsdpaInterFreq" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayLt6Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe6Lt9Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe9Lt15Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe15Lt18Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe18Lt27Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe27Lt51Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe51Lt129Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe129Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe6Lt15Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe15Lt62Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe62Lt129Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe129Lt384Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DistPropDelayPerRange.DelayGe384Lt767Chips" type="bigint" counter="yes">
-    </field>
-    <field name="VS.EventDetectedCellAttemptAddToActiveSet.DetectedCellEvent1A" type="bigint" counter="yes">
-    </field>
-    <field name="VS.EventDetectedCellAttemptAddToActiveSet.DetectedCellEvent1C" type="bigint" counter="yes">
-    </field>
-    <field name="VS.EventDetectedCellSuccessfulAddToActiveSet.DetectedCellEvent1A" type="bigint" counter="yes">
-    </field>
-    <field name="VS.EventDetectedCellSuccessfulAddToActiveSet.DetectedCellEvent1C" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsupaCACSuccess" type="bigint" counter="yes">
-    </field>
-    <field name="VS.HsupaCACUnsuccess.MaxNumEdchUsers" type="bigint" counter="yes">
-    </field>
-    <field name="VS.IurDrncRadioLinkReconfigurationPrepareUnsuccess.EdchTti2msNotSupported" table-alias="VS.IurDrncRadioLinkReconfPrepareUnsuccess.EdchTti2msNoSupport" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkBadPdusRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkKbytesRlcActiveCells.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkKbytesRlcReferenceCell.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkPdusRlcReferenceCell.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkSduRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.DedicatedUplinkActivityRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RncRepDlRateCtrlAmrLr" type="bigint" counter="yes">
-    </field>
-    <field name="VS.ReconfAtt.0kbps.DCH" type="bigint" counter="yes">
-    </field>
-    <field name="VS.ReconfAtt.0kbps.HSDSCH" type="bigint" counter="yes">
-    </field>
-    <field name="VS.ReconfAtt.0kbps.EDCH" type="bigint" counter="yes">
-    </field>
-    <field name="VS.CallAttWithUeCatPerCell.UeCategory21" type="bigint" counter="yes">
-    </field>
-    <field name="VS.CallAttWithUeCatPerCell.UeCategory22" type="bigint" counter="yes">
-    </field>
-    <field name="VS.CallAttWithUeCatPerCell.UeCategory23" type="bigint" counter="yes">
-    </field>
-    <field name="VS.CallAttWithUeCatPerCell.UeCategory24" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutCS.ConfUnaccept" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutCS.PhyChnFail" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutCS.ProtErr" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutCS.IRATProtErr" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutCS.Unspec" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutPS.ConfUnaccept" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutPS.PhyChnFail" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutPS.ProtErr" type="bigint" counter="yes">
-    </field>
-    <field name="IRATHO.FailOutPS.Unspec" type="bigint" counter="yes">
-    </field>
-    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_HSDSCH" type="bigint" counter="yes">
-    </field>
-    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
-    </field>
-    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
-    </field>
-    <field name="RAB.AttEstab.PS.DCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Cum" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Avg" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.NbEvt" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Max" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Min" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RRC.RBReconfigCancel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.AttEstabCS.MULTIAMRV2" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.SuccEstabCS.MULTIAMRV2.HrMultiRate" type="bigint" counter="yes">
-    </field>
-    <field name="VS.RAB.SuccEstabCS.MULTIAMRV2.LrMultiRate" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSAtt.EmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSucc.EmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSCancel.EmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSAttCS.NEmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSuccCS.NEmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSCancelCS.NEmSrv.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFail.EmSrv.Timeout.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSFailCS.NEmSrv.Timeout.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFail.EmSrv.NotEnoughSatellites.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSFailCS.NEmSrv.NotEnoughSatellites.LowDel" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFail.EmSrv.Timeout" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSFailCS.NEmSrv.Timeout" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFail.EmSrv.NotEnoughSatellites" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFail.EmSrv.PoorAccuracy" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSSFailCS.NEmSrv.NotEnoughSatellites" type="bigint" counter="yes">
-    </field>
-    <field name="VS.LS.GPSFailCS.NEmSrv.PoorAccuracy" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Edch2msTtiTo10msTtiFallbackSuccess" type="bigint" counter="yes">
-    </field>
-    <field name="VS.Edch2msTtiTo10msTtiFallbackUnsuccess" type="bigint" counter="yes">
-    </field>
-    <index name="ucell">
+	    </field>
+	    <field name="VS.RadioLinkSetupUnsuccess.TMUUnbalance" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RadioLinkReconfigurationPrepareUnsuccess.MultiCellNotAvailable" table-alias="VS.RadioLinkReconfigPrepareUnsuccess.MultiCellNotAvailable" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RadioLinkFirstSetupFailure.MultiCellNotAvailable" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RadioLinkFirstSetupFailure.TMUUnbalance" type="bigint" counter="yes">
+	    </field>
+	    <field name="RLM.AttRLSetupIur.PS" type="bigint" counter="yes">
+	    </field>
+	    <field name="RLM.AttRLSetupIur.CS" type="bigint" counter="yes">
+	    </field>
+	    <field name="RLM.AttRLSetupIur" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Unavailability.Cell.Sum" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Unavailability.Cell.CellFail" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Unavailability.Cell.OperatorLock" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Unavailability.Cell.IubFail" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RRC.ConnectionReAttempt.3G2GRedirectEmergency" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RRC.ConnectionReAttempt.3G2GRedirectCellLoad" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IuRelocationRequests.Ps4Gto3GRelocation" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionDueToFailureInTargetSystem" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectDueToFailInTgtSys" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionCannotEstablishLocation" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectCantEstablishLoc" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionDueToRabMatchingFailure" table-alias="VS.IuRelocationRequestFailuresPs.4Gto3GRejectDueToRabMatchFail" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IuRelocationRequestFailuresPs.4Gto3GRejectionOtherCauses" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.NonHsdpaToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToNonHsdpa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.NonHsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToHsdpaInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilitySuccess.HsdpaDCToNonHsdpaInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.NonHsdpaToHsdpaDC" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToNonHsdpa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.NonHsdpaToHsdpaDCInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToHsdpaInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsdpaMobilityUnsuccessful.HsdpaDCToNonHsdpaInterFreq" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayLt6Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe6Lt9Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe9Lt15Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe15Lt18Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe18Lt27Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe27Lt51Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe51Lt129Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe129Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe6Lt15Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe15Lt62Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe62Lt129Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe129Lt384Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DistPropDelayPerRange.DelayGe384Lt767Chips" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.EventDetectedCellAttemptAddToActiveSet.DetectedCellEvent1A" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.EventDetectedCellAttemptAddToActiveSet.DetectedCellEvent1C" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.EventDetectedCellSuccessfulAddToActiveSet.DetectedCellEvent1A" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.EventDetectedCellSuccessfulAddToActiveSet.DetectedCellEvent1C" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsupaCACSuccess" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.HsupaCACUnsuccess.MaxNumEdchUsers" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.IurDrncRadioLinkReconfigurationPrepareUnsuccess.EdchTti2msNotSupported" table-alias="VS.IurDrncRadioLinkReconfPrepareUnsuccess.EdchTti2msNoSupport" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkBadPdusRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkKbytesRlcActiveCells.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkKbytesRlcReferenceCell.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkPdusRlcReferenceCell.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkSduRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.DedicatedUplinkActivityRlcRefCell.UlRabPsStrHsupa" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RncRepDlRateCtrlAmrLr" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ReconfAtt.0kbps.DCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ReconfAtt.0kbps.HSDSCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.ReconfAtt.0kbps.EDCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.CallAttWithUeCatPerCell.UeCategory21" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.CallAttWithUeCatPerCell.UeCategory22" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.CallAttWithUeCatPerCell.UeCategory23" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.CallAttWithUeCatPerCell.UeCategory24" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutCS.ConfUnaccept" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutCS.PhyChnFail" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutCS.ProtErr" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutCS.IRATProtErr" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutCS.Unspec" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutPS.ConfUnaccept" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutPS.PhyChnFail" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutPS.ProtErr" type="bigint" counter="yes">
+	    </field>
+	    <field name="IRATHO.FailOutPS.Unspec" type="bigint" counter="yes">
+	    </field>
+	    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_HSDSCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="RAB.AttEstab.PS.EDCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="RAB.AttEstab.PS.DCH_HSDSCH.Conf.DCH_DCH" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Cum" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Avg" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.NbEvt" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Max" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.MeanCellDCH.PS.Strm_EDCH_HSDSCH.Min" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RRC.RBReconfigCancel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.AttEstabCS.MULTIAMRV2" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.SuccEstabCS.MULTIAMRV2.HrMultiRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.RAB.SuccEstabCS.MULTIAMRV2.LrMultiRate" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSAtt.EmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSucc.EmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSCancel.EmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSAttCS.NEmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSuccCS.NEmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSCancelCS.NEmSrv.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFail.EmSrv.Timeout.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSFailCS.NEmSrv.Timeout.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFail.EmSrv.NotEnoughSatellites.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSFailCS.NEmSrv.NotEnoughSatellites.LowDel" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFail.EmSrv.Timeout" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSFailCS.NEmSrv.Timeout" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFail.EmSrv.NotEnoughSatellites" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFail.EmSrv.PoorAccuracy" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSSFailCS.NEmSrv.NotEnoughSatellites" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.LS.GPSFailCS.NEmSrv.PoorAccuracy" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Edch2msTtiTo10msTtiFallbackSuccess" type="bigint" counter="yes">
+	    </field>
+	    <field name="VS.Edch2msTtiTo10msTtiFallbackUnsuccess" type="bigint" counter="yes">
+	    </field>
+    	<index name="ucell">
 			<order>UtranCell,RncFunction,NAME,OMC_ID,IMPORTDATE</order>
 			<unique>yes</unique>
 		</index>
@@ -31609,6 +31653,10 @@
 		</index>
 		<index name="rnc">
 			<order>NAME,IMPORTDATE</order>
+			<unique>no</unique>
+		</index>
+		<index name="nodeb">
+			<order>NodeBName,IMPORTDATE</order>
 			<unique>no</unique>
 		</index>
 	</table>
