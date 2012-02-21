@@ -52,7 +52,7 @@ sub execute {
 		warn "Warning: No data was retrieved after parsing $pmfile. This may not be a problem but should be investigated."	unless (scalar(keys %$counters) > 0);
 	
 		my $success = Common::CSV::to_csv($pm,$counters,$info,$opt->{omc},'gpm',$opt->{outdir});
-		if ($success && $opt->{delete}) {
+		if ($opt->{delete}) {
 			print "Deleting: $pmfile (-D command line option was provided)\n";
 			unlink($pmfile);
 		}
