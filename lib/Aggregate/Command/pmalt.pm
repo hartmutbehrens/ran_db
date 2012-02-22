@@ -101,6 +101,11 @@ sub aggregate {
 	my $today = Common::Date::today();
 	my $config = Common::XML::read_xml($template);
 	my $todo = instructions($config->{aggregate}->{fields}->{field},$opt);
+
+	unless (exists $config->{aggregate}->{$opt->{time}}) {
+		warn "No instructions found in template for $opt->{time} aggregation. \n";
+		return;
+	}
 	
 	for my $step (sort {$a <=> $b} keys %{$config->{aggregate}->{$opt->{time}}->{step}}) {
 		if ( ( defined $opt->{step} ) && ($step != $opt->{step}) ) {
