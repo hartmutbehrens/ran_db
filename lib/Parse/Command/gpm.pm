@@ -30,7 +30,7 @@ sub opt_spec {
 	[ "templatedir|t=s",	"directory containing xml templates for decoding pm file", { default => "../templates" }],
 	[ "omc|o=s",	"OMC-R name", { required => 1 }],
 	[ "delete|D",	"Delete file(s) after parsing"],
-	[ "parallel|P=s", 	"number of files to process in parallel (default = $np) ", { default => 4}],	
+	[ "parallel|P=s", 	"number of files to process in parallel (default = 4) ", { default => 4}],	
   );
 }
 
