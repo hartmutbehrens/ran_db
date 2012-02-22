@@ -185,7 +185,8 @@ sub make_select_sql {
 	my $where = join(' and ',map("$_ = ?", split(',',$sconfig->{identifier}),$sconfig->{groupfrom} ) );
 	for my $counter (keys %$todo) {
 		if ( (exists $from{$counter}) && (exists $to{$counter}) ) {
-			my $what = ($todo->{$counter} =~ /[\+|\-|\*|\/]/) ? $todo->{$counter} : $todo->{$counter}.'(`'.$counter.'`)';
+			my $how = $todo->{$counter};	#sum, min, max, avg or explicit definition eg counter1/counter2
+			my $what = ($how =~ /[\+|\-|\*|\/]/) ? $how : $how.'(`'.$counter.'`)'; 
 			push @what, $what;
 			push @cols, $counter;	
 		}
