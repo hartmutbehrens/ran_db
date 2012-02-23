@@ -6,6 +6,7 @@ tmp/*
 aggregationlog/*
 bin/..*
 copylog/*
-
+.includepath
+.project
 .carton/
 local/
