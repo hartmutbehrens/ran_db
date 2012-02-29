@@ -21,6 +21,7 @@ sub recognize {
 	my ($self,$header) = @_;
 	my $rv = 0;
 	$rv = 1 if ( (exists $header->{'Type_of_measurement'}) && ($header->{'Type_of_measurement'} =~ /rt18_a/i ) );
+	$rv = 1 if ( (exists $header->{'Type_of_Measurement'}) && ($header->{'Type_of_Measurement'} =~ /rt18_a/i ) );
 	return $rv;
 }
 
@@ -93,7 +94,12 @@ sub process_header {
 	@$header{qw/ENDDATE ENDTIME/} = split(' ',$edt);
 	$header->{'SDATE'} = $sdt;
 	$header->{'BSC_NAME'} = $header->{'Name_of_BSC'};
-	($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?PMRES.*?\..*?\.(\d+)\..*?/);
+	if ($header->{'Input_file_name'} =~ /PMRES/) {
+		($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?PMRES.*?\..*?\.(\d+)\..*?/);
+	}
+	if ($header->{'Input_file_name'} =~ /metrica/) {		#BSS release b9
+		($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?TYPE.*?#\-(\d+)\-#/);	
+	}
 }
 
 1;
