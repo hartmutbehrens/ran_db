@@ -49,7 +49,7 @@ sub classify_10 {
 	return ('T110_TRX_H,TRXID','T110_SECTOR_H,MC01,MC02','T110_LINK_H,LINK_ID','T110_BSC_H,MC19,MC35','T110_MSC_H,MSC_NAME,MSC_SBL,MC1101'); 
 }
 
-sub classifiy_9 {
+sub classify_9 {
 	return ('T110_TRX_H,TRXID','T110_SECTOR_H,MC01,MC02','T110_LINK_H,LINK_ID','T110_BSC_H,MC19,MC35'); 
 }
 
@@ -70,7 +70,13 @@ sub process_header {
 	@$header{qw/ENDDATE ENDTIME/} = split(' ',$edt);
 	$header->{'SDATE'} = $sdt;
 	$header->{'BSC_NAME'} = $header->{'Name_of_BSC'};
-	($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?PMRES.*?\..*?\.(\d+)\..*?/);
+	if ($header->{'Input_file_name'} =~ /PMRES/) {
+		($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?PMRES.*?\..*?\.(\d+)\..*?/);	
+	}
+	if ($header->{'Input_file_name'} =~ /metrica/) {		#BSS release b9
+		($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?TYPE.*?#\-(\d+)\-#);	
+	}
+	
 }
 
 1;
