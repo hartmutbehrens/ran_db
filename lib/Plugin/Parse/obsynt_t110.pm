@@ -74,7 +74,7 @@ sub process_header {
 		($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?PMRES.*?\..*?\.(\d+)\..*?/);	
 	}
 	if ($header->{'Input_file_name'} =~ /metrica/) {		#BSS release b9
-		($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?TYPE.*?#\-(\d+)\-#);	
+		($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?TYPE.*?#\-(\d+)\-#/);	
 	}
 	
 }
