@@ -70,7 +70,12 @@ sub process_header {
 	@$header{qw/ENDDATE ENDTIME/} = split(' ',$edt);
 	$header->{'SDATE'} = $sdt;
 	$header->{'BSC_NAME'} = $header->{'Name_of_BSC'};
-	($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?PMRES.*?\..*?\.(\d+)\..*?/);
+	if ($header->{'Input_file_name'} =~ /PMRES/) {
+		($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?PMRES.*?\..*?\.(\d+)\..*?/);
+	}
+	if ($header->{'Input_file_name'} =~ /metrica/) {		#BSS release b9
+		($header->{'BSC_ID'}) = ($header->{'Input_file_name'} =~ /.*?TYPE.*?#\-(\d+)\-#/);	
+	}
 }
 
 1;
