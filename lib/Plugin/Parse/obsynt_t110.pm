@@ -22,6 +22,7 @@ sub recognize {
 	my ($self,$header) = @_;
 	my $rv = 0;
 	$rv = 1 if ( (exists $header->{'Type_of_measurement'}) && ($header->{'Type_of_measurement'} =~ /rt110/i ) );
+	$rv = 1 if ( (exists $header->{'Type_of_Measurement'}) && ($header->{'Type_of_Measurement'} =~ /rt110/i ) );	#BSS release b9
 	return $rv;
 }
 
