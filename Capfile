@@ -1,14 +1,12 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
 
-load 'config/deploy' # remove this line to skip loading any of the default tasks
-
 depend :remote, :command, "perlbrew"
 
 #before "deploy:setup", "db:setup"
 after "deploy:symlink", "application:symlink"
 
-set :mysql_path, "/usr/local/mysql/bin/mysql"
+set :mysql_path, "/usr/bin/mysql"
 set :application, "ran_db"
 set :repository, "file:///home/hartmut/workspace/#{application}"
 set :scm, :git
@@ -16,7 +14,7 @@ set :branch, "master"
 set :deploy_via, :copy
 set :copy_exclude, [".git", "Capfile", "config"]
 set :use_sudo, false
-set :deploy_to, "/home/wahl/#{application}"
+set :deploy_to, "/home/PNM/hartmut/#{application}"
 ssh_options[:forward_agent] = true
 
 set :db_superuser do Capistrano::CLI.ui.ask "MySQL username (with CREATE privilege): " end
@@ -29,8 +27,8 @@ set :utran_ver do	Capistrano::CLI.ui.ask "UTRAN version: " end
 
 set :production_db do Capistrano::CLI.ui.ask "Database name: " end
 
-role :hosts, "wahl@10.101.11.218"
-role :db, "wahl@10.101.11.218", :primary => true
+role :hosts, "PNM@ilndcpnm015"
+role :db, "PNM@ilndcpnm015", :primary => true
 
 namespace :perlbrew do
 	desc "Install perl"
@@ -71,14 +69,15 @@ end
 namespace :application do
 	desc "Create csvload and data directory symlinks"
 	task :symlink, :roles => :hosts do
-		run "mkdir -p #{shared_path}/system/csvload #{shared_path}/system/data"
+		run "mkdir -p #{shared_path}/system/csvload #{shared_path}/system/data #{shared_path}/system/copylog"
 		run "ln -nfs #{shared_path}/system/csvload #{current_path}/csvload"
 		run "ln -nfs #{shared_path}/system/data #{current_path}/data"
+		run "ln -nfs #{shared_path}/system/copylog #{current_path}/copylog"
 	end
 
 	desc "Create GSM tables in database"
 	task :create_gsm_tables, :roles => :hosts do
-		for table in ['rnl','t18','t31','t110','t180','gpm','cellpositions','cell_bh','Alarms_2G','matrix']
+		for table in ['rnl','t18','t31','t110','t180','obsynt.gpm','cellpositions','cell_bh','Alarms_2G','matrix']
 			run "#{current_path}/bin/rdb-make tables -u #{db_user} -x #{db_pass} -h localhost -d #{production_db} -D #{current_path}/templates/table.#{table}.#{bss_ver}.xml"
 		end
 	end
