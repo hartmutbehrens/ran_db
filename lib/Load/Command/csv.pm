@@ -37,6 +37,7 @@ sub opt_spec {
 	[ "type|t=s",	"file type to be loaded (will be used to match against csv file name) - e.g. t110,RNCCN..", { required => 1 }],
 	[ "parallel|P=s", 	"number of files to load in parallel (default = $np). Cannot be used with the --lock option when > 0", { default => $np}],
 	[ "lock|l",	"lock tables during write"],
+	[ "driver=s",	"database driver (default mysql)", { default => "mysql" }],
 	[ "delete|D",	"Delete file(s) after parsing"],
   );
 }
@@ -56,12 +57,11 @@ sub execute {
 	my ($self, $opt, $args) = @_;
 
 	my $files = get_filenames($opt);
-	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db/});
+	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db driver/});
 	my $pm = Parallel::ForkManager->new($opt->{parallel});
 	
 	for my $file (@$files) {
 		$pm->start and next; # do the fork
-		
 		my $dbh = $conn->dbh;
 		die "Could not get a database handle\n" unless defined $dbh;
 		 
