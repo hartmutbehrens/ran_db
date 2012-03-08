@@ -9,35 +9,27 @@ use strict;
 use warnings;
 #modules
 use Carp qw(croak);
-use DBI;
 use DBIx::Connector;
 
 sub get_connection {
-	my ($user,$pass,$host,$port,$db) = @_;
-	my $dsn = 'DBI:mysql:'.$db.';host='.$host.';port='.$port;
+	my ($user,$pass,$host,$port,$db,$driver) = @_;
+	$driver = $driver // 'mysql';
+	my $dsn = "DBI:$driver:$db;host=$host;port=$port";
 	my $conn = DBIx::Connector->new($dsn, $user, $pass, {RaiseError => 1,AutoCommit => 1,});
 	return $conn;
 }
 
-
 sub connect {
-	my ($dbhref, $user,$pass,$host,$port,$db) = @_;
-	my ($dbh, $dsn, $drh);
-	
-	$dsn = 'DBI:mysql:;host='.$host.';port='.$port;
-	$dbh = DBI->connect($dsn, $user, $pass);
-	$drh = DBI->install_driver('mysql');
-	# grab general database information
-	my @databases = @{$dbh->selectcol_arrayref("show databases")};	# this is only interesting for debugging purposes
-	# does the correct DB exist?
-	my $found = 0 ; for (@databases) {$found = 1 if (uc($_) eq uc($db))};
-	return 0 if (!$found);
-	$dbh->disconnect;
-	# now connect properly
-	$dsn = 'DBI:mysql:'.$db.';host='.$host.';port='.$port;
-	$$dbhref = DBI->connect($dsn, $user, $pass);
-	$drh = DBI->install_driver('mysql');
-	return 1;
+	my ($dbhref, $user,$pass,$host,$port,$db,$driver) = @_;
+	my $conn = get_connection($user,$pass,$host,$port,$db,$driver);
+	if (defined $conn) {
+		$$dbhref = $conn->dbh;
+		return 1;
+	}
+	else {
+		die "Could not connect to $db. Please check that the connection details are correct\n";
+		return 0;
+	}
 }
 
 sub get_table_definition {
