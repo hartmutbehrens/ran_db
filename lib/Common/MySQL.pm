@@ -27,7 +27,7 @@ sub connect {
 		return 1;
 	}
 	else {
-		die "Could not connect to $db. Please check that the connection details are correct\n";
+		croak "Could not connect to $db. Please check that the connection details are correct\n";
 		return 0;
 	}
 }
