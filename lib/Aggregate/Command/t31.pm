@@ -33,6 +33,7 @@ sub opt_spec {
 	[ "db|d=s",	"database name", { required => 1 }],
 	[ "port|P=s",	"database port", { hidden => 1, default => 3306 }],
 	[ "which|w=s",	"type of aggregation that should be run", { required => 1, hidden => 1, one_of => \@which}],
+	[ "driver=s",	"database driver (default mysql)", { default => "mysql" }],
   );
 }
 
@@ -42,12 +43,11 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-	my $dbh;
 	my $count = 0;
-	my $connected = Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
-	unless ($connected) {
-		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
-	}
+	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db driver/});
+	die "Could not get a database connection\n" unless defined $conn;
+	my $dbh = $conn->dbh;
+
 	my $lock = '.'.$opt->{db}.'t31';
 	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 	if ($opt->{which} eq 'cell') {
