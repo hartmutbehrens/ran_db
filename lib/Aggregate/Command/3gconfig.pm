@@ -34,6 +34,7 @@ sub opt_spec {
 	[ "host2g|h2g=s",	"optional 2G database host IP address", { hidden => 1 }],
 	[ "db2g|d2g=s",	"optional 2G database name", { hidden => 1 }],
 	[ "port2g|P2g=s",	"optional 2G database port", { hidden => 1, default => 3306 }],
+	[ "driver=s",	"database driver (default mysql)", { default => "mysql" }],
   );
 }
 
@@ -45,17 +46,20 @@ sub execute {
 	my ($self, $opt, $args) = @_;
 	my ($dbh,$dbh2g);
 	my $count = 0;
-	my $connected = Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
-	unless ($connected) {
-		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
-	}
+	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db driver/});
+	die "Could not get a database connection\n" unless defined $conn;
+	my $dbh = $conn->dbh;
+
 	my $lock = '.'.$opt->{db}.'3gconfig';
 	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 	
 	aggregate_3gconfig($dbh);
 	if ($opt->{update}) {
-		my $connected2g = Common::MySQL::connect(\$dbh2g,@{$opt}{qw/user2g pass2g host2g port2g db2g/});
-		if ($connected2g) {
+		my $conn2g = Common::MySQL::get_connection(@{$opt}{qw/user2g pass2g host2g port2g db2g driver/});
+		die "Could not get a 2G database connection\n" unless defined $conn2g;
+		
+		if ($conn2g) {
+			my $dbh2g = $conn2g->dbh;
 			update_with_2g($dbh,$dbh2g);
 		}
 	}

@@ -41,6 +41,7 @@ sub opt_spec {
 	[ "limit|l=s",	"optionally increase/decrease amount of days to use in aggregation operation"],
 	[ "step|s=s",	"only perform operations from specified step in aggregation template"],
 	[ "skip",	"skip aggregation steps that have already been completed according to log files"],
+	[ "driver=s",	"database driver (default mysql)", { default => "mysql" }],
 	[ "debug",	"generate debug output"],
   );
 }
@@ -56,11 +57,9 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-	my $dbh;
-	my $connected = Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
-	unless ($connected) {
-		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
-	}
+	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db driver/});
+	die "Could not get a database connection\n" unless defined $conn;
+	my $dbh = $conn->dbh;
 	for my $template (@$args) {
 		my $lock = $template;
 		$lock =~ s/\W//g;

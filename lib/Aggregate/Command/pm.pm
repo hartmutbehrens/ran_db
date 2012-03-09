@@ -32,6 +32,7 @@ sub opt_spec {
 	[ "port|P=s",	"database port", { hidden => 1, default => 3306 }],
 	[ "time|t=s",	"time level of aggregation that should be run", { required => 1, hidden => 1, one_of => \@which}],
 	[ "limit|l=s",	"optionally increase/decrease amount of days to use in aggregation operation"],
+	[ "driver=s",	"database driver (default mysql)", { default => "mysql" }],
   );
 }
 
@@ -45,11 +46,9 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-	my $dbh;
-	my $connected = Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
-	unless ($connected) {
-		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
-	}
+	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db driver/});
+	die "Could not get a database connection\n" unless defined $conn;
+	my $dbh = $conn->dbh;
 	for my $template (@$args) {
 		my $lock = $template;
 		$lock =~ s/\W//g;
