@@ -41,9 +41,8 @@ sub execute {
 	my $count = 0;
 	
 	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db driver/});
-	unless ($connected) {
-		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
-	}
+	die "Could not get a database connection\n" unless defined $conn;
+	
 	my $lock = '.'.$opt->{db}.'rnl';
 	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
 	aggregate_rnl($conn);
