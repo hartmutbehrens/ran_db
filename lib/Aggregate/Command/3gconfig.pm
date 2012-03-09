@@ -44,7 +44,6 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-	my ($dbh,$dbh2g);
 	my $count = 0;
 	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db driver/});
 	die "Could not get a database connection\n" unless defined $conn;
