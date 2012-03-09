@@ -27,6 +27,7 @@ sub opt_spec {
 	[ "host|h=s",	"database host IP address", { required => 1 }],
 	[ "db|d=s",	"database name", { required => 1 }],
 	[ "port|P=s",	"database port", { hidden => 1, default => 3306 }],
+	[ "driver=s",	"database driver (default mysql)", { default => "mysql" }],
   );
 }
 
@@ -38,13 +39,14 @@ sub execute {
 	my ($self, $opt, $args) = @_;
 	my $dbh;
 	my $count = 0;
-	my $connected = Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
+	
+	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db driver/});
 	unless ($connected) {
 		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
 	}
 	my $lock = '.'.$opt->{db}.'rnl';
 	Common::Lock::get_lock($lock) or Common::Lock::bail($lock);
-	aggregate_rnl($dbh);
+	aggregate_rnl($conn);
 }
 
 
@@ -224,8 +226,8 @@ sub do_tchinner {
 
 #"aggregate" rnl info - mostly just fill in LAC,CI, etc into the table...
 sub aggregate_rnl {
-	my $dbh = shift;
-	
+	my $conn = shift;
+	my $dbh = $conn->dbh;
 	unless (Common::MySQL::has_table($dbh,'Cell')) {
 		die "Cannot continue aggregation because the table \"Cell\" is not available\n";
 	}
