@@ -35,6 +35,7 @@ sub opt_spec {
 	[ "host|h=s",	"database host IP address", { required => 1 }],
 	[ "db|d=s",	"database name", { required => 1 }],
 	[ "port|P=s",	"database port", { hidden => 1, default => 3306 }],
+	[ "driver=s",	"database driver (default mysql)", { default => "mysql" }],
   );
 }
 
@@ -45,13 +46,13 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-	my $dbh;
+	
 	my %bh;
 	my @required = qw(Cell T31_CIN_CELL_D);
-	my $connected = Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
-	unless ($connected) {
-		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
-	}
+	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db driver/});
+	die "Could not get a database connection\n" unless defined $conn;
+	my $dbh = $conn->dbh;
+
 	my @tables = @{$dbh->selectcol_arrayref("show tables")};
 	for (@required) {
 		die "Cannot calculate the interference matrix because the required table $_ does not exist! \n" unless grep {/^$_/} @tables;

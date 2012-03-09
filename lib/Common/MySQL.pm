@@ -19,19 +19,6 @@ sub get_connection {
 	return $conn;
 }
 
-sub connect {
-	my ($dbhref, $user,$pass,$host,$port,$db,$driver) = @_;
-	my $conn = get_connection($user,$pass,$host,$port,$db,$driver);
-	if (defined $conn) {
-		$$dbhref = $conn->dbh;
-		return 1;
-	}
-	else {
-		croak "Could not connect to $db. Please check that the connection details are correct\n";
-		return 0;
-	}
-}
-
 sub get_table_definition {
 	my ($dbh,$table,$defRef,$idxRef) = @_;
 	croak "Need a valid database handle. The one you provided is not defined!\n" unless defined $dbh;

@@ -29,6 +29,7 @@ sub opt_spec {
 	[ "db|d=s",	"database name in which tables will be created", { required => 1 }],
 	[ "port|P=s",	"database port", { hidden => 1, default => 3306 }],
 	[ "drop|D",	"Drop any existing tables, if they exist"],
+	[ "driver=s",	"database driver (default mysql)", { default => "mysql" }],
   );
 }
 
@@ -42,11 +43,9 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-	my $dbh;
-	my $connected = Common::MySQL::connect(\$dbh,@{$opt}{qw/user pass host port db/});
-	unless ($connected) {
-		die "Could not connect user \"$opt->{user}\" to database \"$opt->{db}\" on host \"$opt->{host}\". Please check that the provided credentials are correct and that the databse exists!\n";
-	}
+	my $conn = Common::MySQL::get_connection(@{$opt}{qw/user pass host port db driver/});
+	die "Could not get a database connection\n" unless defined $conn;
+	my $dbh = $conn->dbh;
 	for my $template (@$args) {
 		my $mk = Common::XML::read_xml($template);
 		Common::MakeIt::make_table($mk,$dbh,undef,$opt->{drop});	
