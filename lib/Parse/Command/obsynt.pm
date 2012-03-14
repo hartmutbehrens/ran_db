@@ -40,7 +40,6 @@ sub opt_spec {
 			{ default => [], hidden => 1 } ],
 	[ "remap|m=s@",	"change column names [table,old_col_name,new_col_name]. Repeat switch and argument to add more column name changes.", 
 			{ default => [], hidden => 1 } ],
-	[ "debug", "enable debugging output"],
   );
 }
 
@@ -67,10 +66,10 @@ sub execute {
 			for my $plugin (plugins()) {
 				if ( $plugin->can('recognize') && $plugin->recognize($header) ) {
 				
-					$plugin->process_header($header) if $plugin->can('process_header');
-					$plugin->add_classifiers($opt,$header) if $plugin->can('add_classifiers');
-					$plugin->add_remaps($opt,$header) if $plugin->can('add_remaps');
-					push @known, $plugin;	
+					#$plugin->process_header($header) if $plugin->can('process_header');
+					#$plugin->add_classifiers($opt,$header) if $plugin->can('add_classifiers');
+					#$plugin->add_remaps($opt,$header) if $plugin->can('add_remaps');
+					#push @known, $plugin;	
 				}
 			}
 			for (1..$#$sections) {
@@ -137,8 +136,9 @@ sub parse_header {
 sub parse_section {
 	my ($section,$opt) = @_;
 	my (@cols,@data);
-	my $table = undef;
+	my ($table,$first) = (undef,undef);
 	for my $line ( split($opt->{rsep},$section)  ) {
+		$first = $line unless defined $first;
 		next unless $line =~ /\w+/;
 		my @fields = split($opt->{fsep},$line);
 		my $id = classify(\@fields,$opt->{classifiers});
@@ -151,13 +151,9 @@ sub parse_section {
 			push @data ,\@fields;
 		}
 	}
-	if ( (defined $opt->{debug}) && (not defined $table) ) { 
-		warn "The following section could not be classified:\n";
-		warn $section,"\n";
-	}
-	else {	#just give a sneak peek to the user that there could be an issue
-		warn "Could not classify section starting with:\n";
-		warn $data[0],"\n";
+	if ( not defined $table ) { 
+		warn "The section starting with the following data could not be classified:\n";
+		warn $first,"\n";
 	}
 	return ($table,\@cols,\@data);
 }
