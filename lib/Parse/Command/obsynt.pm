@@ -155,6 +155,10 @@ sub parse_section {
 		warn "The following section could not be classified:\n";
 		warn $section,"\n";
 	}
+	else {	#just give a sneak peek to the user that there could be an issue
+		warn "Could not classify section starting with:\n";
+		warn $data[0],"\n";
+	}
 	return ($table,\@cols,\@data);
 }
 
