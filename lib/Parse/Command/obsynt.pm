@@ -40,6 +40,7 @@ sub opt_spec {
 			{ default => [], hidden => 1 } ],
 	[ "remap|m=s@",	"change column names [table,old_col_name,new_col_name]. Repeat switch and argument to add more column name changes.", 
 			{ default => [], hidden => 1 } ],
+	[ "debug", "enable debugging output"],
   );
 }
 
@@ -150,7 +151,7 @@ sub parse_section {
 			push @data ,\@fields;
 		}
 	}
-	unless ($table) {
+	if ( (defined $opt->{debug}) && (not defined $table) ) { 
 		warn "The following section could not be classified:\n";
 		warn $section,"\n";
 	}
