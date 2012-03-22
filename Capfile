@@ -33,14 +33,9 @@ role :db, "PNM@ilndcpnm015", :primary => true
 namespace :perlbrew do
 	desc "Install perl"
 	task :install, :roles => :hosts do
-		run "which perlbrew"
+		#needs to be completed
 	end
 end
-
-namespace :ran_db do
-	desc "Update tables"
-end
-
 
 namespace :db do
 	desc "Create MySQL database"
