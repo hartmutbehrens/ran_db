@@ -44,6 +44,7 @@ install_script 'bin/rdb-make';
 install_script 'bin/rdb-modify';
 install_script 'bin/rdb-parse';
 install_script 'bin/rdb-report';
+install_script 'bin/rdb-rm';
 install_script 'bin/rdb-xparthse';
  
 WriteAll;
