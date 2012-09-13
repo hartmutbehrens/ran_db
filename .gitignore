@@ -1,7 +1,6 @@
 csvload/*
 ftplog/*
 data/*
-inc/*
 tmp/*
 aggregationlog/*
 bin/..*
