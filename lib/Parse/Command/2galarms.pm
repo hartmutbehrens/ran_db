@@ -10,7 +10,6 @@ use warnings;
 use Common::Date;
 use Common::File;
 use Common::Lock;
-use Data::Dumper;
 use File::Path qw(make_path);
 use Parse -command;
 

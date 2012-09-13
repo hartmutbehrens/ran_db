@@ -12,7 +12,6 @@ use Common::Lock;
 use Common::MySQL;
 use Common::XML;
 use Aggregate -command;
-use Data::Dumper;
 use File::Path qw(make_path);
 use Time::Local qw(timelocal);
 
