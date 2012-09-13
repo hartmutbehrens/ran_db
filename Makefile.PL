@@ -9,6 +9,7 @@ author			'Hartmut Behrens <hartmut.behrens@gmail.com>';
 version			'0.01';			
 license			'Alcatel-Lucent';
 repository		'git://github.com/hartmutbehrens/ran_db.git';
+installdirs		'site';
  
 # Specific dependencies
 requires       'App::Cmd'  => 0;
